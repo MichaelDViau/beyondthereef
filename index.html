@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beyond the Reef Adventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__logo" href="index.html">Beyond the Reef</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="primary-navigation">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="build-your-tours.html">Build Your Tours</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="review.html">Reviews</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">🌞</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-slider" aria-label="Featured Experiences">
+      <div class="hero-slider__content">
+        <p class="eyebrow">Dive in</p>
+        <h1>Create unforgettable island adventures</h1>
+        <p>Handcraft your dream tour with immersive reef dives, sunset sails, and exclusive culinary encounters.</p>
+        <a class="button button--primary" href="build-your-tours.html">Start building</a>
+      </div>
+      <div class="hero-slider__controls" aria-hidden="true">
+        <button class="hero-slider__arrow" type="button" data-slide="prev" aria-label="Previous slide">❮</button>
+        <button class="hero-slider__arrow" type="button" data-slide="next" aria-label="Next slide">❯</button>
+      </div>
+      <div class="hero-slider__dots" role="tablist" aria-label="Featured slides"></div>
+      <div class="hero-slider__track">
+        <article class="hero-slide is-active">
+          <video class="hero-slide__media" src="https://cdn.coverr.co/videos/coverr-divers-swimming-with-fishes-7481/1080p.mp4" autoplay muted loop playsinline></video>
+          <div class="hero-slide__overlay">
+            <h2>Weightless beneath the waves</h2>
+            <p>Swim alongside technicolor reefs with our master divers guiding every moment.</p>
+          </div>
+        </article>
+        <article class="hero-slide">
+          <img class="hero-slide__media" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80" alt="Sunset over tropical ocean" />
+          <div class="hero-slide__overlay">
+            <h2>Sunsets made for storytelling</h2>
+            <p>Set sail on a private catamaran and savor a chef-crafted dinner at golden hour.</p>
+          </div>
+        </article>
+        <article class="hero-slide">
+          <img class="hero-slide__media" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80" alt="Traveler exploring jungle waterfall" />
+          <div class="hero-slide__overlay">
+            <h2>Discover hidden waterfalls</h2>
+            <p>Trek with local naturalists to secret grottos and shimmering rainforest pools.</p>
+          </div>
+        </article>
+        <article class="hero-slide">
+          <img class="hero-slide__media" src="https://images.unsplash.com/photo-1500043204300-5fe4f2131d3a?auto=format&fit=crop&w=1600&q=80" alt="Gourmet seafood dish" />
+          <div class="hero-slide__overlay">
+            <h2>Savor the archipelago</h2>
+            <p>Elevate your itinerary with private tastings, mixology classes, and farm-to-table feasts.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="tour-builder">
+      <div class="section__intro">
+        <p class="eyebrow">Build your tour</p>
+        <h2>Design a custom itinerary in minutes</h2>
+        <p>Create a bespoke adventure by mixing activities, dining, and relaxation. Add each idea to your itinerary and we will weave it into a seamless journey.</p>
+      </div>
+      <div class="tour-builder">
+        <form class="card" id="tour-builder-form" aria-label="Add an activity to your custom tour">
+          <div class="field">
+            <label for="activity-name">Activity name</label>
+            <input id="activity-name" name="activity" type="text" placeholder="Night snorkel" required />
+          </div>
+          <div class="field">
+            <label for="activity-date">Preferred date</label>
+            <input id="activity-date" name="date" type="date" />
+          </div>
+          <div class="field">
+            <label for="activity-notes">Special touches</label>
+            <textarea id="activity-notes" name="notes" rows="3" placeholder="Add a sunset picnic with locally sourced fruit."></textarea>
+          </div>
+          <button class="button button--primary" type="submit">Add to itinerary</button>
+        </form>
+        <div class="card tour-itinerary" aria-live="polite">
+          <h3>Your custom itinerary</h3>
+          <ul id="itinerary-list" class="itinerary-list">
+            <li class="itinerary-list__placeholder">Your ideas will appear here. Add the first one to begin crafting the perfect tour.</li>
+          </ul>
+          <button class="button button--ghost" type="button" id="clear-itinerary">Clear itinerary</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--accent">
+      <div class="section__intro">
+        <p class="eyebrow">Why travelers love us</p>
+        <h2>Concierge-level planning at lightning speed</h2>
+      </div>
+      <div class="grid grid--features">
+        <article class="card feature-card">
+          <h3>Crafted by locals</h3>
+          <p>Our specialists live on the islands year round, curating insider-only moments you cannot find on a brochure.</p>
+        </article>
+        <article class="card feature-card">
+          <h3>Real-time collaboration</h3>
+          <p>Invite friends or family to add ideas to your itinerary and watch it come to life instantly.</p>
+        </article>
+        <article class="card feature-card">
+          <h3>Seamless execution</h3>
+          <p>From airport transfer to last toast, your dedicated host orchestrates every detail while you unwind.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="cta">
+        <div>
+          <h2>Ready to feel the sea breeze?</h2>
+          <p>Answer a few questions and we will send a bespoke proposal within 24 hours.</p>
+        </div>
+        <a class="button button--primary" href="contact.html">Plan my escape</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="current-year"></span> Beyond the Reef Adventures. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
