@@ -139,10 +139,11 @@ main {
   transition: color var(--transition);
 }
 
-.nav__logo-icon svg {
+.nav__logo-icon img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
 }
 
 .nav__logo-text {
@@ -166,25 +167,12 @@ main {
   color: var(--accent);
 }
 
-.nav__logo-wave {
-  fill: currentColor;
-}
-
-.nav__logo-sun {
-  fill: #fbbf24;
-  transition: fill var(--transition);
-}
-
 body.dark-mode .nav__logo-icon {
   color: var(--accent-strong);
 }
 
 body.dark-mode .nav__logo-subtitle {
   color: var(--accent-strong);
-}
-
-body.dark-mode .nav__logo-sun {
-  fill: var(--accent);
 }
 
 .nav__links {
