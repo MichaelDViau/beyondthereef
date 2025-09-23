@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title>Beyond the Reef placeholder logo</title>
+  <defs>
+    <linearGradient id="sunset" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#0f4c81" />
+  <circle cx="44" cy="20" r="9" fill="url(#sunset)" />
+  <path d="M10 44c8-10 18-14 28-10 6 2 12 7 16 12v6H10z" fill="#fff7d6" opacity="0.9" />
+  <path d="M10 48c6-6 14-9 22-7 6 1.5 12 4.5 18 9v6H10z" fill="#ffffff" opacity="0.75" />
+</svg>
