@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Beyond the Reef Adventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__logo" href="index.html">Beyond the Reef</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="primary-navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="build-your-tours.html">Build Your Tours</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="review.html">Reviews</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html" aria-current="page">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">🌞</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img class="page-hero__background" src="https://images.unsplash.com/photo-1522356308333-94b4958341c5?auto=format&fit=crop&w=1600&q=80" alt="Message in a bottle on a beach" />
+      <div>
+        <p class="eyebrow">Say aloha</p>
+        <h1>Let’s bring your next adventure to life</h1>
+        <p>Share a few details and our concierge team will respond within one business day with ideas and availability.</p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="contact-grid">
+        <article class="contact-card">
+          <h3>Start a conversation</h3>
+          <p>Email <a href="mailto:hello@beyondthereef.com">hello@beyondthereef.com</a></p>
+          <p>Call or WhatsApp <a href="tel:+18085551234">+1 (808) 555-1234</a></p>
+          <p>Office hours: Monday–Saturday, 8am–8pm local time</p>
+        </article>
+        <form class="contact-card contact-form" aria-label="Contact Beyond the Reef">
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" type="text" name="name" placeholder="Alex Morgan" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input id="phone" type="tel" name="phone" placeholder="Optional" />
+          </div>
+          <div class="field">
+            <label for="travel-dates">Ideal travel window</label>
+            <input id="travel-dates" type="text" name="dates" placeholder="June 10 – 18, flexible" />
+          </div>
+          <div class="field">
+            <label for="message">Tell us about your dream tour</label>
+            <textarea id="message" name="message" placeholder="We want to celebrate with a sunset vow renewal..." required></textarea>
+          </div>
+          <button class="button button--primary" type="submit">Send message</button>
+          <p class="text-small" style="color: var(--text-muted); margin: 0;">We respect your privacy and will never spam.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="current-year"></span> Beyond the Reef Adventures. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guest Reviews | Beyond the Reef Adventures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__logo" href="index.html">Beyond the Reef</a>
+      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav__links" id="primary-navigation">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="build-your-tours.html">Build Your Tours</a></li>
+        <li><a href="tours.html">Tours</a></li>
+        <li><a href="review.html" aria-current="page">Reviews</a></li>
+        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">🌞</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <img class="page-hero__background" src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?auto=format&fit=crop&w=1600&q=80" alt="Happy travelers on a boat" />
+      <div>
+        <p class="eyebrow">Guest love letters</p>
+        <h1>Stories from travelers who went beyond</h1>
+        <p>Hear how custom-crafted journeys and thoughtful touches turned bucket-list dreams into effortless escapes.</p>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <h2>Featured reviews</h2>
+      <div class="review-list">
+        <article class="review-card">
+          <h3>“They thought of every detail.”</h3>
+          <p>“From the midnight manta ray swim to the surprise anniversary dinner on a sandbar, the Beyond the Reef team went above and beyond. We never looked at our watches once.” — <strong>Cam &amp; Jordan</strong></p>
+        </article>
+        <article class="review-card">
+          <h3>“Planning was actually fun.”</h3>
+          <p>“We built the itinerary together during a video call and could see availability update live. Their concierge secured a private guide for my dad so he could explore at his own pace.” — <strong>Riya</strong></p>
+        </article>
+        <article class="review-card">
+          <h3>“Our friends are still raving.”</h3>
+          <p>“The group chat was blowing up with ideas. The Beyond the Reef planner kept everything organized and even added mixology classes based on our Spotify playlist.” — <strong>Diego &amp; crew</strong></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <h2>Share your experience</h2>
+      <p>Email <a href="mailto:hello@beyondthereef.com">hello@beyondthereef.com</a> with a highlight reel or tag us on social with <strong>#BeyondTheReef</strong> for a chance to be featured.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="current-year"></span> Beyond the Reef Adventures. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
