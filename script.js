@@ -38,15 +38,18 @@ function setupThemeToggle(prefersDark) {
   const storedTheme = localStorage.getItem('preferred-theme');
   const shouldUseDark = storedTheme ? storedTheme === 'dark' : prefersDark?.matches;
 
+  toggle.textContent = 'Dark mode';
+  toggle.setAttribute('aria-pressed', 'false');
+
   if (shouldUseDark) {
     document.body.classList.add('dark-mode');
-    toggle.textContent = '🌙';
+    toggle.textContent = 'Light mode';
     toggle.setAttribute('aria-pressed', 'true');
   }
 
   toggle.addEventListener('click', () => {
     const isDark = document.body.classList.toggle('dark-mode');
-    toggle.textContent = isDark ? '🌙' : '🌞';
+    toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
     toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
     localStorage.setItem('preferred-theme', isDark ? 'dark' : 'light');
   });
@@ -54,7 +57,7 @@ function setupThemeToggle(prefersDark) {
   prefersDark?.addEventListener?.('change', (event) => {
     if (!localStorage.getItem('preferred-theme')) {
       document.body.classList.toggle('dark-mode', event.matches);
-      toggle.textContent = event.matches ? '🌙' : '🌞';
+      toggle.textContent = event.matches ? 'Light mode' : 'Dark mode';
       toggle.setAttribute('aria-pressed', event.matches ? 'true' : 'false');
     }
   });
