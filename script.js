@@ -77,9 +77,38 @@ function setupHeroSlider() {
     currentIndex = 0;
   }
 
+  const HAVE_CURRENT_DATA =
+    typeof HTMLMediaElement !== 'undefined' ? HTMLMediaElement.HAVE_CURRENT_DATA : 2;
   let autoRotateTimer = null;
   const AUTO_ROTATE_INTERVAL = 7000;
   const hasMultipleSlides = slides.length > 1;
+
+  slides.forEach((slide, index) => {
+    const media = slide.querySelector('.hero-slide__media');
+    if (!media) return;
+
+    media.preload = index === currentIndex ? 'auto' : 'metadata';
+
+    const markLoaded = () => {
+      media.classList.add('is-loaded');
+    };
+
+    if (media.readyState >= HAVE_CURRENT_DATA) {
+      markLoaded();
+    } else {
+      ['loadeddata', 'canplay'].forEach((eventName) => {
+        media.addEventListener(eventName, markLoaded, { once: true });
+      });
+    }
+
+    media.addEventListener(
+      'error',
+      () => {
+        slide.classList.add('hero-slide--unavailable');
+      },
+      { once: true }
+    );
+  });
 
   function setSlideState(slide, isActive) {
     slide.classList.toggle('is-active', isActive);
@@ -89,6 +118,12 @@ function setupHeroSlider() {
     if (!video) return;
 
     if (isActive) {
+      if (video.preload !== 'auto') {
+        video.preload = 'auto';
+      }
+      if (video.readyState < HAVE_CURRENT_DATA && typeof video.load === 'function') {
+        video.load();
+      }
       if (typeof video.play === 'function') {
         const playPromise = video.play();
         if (playPromise && typeof playPromise.catch === 'function') {
@@ -96,6 +131,9 @@ function setupHeroSlider() {
         }
       }
     } else {
+      if (video.preload !== 'metadata') {
+        video.preload = 'metadata';
+      }
       if (typeof video.pause === 'function') {
         video.pause();
       }
