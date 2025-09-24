@@ -7,11 +7,14 @@ const translations = {
       'nav.create': 'Create Your Experience',
       'nav.reviews': 'Reviews',
       'nav.story': 'Our Story',
-      'nav.contact': 'Contact',
       'footer.rights': 'Beyond the Reef Adventures. All rights reserved.',
       'floatingContact.aria': 'Quick contact options',
       'floatingContact.whatsappAria': 'Chat on WhatsApp',
+      'floatingContact.emailAria': 'Email Beyond the Reef',
       'floatingContact.instagramAria': 'Open Instagram',
+      'floatingContact.whatsappLabel': 'WhatsApp',
+      'floatingContact.emailLabel': 'Email',
+      'floatingContact.instagramLabel': 'Instagram',
       'themeToggle.dark': 'Dark mode',
       'themeToggle.light': 'Light mode',
       'heroSlider.goToSlide': 'Go to slide {{index}}',
@@ -64,8 +67,8 @@ const translations = {
       'home.accent.execution.copy':
         'From airport transfer to last toast, your dedicated host orchestrates every detail while you unwind.',
       'home.cta.heading': 'Ready to feel the sea breeze?',
-      'home.cta.copy': 'Answer a few questions and we will send a bespoke proposal within 24 hours.',
-      'home.cta.button': 'Plan my escape'
+      'home.cta.copy': 'Email our concierge team and we will send a bespoke proposal within 24 hours.',
+      'home.cta.button': 'Email our concierge team'
     },
     tours: {
       'page.title': 'Build Your Tours | Beyond the Reef Adventures',
@@ -110,7 +113,7 @@ const translations = {
         '“The group chat was blowing up with ideas. The Beyond the Reef planner kept everything organized and even added mixology classes based on our Spotify playlist.” — <strong>Diego &amp; crew</strong>',
       'reviews.share.heading': 'Share your experience',
       'reviews.share.copy':
-        'Email <a href="mailto:hello@beyondthereef.com">hello@beyondthereef.com</a> with a highlight reel or tag us on social with <strong>#BeyondTheReef</strong> for a chance to be featured.'
+        'Email <a href="mailto:info@beyondthereef.com">info@beyondthereef.com</a> with a highlight reel or tag us on social with <strong>#BeyondTheReef</strong> for a chance to be featured.'
     },
     story: {
       'page.title': 'Our Story | Beyond the Reef Adventures',
@@ -138,30 +141,6 @@ const translations = {
       'story.values.tech.title': 'Technology that disappears',
       'story.values.tech.copy':
         'The planning tools are powerful, yet effortless, so you stay focused on excitement rather than logistics.'
-    },
-    contact: {
-      'page.title': 'Contact | Beyond the Reef Adventures',
-      'contact.hero.eyebrow': 'Say aloha',
-      'contact.hero.heading': 'Let’s bring your next adventure to life',
-      'contact.hero.copy':
-        'Share a few details and our concierge team will respond within one business day with ideas and availability.',
-      'contact.card.heading': 'Start a conversation',
-      'contact.card.email': 'Email <a href="mailto:hello@beyondthereef.com">hello@beyondthereef.com</a>',
-      'contact.card.phone': 'Call or WhatsApp <a href="tel:+529841670697">+52 984 167 0697</a>',
-      'contact.card.hours': 'Office hours: Monday–Saturday, 8am–8pm local time',
-      'contact.form.aria': 'Contact Beyond the Reef',
-      'contact.form.nameLabel': 'Full name',
-      'contact.form.namePlaceholder': 'Alex Morgan',
-      'contact.form.emailLabel': 'Email',
-      'contact.form.emailPlaceholder': 'you@example.com',
-      'contact.form.phoneLabel': 'Phone',
-      'contact.form.phonePlaceholder': 'Optional',
-      'contact.form.datesLabel': 'Ideal travel window',
-      'contact.form.datesPlaceholder': 'June 10 – 18, flexible',
-      'contact.form.messageLabel': 'Tell us about your dream tour',
-      'contact.form.messagePlaceholder': 'We want to celebrate with a sunset vow renewal...',
-      'contact.form.submit': 'Send message',
-      'contact.form.disclaimer': 'We respect your privacy and will never spam.'
     }
   },
   es: {
@@ -172,11 +151,14 @@ const translations = {
       'nav.create': 'Crea tu experiencia',
       'nav.reviews': 'Reseñas',
       'nav.story': 'Nuestra historia',
-      'nav.contact': 'Contacto',
       'footer.rights': 'Beyond the Reef Adventures. Todos los derechos reservados.',
       'floatingContact.aria': 'Opciones de contacto rápido',
       'floatingContact.whatsappAria': 'Chatear en WhatsApp',
+      'floatingContact.emailAria': 'Enviar correo a Beyond the Reef',
       'floatingContact.instagramAria': 'Abrir Instagram',
+      'floatingContact.whatsappLabel': 'WhatsApp',
+      'floatingContact.emailLabel': 'Correo',
+      'floatingContact.instagramLabel': 'Instagram',
       'themeToggle.dark': 'Modo oscuro',
       'themeToggle.light': 'Modo claro',
       'heroSlider.goToSlide': 'Ir a la diapositiva {{index}}',
@@ -229,8 +211,8 @@ const translations = {
       'home.accent.execution.copy':
         'Desde el traslado hasta el último brindis, tu anfitrión se encarga de cada detalle mientras tú disfrutas.',
       'home.cta.heading': '¿Listo para sentir la brisa marina?',
-      'home.cta.copy': 'Responde algunas preguntas y te enviaremos una propuesta personalizada en 24 horas.',
-      'home.cta.button': 'Planear mi escape'
+      'home.cta.copy': 'Escríbele a nuestro equipo de concierge y te enviaremos una propuesta personalizada en 24 horas.',
+      'home.cta.button': 'Escríbenos'
     },
     tours: {
       'page.title': 'Diseña tus tours | Beyond the Reef Adventures',
@@ -275,7 +257,7 @@ const translations = {
         '“El chat del grupo no dejaba de llenarse de ideas. El planificador de Beyond the Reef mantuvo todo organizado e incluso añadió clases de mixología inspiradas en nuestra lista de Spotify.” — <strong>Diego &amp; crew</strong>',
       'reviews.share.heading': 'Comparte tu experiencia',
       'reviews.share.copy':
-        'Escríbenos a <a href="mailto:hello@beyondthereef.com">hello@beyondthereef.com</a> con los mejores momentos o etiquétanos en redes con <strong>#BeyondTheReef</strong> para tener la oportunidad de aparecer.'
+        'Escríbenos a <a href="mailto:info@beyondthereef.com">info@beyondthereef.com</a> con los mejores momentos o etiquétanos en redes con <strong>#BeyondTheReef</strong> para tener la oportunidad de aparecer.'
     },
     story: {
       'page.title': 'Nuestra historia | Beyond the Reef Adventures',
@@ -303,30 +285,6 @@ const translations = {
       'story.values.tech.title': 'Tecnología que se difumina',
       'story.values.tech.copy':
         'Nuestras herramientas de planificación son potentes pero sencillas, para que te enfoques en la emoción y no en la logística.'
-    },
-    contact: {
-      'page.title': 'Contacto | Beyond the Reef Adventures',
-      'contact.hero.eyebrow': 'Di aloha',
-      'contact.hero.heading': 'Hagamos realidad tu próxima aventura',
-      'contact.hero.copy':
-        'Comparte algunos detalles y nuestro equipo de concierge responderá en un día hábil con ideas y disponibilidad.',
-      'contact.card.heading': 'Inicia la conversación',
-      'contact.card.email': 'Escríbenos a <a href="mailto:hello@beyondthereef.com">hello@beyondthereef.com</a>',
-      'contact.card.phone': 'Llámanos o mándanos WhatsApp al <a href="tel:+529841670697">+52 984 167 0697</a>',
-      'contact.card.hours': 'Horario de oficina: lunes a sábado, 8 a.m. – 8 p.m. hora local',
-      'contact.form.aria': 'Contacta a Beyond the Reef',
-      'contact.form.nameLabel': 'Nombre completo',
-      'contact.form.namePlaceholder': 'Alex Morgan',
-      'contact.form.emailLabel': 'Correo electrónico',
-      'contact.form.emailPlaceholder': 'tu@ejemplo.com',
-      'contact.form.phoneLabel': 'Teléfono',
-      'contact.form.phonePlaceholder': 'Opcional',
-      'contact.form.datesLabel': 'Fechas ideales de viaje',
-      'contact.form.datesPlaceholder': '10 al 18 de junio, flexible',
-      'contact.form.messageLabel': 'Cuéntanos sobre tu tour soñado',
-      'contact.form.messagePlaceholder': 'Queremos celebrar con una renovación de votos al atardecer...',
-      'contact.form.submit': 'Enviar mensaje',
-      'contact.form.disclaimer': 'Respetamos tu privacidad y nunca enviaremos spam.'
     }
   }
 };
@@ -558,31 +516,54 @@ function setupThemeToggle(prefersDark, languageManager) {
   const toggle = document.querySelector('[data-theme-toggle]');
   if (!toggle) return;
 
-  const storedTheme = localStorage.getItem('preferred-theme');
-  const shouldUseDark = storedTheme ? storedTheme === 'dark' : prefersDark?.matches;
+  const rootElement = document.documentElement;
+  const getStoredTheme = () => {
+    try {
+      return localStorage.getItem('preferred-theme');
+    } catch (error) {
+      return null;
+    }
+  };
 
-  if (shouldUseDark) {
-    document.body.classList.add('dark-mode');
-  }
+  const setStoredTheme = (value) => {
+    try {
+      localStorage.setItem('preferred-theme', value);
+    } catch (error) {
+      /* ignore storage errors */
+    }
+  };
+
+  const applyTheme = (isDark) => {
+    rootElement.classList.toggle('dark-mode', isDark);
+    if (document.body) {
+      document.body.classList.toggle('dark-mode', isDark);
+    }
+  };
+
+  const storedTheme = getStoredTheme();
+  const shouldUseDark = storedTheme === 'dark' || (!storedTheme && prefersDark?.matches);
+
+  applyTheme(Boolean(shouldUseDark));
   toggle.setAttribute('aria-pressed', shouldUseDark ? 'true' : 'false');
 
   const updateLabel = (lang) => {
-    const isDark = document.body.classList.contains('dark-mode');
+    const isDark = rootElement.classList.contains('dark-mode');
     const key = isDark ? 'themeToggle.light' : 'themeToggle.dark';
     toggle.textContent = languageManager.translate(key, {}, lang);
     scheduleNavControlWidthSync();
   };
 
   toggle.addEventListener('click', () => {
-    const isDark = document.body.classList.toggle('dark-mode');
-    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-    localStorage.setItem('preferred-theme', isDark ? 'dark' : 'light');
+    const nextIsDark = !rootElement.classList.contains('dark-mode');
+    applyTheme(nextIsDark);
+    toggle.setAttribute('aria-pressed', nextIsDark ? 'true' : 'false');
+    setStoredTheme(nextIsDark ? 'dark' : 'light');
     updateLabel(languageManager.getLanguage());
   });
 
   prefersDark?.addEventListener?.('change', (event) => {
-    if (!localStorage.getItem('preferred-theme')) {
-      document.body.classList.toggle('dark-mode', event.matches);
+    if (!getStoredTheme()) {
+      applyTheme(event.matches);
       toggle.setAttribute('aria-pressed', event.matches ? 'true' : 'false');
       updateLabel(languageManager.getLanguage());
     }

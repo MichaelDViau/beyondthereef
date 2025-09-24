@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="theme-init.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body data-page="tours">
@@ -32,7 +33,6 @@
         <li><a href="build-your-tours.html" aria-current="page" data-i18n="nav.create">Create Your Experience</a></li>
         <li><a href="review.html" data-i18n="nav.reviews">Reviews</a></li>
         <li><a href="our-story.html" data-i18n="nav.story">Our Story</a></li>
-        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <button class="nav__control language-toggle" type="button" data-language-toggle aria-pressed="false">Español 🇲🇽</button>
       <button class="nav__control theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
@@ -121,7 +121,26 @@
         </svg>
       </span>
       <span class="floating-contact__text">
-        <span class="floating-contact__label">WhatsApp</span>
+        <span class="floating-contact__label" data-i18n="floatingContact.whatsappLabel">WhatsApp</span>
+      </span>
+    </a>
+    <a
+      class="floating-contact__link floating-contact__link--email"
+      href="mailto:info@beyondthereef.com"
+      aria-label="Email Beyond the Reef"
+      data-i18n="floatingContact.emailAria"
+      data-i18n-attr="aria-label"
+    >
+      <span class="floating-contact__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3.25" y="5.75" width="17.5" height="12.5" rx="2.25"></rect>
+          <path d="M4.5 7.5 12 12.75 19.5 7.5"></path>
+          <path d="m4.75 17 4.75-3.75"></path>
+          <path d="m19.25 17-4.75-3.75"></path>
+        </svg>
+      </span>
+      <span class="floating-contact__text">
+        <span class="floating-contact__label" data-i18n="floatingContact.emailLabel">Email</span>
       </span>
     </a>
     <a
@@ -141,7 +160,7 @@
         </svg>
       </span>
       <span class="floating-contact__text">
-        <span class="floating-contact__label">Instagram</span>
+        <span class="floating-contact__label" data-i18n="floatingContact.instagramLabel">Instagram</span>
       </span>
     </a>
   </div>
