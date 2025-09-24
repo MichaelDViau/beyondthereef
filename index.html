@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Beyond the Reef Adventures</title>
+  <title data-i18n="page.title">Beyond the Reef Adventures</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="home">
   <header class="site-header">
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" aria-label="Primary" data-i18n="nav.primary" data-i18n-attr="aria-label">
       <a class="nav__logo" href="index.html" aria-label="Beyond the Reef Mexico">
         <span class="nav__logo-icon" aria-hidden="true">
           <img src="assets/logo.svg" alt="" />
@@ -22,40 +22,57 @@
         </span>
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only" data-i18n="nav.toggle">Toggle navigation</span>
         <span></span>
         <span></span>
         <span></span>
       </button>
       <ul class="nav__links" id="primary-navigation">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="build-your-tours.html">Create Your Experience</a></li>
-        <li><a href="review.html">Reviews</a></li>
-        <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" aria-current="page" data-i18n="nav.home">Home</a></li>
+        <li><a href="build-your-tours.html" data-i18n="nav.create">Create Your Experience</a></li>
+        <li><a href="review.html" data-i18n="nav.reviews">Reviews</a></li>
+        <li><a href="our-story.html" data-i18n="nav.story">Our Story</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
+      <button class="nav__control language-toggle" type="button" data-language-toggle aria-pressed="false">Español 🇲🇽</button>
+      <button class="nav__control theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
     </nav>
   </header>
 
   <main>
-    <section class="hero-slider" aria-label="Featured Experiences">
+    <section class="hero-slider" aria-label="Featured Experiences" data-i18n="home.hero.aria" data-i18n-attr="aria-label">
       <div class="hero-slider__content">
-        <h2>Pure adrenaline. Untamed nature. Your story in the making.</h2>
-        <p>Not just a day out — this is freedom unleashed.
-          Swim with turtles, dive into cenotes, race across lagoons, and explore ancient Mayan ruins.
-           No crowds. No limits. Just raw adventure carved into the heart of the Riviera Maya.
-
-           Your rules. Your pace. Your unforgettable.
-           This isn’t tourism.
-           This is Beyond the Reef.</p>
-        <a class="button button--primary" href="build-your-tours.html">Create Your Experience</a>
+        <h2 data-i18n="home.hero.heading">Pure adrenaline. Untamed nature. Your story in the making.</h2>
+        <p data-i18n="home.hero.description">
+          Not just a day out — this is freedom unleashed. Swim with turtles, dive into cenotes, race across lagoons, and explore
+          ancient Mayan ruins. No crowds. No limits. Just raw adventure carved into the heart of the Riviera Maya. Your rules.
+          Your pace. Your unforgettable. This isn’t tourism. This is Beyond the Reef.
+        </p>
+        <a class="button button--primary" href="build-your-tours.html" data-i18n="nav.create">Create Your Experience</a>
       </div>
       <div class="hero-slider__controls" aria-hidden="true">
-        <button class="hero-slider__arrow" type="button" data-slide="prev" aria-label="Previous slide">❮</button>
-        <button class="hero-slider__arrow" type="button" data-slide="next" aria-label="Next slide">❯</button>
+        <button
+          class="hero-slider__arrow"
+          type="button"
+          data-slide="prev"
+          aria-label="Previous slide"
+          data-i18n="home.hero.previous"
+          data-i18n-attr="aria-label"
+        >
+          ❮
+        </button>
+        <button
+          class="hero-slider__arrow"
+          type="button"
+          data-slide="next"
+          aria-label="Next slide"
+          data-i18n="home.hero.next"
+          data-i18n-attr="aria-label"
+        >
+          ❯
+        </button>
       </div>
-      <div class="hero-slider__dots" role="tablist" aria-label="Featured slides"></div>
+      <div class="hero-slider__dots" role="tablist" aria-label="Featured slides" data-i18n="home.hero.dots" data-i18n-attr="aria-label"></div>
       <div class="hero-slider__track">
         <article class="hero-slide is-active" aria-hidden="false">
           <video
@@ -107,7 +124,7 @@
     <section class="section section--difference" aria-labelledby="difference-heading">
       <div class="difference">
         <div class="section__intro difference__intro">
-          <h2 id="difference-heading">Experience the Difference</h2>
+          <h2 id="difference-heading" data-i18n="home.difference.heading">Experience the Difference</h2>
         </div>
         <div class="difference__grid" role="list">
           <article class="card difference-item" role="listitem">
@@ -118,8 +135,8 @@
                 <circle cx="12" cy="12.5" r="3.5" />
               </svg>
             </span>
-            <h3>Captured</h3>
-            <p>Complimentary Photography on Every Tour</p>
+            <h3 data-i18n="home.difference.captured.title">Captured</h3>
+            <p data-i18n="home.difference.captured.copy">Complimentary Photography on Every Tour</p>
           </article>
           <article class="card difference-item" role="listitem">
             <span class="difference-item__icon" aria-hidden="true">
@@ -129,8 +146,8 @@
                 <path d="m14.75 9.75 2.75 2.25-2.75 2.25" />
               </svg>
             </span>
-            <h3>Set the Pace</h3>
-            <p>Choose your start time, skip pickups, set your own schedule</p>
+            <h3 data-i18n="home.difference.pace.title">Set the Pace</h3>
+            <p data-i18n="home.difference.pace.copy">Choose your start time, skip pickups, set your own schedule</p>
           </article>
           <article class="card difference-item" role="listitem">
             <span class="difference-item__icon" aria-hidden="true">
@@ -146,8 +163,8 @@
                 <path d="m8.5 15.5-1.75 1.75" />
               </svg>
             </span>
-            <h3>Your Journey</h3>
-            <p>Snorkel, explore, taste, relax — the choice is yours</p>
+            <h3 data-i18n="home.difference.journey.title">Your Journey</h3>
+            <p data-i18n="home.difference.journey.copy">Snorkel, explore, taste, relax — the choice is yours</p>
           </article>
           <article class="card difference-item" role="listitem">
             <span class="difference-item__icon" aria-hidden="true">
@@ -156,8 +173,8 @@
                 <path d="m9.25 12.5 2.25 2.25 3.25-3.25" />
               </svg>
             </span>
-            <h3>No Surprises</h3>
-            <p>No hidden costs, No extra charges, Just adventure</p>
+            <h3 data-i18n="home.difference.surprises.title">No Surprises</h3>
+            <p data-i18n="home.difference.surprises.copy">No hidden costs, No extra charges, Just adventure</p>
           </article>
           <article class="card difference-item" role="listitem">
             <span class="difference-item__icon" aria-hidden="true">
@@ -166,8 +183,8 @@
                 <path d="M8.5 13.4 7.25 20l4.75-1.8L16.75 20 15.5 13.4" />
               </svg>
             </span>
-            <h3>Excellence</h3>
-            <p>We don’t claim it — our guests do. Five stars, every time.</p>
+            <h3 data-i18n="home.difference.excellence.title">Excellence</h3>
+            <p data-i18n="home.difference.excellence.copy">We don’t claim it — our guests do. Five stars, every time.</p>
           </article>
         </div>
       </div>
@@ -175,53 +192,64 @@
 
     <section class="section" id="tour-builder">
       <div class="section__intro">
-        <p class="eyebrow">Build your tour</p>
-        <h2>Design a custom itinerary in minutes</h2>
-        <p>Create a bespoke adventure by mixing activities, dining, and relaxation. Add each idea to your itinerary and we will weave it into a seamless journey.</p>
+        <p class="eyebrow" data-i18n="home.builder.eyebrow">Build your tour</p>
+        <h2 data-i18n="home.builder.heading">Design a custom itinerary in minutes</h2>
+        <p data-i18n="home.builder.copy">
+          Create a bespoke adventure by mixing activities, dining, and relaxation. Add each idea to your itinerary and we will weave it into a seamless journey.
+        </p>
       </div>
       <div class="tour-builder">
-        <form class="card" id="tour-builder-form" aria-label="Add an activity to your custom tour">
+        <form class="card" id="tour-builder-form" aria-label="Add an activity to your custom tour" data-i18n="home.builder.formAria" data-i18n-attr="aria-label">
           <div class="field">
-            <label for="activity-name">Activity name</label>
-            <input id="activity-name" name="activity" type="text" placeholder="Night snorkel" required />
+            <label for="activity-name" data-i18n="home.builder.activityLabel">Activity name</label>
+            <input id="activity-name" name="activity" type="text" placeholder="Night snorkel" required data-i18n="home.builder.activityPlaceholder" data-i18n-attr="placeholder" />
           </div>
           <div class="field">
-            <label for="activity-date">Preferred date</label>
+            <label for="activity-date" data-i18n="home.builder.dateLabel">Preferred date</label>
             <input id="activity-date" name="date" type="date" />
           </div>
           <div class="field">
-            <label for="activity-notes">Special touches</label>
-            <textarea id="activity-notes" name="notes" rows="3" placeholder="Add a sunset picnic with locally sourced fruit."></textarea>
+            <label for="activity-notes" data-i18n="home.builder.notesLabel">Special touches</label>
+            <textarea
+              id="activity-notes"
+              name="notes"
+              rows="3"
+              placeholder="Add a sunset picnic with locally sourced fruit."
+              data-i18n="home.builder.notesPlaceholder"
+              data-i18n-attr="placeholder"
+            ></textarea>
           </div>
-          <button class="button button--primary" type="submit">Add to itinerary</button>
+          <button class="button button--primary" type="submit" data-i18n="home.builder.add">Add to itinerary</button>
         </form>
         <div class="card tour-itinerary" aria-live="polite">
-          <h3>Your custom itinerary</h3>
+          <h3 data-i18n="home.builder.listHeading">Your custom itinerary</h3>
           <ul id="itinerary-list" class="itinerary-list">
-            <li class="itinerary-list__placeholder">Your ideas will appear here. Add the first one to begin crafting the perfect tour.</li>
+            <li class="itinerary-list__placeholder" data-i18n="home.builder.placeholder">
+              Your ideas will appear here. Add the first one to begin crafting the perfect tour.
+            </li>
           </ul>
-          <button class="button button--ghost" type="button" id="clear-itinerary">Clear itinerary</button>
+          <button class="button button--ghost" type="button" id="clear-itinerary" data-i18n="home.builder.clear">Clear itinerary</button>
         </div>
       </div>
     </section>
 
     <section class="section section--accent">
       <div class="section__intro">
-        <p class="eyebrow">Why travelers love us</p>
-        <h2>Concierge-level planning at lightning speed</h2>
+        <p class="eyebrow" data-i18n="home.accent.eyebrow">Why travelers love us</p>
+        <h2 data-i18n="home.accent.heading">Concierge-level planning at lightning speed</h2>
       </div>
       <div class="grid grid--features">
         <article class="card feature-card">
-          <h3>Crafted by locals</h3>
-          <p>Our specialists live on the islands year round, curating insider-only moments you cannot find on a brochure.</p>
+          <h3 data-i18n="home.accent.locals.title">Crafted by locals</h3>
+          <p data-i18n="home.accent.locals.copy">Our specialists live on the islands year round, curating insider-only moments you cannot find on a brochure.</p>
         </article>
         <article class="card feature-card">
-          <h3>Real-time collaboration</h3>
-          <p>Invite friends or family to add ideas to your itinerary and watch it come to life instantly.</p>
+          <h3 data-i18n="home.accent.collab.title">Real-time collaboration</h3>
+          <p data-i18n="home.accent.collab.copy">Invite friends or family to add ideas to your itinerary and watch it come to life instantly.</p>
         </article>
         <article class="card feature-card">
-          <h3>Seamless execution</h3>
-          <p>From airport transfer to last toast, your dedicated host orchestrates every detail while you unwind.</p>
+          <h3 data-i18n="home.accent.execution.title">Seamless execution</h3>
+          <p data-i18n="home.accent.execution.copy">From airport transfer to last toast, your dedicated host orchestrates every detail while you unwind.</p>
         </article>
       </div>
     </section>
@@ -229,25 +257,36 @@
     <section class="section">
       <div class="cta">
         <div>
-          <h2>Ready to feel the sea breeze?</h2>
-          <p>Answer a few questions and we will send a bespoke proposal within 24 hours.</p>
+          <h2 data-i18n="home.cta.heading">Ready to feel the sea breeze?</h2>
+          <p data-i18n="home.cta.copy">Answer a few questions and we will send a bespoke proposal within 24 hours.</p>
         </div>
-        <a class="button button--primary" href="contact.html">Plan my escape</a>
+        <a class="button button--primary" href="contact.html" data-i18n="home.cta.button">Plan my escape</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="current-year"></span> Beyond the Reef Adventures. All rights reserved.</p>
+    <p>
+      &copy; <span id="current-year"></span>
+      <span data-i18n="footer.rights">Beyond the Reef Adventures. All rights reserved.</span>
+    </p>
   </footer>
 
-  <div class="floating-contact" role="complementary" aria-label="Quick contact options">
+  <div
+    class="floating-contact"
+    role="complementary"
+    aria-label="Quick contact options"
+    data-i18n="floatingContact.aria"
+    data-i18n-attr="aria-label"
+  >
     <a
       class="floating-contact__link floating-contact__link--whatsapp"
       href="https://wa.me/529841670697"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+      data-i18n="floatingContact.whatsappAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
@@ -268,6 +307,8 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Open Instagram"
+      data-i18n="floatingContact.instagramAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">

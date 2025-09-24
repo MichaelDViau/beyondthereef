@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Our Story | Beyond the Reef Adventures</title>
+  <title data-i18n="page.title">Our Story | Beyond the Reef Adventures</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="story">
   <header class="site-header">
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" aria-label="Primary" data-i18n="nav.primary" data-i18n-attr="aria-label">
       <a class="nav__logo" href="index.html" aria-label="Beyond the Reef Mexico">
         <span class="nav__logo-icon" aria-hidden="true">
           <svg viewBox="0 0 148 96" role="presentation" focusable="false">
@@ -26,19 +26,20 @@
         </span>
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only" data-i18n="nav.toggle">Toggle navigation</span>
         <span></span>
         <span></span>
         <span></span>
       </button>
       <ul class="nav__links" id="primary-navigation">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="build-your-tours.html">Create Your Experience</a></li>
-        <li><a href="review.html">Reviews</a></li>
-        <li><a href="our-story.html" aria-current="page">Our Story</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="build-your-tours.html" data-i18n="nav.create">Create Your Experience</a></li>
+        <li><a href="review.html" data-i18n="nav.reviews">Reviews</a></li>
+        <li><a href="our-story.html" aria-current="page" data-i18n="nav.story">Our Story</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
+      <button class="nav__control language-toggle" type="button" data-language-toggle aria-pressed="false">Español 🇲🇽</button>
+      <button class="nav__control theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
     </nav>
   </header>
 
@@ -46,60 +47,71 @@
     <section class="page-hero">
       <img class="page-hero__background" src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=1600&q=80" alt="Ocean waves crashing on rocks" />
       <div>
-        <p class="eyebrow">Our story</p>
-        <h1>Born from a love of the sea and storytelling</h1>
-        <p>We believe every traveler deserves a tailor-made narrative—crafted by locals, powered by technology, and infused with genuine hospitality.</p>
+        <p class="eyebrow" data-i18n="story.hero.eyebrow">Our story</p>
+        <h1 data-i18n="story.hero.heading">Born from a love of the sea and storytelling</h1>
+        <p data-i18n="story.hero.copy">We believe every traveler deserves a tailor-made narrative—crafted by locals, powered by technology, and infused with genuine hospitality.</p>
       </div>
     </section>
 
     <section class="page-section">
-      <h2>Meet the crew</h2>
+      <h2 data-i18n="story.crew.heading">Meet the crew</h2>
       <div class="page-grid">
         <article class="card">
-          <h3>Lila Reyes — Founder</h3>
-          <p>A marine biologist turned travel designer, Lila launched Beyond the Reef to share hidden reefs and island communities with respectful explorers.</p>
+          <h3 data-i18n="story.crew.lila.title">Lila Reyes — Founder</h3>
+          <p data-i18n="story.crew.lila.copy">A marine biologist turned travel designer, Lila launched Beyond the Reef to share hidden reefs and island communities with respectful explorers.</p>
         </article>
         <article class="card">
-          <h3>Makai Thompson — Experience Architect</h3>
-          <p>Raised between three islands, Makai weaves cultural rituals, local artisans, and signature flavors into each itinerary.</p>
+          <h3 data-i18n="story.crew.makai.title">Makai Thompson — Experience Architect</h3>
+          <p data-i18n="story.crew.makai.copy">Raised between three islands, Makai weaves cultural rituals, local artisans, and signature flavors into each itinerary.</p>
         </article>
         <article class="card">
-          <h3>Sami Chen — Technology Lead</h3>
-          <p>Sami built our collaborative planning platform with real-time availability checks and concierge messaging that feels like texting a friend.</p>
+          <h3 data-i18n="story.crew.sami.title">Sami Chen — Technology Lead</h3>
+          <p data-i18n="story.crew.sami.copy">Sami built our collaborative planning platform with real-time availability checks and concierge messaging that feels like texting a friend.</p>
         </article>
       </div>
     </section>
 
     <section class="page-section">
-      <h2>What we stand for</h2>
+      <h2 data-i18n="story.values.heading">What we stand for</h2>
       <div class="grid">
         <article class="card">
-          <h3>Regenerative travel</h3>
-          <p>We partner with community-led conservation projects and donate a portion of every itinerary to reef restoration.</p>
+          <h3 data-i18n="story.values.regen.title">Regenerative travel</h3>
+          <p data-i18n="story.values.regen.copy">We partner with community-led conservation projects and donate a portion of every itinerary to reef restoration.</p>
         </article>
         <article class="card">
-          <h3>Hospitality with heart</h3>
-          <p>Your hosts welcome you like family, preparing meaningful surprises and thoughtful touches along the way.</p>
+          <h3 data-i18n="story.values.hospitality.title">Hospitality with heart</h3>
+          <p data-i18n="story.values.hospitality.copy">Your hosts welcome you like family, preparing meaningful surprises and thoughtful touches along the way.</p>
         </article>
         <article class="card">
-          <h3>Technology that disappears</h3>
-          <p>The planning tools are powerful, yet effortless, so you stay focused on excitement rather than logistics.</p>
+          <h3 data-i18n="story.values.tech.title">Technology that disappears</h3>
+          <p data-i18n="story.values.tech.copy">The planning tools are powerful, yet effortless, so you stay focused on excitement rather than logistics.</p>
         </article>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="current-year"></span> Beyond the Reef Adventures. All rights reserved.</p>
+    <p>
+      &copy; <span id="current-year"></span>
+      <span data-i18n="footer.rights">Beyond the Reef Adventures. All rights reserved.</span>
+    </p>
   </footer>
 
-  <div class="floating-contact" role="complementary" aria-label="Quick contact options">
+  <div
+    class="floating-contact"
+    role="complementary"
+    aria-label="Quick contact options"
+    data-i18n="floatingContact.aria"
+    data-i18n-attr="aria-label"
+  >
     <a
       class="floating-contact__link floating-contact__link--whatsapp"
       href="https://wa.me/529841670697"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+      data-i18n="floatingContact.whatsappAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
@@ -120,6 +132,8 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Open Instagram"
+      data-i18n="floatingContact.instagramAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
