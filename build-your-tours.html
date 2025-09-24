@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Build Your Tours | Beyond the Reef Adventures</title>
+  <title data-i18n="page.title">Build Your Tours | Beyond the Reef Adventures</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="tours">
   <header class="site-header">
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" aria-label="Primary" data-i18n="nav.primary" data-i18n-attr="aria-label">
       <a class="nav__logo" href="index.html" aria-label="Beyond the Reef Mexico">
         <span class="nav__logo-icon" aria-hidden="true">
           <img src="assets/logo.svg" alt="" />
@@ -22,19 +22,20 @@
         </span>
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only" data-i18n="nav.toggle">Toggle navigation</span>
         <span></span>
         <span></span>
         <span></span>
       </button>
       <ul class="nav__links" id="primary-navigation">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="build-your-tours.html" aria-current="page">Create Your Experience</a></li>
-        <li><a href="review.html">Reviews</a></li>
-        <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="build-your-tours.html" aria-current="page" data-i18n="nav.create">Create Your Experience</a></li>
+        <li><a href="review.html" data-i18n="nav.reviews">Reviews</a></li>
+        <li><a href="our-story.html" data-i18n="nav.story">Our Story</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
+      <button class="nav__control language-toggle" type="button" data-language-toggle aria-pressed="false">Español 🇲🇽</button>
+      <button class="nav__control theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
     </nav>
   </header>
 
@@ -42,62 +43,73 @@
     <section class="page-hero">
       <img class="page-hero__background" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80" alt="Custom boat on turquoise water" />
       <div>
-        <p class="eyebrow">Build your tour</p>
-        <h1>Design experiences as unique as your crew</h1>
-        <p>Drag and drop curated activities, refine pacing, and invite your travel companions to collaborate in real time.</p>
+        <p class="eyebrow" data-i18n="tours.hero.eyebrow">Build your tour</p>
+        <h1 data-i18n="tours.hero.heading">Design experiences as unique as your crew</h1>
+        <p data-i18n="tours.hero.copy">Drag and drop curated activities, refine pacing, and invite your travel companions to collaborate in real time.</p>
       </div>
     </section>
 
     <section class="page-section">
       <div class="page-grid">
         <article class="card">
-          <h2>Custom combinations</h2>
-          <p>Mix scuba dives, culinary surprises, and remote hikes across islands. Our smart planner orchestrates logistics so you can focus on the fun.</p>
+          <h2 data-i18n="tours.grid.custom.title">Custom combinations</h2>
+          <p data-i18n="tours.grid.custom.copy">Mix scuba dives, culinary surprises, and remote hikes across islands. Our smart planner orchestrates logistics so you can focus on the fun.</p>
         </article>
         <article class="card">
-          <h2>Smart pacing</h2>
-          <p>We balance high-energy adventures with restorative interludes, ensuring every guest has time to recharge.</p>
+          <h2 data-i18n="tours.grid.pacing.title">Smart pacing</h2>
+          <p data-i18n="tours.grid.pacing.copy">We balance high-energy adventures with restorative interludes, ensuring every guest has time to recharge.</p>
         </article>
         <article class="card">
-          <h2>Co-create instantly</h2>
-          <p>Share a private link so your crew can vote, comment, or add new ideas. Our concierges can jump in live to fine-tune.</p>
+          <h2 data-i18n="tours.grid.collab.title">Co-create instantly</h2>
+          <p data-i18n="tours.grid.collab.copy">Share a private link so your crew can vote, comment, or add new ideas. Our concierges can jump in live to fine-tune.</p>
         </article>
       </div>
     </section>
 
     <section class="page-section">
-      <h2>How the custom builder works</h2>
+      <h2 data-i18n="tours.steps.heading">How the custom builder works</h2>
       <ol class="grid" style="counter-reset: steps; list-style: none; padding: 0; margin: 0;">
         <li class="card" style="position: relative; padding-left: 3.5rem;">
           <span style="position: absolute; left: 1.5rem; top: 1.75rem; font-size: 1.1rem; font-weight: 700; color: var(--accent);">1</span>
-          <h3>Tell us about your dream</h3>
-          <p>Answer a few questions or import a mood board. We use your vibe to pre-select experiences.</p>
+          <h3 data-i18n="tours.steps.one.title">Tell us about your dream</h3>
+          <p data-i18n="tours.steps.one.copy">Answer a few questions or import a mood board. We use your vibe to pre-select experiences.</p>
         </li>
         <li class="card" style="position: relative; padding-left: 3.5rem;">
           <span style="position: absolute; left: 1.5rem; top: 1.75rem; font-size: 1.1rem; font-weight: 700; color: var(--accent);">2</span>
-          <h3>Remix the plan</h3>
-          <p>Drag items between days, adjust timing, and add bespoke requests like photographers or private chefs.</p>
+          <h3 data-i18n="tours.steps.two.title">Remix the plan</h3>
+          <p data-i18n="tours.steps.two.copy">Drag items between days, adjust timing, and add bespoke requests like photographers or private chefs.</p>
         </li>
         <li class="card" style="position: relative; padding-left: 3.5rem;">
           <span style="position: absolute; left: 1.5rem; top: 1.75rem; font-size: 1.1rem; font-weight: 700; color: var(--accent);">3</span>
-          <h3>Lock it in</h3>
-          <p>Collaborate with your concierge to finalize transfers, payments, and on-island support.</p>
+          <h3 data-i18n="tours.steps.three.title">Lock it in</h3>
+          <p data-i18n="tours.steps.three.copy">Collaborate with your concierge to finalize transfers, payments, and on-island support.</p>
         </li>
       </ol>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="current-year"></span> Beyond the Reef Adventures. All rights reserved.</p>
+    <p>
+      &copy; <span id="current-year"></span>
+      <span data-i18n="footer.rights">Beyond the Reef Adventures. All rights reserved.</span>
+    </p>
   </footer>
 
-  <div class="floating-contact" role="complementary" aria-label="Quick contact options">
+  <div
+    class="floating-contact"
+    role="complementary"
+    aria-label="Quick contact options"
+    data-i18n="floatingContact.aria"
+    data-i18n-attr="aria-label"
+  >
     <a
       class="floating-contact__link floating-contact__link--whatsapp"
       href="https://wa.me/529841670697"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+      data-i18n="floatingContact.whatsappAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
@@ -118,6 +130,8 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Open Instagram"
+      data-i18n="floatingContact.instagramAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">

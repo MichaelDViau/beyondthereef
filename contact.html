@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contact | Beyond the Reef Adventures</title>
+  <title data-i18n="page.title">Contact | Beyond the Reef Adventures</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="contact">
   <header class="site-header">
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" aria-label="Primary" data-i18n="nav.primary" data-i18n-attr="aria-label">
       <a class="nav__logo" href="index.html" aria-label="Beyond the Reef Mexico">
         <span class="nav__logo-icon" aria-hidden="true">
           <img src="assets/logo.svg" alt="" />
@@ -22,19 +22,20 @@
         </span>
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only" data-i18n="nav.toggle">Toggle navigation</span>
         <span></span>
         <span></span>
         <span></span>
       </button>
       <ul class="nav__links" id="primary-navigation">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="build-your-tours.html">Create Your Experience</a></li>
-        <li><a href="review.html">Reviews</a></li>
-        <li><a href="our-story.html">Our Story</a></li>
-        <li><a href="contact.html" aria-current="page">Contact</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="build-your-tours.html" data-i18n="nav.create">Create Your Experience</a></li>
+        <li><a href="review.html" data-i18n="nav.reviews">Reviews</a></li>
+        <li><a href="our-story.html" data-i18n="nav.story">Our Story</a></li>
+        <li><a href="contact.html" aria-current="page" data-i18n="nav.contact">Contact</a></li>
       </ul>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
+      <button class="nav__control language-toggle" type="button" data-language-toggle aria-pressed="false">Español 🇲🇽</button>
+      <button class="nav__control theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
     </nav>
   </header>
 
@@ -42,59 +43,77 @@
     <section class="page-hero">
       <img class="page-hero__background" src="https://images.unsplash.com/photo-1522356308333-94b4958341c5?auto=format&fit=crop&w=1600&q=80" alt="Message in a bottle on a beach" />
       <div>
-        <p class="eyebrow">Say aloha</p>
-        <h1>Let’s bring your next adventure to life</h1>
-        <p>Share a few details and our concierge team will respond within one business day with ideas and availability.</p>
+        <p class="eyebrow" data-i18n="contact.hero.eyebrow">Say aloha</p>
+        <h1 data-i18n="contact.hero.heading">Let’s bring your next adventure to life</h1>
+        <p data-i18n="contact.hero.copy">Share a few details and our concierge team will respond within one business day with ideas and availability.</p>
       </div>
     </section>
 
     <section class="page-section">
       <div class="contact-grid">
         <article class="contact-card">
-          <h3>Start a conversation</h3>
-          <p>Email <a href="mailto:hello@beyondthereef.com">hello@beyondthereef.com</a></p>
-          <p>Call or WhatsApp <a href="tel:+529841670697">+52 984 167 0697</a></p>
-          <p>Office hours: Monday–Saturday, 8am–8pm local time</p>
+          <h3 data-i18n="contact.card.heading">Start a conversation</h3>
+          <p data-i18n="contact.card.email" data-i18n-attr="html">Email <a href="mailto:hello@beyondthereef.com">hello@beyondthereef.com</a></p>
+          <p data-i18n="contact.card.phone" data-i18n-attr="html">Call or WhatsApp <a href="tel:+529841670697">+52 984 167 0697</a></p>
+          <p data-i18n="contact.card.hours">Office hours: Monday–Saturday, 8am–8pm local time</p>
         </article>
-        <form class="contact-card contact-form" aria-label="Contact Beyond the Reef">
+        <form class="contact-card contact-form" aria-label="Contact Beyond the Reef" data-i18n="contact.form.aria" data-i18n-attr="aria-label">
           <div class="field">
-            <label for="name">Full name</label>
-            <input id="name" type="text" name="name" placeholder="Alex Morgan" required />
+            <label for="name" data-i18n="contact.form.nameLabel">Full name</label>
+            <input id="name" type="text" name="name" placeholder="Alex Morgan" required data-i18n="contact.form.namePlaceholder" data-i18n-attr="placeholder" />
           </div>
           <div class="field">
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+            <label for="email" data-i18n="contact.form.emailLabel">Email</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required data-i18n="contact.form.emailPlaceholder" data-i18n-attr="placeholder" />
           </div>
           <div class="field">
-            <label for="phone">Phone</label>
-            <input id="phone" type="tel" name="phone" placeholder="Optional" />
+            <label for="phone" data-i18n="contact.form.phoneLabel">Phone</label>
+            <input id="phone" type="tel" name="phone" placeholder="Optional" data-i18n="contact.form.phonePlaceholder" data-i18n-attr="placeholder" />
           </div>
           <div class="field">
-            <label for="travel-dates">Ideal travel window</label>
-            <input id="travel-dates" type="text" name="dates" placeholder="June 10 – 18, flexible" />
+            <label for="travel-dates" data-i18n="contact.form.datesLabel">Ideal travel window</label>
+            <input id="travel-dates" type="text" name="dates" placeholder="June 10 – 18, flexible" data-i18n="contact.form.datesPlaceholder" data-i18n-attr="placeholder" />
           </div>
           <div class="field">
-            <label for="message">Tell us about your dream tour</label>
-            <textarea id="message" name="message" placeholder="We want to celebrate with a sunset vow renewal..." required></textarea>
+            <label for="message" data-i18n="contact.form.messageLabel">Tell us about your dream tour</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="We want to celebrate with a sunset vow renewal..."
+              required
+              data-i18n="contact.form.messagePlaceholder"
+              data-i18n-attr="placeholder"
+            ></textarea>
           </div>
-          <button class="button button--primary" type="submit">Send message</button>
-          <p class="text-small" style="color: var(--text-muted); margin: 0;">We respect your privacy and will never spam.</p>
+          <button class="button button--primary" type="submit" data-i18n="contact.form.submit">Send message</button>
+          <p class="text-small" style="color: var(--text-muted); margin: 0;" data-i18n="contact.form.disclaimer">We respect your privacy and will never spam.</p>
         </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>&copy; <span id="current-year"></span> Beyond the Reef Adventures. All rights reserved.</p>
+    <p>
+      &copy; <span id="current-year"></span>
+      <span data-i18n="footer.rights">Beyond the Reef Adventures. All rights reserved.</span>
+    </p>
   </footer>
 
-  <div class="floating-contact" role="complementary" aria-label="Quick contact options">
+  <div
+    class="floating-contact"
+    role="complementary"
+    aria-label="Quick contact options"
+    data-i18n="floatingContact.aria"
+    data-i18n-attr="aria-label"
+  >
     <a
       class="floating-contact__link floating-contact__link--whatsapp"
       href="https://wa.me/529841670697"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+      data-i18n="floatingContact.whatsappAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
@@ -115,6 +134,8 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Open Instagram"
+      data-i18n="floatingContact.instagramAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
