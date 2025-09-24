@@ -716,10 +716,22 @@ body.dark-mode .difference-item__icon {
   gap: 2rem;
   border: 1px solid rgba(15, 58, 93, 0.18);
   box-shadow: var(--shadow);
+  min-height: clamp(240px, 38vh, 360px);
+}
+
+.cta > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
 }
 
 .cta h2 {
-  margin: 0 0 0.75rem;
+  margin: 0;
+}
+
+.cta p {
+  margin: 0;
 }
 
 .site-footer {
@@ -937,7 +949,14 @@ body.dark-mode .floating-contact__link:focus-visible {
 @media (max-width: 992px) {
   .cta {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .cta > div {
+    align-items: center;
+    text-align: center;
   }
 
   .hero-slider {
