@@ -41,39 +41,37 @@ const translations = {
       'home.difference.excellence.title': 'Excellence',
       'home.difference.excellence.copy': 'We don’t claim it — our guests do. Five stars, every time.',
       'home.favorites.heading': 'Adventures Loved by Travelers',
-      'home.favorites.copy': 'Not sure where to start? Explore the tours our guests book and love the most.',
+      'home.favorites.copy': 'Swipe through limited-time offers on the tours our guests love the most.',
+      'home.favorites.previous': 'Previous tours',
+      'home.favorites.next': 'Next tours',
       'home.favorites.card1.tag': 'Top pick',
       'home.favorites.card1.title': 'Swimming with Whale Sharks',
-      'home.favorites.card1.price': '$160 USD',
-      'home.favorites.card1.priceNote': 'per guest',
-      'home.favorites.card1.duration': '6.5 hours',
-      'home.favorites.card1.group': 'Max 8 guests',
-      'home.favorites.card1.age': 'Ages 10+',
-      'home.favorites.card1.cta': 'Plan this tour',
+      'home.favorites.card1.badge': '-30%',
+      'home.favorites.card1.deal': 'Up to 30% discount',
+      'home.favorites.card1.copy':
+        'Charter a private boat with marine biologist guides and slip into the water beside gentle giants at sunrise.',
+      'home.favorites.card1.cta': 'More information',
       'home.favorites.card2.tag': 'Guest favorite',
       'home.favorites.card2.title': 'The Taco Tour',
-      'home.favorites.card2.price': '$97 USD',
-      'home.favorites.card2.priceNote': 'per guest',
-      'home.favorites.card2.duration': '4 hours',
-      'home.favorites.card2.group': 'Up to 10 guests',
-      'home.favorites.card2.age': 'Family friendly',
-      'home.favorites.card2.cta': 'Taste the flavors',
+      'home.favorites.card2.badge': '-25%',
+      'home.favorites.card2.deal': 'Up to 25% discount',
+      'home.favorites.card2.copy':
+        'Taste your way through hidden taquerías with a local host curating mezcal pairings and street-food legends.',
+      'home.favorites.card2.cta': 'More information',
       'home.favorites.card3.tag': 'Limited spots',
       'home.favorites.card3.title': 'El Cielo Cozumel Snorkeling',
-      'home.favorites.card3.price': '$109 USD',
-      'home.favorites.card3.priceNote': 'per guest',
-      'home.favorites.card3.duration': '5 hours',
-      'home.favorites.card3.group': 'Small-group charter',
-      'home.favorites.card3.age': 'All swim levels',
-      'home.favorites.card3.cta': 'Snorkel the sandbar',
+      'home.favorites.card3.badge': '-22%',
+      'home.favorites.card3.deal': 'Up to 22% discount',
+      'home.favorites.card3.copy':
+        'Float above starfish gardens and neon reefs in Cozumel with a captain who times the sandbar at its clearest.',
+      'home.favorites.card3.cta': 'More information',
       'home.favorites.card4.tag': 'Photo ready',
       'home.favorites.card4.title': 'Tulum Insta Experience',
-      'home.favorites.card4.price': '$111 USD',
-      'home.favorites.card4.priceNote': 'per guest',
-      'home.favorites.card4.duration': '6 hours',
-      'home.favorites.card4.group': 'Private host',
-      'home.favorites.card4.age': 'Includes content crew',
-      'home.favorites.card4.cta': 'Capture the magic',
+      'home.favorites.card4.badge': '-18%',
+      'home.favorites.card4.deal': 'Up to 18% discount',
+      'home.favorites.card4.copy':
+        'Capture cinematic shots across Tulum’s ruins and cenotes with a creative director setting the scene for every moment.',
+      'home.favorites.card4.cta': 'More information',
       'home.builder.eyebrow': 'Build your tour',
       'home.builder.heading': 'Design a custom itinerary in minutes',
       'home.builder.copy':
@@ -219,39 +217,37 @@ const translations = {
       'home.difference.excellence.title': 'Excelencia',
       'home.difference.excellence.copy': 'No lo decimos nosotros: lo dicen nuestros huéspedes. Cinco estrellas siempre.',
       'home.favorites.heading': 'Aventuras que enamoran a los viajeros',
-      'home.favorites.copy': '¿No sabes por dónde empezar? Explora los tours que nuestros huéspedes reservan y aman.',
+      'home.favorites.copy': 'Desliza para conocer las ofertas limitadas de los tours que más enamoran a nuestros viajeros.',
+      'home.favorites.previous': 'Tours anteriores',
+      'home.favorites.next': 'Más tours',
       'home.favorites.card1.tag': 'Imprescindible',
       'home.favorites.card1.title': 'Nado con tiburón ballena',
-      'home.favorites.card1.price': '$160 USD',
-      'home.favorites.card1.priceNote': 'por persona',
-      'home.favorites.card1.duration': '6.5 horas',
-      'home.favorites.card1.group': 'Máx. 8 viajeros',
-      'home.favorites.card1.age': 'Edades 10+',
-      'home.favorites.card1.cta': 'Planear este tour',
+      'home.favorites.card1.badge': '-30%',
+      'home.favorites.card1.deal': 'Hasta 30% de descuento',
+      'home.favorites.card1.copy':
+        'Alquila un barco privado con guías biólogos marinos y nada junto a estos gigantes pacíficos al amanecer.',
+      'home.favorites.card1.cta': 'Más información',
       'home.favorites.card2.tag': 'Favorito de los huéspedes',
       'home.favorites.card2.title': 'El Taco Tour',
-      'home.favorites.card2.price': '$97 USD',
-      'home.favorites.card2.priceNote': 'por persona',
-      'home.favorites.card2.duration': '4 horas',
-      'home.favorites.card2.group': 'Hasta 10 viajeros',
-      'home.favorites.card2.age': 'Ideal para familias',
-      'home.favorites.card2.cta': 'Prueba los sabores',
+      'home.favorites.card2.badge': '-25%',
+      'home.favorites.card2.deal': 'Hasta 25% de descuento',
+      'home.favorites.card2.copy':
+        'Saborea taquerías ocultas con un anfitrión local que marida mezcales y comparte leyendas callejeras.',
+      'home.favorites.card2.cta': 'Más información',
       'home.favorites.card3.tag': 'Cupos limitados',
       'home.favorites.card3.title': 'Snorkel en El Cielo Cozumel',
-      'home.favorites.card3.price': '$109 USD',
-      'home.favorites.card3.priceNote': 'por persona',
-      'home.favorites.card3.duration': '5 horas',
-      'home.favorites.card3.group': 'Charter para grupos pequeños',
-      'home.favorites.card3.age': 'Para todos los niveles de nado',
-      'home.favorites.card3.cta': 'Haz snorkel en el banco de arena',
+      'home.favorites.card3.badge': '-22%',
+      'home.favorites.card3.deal': 'Hasta 22% de descuento',
+      'home.favorites.card3.copy':
+        'Flota sobre jardines de estrellas de mar y arrecifes neón en Cozumel con un capitán que elige el banco de arena en su punto más claro.',
+      'home.favorites.card3.cta': 'Más información',
       'home.favorites.card4.tag': 'Listo para fotos',
       'home.favorites.card4.title': 'Experiencia Insta en Tulum',
-      'home.favorites.card4.price': '$111 USD',
-      'home.favorites.card4.priceNote': 'por persona',
-      'home.favorites.card4.duration': '6 horas',
-      'home.favorites.card4.group': 'Anfitrión privado',
-      'home.favorites.card4.age': 'Incluye equipo de contenido',
-      'home.favorites.card4.cta': 'Captura la magia',
+      'home.favorites.card4.badge': '-18%',
+      'home.favorites.card4.deal': 'Hasta 18% de descuento',
+      'home.favorites.card4.copy':
+        'Captura tomas cinematográficas en las ruinas y cenotes de Tulum con un director creativo preparando cada escena.',
+      'home.favorites.card4.cta': 'Más información',
       'home.builder.eyebrow': 'Diseña tu tour',
       'home.builder.heading': 'Crea un itinerario a medida en minutos',
       'home.builder.copy':
@@ -487,6 +483,7 @@ function createLanguageManager(pageKey) {
     setupThemeToggle(prefersDark, languageManager);
     window.addEventListener('resize', scheduleNavControlWidthSync, { passive: true });
     setupHeroSlider(languageManager);
+    setupFavoritesCarousel();
     setupTourBuilder(languageManager);
     setCurrentYear();
 
@@ -824,6 +821,77 @@ function setupHeroSlider(languageManager) {
   startAutoRotate();
 
   languageManager.onChange(updateDotLabels);
+}
+
+function setupFavoritesCarousel() {
+  const carousel = document.querySelector('[data-favorites-carousel]');
+  if (!carousel) return;
+
+  const viewport = carousel.querySelector('.favorites-carousel__viewport');
+  const track = carousel.querySelector('.favorites-carousel__track');
+  const prevButton = carousel.querySelector('[data-carousel-arrow="prev"]');
+  const nextButton = carousel.querySelector('[data-carousel-arrow="next"]');
+
+  if (!viewport || !track) return;
+
+  const cards = Array.from(track.querySelectorAll('.favorite-card'));
+
+  const getGap = () => {
+    const styles = window.getComputedStyle(track);
+    const gapValue = parseFloat(styles.columnGap || styles.gap || '0');
+    return Number.isFinite(gapValue) ? gapValue : 0;
+  };
+
+  const updateArrowState = () => {
+    const maxScroll = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+    const atStart = viewport.scrollLeft <= 1;
+    const atEnd = viewport.scrollLeft >= maxScroll - 1;
+
+    if (prevButton) {
+      prevButton.disabled = atStart;
+    }
+    if (nextButton) {
+      nextButton.disabled = atEnd;
+    }
+
+    carousel.classList.toggle('favorites-carousel--is-scrollable', maxScroll > 1);
+  };
+
+  const scrollByDirection = (direction) => {
+    const multiplier = direction < 0 ? -1 : 1;
+    const cardWidth = cards.length ? cards[0].getBoundingClientRect().width : viewport.clientWidth;
+    const target = viewport.scrollLeft + multiplier * (cardWidth + getGap());
+    const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+    const clamped = Math.max(0, Math.min(target, maxScroll));
+    viewport.scrollTo({ left: clamped, behavior: 'smooth' });
+  };
+
+  prevButton?.addEventListener('click', () => scrollByDirection(-1));
+  nextButton?.addEventListener('click', () => scrollByDirection(1));
+
+  let scrollRaf = null;
+  const handleScroll = () => {
+    if (scrollRaf) return;
+    scrollRaf = window.requestAnimationFrame(() => {
+      scrollRaf = null;
+      updateArrowState();
+    });
+  };
+
+  viewport.addEventListener('scroll', handleScroll, { passive: true });
+
+  let resizeRaf = null;
+  const handleResize = () => {
+    if (resizeRaf) return;
+    resizeRaf = window.requestAnimationFrame(() => {
+      resizeRaf = null;
+      updateArrowState();
+    });
+  };
+
+  window.addEventListener('resize', handleResize);
+
+  updateArrowState();
 }
 
 function setupTourBuilder(languageManager) {
