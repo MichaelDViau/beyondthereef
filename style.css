@@ -307,6 +307,8 @@ body.dark-mode .theme-toggle:focus-visible {
   opacity: 0;
   transform: scale(1.05);
   transition: opacity 1s ease, transform 1.2s ease;
+  backface-visibility: hidden;
+  will-change: opacity, transform;
 }
 
 .hero-slide.is-active {

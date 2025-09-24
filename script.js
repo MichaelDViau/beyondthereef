@@ -79,11 +79,52 @@ function setupHeroSlider() {
 
   let autoRotateTimer = null;
   const AUTO_ROTATE_INTERVAL = 7000;
+  const hasMultipleSlides = slides.length > 1;
+
+  function setSlideState(slide, isActive) {
+    slide.classList.toggle('is-active', isActive);
+    slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
+
+    const video = slide.querySelector('video');
+    if (!video) return;
+
+    if (isActive) {
+      if (typeof video.play === 'function') {
+        const playPromise = video.play();
+        if (playPromise && typeof playPromise.catch === 'function') {
+          playPromise.catch(() => {});
+        }
+      }
+    } else {
+      if (typeof video.pause === 'function') {
+        video.pause();
+      }
+      if (!video.loop) {
+        try {
+          video.currentTime = 0;
+        } catch {
+          // Some browsers might not allow resetting the currentTime for certain sources.
+        }
+      }
+    }
+  }
+
+  function syncSlides() {
+    slides.forEach((slide, index) => {
+      setSlideState(slide, index === currentIndex);
+    });
+  }
 
   function goToSlide(index) {
-    slides[currentIndex].classList.remove('is-active');
-    currentIndex = (index + slides.length) % slides.length;
-    slides[currentIndex].classList.add('is-active');
+    const nextIndex = (index + slides.length) % slides.length;
+    if (nextIndex === currentIndex) return;
+
+    const previousSlide = slides[currentIndex];
+    const nextSlide = slides[nextIndex];
+
+    setSlideState(previousSlide, false);
+    currentIndex = nextIndex;
+    setSlideState(nextSlide, true);
     updateDots();
     restartAutoRotate();
   }
@@ -97,6 +138,7 @@ function setupHeroSlider() {
   }
 
   function startAutoRotate() {
+    if (!hasMultipleSlides) return;
     stopAutoRotate();
     autoRotateTimer = window.setInterval(nextSlide, AUTO_ROTATE_INTERVAL);
   }
@@ -109,13 +151,15 @@ function setupHeroSlider() {
   }
 
   function restartAutoRotate() {
+    if (!hasMultipleSlides) return;
     stopAutoRotate();
     autoRotateTimer = window.setInterval(nextSlide, AUTO_ROTATE_INTERVAL);
   }
 
   function buildDots() {
-    if (!dotsContainer) return;
+    if (!dotsContainer || !hasMultipleSlides) return;
 
+    dotsContainer.innerHTML = '';
     slides.forEach((_, index) => {
       const dot = document.createElement('button');
       dot.className = 'hero-slider__dot';
@@ -130,20 +174,24 @@ function setupHeroSlider() {
   }
 
   function updateDots() {
-    if (!dotsContainer) return;
+    if (!dotsContainer || !hasMultipleSlides) return;
     const dots = dotsContainer.querySelectorAll('.hero-slider__dot');
     dots.forEach((dot, index) => {
       dot.setAttribute('aria-selected', index === currentIndex ? 'true' : 'false');
     });
   }
 
+  syncSlides();
+
   prevButton?.addEventListener('click', previousSlide);
   nextButton?.addEventListener('click', nextSlide);
 
-  slider.addEventListener('mouseenter', stopAutoRotate);
-  slider.addEventListener('mouseleave', startAutoRotate);
-  slider.addEventListener('focusin', stopAutoRotate);
-  slider.addEventListener('focusout', startAutoRotate);
+  if (hasMultipleSlides) {
+    slider.addEventListener('mouseenter', stopAutoRotate);
+    slider.addEventListener('mouseleave', startAutoRotate);
+    slider.addEventListener('focusin', stopAutoRotate);
+    slider.addEventListener('focusout', startAutoRotate);
+  }
 
   buildDots();
   startAutoRotate();
