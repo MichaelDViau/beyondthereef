@@ -419,7 +419,8 @@ body.dark-mode .theme-toggle:focus-visible {
     rgba(15, 58, 93, 0.14) 100%
   );
   overflow: hidden;
-  padding-block-start: clamp(0.75rem, 2vw, 1.75rem);
+  padding-block-start: clamp(0.5rem, 1.5vw, 1.25rem);
+  padding-block-end: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 body.dark-mode .section--difference {
