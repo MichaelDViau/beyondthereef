@@ -459,11 +459,13 @@ function createLanguageManager(pageKey) {
     setupNavigation();
     setupLanguageToggle(languageManager);
     setupThemeToggle(prefersDark, languageManager);
+    window.addEventListener('resize', scheduleNavControlWidthSync, { passive: true });
     setupHeroSlider(languageManager);
     setupTourBuilder(languageManager);
     setCurrentYear();
 
     languageManager.init();
+    scheduleNavControlWidthSync();
   });
 })();
 
@@ -488,6 +490,50 @@ function setupNavigation() {
   });
 }
 
+let navControlWidthSyncScheduled = false;
+
+function syncNavControlWidths() {
+  navControlWidthSyncScheduled = false;
+  const controls = Array.from(document.querySelectorAll('.language-toggle, .theme-toggle'));
+  if (controls.length < 2) {
+    return;
+  }
+
+  controls.forEach((control) => {
+    control.style.removeProperty('--nav-control-width');
+  });
+
+  const maxWidth = controls.reduce((largest, control) => {
+    const { width } = control.getBoundingClientRect();
+    return width > largest ? width : largest;
+  }, 0);
+
+  if (!maxWidth) {
+    return;
+  }
+
+  const widthValue = `${Math.ceil(maxWidth)}px`;
+  controls.forEach((control) => {
+    control.style.setProperty('--nav-control-width', widthValue);
+  });
+}
+
+function scheduleNavControlWidthSync() {
+  if (navControlWidthSyncScheduled) {
+    return;
+  }
+
+  navControlWidthSyncScheduled = true;
+  const scheduler =
+    typeof window.requestAnimationFrame === 'function'
+      ? window.requestAnimationFrame.bind(window)
+      : (callback) => window.setTimeout(callback, 16);
+
+  scheduler(() => {
+    syncNavControlWidths();
+  });
+}
+
 function setupLanguageToggle(languageManager) {
   const toggle = document.querySelector('[data-language-toggle]');
   if (!toggle) return;
@@ -497,6 +543,7 @@ function setupLanguageToggle(languageManager) {
     const nextLanguage = isSpanish ? 'en' : 'es';
     toggle.textContent = nextLanguage === 'es' ? 'Español 🇲🇽' : 'English 🇺🇸';
     toggle.setAttribute('aria-pressed', isSpanish ? 'true' : 'false');
+    scheduleNavControlWidthSync();
   };
 
   toggle.addEventListener('click', () => {
@@ -523,6 +570,7 @@ function setupThemeToggle(prefersDark, languageManager) {
     const isDark = document.body.classList.contains('dark-mode');
     const key = isDark ? 'themeToggle.light' : 'themeToggle.dark';
     toggle.textContent = languageManager.translate(key, {}, lang);
+    scheduleNavControlWidthSync();
   };
 
   toggle.addEventListener('click', () => {

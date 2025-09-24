@@ -240,6 +240,10 @@ body.dark-mode .nav__logo-subtitle {
 
 .nav__control {
   margin-left: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--nav-control-width, auto);
   background: rgba(15, 58, 93, 0.12);
   color: var(--accent-strong);
   border: 1px solid rgba(15, 58, 93, 0.22);
@@ -247,6 +251,8 @@ body.dark-mode .nav__logo-subtitle {
   padding: 0.45rem 0.75rem;
   cursor: pointer;
   font-size: 0.95rem;
+  white-space: nowrap;
+  text-align: center;
   transition: background var(--transition), transform 0.3s ease;
 }
 
