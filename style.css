@@ -830,7 +830,7 @@ body.dark-mode .difference-item__icon {
 .floating-contact {
   position: fixed;
   bottom: 1.5rem;
-  right: 1.5rem;
+  right: 0.75rem;
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
@@ -898,12 +898,6 @@ body.dark-mode .difference-item__icon {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   opacity: 0.9;
-}
-
-.floating-contact__detail {
-  font-size: 1rem;
-  font-weight: 600;
-  word-break: break-word;
 }
 
 .floating-contact__link--whatsapp {
@@ -1028,7 +1022,7 @@ body.dark-mode .floating-contact__link:focus-visible {
   }
 
   .floating-contact {
-    right: 1rem;
+    right: 0.5rem;
     bottom: 1rem;
   }
 
@@ -1052,14 +1046,11 @@ body.dark-mode .floating-contact__link:focus-visible {
     font-size: 0.72rem;
   }
 
-  .floating-contact__detail {
-    font-size: 0.95rem;
-  }
 }
 
 @media (max-width: 420px) {
   .floating-contact {
-    right: 0.75rem;
+    right: 0.4rem;
     bottom: 0.75rem;
   }
 
