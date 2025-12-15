@@ -1051,15 +1051,17 @@ function setupHeroSlider(languageManager) {
 }
 
 function createFavoriteCard(tour) {
+  const halfDaySlugs = new Set(['tulum-express', 'cenotes-express', 'tacos-tour', 'turtles-cenotes']);
+  const durationLabel = halfDaySlugs.has(tour.slug) ? 'Half day' : 'Full day';
   const article = document.createElement('article');
   article.className = 'card favorite-card';
   article.setAttribute('role', 'listitem');
   article.innerHTML = `
-    <div class="favorite-card__media">
+    <a class="favorite-card__media" href="tour.html?tour=${tour.slug}" aria-label="View ${tour.name}">
       <img src="${tour.image}" alt="${tour.name}" loading="lazy" />
       <span class="favorite-card__tag">${tour.duration}</span>
-      <span class="favorite-card__badge">${tour.badge || 'Featured'}</span>
-    </div>
+      <span class="favorite-card__badge">${durationLabel}</span>
+    </a>
     <div class="favorite-card__body">
       <h3>${tour.name}</h3>
       <p class="favorite-card__deal">${tour.tagline}</p>
