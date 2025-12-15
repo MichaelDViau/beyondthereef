@@ -567,16 +567,19 @@ body.dark-mode .difference-item__icon {
 }
 
 .section--favorites {
-  background: linear-gradient(135deg, rgba(5, 26, 48, 0.95) 0%, rgba(17, 72, 118, 0.78) 100%);
+  background: linear-gradient(135deg, rgba(2, 12, 24, 0.92) 0%, rgba(12, 30, 52, 0.92) 100%);
   position: relative;
   overflow: hidden;
   --favorites-heading-color: #facc15;
   --favorites-subtext-color: #fde68a;
-  --favorite-card-text: #fef3c7;
-  --favorite-card-muted: rgba(254, 243, 199, 0.9);
+  --favorite-card-text: #fff8eb;
+  --favorite-card-muted: rgba(255, 227, 189, 0.78);
   --favorite-card-deal-color: #fbbf24;
-  --favorite-card-badge-bg: linear-gradient(135deg, #f97316 0%, #facc15 100%);
+  --favorite-card-badge-bg: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
   --favorite-card-badge-text: #0b1a2e;
+  --favorite-card-bg: linear-gradient(180deg, rgba(15, 40, 68, 0.92) 0%, rgba(5, 20, 38, 0.92) 100%);
+  --favorite-card-border: rgba(245, 158, 11, 0.28);
+  --favorite-card-shadow: 0 30px 60px rgba(1, 10, 20, 0.55);
 }
 
 .section--favorites .section__intro h2 {
