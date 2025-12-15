@@ -469,14 +469,15 @@ body.dark-mode .language-toggle[aria-pressed='true'] {
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 248, 235, 0.7);
-  background: transparent;
+  border: 1px solid rgba(15, 76, 129, 0.55);
+  background: rgba(15, 58, 93, 0.2);
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .hero-slider__dot[aria-selected="true"] {
-  background: #fff8eb;
+  background: #0b1f3a;
+  border-color: rgba(11, 31, 58, 0.9);
   transform: scale(1.2);
 }
 
@@ -705,10 +706,10 @@ body.dark-mode .favorite-card:focus-within {
 .favorite-card__badge {
   bottom: 1rem;
   left: 1rem;
-  background: #0b1f3a;
-  color: #e6f0ff;
-  border: 1px solid rgba(230, 240, 255, 0.25);
-  box-shadow: 0 12px 24px rgba(5, 20, 38, 0.45);
+  background: linear-gradient(135deg, #f97316 0%, #facc15 100%);
+  color: #0b1a2e;
+  border: 1px solid rgba(11, 26, 50, 0.08);
+  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.35);
 }
 
 .favorite-card__body {

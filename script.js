@@ -1059,7 +1059,7 @@ function createFavoriteCard(tour) {
   article.innerHTML = `
     <a class="favorite-card__media" href="tour.html?tour=${tour.slug}" aria-label="View ${tour.name}">
       <img src="${tour.image}" alt="${tour.name}" loading="lazy" />
-      <span class="favorite-card__tag">${tour.duration}</span>
+      <span class="favorite-card__tag">${tour.badge || tour.tagline}</span>
       <span class="favorite-card__badge">${durationLabel}</span>
     </a>
     <div class="favorite-card__body">
