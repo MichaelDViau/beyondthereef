@@ -371,6 +371,192 @@ const translations = {
 
 const SUPPORTED_LANGUAGES = ['en', 'es'];
 
+const adventureTours = [
+  {
+    slug: 'turtles-cenotes',
+    name: 'Turtles + Cenotes',
+    duration: 'Half a day • Ocean + Jungle',
+    tagline: 'Swim with wild turtles then cool off in sapphire cenotes.',
+    description:
+      'A sunrise snorkel with turtles in the open ocean followed by a trio of sacred cenotes where you can float, rappel, and savor a chef-prepared lunch box between swims.',
+    includes: ['🐢 Turtles in the ocean', '🪨 3 cenotes + optional rappel', '🥪 Lunch box'],
+    image:
+      'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: [
+      'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80',
+      'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80&sat=-8'
+    ],
+    basePrice: 169,
+    badge: 'Top pick'
+  },
+  {
+    slug: 'tulum-turtles-cenotes',
+    name: 'Tulum + Turtles + Cenotes',
+    duration: 'Full day • Culture + Water',
+    tagline: 'Ancient temples, ocean turtles, and cavern cenotes in one epic loop.',
+    description:
+      'Start with crowd-free access to Tulum’s seaside ruins, then glide beside turtles in turquoise water before ending at three hidden cenotes with optional rappel and taco lunch with tequila or mezcal.',
+    includes: ['🐢 Turtles in the ocean', '🏛️ Tulum ruins', '🪨 3 cenotes + optional rappel', '🌮 Taco lunch with tequila/mezcal'],
+    image:
+      'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: [
+      'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1600&q=80',
+      'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1600&q=80&sat=-6'
+    ],
+    basePrice: 215,
+    badge: 'Best seller'
+  },
+  {
+    slug: 'cenotes-express',
+    name: 'Cenotes Express',
+    duration: 'Half a day • Cenote circuit',
+    tagline: 'Four cenotes, zero crowds, endless blues.',
+    description:
+      'Hop between four distinctly beautiful cenotes for cliff jumps, quiet swims, and a guided rappel into the clearest chamber while local snacks keep the energy up.',
+    includes: ['🪨 4 cenotes + rappel', '🥤 Local snacks'],
+    image:
+      'https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: ['https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1600&q=80'],
+    basePrice: 149,
+    badge: 'New route'
+  },
+  {
+    slug: 'tulum-express',
+    name: 'Tulum Express',
+    duration: 'Half a day • Culture dip',
+    tagline: 'Golden-hour magic at the Tulum cliffs.',
+    description:
+      'A swift, well-timed visit to Tulum with a storytelling guide who knows every photogenic corner, plus time for artisan markets and coastal snacks.',
+    includes: ['🏛️ Tulum ruins access', '🍹 Snacks & refreshments'],
+    image:
+      'https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: ['https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80'],
+    basePrice: 125,
+    badge: 'Quick escape'
+  },
+  {
+    slug: 'tacos-tour',
+    name: 'Tacos Tour',
+    duration: 'Evening • Flavor trail',
+    tagline: 'Tacos, tequila, mezcal, and a sunset stroll on 5th Avenue.',
+    description:
+      'Eat your way through hand-picked taquerías with pairings of mezcal or tequila, then enjoy free time in Playa del Carmen’s vibrant 5th Avenue.',
+    includes: ['🌮 Tacos + tequila/mezcal', '🛍️ Free time on Playa del Carmen 5a Avenida'],
+    image:
+      'https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: ['https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1600&q=80'],
+    basePrice: 110,
+    badge: 'Foodie fave'
+  },
+  {
+    slug: 'tulum-coba',
+    name: 'Tulum + Coba',
+    duration: 'Full day • Ruins + Cenote',
+    tagline: 'Twin ruins, jungle zipline, and a restorative cenote.',
+    description:
+      'Climb the jungle lookouts of Coba, wander seaside Tulum, ride a zipline into a cool cenote, and refuel with a regional buffet crafted by local cooks.',
+    includes: ['🏛️ Tulum & Coba', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+    image:
+      'https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: ['https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1600&q=80'],
+    basePrice: 225,
+    badge: 'All-day adventure'
+  },
+  {
+    slug: 'coba',
+    name: 'Coba',
+    duration: 'Full day • Jungle history',
+    tagline: 'Bike ancient causeways and cool off in a cenote.',
+    description:
+      'Pedal through the shaded sacbe roads of Coba, climb its towering pyramid, then celebrate with a cenote swim and hearty regional buffet.',
+    includes: ['🏛️ Coba ruins', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+    image:
+      'https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: ['https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1600&q=80'],
+    basePrice: 185,
+    badge: 'History rich'
+  },
+  {
+    slug: 'chichen-itza',
+    name: 'Chichen Itza',
+    duration: 'Full day • Wonder of the World',
+    tagline: 'Sunrise at a UNESCO wonder, cenote swim, buffet feast.',
+    description:
+      'See Chichen Itza before the crowds, learn the legends of Kukulkán, swim in a crystalline cenote with zipline, and enjoy a regional buffet.',
+    includes: ['🏛️ Chichen Itza access', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+    image:
+      'https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: ['https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1600&q=80'],
+    basePrice: 239,
+    badge: 'UNESCO site'
+  },
+  {
+    slug: 'coba-chichen-itza',
+    name: 'Coba + Chichen Itza',
+    duration: 'Full day • Two Wonders',
+    tagline: 'Twin ancient cities, cenote thrills, and bold flavors.',
+    description:
+      'Trace the story from Coba’s jungle temples to the grand plazas of Chichen Itza, break for a cenote zipline plunge, and savor a regional buffet between sites.',
+    includes: ['🏛️ Coba + Chichen Itza', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+    image:
+      'https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: ['https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1600&q=80'],
+    basePrice: 265,
+    badge: 'Epic circuit'
+  },
+  {
+    slug: 'holbox-express',
+    name: 'Holbox Express',
+    duration: 'Full day • Island hopping',
+    tagline: 'Speedboat to sandbars, flamingos, and Holbox chill vibes.',
+    description:
+      'Glide by speedboat across glowing shallows, hop between Holbox islands, lounge on secluded sandbars, and enjoy buffet lunch with open bar before exploring town time on the island.',
+    includes: ['🚤 Island hopping by speedboat', '🏖️ Free time on Holbox', '🍹 Buffet + open bar'],
+    image:
+      'https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: ['https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1600&q=80'],
+    basePrice: 255,
+    badge: 'Island life'
+  },
+  {
+    slug: 'dolphin-turtle',
+    name: 'Dolphin + Turtle (Sian Ka’an)',
+    duration: 'Full day • UNESCO Biosphere',
+    tagline: 'Speedboat safaris for dolphins, turtles, and reef snorkeling.',
+    description:
+      'Journey into the Sian Ka’an reserve by speedboat to spot dolphins, turtles, and vibrant reef life, then savor a beachside buffet that celebrates the protected UNESCO paradise.',
+    includes: ['🐬 Dolphin & turtle encounters', '🤿 Reef snorkeling', '🥗 Buffet lunch'],
+    image:
+      'https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: ['https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1600&q=80'],
+    basePrice: 245,
+    badge: 'UNESCO reserve'
+  },
+  {
+    slug: 'fishing-half-day',
+    name: 'Fishing Half Day',
+    duration: 'Half a day • Private charter',
+    tagline: 'Cast off on a private boat with fresh ceviche waiting.',
+    description:
+      'A relaxed private fishing charter with pro guides, cold beers, and ceviche made with the day’s catch while you cruise the Caribbean coast.',
+    includes: ['🎣 Private fishing trip', '🥗 Fresh ceviche/food', '🍻 Beers on board'],
+    image:
+      'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1600&q=80',
+    gallery: [
+      'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1600&q=80',
+      'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1600&q=80&sat=-10'
+    ],
+    basePrice: 210,
+    badge: 'Private boat'
+  }
+];
+
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  maximumFractionDigits: 0
+});
+
 function interpolate(template, replacements = {}) {
   return template.replace(/\{\{(\w+)\}\}/g, (_, key) =>
     Object.prototype.hasOwnProperty.call(replacements, key) ? String(replacements[key]) : ''
@@ -499,7 +685,9 @@ function createLanguageManager(pageKey) {
     setupThemeToggle(prefersDark, languageManager);
     window.addEventListener('resize', scheduleNavControlWidthSync, { passive: true });
     setupHeroSlider(languageManager);
-    setupFavoritesCarousel();
+    buildFavoritesCarousel(adventureTours);
+    initTourPage(adventureTours);
+    setupCardCarousels();
     setupInquiryForm(languageManager);
     setCurrentYear();
 
@@ -862,75 +1050,209 @@ function setupHeroSlider(languageManager) {
   languageManager.onChange(updateDotLabels);
 }
 
-function setupFavoritesCarousel() {
-  const carousel = document.querySelector('[data-favorites-carousel]');
-  if (!carousel) return;
+function createFavoriteCard(tour) {
+  const article = document.createElement('article');
+  article.className = 'card favorite-card';
+  article.setAttribute('role', 'listitem');
+  article.innerHTML = `
+    <div class="favorite-card__media">
+      <img src="${tour.image}" alt="${tour.name}" loading="lazy" />
+      <span class="favorite-card__tag">${tour.duration}</span>
+      <span class="favorite-card__badge">${tour.badge || 'Featured'}</span>
+    </div>
+    <div class="favorite-card__body">
+      <h3>${tour.name}</h3>
+      <p class="favorite-card__deal">${tour.tagline}</p>
+      <p class="favorite-card__copy">${tour.description}</p>
+      <a class="button button--primary favorite-card__cta" href="tour.html?tour=${tour.slug}">View details</a>
+    </div>
+  `;
+  return article;
+}
 
-  const viewport = carousel.querySelector('.favorites-carousel__viewport');
-  const track = carousel.querySelector('.favorites-carousel__track');
-  const prevButton = carousel.querySelector('[data-carousel-arrow="prev"]');
-  const nextButton = carousel.querySelector('[data-carousel-arrow="next"]');
+function populateCardTrack(selector, tours) {
+  const track = document.querySelector(selector);
+  if (!track) return null;
+  track.innerHTML = '';
+  tours.forEach((tour) => track.appendChild(createFavoriteCard(tour)));
+  return track;
+}
 
-  if (!viewport || !track) return;
+function buildFavoritesCarousel(tours) {
+  populateCardTrack('[data-favorites-track]', tours);
+}
 
-  const cards = Array.from(track.querySelectorAll('.favorite-card'));
+function setupCardCarousels() {
+  const carousels = document.querySelectorAll('[data-card-carousel]');
+  if (!carousels.length) return;
 
-  const getGap = () => {
-    const styles = window.getComputedStyle(track);
-    const gapValue = parseFloat(styles.columnGap || styles.gap || '0');
-    return Number.isFinite(gapValue) ? gapValue : 0;
+  carousels.forEach((carousel) => {
+    const viewport = carousel.querySelector('.favorites-carousel__viewport');
+    const track = carousel.querySelector('.favorites-carousel__track');
+    const prevButton = carousel.querySelector('[data-carousel-arrow="prev"]');
+    const nextButton = carousel.querySelector('[data-carousel-arrow="next"]');
+
+    if (!viewport || !track) return;
+
+    const cards = Array.from(track.querySelectorAll('.favorite-card'));
+
+    const getGap = () => {
+      const styles = window.getComputedStyle(track);
+      const gapValue = parseFloat(styles.columnGap || styles.gap || '0');
+      return Number.isFinite(gapValue) ? gapValue : 0;
+    };
+
+    const updateArrowState = () => {
+      const maxScroll = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+      const atStart = viewport.scrollLeft <= 1;
+      const atEnd = viewport.scrollLeft >= maxScroll - 1;
+
+      if (prevButton) {
+        prevButton.disabled = atStart;
+      }
+      if (nextButton) {
+        nextButton.disabled = atEnd;
+      }
+
+      carousel.classList.toggle('favorites-carousel--is-scrollable', maxScroll > 1);
+    };
+
+    const scrollByDirection = (direction) => {
+      const multiplier = direction < 0 ? -1 : 1;
+      const cardWidth = cards.length ? cards[0].getBoundingClientRect().width : viewport.clientWidth;
+      const target = viewport.scrollLeft + multiplier * (cardWidth + getGap());
+      const maxScroll = viewport.scrollWidth - viewport.clientWidth;
+      const clamped = Math.max(0, Math.min(target, maxScroll));
+      viewport.scrollTo({ left: clamped, behavior: 'smooth' });
+    };
+
+    prevButton?.addEventListener('click', () => scrollByDirection(-1));
+    nextButton?.addEventListener('click', () => scrollByDirection(1));
+
+    let scrollRaf = null;
+    const handleScroll = () => {
+      if (scrollRaf) return;
+      scrollRaf = window.requestAnimationFrame(() => {
+        scrollRaf = null;
+        updateArrowState();
+      });
+    };
+
+    viewport.addEventListener('scroll', handleScroll, { passive: true });
+
+    let resizeRaf = null;
+    const handleResize = () => {
+      if (resizeRaf) return;
+      resizeRaf = window.requestAnimationFrame(() => {
+        resizeRaf = null;
+        updateArrowState();
+      });
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    updateArrowState();
+  });
+}
+
+function setupTourGallery(gallery) {
+  if (!gallery) return;
+
+  const track = gallery.querySelector('[data-tour-gallery-track]');
+  const prevButton = gallery.querySelector('[data-gallery-arrow="prev"]');
+  const nextButton = gallery.querySelector('[data-gallery-arrow="next"]');
+  const slides = track ? Array.from(track.children) : [];
+  let current = 0;
+
+  const update = () => {
+    if (!track) return;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    const disableArrows = slides.length <= 1;
+    if (prevButton) prevButton.disabled = disableArrows;
+    if (nextButton) nextButton.disabled = disableArrows;
   };
 
-  const updateArrowState = () => {
-    const maxScroll = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
-    const atStart = viewport.scrollLeft <= 1;
-    const atEnd = viewport.scrollLeft >= maxScroll - 1;
-
-    if (prevButton) {
-      prevButton.disabled = atStart;
-    }
-    if (nextButton) {
-      nextButton.disabled = atEnd;
-    }
-
-    carousel.classList.toggle('favorites-carousel--is-scrollable', maxScroll > 1);
+  const goTo = (direction) => {
+    if (!slides.length) return;
+    current = (current + direction + slides.length) % slides.length;
+    update();
   };
 
-  const scrollByDirection = (direction) => {
-    const multiplier = direction < 0 ? -1 : 1;
-    const cardWidth = cards.length ? cards[0].getBoundingClientRect().width : viewport.clientWidth;
-    const target = viewport.scrollLeft + multiplier * (cardWidth + getGap());
-    const maxScroll = viewport.scrollWidth - viewport.clientWidth;
-    const clamped = Math.max(0, Math.min(target, maxScroll));
-    viewport.scrollTo({ left: clamped, behavior: 'smooth' });
-  };
+  prevButton?.addEventListener('click', () => goTo(-1));
+  nextButton?.addEventListener('click', () => goTo(1));
 
-  prevButton?.addEventListener('click', () => scrollByDirection(-1));
-  nextButton?.addEventListener('click', () => scrollByDirection(1));
+  update();
+}
 
-  let scrollRaf = null;
-  const handleScroll = () => {
-    if (scrollRaf) return;
-    scrollRaf = window.requestAnimationFrame(() => {
-      scrollRaf = null;
-      updateArrowState();
+function initTourPage(tours) {
+  const tourPage = document.querySelector('[data-tour-page]');
+  if (!tourPage || !tours.length) return;
+
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('tour');
+  const tour = tours.find((item) => item.slug === slug) || tours[0];
+  if (!tour) return;
+
+  const galleryTrack = document.querySelector('[data-tour-gallery-track]');
+  const galleryWrapper = document.querySelector('[data-tour-gallery]');
+  const titleEl = document.querySelector('[data-tour-title]');
+  const durationEl = document.querySelector('[data-tour-duration]');
+  const taglineEl = document.querySelector('[data-tour-tagline]');
+  const descriptionEl = document.querySelector('[data-tour-description]');
+  const includesEl = document.querySelector('[data-tour-includes]');
+  const priceEl = document.querySelector('[data-tour-price]');
+  const guestSelect = document.querySelector('[data-tour-guests]');
+  const bookingForm = document.querySelector('[data-tour-booking]');
+  const noteEl = bookingForm?.querySelector('.tour-booking__note');
+
+  if (titleEl) titleEl.textContent = tour.name;
+  if (durationEl) durationEl.textContent = tour.duration;
+  if (taglineEl) taglineEl.textContent = tour.tagline;
+  if (descriptionEl) descriptionEl.textContent = tour.description;
+  document.title = `${tour.name} | Beyond the Reef Mexico`;
+
+  if (includesEl) {
+    includesEl.innerHTML = '';
+    tour.includes.forEach((item) => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      includesEl.appendChild(li);
     });
-  };
+  }
 
-  viewport.addEventListener('scroll', handleScroll, { passive: true });
-
-  let resizeRaf = null;
-  const handleResize = () => {
-    if (resizeRaf) return;
-    resizeRaf = window.requestAnimationFrame(() => {
-      resizeRaf = null;
-      updateArrowState();
+  if (galleryTrack) {
+    galleryTrack.innerHTML = '';
+    const images = tour.gallery && tour.gallery.length ? tour.gallery : [tour.image];
+    images.forEach((src, index) => {
+      const slide = document.createElement('figure');
+      slide.className = 'tour-gallery__slide';
+      slide.innerHTML = `<img src="${src}" alt="${tour.name} photo ${index + 1}" loading="lazy" />`;
+      galleryTrack.appendChild(slide);
     });
+  }
+
+  setupTourGallery(galleryWrapper);
+
+  const updatePrice = () => {
+    if (!priceEl || !guestSelect) return;
+    const guests = Number(guestSelect.value) || 1;
+    priceEl.textContent = currencyFormatter.format(guests * tour.basePrice);
   };
 
-  window.addEventListener('resize', handleResize);
+  guestSelect?.addEventListener('change', updatePrice);
+  updatePrice();
 
-  updateArrowState();
+  bookingForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const guests = Number(guestSelect?.value) || 1;
+    const pickup = (document.querySelector('[data-tour-pickup]')?.value || 'your location').trim();
+    if (noteEl) {
+      noteEl.textContent = `Holding ${guests} spot(s) for ${tour.name}. We will confirm pick-up at ${pickup} right away.`;
+    }
+  });
+
+  const relatedTours = tours.filter((item) => item.slug !== tour.slug);
+  populateCardTrack('[data-related-track]', relatedTours);
 }
 
 function setupInquiryForm(languageManager) {
