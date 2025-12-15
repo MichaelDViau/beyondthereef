@@ -614,6 +614,10 @@ body.dark-mode .section--favorites {
   scroll-snap-type: x mandatory;
   scroll-padding-inline: var(--favorites-viewport-padding);
   scroll-behavior: smooth;
+  background: linear-gradient(135deg, rgba(2, 12, 24, 0.95) 0%, rgba(12, 30, 52, 0.95) 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--favorite-card-border);
+  box-shadow: 0 24px 48px rgba(1, 10, 20, 0.55);
 }
 
 .favorites-carousel__viewport::-webkit-scrollbar {
@@ -739,7 +743,7 @@ body.dark-mode .favorite-card:focus-within {
 
 .favorite-card__copy {
   margin: 0;
-  color: var(--favorite-card-muted);
+  color: var(--text);
   font-size: 0.95rem;
   line-height: 1.6;
   display: -webkit-box;
