@@ -813,11 +813,40 @@ body.dark-mode .favorite-card:focus-within {
   }
 }
 
-.tour-builder {
+.custom-inquiry {
   display: grid;
   gap: clamp(1.5rem, 4vw, 2.5rem);
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   align-items: start;
+}
+
+.custom-inquiry__list {
+  list-style: disc inside;
+  display: grid;
+  gap: 0.65rem;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+}
+
+.custom-inquiry__email {
+  margin: 0;
+  font-weight: 600;
+}
+
+.custom-inquiry__email a {
+  color: var(--accent-strong);
+  text-decoration: underline;
+}
+
+.form-status {
+  margin: 0.75rem 0 0;
+  font-weight: 600;
+  color: var(--accent-strong);
+}
+
+.form-status.is-error {
+  color: #d12e2e;
 }
 
 .card {
