@@ -574,8 +574,8 @@ body.dark-mode .difference-item__icon {
   padding-top: clamp(2.5rem, 4vw, 3.5rem);
   --favorites-heading-color: #facc15;
   --favorites-subtext-color: #fde68a;
-  --favorite-card-text: #fff8eb;
-  --favorite-card-muted: rgba(255, 227, 189, 0.78);
+  --favorite-card-text: #eaf2ff;
+  --favorite-card-muted: rgba(224, 236, 255, 0.92);
   --favorite-card-deal-color: #fbbf24;
   --favorite-card-badge-bg: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
   --favorite-card-badge-text: #0b1a2e;
@@ -619,14 +619,15 @@ body.dark-mode .section--favorites {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  width: min(1200px, calc(100vw - 2rem));
+  width: calc(100vw - clamp(1rem, 4vw, 3.25rem));
+  max-width: none;
   margin: 0 auto;
   padding: 1.25rem 0;
   padding-inline: var(--favorites-viewport-padding);
   scroll-snap-type: x mandatory;
   scroll-padding-inline: var(--favorites-viewport-padding);
   scroll-behavior: smooth;
-  background: var(--surface);
+  background: rgba(17, 45, 78, 0.88);
   border-radius: var(--radius-lg);
   border: 1px solid var(--favorite-card-border);
   box-shadow: 0 24px 48px rgba(1, 10, 20, 0.55);
