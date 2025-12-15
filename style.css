@@ -14,11 +14,11 @@
   --radius-md: 18px;
   --radius-sm: 12px;
   --transition: all 0.4s ease;
-  --favorite-card-bg: linear-gradient(180deg, rgba(11, 40, 73, 0.95) 0%, rgba(6, 26, 50, 0.97) 100%);
-  --favorite-card-border: rgba(15, 76, 129, 0.45);
-  --favorite-card-text: #f1f7ff;
-  --favorite-card-muted: rgba(221, 233, 250, 0.78);
-  --favorite-card-shadow: 0 25px 50px rgba(6, 26, 50, 0.35);
+  --favorite-card-bg: linear-gradient(180deg, #eef2f7 0%, #dde5f0 100%);
+  --favorite-card-border: rgba(12, 43, 76, 0.18);
+  --favorite-card-text: #0b2340;
+  --favorite-card-muted: rgba(12, 43, 76, 0.74);
+  --favorite-card-shadow: 0 25px 50px rgba(12, 43, 76, 0.16);
   --favorite-card-badge-bg: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
   --favorite-card-badge-text: #f8fbff;
   --favorite-card-deal-color: #38bdf8;
@@ -595,8 +595,13 @@ body.dark-mode .difference-item__icon {
 }
 
 .section--favorites .section__intro {
-  padding-inline: clamp(1.5rem, 5vw, 7.5rem);
+  padding-inline: clamp(1.5rem, 4vw, 3.5rem);
   margin-bottom: clamp(1.5rem, 2.5vw, 2.25rem);
+}
+
+.section--favorites {
+  padding-inline: 0;
+  background: #ffffff;
 }
 
 html.dark-mode .section--favorites,
@@ -606,9 +611,9 @@ body.dark-mode .section--favorites {
 
 .favorites-carousel {
   position: relative;
-  --favorites-viewport-padding: clamp(1.25rem, 6vw, 3rem);
-  --favorites-gap: clamp(1rem, 2.8vw, 1.75rem);
-  padding-inline: clamp(1.5rem, 5vw, 7.5rem);
+  --favorites-viewport-padding: clamp(1.25rem, 4vw, 3rem);
+  --favorites-gap: clamp(1rem, 2.4vw, 1.6rem);
+  padding-inline: clamp(0.75rem, 3vw, 2.5rem);
 }
 
 .favorites-carousel:not(.favorites-carousel--is-scrollable) .favorites-carousel__arrow {
@@ -619,7 +624,7 @@ body.dark-mode .section--favorites {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  width: calc(100vw - clamp(1rem, 4vw, 3.25rem));
+  width: 100%;
   max-width: none;
   margin: 0 auto;
   padding: 1.25rem 0;
@@ -627,14 +632,21 @@ body.dark-mode .section--favorites {
   scroll-snap-type: x mandatory;
   scroll-padding-inline: var(--favorites-viewport-padding);
   scroll-behavior: smooth;
-  background: rgba(17, 45, 78, 0.88);
+  background: linear-gradient(135deg, #eef2f7 0%, #d9e2ee 100%);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--favorite-card-border);
-  box-shadow: 0 24px 48px rgba(1, 10, 20, 0.55);
+  border: 1px solid rgba(12, 43, 76, 0.12);
+  box-shadow: 0 24px 48px rgba(12, 43, 76, 0.25);
 }
 
 .favorites-carousel__viewport::-webkit-scrollbar {
   display: none;
+}
+
+html.dark-mode .favorites-carousel__viewport,
+body.dark-mode .favorites-carousel__viewport {
+  background: rgba(17, 45, 78, 0.88);
+  border: 1px solid var(--favorite-card-border);
+  box-shadow: 0 24px 48px rgba(1, 10, 20, 0.55);
 }
 
 .favorites-carousel__track {
@@ -743,6 +755,7 @@ body.dark-mode .favorite-card:focus-within {
 .favorite-card__body h3 {
   margin: 0;
   font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  color: var(--favorite-card-text);
 }
 
 .favorite-card__deal {
