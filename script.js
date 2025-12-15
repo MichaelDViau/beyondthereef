@@ -7,10 +7,10 @@ const translations = {
       'nav.create': 'Create Your Experience',
       'nav.reviews': 'Reviews',
       'nav.story': 'Our Story',
-      'footer.rights': 'Beyond the Reef Adventures. All rights reserved.',
+      'footer.rights': 'Beyond the Reef Mexico. All rights reserved.',
       'floatingContact.aria': 'Quick contact options',
       'floatingContact.whatsappAria': 'Chat on WhatsApp',
-      'floatingContact.emailAria': 'Email Beyond the Reef',
+      'floatingContact.emailAria': 'Email Beyond the Reef Mexico',
       'floatingContact.instagramAria': 'Open Instagram',
       'floatingContact.whatsappLabel': 'WhatsApp',
       'floatingContact.emailLabel': 'Email',
@@ -21,7 +21,7 @@ const translations = {
       'tourBuilder.remove': 'Remove'
     },
     home: {
-      'page.title': 'Beyond the Reef Adventures',
+      'page.title': 'Beyond the Reef Mexico',
       'home.hero.aria': 'Featured Experiences',
       'home.hero.heading': 'Pure adrenaline. Untamed nature. Your story in the making.',
       'home.hero.description':
@@ -72,21 +72,29 @@ const translations = {
       'home.favorites.card4.copy':
         'Capture cinematic shots across Tulum’s ruins and cenotes with a creative director setting the scene for every moment.',
       'home.favorites.card4.cta': 'More information',
-      'home.builder.eyebrow': 'Build your tour',
-      'home.builder.heading': 'Design a custom itinerary in minutes',
+      'home.builder.eyebrow': 'Plan with locals',
+      'home.builder.heading': 'We build your perfect day',
       'home.builder.copy':
-        'Create a bespoke adventure by mixing activities, dining, and relaxation. Add each idea to your itinerary and we will weave it into a seamless journey.',
-      'home.builder.formAria': 'Add an activity to your custom tour',
-      'home.builder.activityLabel': 'Activity name',
-      'home.builder.activityPlaceholder': 'Night snorkel',
-      'home.builder.dateLabel': 'Preferred date',
-      'home.builder.notesLabel': 'Special touches',
-      'home.builder.notesPlaceholder': 'Add a sunset picnic with locally sourced fruit.',
-      'home.builder.add': 'Add to itinerary',
-      'home.builder.listHeading': 'Your custom itinerary',
-      'home.builder.placeholder':
-        'Your ideas will appear here. Add the first one to begin crafting the perfect tour.',
-      'home.builder.clear': 'Clear itinerary',
+        'Email us with your idea and we will answer you with a custom quote about your day, or book a video call with our local expert to refine every detail together.',
+      'home.builder.formAria': 'Send your perfect day details',
+      'home.builder.nameLabel': 'Name',
+      'home.builder.namePlaceholder': 'Your name',
+      'home.builder.emailLabel': 'Email',
+      'home.builder.emailPlaceholder': 'you@example.com',
+      'home.builder.phoneLabel': 'Phone',
+      'home.builder.phonePlaceholder': '+52 1 555 555 5555',
+      'home.builder.notesLabel': 'Tell us about your idea',
+      'home.builder.notesPlaceholder': 'Include the date, vibe, and any must-do experiences.',
+      'home.builder.submit': 'Send my idea',
+      'home.builder.listHeading': 'Tell us about your dream day',
+      'home.builder.pointOne': 'Share the vibe you want—relaxed, high-energy, romantic, or off-grid.',
+      'home.builder.pointTwo': 'Add any must-do activities, dining styles, or timing preferences.',
+      'home.builder.pointThree': 'We’ll reply with a tailored quote or set up a video call with our local expert.',
+      'home.builder.emailFallback':
+        'Prefer email? Reach us directly at <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a>.',
+      'home.builder.emailSubject': 'Custom day idea from {{name}}',
+      'home.builder.status.missing': 'Please add your name, email, and idea so we can craft your quote.',
+      'home.builder.status.prompt': 'Opening your email app to send the details to our concierge.',
       'home.accent.eyebrow': 'Why travelers love us',
       'home.accent.heading': 'Concierge-level planning at lightning speed',
       'home.accent.locals.title': 'Crafted by locals',
@@ -103,7 +111,7 @@ const translations = {
       'home.cta.button': 'Email our concierge team'
     },
     tours: {
-      'page.title': 'Build Your Tours | Beyond the Reef Adventures',
+      'page.title': 'Build Your Tours | Beyond the Reef Mexico',
       'tours.hero.eyebrow': 'Build your tour',
       'tours.hero.heading': 'Design experiences as unique as your crew',
       'tours.hero.copy':
@@ -128,7 +136,7 @@ const translations = {
         'Collaborate with your concierge to finalize transfers, payments, and on-island support.'
     },
     reviews: {
-      'page.title': 'Guest Reviews | Beyond the Reef Adventures',
+      'page.title': 'Guest Reviews | Beyond the Reef Mexico',
       'reviews.hero.eyebrow': 'Guest love letters',
       'reviews.hero.heading': 'Stories from travelers who went beyond',
       'reviews.hero.copy':
@@ -145,10 +153,10 @@ const translations = {
         '“The group chat was blowing up with ideas. The Beyond the Reef planner kept everything organized and even added mixology classes based on our Spotify playlist.” — <strong>Diego &amp; crew</strong>',
       'reviews.share.heading': 'Share your experience',
       'reviews.share.copy':
-        'Email <a href="mailto:info@beyondthereef.com">info@beyondthereef.com</a> with a highlight reel or tag us on social with <strong>#BeyondTheReef</strong> for a chance to be featured.'
+        'Email <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a> with a highlight reel or tag us on social with <strong>#BeyondTheReef</strong> for a chance to be featured.'
     },
     story: {
-      'page.title': 'Our Story | Beyond the Reef Adventures',
+      'page.title': 'Our Story | Beyond the Reef Mexico',
       'story.hero.eyebrow': 'Our story',
       'story.hero.heading': 'Born from a love of the sea and storytelling',
       'story.hero.copy':
@@ -183,10 +191,10 @@ const translations = {
       'nav.create': 'Crea tu experiencia',
       'nav.reviews': 'Reseñas',
       'nav.story': 'Nuestra historia',
-      'footer.rights': 'Beyond the Reef Adventures. Todos los derechos reservados.',
+      'footer.rights': 'Beyond the Reef Mexico. Todos los derechos reservados.',
       'floatingContact.aria': 'Opciones de contacto rápido',
       'floatingContact.whatsappAria': 'Chatear en WhatsApp',
-      'floatingContact.emailAria': 'Enviar correo a Beyond the Reef',
+      'floatingContact.emailAria': 'Enviar correo a Beyond the Reef Mexico',
       'floatingContact.instagramAria': 'Abrir Instagram',
       'floatingContact.whatsappLabel': 'WhatsApp',
       'floatingContact.emailLabel': 'Correo',
@@ -197,7 +205,7 @@ const translations = {
       'tourBuilder.remove': 'Eliminar'
     },
     home: {
-      'page.title': 'Beyond the Reef Adventures',
+      'page.title': 'Beyond the Reef Mexico',
       'home.hero.aria': 'Experiencias destacadas',
       'home.hero.heading': 'Pura adrenalina. Naturaleza indómita. Tu historia en marcha.',
       'home.hero.description':
@@ -248,21 +256,29 @@ const translations = {
       'home.favorites.card4.copy':
         'Captura tomas cinematográficas en las ruinas y cenotes de Tulum con un director creativo preparando cada escena.',
       'home.favorites.card4.cta': 'Más información',
-      'home.builder.eyebrow': 'Diseña tu tour',
-      'home.builder.heading': 'Crea un itinerario a medida en minutos',
+      'home.builder.eyebrow': 'Planifica con locales',
+      'home.builder.heading': 'Creamos tu día perfecto',
       'home.builder.copy':
-        'Diseña una aventura única combinando actividades, gastronomía y momentos de relajación. Agrega cada idea a tu itinerario y nosotros la convertiremos en un viaje perfecto.',
-      'home.builder.formAria': 'Agrega una actividad a tu tour personalizado',
-      'home.builder.activityLabel': 'Nombre de la actividad',
-      'home.builder.activityPlaceholder': 'Snorkel nocturno',
-      'home.builder.dateLabel': 'Fecha preferida',
-      'home.builder.notesLabel': 'Toques especiales',
-      'home.builder.notesPlaceholder': 'Incluye un picnic al atardecer con fruta local.',
-      'home.builder.add': 'Agregar al itinerario',
-      'home.builder.listHeading': 'Tu itinerario personalizado',
-      'home.builder.placeholder':
-        'Aquí aparecerán tus ideas. Agrega la primera para comenzar a crear el tour perfecto.',
-      'home.builder.clear': 'Borrar itinerario',
+        'Envíanos tu idea y te responderemos con una cotización personalizada de tu día, o agenda una videollamada con nuestro experto local para pulir cada detalle.',
+      'home.builder.formAria': 'Envía los detalles de tu día perfecto',
+      'home.builder.nameLabel': 'Nombre',
+      'home.builder.namePlaceholder': 'Tu nombre',
+      'home.builder.emailLabel': 'Correo electrónico',
+      'home.builder.emailPlaceholder': 'tu@correo.com',
+      'home.builder.phoneLabel': 'Teléfono',
+      'home.builder.phonePlaceholder': '+52 1 555 555 5555',
+      'home.builder.notesLabel': 'Cuéntanos tu idea',
+      'home.builder.notesPlaceholder': 'Incluye la fecha, el ambiente y las experiencias imperdibles.',
+      'home.builder.submit': 'Enviar mi idea',
+      'home.builder.listHeading': 'Cuéntanos sobre tu día soñado',
+      'home.builder.pointOne': 'Comparte el ambiente que buscas: relajado, con adrenalina, romántico o fuera de lo común.',
+      'home.builder.pointTwo': 'Agrega actividades imprescindibles, estilo de comida o preferencias de horario.',
+      'home.builder.pointThree': 'Te responderemos con una cotización a medida o agendaremos una videollamada con nuestro experto local.',
+      'home.builder.emailFallback':
+        '¿Prefieres correo? Escríbenos a <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a>.',
+      'home.builder.emailSubject': 'Idea de día personalizado de {{name}}',
+      'home.builder.status.missing': 'Por favor agrega tu nombre, correo e idea para crear tu cotización.',
+      'home.builder.status.prompt': 'Abriendo tu app de correo para enviar los detalles a nuestro concierge.',
       'home.accent.eyebrow': 'Por qué nos aman los viajeros',
       'home.accent.heading': 'Planificación de concierge a toda velocidad',
       'home.accent.locals.title': 'Creado por locales',
@@ -279,7 +295,7 @@ const translations = {
       'home.cta.button': 'Escríbenos'
     },
     tours: {
-      'page.title': 'Diseña tus tours | Beyond the Reef Adventures',
+      'page.title': 'Diseña tus tours | Beyond the Reef Mexico',
       'tours.hero.eyebrow': 'Diseña tu tour',
       'tours.hero.heading': 'Crea experiencias tan únicas como tu grupo',
       'tours.hero.copy':
@@ -304,7 +320,7 @@ const translations = {
         'Colabora con tu concierge para definir traslados, pagos y asistencia en destino.'
     },
     reviews: {
-      'page.title': 'Reseñas de huéspedes | Beyond the Reef Adventures',
+      'page.title': 'Reseñas de huéspedes | Beyond the Reef Mexico',
       'reviews.hero.eyebrow': 'Cartas de amor de nuestros huéspedes',
       'reviews.hero.heading': 'Historias de viajeros que fueron más allá',
       'reviews.hero.copy':
@@ -321,10 +337,10 @@ const translations = {
         '“El chat del grupo no dejaba de llenarse de ideas. El planificador de Beyond the Reef mantuvo todo organizado e incluso añadió clases de mixología inspiradas en nuestra lista de Spotify.” — <strong>Diego &amp; crew</strong>',
       'reviews.share.heading': 'Comparte tu experiencia',
       'reviews.share.copy':
-        'Escríbenos a <a href="mailto:info@beyondthereef.com">info@beyondthereef.com</a> con los mejores momentos o etiquétanos en redes con <strong>#BeyondTheReef</strong> para tener la oportunidad de aparecer.'
+        'Escríbenos a <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a> con los mejores momentos o etiquétanos en redes con <strong>#BeyondTheReef</strong> para tener la oportunidad de aparecer.'
     },
     story: {
-      'page.title': 'Nuestra historia | Beyond the Reef Adventures',
+      'page.title': 'Nuestra historia | Beyond the Reef Mexico',
       'story.hero.eyebrow': 'Nuestra historia',
       'story.hero.heading': 'Nacimos del amor por el mar y por contar historias',
       'story.hero.copy':
@@ -484,7 +500,7 @@ function createLanguageManager(pageKey) {
     window.addEventListener('resize', scheduleNavControlWidthSync, { passive: true });
     setupHeroSlider(languageManager);
     setupFavoritesCarousel();
-    setupTourBuilder(languageManager);
+    setupInquiryForm(languageManager);
     setCurrentYear();
 
     languageManager.init();
@@ -657,13 +673,20 @@ function setupHeroSlider(languageManager) {
   const HAVE_CURRENT_DATA =
     typeof HTMLMediaElement !== 'undefined' ? HTMLMediaElement.HAVE_CURRENT_DATA : 2;
   let autoRotateTimer = null;
-  const AUTO_ROTATE_INTERVAL = 7000;
+  const DEFAULT_ROTATE_INTERVAL = 7000;
   const hasMultipleSlides = slides.length > 1;
+
+  const handleMediaEnded = (index) => {
+    if (!hasMultipleSlides) return;
+    if (currentIndex !== index) return;
+    nextSlide();
+  };
 
   slides.forEach((slide, index) => {
     const media = slide.querySelector('.hero-slide__media');
     if (!media) return;
 
+    media.loop = false;
     media.preload = index === currentIndex ? 'auto' : 'metadata';
 
     const markLoaded = () => {
@@ -678,6 +701,12 @@ function setupHeroSlider(languageManager) {
       });
     }
 
+    media.addEventListener('loadedmetadata', () => {
+      if (index === currentIndex) {
+        scheduleAutoRotate();
+      }
+    });
+
     media.addEventListener(
       'error',
       () => {
@@ -685,6 +714,8 @@ function setupHeroSlider(languageManager) {
       },
       { once: true }
     );
+
+    media.addEventListener('ended', () => handleMediaEnded(index));
   });
 
   function setSlideState(slide, isActive) {
@@ -752,23 +783,31 @@ function setupHeroSlider(languageManager) {
     goToSlide(currentIndex - 1);
   }
 
-  function startAutoRotate() {
+  const scheduleAutoRotate = () => {
     if (!hasMultipleSlides) return;
     stopAutoRotate();
-    autoRotateTimer = window.setInterval(nextSlide, AUTO_ROTATE_INTERVAL);
+
+    const activeSlide = slides[currentIndex];
+    const activeVideo = activeSlide?.querySelector('.hero-slide__media');
+    const duration = activeVideo?.duration;
+    const delay = Number.isFinite(duration) && duration > 0 ? duration * 1000 : DEFAULT_ROTATE_INTERVAL;
+
+    autoRotateTimer = window.setTimeout(nextSlide, delay);
+  };
+
+  function startAutoRotate() {
+    scheduleAutoRotate();
   }
 
   function stopAutoRotate() {
     if (autoRotateTimer) {
-      window.clearInterval(autoRotateTimer);
+      window.clearTimeout(autoRotateTimer);
       autoRotateTimer = null;
     }
   }
 
   function restartAutoRotate() {
-    if (!hasMultipleSlides) return;
-    stopAutoRotate();
-    autoRotateTimer = window.setInterval(nextSlide, AUTO_ROTATE_INTERVAL);
+    scheduleAutoRotate();
   }
 
   function updateDotLabels(lang = languageManager.getLanguage()) {
@@ -894,100 +933,50 @@ function setupFavoritesCarousel() {
   updateArrowState();
 }
 
-function setupTourBuilder(languageManager) {
-  const form = document.querySelector('#tour-builder-form');
-  const itineraryList = document.querySelector('#itinerary-list');
-  const clearButton = document.querySelector('#clear-itinerary');
+function setupInquiryForm(languageManager) {
+  const form = document.querySelector('#custom-contact-form');
+  const status = document.querySelector('#custom-contact-status');
 
-  if (!form || !itineraryList) return;
+  if (!form) return;
 
-  const getItemCount = () => itineraryList.querySelectorAll('.itinerary-item').length;
-
-  const updatePlaceholder = (lang = languageManager.getLanguage()) => {
-    const placeholder = itineraryList.querySelector('.itinerary-list__placeholder');
-    const message = languageManager.translate('home.builder.placeholder', {}, lang);
-
-    if (getItemCount() === 0) {
-      if (placeholder) {
-        placeholder.textContent = message;
-      } else {
-        const newPlaceholder = document.createElement('li');
-        newPlaceholder.className = 'itinerary-list__placeholder';
-        newPlaceholder.dataset.i18n = 'home.builder.placeholder';
-        newPlaceholder.textContent = message;
-        itineraryList.append(newPlaceholder);
-      }
-    } else if (placeholder) {
-      placeholder.remove();
-    }
+  const setStatus = (message = '', isError = false) => {
+    if (!status) return;
+    status.textContent = message;
+    status.classList.toggle('is-error', Boolean(isError));
   };
 
-  const updateRemoveButtons = (lang = languageManager.getLanguage()) => {
-    itineraryList.querySelectorAll('.itinerary-item__remove').forEach((button) => {
-      button.textContent = languageManager.translate('tourBuilder.remove', {}, lang);
-    });
+  const buildMailtoBody = (name, email, phone, idea) => {
+    const lines = [`Name: ${name}`, `Email: ${email}`];
+    if (phone) {
+      lines.push(`Phone: ${phone}`);
+    }
+    lines.push('', 'Trip idea:', idea);
+    return encodeURIComponent(lines.join('\n'));
   };
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
-    const activity = formData.get('activity');
-    const date = formData.get('date');
-    const notes = formData.get('notes');
+    const name = (formData.get('name') || '').toString().trim();
+    const email = (formData.get('email') || '').toString().trim();
+    const phone = (formData.get('phone') || '').toString().trim();
+    const idea = (formData.get('idea') || '').toString().trim();
 
-    if (!activity) return;
-
-    const item = document.createElement('li');
-    item.className = 'itinerary-item';
-
-    const heading = document.createElement('strong');
-    heading.textContent = activity;
-    item.append(heading);
-
-    if (date) {
-      const meta = document.createElement('div');
-      meta.className = 'itinerary-item__meta';
-      try {
-        const formattedDate = new Intl.DateTimeFormat(undefined, { dateStyle: 'medium' }).format(new Date(date));
-        meta.innerHTML = `<span>📅 ${formattedDate}</span>`;
-      } catch (error) {
-        meta.textContent = `📅 ${date}`;
-      }
-      item.append(meta);
+    if (!name || !email || !idea) {
+      setStatus(languageManager.translate('home.builder.status.missing'), true);
+      return;
     }
 
-    if (notes) {
-      const note = document.createElement('p');
-      note.textContent = notes;
-      item.append(note);
-    }
+    const subject = encodeURIComponent(languageManager.translate('home.builder.emailSubject', { name }));
+    const body = buildMailtoBody(name, email, phone, idea);
+    const mailtoLink = `mailto:info@beyondthereefmexico.com?subject=${subject}&body=${body}`;
 
-    const remove = document.createElement('button');
-    remove.type = 'button';
-    remove.className = 'itinerary-item__remove';
-    remove.textContent = languageManager.translate('tourBuilder.remove');
-    remove.addEventListener('click', () => {
-      item.remove();
-      updatePlaceholder();
-      updateRemoveButtons();
-    });
-
-    item.append(remove);
-    itineraryList.append(item);
+    setStatus(languageManager.translate('home.builder.status.prompt'));
+    window.location.href = mailtoLink;
     form.reset();
-    updatePlaceholder();
-    updateRemoveButtons();
   });
 
-  clearButton?.addEventListener('click', () => {
-    itineraryList.innerHTML = '';
-    updatePlaceholder();
-  });
-
-  languageManager.onChange((lang) => {
-    updatePlaceholder(lang);
-    updateRemoveButtons(lang);
-  });
+  languageManager.onChange(() => setStatus(''));
 }
 
 function setCurrentYear() {

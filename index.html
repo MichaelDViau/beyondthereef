@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="page.title">Beyond the Reef Adventures</title>
+  <title data-i18n="page.title">Beyond the Reef Mexico</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -80,7 +80,6 @@
             src="https://www.pexels.com/download/video/3591016/"
             autoplay
             muted
-            loop
             playsinline
             preload="metadata"
           ></video>
@@ -91,7 +90,6 @@
             src="https://www.pexels.com/download/video/17823659/"
             autoplay
             muted
-            loop
             playsinline
             preload="metadata"
           ></video>
@@ -102,7 +100,6 @@
             src="https://www.pexels.com/download/video/7772228/"
             autoplay
             muted
-            loop
             playsinline
             preload="metadata"
           ></video>
@@ -113,7 +110,6 @@
             src="https://www.pexels.com/download/video/17145872/"
             autoplay
             muted
-            loop
             playsinline
             preload="metadata"
           ></video>
@@ -328,44 +324,75 @@
 
     <section class="section" id="tour-builder">
       <div class="section__intro">
-        <p class="eyebrow" data-i18n="home.builder.eyebrow">Build your tour</p>
-        <h2 data-i18n="home.builder.heading">Design a custom itinerary in minutes</h2>
+        <p class="eyebrow" data-i18n="home.builder.eyebrow">Plan with locals</p>
+        <h2 data-i18n="home.builder.heading">We build your perfect day</h2>
         <p data-i18n="home.builder.copy">
-          Create a bespoke adventure by mixing activities, dining, and relaxation. Add each idea to your itinerary and we will weave it into a seamless journey.
+          Email us with your idea and we will answer you with a custom quote about your day, or book a video call with our local expert to refine every detail together.
         </p>
       </div>
-      <div class="tour-builder">
-        <form class="card" id="tour-builder-form" aria-label="Add an activity to your custom tour" data-i18n="home.builder.formAria" data-i18n-attr="aria-label">
+      <div class="custom-inquiry">
+        <div class="card custom-inquiry__details">
+          <h3 data-i18n="home.builder.listHeading">Tell us about your dream day</h3>
+          <ul class="custom-inquiry__list">
+            <li data-i18n="home.builder.pointOne">Share the vibe you want—relaxed, high-energy, romantic, or off-grid.</li>
+            <li data-i18n="home.builder.pointTwo">Add any must-do activities, dining styles, or timing preferences.</li>
+            <li data-i18n="home.builder.pointThree">We’ll reply with a tailored quote or set up a video call with our local expert.</li>
+          </ul>
+          <p class="custom-inquiry__email" data-i18n="home.builder.emailFallback" data-i18n-attr="html">
+            Prefer email? Reach us directly at <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a>.
+          </p>
+        </div>
+        <form
+          class="card custom-inquiry__form"
+          id="custom-contact-form"
+          aria-label="Send your perfect day details"
+          data-i18n="home.builder.formAria"
+          data-i18n-attr="aria-label"
+        >
           <div class="field">
-            <label for="activity-name" data-i18n="home.builder.activityLabel">Activity name</label>
-            <input id="activity-name" name="activity" type="text" placeholder="Night snorkel" required data-i18n="home.builder.activityPlaceholder" data-i18n-attr="placeholder" />
+            <label for="contact-name" data-i18n="home.builder.nameLabel">Name</label>
+            <input id="contact-name" name="name" type="text" placeholder="Your name" required data-i18n="home.builder.namePlaceholder" data-i18n-attr="placeholder" />
           </div>
           <div class="field">
-            <label for="activity-date" data-i18n="home.builder.dateLabel">Preferred date</label>
-            <input id="activity-date" name="date" type="date" />
+            <label for="contact-email" data-i18n="home.builder.emailLabel">Email</label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              inputmode="email"
+              placeholder="you@example.com"
+              required
+              data-i18n="home.builder.emailPlaceholder"
+              data-i18n-attr="placeholder"
+            />
           </div>
           <div class="field">
-            <label for="activity-notes" data-i18n="home.builder.notesLabel">Special touches</label>
+            <label for="contact-phone" data-i18n="home.builder.phoneLabel">Phone</label>
+            <input
+              id="contact-phone"
+              name="phone"
+              type="tel"
+              inputmode="tel"
+              placeholder="+52 1 555 555 5555"
+              data-i18n="home.builder.phonePlaceholder"
+              data-i18n-attr="placeholder"
+            />
+          </div>
+          <div class="field">
+            <label for="contact-idea" data-i18n="home.builder.notesLabel">Tell us about your idea</label>
             <textarea
-              id="activity-notes"
-              name="notes"
-              rows="3"
-              placeholder="Add a sunset picnic with locally sourced fruit."
+              id="contact-idea"
+              name="idea"
+              rows="4"
+              placeholder="Include the date, vibe, and any must-do experiences."
+              required
               data-i18n="home.builder.notesPlaceholder"
               data-i18n-attr="placeholder"
             ></textarea>
           </div>
-          <button class="button button--primary" type="submit" data-i18n="home.builder.add">Add to itinerary</button>
+          <button class="button button--primary" type="submit" data-i18n="home.builder.submit">Send my idea</button>
+          <p class="form-status" id="custom-contact-status" role="status" aria-live="polite"></p>
         </form>
-        <div class="card tour-itinerary" aria-live="polite">
-          <h3 data-i18n="home.builder.listHeading">Your custom itinerary</h3>
-          <ul id="itinerary-list" class="itinerary-list">
-            <li class="itinerary-list__placeholder" data-i18n="home.builder.placeholder">
-              Your ideas will appear here. Add the first one to begin crafting the perfect tour.
-            </li>
-          </ul>
-          <button class="button button--ghost" type="button" id="clear-itinerary" data-i18n="home.builder.clear">Clear itinerary</button>
-        </div>
       </div>
     </section>
 
@@ -396,7 +423,7 @@
           <h2 data-i18n="home.cta.heading">Ready to feel the sea breeze?</h2>
           <p data-i18n="home.cta.copy">Email our concierge team and we will send a bespoke proposal within 24 hours.</p>
         </div>
-        <a class="button button--primary" href="mailto:info@beyondthereef.com" data-i18n="home.cta.button">Email our concierge team</a>
+        <a class="button button--primary" href="mailto:info@beyondthereefmexico.com" data-i18n="home.cta.button">Email our concierge team</a>
       </div>
     </section>
   </main>
@@ -439,8 +466,8 @@
     </a>
     <a
       class="floating-contact__link floating-contact__link--email"
-      href="mailto:info@beyondthereef.com"
-      aria-label="Email Beyond the Reef"
+      href="mailto:info@beyondthereefmexico.com"
+      aria-label="Email Beyond the Reef Mexico"
       data-i18n="floatingContact.emailAria"
       data-i18n-attr="aria-label"
     >
