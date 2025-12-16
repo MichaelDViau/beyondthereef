@@ -740,10 +740,10 @@ body.dark-mode .favorite-card:focus-within {
 .favorite-card__badge {
   bottom: 1rem;
   left: 1rem;
-  background: linear-gradient(135deg, #f97316 0%, #facc15 100%);
-  color: #f8fbff;
-  border: 1px solid rgba(11, 26, 50, 0.08);
-  box-shadow: 0 12px 24px rgba(249, 115, 22, 0.35);
+  background: linear-gradient(135deg, #ffd166 0%, #fff3b0 100%);
+  color: #7a2d00;
+  border: 1px solid rgba(122, 45, 0, 0.2);
+  box-shadow: 0 12px 24px rgba(255, 209, 102, 0.4);
 }
 
 .favorite-card__body {
