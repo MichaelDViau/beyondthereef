@@ -111,7 +111,7 @@ const translations = {
       'home.cta.button': 'Email our concierge team'
     },
     tours: {
-      'page.title': 'Build Your Tours | Beyond the Reef Mexico',
+      'page.title': 'Excursions & Private Tours | Beyond the Reef Mexico',
       'tours.hero.eyebrow': 'Build your tour',
       'tours.hero.heading': 'Design experiences as unique as your crew',
       'tours.hero.copy':
@@ -295,7 +295,7 @@ const translations = {
       'home.cta.button': 'Escríbenos'
     },
     tours: {
-      'page.title': 'Diseña tus tours | Beyond the Reef Mexico',
+      'page.title': 'Excursiones y Tours Privados | Beyond the Reef Mexico',
       'tours.hero.eyebrow': 'Diseña tu tour',
       'tours.hero.heading': 'Crea experiencias tan únicas como tu grupo',
       'tours.hero.copy':
@@ -678,12 +678,19 @@ function createLanguageManager(pageKey) {
   document.addEventListener('DOMContentLoaded', () => {
     const pageKey = document.body?.dataset.page || 'home';
     const languageManager = createLanguageManager(pageKey);
+    const isToursPage = pageKey === 'tours';
 
     setupNavigation();
     setupLanguageToggle(languageManager);
     setupThemeToggle(prefersDark, languageManager);
     window.addEventListener('resize', scheduleNavControlWidthSync, { passive: true });
+    if (isToursPage) {
+      buildToursHeroSlider(adventureTours);
+    }
     setupHeroSlider(languageManager);
+    if (isToursPage) {
+      buildToursCatalog(adventureTours);
+    }
     buildFavoritesCarousel(adventureTours);
     initTourPage(adventureTours);
     setupCardCarousels();
@@ -872,37 +879,52 @@ function setupHeroSlider(languageManager) {
   slides.forEach((slide, index) => {
     const media = slide.querySelector('.hero-slide__media');
     if (!media) return;
-
-    media.loop = false;
-    media.preload = index === currentIndex ? 'auto' : 'metadata';
+    const isVideo = media.tagName.toLowerCase() === 'video';
 
     const markLoaded = () => {
       media.classList.add('is-loaded');
     };
 
-    if (media.readyState >= HAVE_CURRENT_DATA) {
-      markLoaded();
-    } else {
-      ['loadeddata', 'canplay'].forEach((eventName) => {
-        media.addEventListener(eventName, markLoaded, { once: true });
-      });
-    }
+    if (isVideo) {
+      media.loop = false;
+      media.preload = index === currentIndex ? 'auto' : 'metadata';
 
-    media.addEventListener('loadedmetadata', () => {
-      if (index === currentIndex) {
-        scheduleAutoRotate();
+      if (media.readyState >= HAVE_CURRENT_DATA) {
+        markLoaded();
+      } else {
+        ['loadeddata', 'canplay'].forEach((eventName) => {
+          media.addEventListener(eventName, markLoaded, { once: true });
+        });
       }
-    });
 
-    media.addEventListener(
-      'error',
-      () => {
+      media.addEventListener('loadedmetadata', () => {
+        if (index === currentIndex) {
+          scheduleAutoRotate();
+        }
+      });
+
+      media.addEventListener(
+        'error',
+        () => {
+          slide.classList.add('hero-slide--unavailable');
+        },
+        { once: true }
+      );
+
+      media.addEventListener('ended', () => handleMediaEnded(index));
+    } else {
+      const handleError = () => {
+        markLoaded();
         slide.classList.add('hero-slide--unavailable');
-      },
-      { once: true }
-    );
+      };
 
-    media.addEventListener('ended', () => handleMediaEnded(index));
+      if (media.complete) {
+        markLoaded();
+      } else {
+        media.addEventListener('load', markLoaded, { once: true });
+        media.addEventListener('error', handleError, { once: true });
+      }
+    }
   });
 
   function setSlideState(slide, isActive) {
@@ -1049,6 +1071,31 @@ function setupHeroSlider(languageManager) {
   languageManager.onChange(updateDotLabels);
 }
 
+function buildToursHeroSlider(tours) {
+  const slider = document.querySelector('[data-tour-hero-slider]');
+  const track = slider?.querySelector('[data-tour-hero-track]');
+  if (!slider || !track || !tours.length) return;
+
+  const formatTagline = (tagline = '') => tagline.replace(/<br\s*\/?>(\s*·)?/gi, ' · ').trim();
+
+  track.innerHTML = '';
+
+  tours.forEach((tour, index) => {
+    const slide = document.createElement('article');
+    slide.className = `hero-slide${index === 0 ? ' is-active' : ''}`;
+    slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+    slide.innerHTML = `
+      <img class="hero-slide__media" src="${tour.image}" alt="${tour.name} private tour" loading="lazy" />
+      <div class="hero-slide__overlay">
+        <p class="eyebrow">Private &amp; exclusive</p>
+        <h2>${tour.name}</h2>
+        <p>${formatTagline(tour.tagline)}</p>
+      </div>
+    `;
+    track.appendChild(slide);
+  });
+}
+
 function createFavoriteCard(tour) {
   const halfDaySlugs = new Set(['tulum-express', 'cenotes-express', 'tacos-tour', 'turtles-cenotes']);
   const durationLabel = halfDaySlugs.has(tour.slug) ? 'Half day' : 'Full day';
@@ -1077,6 +1124,34 @@ function populateCardTrack(selector, tours) {
   track.innerHTML = '';
   tours.forEach((tour) => track.appendChild(createFavoriteCard(tour)));
   return track;
+}
+
+function buildToursCatalog(tours) {
+  const container = document.querySelector('[data-tour-grid]');
+  if (!container || !tours.length) return;
+
+  const tourGroups = [
+    {
+      key: 'water',
+      slugs: ['turtles-cenotes', 'dolphin-turtle', 'holbox-express', 'fishing-half-day']
+    },
+    {
+      key: 'culture',
+      slugs: ['tulum-express', 'tulum-coba', 'coba', 'chichen-itza']
+    },
+    {
+      key: 'signature',
+      slugs: ['cenotes-express', 'tulum-turtles-cenotes', 'coba-chichen-itza', 'tacos-tour']
+    }
+  ];
+
+  tourGroups.forEach(({ key, slugs }) => {
+    const selector = `[data-tour-row="${key}"] [data-tour-row-track]`;
+    const selection = slugs
+      .map((slug) => tours.find((tour) => tour.slug === slug))
+      .filter(Boolean);
+    populateCardTrack(selector, selection);
+  });
 }
 
 function buildFavoritesCarousel(tours) {

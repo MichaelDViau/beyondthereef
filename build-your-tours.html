@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="page.title">Build Your Tours | Beyond the Reef Mexico</title>
+  <title data-i18n="page.title">Excursions &amp; Private Tours | Beyond the Reef Mexico</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -39,52 +39,158 @@
     </nav>
   </header>
 
-  <main>
-    <section class="page-hero">
-      <img class="page-hero__background" src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1600&q=80" alt="Custom boat on turquoise water" />
-      <div>
-        <p class="eyebrow" data-i18n="tours.hero.eyebrow">Build your tour</p>
-        <h1 data-i18n="tours.hero.heading">Design experiences as unique as your crew</h1>
-        <p data-i18n="tours.hero.copy">Drag and drop curated activities, refine pacing, and invite your travel companions to collaborate in real time.</p>
+  <main class="tours-page">
+    <section class="hero-slider hero-slider--tours" aria-label="Excursion highlight reel" data-tour-hero-slider>
+      <div class="hero-slider__content">
+        <p class="eyebrow">Private excursions</p>
+        <h1>Slide through every Beyond the Reef adventure</h1>
+        <p>All of our tours in one big photo slider, with private-only service, certified guides, and modern vans.</p>
+        <ul class="tours-hero__promises">
+          <li>Private tours only with the newest vans in the industry</li>
+          <li>Top professional, certified guides that speak your language</li>
+          <li>Safe food service—we adapt to any special diet or request</li>
+        </ul>
+        <div class="tours-hero__promo">
+          <div class="tours-hero__promo-text"><strong>Tour promo:</strong> Buy 3 tours and get 40% off the total price.</div>
+          <span class="pill pill--accent">Bundle &amp; save</span>
+        </div>
+        <div class="tours-hero__cta">
+          <a class="button button--primary" href="#tour-rows">Browse all tours</a>
+          <a class="button button--ghost" href="#contact-planner">Create your own</a>
+        </div>
+      </div>
+      <div class="hero-slider__controls" aria-hidden="true">
+        <button class="hero-slider__arrow" type="button" data-slide="prev" aria-label="Previous slide">
+          ❮
+        </button>
+        <button class="hero-slider__arrow" type="button" data-slide="next" aria-label="Next slide">
+          ❯
+        </button>
+      </div>
+      <div class="hero-slider__dots" role="tablist" aria-label="Excursion slides"></div>
+      <div class="hero-slider__track" data-tour-hero-track></div>
+    </section>
+
+    <section class="section tours-assurance" aria-labelledby="tours-assurance-heading">
+      <div class="section__intro">
+        <p class="eyebrow">Private comfort, pro care</p>
+        <h2 id="tours-assurance-heading">Every excursion is private and tuned to your crew</h2>
+        <p>Newest vans in the industry, certified guides, safe meals tailored to allergies and special diets.</p>
+      </div>
+      <div class="tours-assurance__grid">
+        <article class="card tours-assurance__item">
+          <h3>Private fleet &amp; modern vans</h3>
+          <p>Ride in our newest vans with cold A/C, leather seating, pro captains, and zero shared groups.</p>
+        </article>
+        <article class="card tours-assurance__item">
+          <h3>Certified, professional guides</h3>
+          <p>Licensed, bilingual guides lead every tour with safety-first protocols and insider knowledge.</p>
+        </article>
+        <article class="card tours-assurance__item">
+          <h3>Safe food for every diet</h3>
+          <p>We include fresh, safe food and adapt menus for vegan, gluten-free, allergies, and special requests.</p>
+        </article>
       </div>
     </section>
 
-    <section class="page-section">
-      <div class="page-grid">
-        <article class="card">
-          <h2 data-i18n="tours.grid.custom.title">Custom combinations</h2>
-          <p data-i18n="tours.grid.custom.copy">Mix scuba dives, culinary surprises, and remote hikes across islands. Our smart planner orchestrates logistics so you can focus on the fun.</p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="tours.grid.pacing.title">Smart pacing</h2>
-          <p data-i18n="tours.grid.pacing.copy">We balance high-energy adventures with restorative interludes, ensuring every guest has time to recharge.</p>
-        </article>
-        <article class="card">
-          <h2 data-i18n="tours.grid.collab.title">Co-create instantly</h2>
-          <p data-i18n="tours.grid.collab.copy">Share a private link so your crew can vote, comment, or add new ideas. Our concierges can jump in live to fine-tune.</p>
-        </article>
+    <section class="section tours-rows" id="tour-rows" aria-labelledby="tour-rows-heading" data-tour-grid>
+      <div class="section__intro">
+        <p class="eyebrow">See every tour fast</p>
+        <h2 id="tour-rows-heading">All excursions organized in three slider rows</h2>
+        <p>Swipe through the entire catalog—water and wildlife, ruins and culture, and our signature combos—without leaving the page.</p>
+      </div>
+
+      <div class="tour-row" data-tour-row="water">
+        <div class="tour-row__header">
+          <div>
+            <p class="eyebrow">Water &amp; Wildlife</p>
+            <h3>Lagoon, reef, and island days</h3>
+            <p>Snorkel with turtles, chase dolphins, island hop, and fish with ceviche on board.</p>
+          </div>
+          <span class="tour-row__note">Private boats &amp; sunrise arrivals</span>
+        </div>
+        <div class="favorites-carousel" data-card-carousel>
+          <button class="favorites-carousel__arrow favorites-carousel__arrow--prev" type="button" data-carousel-arrow="prev" aria-label="Previous tours">❮</button>
+          <div class="favorites-carousel__viewport">
+            <div class="favorites-carousel__track" role="list" data-tour-row-track></div>
+          </div>
+          <button class="favorites-carousel__arrow favorites-carousel__arrow--next" type="button" data-carousel-arrow="next" aria-label="Next tours">❯</button>
+        </div>
+      </div>
+
+      <div class="tour-row" data-tour-row="culture">
+        <div class="tour-row__header">
+          <div>
+            <p class="eyebrow">Ruins &amp; Culture</p>
+            <h3>World wonders without the crowds</h3>
+            <p>Certified storytellers guide you through Tulum, Coba, and Chichen Itza with private timing and cenote cool-downs.</p>
+          </div>
+          <span class="tour-row__note">Private vans &amp; hosted lunches</span>
+        </div>
+        <div class="favorites-carousel" data-card-carousel>
+          <button class="favorites-carousel__arrow favorites-carousel__arrow--prev" type="button" data-carousel-arrow="prev" aria-label="Previous tours">❮</button>
+          <div class="favorites-carousel__viewport">
+            <div class="favorites-carousel__track" role="list" data-tour-row-track></div>
+          </div>
+          <button class="favorites-carousel__arrow favorites-carousel__arrow--next" type="button" data-carousel-arrow="next" aria-label="Next tours">❯</button>
+        </div>
+      </div>
+
+      <div class="tour-row" data-tour-row="signature">
+        <div class="tour-row__header">
+          <div>
+            <p class="eyebrow">Signature mixes</p>
+            <h3>Express hits &amp; foodie nights</h3>
+            <p>Rapid-fire cenotes, turtles + ruins, and taco nights—perfect to bundle with our 40% off when you book 3 tours.</p>
+          </div>
+          <span class="tour-row__note">Bundle &amp; save 40%</span>
+        </div>
+        <div class="favorites-carousel" data-card-carousel>
+          <button class="favorites-carousel__arrow favorites-carousel__arrow--prev" type="button" data-carousel-arrow="prev" aria-label="Previous tours">❮</button>
+          <div class="favorites-carousel__viewport">
+            <div class="favorites-carousel__track" role="list" data-tour-row-track></div>
+          </div>
+          <button class="favorites-carousel__arrow favorites-carousel__arrow--next" type="button" data-carousel-arrow="next" aria-label="Next tours">❯</button>
+        </div>
       </div>
     </section>
 
-    <section class="page-section">
-      <h2 data-i18n="tours.steps.heading">How the custom builder works</h2>
-      <ol class="grid" style="counter-reset: steps; list-style: none; padding: 0; margin: 0;">
-        <li class="card" style="position: relative; padding-left: 3.5rem;">
-          <span style="position: absolute; left: 1.5rem; top: 1.75rem; font-size: 1.1rem; font-weight: 700; color: var(--accent);">1</span>
-          <h3 data-i18n="tours.steps.one.title">Tell us about your dream</h3>
-          <p data-i18n="tours.steps.one.copy">Answer a few questions or import a mood board. We use your vibe to pre-select experiences.</p>
-        </li>
-        <li class="card" style="position: relative; padding-left: 3.5rem;">
-          <span style="position: absolute; left: 1.5rem; top: 1.75rem; font-size: 1.1rem; font-weight: 700; color: var(--accent);">2</span>
-          <h3 data-i18n="tours.steps.two.title">Remix the plan</h3>
-          <p data-i18n="tours.steps.two.copy">Drag items between days, adjust timing, and add bespoke requests like photographers or private chefs.</p>
-        </li>
-        <li class="card" style="position: relative; padding-left: 3.5rem;">
-          <span style="position: absolute; left: 1.5rem; top: 1.75rem; font-size: 1.1rem; font-weight: 700; color: var(--accent);">3</span>
-          <h3 data-i18n="tours.steps.three.title">Lock it in</h3>
-          <p data-i18n="tours.steps.three.copy">Collaborate with your concierge to finalize transfers, payments, and on-island support.</p>
-        </li>
-      </ol>
+    <section class="section contact-panel" id="contact-planner" aria-labelledby="contact-planner-heading">
+      <div class="contact-panel__grid">
+        <div class="contact-panel__copy">
+          <p class="eyebrow">Concierge help</p>
+          <h2 id="contact-planner-heading">Want a tour that isn&apos;t on the list?</h2>
+          <p>Tell us the vibe, the date, and any special diets or accessibility needs—we&apos;ll design it, price it, and confirm fast.</p>
+          <ul class="contact-panel__points">
+            <li>Bundle promo: buy 3 tours and get 40% off the total price.</li>
+            <li>Private-only service with new vans, pro captains, and certified guides.</li>
+            <li>Safe food standards with menus adapted for vegan, gluten-free, and allergy requests.</li>
+          </ul>
+          <p class="contact-panel__channels">
+            Prefer direct contact? Email <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a> or WhatsApp <a href="https://wa.me/529841670697" target="_blank" rel="noopener noreferrer">+52 984 167 0697</a>.
+          </p>
+        </div>
+        <form class="card contact-panel__form" id="custom-contact-form" aria-label="Share the tour you want">
+          <div class="field">
+            <label for="contact-name">Name</label>
+            <input id="contact-name" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="contact-email">Email</label>
+            <input id="contact-email" name="email" type="email" inputmode="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="contact-phone">Phone</label>
+            <input id="contact-phone" name="phone" type="tel" inputmode="tel" placeholder="+52 1 555 555 5555" />
+          </div>
+          <div class="field">
+            <label for="contact-idea">Tell us about your idea</label>
+            <textarea id="contact-idea" name="idea" rows="4" placeholder="Include the date, vibe, diet needs, and any must-do experiences." required></textarea>
+          </div>
+          <button class="button button--primary" type="submit">Send my idea</button>
+          <p class="form-status" id="custom-contact-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
   </main>
 
