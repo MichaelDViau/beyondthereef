@@ -895,6 +895,7 @@ function setupHeroSlider(languageManager) {
     const media = ensureMediaSource(slide, index, index === currentIndex);
     if (!media) return;
     const isVideo = media.tagName.toLowerCase() === 'video';
+    const endOffsetSeconds = Number(media.dataset?.endOffset ?? media.dataset?.endOffsetSeconds ?? 0);
 
     const markLoaded = () => {
       media.classList.add('is-loaded');
@@ -917,6 +918,22 @@ function setupHeroSlider(languageManager) {
           scheduleAutoRotate();
         }
       });
+
+      if (Number.isFinite(endOffsetSeconds) && endOffsetSeconds > 0) {
+        const handleEarlyEnd = () => {
+          const { duration, currentTime } = media;
+          if (!Number.isFinite(duration)) return;
+
+          const effectiveEnd = Math.max(0, duration - endOffsetSeconds);
+          if (currentTime >= effectiveEnd) {
+            media.pause();
+            media.removeEventListener('timeupdate', handleEarlyEnd);
+            handleMediaEnded(index);
+          }
+        };
+
+        media.addEventListener('timeupdate', handleEarlyEnd);
+      }
 
       media.addEventListener(
         'error',
