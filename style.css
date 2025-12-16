@@ -487,6 +487,74 @@ body.dark-mode .language-toggle[aria-pressed='true'] {
   transform: scale(1.2);
 }
 
+.hero-slider--tours {
+  min-height: 520px;
+  border-bottom-left-radius: var(--radius-lg);
+  border-bottom-right-radius: var(--radius-lg);
+  box-shadow: 0 30px 60px rgba(15, 58, 93, 0.22);
+}
+
+.tours-hero__promises {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tours-hero__promises li {
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 248, 235, 0.14);
+  border: 1px solid rgba(255, 248, 235, 0.25);
+  color: rgba(255, 248, 235, 0.92);
+  backdrop-filter: blur(6px);
+}
+
+.tours-hero__promo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(255, 200, 64, 0.35), rgba(15, 76, 129, 0.55));
+  border: 1px solid rgba(255, 248, 235, 0.28);
+  color: #fff8eb;
+  box-shadow: 0 16px 32px rgba(11, 31, 58, 0.32);
+}
+
+.tours-hero__promo strong {
+  color: #fff8eb;
+}
+
+.tours-hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(255, 248, 235, 0.3);
+  background: rgba(255, 248, 235, 0.15);
+  color: #fff8eb;
+}
+
+.pill--accent {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #fff8eb;
+  border-color: rgba(255, 248, 235, 0.45);
+}
+
 .section--difference {
   position: relative;
   background: linear-gradient(
@@ -570,6 +638,101 @@ body.dark-mode .difference-item__icon {
   background: rgba(245, 158, 11, 0.22);
   color: var(--accent);
   box-shadow: 0 12px 26px rgba(245, 158, 11, 0.2);
+}
+
+.tours-assurance {
+  background: var(--accent-soft);
+  border-radius: var(--radius-lg);
+  margin: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2rem);
+  box-shadow: var(--shadow);
+}
+
+.tours-assurance__grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 1.5rem);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.tours-assurance__item {
+  height: 100%;
+  background: var(--surface);
+}
+
+.tours-rows {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tour-row {
+  background: var(--surface);
+  border: 1px solid rgba(15, 58, 93, 0.12);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  box-shadow: var(--shadow);
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.tour-row__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tour-row__note {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(15, 76, 129, 0.12);
+  color: var(--accent-strong);
+  font-weight: 700;
+  border: 1px solid rgba(15, 58, 93, 0.16);
+}
+
+.contact-panel {
+  background: linear-gradient(135deg, rgba(255, 200, 64, 0.2), rgba(15, 76, 129, 0.1));
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  margin: clamp(2rem, 4vw, 3.5rem) clamp(1.25rem, 3vw, 2rem);
+}
+
+.contact-panel__grid {
+  display: grid;
+  gap: clamp(1.25rem, 4vw, 2rem);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: start;
+}
+
+.contact-panel__copy {
+  background: var(--surface);
+  border: 1px solid rgba(15, 58, 93, 0.12);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: var(--shadow);
+}
+
+.contact-panel__points {
+  list-style: disc inside;
+  padding: 0;
+  margin: 1rem 0;
+  color: var(--text-muted);
+  display: grid;
+  gap: 0.5rem;
+}
+
+.contact-panel__channels {
+  margin: 0.5rem 0 0;
+  font-weight: 600;
+}
+
+.contact-panel__channels a {
+  color: var(--accent-strong);
+}
+
+.contact-panel__form {
+  margin: 0;
 }
 
 .section--favorites {
@@ -1540,6 +1703,14 @@ body.dark-mode .floating-contact__link:focus-visible {
 
   .hero-slider {
     height: min(78vh, 640px);
+  }
+
+  .tour-row__header {
+    flex-direction: column;
+  }
+
+  .tour-row__note {
+    align-self: flex-start;
   }
 }
 
