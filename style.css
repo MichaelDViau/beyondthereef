@@ -1597,7 +1597,8 @@ body.dark-mode .tour-gallery__arrow {
 
 .page-section--values h2 {
   text-align: center;
-  margin: clamp(2.5rem, 5vw, 3.5rem) 0;
+  margin-top: clamp(0.8rem, 2vw, 1.1rem);
+  margin-bottom: clamp(3rem, 6vw, 4.2rem);
 }
 
 .values-grid {
