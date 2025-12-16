@@ -394,8 +394,8 @@ const adventureTours = [
     duration: 'Full day • Culture + Water',
     tagline: 'Ancient temples, ocean turtles, and cavern cenotes in one epic loop.',
     description:
-      'Start with crowd-free access to Tulum’s seaside ruins, then glide beside turtles in turquoise water before ending at three hidden cenotes with optional rappel and taco lunch with tequila or mezcal.',
-    includes: ['🐢 Turtles in the ocean', '🏛️ Tulum ruins', '🪨 3 cenotes + optional rappel', '🌮 Taco lunch with tequila/mezcal'],
+      'Come swim with turtles in their natural home and uncover the mysteries of the underground rivers.',
+    includes: ['· Tulum Ruins', '· 3 Cenotes', '· Snack + drinks'],
     image:
       'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: [
