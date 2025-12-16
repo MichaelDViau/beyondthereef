@@ -727,7 +727,7 @@ body.dark-mode .favorite-card:focus-within {
   top: 1rem;
   left: 1rem;
   background: rgba(8, 31, 55, 0.8);
-  color: var(--favorite-card-text);
+  color: #f8fbff;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -735,7 +735,7 @@ body.dark-mode .favorite-card:focus-within {
   bottom: 1rem;
   left: 1rem;
   background: linear-gradient(135deg, #f97316 0%, #facc15 100%);
-  color: #0b1a2e;
+  color: #f8fbff;
   border: 1px solid rgba(11, 26, 50, 0.08);
   box-shadow: 0 12px 24px rgba(249, 115, 22, 0.35);
 }
