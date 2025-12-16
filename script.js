@@ -1168,7 +1168,7 @@ function setupTourGallery(gallery) {
 
   const update = () => {
     if (!track) return;
-    track.style.transform = `translateX(-${current * 100}%)`;
+    track.style.transform = `translate3d(-${current * 100}%, 0, 0)`;
     const disableArrows = slides.length <= 1;
     if (prevButton) prevButton.disabled = disableArrows;
     if (nextButton) nextButton.disabled = disableArrows;
