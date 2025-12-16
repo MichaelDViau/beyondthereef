@@ -334,6 +334,23 @@ body.dark-mode .language-toggle[aria-pressed='true'] {
   content: none;
 }
 
+.hero-slider--home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.22) 0%, rgba(249, 115, 22, 0.6) 55%, rgba(15, 58, 93, 0.85) 100%);
+  mix-blend-mode: multiply;
+  z-index: -1;
+}
+
+.hero-slider--home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 58, 93, 0.75) 0%, rgba(249, 115, 22, 0.35) 60%, rgba(15, 58, 93, 0.7) 100%);
+  z-index: -1;
+}
+
 .hero-slider__track {
   position: absolute;
   inset: 0;
@@ -664,6 +681,11 @@ body.dark-mode .difference-item__icon {
   box-shadow: var(--shadow);
 }
 
+.tours-assurance .section__intro,
+.tours-grid-section .section__intro {
+  text-align: center;
+}
+
 .tours-assurance__grid {
   display: grid;
   gap: clamp(1rem, 3vw, 1.5rem);
@@ -685,6 +707,10 @@ body.dark-mode .difference-item__icon {
 .tours-assurance .section__intro p,
 #tour-rows-heading {
   white-space: nowrap;
+}
+
+.contact-panel {
+  margin-top: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .tours-grid {
