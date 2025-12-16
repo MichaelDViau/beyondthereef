@@ -366,6 +366,7 @@ body.dark-mode .language-toggle[aria-pressed='true'] {
   backface-visibility: hidden;
   will-change: opacity, transform;
   background: none;
+  pointer-events: none;
 }
 
 .hero-slide__link {
@@ -379,6 +380,7 @@ body.dark-mode .language-toggle[aria-pressed='true'] {
 .hero-slide.is-active {
   opacity: 1;
   transform: scale(1);
+  pointer-events: auto;
 }
 
 .hero-slide__media {
