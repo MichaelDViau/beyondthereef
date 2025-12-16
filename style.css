@@ -530,6 +530,10 @@ body.dark-mode .language-toggle[aria-pressed='true'] {
   box-shadow: 0 30px 60px rgba(15, 58, 93, 0.22);
 }
 
+.hero-slider--tours .hero-slider__controls {
+  display: none;
+}
+
 .tours-hero__promises {
   list-style: none;
   padding: 0;
@@ -1316,7 +1320,7 @@ body.dark-mode .tour-gallery__arrow {
 }
 
 .tour-details {
-  padding-top: clamp(3.6rem, 6vw + 1.2rem, 7.2rem);
+  padding-top: clamp(2.5rem, 4.2vw + 0.84rem, 5rem);
 }
 
 .tour-details .section__intro h2 {
@@ -1372,10 +1376,10 @@ body.dark-mode .tour-gallery__arrow {
 }
 
 .tour-details__panel--booking {
-  background: linear-gradient(135deg, #0d63c6, #1a78e0);
-  color: #f8fafc;
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 30px 40px rgba(5, 20, 38, 0.35);
+  background: linear-gradient(135deg, #e6f0ff, #cddfff);
+  color: #0b2f55;
+  border-color: rgba(11, 47, 85, 0.08);
+  box-shadow: 0 30px 40px rgba(5, 20, 38, 0.18);
 }
 
 .tour-booking__header {
@@ -1390,7 +1394,7 @@ body.dark-mode .tour-gallery__arrow {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
-  color: #e0f2fe;
+  color: #0b2f55;
 }
 
 .tour-booking__price {
@@ -1399,25 +1403,27 @@ body.dark-mode .tour-gallery__arrow {
   display: flex;
   align-items: center;
   gap: 0.35rem;
+  color: #0b2f55;
 }
 
 .tour-booking__price strong {
   font-size: 1.6rem;
+  color: #0b2f55;
 }
 
 .tour-booking .field label {
-  color: #e2e8f0;
+  color: #0b2f55;
 }
 
 .tour-booking input,
 .tour-booking select {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.18);
-  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(11, 47, 85, 0.18);
+  color: #0b2f55;
 }
 
 .tour-booking input::placeholder {
-  color: rgba(226, 232, 240, 0.85);
+  color: rgba(11, 47, 85, 0.65);
 }
 
 .tour-booking__cta {
@@ -1429,7 +1435,7 @@ body.dark-mode .tour-gallery__arrow {
 
 .tour-booking__note {
   margin: 0.65rem 0 0;
-  color: #c7d2fe;
+  color: #0b2f55;
   font-size: 0.95rem;
 }
 
