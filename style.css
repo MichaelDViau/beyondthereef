@@ -1723,6 +1723,7 @@ body.dark-mode .tour-gallery__arrow {
 .story-intro {
   text-align: left;
   padding-top: clamp(1rem, 3vw, 2rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .story-intro h2 {
@@ -1745,6 +1746,10 @@ body.dark-mode .tour-gallery__arrow {
 
 .story-message p {
   margin: 0;
+}
+
+.page-section--values {
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 .page-grid {
