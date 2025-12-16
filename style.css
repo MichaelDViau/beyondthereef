@@ -577,11 +577,11 @@ body.dark-mode .difference-item__icon {
   position: relative;
   overflow: hidden;
   padding-inline: 0;
-  padding-top: clamp(2.5rem, 4vw, 3.5rem);
+  padding-top: clamp(1.75rem, 3vw, 2.5rem);
   --favorites-heading-color: #facc15;
   --favorites-subtext-color: #fde68a;
-  --favorite-card-text: #eaf2ff;
-  --favorite-card-muted: rgba(224, 236, 255, 0.92);
+  --favorite-card-text: #0b3059;
+  --favorite-card-muted: #0f3a5d;
   --favorite-card-deal-color: #fbbf24;
   --favorite-card-badge-bg: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
   --favorite-card-badge-text: #0b1a2e;
