@@ -1090,6 +1090,7 @@ function buildToursHeroSlider(tours) {
         <p class="eyebrow">Private &amp; exclusive</p>
         <h2>${tour.name}</h2>
         <p>${formatTagline(tour.tagline)}</p>
+        <a class="button button--primary hero-slide__cta" href="tour.html?tour=${tour.slug}">Book now</a>
       </div>
     `;
     track.appendChild(slide);
@@ -1118,6 +1119,27 @@ function createFavoriteCard(tour) {
   return article;
 }
 
+function createTourGridCard(tour) {
+  const article = document.createElement('article');
+  article.className = 'card tour-grid-card';
+  article.setAttribute('role', 'listitem');
+  article.innerHTML = `
+    <div class="tour-grid-card__media">
+      <a href="tour.html?tour=${tour.slug}" aria-label="View ${tour.name}">
+        <img src="${tour.image}" alt="${tour.name}" loading="lazy" />
+        <span class="tour-grid-card__badge">${tour.badge || 'Private tour'}</span>
+      </a>
+    </div>
+    <div class="tour-grid-card__body">
+      <h3 class="tour-grid-card__title">${tour.name}</h3>
+      <p class="tour-grid-card__meta">${tour.duration}</p>
+      <p class="tour-grid-card__copy">${tour.description}</p>
+      <a class="button button--primary tour-grid-card__cta" href="tour.html?tour=${tour.slug}">Book now</a>
+    </div>
+  `;
+  return article;
+}
+
 function populateCardTrack(selector, tours) {
   const track = document.querySelector(selector);
   if (!track) return null;
@@ -1127,31 +1149,11 @@ function populateCardTrack(selector, tours) {
 }
 
 function buildToursCatalog(tours) {
-  const container = document.querySelector('[data-tour-grid]');
-  if (!container || !tours.length) return;
+  const grid = document.querySelector('[data-tour-grid]');
+  if (!grid || !tours.length) return;
 
-  const tourGroups = [
-    {
-      key: 'water',
-      slugs: ['turtles-cenotes', 'dolphin-turtle', 'holbox-express', 'fishing-half-day']
-    },
-    {
-      key: 'culture',
-      slugs: ['tulum-express', 'tulum-coba', 'coba', 'chichen-itza']
-    },
-    {
-      key: 'signature',
-      slugs: ['cenotes-express', 'tulum-turtles-cenotes', 'coba-chichen-itza', 'tacos-tour']
-    }
-  ];
-
-  tourGroups.forEach(({ key, slugs }) => {
-    const selector = `[data-tour-row="${key}"] [data-tour-row-track]`;
-    const selection = slugs
-      .map((slug) => tours.find((tour) => tour.slug === slug))
-      .filter(Boolean);
-    populateCardTrack(selector, selection);
-  });
+  grid.innerHTML = '';
+  tours.forEach((tour) => grid.appendChild(createTourGridCard(tour)));
 }
 
 function buildFavoritesCarousel(tours) {
