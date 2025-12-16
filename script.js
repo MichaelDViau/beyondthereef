@@ -376,8 +376,8 @@ const adventureTours = [
     slug: 'turtles-cenotes',
     name: 'Turtles + Cenotes',
     duration: 'Half a day • Ocean + Jungle',
-    tagline: 'Swim with turtles in the ocean; visit three incredible cenotes.',
-    description: 'Swim with turtles in the ocean, visit 3 amazing cenotes.',
+    tagline: '· Sea Turtles\n· 3 Cenotes\n· Snack & Drinks',
+    description: 'Visit sea turtles in their natural habitat and discover the mysteries of the underground rivers.',
     includes: ['· Sea Turtles', '· 3 Cenotes', '· Snack & Drinks'],
     image:
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80',
