@@ -451,10 +451,10 @@ const adventureTours = [
     slug: 'tulum-coba',
     name: 'Tulum + Coba',
     duration: 'Full day • Ruins + Cenote',
-    tagline: 'Twin ruins, jungle zipline, and a restorative cenote.',
+    tagline: '·Tulum Ruins<br>·Coba Ruins<br>·Cenote with Zipline<br>·Local Buffet & Drinks',
     description:
-      'Climb the jungle lookouts of Coba, wander seaside Tulum, ride a zipline into a cool cenote, and refuel with a regional buffet crafted by local cooks.',
-    includes: ['🏛️ Tulum & Coba', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+      'Explore Tulum and Coba with certified guides, zip into a refreshing cenote, and savor a local buffet with drinks.',
+    includes: ['· Tulum Ruins', '· Coba Ruins', '· Cenote with Zipline', '· Local Buffet & Drinks'],
     image:
       'https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1600&q=80'],
