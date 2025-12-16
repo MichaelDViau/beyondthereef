@@ -351,6 +351,14 @@ body.dark-mode .language-toggle[aria-pressed='true'] {
   background: none;
 }
 
+.hero-slide__link {
+  position: absolute;
+  inset: 0;
+  display: block;
+  overflow: hidden;
+  text-decoration: none;
+}
+
 .hero-slide.is-active {
   opacity: 1;
   transform: scale(1);
@@ -419,6 +427,7 @@ body.dark-mode .language-toggle[aria-pressed='true'] {
   background: linear-gradient(135deg, #ff7a00 0%, #ff9a1f 100%);
   border: 1px solid rgba(255, 255, 255, 0.18);
   color: #fffaf2;
+  text-decoration: none;
 }
 
 .hero-slide__cta:hover,
@@ -670,6 +679,12 @@ body.dark-mode .difference-item__icon {
   max-width: 1400px;
   width: 80%;
   margin: 0 auto;
+}
+
+#tours-assurance-heading,
+.tours-assurance .section__intro p,
+#tour-rows-heading {
+  white-space: nowrap;
 }
 
 .tours-grid {

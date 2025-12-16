@@ -1085,11 +1085,13 @@ function buildToursHeroSlider(tours) {
     slide.className = `hero-slide${index === 0 ? ' is-active' : ''}`;
     slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
     slide.innerHTML = `
-      <img class="hero-slide__media" src="${tour.image}" alt="${tour.name} private tour" loading="lazy" />
-      <div class="hero-slide__overlay">
-        <h2>${tour.name}</h2>
-        <a class="button button--primary hero-slide__cta" href="tour.html?tour=${tour.slug}">Book now</a>
-      </div>
+      <a class="hero-slide__link" href="tour.html?tour=${tour.slug}">
+        <img class="hero-slide__media" src="${tour.image}" alt="${tour.name} private tour" loading="lazy" />
+        <div class="hero-slide__overlay">
+          <h2>${tour.name}</h2>
+          <span class="button button--primary hero-slide__cta">Book now</span>
+        </div>
+      </a>
     `;
     track.appendChild(slide);
   });
