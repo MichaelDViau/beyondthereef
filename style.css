@@ -590,6 +590,12 @@ body.dark-mode .difference-item__icon {
   --favorite-card-shadow: 0 30px 60px rgba(1, 10, 20, 0.55);
 }
 
+.dark-mode .section--favorites,
+html.dark-mode .section--favorites {
+  --favorite-card-text: #f8fbff;
+  --favorite-card-muted: rgba(232, 240, 255, 0.9);
+}
+
 .section--favorites .section__intro h2 {
   color: var(--favorites-heading-color);
   white-space: nowrap;
@@ -726,7 +732,7 @@ body.dark-mode .favorite-card:focus-within {
 .favorite-card__tag {
   top: 1rem;
   left: 1rem;
-  background: rgba(8, 31, 55, 0.8);
+  background: rgba(8, 31, 55, 0.92);
   color: #f8fbff;
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -752,6 +758,9 @@ body.dark-mode .favorite-card:focus-within {
   margin: 0;
   font-size: clamp(1.25rem, 2.6vw, 1.6rem);
   color: var(--favorite-card-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .favorite-card__deal {
@@ -800,7 +809,7 @@ body.dark-mode .favorite-card:focus-within {
   border-radius: 999px;
   border: 1px solid var(--favorite-card-border);
   background: rgba(5, 24, 45, 0.9);
-  color: var(--favorite-card-text);
+  color: #f8fbff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
