@@ -1649,6 +1649,7 @@ body.dark-mode .tour-gallery__arrow {
   color: #fff8eb;
   overflow: hidden;
   background-color: #0b1f3a;
+  isolation: isolate;
 }
 
 .page-hero::after {
@@ -1656,14 +1657,22 @@ body.dark-mode .tour-gallery__arrow {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, rgba(15, 58, 93, 0.82), rgba(249, 115, 22, 0.45));
-  z-index: -1;
+  z-index: 0;
 }
 
 .page-hero__background {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  z-index: -2;
+  z-index: -1;
+  display: block;
+}
+
+.page-hero > div {
+  position: relative;
+  z-index: 1;
 }
 
 .page-hero h1 {
