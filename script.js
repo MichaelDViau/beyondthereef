@@ -96,16 +96,16 @@ const translations = {
       'home.builder.status.missing': 'Please add your name, email, and idea so we can craft your quote.',
       'home.builder.status.prompt': 'Opening your email app to send the details to our concierge.',
       'home.accent.eyebrow': 'Why travelers love us',
-      'home.accent.heading': 'VIP concierge planning so your family has its best trip yet',
+      'home.accent.heading': 'VIP concierge planning made easy for your family’s best trip ever',
       'home.accent.locals.title': 'Led by certified local guides',
       'home.accent.locals.copy':
         'Our certified local guides bring years of professional experience, crafting insider-only moments you cannot find on a brochure.',
-      'home.accent.collab.title': 'Real-time collaboration',
+      'home.accent.collab.title': 'Can’t find the tour you want?',
       'home.accent.collab.copy':
-        'Invite friends or family to add ideas to your itinerary and watch it come to life instantly.',
-      'home.accent.execution.title': 'Seamless execution',
+        'Reach out and we’ll schedule a call or video chat to custom-build your perfect vacation.',
+      'home.accent.execution.title': 'Worry-free tours',
       'home.accent.execution.copy':
-        'From airport transfer to last toast, your dedicated host orchestrates every detail while you unwind.',
+        'Your tour, your time, no hidden fees—transfers, tickets, and timing handled so you just enjoy.',
       'home.cta.heading': 'Ready to build your dream tour?',
       'home.cta.copy': 'Email our concierge team and we will send a bespoke proposal within 24 hours.',
       'home.cta.button': 'Email our concierge team'
@@ -284,12 +284,12 @@ const translations = {
       'home.accent.locals.title': 'Guiado por guías locales certificados',
       'home.accent.locals.copy':
         'Nuestros guías locales certificados tienen años de experiencia profesional y organizan momentos únicos que no encontrarás en un folleto.',
-      'home.accent.collab.title': 'Colaboración en tiempo real',
+      'home.accent.collab.title': '¿No encuentras el tour ideal?',
       'home.accent.collab.copy':
-        'Invita a tus amigos o familia a sumar ideas y mira cómo el plan cobra vida al instante.',
-      'home.accent.execution.title': 'Ejecución impecable',
+        'Escríbenos y agendamos una llamada o videollamada para crear tus vacaciones perfectas a la medida.',
+      'home.accent.execution.title': 'Tours sin preocupaciones',
       'home.accent.execution.copy':
-        'Desde el traslado hasta el último brindis, tu anfitrión se encarga de cada detalle mientras tú disfrutas.',
+        'Tu tour, tu horario, sin cargos ocultos: coordinamos traslados, boletos y tiempos para que solo disfrutes.',
       'home.cta.heading': '¿Listo para diseñar tu tour soñado?',
       'home.cta.copy': 'Escríbele a nuestro equipo de concierge y te enviaremos una propuesta personalizada en 24 horas.',
       'home.cta.button': 'Escríbenos'
