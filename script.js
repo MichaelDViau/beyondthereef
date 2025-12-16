@@ -97,9 +97,9 @@ const translations = {
       'home.builder.status.prompt': 'Opening your email app to send the details to our concierge.',
       'home.accent.eyebrow': 'Why travelers love us',
       'home.accent.heading': 'Concierge-level planning at lightning speed',
-      'home.accent.locals.title': 'Crafted by island insiders',
+      'home.accent.locals.title': 'Led by certified guides',
       'home.accent.locals.copy':
-        'Our specialists live on the islands year-round, curating insider-only moments you cannot find on a brochure.',
+        'Our certified guides have years of island experience, crafting insider-only moments you cannot find on a brochure.',
       'home.accent.collab.title': 'Real-time collaboration',
       'home.accent.collab.copy':
         'Invite friends or family to add ideas to your itinerary and watch it come to life instantly.',
@@ -281,9 +281,9 @@ const translations = {
       'home.builder.status.prompt': 'Abriendo tu app de correo para enviar los detalles a nuestro concierge.',
       'home.accent.eyebrow': 'Por qué nos aman los viajeros',
       'home.accent.heading': 'Planificación de concierge a toda velocidad',
-      'home.accent.locals.title': 'Creado por expertos de la isla',
+      'home.accent.locals.title': 'Guiado por expertos certificados',
       'home.accent.locals.copy':
-        'Nuestros especialistas viven en las islas todo el año y organizan momentos únicos que no encontrarás en un folleto.',
+        'Nuestros guías certificados tienen años de experiencia en la isla y organizan momentos únicos que no encontrarás en un folleto.',
       'home.accent.collab.title': 'Colaboración en tiempo real',
       'home.accent.collab.copy':
         'Invita a tus amigos o familia a sumar ideas y mira cómo el plan cobra vida al instante.',
