@@ -160,7 +160,7 @@ const translations = {
       'story.hero.eyebrow': 'Our story',
       'story.hero.heading': 'Born from a love of the sea and storytelling',
       'story.hero.copy':
-        'We believe every traveler deserves a tailor-made narrative crafted by our team, powered by technology, and infused with genuine hospitality.',
+        'Every experience is thoughtfully designed to feel personal, seamless, and genuinely human.',
       'story.crew.heading': 'Meet the crew',
       'story.crew.lila.title': 'Lila Reyes - Founder',
       'story.crew.lila.copy':
