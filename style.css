@@ -1184,7 +1184,7 @@ body.dark-mode .favorite-card:focus-within {
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.35rem;
   max-width: 720px;
   padding: clamp(1.25rem, 2vw, 1.85rem);
   border-radius: var(--radius-lg);
@@ -1192,6 +1192,12 @@ body.dark-mode .favorite-card:focus-within {
   color: var(--hero-panel-text);
   backdrop-filter: blur(10px);
   box-shadow: 0 22px 42px rgba(5, 20, 38, 0.22);
+}
+
+.tour-hero__content .eyebrow,
+.tour-hero__meta,
+.tour-hero__tagline {
+  display: none;
 }
 
 .tour-hero__title {
@@ -1310,7 +1316,11 @@ body.dark-mode .tour-gallery__arrow {
 }
 
 .tour-details {
-  padding-top: 0;
+  padding-top: clamp(3.6rem, 6vw + 1.2rem, 7.2rem);
+}
+
+.tour-details .section__intro h2 {
+  white-space: nowrap;
 }
 
 .tour-details__grid {
@@ -1347,13 +1357,22 @@ body.dark-mode .tour-gallery__arrow {
 }
 
 .tour-includes__list li {
-  padding: 0.65rem 0.75rem;
+  position: relative;
+  padding: 0.65rem 0.75rem 0.65rem 2.35rem;
   background: rgba(15, 58, 93, 0.08);
   border-radius: var(--radius-md);
 }
 
+.tour-includes__list li::before {
+  content: '✨';
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .tour-details__panel--booking {
-  background: linear-gradient(135deg, rgba(8, 31, 55, 0.92), rgba(17, 72, 118, 0.92));
+  background: linear-gradient(135deg, #0d63c6, #1a78e0);
   color: #f8fafc;
   border-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 30px 40px rgba(5, 20, 38, 0.35);
@@ -1404,6 +1423,8 @@ body.dark-mode .tour-gallery__arrow {
 .tour-booking__cta {
   width: 100%;
   justify-content: center;
+  background: linear-gradient(135deg, #ff9f1c, #ff7a00);
+  box-shadow: 0 18px 25px rgba(255, 122, 0, 0.3);
 }
 
 .tour-booking__note {
