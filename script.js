@@ -1087,9 +1087,7 @@ function buildToursHeroSlider(tours) {
     slide.innerHTML = `
       <img class="hero-slide__media" src="${tour.image}" alt="${tour.name} private tour" loading="lazy" />
       <div class="hero-slide__overlay">
-        <p class="eyebrow">Private &amp; exclusive</p>
         <h2>${tour.name}</h2>
-        <p>${formatTagline(tour.tagline)}</p>
         <a class="button button--primary hero-slide__cta" href="tour.html?tour=${tour.slug}">Book now</a>
       </div>
     `;
