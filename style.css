@@ -756,11 +756,8 @@ body.dark-mode .favorite-card:focus-within {
 
 .favorite-card__body h3 {
   margin: 0;
-  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  font-size: clamp(1.1rem, 2.3vw, 1.45rem);
   color: var(--favorite-card-text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .favorite-card__deal {
