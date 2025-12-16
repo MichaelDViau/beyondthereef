@@ -380,7 +380,7 @@ const adventureTours = [
     description: 'Snorkel with turtles in their natural habitat and discover the mystery of the cenotes.',
     includes: ['· Sea Turtles', '· 3 Cenotes', '· Snack & Drinks'],
     image:
-      'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80',
+      'https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?_gl=1*1leu1xd*_ga*NTc3NjYyMTQzLjE3NjU4MTE2NzU.*_ga_8JE65Q40S6*czE3NjU5MDM2NjEkbzMkZzEkdDE3NjU5MDM2ODckajM0JGwwJGgw',
     gallery: [
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80',
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80&sat=-8'
@@ -423,10 +423,10 @@ const adventureTours = [
     slug: 'tulum-express',
     name: 'Tulum Express',
     duration: 'Half a day • Culture dip',
-    tagline: 'Golden-hour magic at the Tulum cliffs.',
+    tagline: '· Tulum Ruins<br>· (Optional) Free time in Tulum<br>· Drinks & Beers',
     description:
-      'A swift, well-timed visit to Tulum with a storytelling guide who knows every photogenic corner, plus time for artisan markets and coastal snacks.',
-    includes: ['🏛️ Tulum ruins access', '🍹 Snacks & refreshments'],
+      'Discover sunrise at the Tulum ruins with a certified local guide, then enjoy optional free time for shopping and photos around town.',
+    includes: ['· Tulum Ruins', '· (Optional) Free time in Tulum', '· Drinks & Beers'],
     image:
       'https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80'],
