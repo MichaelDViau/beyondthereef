@@ -376,10 +376,9 @@ const adventureTours = [
     slug: 'turtles-cenotes',
     name: 'Turtles + Cenotes',
     duration: 'Half a day • Ocean + Jungle',
-    tagline: 'Swim with wild turtles then cool off in sapphire cenotes.',
-    description:
-      'A sunrise snorkel with turtles in the open ocean followed by a trio of sacred cenotes where you can float, rappel, and savor a chef-prepared lunch box between swims.',
-    includes: ['🐢 Turtles in the ocean', '🪨 3 cenotes + optional rappel', '🥪 Lunch box'],
+    tagline: 'Swim with turtles in the ocean; visit three incredible cenotes.',
+    description: 'Swim with turtles in the ocean, visit 3 amazing cenotes.',
+    includes: ['Sea Turtles', '3 Cenotes', 'Snack Box', 'Drinks'],
     image:
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: [
@@ -391,7 +390,7 @@ const adventureTours = [
   },
   {
     slug: 'tulum-turtles-cenotes',
-    name: 'Tulum + Turtles + Cenotes',
+    name: 'Tulum Underwater',
     duration: 'Full day • Culture + Water',
     tagline: 'Ancient temples, ocean turtles, and cavern cenotes in one epic loop.',
     description:
@@ -520,7 +519,7 @@ const adventureTours = [
   },
   {
     slug: 'dolphin-turtle',
-    name: 'Dolphin + Turtle (Sian Ka’an)',
+    name: 'Dolphin + Turtle',
     duration: 'Full day • UNESCO Biosphere',
     tagline: 'Speedboat safaris for dolphins, turtles, and reef snorkeling.',
     description:
