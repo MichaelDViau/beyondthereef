@@ -423,10 +423,10 @@ const adventureTours = [
     slug: 'tulum-express',
     name: 'Tulum Express',
     duration: 'Half a day • Culture dip',
-    tagline: '· Tulum Ruins<br>· (Optional) Free time in Tulum<br>· Drinks & Beers',
+    tagline: '· Tulum Ruins<br>· Drinks & Beers<br>· (Optional) Free time in Tulum',
     description:
       'Discover sunrise at the Tulum ruins with a certified local guide, then enjoy optional free time for shopping and photos around town.',
-    includes: ['· Tulum Ruins', '· (Optional) Free time in Tulum', '· Drinks & Beers'],
+    includes: ['· Tulum Ruins', '· Drinks & Beers', '· (Optional) Free time in Tulum'],
     image:
       'https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -437,10 +437,10 @@ const adventureTours = [
     slug: 'tacos-tour',
     name: 'Tacos Tour',
     duration: 'Evening • Flavor trail',
-    tagline: 'Tacos, tequila, mezcal, and a sunset stroll on 5th Avenue.',
+    tagline: '· Autentic Tacos<br>· Beers, Tequila & Mezcal<br>· Free time in Playa del Carmen',
     description:
-      'Eat your way through hand-picked taquerías with pairings of mezcal or tequila, then enjoy free time in Playa del Carmen’s vibrant 5th Avenue.',
-    includes: ['🌮 Tacos + tequila/mezcal', '🛍️ Free time on Playa del Carmen 5a Avenida'],
+      'Discover authentic local food, sip tequila/mezcal cocktails, and explore Playa del Carmen.',
+    includes: ['· Autentic Tacos', '· Beers, Tequila & Mezcal', '· Free time in Playa del Carmen'],
     image:
       'https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1600&q=80'],
