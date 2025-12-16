@@ -376,12 +376,11 @@ const adventureTours = [
     slug: 'turtles-cenotes',
     name: 'Turtles + Cenotes',
     duration: 'Half a day • Ocean + Jungle',
-    tagline: 'Swim with wild turtles then cool off in sapphire cenotes.',
-    description:
-      'A sunrise snorkel with turtles in the open ocean followed by a trio of sacred cenotes where you can float, rappel, and savor a chef-prepared lunch box between swims.',
-    includes: ['🐢 Turtles in the ocean', '🪨 3 cenotes + optional rappel', '🥪 Lunch box'],
+    tagline: '· Sea Turtles<br>· 3 Cenotes<br>· Snack & Drinks',
+    description: 'Snorkel with turtles in their natural habitat and discover the mystery of the cenotes.',
+    includes: ['· Sea Turtles', '· 3 Cenotes', '· Snack & Drinks'],
     image:
-      'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80',
+      'https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?_gl=1*1leu1xd*_ga*NTc3NjYyMTQzLjE3NjU4MTE2NzU.*_ga_8JE65Q40S6*czE3NjU5MDM2NjEkbzMkZzEkdDE3NjU5MDM2ODckajM0JGwwJGgw',
     gallery: [
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80',
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80&sat=-8'
@@ -391,12 +390,12 @@ const adventureTours = [
   },
   {
     slug: 'tulum-turtles-cenotes',
-    name: 'Tulum + Turtles + Cenotes',
+    name: 'Tulum Underwater',
     duration: 'Full day • Culture + Water',
-    tagline: 'Ancient temples, ocean turtles, and cavern cenotes in one epic loop.',
+    tagline: '·Tulum Ruins<br>·Turtle Snorkeling<br>·2 Cenotes<br>·Full Local Lunch',
     description:
-      'Start with crowd-free access to Tulum’s seaside ruins, then glide beside turtles in turquoise water before ending at three hidden cenotes with optional rappel and taco lunch with tequila or mezcal.',
-    includes: ['🐢 Turtles in the ocean', '🏛️ Tulum ruins', '🪨 3 cenotes + optional rappel', '🌮 Taco lunch with tequila/mezcal'],
+      'Learn about the Mayan culture in Tulum ruins, swim with turtles, refresh in a cenote, and try real local tacos.',
+    includes: ['· Tulum Ruins', '· Turtle Snorkeling', '· 2 Cenotes', '· Full Local Lunch'],
     image:
       'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: [
@@ -410,10 +409,10 @@ const adventureTours = [
     slug: 'cenotes-express',
     name: 'Cenotes Express',
     duration: 'Half a day • Cenote circuit',
-    tagline: 'Four cenotes, zero crowds, endless blues.',
+    tagline: '· 4 Cenotes<br>· Rappel down a cavern<br>· Snack & Beers',
     description:
-      'Hop between four distinctly beautiful cenotes for cliff jumps, quiet swims, and a guided rappel into the clearest chamber while local snacks keep the energy up.',
-    includes: ['🪨 4 cenotes + rappel', '🥤 Local snacks'],
+      'Discover four distinct cenotes, rappel into a cavern chamber, and celebrate with cold beers and snacks between swims.',
+    includes: ['· 4 Cenotes', '· Rappel down a cavern', '· Snack & Beers'],
     image:
       'https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -424,10 +423,10 @@ const adventureTours = [
     slug: 'tulum-express',
     name: 'Tulum Express',
     duration: 'Half a day • Culture dip',
-    tagline: 'Golden-hour magic at the Tulum cliffs.',
+    tagline: '· Tulum Ruins<br>· Drinks & Beers<br>· (Optional) Free time in Tulum',
     description:
-      'A swift, well-timed visit to Tulum with a storytelling guide who knows every photogenic corner, plus time for artisan markets and coastal snacks.',
-    includes: ['🏛️ Tulum ruins access', '🍹 Snacks & refreshments'],
+      'Discover sunrise at the Tulum ruins with a certified local guide, then enjoy optional free time for shopping and photos around town.',
+    includes: ['· Tulum Ruins', '· Drinks & Beers', '· (Optional) Free time in Tulum'],
     image:
       'https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -438,10 +437,10 @@ const adventureTours = [
     slug: 'tacos-tour',
     name: 'Tacos Tour',
     duration: 'Evening • Flavor trail',
-    tagline: 'Tacos, tequila, mezcal, and a sunset stroll on 5th Avenue.',
+    tagline: '· Autentic Tacos<br>· Beers, Tequila & Mezcal<br>· Free time in Playa del Carmen',
     description:
-      'Eat your way through hand-picked taquerías with pairings of mezcal or tequila, then enjoy free time in Playa del Carmen’s vibrant 5th Avenue.',
-    includes: ['🌮 Tacos + tequila/mezcal', '🛍️ Free time on Playa del Carmen 5a Avenida'],
+      'Discover authentic local food, sip tequila/mezcal cocktails, and explore Playa del Carmen.',
+    includes: ['· Autentic Tacos', '· Beers, Tequila & Mezcal', '· Free time in Playa del Carmen'],
     image:
       'https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -452,10 +451,10 @@ const adventureTours = [
     slug: 'tulum-coba',
     name: 'Tulum + Coba',
     duration: 'Full day • Ruins + Cenote',
-    tagline: 'Twin ruins, jungle zipline, and a restorative cenote.',
+    tagline: '·Tulum Ruins<br>·Coba Ruins<br>·Cenote with Zipline<br>·Local Buffet & Drinks',
     description:
-      'Climb the jungle lookouts of Coba, wander seaside Tulum, ride a zipline into a cool cenote, and refuel with a regional buffet crafted by local cooks.',
-    includes: ['🏛️ Tulum & Coba', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+      'Explore Tulum and Coba with certified guides, zip into a refreshing cenote, and savor a local buffet with drinks.',
+    includes: ['· Tulum Ruins', '· Coba Ruins', '· Cenote with Zipline', '· Local Buffet & Drinks'],
     image:
       'https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -466,10 +465,10 @@ const adventureTours = [
     slug: 'coba',
     name: 'Coba',
     duration: 'Full day • Jungle history',
-    tagline: 'Bike ancient causeways and cool off in a cenote.',
+    tagline: '·Coba Ruins<br>·Bike around the site<br>·Cenote with Zipline<br>·Regional Buffet & Drinks',
     description:
-      'Pedal through the shaded sacbe roads of Coba, climb its towering pyramid, then celebrate with a cenote swim and hearty regional buffet.',
-    includes: ['🏛️ Coba ruins', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+      'Bike the ancient paths of Coba with a guide, zip into a refreshing cenote, and enjoy a regional buffet with drinks.',
+    includes: ['· Coba Ruins', '· Bike around the site', '· Cenote with Zipline', '· Regional Buffet & Drinks'],
     image:
       'https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -480,10 +479,10 @@ const adventureTours = [
     slug: 'chichen-itza',
     name: 'Chichen Itza',
     duration: 'Full day • Wonder of the World',
-    tagline: 'Sunrise at a UNESCO wonder, cenote swim, buffet feast.',
+    tagline: '· Chichen Itza ruins<br>· Cenote with zipline<br>· Local Buffet with Drinks',
     description:
       'See Chichen Itza before the crowds, learn the legends of Kukulkán, swim in a crystalline cenote with zipline, and enjoy a regional buffet.',
-    includes: ['🏛️ Chichen Itza access', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+    includes: ['· Chichen Itza ruins', '· Cenote with zipline', '· Local Buffet with Drinks'],
     image:
       'https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -494,10 +493,10 @@ const adventureTours = [
     slug: 'coba-chichen-itza',
     name: 'Coba + Chichen Itza',
     duration: 'Full day • Two Wonders',
-    tagline: 'Twin ancient cities, cenote thrills, and bold flavors.',
+    tagline: '· Coba Ruins<br>· Chichen Itza ruins<br>· Cenote with zipline<br>· Local Buffet with Drinks',
     description:
       'Trace the story from Coba’s jungle temples to the grand plazas of Chichen Itza, break for a cenote zipline plunge, and savor a regional buffet between sites.',
-    includes: ['🏛️ Coba + Chichen Itza', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+    includes: ['· Coba Ruins', '· Chichen Itza ruins', '· Cenote with zipline', '· Local Buffet with Drinks'],
     image:
       'https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -508,10 +507,10 @@ const adventureTours = [
     slug: 'holbox-express',
     name: 'Holbox Express',
     duration: 'Full day • Island hopping',
-    tagline: 'Speedboat to sandbars, flamingos, and Holbox chill vibes.',
+    tagline: '· Private SpeedBoat<br>· 3 Islands Hoping<br>· Golf Cart<br>· Free time on the island<br>· BeachClub Buffet with open bar',
     description:
       'Glide by speedboat across glowing shallows, hop between Holbox islands, lounge on secluded sandbars, and enjoy buffet lunch with open bar before exploring town time on the island.',
-    includes: ['🚤 Island hopping by speedboat', '🏖️ Free time on Holbox', '🍹 Buffet + open bar'],
+    includes: ['· Private SpeedBoat', '· 3 Islands Hoping', '· Golf Cart', '· Free time on the island', '· BeachClub Buffet with open bar'],
     image:
       'https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -520,12 +519,12 @@ const adventureTours = [
   },
   {
     slug: 'dolphin-turtle',
-    name: 'Dolphin + Turtle (Sian Ka’an)',
+    name: 'Dolphin + Turtle',
     duration: 'Full day • UNESCO Biosphere',
-    tagline: 'Speedboat safaris for dolphins, turtles, and reef snorkeling.',
+    tagline: '· Sian Kaan by Speedboat<br>· Dolphin + Turtles<br>· Bird watching<br>· Reef Snorkeling<br>· Local Buffet',
     description:
       'Journey into the Sian Ka’an reserve by speedboat to spot dolphins, turtles, and vibrant reef life, then savor a beachside buffet that celebrates the protected UNESCO paradise.',
-    includes: ['🐬 Dolphin & turtle encounters', '🤿 Reef snorkeling', '🥗 Buffet lunch'],
+    includes: ['· Sian Kaan by Speedboat', '· Dolphin + Turtles', '· Bird watching', '· Reef Snorkeling', '· Local Buffet'],
     image:
       'https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -536,10 +535,10 @@ const adventureTours = [
     slug: 'fishing-half-day',
     name: 'Fishing Half Day',
     duration: 'Half a day • Private charter',
-    tagline: 'Cast off on a private boat with fresh ceviche waiting.',
+    tagline: '· Private Boat<br>· Fishing Equipment<br>· Fresh Ceviche and fish<br>· Drinks and Beers',
     description:
       'A relaxed private fishing charter with pro guides, cold beers, and ceviche made with the day’s catch while you cruise the Caribbean coast.',
-    includes: ['🎣 Private fishing trip', '🥗 Fresh ceviche/food', '🍻 Beers on board'],
+    includes: ['· Private Boat', '· Fishing Equipment', '· Fresh Ceviche and fish', '· Drinks and Beers'],
     image:
       'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: [
