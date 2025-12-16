@@ -683,8 +683,10 @@ body.dark-mode .difference-item__icon {
 
 .tours-assurance .section__intro,
 .tours-grid-section .section__intro {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 
 .tours-assurance__grid {
