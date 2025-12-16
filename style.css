@@ -1,5 +1,5 @@
 :root {
-  --background: linear-gradient(135deg, #0b1f3a 0%, #0f4c81 100%);
+  --background: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
   --surface: rgba(255, 249, 235, 0.92);
   --surface-strong: #fff7d6;
   --text: #0f3a5d;
@@ -862,6 +862,7 @@ body.dark-mode .favorite-card:focus-within {
   align-items: flex-end;
   overflow: hidden;
   isolation: isolate;
+  background: linear-gradient(135deg, #0b1f3a 0%, #0f4c81 100%);
 }
 
 .tour-hero::before {
@@ -891,6 +892,7 @@ body.dark-mode .favorite-card:focus-within {
 .tour-hero__title {
   margin: 0;
   font-size: clamp(2.1rem, 3.8vw, 2.9rem);
+  color: #0b2f55;
 }
 
 .tour-hero__meta {
@@ -901,7 +903,7 @@ body.dark-mode .favorite-card:focus-within {
 
 .tour-hero__tagline {
   margin: 0;
-  color: var(--hero-panel-muted);
+  color: #0a3d6b;
   font-size: 1rem;
   line-height: 1.6;
 }
