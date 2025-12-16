@@ -100,7 +100,7 @@ main {
 
 .section__intro h2 {
   font-size: clamp(1.8rem, 4vw, 2.8rem);
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.75rem;
 }
 
 .section__intro p {
