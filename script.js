@@ -479,10 +479,10 @@ const adventureTours = [
     slug: 'chichen-itza',
     name: 'Chichen Itza',
     duration: 'Full day • Wonder of the World',
-    tagline: 'Sunrise at a UNESCO wonder, cenote swim, buffet feast.',
+    tagline: '· Chichen Itza ruins<br>· Cenote with zipline<br>· Local Buffet with Drinks',
     description:
       'See Chichen Itza before the crowds, learn the legends of Kukulkán, swim in a crystalline cenote with zipline, and enjoy a regional buffet.',
-    includes: ['🏛️ Chichen Itza access', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+    includes: ['· Chichen Itza ruins', '· Cenote with zipline', '· Local Buffet with Drinks'],
     image:
       'https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -493,10 +493,10 @@ const adventureTours = [
     slug: 'coba-chichen-itza',
     name: 'Coba + Chichen Itza',
     duration: 'Full day • Two Wonders',
-    tagline: 'Twin ancient cities, cenote thrills, and bold flavors.',
+    tagline: '· Coba Ruins<br>· Chichen Itza ruins<br>· Cenote with zipline<br>· Local Buffet with Drinks',
     description:
       'Trace the story from Coba’s jungle temples to the grand plazas of Chichen Itza, break for a cenote zipline plunge, and savor a regional buffet between sites.',
-    includes: ['🏛️ Coba + Chichen Itza', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+    includes: ['· Coba Ruins', '· Chichen Itza ruins', '· Cenote with zipline', '· Local Buffet with Drinks'],
     image:
       'https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -507,10 +507,10 @@ const adventureTours = [
     slug: 'holbox-express',
     name: 'Holbox Express',
     duration: 'Full day • Island hopping',
-    tagline: 'Speedboat to sandbars, flamingos, and Holbox chill vibes.',
+    tagline: '· Private SpeedBoat<br>· 3 Islands Hoping<br>· Golf Cart<br>· Free time on the island<br>· BeachClub Buffet with open bar',
     description:
       'Glide by speedboat across glowing shallows, hop between Holbox islands, lounge on secluded sandbars, and enjoy buffet lunch with open bar before exploring town time on the island.',
-    includes: ['🚤 Island hopping by speedboat', '🏖️ Free time on Holbox', '🍹 Buffet + open bar'],
+    includes: ['· Private SpeedBoat', '· 3 Islands Hoping', '· Golf Cart', '· Free time on the island', '· BeachClub Buffet with open bar'],
     image:
       'https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -521,10 +521,10 @@ const adventureTours = [
     slug: 'dolphin-turtle',
     name: 'Dolphin + Turtle',
     duration: 'Full day • UNESCO Biosphere',
-    tagline: 'Speedboat safaris for dolphins, turtles, and reef snorkeling.',
+    tagline: '· Sian Kaan by Speedboat<br>· Dolphin + Turtles<br>· Bird watching<br>· Reef Snorkeling<br>· Local Buffet',
     description:
       'Journey into the Sian Ka’an reserve by speedboat to spot dolphins, turtles, and vibrant reef life, then savor a beachside buffet that celebrates the protected UNESCO paradise.',
-    includes: ['🐬 Dolphin & turtle encounters', '🤿 Reef snorkeling', '🥗 Buffet lunch'],
+    includes: ['· Sian Kaan by Speedboat', '· Dolphin + Turtles', '· Bird watching', '· Reef Snorkeling', '· Local Buffet'],
     image:
       'https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1600&q=80'],
@@ -535,10 +535,10 @@ const adventureTours = [
     slug: 'fishing-half-day',
     name: 'Fishing Half Day',
     duration: 'Half a day • Private charter',
-    tagline: 'Cast off on a private boat with fresh ceviche waiting.',
+    tagline: '· Private Boat<br>· Fishing Equipment<br>· Fresh Ceviche and fish<br>· Drinks and Beers',
     description:
       'A relaxed private fishing charter with pro guides, cold beers, and ceviche made with the day’s catch while you cruise the Caribbean coast.',
-    includes: ['🎣 Private fishing trip', '🥗 Fresh ceviche/food', '🍻 Beers on board'],
+    includes: ['· Private Boat', '· Fishing Equipment', '· Fresh Ceviche and fish', '· Drinks and Beers'],
     image:
       'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: [
