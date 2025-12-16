@@ -1698,17 +1698,21 @@ body.dark-mode .tour-gallery__arrow {
 }
 
 .story-intro {
-  text-align: center;
+  text-align: left;
+  padding-top: clamp(1rem, 3vw, 2rem);
 }
 
 .story-message {
-  background: #fff;
-  color: #0f3a5d;
+  background: #0f3a5d;
+  color: #f4f8fd;
   padding: clamp(2rem, 4vw, 3rem);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
   display: grid;
-  gap: 1rem;
+  gap: 1.15rem;
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.7;
 }
 
 .story-message p {
