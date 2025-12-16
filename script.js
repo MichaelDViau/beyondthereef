@@ -392,10 +392,10 @@ const adventureTours = [
     slug: 'tulum-turtles-cenotes',
     name: 'Tulum Underwater',
     duration: 'Full day • Culture + Water',
-    tagline: 'Ancient temples, ocean turtles, and cavern cenotes in one epic loop.',
+    tagline: '·Tulum Ruins<br>·Turtle Snorkeling<br>·2 Cenotes<br>·Full Local Lunch',
     description:
-      'Come swim with turtles in their natural home and uncover the mysteries of the underground rivers.',
-    includes: ['· Tulum Ruins', '· 3 Cenotes', '· Snack + drinks'],
+      'Learn about the Mayan culture in Tulum ruins, swim with turtles, refresh in a cenote, and try real local tacos.',
+    includes: ['· Tulum Ruins', '· Turtle Snorkeling', '· 2 Cenotes', '· Full Local Lunch'],
     image:
       'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: [
