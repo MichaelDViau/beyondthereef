@@ -465,10 +465,10 @@ const adventureTours = [
     slug: 'coba',
     name: 'Coba',
     duration: 'Full day • Jungle history',
-    tagline: 'Bike ancient causeways and cool off in a cenote.',
+    tagline: '·Coba Ruins<br>·Bike around the site<br>·Cenote with Zipline<br>·Regional Buffet & Drinks',
     description:
-      'Pedal through the shaded sacbe roads of Coba, climb its towering pyramid, then celebrate with a cenote swim and hearty regional buffet.',
-    includes: ['🏛️ Coba ruins', '🛝 Cenote with zipline', '🥗 Regional buffet'],
+      'Bike the ancient paths of Coba with a guide, zip into a refreshing cenote, and enjoy a regional buffet with drinks.',
+    includes: ['· Coba Ruins', '· Bike around the site', '· Cenote with Zipline', '· Regional Buffet & Drinks'],
     image:
       'https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1600&q=80'],
