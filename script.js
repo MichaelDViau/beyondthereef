@@ -96,7 +96,7 @@ const translations = {
       'home.builder.status.missing': 'Please add your name, email, and idea so we can craft your quote.',
       'home.builder.status.prompt': 'Opening your email app to send the details to our concierge.',
       'home.accent.eyebrow': 'Why travelers love us',
-      'home.accent.heading': 'Concierge-level planning at lightning speed',
+      'home.accent.heading': 'VIP concierge planning so your family has its best trip yet',
       'home.accent.locals.title': 'Led by certified local guides',
       'home.accent.locals.copy':
         'Our certified local guides bring years of professional experience, crafting insider-only moments you cannot find on a brochure.',
@@ -280,7 +280,7 @@ const translations = {
       'home.builder.status.missing': 'Por favor agrega tu nombre, correo e idea para crear tu cotización.',
       'home.builder.status.prompt': 'Abriendo tu app de correo para enviar los detalles a nuestro concierge.',
       'home.accent.eyebrow': 'Por qué nos aman los viajeros',
-      'home.accent.heading': 'Planificación de concierge a toda velocidad',
+      'home.accent.heading': 'Planificación concierge VIP para que tu familia tenga su mejor viaje',
       'home.accent.locals.title': 'Guiado por guías locales certificados',
       'home.accent.locals.copy':
         'Nuestros guías locales certificados tienen años de experiencia profesional y organizan momentos únicos que no encontrarás en un folleto.',
