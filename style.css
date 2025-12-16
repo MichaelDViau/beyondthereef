@@ -605,16 +605,6 @@ body.dark-mode .difference-item__icon {
   margin-bottom: clamp(1.5rem, 2.5vw, 2.25rem);
 }
 
-.section--favorites {
-  padding-inline: 0;
-  background: #ffffff;
-}
-
-html.dark-mode .section--favorites,
-body.dark-mode .section--favorites {
-  background: linear-gradient(135deg, rgba(2, 12, 24, 0.92) 0%, rgba(12, 30, 52, 0.92) 100%);
-}
-
 .favorites-carousel {
   position: relative;
   --favorites-viewport-padding: clamp(1.25rem, 4vw, 3rem);
