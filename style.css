@@ -1728,7 +1728,7 @@ body.dark-mode .tour-gallery__arrow {
 
 .story-intro h2 {
   text-align: center;
-  margin: clamp(2rem, 4vw, 2.8rem) 0;
+  margin: clamp(2rem, 4vw, 2.8rem) 0 clamp(2.4rem, 4.8vw, 3.36rem);
 }
 
 .story-message {
