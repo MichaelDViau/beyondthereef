@@ -72,10 +72,10 @@ const translations = {
       'home.favorites.card4.copy':
         'Capture cinematic shots across Tulum’s ruins and cenotes with a creative director setting the scene for every moment.',
       'home.favorites.card4.cta': 'More information',
-      'home.builder.eyebrow': 'Plan with island specialists',
+      'home.builder.eyebrow': 'Plan with local experts',
       'home.builder.heading': 'We build your perfect day',
       'home.builder.copy':
-        'Email us with your idea and we will answer you with a custom quote about your day, or book a video call with our island specialist to refine every detail together.',
+        'Email us with your idea and we will answer you with a custom quote about your day, or book a video call with our local expert to refine every detail together.',
       'home.builder.formAria': 'Send your perfect day details',
       'home.builder.nameLabel': 'Name',
       'home.builder.namePlaceholder': 'Your name',
@@ -89,7 +89,7 @@ const translations = {
       'home.builder.listHeading': 'Tell us about your dream day',
       'home.builder.pointOne': 'Share the vibe you want—relaxed, high-energy, romantic, or off-grid.',
       'home.builder.pointTwo': 'Add any must-do activities, dining styles, or timing preferences.',
-      'home.builder.pointThree': 'We’ll reply with a tailored quote or set up a video call with our island specialist.',
+      'home.builder.pointThree': 'We’ll reply with a tailored quote or set up a video call with our professional tour guide.',
       'home.builder.emailFallback':
         'Prefer email? Reach us directly at <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a>.',
       'home.builder.emailSubject': 'Custom day idea from {{name}}',
@@ -97,9 +97,9 @@ const translations = {
       'home.builder.status.prompt': 'Opening your email app to send the details to our concierge.',
       'home.accent.eyebrow': 'Why travelers love us',
       'home.accent.heading': 'Concierge-level planning at lightning speed',
-      'home.accent.locals.title': 'Led by certified guides',
+      'home.accent.locals.title': 'Led by certified local guides',
       'home.accent.locals.copy':
-        'Our certified guides have years of island experience, crafting insider-only moments you cannot find on a brochure.',
+        'Our certified local guides bring years of professional experience, crafting insider-only moments you cannot find on a brochure.',
       'home.accent.collab.title': 'Real-time collaboration',
       'home.accent.collab.copy':
         'Invite friends or family to add ideas to your itinerary and watch it come to life instantly.',
@@ -256,10 +256,10 @@ const translations = {
       'home.favorites.card4.copy':
         'Captura tomas cinematográficas en las ruinas y cenotes de Tulum con un director creativo preparando cada escena.',
       'home.favorites.card4.cta': 'Más información',
-      'home.builder.eyebrow': 'Planifica con especialistas de la isla',
+      'home.builder.eyebrow': 'Planifica con expertos locales',
       'home.builder.heading': 'Creamos tu día perfecto',
       'home.builder.copy':
-        'Envíanos tu idea y te responderemos con una cotización personalizada de tu día, o agenda una videollamada con nuestro especialista en la isla para pulir cada detalle.',
+        'Envíanos tu idea y te responderemos con una cotización personalizada de tu día, o agenda una videollamada con nuestro experto local para pulir cada detalle.',
       'home.builder.formAria': 'Envía los detalles de tu día perfecto',
       'home.builder.nameLabel': 'Nombre',
       'home.builder.namePlaceholder': 'Tu nombre',
@@ -273,7 +273,7 @@ const translations = {
       'home.builder.listHeading': 'Cuéntanos sobre tu día soñado',
       'home.builder.pointOne': 'Comparte el ambiente que buscas: relajado, con adrenalina, romántico o fuera de lo común.',
       'home.builder.pointTwo': 'Agrega actividades imprescindibles, estilo de comida o preferencias de horario.',
-      'home.builder.pointThree': 'Te responderemos con una cotización a medida o agendaremos una videollamada con nuestro especialista en la isla.',
+      'home.builder.pointThree': 'Te responderemos con una cotización a medida o agendaremos una videollamada con nuestro guía profesional.',
       'home.builder.emailFallback':
         '¿Prefieres correo? Escríbenos a <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a>.',
       'home.builder.emailSubject': 'Idea de día personalizado de {{name}}',
@@ -281,9 +281,9 @@ const translations = {
       'home.builder.status.prompt': 'Abriendo tu app de correo para enviar los detalles a nuestro concierge.',
       'home.accent.eyebrow': 'Por qué nos aman los viajeros',
       'home.accent.heading': 'Planificación de concierge a toda velocidad',
-      'home.accent.locals.title': 'Guiado por expertos certificados',
+      'home.accent.locals.title': 'Guiado por guías locales certificados',
       'home.accent.locals.copy':
-        'Nuestros guías certificados tienen años de experiencia en la isla y organizan momentos únicos que no encontrarás en un folleto.',
+        'Nuestros guías locales certificados tienen años de experiencia profesional y organizan momentos únicos que no encontrarás en un folleto.',
       'home.accent.collab.title': 'Colaboración en tiempo real',
       'home.accent.collab.copy':
         'Invita a tus amigos o familia a sumar ideas y mira cómo el plan cobra vida al instante.',
