@@ -382,8 +382,8 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?_gl=1*1leu1xd*_ga*NTc3NjYyMTQzLjE3NjU4MTE2NzU.*_ga_8JE65Q40S6*czE3NjU5MDM2NjEkbzMkZzEkdDE3NjU5MDM2ODckajM0JGwwJGgw',
     gallery: [
-      'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80',
-      'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1600&q=80&sat=-8'
+      'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1200&q=70',
+      'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1200&q=70&sat=-8'
     ],
     basePrice: 169,
     badge: 'Top pick'
@@ -397,10 +397,10 @@ const adventureTours = [
       'Learn about the Mayan culture in Tulum ruins, swim with turtles, refresh in a cenote, and try real local tacos.',
     includes: ['· Tulum Ruins', '· Turtle Snorkeling', '· 2 Cenotes', '· Full Local Lunch'],
     image:
-      'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1600&q=80',
+      'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: [
-      'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1600&q=80',
-      'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1600&q=80&sat=-6'
+      'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1200&q=70',
+      'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1200&q=70&sat=-6'
     ],
     basePrice: 215,
     badge: 'Best seller'
@@ -414,8 +414,8 @@ const adventureTours = [
       'Discover four distinct cenotes, rappel into a cavern chamber, and celebrate with cold beers and snacks between swims.',
     includes: ['· 4 Cenotes', '· Rappel down a cavern', '· Snack & Beers'],
     image:
-      'https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1600&q=80',
-    gallery: ['https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1600&q=80'],
+      'https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1200&q=70',
+    gallery: ['https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1200&q=70'],
     basePrice: 149,
     badge: 'New route'
   },
@@ -428,8 +428,8 @@ const adventureTours = [
       'Discover sunrise at the Tulum ruins with a certified local guide, then enjoy optional free time for shopping and photos around town.',
     includes: ['· Tulum Ruins', '· Drinks & Beers', '· (Optional) Free time in Tulum'],
     image:
-      'https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80',
-    gallery: ['https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1600&q=80'],
+      'https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1200&q=70',
+    gallery: ['https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1200&q=70'],
     basePrice: 125,
     badge: 'Quick escape'
   },
@@ -442,8 +442,8 @@ const adventureTours = [
       'Discover authentic local food, sip tequila/mezcal cocktails, and explore Playa del Carmen.',
     includes: ['· Autentic Tacos', '· Beers, Tequila & Mezcal', '· Free time in Playa del Carmen'],
     image:
-      'https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1600&q=80',
-    gallery: ['https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1600&q=80'],
+      'https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1200&q=70',
+    gallery: ['https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1200&q=70'],
     basePrice: 110,
     badge: 'Foodie fave'
   },
@@ -456,8 +456,8 @@ const adventureTours = [
       'Explore Tulum and Coba with certified guides, zip into a refreshing cenote, and savor a local buffet with drinks.',
     includes: ['· Tulum Ruins', '· Coba Ruins', '· Cenote with Zipline', '· Local Buffet & Drinks'],
     image:
-      'https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1600&q=80',
-    gallery: ['https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1600&q=80'],
+      'https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1200&q=70',
+    gallery: ['https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1200&q=70'],
     basePrice: 225,
     badge: 'All-day adventure'
   },
@@ -470,8 +470,8 @@ const adventureTours = [
       'Bike the ancient paths of Coba with a guide, zip into a refreshing cenote, and enjoy a regional buffet with drinks.',
     includes: ['· Coba Ruins', '· Bike around the site', '· Cenote with Zipline', '· Regional Buffet & Drinks'],
     image:
-      'https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1600&q=80',
-    gallery: ['https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1600&q=80'],
+      'https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1200&q=70',
+    gallery: ['https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1200&q=70'],
     basePrice: 185,
     badge: 'History rich'
   },
@@ -484,8 +484,8 @@ const adventureTours = [
       'See Chichen Itza before the crowds, learn the legends of Kukulkán, swim in a crystalline cenote with zipline, and enjoy a regional buffet.',
     includes: ['· Chichen Itza ruins', '· Cenote with zipline', '· Local Buffet with Drinks'],
     image:
-      'https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1600&q=80',
-    gallery: ['https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1600&q=80'],
+      'https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1200&q=70',
+    gallery: ['https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1200&q=70'],
     basePrice: 239,
     badge: 'UNESCO site'
   },
@@ -498,8 +498,8 @@ const adventureTours = [
       'Trace the story from Coba’s jungle temples to the grand plazas of Chichen Itza, break for a cenote zipline plunge, and savor a regional buffet between sites.',
     includes: ['· Coba Ruins', '· Chichen Itza ruins', '· Cenote with zipline', '· Local Buffet with Drinks'],
     image:
-      'https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1600&q=80',
-    gallery: ['https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1600&q=80'],
+      'https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1200&q=70',
+    gallery: ['https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1200&q=70'],
     basePrice: 265,
     badge: 'Epic circuit'
   },
@@ -512,8 +512,8 @@ const adventureTours = [
       'Glide by speedboat across glowing shallows, hop between Holbox islands, lounge on secluded sandbars, and enjoy buffet lunch with open bar before exploring town time on the island.',
     includes: ['· Private SpeedBoat', '· 3 Islands Hoping', '· Golf Cart', '· Free time on the island', '· BeachClub Buffet with open bar'],
     image:
-      'https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1600&q=80',
-    gallery: ['https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1600&q=80'],
+      'https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1200&q=70',
+    gallery: ['https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1200&q=70'],
     basePrice: 255,
     badge: 'Island life'
   },
@@ -526,8 +526,8 @@ const adventureTours = [
       'Journey into the Sian Ka’an reserve by speedboat to spot dolphins, turtles, and vibrant reef life, then savor a beachside buffet that celebrates the protected UNESCO paradise.',
     includes: ['· Sian Kaan by Speedboat', '· Dolphin + Turtles', '· Bird watching', '· Reef Snorkeling', '· Local Buffet'],
     image:
-      'https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1600&q=80',
-    gallery: ['https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1600&q=80'],
+      'https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1200&q=70',
+    gallery: ['https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1200&q=70'],
     basePrice: 245,
     badge: 'UNESCO reserve'
   },
@@ -540,10 +540,10 @@ const adventureTours = [
       'A relaxed private fishing charter with pro guides, cold beers, and ceviche made with the day’s catch while you cruise the Caribbean coast.',
     includes: ['· Private Boat', '· Fishing Equipment', '· Fresh Ceviche and fish', '· Drinks and Beers'],
     image:
-      'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1600&q=80',
+      'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: [
-      'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1600&q=80',
-      'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1600&q=80&sat=-10'
+      'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1200&q=70',
+      'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1200&q=70&sat=-10'
     ],
     basePrice: 210,
     badge: 'Private boat'
@@ -870,6 +870,21 @@ function setupHeroSlider(languageManager) {
   const DEFAULT_ROTATE_INTERVAL = 7000;
   const hasMultipleSlides = slides.length > 1;
 
+  const ensureMediaSource = (slide, index, eager = false) => {
+    const media = slide.querySelector('.hero-slide__media');
+    if (!media) return null;
+
+    if (!media.src && media.dataset?.src && (eager || slide.classList.contains('is-active'))) {
+      media.src = media.dataset.src;
+    }
+
+    if (media.tagName.toLowerCase() === 'video') {
+      media.preload = eager ? 'auto' : 'metadata';
+    }
+
+    return media;
+  };
+
   const handleMediaEnded = (index) => {
     if (!hasMultipleSlides) return;
     if (currentIndex !== index) return;
@@ -877,7 +892,7 @@ function setupHeroSlider(languageManager) {
   };
 
   slides.forEach((slide, index) => {
-    const media = slide.querySelector('.hero-slide__media');
+    const media = ensureMediaSource(slide, index, index === currentIndex);
     if (!media) return;
     const isVideo = media.tagName.toLowerCase() === 'video';
 
@@ -927,11 +942,11 @@ function setupHeroSlider(languageManager) {
     }
   });
 
-  function setSlideState(slide, isActive) {
+  function setSlideState(slide, isActive, index) {
     slide.classList.toggle('is-active', isActive);
     slide.setAttribute('aria-hidden', isActive ? 'false' : 'true');
 
-    const video = slide.querySelector('video');
+    const video = ensureMediaSource(slide, index, isActive);
     if (!video) return;
 
     if (isActive) {
@@ -966,7 +981,7 @@ function setupHeroSlider(languageManager) {
 
   function syncSlides() {
     slides.forEach((slide, index) => {
-      setSlideState(slide, index === currentIndex);
+      setSlideState(slide, index === currentIndex, index);
     });
   }
 
@@ -977,9 +992,9 @@ function setupHeroSlider(languageManager) {
     const previousSlide = slides[currentIndex];
     const nextSlide = slides[nextIndex];
 
-    setSlideState(previousSlide, false);
+    setSlideState(previousSlide, false, currentIndex);
     currentIndex = nextIndex;
-    setSlideState(nextSlide, true);
+    setSlideState(nextSlide, true, currentIndex);
     updateDots();
     restartAutoRotate();
   }
@@ -997,7 +1012,7 @@ function setupHeroSlider(languageManager) {
     stopAutoRotate();
 
     const activeSlide = slides[currentIndex];
-    const activeVideo = activeSlide?.querySelector('.hero-slide__media');
+    const activeVideo = ensureMediaSource(activeSlide, currentIndex, true);
     const duration = activeVideo?.duration;
     const delay = Number.isFinite(duration) && duration > 0 ? duration * 1000 : DEFAULT_ROTATE_INTERVAL;
 
