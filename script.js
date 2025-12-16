@@ -1292,8 +1292,9 @@ function initTourPage(tours) {
   if (includesEl) {
     includesEl.innerHTML = '';
     tour.includes.forEach((item) => {
+      const cleanItem = item.replace(/^·\s*/, '');
       const li = document.createElement('li');
-      li.textContent = item;
+      li.textContent = cleanItem;
       includesEl.appendChild(li);
     });
   }
