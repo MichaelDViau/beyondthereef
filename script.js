@@ -409,10 +409,10 @@ const adventureTours = [
     slug: 'cenotes-express',
     name: 'Cenotes Express',
     duration: 'Half a day • Cenote circuit',
-    tagline: 'Four cenotes, zero crowds, endless blues.',
+    tagline: '· 4 Cenotes<br>· Rappel down a cavern<br>· Snack & Beers',
     description:
-      'Hop between four distinctly beautiful cenotes for cliff jumps, quiet swims, and a guided rappel into the clearest chamber while local snacks keep the energy up.',
-    includes: ['🪨 4 cenotes + rappel', '🥤 Local snacks'],
+      'Discover four distinct cenotes, rappel into a cavern chamber, and celebrate with cold beers and snacks between swims.',
+    includes: ['· 4 Cenotes', '· Rappel down a cavern', '· Snack & Beers'],
     image:
       'https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1600&q=80',
     gallery: ['https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1600&q=80'],
