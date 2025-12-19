@@ -1524,6 +1524,7 @@ body.dark-mode .tour-gallery__arrow {
   .section--favorites .section__intro h2 {
     white-space: normal;
     overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .contact-panel__points,
@@ -2055,28 +2056,38 @@ body.dark-mode .floating-contact__link:focus-visible {
   }
 
   .nav__links {
-    position: absolute;
-    top: 100%;
-    right: clamp(1.5rem, 4vw, 4.5rem);
+    position: fixed;
+    inset: 0;
     background: var(--nav-bg);
-    border: 1px solid var(--nav-border);
-    border-radius: var(--radius-md);
-    padding: 1.1rem;
+    border: 0;
+    border-radius: 0;
+    padding: clamp(6rem, 12vh, 8rem) 1.5rem 2rem;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.9rem;
-    min-width: 180px;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-width: 100%;
+    text-align: center;
+    overflow-y: auto;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 12px 30px rgba(15, 58, 93, 0.18);
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 10;
   }
 
   .nav__links.open {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
+  }
+
+  .nav__links a {
+    font-size: 1.35rem;
+  }
+
+  .theme-toggle {
+    display: none;
   }
 
   .hero-slider {
