@@ -75,7 +75,7 @@ const translations = {
       'home.builder.eyebrow': 'Plan with our concierge team',
       'home.builder.heading': 'We build your perfect day',
       'home.builder.copy':
-        'Email us with your idea and we will answer you with a custom quote about your day, or book a video call with our concierge team to refine every detail together.',
+        'Share your idea by email and receive a personalized quote, or book a video call with our team to fine-tune every detail.',
       'home.builder.formAria': 'Send your perfect day details',
       'home.builder.nameLabel': 'Name',
       'home.builder.namePlaceholder': 'Your name',
@@ -89,7 +89,8 @@ const translations = {
       'home.builder.listHeading': 'Tell us about your dream day',
       'home.builder.pointOne': 'Share the vibe you want: relaxed, high-energy, romantic, or off-grid.',
       'home.builder.pointTwo': 'Add any must-do activities, dining styles, or timing preferences.',
-      'home.builder.pointThree': 'We’ll reply with a tailored quote or set up a video call with our concierge team.',
+      'home.builder.pointThree':
+        'You’ll receive a personalized quote or the option to connect with our team by video call.',
       'home.builder.emailFallback':
         'Prefer email? Reach us directly at <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a>.',
       'home.builder.emailSubject': 'Custom day idea from {{name}}',
