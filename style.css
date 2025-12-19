@@ -2052,7 +2052,12 @@ body.dark-mode #contact-planner-heading {
 
 html.dark-mode .tour-grid-card__title,
 body.dark-mode .tour-grid-card__title {
-  color: #ffffff;
+  color: var(--accent);
+}
+
+html.dark-mode .tour-hero__title,
+body.dark-mode .tour-hero__title {
+  color: var(--accent);
 }
 
 html.dark-mode .tour-details__panel--booking,
