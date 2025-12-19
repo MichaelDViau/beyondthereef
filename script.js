@@ -2025,7 +2025,7 @@ function initTourPage(tours, languageManager) {
   const dateTimeInput = document.querySelector('[data-tour-datetime]');
   const dateTimeUnknown = document.querySelector('[data-tour-datetime-unknown]');
   const dateTimeField = document.querySelector('[data-tour-datetime-field]');
-  const formspreeEndpoint = 'https://formspree.io/f/REPLACE_ME';
+  const formspreeEndpoint = 'https://formspree.io/f/xkowoogr';
 
   const updateTourContent = (lang) => {
     const content = getTourContent(baseTour, lang);
