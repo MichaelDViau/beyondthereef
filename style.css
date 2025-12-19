@@ -1527,6 +1527,15 @@ body.dark-mode .tour-gallery__arrow {
     word-break: break-word;
   }
 
+  #tours-assurance-heading,
+  #tour-rows-heading {
+    white-space: normal;
+  }
+
+  .tours-assurance .section__intro p {
+    max-width: 100%;
+  }
+
   .contact-panel__points,
   .custom-inquiry__list,
   .contact-panel__channels {
@@ -2073,7 +2082,9 @@ body.dark-mode .floating-contact__link:focus-visible {
     pointer-events: none;
     transform: translateY(10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
   }
 
   .nav__links.open {
