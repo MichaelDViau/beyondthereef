@@ -40,45 +40,47 @@
   </header>
 
   <main class="tours-page">
-    <section class="hero-slider hero-slider--tours" aria-label="Excursion highlight reel" data-tour-hero-slider>
+    <section class="hero-slider hero-slider--tours" aria-label="Excursion highlight reel" data-tour-hero-slider data-i18n="tours.hero.aria" data-i18n-attr="aria-label">
       <div class="hero-slider__controls" aria-hidden="true">
-        <button class="hero-slider__arrow" type="button" data-slide="prev" aria-label="Previous slide">
+        <button class="hero-slider__arrow" type="button" data-slide="prev" aria-label="Previous slide" data-i18n="tours.hero.previous" data-i18n-attr="aria-label">
           ❮
         </button>
-        <button class="hero-slider__arrow" type="button" data-slide="next" aria-label="Next slide">
+        <button class="hero-slider__arrow" type="button" data-slide="next" aria-label="Next slide" data-i18n="tours.hero.next" data-i18n-attr="aria-label">
           ❯
         </button>
       </div>
-      <div class="hero-slider__dots" role="tablist" aria-label="Excursion slides"></div>
+      <div class="hero-slider__dots" role="tablist" aria-label="Excursion slides" data-i18n="tours.hero.dots" data-i18n-attr="aria-label"></div>
       <div class="hero-slider__track" data-tour-hero-track></div>
     </section>
 
     <section class="section tours-assurance" aria-labelledby="tours-assurance-heading">
       <div class="section__intro">
-        <p class="eyebrow">Only you and the people you care</p>
-        <h2 id="tours-assurance-heading">With more than 14 years of experience in tours</h2>
-        <p>Newest vans in the industry, certified guides, safe meals tailored to allergies and special diets.</p>
+        <p class="eyebrow" data-i18n="tours.assurance.eyebrow">Only you and the people you care</p>
+        <h2 id="tours-assurance-heading" data-i18n="tours.assurance.heading">With more than 14 years of experience in tours</h2>
+        <p data-i18n="tours.assurance.copy" data-i18n-attr="html">
+          Newest vans in the industry, certified guides, safe meals tailored to allergies and special diets.
+        </p>
       </div>
       <div class="tours-assurance__grid">
         <article class="card tours-assurance__item">
-          <h3>Private fleet &amp; modern vans</h3>
-          <p>Ride in our newest vans with cold A/C, leather seating, pro captains, and zero shared groups.</p>
+          <h3 data-i18n="tours.assurance.item1.title">Private fleet &amp; modern vans</h3>
+          <p data-i18n="tours.assurance.item1.copy">Ride in our newest vans with cold A/C, leather seating, pro captains, and zero shared groups.</p>
         </article>
         <article class="card tours-assurance__item">
-          <h3>Certified, professional guides</h3>
-          <p>Licensed, bilingual guides lead every tour with safety-first protocols and insider knowledge.</p>
+          <h3 data-i18n="tours.assurance.item2.title">Certified, professional guides</h3>
+          <p data-i18n="tours.assurance.item2.copy">Licensed, bilingual guides lead every tour with safety-first protocols and insider knowledge.</p>
         </article>
         <article class="card tours-assurance__item">
-          <h3>Safe food for every diet</h3>
-          <p>We include fresh, safe food and adapt menus for vegan, gluten-free, allergies, and special requests.</p>
+          <h3 data-i18n="tours.assurance.item3.title">Safe food for every diet</h3>
+          <p data-i18n="tours.assurance.item3.copy">We include fresh, safe food and adapt menus for vegan, gluten-free, allergies, and special requests.</p>
         </article>
       </div>
     </section>
 
     <section class="section tours-grid-section" id="tour-rows" aria-labelledby="tour-rows-heading">
       <div class="section__intro">
-        <p class="eyebrow">See every tour fast</p>
-        <h2 id="tour-rows-heading">Our most popular private excursions</h2>
+        <p class="eyebrow" data-i18n="tours.grid.eyebrow">See every tour fast</p>
+        <h2 id="tour-rows-heading" data-i18n="tours.grid.heading">Our most popular private excursions</h2>
       </div>
       <div class="tours-grid" data-tour-grid role="list"></div>
     </section>
@@ -86,36 +88,75 @@
     <section class="section contact-panel" id="contact-planner" aria-labelledby="contact-planner-heading">
       <div class="contact-panel__grid">
         <div class="contact-panel__copy">
-          <p class="eyebrow">Your custom tour</p>
-          <h2 id="contact-planner-heading">Want a tour that isn&apos;t on the list?</h2>
-          <p>Tell us the date and any special diets or accessibility needs—we&apos;ll design it, price it, and confirm fast.</p>
+          <p class="eyebrow" data-i18n="tours.contact.eyebrow">Your custom tour</p>
+          <h2 id="contact-planner-heading" data-i18n="tours.contact.heading">Want a tour that isn&apos;t on the list?</h2>
+          <p data-i18n="tours.contact.copy">Tell us the date and any special diets or accessibility needs—we&apos;ll design it, price it, and confirm fast.</p>
           <ul class="contact-panel__points">
-            <li>Bundle promo: book 3 tours and save 20% to 30%.</li>
-            <li>Private-only service with new vans, pro captains, and certified guides.</li>
-            <li>Safe food standards with menus adapted for vegan, gluten-free, and allergy requests.</li>
+            <li data-i18n="tours.contact.point1">Bundle promo: book 3 tours and save 20% to 30%.</li>
+            <li data-i18n="tours.contact.point2">Private-only service with new vans, pro captains, and certified guides.</li>
+            <li data-i18n="tours.contact.point3">Safe food standards with menus adapted for vegan, gluten-free, and allergy requests.</li>
           </ul>
-          <p class="contact-panel__channels">
+          <p class="contact-panel__channels" data-i18n="tours.contact.channels" data-i18n-attr="html">
             Prefer direct contact? Email <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a> or WhatsApp <a href="https://wa.me/529841670697" target="_blank" rel="noopener noreferrer">+52 984 167 0697</a>.
           </p>
         </div>
-        <form class="card contact-panel__form" id="custom-contact-form" aria-label="Share the tour you want">
+        <form
+          class="card contact-panel__form"
+          id="custom-contact-form"
+          aria-label="Share the tour you want"
+          data-i18n="tours.contact.formAria"
+          data-i18n-attr="aria-label"
+        >
           <div class="field">
-            <label for="contact-name">Name</label>
-            <input id="contact-name" name="name" type="text" placeholder="Your name" required />
+            <label for="contact-name" data-i18n="tours.contact.nameLabel">Name</label>
+            <input
+              id="contact-name"
+              name="name"
+              type="text"
+              placeholder="Your name"
+              required
+              data-i18n="tours.contact.namePlaceholder"
+              data-i18n-attr="placeholder"
+            />
           </div>
           <div class="field">
-            <label for="contact-email">Email</label>
-            <input id="contact-email" name="email" type="email" inputmode="email" placeholder="you@example.com" required />
+            <label for="contact-email" data-i18n="tours.contact.emailLabel">Email</label>
+            <input
+              id="contact-email"
+              name="email"
+              type="email"
+              inputmode="email"
+              placeholder="you@example.com"
+              required
+              data-i18n="tours.contact.emailPlaceholder"
+              data-i18n-attr="placeholder"
+            />
           </div>
           <div class="field">
-            <label for="contact-phone">Phone</label>
-            <input id="contact-phone" name="phone" type="tel" inputmode="tel" placeholder="+52 1 555 555 5555" />
+            <label for="contact-phone" data-i18n="tours.contact.phoneLabel">Phone</label>
+            <input
+              id="contact-phone"
+              name="phone"
+              type="tel"
+              inputmode="tel"
+              placeholder="+52 1 555 555 5555"
+              data-i18n="tours.contact.phonePlaceholder"
+              data-i18n-attr="placeholder"
+            />
           </div>
           <div class="field">
-            <label for="contact-idea">Tell us about your idea</label>
-            <textarea id="contact-idea" name="idea" rows="4" placeholder="Include the date, vibe, diet needs, and any must-do experiences." required></textarea>
+            <label for="contact-idea" data-i18n="tours.contact.ideaLabel">Tell us about your idea</label>
+            <textarea
+              id="contact-idea"
+              name="idea"
+              rows="4"
+              placeholder="Include the date, vibe, diet needs, and any must-do experiences."
+              required
+              data-i18n="tours.contact.ideaPlaceholder"
+              data-i18n-attr="placeholder"
+            ></textarea>
           </div>
-          <button class="button button--primary" type="submit">Send my idea</button>
+          <button class="button button--primary" type="submit" data-i18n="tours.contact.submit">Send my idea</button>
           <p class="form-status" id="custom-contact-status" role="status" aria-live="polite"></p>
         </form>
       </div>
