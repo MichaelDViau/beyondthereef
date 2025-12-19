@@ -1474,6 +1474,12 @@ body.dark-mode .tour-gallery__arrow {
   font-size: 0.95rem;
 }
 
+.tour-booking__disclaimer {
+  margin: 0.35rem 0 0;
+  font-size: 0.75rem;
+  color: rgba(11, 47, 85, 0.6);
+}
+
 .section--related {
   margin-top: clamp(1rem, 4vw, 2rem);
 }
