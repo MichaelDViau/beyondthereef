@@ -1315,6 +1315,13 @@ function initTourPage(tours) {
   const guestSelect = document.querySelector('[data-tour-guests]');
   const bookingForm = document.querySelector('[data-tour-booking]');
   const noteEl = bookingForm?.querySelector('.tour-booking__note');
+  const nameInput = document.querySelector('[data-tour-name]');
+  const emailInput = document.querySelector('[data-tour-email]');
+  const phoneInput = document.querySelector('[data-tour-phone]');
+  const dateTimeInput = document.querySelector('[data-tour-datetime]');
+  const dateTimeUnknown = document.querySelector('[data-tour-datetime-unknown]');
+  const dateTimeField = document.querySelector('[data-tour-datetime-field]');
+  const formspreeEndpoint = 'https://formspree.io/f/REPLACE_ME';
 
   if (titleEl) titleEl.textContent = tour.name;
   if (durationEl) durationEl.textContent = tour.duration;
@@ -1345,22 +1352,97 @@ function initTourPage(tours) {
 
   setupTourGallery(galleryWrapper);
 
+  const getGroupRate = (guests) => {
+    if (guests >= 7) return 0.64;
+    if (guests >= 5) return 0.7;
+    if (guests >= 3) return 0.76;
+    if (guests >= 2) return 0.82;
+    return 1;
+  };
+
   const updatePrice = () => {
     if (!priceEl || !guestSelect) return;
     const guests = Number(guestSelect.value) || 1;
-    priceEl.textContent = currencyFormatter.format(guests * tour.basePrice);
+    const perPersonRate = getGroupRate(guests);
+    priceEl.textContent = currencyFormatter.format(tour.basePrice * perPersonRate);
   };
 
   guestSelect?.addEventListener('change', updatePrice);
   updatePrice();
 
+  const toggleDateTime = () => {
+    if (!dateTimeInput || !dateTimeUnknown) return;
+    const isUnknown = dateTimeUnknown.checked;
+    dateTimeInput.disabled = isUnknown;
+    if (isUnknown) {
+      dateTimeInput.value = '';
+    }
+  };
+
+  dateTimeUnknown?.addEventListener('change', toggleDateTime);
+  toggleDateTime();
+
+  const openDateTimePicker = () => {
+    if (!dateTimeInput || dateTimeInput.disabled) return;
+    if (typeof dateTimeInput.showPicker === 'function') {
+      dateTimeInput.showPicker();
+    }
+  };
+
+  dateTimeInput?.addEventListener('click', openDateTimePicker);
+  dateTimeInput?.addEventListener('focus', openDateTimePicker);
+  dateTimeField?.addEventListener('click', (event) => {
+    if (event.target instanceof HTMLInputElement && event.target.type === 'checkbox') return;
+    openDateTimePicker();
+    dateTimeInput?.focus();
+  });
+
   bookingForm?.addEventListener('submit', (event) => {
     event.preventDefault();
     const guests = Number(guestSelect?.value) || 1;
     const pickup = (document.querySelector('[data-tour-pickup]')?.value || 'your location').trim();
+    const name = (nameInput?.value || '').trim();
+    const email = (emailInput?.value || '').trim();
+    const phone = (phoneInput?.value || '').trim();
+    const dateTimeValue = (dateTimeInput?.value || '').trim();
+    const dateTimeLabel = dateTimeUnknown?.checked ? 'Not sure yet' : dateTimeValue || 'Not provided';
     if (noteEl) {
       noteEl.textContent = `Holding ${guests} spot(s) for ${tour.name}. We will confirm pick-up at ${pickup} right away.`;
     }
+    if (!formspreeEndpoint || formspreeEndpoint.includes('REPLACE_ME')) {
+      if (noteEl) {
+        noteEl.textContent = 'Please connect the booking form to your email service to receive requests.';
+      }
+      return;
+    }
+    const payload = {
+      tour: tour.name,
+      guests,
+      name: name || 'Not provided',
+      email: email || 'Not provided',
+      phone: phone || 'Not provided',
+      dateTime: dateTimeLabel,
+      pickup
+    };
+    fetch(formspreeEndpoint, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+      .then((response) => {
+        if (!noteEl) return;
+        noteEl.textContent = response.ok
+          ? 'Request sent! We will confirm availability and follow up right away.'
+          : 'Something went wrong sending your request. Please try again shortly.';
+      })
+      .catch(() => {
+        if (noteEl) {
+          noteEl.textContent = 'Unable to send your request right now. Please try again shortly.';
+        }
+      });
   });
 
   const relatedTours = tours.filter((item) => item.slug !== tour.slug);
