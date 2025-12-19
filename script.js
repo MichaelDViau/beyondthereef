@@ -75,7 +75,7 @@ const translations = {
       'home.builder.eyebrow': 'Plan with our concierge team',
       'home.builder.heading': 'We build your perfect day',
       'home.builder.copy':
-        'Email us with your idea and we will answer you with a custom quote about your day, or book a video call with our concierge team to refine every detail together.',
+        'Share your idea by email and receive a personalized quote, or book a video call with our team to fine-tune every detail.',
       'home.builder.formAria': 'Send your perfect day details',
       'home.builder.nameLabel': 'Name',
       'home.builder.namePlaceholder': 'Your name',
@@ -89,7 +89,8 @@ const translations = {
       'home.builder.listHeading': 'Tell us about your dream day',
       'home.builder.pointOne': 'Share the vibe you want: relaxed, high-energy, romantic, or off-grid.',
       'home.builder.pointTwo': 'Add any must-do activities, dining styles, or timing preferences.',
-      'home.builder.pointThree': 'We’ll reply with a tailored quote or set up a video call with our concierge team.',
+      'home.builder.pointThree':
+        'You’ll receive a personalized quote or the option to connect with our team by video call.',
       'home.builder.emailFallback':
         'Prefer email? Reach us directly at <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a>.',
       'home.builder.emailSubject': 'Custom day idea from {{name}}',
@@ -102,13 +103,13 @@ const translations = {
         'Our certified guides bring years of professional experience, crafting insider-only moments you cannot find on a brochure.',
       'home.accent.collab.title': 'Can’t find the tour you want?',
       'home.accent.collab.copy':
-        'Reach out and we’ll schedule a call or video chat to custom-build your perfect vacation.',
+        'Reach out and we’ll schedule a call or video chat to custom-build your perfect excursions.',
       'home.accent.execution.title': 'Worry-free tours',
       'home.accent.execution.copy':
         'Your tour, your time, no hidden fees, with transfers, tickets, and timing handled so you just enjoy.',
       'home.cta.heading': 'Ready to build your dream tour?',
-      'home.cta.copy': 'Email our concierge team and we will send a bespoke proposal within 24 hours.',
-      'home.cta.button': 'Email our concierge team'
+      'home.cta.copy': 'Reach out and we’ll design the right experience for you.',
+      'home.cta.button': 'Email us now'
     },
     tours: {
       'page.title': 'Excursions & Private Tours | Beyond the Reef Mexico',
