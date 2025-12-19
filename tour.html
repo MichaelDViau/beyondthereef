@@ -83,18 +83,6 @@
           </div>
           <form class="tour-booking" data-tour-booking>
             <div class="field">
-              <label for="tour-name">Name</label>
-              <input id="tour-name" name="name" type="text" placeholder="Your full name" autocomplete="name" data-tour-name />
-            </div>
-            <div class="field">
-              <label for="tour-email">Email</label>
-              <input id="tour-email" name="email" type="email" placeholder="you@email.com" autocomplete="email" data-tour-email />
-            </div>
-            <div class="field">
-              <label for="tour-phone">Phone number</label>
-              <input id="tour-phone" name="phone" type="tel" placeholder="+52 984 123 4567" autocomplete="tel" data-tour-phone />
-            </div>
-            <div class="field">
               <label for="tour-guests">How many people?</label>
               <select id="tour-guests" name="guests" data-tour-guests>
                 <option value="1">1</option>
@@ -107,7 +95,21 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
                 <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
               </select>
+            </div>
+            <div class="field">
+              <label for="tour-name">Name</label>
+              <input id="tour-name" name="name" type="text" placeholder="Your full name" autocomplete="name" data-tour-name />
+            </div>
+            <div class="field">
+              <label for="tour-email">Email</label>
+              <input id="tour-email" name="email" type="email" placeholder="you@email.com" autocomplete="email" data-tour-email />
+            </div>
+            <div class="field">
+              <label for="tour-phone">Phone number</label>
+              <input id="tour-phone" name="phone" type="tel" placeholder="+52 984 123 4567" autocomplete="tel" data-tour-phone />
             </div>
             <div class="field" data-tour-datetime-field>
               <label for="tour-datetime">Date &amp; time of the activity</label>
@@ -123,6 +125,7 @@
             </div>
             <button class="button button--primary tour-booking__cta" type="submit">Book now</button>
             <p class="tour-booking__note">No payment collected here - we confirm availability and follow up right away.</p>
+            <p class="tour-booking__disclaimer">Prices and promotional offers are subject to change without prior notice.</p>
           </form>
         </aside>
       </div>

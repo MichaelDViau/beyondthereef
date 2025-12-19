@@ -388,7 +388,20 @@ const adventureTours = [
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1200&q=70',
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1200&q=70&sat=-8'
     ],
-    basePrice: 169,
+    prices: {
+      1: 340,
+      2: 218,
+      3: 207,
+      4: 184,
+      5: 162,
+      6: 151,
+      7: 140,
+      8: 129,
+      9: 124,
+      10: 119,
+      11: 119,
+      12: 119
+    },
     badge: 'Top pick'
   },
   {
@@ -405,7 +418,20 @@ const adventureTours = [
       'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1200&q=70',
       'https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=format&fit=crop&w=1200&q=70&sat=-6'
     ],
-    basePrice: 215,
+    prices: {
+      1: 390,
+      2: 268,
+      3: 257,
+      4: 234,
+      5: 212,
+      6: 201,
+      7: 190,
+      8: 179,
+      9: 174,
+      10: 169,
+      11: 169,
+      12: 169
+    },
     badge: 'Best seller'
   },
   {
@@ -419,7 +445,20 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: ['https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=format&fit=crop&w=1200&q=70'],
-    basePrice: 149,
+    prices: {
+      1: 295,
+      2: 173,
+      3: 162,
+      4: 140,
+      5: 118,
+      6: 107,
+      7: 95,
+      8: 84,
+      9: 79,
+      10: 74,
+      11: 74,
+      12: 74
+    },
     badge: 'New route'
   },
   {
@@ -433,7 +472,20 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: ['https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=format&fit=crop&w=1200&q=70'],
-    basePrice: 125,
+    prices: {
+      1: 290,
+      2: 168,
+      3: 157,
+      4: 135,
+      5: 113,
+      6: 102,
+      7: 90,
+      8: 79,
+      9: 74,
+      10: 69,
+      11: 69,
+      12: 69
+    },
     badge: 'Quick escape'
   },
   {
@@ -447,7 +499,20 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: ['https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=format&fit=crop&w=1200&q=70'],
-    basePrice: 110,
+    prices: {
+      1: 280,
+      2: 158,
+      3: 147,
+      4: 125,
+      5: 103,
+      6: 92,
+      7: 80,
+      8: 69,
+      9: 64,
+      10: 59,
+      11: 59,
+      12: 59
+    },
     badge: 'Foodie fave'
   },
   {
@@ -461,7 +526,20 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: ['https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=format&fit=crop&w=1200&q=70'],
-    basePrice: 225,
+    prices: {
+      1: 534,
+      2: 300,
+      3: 267,
+      4: 256,
+      5: 234,
+      6: 212,
+      7: 200,
+      8: 189,
+      9: 184,
+      10: 179,
+      11: 179,
+      12: 179
+    },
     badge: 'All-day adventure'
   },
   {
@@ -475,7 +553,20 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: ['https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=format&fit=crop&w=1200&q=70'],
-    basePrice: 185,
+    prices: {
+      1: 367,
+      2: 234,
+      3: 228,
+      4: 189,
+      5: 167,
+      6: 156,
+      7: 164,
+      8: 134,
+      9: 129,
+      10: 124,
+      11: 124,
+      12: 124
+    },
     badge: 'History rich'
   },
   {
@@ -489,7 +580,19 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: ['https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=format&fit=crop&w=1200&q=70'],
-    basePrice: 239,
+    prices: {
+      2: 317,
+      3: 317,
+      4: 272,
+      5: 239,
+      6: 217,
+      7: 205,
+      8: 194,
+      9: 189,
+      10: 184,
+      11: 184,
+      12: 184
+    },
     badge: 'UNESCO site'
   },
   {
@@ -503,7 +606,19 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: ['https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=format&fit=crop&w=1200&q=70'],
-    basePrice: 265,
+    prices: {
+      2: 352,
+      3: 352,
+      4: 307,
+      5: 274,
+      6: 252,
+      7: 240,
+      8: 229,
+      9: 224,
+      10: 219,
+      11: 219,
+      12: 219
+    },
     badge: 'Epic circuit'
   },
   {
@@ -517,7 +632,20 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: ['https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=format&fit=crop&w=1200&q=70'],
-    basePrice: 255,
+    prices: {
+      1: 740,
+      2: 384,
+      3: 329,
+      4: 273,
+      5: 229,
+      6: 195,
+      7: 173,
+      8: 151,
+      9: 146,
+      10: 141,
+      11: 141,
+      12: 141
+    },
     badge: 'Island life'
   },
   {
@@ -531,7 +659,20 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1200&q=70',
     gallery: ['https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=format&fit=crop&w=1200&q=70'],
-    basePrice: 245,
+    prices: {
+      1: 707,
+      2: 376,
+      3: 254,
+      4: 210,
+      5: 176,
+      6: 198,
+      7: 176,
+      8: 165,
+      9: 160,
+      10: 155,
+      11: 155,
+      12: 155
+    },
     badge: 'UNESCO reserve'
   },
   {
@@ -548,7 +689,20 @@ const adventureTours = [
       'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1200&q=70',
       'https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=format&fit=crop&w=1200&q=70&sat=-10'
     ],
-    basePrice: 210,
+    prices: {
+      1: 0,
+      2: 0,
+      3: 0,
+      4: 0,
+      5: 0,
+      6: 0,
+      7: 0,
+      8: 0,
+      9: 0,
+      10: 0,
+      11: 0,
+      12: 0
+    },
     badge: 'Private boat'
   }
 ];
@@ -1354,19 +1508,36 @@ function initTourPage(tours) {
 
   setupTourGallery(galleryWrapper);
 
-  const getGroupRate = (guests) => {
-    if (guests >= 7) return 0.64;
-    if (guests >= 5) return 0.7;
-    if (guests >= 3) return 0.76;
-    if (guests >= 2) return 0.82;
-    return 1;
+  const buildGuestOptions = () => {
+    if (!guestSelect) return;
+    if (!tour.prices) return;
+
+    const counts = Object.keys(tour.prices)
+      .map((value) => Number(value))
+      .filter((value) => Number.isFinite(value))
+      .sort((a, b) => a - b);
+
+    if (!counts.length) return;
+
+    guestSelect.innerHTML = '';
+    counts.forEach((count) => {
+      const option = document.createElement('option');
+      option.value = String(count);
+      option.textContent = String(count);
+      guestSelect.appendChild(option);
+    });
+
+    const defaultCount = counts.includes(2) ? 2 : counts[0];
+    guestSelect.value = String(defaultCount);
   };
+
+  buildGuestOptions();
 
   const updatePrice = () => {
     if (!priceEl || !guestSelect) return;
     const guests = Number(guestSelect.value) || 1;
-    const perPersonRate = getGroupRate(guests);
-    priceEl.textContent = currencyFormatter.format(tour.basePrice * perPersonRate);
+    const price = tour.prices ? tour.prices[guests] : tour.basePrice;
+    priceEl.textContent = currencyFormatter.format(price || 0);
   };
 
   guestSelect?.addEventListener('change', updatePrice);
