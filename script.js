@@ -1315,6 +1315,8 @@ function initTourPage(tours) {
   const guestSelect = document.querySelector('[data-tour-guests]');
   const bookingForm = document.querySelector('[data-tour-booking]');
   const noteEl = bookingForm?.querySelector('.tour-booking__note');
+  const dateTimeInput = document.querySelector('[data-tour-datetime]');
+  const dateTimeUnknown = document.querySelector('[data-tour-datetime-unknown]');
 
   if (titleEl) titleEl.textContent = tour.name;
   if (durationEl) durationEl.textContent = tour.duration;
@@ -1345,14 +1347,35 @@ function initTourPage(tours) {
 
   setupTourGallery(galleryWrapper);
 
+  const getGroupRate = (guests) => {
+    if (guests >= 7) return 0.64;
+    if (guests >= 5) return 0.7;
+    if (guests >= 3) return 0.76;
+    if (guests >= 2) return 0.82;
+    return 1;
+  };
+
   const updatePrice = () => {
     if (!priceEl || !guestSelect) return;
     const guests = Number(guestSelect.value) || 1;
-    priceEl.textContent = currencyFormatter.format(guests * tour.basePrice);
+    const perPersonRate = getGroupRate(guests);
+    priceEl.textContent = currencyFormatter.format(tour.basePrice * perPersonRate);
   };
 
   guestSelect?.addEventListener('change', updatePrice);
   updatePrice();
+
+  const toggleDateTime = () => {
+    if (!dateTimeInput || !dateTimeUnknown) return;
+    const isUnknown = dateTimeUnknown.checked;
+    dateTimeInput.disabled = isUnknown;
+    if (isUnknown) {
+      dateTimeInput.value = '';
+    }
+  };
+
+  dateTimeUnknown?.addEventListener('change', toggleDateTime);
+  toggleDateTime();
 
   bookingForm?.addEventListener('submit', (event) => {
     event.preventDefault();
