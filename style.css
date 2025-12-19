@@ -1439,7 +1439,7 @@ body.dark-mode .tour-gallery__arrow {
 }
 
 .tour-booking__helper {
-  margin: 0;
+  margin: 0 0 0.75rem;
   font-size: 0.95rem;
   color: rgba(11, 47, 85, 0.75);
 }
@@ -2079,6 +2079,13 @@ body.dark-mode .tour-details__panel--booking {
   color: #ffffff;
 }
 
+html.dark-mode .tour-details__panel h3,
+body.dark-mode .tour-details__panel h3,
+html.dark-mode .tour-details__panel h4,
+body.dark-mode .tour-details__panel h4 {
+  color: var(--accent);
+}
+
 html.dark-mode .tour-booking__label,
 body.dark-mode .tour-booking__label,
 html.dark-mode .tour-booking__price,
@@ -2090,6 +2097,11 @@ body.dark-mode .tour-booking__helper,
 html.dark-mode .tour-booking__note,
 body.dark-mode .tour-booking__note {
   color: #ffffff;
+}
+
+html.dark-mode .tour-booking__label,
+body.dark-mode .tour-booking__label {
+  color: var(--accent);
 }
 
 html.dark-mode .tour-booking__per-person,
