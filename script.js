@@ -307,7 +307,7 @@ const translations = {
       'tour.booking.emailLabel': 'Email',
       'tour.booking.emailPlaceholder': 'you@email.com',
       'tour.booking.phoneLabel': 'Phone number',
-      'tour.booking.phonePlaceholder': '+52 984 123 4567',
+      'tour.booking.phonePlaceholder': '+52 984 167 0697',
       'tour.booking.datetimeLabel': 'Date & time of the activity',
       'tour.booking.datetimeUnknown': 'Not sure yet',
       'tour.booking.pickupLabel': 'Pick-up location',
@@ -639,7 +639,7 @@ const translations = {
       'tour.booking.emailLabel': 'Correo electrónico',
       'tour.booking.emailPlaceholder': 'tu@correo.com',
       'tour.booking.phoneLabel': 'Número de teléfono',
-      'tour.booking.phonePlaceholder': '+52 984 123 4567',
+      'tour.booking.phonePlaceholder': '+52 984 167 0697',
       'tour.booking.datetimeLabel': 'Fecha y hora de la actividad',
       'tour.booking.datetimeUnknown': 'Aún no lo sé',
       'tour.booking.pickupLabel': 'Lugar de pick-up',
@@ -1291,11 +1291,13 @@ function createLanguageManager(pageKey) {
       }
       buildFavoritesCarousel(adventureTours, languageManager);
       setupCardCarousels();
+      setupMediaPrefetch();
     };
 
     refreshTourLists();
     setupHeroSlider(languageManager);
     initTourPage(adventureTours, languageManager);
+    setupMediaPrefetch();
     setupInquiryForm(languageManager);
     setCurrentYear();
 
@@ -1912,6 +1914,59 @@ function setupCardCarousels() {
     updateArrowState();
     carousel.dataset.carouselReady = 'true';
     carousel._updateArrowState = updateArrowState;
+  });
+}
+
+const mediaPreloadSources = new Set();
+let mediaPreloadObserver = null;
+
+function preloadImageSource(source) {
+  if (!source || mediaPreloadSources.has(source)) return;
+  const image = new Image();
+  image.decoding = 'async';
+  image.src = source;
+  mediaPreloadSources.add(source);
+}
+
+function getMediaPreloadObserver() {
+  if (mediaPreloadObserver || typeof IntersectionObserver === 'undefined') {
+    return mediaPreloadObserver;
+  }
+
+  mediaPreloadObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const target = entry.target;
+        observer.unobserve(target);
+
+        if (target instanceof HTMLImageElement) {
+          const source = target.currentSrc || target.src;
+          preloadImageSource(source);
+        }
+      });
+    },
+    {
+      rootMargin: '240px 0px',
+      threshold: 0.01
+    }
+  );
+
+  return mediaPreloadObserver;
+}
+
+function setupMediaPrefetch() {
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]:not([data-preload-ready])');
+  if (!lazyImages.length) return;
+
+  const observer = getMediaPreloadObserver();
+  lazyImages.forEach((image) => {
+    image.dataset.preloadReady = 'true';
+    if (observer) {
+      observer.observe(image);
+    } else {
+      preloadImageSource(image.currentSrc || image.src);
+    }
   });
 }
 
