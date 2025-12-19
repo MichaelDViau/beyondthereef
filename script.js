@@ -106,9 +106,9 @@ const translations = {
       'home.accent.execution.title': 'Worry-free tours',
       'home.accent.execution.copy':
         'Your tour, your time, no hidden fees, with transfers, tickets, and timing handled so you just enjoy.',
-      'home.cta.heading': 'Ready to build your dream tour?',
-      'home.cta.copy': 'Email our concierge team and we will send a bespoke proposal within 24 hours.',
-      'home.cta.button': 'Email our concierge team'
+      'home.cta.heading': '',
+      'home.cta.copy': '',
+      'home.cta.button': ''
     },
     tours: {
       'page.title': 'Excursions & Private Tours | Beyond the Reef Mexico',
@@ -290,9 +290,9 @@ const translations = {
       'home.accent.execution.title': 'Tours sin preocupaciones',
       'home.accent.execution.copy':
         'Tu tour, tu horario, sin cargos ocultos: coordinamos traslados, boletos y tiempos para que solo disfrutes.',
-      'home.cta.heading': '¿Listo para diseñar tu tour soñado?',
-      'home.cta.copy': 'Escríbele a nuestro equipo de concierge y te enviaremos una propuesta personalizada en 24 horas.',
-      'home.cta.button': 'Escríbenos'
+      'home.cta.heading': '',
+      'home.cta.copy': '',
+      'home.cta.button': ''
     },
     tours: {
       'page.title': 'Excursiones y Tours Privados | Beyond the Reef Mexico',
