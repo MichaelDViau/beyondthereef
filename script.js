@@ -383,6 +383,7 @@ const adventureTours = [
     image:
       'https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?_gl=1*1leu1xd*_ga*NTc3NjYyMTQzLjE3NjU4MTE2NzU.*_ga_8JE65Q40S6*czE3NjU5MDM2NjEkbzMkZzEkdDE3NjU5MDM2ODckajM0JGwwJGgw',
     gallery: [
+      'https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?_gl=1*1leu1xd*_ga*NTc3NjYyMTQzLjE3NjU4MTE2NzU.*_ga_8JE65Q40S6*czE3NjU5MDM2NjEkbzMkZzEkdDE3NjU5MDM2ODckajM0JGwwJGgw',
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1200&q=70',
       'https://images.pexels.com/photos/32865198/pexels-photo-32865198.jpeg?auto=format&fit=crop&w=1200&q=70&sat=-8'
     ],
