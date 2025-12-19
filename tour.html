@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Beyond the Reef Mexico | Tour Details</title>
+  <title data-i18n="page.title">Beyond the Reef Mexico | Tour Details</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -12,7 +12,7 @@
 </head>
 <body data-page="tour-detail" data-tour-page>
   <header class="site-header">
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" aria-label="Primary" data-i18n="nav.primary" data-i18n-attr="aria-label">
       <a class="nav__logo" href="index.html" aria-label="Beyond the Reef Mexico">
         <span class="nav__logo-icon" aria-hidden="true">
           <img src="assets/logo.svg" alt="" decoding="async" />
@@ -23,16 +23,16 @@
         </span>
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only" data-i18n="nav.toggle">Toggle navigation</span>
         <span></span>
         <span></span>
         <span></span>
       </button>
       <ul class="nav__links" id="primary-navigation">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="build-your-tours.html">Excursions</a></li>
-        <li><a href="review.html">Reviews</a></li>
-        <li><a href="our-story.html">Our Story</a></li>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="build-your-tours.html" data-i18n="nav.create">Excursions</a></li>
+        <li><a href="review.html" data-i18n="nav.reviews">Reviews</a></li>
+        <li><a href="our-story.html" data-i18n="nav.story">Our Story</a></li>
       </ul>
       <button class="nav__control language-toggle" type="button" data-language-toggle aria-pressed="false">Español 🇲🇽</button>
       <button class="nav__control theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
@@ -40,50 +40,68 @@
   </header>
 
   <main class="tour-page">
-    <section class="tour-hero" aria-label="Tour overview">
+    <section class="tour-hero" aria-label="Tour overview" data-i18n="tour.hero.aria" data-i18n-attr="aria-label">
       <div class="tour-hero__content">
-        <p class="eyebrow">Adventures Loved by Travelers</p>
+        <p class="eyebrow" data-i18n="tour.hero.eyebrow">Adventures Loved by Travelers</p>
         <h1 class="tour-hero__title" data-tour-title>Adventure</h1>
         <p class="tour-hero__meta" data-tour-duration></p>
         <p class="tour-hero__tagline" data-tour-tagline></p>
       </div>
       <div class="tour-gallery" data-tour-gallery>
-        <button class="tour-gallery__arrow" type="button" data-gallery-arrow="prev" aria-label="Previous photo">❮</button>
+        <button
+          class="tour-gallery__arrow"
+          type="button"
+          data-gallery-arrow="prev"
+          aria-label="Previous photo"
+          data-i18n="tour.gallery.previous"
+          data-i18n-attr="aria-label"
+        >
+          ❮
+        </button>
         <div class="tour-gallery__viewport">
           <div class="tour-gallery__track" data-tour-gallery-track></div>
         </div>
-        <button class="tour-gallery__arrow" type="button" data-gallery-arrow="next" aria-label="Next photo">❯</button>
+        <button
+          class="tour-gallery__arrow"
+          type="button"
+          data-gallery-arrow="next"
+          aria-label="Next photo"
+          data-i18n="tour.gallery.next"
+          data-i18n-attr="aria-label"
+        >
+          ❯
+        </button>
       </div>
     </section>
 
     <section class="section tour-details" aria-labelledby="tour-details-heading">
       <div class="section__intro">
-        <h2 id="tour-details-heading">Plan every detail with confidence</h2>
-        <p>Everything you need to know before you reserve.</p>
+        <h2 id="tour-details-heading" data-i18n="tour.details.heading">Plan every detail with confidence</h2>
+        <p data-i18n="tour.details.copy">Everything you need to know before you reserve.</p>
       </div>
       <div class="tour-details__grid">
         <article class="card tour-details__panel">
-          <h3>About this experience</h3>
+          <h3 data-i18n="tour.details.about">About this experience</h3>
           <p class="tour-details__description" data-tour-description></p>
           <div class="tour-includes">
-            <h4>What&apos;s included</h4>
+            <h4 data-i18n="tour.details.includes">What&apos;s included</h4>
             <ul class="tour-includes__list" data-tour-includes></ul>
           </div>
         </article>
         <aside class="card tour-details__panel tour-details__panel--booking">
           <div class="tour-booking__header">
-            <p class="tour-booking__label">Reserve now</p>
+            <p class="tour-booking__label" data-i18n="tour.booking.label">Reserve now</p>
             <div class="tour-booking__price-block">
               <p class="tour-booking__price">
-                <span>From</span> <strong data-tour-price>$0</strong> <span>USD</span>
-                <span class="tour-booking__per-person">per person</span>
+                <span data-i18n="tour.booking.from">From</span> <strong data-tour-price>$0</strong> <span data-i18n="tour.booking.currency">USD</span>
+                <span class="tour-booking__per-person" data-i18n="tour.booking.perPerson">per person</span>
               </p>
-              <p class="tour-booking__helper">Prices drop as you add more people.</p>
+              <p class="tour-booking__helper" data-i18n="tour.booking.helper">Prices drop as you add more people.</p>
             </div>
           </div>
           <form class="tour-booking" data-tour-booking>
             <div class="field">
-              <label for="tour-guests">How many people?</label>
+              <label for="tour-guests" data-i18n="tour.booking.guestsLabel">How many people?</label>
               <select id="tour-guests" name="guests" data-tour-guests>
                 <option value="1">1</option>
                 <option value="2" selected>2</option>
@@ -100,59 +118,120 @@
               </select>
             </div>
             <div class="field">
-              <label for="tour-name">Name</label>
-              <input id="tour-name" name="name" type="text" placeholder="Your full name" autocomplete="name" data-tour-name />
+              <label for="tour-name" data-i18n="tour.booking.nameLabel">Name</label>
+              <input
+                id="tour-name"
+                name="name"
+                type="text"
+                placeholder="Your full name"
+                autocomplete="name"
+                data-tour-name
+                data-i18n="tour.booking.namePlaceholder"
+                data-i18n-attr="placeholder"
+              />
             </div>
             <div class="field">
-              <label for="tour-email">Email</label>
-              <input id="tour-email" name="email" type="email" placeholder="you@email.com" autocomplete="email" data-tour-email />
+              <label for="tour-email" data-i18n="tour.booking.emailLabel">Email</label>
+              <input
+                id="tour-email"
+                name="email"
+                type="email"
+                placeholder="you@email.com"
+                autocomplete="email"
+                data-tour-email
+                data-i18n="tour.booking.emailPlaceholder"
+                data-i18n-attr="placeholder"
+              />
             </div>
             <div class="field">
-              <label for="tour-phone">Phone number</label>
-              <input id="tour-phone" name="phone" type="tel" placeholder="+52 984 123 4567" autocomplete="tel" data-tour-phone />
+              <label for="tour-phone" data-i18n="tour.booking.phoneLabel">Phone number</label>
+              <input
+                id="tour-phone"
+                name="phone"
+                type="tel"
+                placeholder="+52 984 123 4567"
+                autocomplete="tel"
+                data-tour-phone
+                data-i18n="tour.booking.phonePlaceholder"
+                data-i18n-attr="placeholder"
+              />
             </div>
             <div class="field" data-tour-datetime-field>
-              <label for="tour-datetime">Date &amp; time of the activity</label>
+              <label for="tour-datetime" data-i18n="tour.booking.datetimeLabel">Date &amp; time of the activity</label>
               <input id="tour-datetime" name="datetime" type="datetime-local" data-tour-datetime />
               <label class="tour-booking__checkbox">
                 <input type="checkbox" name="datetime-unknown" data-tour-datetime-unknown />
-                Not sure yet
+                <span data-i18n="tour.booking.datetimeUnknown">Not sure yet</span>
               </label>
             </div>
             <div class="field">
-              <label for="tour-pickup">Pick-up location</label>
-              <input id="tour-pickup" name="pickup" type="text" placeholder="Hotel or meeting point" data-tour-pickup />
+              <label for="tour-pickup" data-i18n="tour.booking.pickupLabel">Pick-up location</label>
+              <input
+                id="tour-pickup"
+                name="pickup"
+                type="text"
+                placeholder="Hotel or meeting point"
+                data-tour-pickup
+                data-i18n="tour.booking.pickupPlaceholder"
+                data-i18n-attr="placeholder"
+              />
             </div>
-            <button class="button button--primary tour-booking__cta" type="submit">Book now</button>
-            <p class="tour-booking__note">No payment collected here - we confirm availability and follow up right away.</p>
-            <p class="tour-booking__disclaimer">Prices and promotional offers are subject to change without prior notice.</p>
+            <button class="button button--primary tour-booking__cta" type="submit" data-i18n="tour.booking.submit">Book now</button>
+            <p class="tour-booking__note" data-i18n="tour.booking.note">No payment collected here - we confirm availability and follow up right away.</p>
+            <p class="tour-booking__disclaimer" data-i18n="tour.booking.disclaimer">Prices and promotional offers are subject to change without prior notice.</p>
           </form>
         </aside>
       </div>
     </section>
 
-    <section class="section section--favorites section--related" aria-label="Other adventures">
+    <section class="section section--favorites section--related" aria-label="Other adventures" data-i18n="tour.related.aria" data-i18n-attr="aria-label">
       <div class="section__intro">
-        <h2>Keep exploring</h2>
-        <p>Travelers also loved these journeys.</p>
+        <h2 data-i18n="tour.related.heading">Keep exploring</h2>
+        <p data-i18n="tour.related.copy">Travelers also loved these journeys.</p>
       </div>
       <div class="favorites-carousel" data-card-carousel data-related-carousel>
-        <button class="favorites-carousel__arrow favorites-carousel__arrow--prev" type="button" data-carousel-arrow="prev" aria-label="Previous tours">❮</button>
+        <button
+          class="favorites-carousel__arrow favorites-carousel__arrow--prev"
+          type="button"
+          data-carousel-arrow="prev"
+          aria-label="Previous tours"
+          data-i18n="tour.related.previous"
+          data-i18n-attr="aria-label"
+        >
+          ❮
+        </button>
         <div class="favorites-carousel__viewport">
           <div class="favorites-carousel__track" role="list" data-related-track></div>
         </div>
-        <button class="favorites-carousel__arrow favorites-carousel__arrow--next" type="button" data-carousel-arrow="next" aria-label="Next tours">❯</button>
+        <button
+          class="favorites-carousel__arrow favorites-carousel__arrow--next"
+          type="button"
+          data-carousel-arrow="next"
+          aria-label="Next tours"
+          data-i18n="tour.related.next"
+          data-i18n-attr="aria-label"
+        >
+          ❯
+        </button>
       </div>
     </section>
   </main>
 
-  <div class="floating-contact" role="region" aria-label="Quick contact options">
+  <div
+    class="floating-contact"
+    role="region"
+    aria-label="Quick contact options"
+    data-i18n="floatingContact.aria"
+    data-i18n-attr="aria-label"
+  >
     <a
       class="floating-contact__link floating-contact__link--whatsapp"
       href="https://wa.me/529841457050"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
+      data-i18n="floatingContact.whatsappAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
@@ -164,13 +243,15 @@
         </svg>
       </span>
       <span class="floating-contact__text">
-        <span class="floating-contact__label">WhatsApp</span>
+        <span class="floating-contact__label" data-i18n="floatingContact.whatsappLabel">WhatsApp</span>
       </span>
     </a>
     <a
       class="floating-contact__link floating-contact__link--email"
       href="mailto:info@beyondthereefmexico.com"
       aria-label="Email Beyond the Reef Mexico"
+      data-i18n="floatingContact.emailAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
@@ -181,7 +262,7 @@
         </svg>
       </span>
       <span class="floating-contact__text">
-        <span class="floating-contact__label">Email</span>
+        <span class="floating-contact__label" data-i18n="floatingContact.emailLabel">Email</span>
       </span>
     </a>
     <a
@@ -190,6 +271,8 @@
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Open Instagram"
+      data-i18n="floatingContact.instagramAria"
+      data-i18n-attr="aria-label"
     >
       <span class="floating-contact__icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
@@ -199,7 +282,7 @@
         </svg>
       </span>
       <span class="floating-contact__text">
-        <span class="floating-contact__label">Instagram</span>
+        <span class="floating-contact__label" data-i18n="floatingContact.instagramLabel">Instagram</span>
       </span>
     </a>
   </div>

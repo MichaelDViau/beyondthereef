@@ -18,7 +18,20 @@ const translations = {
       'themeToggle.dark': 'Dark mode',
       'themeToggle.light': 'Light mode',
       'heroSlider.goToSlide': 'Go to slide {{index}}',
-      'tourBuilder.remove': 'Remove'
+      'tourBuilder.remove': 'Remove',
+      'inquiry.emailSubject': 'Custom day idea from {{name}}',
+      'inquiry.emailBody.nameLabel': 'Name',
+      'inquiry.emailBody.emailLabel': 'Email',
+      'inquiry.emailBody.phoneLabel': 'Phone',
+      'inquiry.emailBody.ideaLabel': 'Trip idea',
+      'inquiry.status.missing': 'Please add your name, email, and idea so we can craft your quote.',
+      'inquiry.status.prompt': 'Opening your email app to send the details to our concierge.',
+      'tour.card.viewDetails': 'View details',
+      'tour.card.bookNow': 'Book now',
+      'tour.card.privateBadge': 'Private tour',
+      'tour.card.halfDay': 'Half day',
+      'tour.card.fullDay': 'Full day',
+      'tour.card.viewAria': 'View {{name}}'
     },
     home: {
       'page.title': 'Beyond the Reef Mexico',
@@ -26,6 +39,7 @@ const translations = {
       'home.hero.heading': 'Pure adrenaline. Untamed nature. Your story in the making.',
       'home.hero.description':
         'Not just a day out - this is freedom unleashed. Swim with turtles, dive into cenotes, race across lagoons, and explore ancient Mayan ruins. No crowds. No limits. Just raw adventure carved into the heart of the Riviera Maya. Your rules. Your pace. Your unforgettable. This isn’t tourism. This is Beyond the Reef.',
+      'home.hero.cta': 'See all our private excursions',
       'home.hero.previous': 'Previous slide',
       'home.hero.next': 'Next slide',
       'home.hero.dots': 'Featured slides',
@@ -113,10 +127,25 @@ const translations = {
     },
     tours: {
       'page.title': 'Excursions & Private Tours | Beyond the Reef Mexico',
+      'tours.hero.aria': 'Excursion highlight reel',
+      'tours.hero.previous': 'Previous slide',
+      'tours.hero.next': 'Next slide',
+      'tours.hero.dots': 'Excursion slides',
       'tours.hero.eyebrow': 'Build your tour',
       'tours.hero.heading': 'Design experiences as unique as your crew',
       'tours.hero.copy':
         'Drag and drop curated activities, refine pacing, and invite your travel companions to collaborate in real time.',
+      'tours.assurance.eyebrow': 'Only you and the people you care',
+      'tours.assurance.heading': 'With more than 14 years of experience in tours',
+      'tours.assurance.copy': 'Newest vans in the industry, certified guides, safe meals tailored to allergies and special diets.',
+      'tours.assurance.item1.title': 'Private fleet & modern vans',
+      'tours.assurance.item1.copy': 'Ride in our newest vans with cold A/C, leather seating, pro captains, and zero shared groups.',
+      'tours.assurance.item2.title': 'Certified, professional guides',
+      'tours.assurance.item2.copy': 'Licensed, bilingual guides lead every tour with safety-first protocols and insider knowledge.',
+      'tours.assurance.item3.title': 'Safe food for every diet',
+      'tours.assurance.item3.copy': 'We include fresh, safe food and adapt menus for vegan, gluten-free, allergies, and special requests.',
+      'tours.grid.eyebrow': 'See every tour fast',
+      'tours.grid.heading': 'Our most popular private excursions',
       'tours.grid.custom.title': 'Custom combinations',
       'tours.grid.custom.copy':
         'Mix scuba dives, culinary surprises, and remote hikes across islands. Our smart planner orchestrates logistics so you can focus on the fun.',
@@ -134,7 +163,26 @@ const translations = {
         'Drag items between days, adjust timing, and add bespoke requests like photographers or private chefs.',
       'tours.steps.three.title': 'Lock it in',
       'tours.steps.three.copy':
-        'Collaborate with your concierge to finalize transfers, payments, and on-island support.'
+        'Collaborate with your concierge to finalize transfers, payments, and on-island support.',
+      'tours.contact.eyebrow': 'Your custom tour',
+      'tours.contact.heading': 'Want a tour that isn’t on the list?',
+      'tours.contact.copy':
+        'Tell us the date and any special diets or accessibility needs—we’ll design it, price it, and confirm fast.',
+      'tours.contact.point1': 'Bundle promo: book 3 tours and save 20% to 30%.',
+      'tours.contact.point2': 'Private-only service with new vans, pro captains, and certified guides.',
+      'tours.contact.point3': 'Safe food standards with menus adapted for vegan, gluten-free, and allergy requests.',
+      'tours.contact.channels':
+        'Prefer direct contact? Email <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a> or WhatsApp <a href="https://wa.me/529841670697" target="_blank" rel="noopener noreferrer">+52 984 167 0697</a>.',
+      'tours.contact.formAria': 'Share the tour you want',
+      'tours.contact.nameLabel': 'Name',
+      'tours.contact.namePlaceholder': 'Your name',
+      'tours.contact.emailLabel': 'Email',
+      'tours.contact.emailPlaceholder': 'you@example.com',
+      'tours.contact.phoneLabel': 'Phone',
+      'tours.contact.phonePlaceholder': '+52 1 555 555 5555',
+      'tours.contact.ideaLabel': 'Tell us about your idea',
+      'tours.contact.ideaPlaceholder': 'Include the date, vibe, diet needs, and any must-do experiences.',
+      'tours.contact.submit': 'Send my idea'
     },
     reviews: {
       'page.title': 'Guest Reviews | Beyond the Reef Mexico',
@@ -152,6 +200,36 @@ const translations = {
       'reviews.featured.three.title': '“Our friends are still raving.”',
       'reviews.featured.three.copy':
         '“The group chat was blowing up with ideas. The Beyond the Reef planner kept everything organized and even added mixology classes based on our Spotify playlist.” - <strong>Diego &amp; crew</strong>',
+      'reviews.featured.four.title': '“Chichén Itzá made easy.”',
+      'reviews.featured.four.copy':
+        '“They arranged a sunrise entry so we had El Castillo almost to ourselves, plus a history-loving guide who knew every story. Breakfast tacos afterward were the best.” - <strong>Mariela &amp; Tomás</strong>',
+      'reviews.featured.five.title': '“Fishing with family felt effortless.”',
+      'reviews.featured.five.copy':
+        '“Beyond the Reef stocked the cooler, handled the licenses, and matched us with a patient captain so our kids could reel in their first mahi. Zero stress, just smiles.” - <strong>The Greene crew</strong>',
+      'reviews.featured.six.title': '“Street taco crawl perfection.”',
+      'reviews.featured.six.copy':
+        '“We ate our way through downtown—pastor, cochinita, birria—and never waited in line. Our host knew the vendors by name and even got my vegan friend amazing options.” - <strong>Avery</strong>',
+      'reviews.featured.seven.title': '“Cenote swim with no crowds.”',
+      'reviews.featured.seven.copy':
+        '“They found a hidden cenote and timed our arrival between buses. We floated in crystal water with just birds overhead. Towels, snacks, and photos were all handled.” - <strong>Jess &amp; Priya</strong>',
+      'reviews.featured.eight.title': '“Snorkeling that felt like a documentary.”',
+      'reviews.featured.eight.copy':
+        '“Our guide pointed out turtles, rays, and even a shy seahorse. Gear fit perfectly and the boat had shade, which my dad appreciated. We felt cared for start to finish.” - <strong>Samir</strong>',
+      'reviews.featured.nine.title': '“Romantic taco night on the beach.”',
+      'reviews.featured.nine.copy':
+        '“They turned a simple craving into a whole evening: chef-grilled tacos, aguas frescas, and fairy lights under the palms. It was our favorite date of the trip.” - <strong>Lena &amp; Marco</strong>',
+      'reviews.featured.ten.title': '“Accessible adventure done right.”',
+      'reviews.featured.ten.copy':
+        '“I use a wheelchair, and they coordinated ramps, transport, and a calm guide for exploring Tulum. I never had to explain twice—everything just worked.” - <strong>Natalie</strong>',
+      'reviews.featured.eleven.title': '“Spearfishing lessons that felt personal.”',
+      'reviews.featured.eleven.copy':
+        '“We wanted to learn safely, and they paired us with a local expert who focused on technique and reef respect. We left with new skills and a grilled catch lunch.” - <strong>Darius &amp; Cole</strong>',
+      'reviews.featured.twelve.title': '“Kids loved the lagoon night tour.”',
+      'reviews.featured.twelve.copy':
+        '“Bioluminescence, storytelling, and hot chocolate on deck—every detail was thought through. Even our teenager put the phone away to watch the stars.” - <strong>Ruth &amp; family</strong>',
+      'reviews.featured.thirteen.title': '“Foodie day from market to mezcal.”',
+      'reviews.featured.thirteen.copy':
+        '“We started at the local market for spices, took a cooking class, and ended with a mezcal tasting led by a maestro. It felt authentic, not touristy.” - <strong>Eduardo</strong>',
       'reviews.share.heading': 'Share your experience',
       'reviews.share.copy':
         'Email <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a> with a highlight reel or tag us on social with <strong>#BeyondTheReef</strong> for a chance to be featured.'
@@ -162,6 +240,30 @@ const translations = {
       'story.hero.heading': 'Born from a love of the sea and storytelling',
       'story.hero.copy':
         'Every experience is thoughtfully designed to feel personal, seamless, and genuinely human.',
+      'story.intro.heading': 'Beyond The Reef Mexico',
+      'story.intro.p1':
+        'Our company was born from a simple realization: travel experiences had become rushed, impersonal, and disconnected.',
+      'story.intro.p2': 'We knew there had to be a better way.',
+      'story.intro.p3':
+        'Instead of crowded buses, shared pickups that steal hours of your vacation, and scripted tours, we chose a different path: one built around time, comfort, and real human connection.',
+      'story.intro.p4':
+        'Every experience we offer is thoughtfully designed around you. No shared transportation. No long detours. No compromises. From private transfers to carefully selected local guides, every detail exists to create a smooth, meaningful, and unforgettable day.',
+      'story.intro.p5':
+        'Our guides are not just employees; they are passionate professionals who are paid well, respected, and proud of the work they do. That pride translates directly into the energy, care, and authenticity you feel throughout your experience.',
+      'story.intro.p6':
+        'We believe the best moments happen when people feel relaxed, heard, and genuinely connected. That belief shapes everything we do from how we plan our tours to how we treat our guests and our team.',
+      'story.intro.p7':
+        'If an experience does not meet your expectations, we make it right. Because trust, integrity, and human connection matter more than volume.',
+      'story.intro.p8': 'This is not mass tourism. This is travel done with intention.',
+      'story.values.connection.title': 'Real connections',
+      'story.values.connection.copy':
+        'We build every experience around genuine human connection so guests feel welcomed, understood, and part of the places they visit.',
+      'story.values.wages.title': 'All guides make living wages',
+      'story.values.wages.copy':
+        'Our guides earn strong, reliable incomes with respect and stability, allowing them to focus fully on delivering exceptional hospitality.',
+      'story.values.awareness.title': 'Social awareness',
+      'story.values.awareness.copy':
+        'We act with empathy and cultural sensitivity, partnering with local communities to ensure tourism benefits everyone involved.',
       'story.crew.heading': 'Meet the crew',
       'story.crew.lila.title': 'Lila Reyes - Founder',
       'story.crew.lila.copy':
@@ -182,6 +284,48 @@ const translations = {
       'story.values.tech.title': 'Technology that disappears',
       'story.values.tech.copy':
         'The planning tools are powerful, yet effortless, so you stay focused on excitement rather than logistics.'
+    },
+    'tour-detail': {
+      'page.title': 'Beyond the Reef Mexico | Tour Details',
+      'tour.hero.aria': 'Tour overview',
+      'tour.hero.eyebrow': 'Adventures Loved by Travelers',
+      'tour.gallery.previous': 'Previous photo',
+      'tour.gallery.next': 'Next photo',
+      'tour.details.heading': 'Plan every detail with confidence',
+      'tour.details.copy': 'Everything you need to know before you reserve.',
+      'tour.details.about': 'About this experience',
+      'tour.details.includes': "What's included",
+      'tour.booking.label': 'Reserve now',
+      'tour.booking.from': 'From',
+      'tour.booking.currency': 'USD',
+      'tour.booking.perPerson': 'per person',
+      'tour.booking.helper': 'Prices drop as you add more people.',
+      'tour.booking.guestsLabel': 'How many people?',
+      'tour.booking.nameLabel': 'Name',
+      'tour.booking.namePlaceholder': 'Your full name',
+      'tour.booking.emailLabel': 'Email',
+      'tour.booking.emailPlaceholder': 'you@email.com',
+      'tour.booking.phoneLabel': 'Phone number',
+      'tour.booking.phonePlaceholder': '+52 984 123 4567',
+      'tour.booking.datetimeLabel': 'Date & time of the activity',
+      'tour.booking.datetimeUnknown': 'Not sure yet',
+      'tour.booking.pickupLabel': 'Pick-up location',
+      'tour.booking.pickupPlaceholder': 'Hotel or meeting point',
+      'tour.booking.submit': 'Book now',
+      'tour.booking.note': 'No payment collected here - we confirm availability and follow up right away.',
+      'tour.booking.disclaimer': 'Prices and promotional offers are subject to change without prior notice.',
+      'tour.booking.status.hold': 'Holding {{guests}} spot(s) for {{tour}}. We will confirm pick-up at {{pickup}} right away.',
+      'tour.booking.status.missingService': 'Please connect the booking form to your email service to receive requests.',
+      'tour.booking.status.sent': 'Request sent! We will confirm availability and follow up right away.',
+      'tour.booking.status.error': 'Something went wrong sending your request. Please try again shortly.',
+      'tour.booking.status.unavailable': 'Unable to send your request right now. Please try again shortly.',
+      'tour.booking.pickupFallback': 'your location',
+      'tour.booking.datetimeFallback': 'Not provided',
+      'tour.related.aria': 'Other adventures',
+      'tour.related.heading': 'Keep exploring',
+      'tour.related.copy': 'Travelers also loved these journeys.',
+      'tour.related.previous': 'Previous tours',
+      'tour.related.next': 'Next tours'
     }
   },
   es: {
@@ -203,7 +347,20 @@ const translations = {
       'themeToggle.dark': 'Modo oscuro',
       'themeToggle.light': 'Modo claro',
       'heroSlider.goToSlide': 'Ir a la diapositiva {{index}}',
-      'tourBuilder.remove': 'Eliminar'
+      'tourBuilder.remove': 'Eliminar',
+      'inquiry.emailSubject': 'Idea de día personalizado de {{name}}',
+      'inquiry.emailBody.nameLabel': 'Nombre',
+      'inquiry.emailBody.emailLabel': 'Correo',
+      'inquiry.emailBody.phoneLabel': 'Teléfono',
+      'inquiry.emailBody.ideaLabel': 'Idea del viaje',
+      'inquiry.status.missing': 'Por favor agrega tu nombre, correo e idea para crear tu cotización.',
+      'inquiry.status.prompt': 'Abriendo tu app de correo para enviar los detalles a nuestro concierge.',
+      'tour.card.viewDetails': 'Ver detalles',
+      'tour.card.bookNow': 'Reservar ahora',
+      'tour.card.privateBadge': 'Tour privado',
+      'tour.card.halfDay': 'Medio día',
+      'tour.card.fullDay': 'Día completo',
+      'tour.card.viewAria': 'Ver {{name}}'
     },
     home: {
       'page.title': 'Beyond the Reef Mexico',
@@ -211,6 +368,7 @@ const translations = {
       'home.hero.heading': 'Pura adrenalina. Naturaleza indómita. Tu historia en marcha.',
       'home.hero.description':
         'No es solo una excursión: es libertad desatada. Nada con tortugas, sumérgete en cenotes, cruza lagunas a toda velocidad y explora antiguas ruinas mayas. Sin multitudes. Sin límites. Solo aventura pura en el corazón de la Riviera Maya. Tus reglas. Tu ritmo. Tu recuerdo inolvidable. Esto no es turismo. Esto es Beyond the Reef.',
+      'home.hero.cta': 'Ver todas nuestras excursiones privadas',
       'home.hero.previous': 'Diapositiva anterior',
       'home.hero.next': 'Siguiente diapositiva',
       'home.hero.dots': 'Diapositivas destacadas',
@@ -297,10 +455,29 @@ const translations = {
     },
     tours: {
       'page.title': 'Excursiones y Tours Privados | Beyond the Reef Mexico',
+      'tours.hero.aria': 'Reel de excursiones destacadas',
+      'tours.hero.previous': 'Diapositiva anterior',
+      'tours.hero.next': 'Siguiente diapositiva',
+      'tours.hero.dots': 'Diapositivas de excursiones',
       'tours.hero.eyebrow': 'Diseña tu tour',
       'tours.hero.heading': 'Crea experiencias tan únicas como tu grupo',
       'tours.hero.copy':
         'Arrastra actividades seleccionadas, ajusta el ritmo e invita a tus acompañantes a colaborar en tiempo real.',
+      'tours.assurance.eyebrow': 'Solo tú y las personas que quieres',
+      'tours.assurance.heading': 'Más de 14 años de experiencia en tours',
+      'tours.assurance.copy':
+        'Las vans más nuevas de la industria, guías certificados y alimentos seguros para alergias y dietas especiales.',
+      'tours.assurance.item1.title': 'Flota privada y vans modernas',
+      'tours.assurance.item1.copy':
+        'Viaja en nuestras vans más nuevas con A/C frío, asientos de piel, capitanes expertos y cero grupos compartidos.',
+      'tours.assurance.item2.title': 'Guías certificados y profesionales',
+      'tours.assurance.item2.copy':
+        'Guías bilingües con licencia lideran cada tour con protocolos de seguridad e información local.',
+      'tours.assurance.item3.title': 'Comida segura para cada dieta',
+      'tours.assurance.item3.copy':
+        'Incluimos alimentos frescos y adaptamos menús para veganos, gluten free, alergias y peticiones especiales.',
+      'tours.grid.eyebrow': 'Ve cada tour rápido',
+      'tours.grid.heading': 'Nuestras excursiones privadas más populares',
       'tours.grid.custom.title': 'Combinaciones a medida',
       'tours.grid.custom.copy':
         'Mezcla buceo, sorpresas culinarias y caminatas remotas. Nuestro planificador inteligente coordina la logística para que solo te concentres en disfrutar.',
@@ -318,7 +495,26 @@ const translations = {
         'Reordena actividades por día, ajusta horarios y agrega peticiones especiales como fotógrafos o chefs privados.',
       'tours.steps.three.title': 'Confírmalo todo',
       'tours.steps.three.copy':
-        'Colabora con tu concierge para definir traslados, pagos y asistencia en destino.'
+        'Colabora con tu concierge para definir traslados, pagos y asistencia en destino.',
+      'tours.contact.eyebrow': 'Tu tour personalizado',
+      'tours.contact.heading': '¿Quieres un tour que no está en la lista?',
+      'tours.contact.copy':
+        'Cuéntanos la fecha y cualquier dieta especial o necesidad de accesibilidad: lo diseñamos, cotizamos y confirmamos rápido.',
+      'tours.contact.point1': 'Promo paquete: reserva 3 tours y ahorra de 20% a 30%.',
+      'tours.contact.point2': 'Servicio 100% privado con vans nuevas, capitanes expertos y guías certificados.',
+      'tours.contact.point3': 'Estándares de comida segura con menús adaptados para veganos, gluten free y alergias.',
+      'tours.contact.channels':
+        '¿Prefieres contacto directo? Escribe a <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a> o WhatsApp <a href="https://wa.me/529841670697" target="_blank" rel="noopener noreferrer">+52 984 167 0697</a>.',
+      'tours.contact.formAria': 'Comparte el tour que quieres',
+      'tours.contact.nameLabel': 'Nombre',
+      'tours.contact.namePlaceholder': 'Tu nombre',
+      'tours.contact.emailLabel': 'Correo electrónico',
+      'tours.contact.emailPlaceholder': 'tu@correo.com',
+      'tours.contact.phoneLabel': 'Teléfono',
+      'tours.contact.phonePlaceholder': '+52 1 555 555 5555',
+      'tours.contact.ideaLabel': 'Cuéntanos tu idea',
+      'tours.contact.ideaPlaceholder': 'Incluye la fecha, el ambiente, dietas y experiencias imperdibles.',
+      'tours.contact.submit': 'Enviar mi idea'
     },
     reviews: {
       'page.title': 'Reseñas de huéspedes | Beyond the Reef Mexico',
@@ -336,6 +532,36 @@ const translations = {
       'reviews.featured.three.title': '“Nuestros amigos siguen hablando del viaje.”',
       'reviews.featured.three.copy':
         '“El chat del grupo no dejaba de llenarse de ideas. El planificador de Beyond the Reef mantuvo todo organizado e incluso añadió clases de mixología inspiradas en nuestra lista de Spotify.” - <strong>Diego &amp; crew</strong>',
+      'reviews.featured.four.title': '“Chichén Itzá sin complicaciones.”',
+      'reviews.featured.four.copy':
+        '“Organizaron la entrada al amanecer para tener El Castillo casi para nosotros, con un guía amante de la historia que conocía cada relato. Los tacos del desayuno fueron lo máximo.” - <strong>Mariela &amp; Tomás</strong>',
+      'reviews.featured.five.title': '“Pescar en familia fue facilísimo.”',
+      'reviews.featured.five.copy':
+        '“Beyond the Reef llenó la hielera, gestionó licencias y nos asignó un capitán paciente para que nuestros niños pescaran su primer mahi. Cero estrés, pura sonrisa.” - <strong>The Greene crew</strong>',
+      'reviews.featured.six.title': '“Ruta de tacos callejeros perfecta.”',
+      'reviews.featured.six.copy':
+        '“Comimos en el centro: pastor, cochinita, birria, y nunca hicimos fila. Nuestro anfitrión conocía a los vendedores por nombre y consiguió opciones increíbles para mi amiga vegana.” - <strong>Avery</strong>',
+      'reviews.featured.seven.title': '“Cenote sin multitudes.”',
+      'reviews.featured.seven.copy':
+        '“Encontraron un cenote escondido y coordinaron la llegada entre los autobuses. Flotamos en agua cristalina con solo aves de fondo. Toallas, snacks y fotos estuvieron resueltos.” - <strong>Jess &amp; Priya</strong>',
+      'reviews.featured.eight.title': '“Snorkel de documental.”',
+      'reviews.featured.eight.copy':
+        '“Nuestro guía señaló tortugas, rayas y hasta un caballito de mar tímido. El equipo quedó perfecto y el barco tenía sombra, algo que mi papá agradeció. Nos cuidaron de inicio a fin.” - <strong>Samir</strong>',
+      'reviews.featured.nine.title': '“Noche romántica de tacos en la playa.”',
+      'reviews.featured.nine.copy':
+        '“Convirtieron un antojo en una noche completa: tacos a la parrilla, aguas frescas y luces bajo las palmas. Fue nuestra cita favorita del viaje.” - <strong>Lena &amp; Marco</strong>',
+      'reviews.featured.ten.title': '“Aventura accesible, bien hecha.”',
+      'reviews.featured.ten.copy':
+        '“Uso silla de ruedas y coordinaron rampas, transporte y un guía tranquilo para recorrer Tulum. Nunca tuve que explicar dos veces; todo funcionó.” - <strong>Natalie</strong>',
+      'reviews.featured.eleven.title': '“Clases de pesca submarina muy personales.”',
+      'reviews.featured.eleven.copy':
+        '“Queríamos aprender con seguridad y nos asignaron un experto local enfocado en técnica y respeto al arrecife. Nos fuimos con nuevas habilidades y un almuerzo con la pesca del día.” - <strong>Darius &amp; Cole</strong>',
+      'reviews.featured.twelve.title': '“A los niños les encantó el tour nocturno en la laguna.”',
+      'reviews.featured.twelve.copy':
+        '“Bioluminiscencia, historias y chocolate caliente en cubierta: cada detalle estuvo pensado. Hasta nuestro adolescente guardó el celular para ver las estrellas.” - <strong>Ruth &amp; family</strong>',
+      'reviews.featured.thirteen.title': '“Día foodie del mercado al mezcal.”',
+      'reviews.featured.thirteen.copy':
+        '“Empezamos en el mercado local por especias, tomamos una clase de cocina y cerramos con una cata de mezcal con un maestro. Se sintió auténtico, nada turístico.” - <strong>Eduardo</strong>',
       'reviews.share.heading': 'Comparte tu experiencia',
       'reviews.share.copy':
         'Escríbenos a <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a> con los mejores momentos o etiquétanos en redes con <strong>#BeyondTheReef</strong> para tener la oportunidad de aparecer.'
@@ -346,6 +572,30 @@ const translations = {
       'story.hero.heading': 'Nacimos del amor por el mar y por contar historias',
       'story.hero.copy':
         'Creemos que cada viajero merece una narrativa a la medida, creada por nuestro equipo, impulsada por la tecnología e impregnada de hospitalidad genuina.',
+      'story.intro.heading': 'Beyond The Reef Mexico',
+      'story.intro.p1':
+        'Nuestra empresa nació de una simple realización: las experiencias de viaje se habían vuelto apresuradas, impersonales y desconectadas.',
+      'story.intro.p2': 'Sabíamos que debía existir una mejor forma.',
+      'story.intro.p3':
+        'En lugar de autobuses llenos, recogidas compartidas que roban horas de tus vacaciones y tours guionados, elegimos un camino diferente: uno construido sobre el tiempo, la comodidad y la conexión humana real.',
+      'story.intro.p4':
+        'Cada experiencia que ofrecemos está pensada en ti. Sin transporte compartido. Sin desvíos largos. Sin concesiones. Desde traslados privados hasta guías locales cuidadosamente seleccionados, cada detalle existe para crear un día fluido, significativo e inolvidable.',
+      'story.intro.p5':
+        'Nuestros guías no son solo empleados; son profesionales apasionados, bien remunerados, respetados y orgullosos de su trabajo. Ese orgullo se refleja en la energía, el cuidado y la autenticidad que se siente durante tu experiencia.',
+      'story.intro.p6':
+        'Creemos que los mejores momentos suceden cuando las personas se sienten relajadas, escuchadas y verdaderamente conectadas. Esa creencia guía todo lo que hacemos, desde cómo planeamos los tours hasta cómo tratamos a nuestros huéspedes y a nuestro equipo.',
+      'story.intro.p7':
+        'Si una experiencia no cumple tus expectativas, lo resolvemos. Porque la confianza, la integridad y la conexión humana importan más que el volumen.',
+      'story.intro.p8': 'Esto no es turismo masivo. Esto es viajar con intención.',
+      'story.values.connection.title': 'Conexiones reales',
+      'story.values.connection.copy':
+        'Diseñamos cada experiencia alrededor de la conexión humana genuina para que nuestros huéspedes se sientan bienvenidos, comprendidos y parte de los lugares que visitan.',
+      'story.values.wages.title': 'Guías con salarios dignos',
+      'story.values.wages.copy':
+        'Nuestros guías reciben ingresos sólidos y estables con respeto y estabilidad, para enfocarse por completo en una hospitalidad excepcional.',
+      'story.values.awareness.title': 'Conciencia social',
+      'story.values.awareness.copy':
+        'Actuamos con empatía y sensibilidad cultural, colaborando con comunidades locales para que el turismo beneficie a todos.',
       'story.crew.heading': 'Conoce a la tripulación',
       'story.crew.lila.title': 'Lila Reyes - Fundadora',
       'story.crew.lila.copy':
@@ -366,11 +616,68 @@ const translations = {
       'story.values.tech.title': 'Tecnología que se difumina',
       'story.values.tech.copy':
         'Nuestras herramientas de planificación son potentes pero sencillas, para que te enfoques en la emoción y no en la logística.'
+    },
+    'tour-detail': {
+      'page.title': 'Beyond the Reef Mexico | Detalles del Tour',
+      'tour.hero.aria': 'Resumen del tour',
+      'tour.hero.eyebrow': 'Aventuras favoritas de los viajeros',
+      'tour.gallery.previous': 'Foto anterior',
+      'tour.gallery.next': 'Siguiente foto',
+      'tour.details.heading': 'Planea cada detalle con confianza',
+      'tour.details.copy': 'Todo lo que necesitas saber antes de reservar.',
+      'tour.details.about': 'Sobre esta experiencia',
+      'tour.details.includes': 'Qué incluye',
+      'tour.booking.label': 'Reserva ahora',
+      'tour.booking.from': 'Desde',
+      'tour.booking.currency': 'USD',
+      'tour.booking.perPerson': 'por persona',
+      'tour.booking.helper': 'Los precios bajan conforme agregas más personas.',
+      'tour.booking.guestsLabel': '¿Cuántas personas?',
+      'tour.booking.nameLabel': 'Nombre',
+      'tour.booking.namePlaceholder': 'Tu nombre completo',
+      'tour.booking.emailLabel': 'Correo electrónico',
+      'tour.booking.emailPlaceholder': 'tu@correo.com',
+      'tour.booking.phoneLabel': 'Número de teléfono',
+      'tour.booking.phonePlaceholder': '+52 984 123 4567',
+      'tour.booking.datetimeLabel': 'Fecha y hora de la actividad',
+      'tour.booking.datetimeUnknown': 'Aún no lo sé',
+      'tour.booking.pickupLabel': 'Lugar de pick-up',
+      'tour.booking.pickupPlaceholder': 'Hotel o punto de encuentro',
+      'tour.booking.submit': 'Reservar ahora',
+      'tour.booking.note': 'No se realiza ningún pago aquí: confirmamos disponibilidad y te damos seguimiento de inmediato.',
+      'tour.booking.disclaimer': 'Los precios y promociones pueden cambiar sin previo aviso.',
+      'tour.booking.status.hold':
+        'Reservando {{guests}} lugar(es) para {{tour}}. Confirmaremos el pick-up en {{pickup}} de inmediato.',
+      'tour.booking.status.missingService':
+        'Conecta el formulario de reserva con tu servicio de correo para recibir solicitudes.',
+      'tour.booking.status.sent': '¡Solicitud enviada! Confirmaremos disponibilidad y te daremos seguimiento de inmediato.',
+      'tour.booking.status.error': 'Ocurrió un error al enviar tu solicitud. Inténtalo de nuevo en unos minutos.',
+      'tour.booking.status.unavailable': 'No pudimos enviar tu solicitud en este momento. Inténtalo de nuevo más tarde.',
+      'tour.booking.pickupFallback': 'tu ubicación',
+      'tour.booking.datetimeFallback': 'No proporcionado',
+      'tour.related.aria': 'Otras aventuras',
+      'tour.related.heading': 'Sigue explorando',
+      'tour.related.copy': 'A otros viajeros también les encantaron estos recorridos.',
+      'tour.related.previous': 'Tours anteriores',
+      'tour.related.next': 'Siguientes tours'
     }
   }
 };
 
 const SUPPORTED_LANGUAGES = ['en', 'es'];
+const DEFAULT_LANGUAGE = 'en';
+
+function getTourContent(tour, lang = DEFAULT_LANGUAGE) {
+  const translation = tour.translations?.[lang] || {};
+  return {
+    name: translation.name || tour.name,
+    duration: translation.duration || tour.duration,
+    tagline: translation.tagline || tour.tagline,
+    description: translation.description || tour.description,
+    includes: translation.includes || tour.includes,
+    badge: translation.badge || tour.badge
+  };
+}
 
 const adventureTours = [
   {
@@ -402,6 +709,17 @@ const adventureTours = [
       11: 119,
       12: 119
     },
+    translations: {
+      es: {
+        name: 'Tortugas + Cenotes',
+        duration: 'Medio día • Océano + selva',
+        tagline: '· Tortugas marinas<br>· 3 cenotes<br>· Snack y bebidas',
+        description:
+          'Vive una mañana de agua y calma: comienza con snorkel junto a tortugas marinas y termina en tres cenotes cristalinos escondidos en la selva. Cada parada se siente como postal, con tiempo para flotar, respirar y disfrutar. Una aventura simple y memorable que se queda contigo.',
+        includes: ['🐢 Nado con tortugas marinas', '🤿 Snorkel en 3 cenotes', '🥤 Snack y bebidas'],
+        badge: 'Favorito'
+      }
+    },
     badge: 'Top pick'
   },
   {
@@ -432,6 +750,17 @@ const adventureTours = [
       11: 169,
       12: 169
     },
+    translations: {
+      es: {
+        name: 'Tulum Bajo el Agua',
+        duration: 'Día completo • Cultura + agua',
+        tagline: '· Ruinas de Tulum<br>· Snorkel con tortugas<br>· 2 cenotes<br>· Almuerzo local completo',
+        description:
+          'Recorre los impresionantes acantilados de Tulum con un guía cercano, luego sumérgete para hacer snorkel con tortugas y refrescarte en dos cenotes. El día fluye con paradas para fotos, ritmo relajado y un almuerzo local completo con sabor a Yucatán. Una excursión mágica y sin complicaciones.',
+        includes: ['🏛️ Tour por ruinas de Tulum', '🐢 Snorkel con tortugas', '🌊 Nado en 2 cenotes', '🌮 Almuerzo local completo'],
+        badge: 'Más vendido'
+      }
+    },
     badge: 'Best seller'
   },
   {
@@ -458,6 +787,17 @@ const adventureTours = [
       10: 74,
       11: 74,
       12: 74
+    },
+    translations: {
+      es: {
+        name: 'Cenotes Express',
+        duration: 'Medio día • Circuito de cenotes',
+        tagline: '· 4 cenotes<br>· Rappel en caverna<br>· Snack y cervezas',
+        description:
+          'Sumérgete en cuatro cenotes distintos, cada uno más impresionante que el anterior, y termina con un rappel a una caverna para el momento wow. Entre nados, tendrás tiempo para recargar con un snack y una bebida fría. Una aventura compacta con momentos acuáticos inolvidables.',
+        includes: ['🌊 Visita 4 cenotes', '🧗 Rappel en caverna', '🍺 Snack y cervezas'],
+        badge: 'Nueva ruta'
+      }
     },
     badge: 'New route'
   },
@@ -486,6 +826,17 @@ const adventureTours = [
       11: 69,
       12: 69
     },
+    translations: {
+      es: {
+        name: 'Tulum Express',
+        duration: 'Medio día • Toque cultural',
+        tagline: '· Ruinas de Tulum<br>· Bebidas y cervezas<br>· (Opcional) Tiempo libre en Tulum',
+        description:
+          'Explora las ruinas de Tulum con un guía certificado que explica todo de forma clara y entretenida. Tendrás tiempo para las vistas al mar, buenas fotos y un paseo relajado por la historia. Después, disfruta tiempo libre opcional para compras, café o un snack rápido.',
+        includes: ['🏛️ Entrada a ruinas de Tulum', '🍹 Bebidas y cervezas', '🛍️ Tiempo libre en Tulum (opcional)'],
+        badge: 'Escapada rápida'
+      }
+    },
     badge: 'Quick escape'
   },
   {
@@ -512,6 +863,17 @@ const adventureTours = [
       10: 59,
       11: 59,
       12: 59
+    },
+    translations: {
+      es: {
+        name: 'Tour de Tacos',
+        duration: 'Noche • Ruta de sabor',
+        tagline: '· Tacos auténticos<br>· Cervezas, tequila y mezcal<br>· Tiempo libre en Playa del Carmen',
+        description:
+          'Prueba tacos auténticos en lugares locales, acompaña con tequila o mezcal y disfruta una noche animada en Playa del Carmen sin prisas. Cada parada es fácil, sabrosa y con mucho encanto local, con tiempo para reír y explorar. Una noche deliciosa que se siente como celebración.',
+        includes: ['🌮 Tacos auténticos', '🥃 Cervezas, tequila y mezcal', '🌆 Tiempo libre en Playa del Carmen'],
+        badge: 'Favorito foodie'
+      }
     },
     badge: 'Foodie fave'
   },
@@ -540,6 +902,17 @@ const adventureTours = [
       11: 179,
       12: 179
     },
+    translations: {
+      es: {
+        name: 'Tulum + Cobá',
+        duration: 'Día completo • Ruinas + cenote',
+        tagline: '· Ruinas de Tulum<br>· Ruinas de Cobá<br>· Cenote con tirolesa<br>· Buffet local y bebidas',
+        description:
+          'Vive un día completo entre las ruinas de Tulum y Cobá con guías que explican todo de forma clara y amena. Refresca en un cenote con tirolesa para un extra de adrenalina, y cierra con un buffet local y bebidas. Una excursión épica y sin complicaciones.',
+        includes: ['🏛️ Ruinas de Tulum', '🌿 Ruinas de Cobá', '🪂 Cenote con tirolesa', '🥘 Buffet local y bebidas'],
+        badge: 'Aventura de día completo'
+      }
+    },
     badge: 'All-day adventure'
   },
   {
@@ -567,6 +940,17 @@ const adventureTours = [
       11: 124,
       12: 124
     },
+    translations: {
+      es: {
+        name: 'Cobá',
+        duration: 'Día completo • Historia en la selva',
+        tagline: '· Ruinas de Cobá<br>· Recorrido en bici<br>· Cenote con tirolesa<br>· Buffet regional y bebidas',
+        description:
+          'Recorre en bici las ruinas selváticas de Cobá con un guía que cuenta la historia de forma clara y entretenida. Después, refréscate en un cenote con tirolesa y disfruta un buffet regional con bebidas. Un día grande y hermoso que se siente relajado y accesible.',
+        includes: ['🌿 Ruinas de Cobá', '🚲 Recorrido en bici', '🪂 Cenote con tirolesa', '🥘 Buffet regional y bebidas'],
+        badge: 'Historia viva'
+      }
+    },
     badge: 'History rich'
   },
   {
@@ -593,6 +977,17 @@ const adventureTours = [
       11: 184,
       12: 184
     },
+    translations: {
+      es: {
+        name: 'Chichén Itzá',
+        duration: 'Día completo • Maravilla del mundo',
+        tagline: '· Ruinas de Chichén Itzá<br>· Cenote con tirolesa<br>· Buffet local con bebidas',
+        description:
+          'Visita Chichén Itzá con un guía experto que comparte las historias detrás de los templos de forma clara y memorable. Después, refréscate en un cenote con tirolesa y disfruta un buffet regional con bebidas. Una excursión de clase mundial, emocionante y totalmente vale la pena.',
+        includes: ['🗿 Ruinas de Chichén Itzá', '🪂 Cenote con tirolesa', '🥘 Buffet local con bebidas'],
+        badge: 'Sitio UNESCO'
+      }
+    },
     badge: 'UNESCO site'
   },
   {
@@ -618,6 +1013,17 @@ const adventureTours = [
       10: 219,
       11: 219,
       12: 219
+    },
+    translations: {
+      es: {
+        name: 'Cobá + Chichén Itzá',
+        duration: 'Día completo • Dos maravillas',
+        tagline: '· Ruinas de Cobá<br>· Ruinas de Chichén Itzá<br>· Cenote con tirolesa<br>· Buffet local con bebidas',
+        description:
+          'Visita Cobá en plena selva y Chichén Itzá en la llanura abierta en un día increíble y bien organizado. Divide la aventura con una tirolesa en cenote y un buffet regional con bebidas que mantiene a todos felices. Un tour único en la vida, fácil y divertido.',
+        includes: ['🌿 Ruinas de Cobá', '🗿 Ruinas de Chichén Itzá', '🪂 Cenote con tirolesa', '🥘 Buffet local con bebidas'],
+        badge: 'Circuito épico'
+      }
     },
     badge: 'Epic circuit'
   },
@@ -646,6 +1052,18 @@ const adventureTours = [
       11: 141,
       12: 141
     },
+    translations: {
+      es: {
+        name: 'Holbox Express',
+        duration: 'Día completo • Paseo por islas',
+        tagline:
+          '· Lancha rápida privada<br>· Tour por 3 islas<br>· Carrito de golf<br>· Tiempo libre en la isla<br>· Buffet en beach club con barra libre',
+        description:
+          'Navega en lancha privada para recorrer las islas de Holbox, relájate en bancos de arena blanca y explora a tu ritmo. El agua es increíble, el ambiente es relajado y el día se siente de película tropical. Un buffet en beach club con barra libre lo hace todo fácil y festivo.',
+        includes: ['🚤 Lancha rápida privada', '🏝️ Tour por 3 islas', '🛺 Carrito de golf', '🏖️ Tiempo libre en la isla', '🍹 Buffet en beach club con barra libre'],
+        badge: 'Vida isleña'
+      }
+    },
     badge: 'Island life'
   },
   {
@@ -672,6 +1090,18 @@ const adventureTours = [
       10: 155,
       11: 155,
       12: 155
+    },
+    translations: {
+      es: {
+        name: 'Delfines + Tortugas',
+        duration: 'Día completo • Reserva UNESCO',
+        tagline:
+          '· Sian Ka’an en lancha rápida<br>· Delfines + tortugas<br>· Avistamiento de aves<br>· Snorkel en arrecife<br>· Buffet local',
+        description:
+          'Recorre la reserva de Sian Ka’an en lancha rápida para buscar delfines, tortugas y vida arrecifal en un paraíso protegido. Baja el ritmo con avistamiento de aves, luego haz snorkel en el arrecife y termina con un buffet a la orilla del mar. Una excursión increíble que mezcla fauna, agua y descanso.',
+        includes: ['🚤 Sian Ka’an en lancha rápida', '🐬 Delfines y tortugas', '🦜 Avistamiento de aves', '🤿 Snorkel en arrecife', '🍽️ Buffet local'],
+        badge: 'Reserva UNESCO'
+      }
     },
     badge: 'UNESCO reserve'
   },
@@ -702,6 +1132,17 @@ const adventureTours = [
       10: 0,
       11: 0,
       12: 0
+    },
+    translations: {
+      es: {
+        name: 'Pesca medio día',
+        duration: 'Medio día • Charter privado',
+        tagline: '· Lancha privada<br>· Equipo de pesca<br>· Ceviche y pescado fresco<br>· Bebidas y cervezas',
+        description:
+          'Disfruta un charter privado de pesca con guías profesionales, aguas tranquilas y un ritmo relajado en la costa. Atrapa tu pesca y saborea ceviche fresco, pescado y bebidas frías a bordo. Una manera simple y espectacular de vivir medio día en el Caribe.',
+        includes: ['🛥️ Lancha privada', '🎣 Equipo de pesca', '🐟 Ceviche y pescado fresco', '🍺 Bebidas y cervezas'],
+        badge: 'Lancha privada'
+      }
     },
     badge: 'Private boat'
   }
@@ -841,20 +1282,24 @@ function createLanguageManager(pageKey) {
     setupLanguageToggle(languageManager);
     setupThemeToggle(prefersDark, languageManager);
     window.addEventListener('resize', scheduleNavControlWidthSync, { passive: true });
-    if (isToursPage) {
-      buildToursHeroSlider(adventureTours);
-    }
+
+    const refreshTourLists = () => {
+      if (isToursPage) {
+        buildToursHeroSlider(adventureTours, languageManager);
+        buildToursCatalog(adventureTours, languageManager);
+      }
+      buildFavoritesCarousel(adventureTours, languageManager);
+      setupCardCarousels();
+    };
+
+    refreshTourLists();
     setupHeroSlider(languageManager);
-    if (isToursPage) {
-      buildToursCatalog(adventureTours);
-    }
-    buildFavoritesCarousel(adventureTours);
-    initTourPage(adventureTours);
-    setupCardCarousels();
+    initTourPage(adventureTours, languageManager);
     setupInquiryForm(languageManager);
     setCurrentYear();
 
     languageManager.init();
+    languageManager.onChange(refreshTourLists);
     scheduleNavControlWidthSync();
   });
 })();
@@ -1260,93 +1705,132 @@ function setupHeroSlider(languageManager) {
   languageManager.onChange(updateDotLabels);
 }
 
-function buildToursHeroSlider(tours) {
+function buildToursHeroSlider(tours, languageManager) {
   const slider = document.querySelector('[data-tour-hero-slider]');
   const track = slider?.querySelector('[data-tour-hero-track]');
   if (!slider || !track || !tours.length) return;
 
-  const formatTagline = (tagline = '') => tagline.replace(/<br\s*\/?>(\s*·)?/gi, ' · ').trim();
+  const lang = languageManager?.getLanguage() || DEFAULT_LANGUAGE;
+  const updateSlide = (slide, tour) => {
+    const content = getTourContent(tour, lang);
+    const title = slide.querySelector('[data-tour-hero-title]');
+    const cta = slide.querySelector('[data-tour-hero-cta]');
+    const link = slide.querySelector('.hero-slide__link');
+    const image = slide.querySelector('img');
+    const viewLabel = languageManager?.translate('tour.card.viewAria', { name: content.name }, lang) || content.name;
 
-  track.innerHTML = '';
+    if (title) title.textContent = content.name;
+    if (cta) cta.textContent = languageManager?.translate('tour.card.bookNow', {}, lang) || 'Book now';
+    if (link) link.setAttribute('aria-label', viewLabel);
+    if (image) image.alt = viewLabel;
+  };
 
-  tours.forEach((tour, index) => {
-    const slide = document.createElement('article');
-    slide.className = `hero-slide${index === 0 ? ' is-active' : ''}`;
-    slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
-    slide.innerHTML = `
-      <a class="hero-slide__link" href="tour.html?tour=${tour.slug}">
-        <img class="hero-slide__media" src="${tour.image}" alt="${tour.name} private tour" loading="lazy" />
-        <div class="hero-slide__overlay">
-          <h2>${tour.name}</h2>
-          <span class="button button--primary hero-slide__cta">Book now</span>
-        </div>
-      </a>
-    `;
-    track.appendChild(slide);
-  });
+  if (!track.children.length) {
+    tours.forEach((tour, index) => {
+      const content = getTourContent(tour, lang);
+      const slide = document.createElement('article');
+      slide.className = `hero-slide${index === 0 ? ' is-active' : ''}`;
+      slide.setAttribute('aria-hidden', index === 0 ? 'false' : 'true');
+      slide.dataset.tourSlug = tour.slug;
+      const viewLabel = languageManager?.translate('tour.card.viewAria', { name: content.name }, lang) || content.name;
+      slide.innerHTML = `
+        <a class="hero-slide__link" href="tour.html?tour=${tour.slug}" aria-label="${viewLabel}">
+          <img class="hero-slide__media" src="${tour.image}" alt="${viewLabel}" loading="lazy" decoding="async" />
+          <div class="hero-slide__overlay">
+            <h2 data-tour-hero-title>${content.name}</h2>
+            <span class="button button--primary hero-slide__cta" data-tour-hero-cta>${languageManager?.translate('tour.card.bookNow', {}, lang) || 'Book now'}</span>
+          </div>
+        </a>
+      `;
+      track.appendChild(slide);
+    });
+  } else {
+    Array.from(track.children).forEach((slide) => {
+      const slug = slide.dataset.tourSlug;
+      const tour = tours.find((item) => item.slug === slug);
+      if (tour) {
+        updateSlide(slide, tour);
+      }
+    });
+  }
 }
 
-function createFavoriteCard(tour) {
+function createFavoriteCard(tour, languageManager) {
   const halfDaySlugs = new Set(['tulum-express', 'cenotes-express', 'tacos-tour', 'turtles-cenotes']);
-  const durationLabel = halfDaySlugs.has(tour.slug) ? 'Half day' : 'Full day';
+  const lang = languageManager?.getLanguage() || DEFAULT_LANGUAGE;
+  const content = getTourContent(tour, lang);
+  const durationKey = halfDaySlugs.has(tour.slug) ? 'tour.card.halfDay' : 'tour.card.fullDay';
+  const durationLabel = languageManager?.translate(durationKey, {}, lang) || content.duration;
+  const viewLabel = languageManager?.translate('tour.card.viewDetails', {}, lang) || 'View details';
+  const ariaLabel = languageManager?.translate('tour.card.viewAria', { name: content.name }, lang) || content.name;
+  const tagLabel = content.badge || content.tagline;
   const article = document.createElement('article');
   article.className = 'card favorite-card';
   article.setAttribute('role', 'listitem');
   article.innerHTML = `
-    <a class="favorite-card__media" href="tour.html?tour=${tour.slug}" aria-label="View ${tour.name}">
-      <img src="${tour.image}" alt="${tour.name}" loading="lazy" />
-      <span class="favorite-card__tag">${tour.badge || tour.tagline}</span>
+    <a class="favorite-card__media" href="tour.html?tour=${tour.slug}" aria-label="${ariaLabel}">
+      <img src="${tour.image}" alt="${content.name}" loading="lazy" decoding="async" />
+      <span class="favorite-card__tag">${tagLabel}</span>
       <span class="favorite-card__badge">${durationLabel}</span>
     </a>
     <div class="favorite-card__body">
-      <h3>${tour.name}</h3>
-      <p class="favorite-card__deal">${tour.tagline}</p>
-      <p class="favorite-card__copy">${tour.description}</p>
-      <a class="button button--primary favorite-card__cta" href="tour.html?tour=${tour.slug}">View details</a>
+      <h3>${content.name}</h3>
+      <p class="favorite-card__deal">${content.tagline}</p>
+      <p class="favorite-card__copy">${content.description}</p>
+      <a class="button button--primary favorite-card__cta" href="tour.html?tour=${tour.slug}">${viewLabel}</a>
     </div>
   `;
   return article;
 }
 
-function createTourGridCard(tour) {
+function createTourGridCard(tour, languageManager) {
+  const lang = languageManager?.getLanguage() || DEFAULT_LANGUAGE;
+  const content = getTourContent(tour, lang);
+  const badgeLabel = content.badge || languageManager?.translate('tour.card.privateBadge', {}, lang) || 'Private tour';
+  const ctaLabel = languageManager?.translate('tour.card.bookNow', {}, lang) || 'Book now';
+  const ariaLabel = languageManager?.translate('tour.card.viewAria', { name: content.name }, lang) || content.name;
   const article = document.createElement('article');
   article.className = 'card tour-grid-card';
   article.setAttribute('role', 'listitem');
   article.innerHTML = `
     <div class="tour-grid-card__media">
-      <a href="tour.html?tour=${tour.slug}" aria-label="View ${tour.name}">
-        <img src="${tour.image}" alt="${tour.name}" loading="lazy" />
-        <span class="tour-grid-card__badge">${tour.badge || 'Private tour'}</span>
+      <a href="tour.html?tour=${tour.slug}" aria-label="${ariaLabel}">
+        <img src="${tour.image}" alt="${content.name}" loading="lazy" decoding="async" />
+        <span class="tour-grid-card__badge">${badgeLabel}</span>
       </a>
     </div>
     <div class="tour-grid-card__body">
-      <h3 class="tour-grid-card__title">${tour.name}</h3>
-      <p class="tour-grid-card__meta">${tour.duration}</p>
-      <p class="tour-grid-card__copy">${tour.description}</p>
-      <a class="button button--primary tour-grid-card__cta" href="tour.html?tour=${tour.slug}">Book now</a>
+      <h3 class="tour-grid-card__title">${content.name}</h3>
+      <p class="tour-grid-card__meta">${content.duration}</p>
+      <p class="tour-grid-card__copy">${content.description}</p>
+      <a class="button button--primary tour-grid-card__cta" href="tour.html?tour=${tour.slug}">${ctaLabel}</a>
     </div>
   `;
   return article;
 }
 
-function populateCardTrack(selector, tours) {
+function populateCardTrack(selector, tours, languageManager) {
   const track = document.querySelector(selector);
   if (!track) return null;
   track.innerHTML = '';
-  tours.forEach((tour) => track.appendChild(createFavoriteCard(tour)));
+  tours.forEach((tour) => track.appendChild(createFavoriteCard(tour, languageManager)));
   return track;
 }
 
-function buildToursCatalog(tours) {
+function buildToursCatalog(tours, languageManager) {
   const grid = document.querySelector('[data-tour-grid]');
   if (!grid || !tours.length) return;
 
   grid.innerHTML = '';
-  tours.forEach((tour) => grid.appendChild(createTourGridCard(tour)));
+  tours.forEach((tour) => grid.appendChild(createTourGridCard(tour, languageManager)));
 }
 
-function buildFavoritesCarousel(tours) {
-  populateCardTrack('[data-favorites-track]', tours);
+function buildFavoritesCarousel(tours, languageManager) {
+  const track = populateCardTrack('[data-favorites-track]', tours, languageManager);
+  const viewport = track?.closest('.favorites-carousel')?.querySelector('.favorites-carousel__viewport');
+  if (viewport) {
+    viewport.scrollLeft = 0;
+  }
 }
 
 function setupCardCarousels() {
@@ -1354,14 +1838,19 @@ function setupCardCarousels() {
   if (!carousels.length) return;
 
   carousels.forEach((carousel) => {
+    if (carousel.dataset.carouselReady === 'true') {
+      if (typeof carousel._updateArrowState === 'function') {
+        carousel._updateArrowState();
+      }
+      return;
+    }
+
     const viewport = carousel.querySelector('.favorites-carousel__viewport');
     const track = carousel.querySelector('.favorites-carousel__track');
     const prevButton = carousel.querySelector('[data-carousel-arrow="prev"]');
     const nextButton = carousel.querySelector('[data-carousel-arrow="next"]');
 
     if (!viewport || !track) return;
-
-    const cards = Array.from(track.querySelectorAll('.favorite-card'));
 
     const getGap = () => {
       const styles = window.getComputedStyle(track);
@@ -1386,7 +1875,8 @@ function setupCardCarousels() {
 
     const scrollByDirection = (direction) => {
       const multiplier = direction < 0 ? -1 : 1;
-      const cardWidth = cards.length ? cards[0].getBoundingClientRect().width : viewport.clientWidth;
+      const card = track.querySelector('.favorite-card');
+      const cardWidth = card ? card.getBoundingClientRect().width : viewport.clientWidth;
       const target = viewport.scrollLeft + multiplier * (cardWidth + getGap());
       const maxScroll = viewport.scrollWidth - viewport.clientWidth;
       const clamped = Math.max(0, Math.min(target, maxScroll));
@@ -1419,6 +1909,8 @@ function setupCardCarousels() {
     window.addEventListener('resize', handleResize);
 
     updateArrowState();
+    carousel.dataset.carouselReady = 'true';
+    carousel._updateArrowState = updateArrowState;
   });
 }
 
@@ -1451,14 +1943,14 @@ function setupTourGallery(gallery) {
   update();
 }
 
-function initTourPage(tours) {
+function initTourPage(tours, languageManager) {
   const tourPage = document.querySelector('[data-tour-page]');
   if (!tourPage || !tours.length) return;
 
   const params = new URLSearchParams(window.location.search);
   const slug = params.get('tour');
-  const tour = tours.find((item) => item.slug === slug) || tours[0];
-  if (!tour) return;
+  const baseTour = tours.find((item) => item.slug === slug) || tours[0];
+  if (!baseTour) return;
 
   const galleryTrack = document.querySelector('[data-tour-gallery-track]');
   const galleryWrapper = document.querySelector('[data-tour-gallery]');
@@ -1479,40 +1971,55 @@ function initTourPage(tours) {
   const dateTimeField = document.querySelector('[data-tour-datetime-field]');
   const formspreeEndpoint = 'https://formspree.io/f/REPLACE_ME';
 
-  if (titleEl) titleEl.textContent = tour.name;
-  if (durationEl) durationEl.textContent = tour.duration;
-  if (taglineEl) taglineEl.textContent = tour.tagline;
-  if (descriptionEl) descriptionEl.textContent = tour.description;
-  document.title = `${tour.name} | Beyond the Reef Mexico`;
+  const updateTourContent = (lang) => {
+    const content = getTourContent(baseTour, lang);
+    if (titleEl) titleEl.textContent = content.name;
+    if (durationEl) durationEl.textContent = content.duration;
+    if (taglineEl) taglineEl.innerHTML = content.tagline;
+    if (descriptionEl) descriptionEl.textContent = content.description;
+    document.title = `${content.name} | Beyond the Reef Mexico`;
 
-  if (includesEl) {
-    includesEl.innerHTML = '';
-    tour.includes.forEach((item) => {
-      const cleanItem = item.replace(/^·\s*/, '');
-      const li = document.createElement('li');
-      li.textContent = cleanItem;
-      includesEl.appendChild(li);
-    });
-  }
+    if (includesEl) {
+      includesEl.innerHTML = '';
+      content.includes.forEach((item) => {
+        const cleanItem = item.replace(/^·\s*/, '');
+        const li = document.createElement('li');
+        li.textContent = cleanItem;
+        includesEl.appendChild(li);
+      });
+    }
 
-  if (galleryTrack) {
-    galleryTrack.innerHTML = '';
-    const images = tour.gallery && tour.gallery.length ? tour.gallery : [tour.image];
-    images.forEach((src, index) => {
-      const slide = document.createElement('figure');
-      slide.className = 'tour-gallery__slide';
-      slide.innerHTML = `<img src="${src}" alt="${tour.name} photo ${index + 1}" loading="lazy" />`;
-      galleryTrack.appendChild(slide);
-    });
-  }
+    if (galleryTrack) {
+      const images = baseTour.gallery && baseTour.gallery.length ? baseTour.gallery : [baseTour.image];
+      if (!galleryTrack.children.length) {
+        galleryTrack.innerHTML = '';
+        images.forEach((src, index) => {
+          const slide = document.createElement('figure');
+          slide.className = 'tour-gallery__slide';
+          slide.innerHTML = `<img src="${src}" alt="${content.name} photo ${index + 1}" loading="lazy" decoding="async" />`;
+          galleryTrack.appendChild(slide);
+        });
+      } else {
+        Array.from(galleryTrack.querySelectorAll('img')).forEach((image, index) => {
+          image.alt = `${content.name} photo ${index + 1}`;
+        });
+      }
+    }
+
+    const relatedTours = tours.filter((item) => item.slug !== baseTour.slug);
+    populateCardTrack('[data-related-track]', relatedTours, languageManager);
+    setupCardCarousels();
+  };
+
+  updateTourContent(languageManager?.getLanguage() || DEFAULT_LANGUAGE);
 
   setupTourGallery(galleryWrapper);
 
   const buildGuestOptions = () => {
     if (!guestSelect) return;
-    if (!tour.prices) return;
+    if (!baseTour.prices) return;
 
-    const counts = Object.keys(tour.prices)
+    const counts = Object.keys(baseTour.prices)
       .map((value) => Number(value))
       .filter((value) => Number.isFinite(value))
       .sort((a, b) => a - b);
@@ -1536,7 +2043,7 @@ function initTourPage(tours) {
   const updatePrice = () => {
     if (!priceEl || !guestSelect) return;
     const guests = Number(guestSelect.value) || 1;
-    const price = tour.prices ? tour.prices[guests] : tour.basePrice;
+    const price = baseTour.prices ? baseTour.prices[guests] : baseTour.basePrice;
     priceEl.textContent = currencyFormatter.format(price || 0);
   };
 
@@ -1572,28 +2079,39 @@ function initTourPage(tours) {
 
   bookingForm?.addEventListener('submit', (event) => {
     event.preventDefault();
+    const lang = languageManager?.getLanguage() || DEFAULT_LANGUAGE;
+    const tourContent = getTourContent(baseTour, lang);
     const guests = Number(guestSelect?.value) || 1;
-    const pickup = (document.querySelector('[data-tour-pickup]')?.value || 'your location').trim();
+    const pickupFallback = languageManager?.translate('tour.booking.pickupFallback', {}, lang) || 'your location';
+    const pickup = (document.querySelector('[data-tour-pickup]')?.value || pickupFallback).trim();
     const name = (nameInput?.value || '').trim();
     const email = (emailInput?.value || '').trim();
     const phone = (phoneInput?.value || '').trim();
     const dateTimeValue = (dateTimeInput?.value || '').trim();
-    const dateTimeLabel = dateTimeUnknown?.checked ? 'Not sure yet' : dateTimeValue || 'Not provided';
+    const dateTimeUnknownLabel =
+      languageManager?.translate('tour.booking.datetimeUnknown', {}, lang) || 'Not sure yet';
+    const dateTimeFallback =
+      languageManager?.translate('tour.booking.datetimeFallback', {}, lang) || 'Not provided';
+    const dateTimeLabel = dateTimeUnknown?.checked ? dateTimeUnknownLabel : dateTimeValue || dateTimeFallback;
     if (noteEl) {
-      noteEl.textContent = `Holding ${guests} spot(s) for ${tour.name}. We will confirm pick-up at ${pickup} right away.`;
+      noteEl.textContent =
+        languageManager?.translate('tour.booking.status.hold', { guests, tour: tourContent.name, pickup }, lang) ||
+        `Holding ${guests} spot(s) for ${tourContent.name}. We will confirm pick-up at ${pickup} right away.`;
     }
     if (!formspreeEndpoint || formspreeEndpoint.includes('REPLACE_ME')) {
       if (noteEl) {
-        noteEl.textContent = 'Please connect the booking form to your email service to receive requests.';
+        noteEl.textContent =
+          languageManager?.translate('tour.booking.status.missingService', {}, lang) ||
+          'Please connect the booking form to your email service to receive requests.';
       }
       return;
     }
     const payload = {
-      tour: tour.name,
+      tour: tourContent.name,
       guests,
-      name: name || 'Not provided',
-      email: email || 'Not provided',
-      phone: phone || 'Not provided',
+      name: name || dateTimeFallback,
+      email: email || dateTimeFallback,
+      phone: phone || dateTimeFallback,
       dateTime: dateTimeLabel,
       pickup
     };
@@ -1608,18 +2126,21 @@ function initTourPage(tours) {
       .then((response) => {
         if (!noteEl) return;
         noteEl.textContent = response.ok
-          ? 'Request sent! We will confirm availability and follow up right away.'
-          : 'Something went wrong sending your request. Please try again shortly.';
+          ? languageManager?.translate('tour.booking.status.sent', {}, lang) ||
+            'Request sent! We will confirm availability and follow up right away.'
+          : languageManager?.translate('tour.booking.status.error', {}, lang) ||
+            'Something went wrong sending your request. Please try again shortly.';
       })
       .catch(() => {
         if (noteEl) {
-          noteEl.textContent = 'Unable to send your request right now. Please try again shortly.';
+          noteEl.textContent =
+            languageManager?.translate('tour.booking.status.unavailable', {}, lang) ||
+            'Unable to send your request right now. Please try again shortly.';
         }
       });
   });
 
-  const relatedTours = tours.filter((item) => item.slug !== tour.slug);
-  populateCardTrack('[data-related-track]', relatedTours);
+  languageManager?.onChange(updateTourContent);
 }
 
 function setupInquiryForm(languageManager) {
@@ -1635,11 +2156,14 @@ function setupInquiryForm(languageManager) {
   };
 
   const buildMailtoBody = (name, email, phone, idea) => {
-    const lines = [`Name: ${name}`, `Email: ${email}`];
+    const lines = [
+      `${languageManager.translate('inquiry.emailBody.nameLabel')}: ${name}`,
+      `${languageManager.translate('inquiry.emailBody.emailLabel')}: ${email}`
+    ];
     if (phone) {
-      lines.push(`Phone: ${phone}`);
+      lines.push(`${languageManager.translate('inquiry.emailBody.phoneLabel')}: ${phone}`);
     }
-    lines.push('', 'Trip idea:', idea);
+    lines.push('', `${languageManager.translate('inquiry.emailBody.ideaLabel')}:`, idea);
     return encodeURIComponent(lines.join('\n'));
   };
 
@@ -1652,15 +2176,15 @@ function setupInquiryForm(languageManager) {
     const idea = (formData.get('idea') || '').toString().trim();
 
     if (!name || !email || !idea) {
-      setStatus(languageManager.translate('home.builder.status.missing'), true);
+      setStatus(languageManager.translate('inquiry.status.missing'), true);
       return;
     }
 
-    const subject = encodeURIComponent(languageManager.translate('home.builder.emailSubject', { name }));
+    const subject = encodeURIComponent(languageManager.translate('inquiry.emailSubject', { name }));
     const body = buildMailtoBody(name, email, phone, idea);
     const mailtoLink = `mailto:info@beyondthereefmexico.com?subject=${subject}&body=${body}`;
 
-    setStatus(languageManager.translate('home.builder.status.prompt'));
+    setStatus(languageManager.translate('inquiry.status.prompt'));
     window.location.href = mailtoLink;
     form.reset();
   });

@@ -86,6 +86,8 @@ main {
 
 .section {
   padding: clamp(3rem, 5vw + 1rem, 6rem) clamp(1.5rem, 5vw, 7.5rem);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }
 
 .section--accent {
@@ -747,6 +749,8 @@ body.dark-mode .difference-item__icon {
   grid-template-rows: auto 1fr;
   overflow: hidden;
   padding: 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 320px 420px;
 }
 
 .tour-grid-card__media {
@@ -948,6 +952,8 @@ html.dark-mode .section--favorites {
   scroll-snap-type: x mandatory;
   scroll-padding-inline: var(--favorites-viewport-padding);
   scroll-behavior: smooth;
+  contain: layout paint;
+  will-change: scroll-position;
   background: linear-gradient(135deg, #eef2f7 0%, #d9e2ee 100%);
   border-radius: var(--radius-lg);
   border: 1px solid rgba(12, 43, 76, 0.12);
@@ -986,6 +992,8 @@ body.dark-mode .favorites-carousel__viewport {
   scroll-snap-align: center;
   scroll-snap-stop: always;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 320px 420px;
 }
 
 .favorite-card:hover,
@@ -1493,6 +1501,43 @@ body.dark-mode .tour-gallery__arrow {
     padding-inline: 1rem;
     scroll-padding-inline: 1rem;
   }
+
+  .section__intro,
+  .page-section,
+  .page-hero > div,
+  .tour-hero__content,
+  .contact-panel__copy,
+  .custom-inquiry,
+  .cta {
+    text-align: center;
+  }
+
+  .cta,
+  .contact-panel__grid {
+    align-items: center;
+  }
+
+  .section__intro h2,
+  .page-hero h1,
+  .tour-hero__title,
+  .tour-details .section__intro h2,
+  .section--favorites .section__intro h2 {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-panel__points,
+  .custom-inquiry__list,
+  .contact-panel__channels {
+    text-align: center;
+    list-style-position: inside;
+  }
+
+  .story-intro,
+  .story-message {
+    text-align: center;
+    text-justify: auto;
+  }
 }
 
 .custom-inquiry {
@@ -1781,6 +1826,8 @@ body.dark-mode .tour-gallery__arrow {
   padding: clamp(3rem, 6vw, 5rem) clamp(1.5rem, 6vw, 5rem);
   max-width: 1100px;
   margin: 0 auto;
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }
 
 .page-section h2 {
@@ -1837,6 +1884,8 @@ body.dark-mode .tour-gallery__arrow {
   border-radius: var(--radius-lg);
   border: 1px solid rgba(15, 58, 93, 0.16);
   box-shadow: var(--shadow);
+  content-visibility: auto;
+  contain-intrinsic-size: 240px 260px;
 }
 
 .review-card h3 {
