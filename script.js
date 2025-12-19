@@ -1515,6 +1515,10 @@ function setupHeroSlider(languageManager) {
     };
 
     if (isVideo) {
+      media.muted = true;
+      media.setAttribute('muted', '');
+      media.playsInline = true;
+      media.setAttribute('playsinline', '');
       media.loop = false;
       media.preload = index === currentIndex ? 'auto' : 'metadata';
 
@@ -1580,6 +1584,12 @@ function setupHeroSlider(languageManager) {
     if (!video) return;
 
     if (isActive) {
+      if (video.tagName.toLowerCase() === 'video') {
+        video.muted = true;
+        video.setAttribute('muted', '');
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+      }
       if (video.preload !== 'auto') {
         video.preload = 'auto';
       }
