@@ -1291,11 +1291,13 @@ function createLanguageManager(pageKey) {
       }
       buildFavoritesCarousel(adventureTours, languageManager);
       setupCardCarousels();
+      setupMediaPrefetch();
     };
 
     refreshTourLists();
     setupHeroSlider(languageManager);
     initTourPage(adventureTours, languageManager);
+    setupMediaPrefetch();
     setupInquiryForm(languageManager);
     setCurrentYear();
 
@@ -1912,6 +1914,59 @@ function setupCardCarousels() {
     updateArrowState();
     carousel.dataset.carouselReady = 'true';
     carousel._updateArrowState = updateArrowState;
+  });
+}
+
+const mediaPreloadSources = new Set();
+let mediaPreloadObserver = null;
+
+function preloadImageSource(source) {
+  if (!source || mediaPreloadSources.has(source)) return;
+  const image = new Image();
+  image.decoding = 'async';
+  image.src = source;
+  mediaPreloadSources.add(source);
+}
+
+function getMediaPreloadObserver() {
+  if (mediaPreloadObserver || typeof IntersectionObserver === 'undefined') {
+    return mediaPreloadObserver;
+  }
+
+  mediaPreloadObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const target = entry.target;
+        observer.unobserve(target);
+
+        if (target instanceof HTMLImageElement) {
+          const source = target.currentSrc || target.src;
+          preloadImageSource(source);
+        }
+      });
+    },
+    {
+      rootMargin: '240px 0px',
+      threshold: 0.01
+    }
+  );
+
+  return mediaPreloadObserver;
+}
+
+function setupMediaPrefetch() {
+  const lazyImages = document.querySelectorAll('img[loading="lazy"]:not([data-preload-ready])');
+  if (!lazyImages.length) return;
+
+  const observer = getMediaPreloadObserver();
+  lazyImages.forEach((image) => {
+    image.dataset.preloadReady = 'true';
+    if (observer) {
+      observer.observe(image);
+    } else {
+      preloadImageSource(image.currentSrc || image.src);
+    }
   });
 }
 
