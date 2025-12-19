@@ -73,24 +73,26 @@
         <aside class="card tour-details__panel tour-details__panel--booking">
           <div class="tour-booking__header">
             <p class="tour-booking__label">Reserve now</p>
-            <p class="tour-booking__price">
-              <span>From</span> <strong data-tour-price>$0</strong> <span>USD</span>
-              <span class="tour-booking__per-person">per person</span>
-            </p>
+            <div class="tour-booking__price-block">
+              <p class="tour-booking__price">
+                <span>From</span> <strong data-tour-price>$0</strong> <span>USD</span>
+                <span class="tour-booking__per-person">per person</span>
+              </p>
+              <p class="tour-booking__helper">Prices drop as you add more people.</p>
+            </div>
           </div>
-          <p class="tour-booking__helper">Prices drop as you add more people.</p>
           <form class="tour-booking" data-tour-booking>
             <div class="field">
               <label for="tour-name">Name</label>
-              <input id="tour-name" name="name" type="text" placeholder="Your full name" autocomplete="name" />
+              <input id="tour-name" name="name" type="text" placeholder="Your full name" autocomplete="name" data-tour-name />
             </div>
             <div class="field">
               <label for="tour-email">Email</label>
-              <input id="tour-email" name="email" type="email" placeholder="you@email.com" autocomplete="email" />
+              <input id="tour-email" name="email" type="email" placeholder="you@email.com" autocomplete="email" data-tour-email />
             </div>
             <div class="field">
               <label for="tour-phone">Phone number</label>
-              <input id="tour-phone" name="phone" type="tel" placeholder="+52 984 123 4567" autocomplete="tel" />
+              <input id="tour-phone" name="phone" type="tel" placeholder="+52 984 123 4567" autocomplete="tel" data-tour-phone />
             </div>
             <div class="field">
               <label for="tour-guests">How many people?</label>
@@ -107,7 +109,7 @@
                 <option value="10">10</option>
               </select>
             </div>
-            <div class="field">
+            <div class="field" data-tour-datetime-field>
               <label for="tour-datetime">Date &amp; time of the activity</label>
               <input id="tour-datetime" name="datetime" type="datetime-local" data-tour-datetime />
               <label class="tour-booking__checkbox">

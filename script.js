@@ -1315,8 +1315,12 @@ function initTourPage(tours) {
   const guestSelect = document.querySelector('[data-tour-guests]');
   const bookingForm = document.querySelector('[data-tour-booking]');
   const noteEl = bookingForm?.querySelector('.tour-booking__note');
+  const nameInput = document.querySelector('[data-tour-name]');
+  const emailInput = document.querySelector('[data-tour-email]');
+  const phoneInput = document.querySelector('[data-tour-phone]');
   const dateTimeInput = document.querySelector('[data-tour-datetime]');
   const dateTimeUnknown = document.querySelector('[data-tour-datetime-unknown]');
+  const dateTimeField = document.querySelector('[data-tour-datetime-field]');
 
   if (titleEl) titleEl.textContent = tour.name;
   if (durationEl) durationEl.textContent = tour.duration;
@@ -1377,13 +1381,45 @@ function initTourPage(tours) {
   dateTimeUnknown?.addEventListener('change', toggleDateTime);
   toggleDateTime();
 
+  const openDateTimePicker = () => {
+    if (!dateTimeInput || dateTimeInput.disabled) return;
+    if (typeof dateTimeInput.showPicker === 'function') {
+      dateTimeInput.showPicker();
+    }
+  };
+
+  dateTimeInput?.addEventListener('click', openDateTimePicker);
+  dateTimeInput?.addEventListener('focus', openDateTimePicker);
+  dateTimeField?.addEventListener('click', (event) => {
+    if (event.target instanceof HTMLInputElement && event.target.type === 'checkbox') return;
+    openDateTimePicker();
+    dateTimeInput?.focus();
+  });
+
   bookingForm?.addEventListener('submit', (event) => {
     event.preventDefault();
     const guests = Number(guestSelect?.value) || 1;
     const pickup = (document.querySelector('[data-tour-pickup]')?.value || 'your location').trim();
+    const name = (nameInput?.value || '').trim();
+    const email = (emailInput?.value || '').trim();
+    const phone = (phoneInput?.value || '').trim();
+    const dateTimeValue = (dateTimeInput?.value || '').trim();
+    const dateTimeLabel = dateTimeUnknown?.checked ? 'Not sure yet' : dateTimeValue || 'Not provided';
     if (noteEl) {
       noteEl.textContent = `Holding ${guests} spot(s) for ${tour.name}. We will confirm pick-up at ${pickup} right away.`;
     }
+    const bodyLines = [
+      `Tour: ${tour.name}`,
+      `Guests: ${guests}`,
+      `Name: ${name || 'Not provided'}`,
+      `Email: ${email || 'Not provided'}`,
+      `Phone: ${phone || 'Not provided'}`,
+      `Date & time: ${dateTimeLabel}`,
+      `Pick-up: ${pickup}`
+    ];
+    const subject = encodeURIComponent(`Tour request: ${tour.name}`);
+    const body = encodeURIComponent(bodyLines.join('\n'));
+    window.location.href = `mailto:info@beyondthereefmexico.com?subject=${subject}&body=${body}`;
   });
 
   const relatedTours = tours.filter((item) => item.slug !== tour.slug);

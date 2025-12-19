@@ -1390,6 +1390,13 @@ body.dark-mode .tour-gallery__arrow {
   gap: 0.75rem;
 }
 
+.tour-booking__price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
 .tour-booking__label {
   margin: 0;
   text-transform: uppercase;
@@ -1419,7 +1426,7 @@ body.dark-mode .tour-gallery__arrow {
 }
 
 .tour-booking__helper {
-  margin: 0.35rem 0 0;
+  margin: 0;
   font-size: 0.95rem;
   color: rgba(11, 47, 85, 0.75);
 }
