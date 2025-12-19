@@ -1555,6 +1555,20 @@ body.dark-mode .tour-gallery__arrow {
     text-align: center;
     text-justify: auto;
   }
+
+  .tour-booking__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .tour-booking__label {
+    width: 100%;
+  }
+
+  .tour-booking__price-block {
+    align-items: flex-start;
+  }
 }
 
 .custom-inquiry {
