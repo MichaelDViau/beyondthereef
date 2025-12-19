@@ -102,13 +102,13 @@ const translations = {
         'Our certified guides bring years of professional experience, crafting insider-only moments you cannot find on a brochure.',
       'home.accent.collab.title': 'Can’t find the tour you want?',
       'home.accent.collab.copy':
-        'Reach out and we’ll schedule a call or video chat to custom-build your perfect vacation.',
+        'Reach out and we’ll schedule a call or video chat to custom-build your perfect excursions.',
       'home.accent.execution.title': 'Worry-free tours',
       'home.accent.execution.copy':
         'Your tour, your time, no hidden fees, with transfers, tickets, and timing handled so you just enjoy.',
-      'home.cta.heading': '',
-      'home.cta.copy': '',
-      'home.cta.button': ''
+      'home.cta.heading': 'Ready to build your dream tour?',
+      'home.cta.copy': 'Reach out and we’ll design the right experience for you.',
+      'home.cta.button': 'Email us now'
     },
     tours: {
       'page.title': 'Excursions & Private Tours | Beyond the Reef Mexico',
@@ -290,9 +290,9 @@ const translations = {
       'home.accent.execution.title': 'Tours sin preocupaciones',
       'home.accent.execution.copy':
         'Tu tour, tu horario, sin cargos ocultos: coordinamos traslados, boletos y tiempos para que solo disfrutes.',
-      'home.cta.heading': '',
-      'home.cta.copy': '',
-      'home.cta.button': ''
+      'home.cta.heading': '¿Listo para diseñar tu tour soñado?',
+      'home.cta.copy': 'Escríbele a nuestro equipo de concierge y te enviaremos una propuesta personalizada en 24 horas.',
+      'home.cta.button': 'Escríbenos'
     },
     tours: {
       'page.title': 'Excursiones y Tours Privados | Beyond the Reef Mexico',
