@@ -2038,6 +2038,17 @@ body.dark-mode .floating-contact__link:focus-visible {
   box-shadow: 0 24px 40px rgba(4, 20, 41, 0.55);
 }
 
+html.dark-mode #tour-builder .section__intro h2,
+body.dark-mode #tour-builder .section__intro h2,
+html.dark-mode .section--accent .section__intro h2,
+body.dark-mode .section--accent .section__intro h2,
+html.dark-mode #tour-rows-heading,
+body.dark-mode #tour-rows-heading,
+html.dark-mode #contact-planner-heading,
+body.dark-mode #contact-planner-heading {
+  color: #ffffff;
+}
+
 @media (max-width: 992px) {
   .cta {
     flex-direction: column;
