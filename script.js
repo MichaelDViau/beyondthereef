@@ -1321,6 +1321,7 @@ function initTourPage(tours) {
   const dateTimeInput = document.querySelector('[data-tour-datetime]');
   const dateTimeUnknown = document.querySelector('[data-tour-datetime-unknown]');
   const dateTimeField = document.querySelector('[data-tour-datetime-field]');
+  const formspreeEndpoint = 'https://formspree.io/f/REPLACE_ME';
 
   if (titleEl) titleEl.textContent = tour.name;
   if (durationEl) durationEl.textContent = tour.duration;
@@ -1408,18 +1409,40 @@ function initTourPage(tours) {
     if (noteEl) {
       noteEl.textContent = `Holding ${guests} spot(s) for ${tour.name}. We will confirm pick-up at ${pickup} right away.`;
     }
-    const bodyLines = [
-      `Tour: ${tour.name}`,
-      `Guests: ${guests}`,
-      `Name: ${name || 'Not provided'}`,
-      `Email: ${email || 'Not provided'}`,
-      `Phone: ${phone || 'Not provided'}`,
-      `Date & time: ${dateTimeLabel}`,
-      `Pick-up: ${pickup}`
-    ];
-    const subject = encodeURIComponent(`Tour request: ${tour.name}`);
-    const body = encodeURIComponent(bodyLines.join('\n'));
-    window.location.href = `mailto:info@beyondthereefmexico.com?subject=${subject}&body=${body}`;
+    if (!formspreeEndpoint || formspreeEndpoint.includes('REPLACE_ME')) {
+      if (noteEl) {
+        noteEl.textContent = 'Please connect the booking form to your email service to receive requests.';
+      }
+      return;
+    }
+    const payload = {
+      tour: tour.name,
+      guests,
+      name: name || 'Not provided',
+      email: email || 'Not provided',
+      phone: phone || 'Not provided',
+      dateTime: dateTimeLabel,
+      pickup
+    };
+    fetch(formspreeEndpoint, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    })
+      .then((response) => {
+        if (!noteEl) return;
+        noteEl.textContent = response.ok
+          ? 'Request sent! We will confirm availability and follow up right away.'
+          : 'Something went wrong sending your request. Please try again shortly.';
+      })
+      .catch(() => {
+        if (noteEl) {
+          noteEl.textContent = 'Unable to send your request right now. Please try again shortly.';
+        }
+      });
   });
 
   const relatedTours = tours.filter((item) => item.slug !== tour.slug);
