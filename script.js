@@ -96,7 +96,7 @@ const translations = {
       'home.builder.status.missing': 'Please add your name, email, and idea so we can craft your quote.',
       'home.builder.status.prompt': 'Opening your email app to send the details to our concierge.',
       'home.accent.eyebrow': 'Why travelers love us',
-      'home.accent.heading': 'VIP concierge care for unforgettable family excursions',
+      'home.accent.heading': 'Private, Stress-Free Excursions',
       'home.accent.locals.title': 'Led by certified guides',
       'home.accent.locals.copy':
         'Our certified guides bring years of professional experience, crafting insider-only moments you cannot find on a brochure.',
