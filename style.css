@@ -805,6 +805,7 @@ body.dark-mode .difference-item__icon {
 .tour-grid-card__title {
   margin: 0;
   font-size: 1.1rem;
+  color: var(--accent-strong);
 }
 
 .tour-grid-card__meta {
@@ -2047,6 +2048,57 @@ body.dark-mode #tour-rows-heading,
 html.dark-mode #contact-planner-heading,
 body.dark-mode #contact-planner-heading {
   color: #ffffff;
+}
+
+html.dark-mode .tour-grid-card__title,
+body.dark-mode .tour-grid-card__title {
+  color: #ffffff;
+}
+
+html.dark-mode .tour-details__panel--booking,
+body.dark-mode .tour-details__panel--booking {
+  color: #ffffff;
+}
+
+html.dark-mode .tour-booking__label,
+body.dark-mode .tour-booking__label,
+html.dark-mode .tour-booking__price,
+body.dark-mode .tour-booking__price,
+html.dark-mode .tour-booking__price strong,
+body.dark-mode .tour-booking__price strong,
+html.dark-mode .tour-booking__helper,
+body.dark-mode .tour-booking__helper,
+html.dark-mode .tour-booking__note,
+body.dark-mode .tour-booking__note {
+  color: #ffffff;
+}
+
+html.dark-mode .tour-booking__per-person,
+body.dark-mode .tour-booking__per-person,
+html.dark-mode .tour-booking__disclaimer,
+body.dark-mode .tour-booking__disclaimer,
+html.dark-mode .tour-booking__checkbox,
+body.dark-mode .tour-booking__checkbox {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+html.dark-mode .tour-booking .field label,
+body.dark-mode .tour-booking .field label {
+  color: #ffffff;
+}
+
+html.dark-mode .tour-booking input,
+body.dark-mode .tour-booking input,
+html.dark-mode .tour-booking select,
+body.dark-mode .tour-booking select {
+  background: rgba(11, 27, 49, 0.65);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+}
+
+html.dark-mode .tour-booking input::placeholder,
+body.dark-mode .tour-booking input::placeholder {
+  color: rgba(255, 255, 255, 0.65);
 }
 
 @media (max-width: 992px) {
