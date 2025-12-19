@@ -25,7 +25,11 @@ const translations = {
       'inquiry.emailBody.phoneLabel': 'Phone',
       'inquiry.emailBody.ideaLabel': 'Trip idea',
       'inquiry.status.missing': 'Please add your name, email, and idea so we can craft your quote.',
-      'inquiry.status.prompt': 'Opening your email app to send the details to our concierge.',
+      'inquiry.status.sending': 'Sending your request to our concierge team now.',
+      'inquiry.status.sent': 'Thanks! Your request is in. We will follow up shortly.',
+      'inquiry.status.error': 'Something went wrong sending your request. Please try again.',
+      'inquiry.status.unavailable': 'Unable to send your request right now. Please try again shortly.',
+      'inquiry.status.missingService': 'Please connect this form to an email service to receive requests.',
       'tour.card.viewDetails': 'View details',
       'tour.card.bookNow': 'Book now',
       'tour.card.privateBadge': 'Private tour',
@@ -355,7 +359,11 @@ const translations = {
       'inquiry.emailBody.phoneLabel': 'Teléfono',
       'inquiry.emailBody.ideaLabel': 'Idea del viaje',
       'inquiry.status.missing': 'Por favor agrega tu nombre, correo e idea para crear tu cotización.',
-      'inquiry.status.prompt': 'Abriendo tu app de correo para enviar los detalles a nuestro concierge.',
+      'inquiry.status.sending': 'Enviando tu solicitud al equipo concierge.',
+      'inquiry.status.sent': '¡Gracias! Recibimos tu solicitud y responderemos pronto.',
+      'inquiry.status.error': 'Ocurrió un error al enviar tu solicitud. Intenta de nuevo.',
+      'inquiry.status.unavailable': 'No pudimos enviar tu solicitud. Intenta de nuevo en unos minutos.',
+      'inquiry.status.missingService': 'Conecta este formulario a un servicio de correo para recibir solicitudes.',
       'tour.card.viewDetails': 'Ver detalles',
       'tour.card.bookNow': 'Reservar ahora',
       'tour.card.privateBadge': 'Tour privado',
@@ -2202,6 +2210,7 @@ function initTourPage(tours, languageManager) {
 function setupInquiryForm(languageManager) {
   const form = document.querySelector('#custom-contact-form');
   const status = document.querySelector('#custom-contact-status');
+  const formspreeEndpoint = 'https://formspree.io/f/xkowoogr';
 
   if (!form) return;
 
@@ -2209,18 +2218,6 @@ function setupInquiryForm(languageManager) {
     if (!status) return;
     status.textContent = message;
     status.classList.toggle('is-error', Boolean(isError));
-  };
-
-  const buildMailtoBody = (name, email, phone, idea) => {
-    const lines = [
-      `${languageManager.translate('inquiry.emailBody.nameLabel')}: ${name}`,
-      `${languageManager.translate('inquiry.emailBody.emailLabel')}: ${email}`
-    ];
-    if (phone) {
-      lines.push(`${languageManager.translate('inquiry.emailBody.phoneLabel')}: ${phone}`);
-    }
-    lines.push('', `${languageManager.translate('inquiry.emailBody.ideaLabel')}:`, idea);
-    return encodeURIComponent(lines.join('\n'));
   };
 
   form.addEventListener('submit', (event) => {
@@ -2236,13 +2233,31 @@ function setupInquiryForm(languageManager) {
       return;
     }
 
-    const subject = encodeURIComponent(languageManager.translate('inquiry.emailSubject', { name }));
-    const body = buildMailtoBody(name, email, phone, idea);
-    const mailtoLink = `mailto:info@beyondthereefmexico.com?subject=${subject}&body=${body}`;
+    if (!formspreeEndpoint || formspreeEndpoint.includes('REPLACE_ME')) {
+      setStatus(languageManager.translate('inquiry.status.missingService'), true);
+      return;
+    }
 
-    setStatus(languageManager.translate('inquiry.status.prompt'));
-    window.location.href = mailtoLink;
-    form.reset();
+    setStatus(languageManager.translate('inquiry.status.sending'));
+
+    fetch(formspreeEndpoint, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json'
+      },
+      body: formData
+    })
+      .then((response) => {
+        if (response.ok) {
+          setStatus(languageManager.translate('inquiry.status.sent'));
+          form.reset();
+          return;
+        }
+        setStatus(languageManager.translate('inquiry.status.error'), true);
+      })
+      .catch(() => {
+        setStatus(languageManager.translate('inquiry.status.unavailable'), true);
+      });
   });
 
   languageManager.onChange(() => setStatus(''));
