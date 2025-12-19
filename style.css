@@ -1369,7 +1369,7 @@ body.dark-mode .tour-gallery__arrow {
 }
 
 .tour-includes__list li::before {
-  content: '✨';
+  content: '';
   position: absolute;
   left: 0.85rem;
   top: 50%;
