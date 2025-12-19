@@ -111,6 +111,10 @@ main {
   margin: 0;
 }
 
+.assurance-line {
+  display: inline;
+}
+
 .eyebrow {
   display: inline-flex;
   padding: 0.35rem 0.75rem;
@@ -2050,6 +2054,39 @@ body.dark-mode .floating-contact__link:focus-visible {
 
   .tour-row__note {
     align-self: flex-start;
+  }
+}
+
+@media (max-width: 1024px) {
+  .section__intro,
+  .page-section,
+  .page-hero > div,
+  .tour-hero__content,
+  .contact-panel__copy,
+  .custom-inquiry,
+  .cta {
+    text-align: center;
+  }
+
+  .section__intro h2,
+  .page-hero h1,
+  .tour-hero__title,
+  .tour-details .section__intro h2,
+  .section--favorites .section__intro h2 {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .section__intro p,
+  .tours-assurance .section__intro p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .assurance-line {
+    display: block;
   }
 }
 

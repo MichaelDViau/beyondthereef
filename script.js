@@ -137,7 +137,8 @@ const translations = {
         'Drag and drop curated activities, refine pacing, and invite your travel companions to collaborate in real time.',
       'tours.assurance.eyebrow': 'Only you and the people you care',
       'tours.assurance.heading': 'With more than 14 years of experience in tours',
-      'tours.assurance.copy': 'Newest vans in the industry, certified guides, safe meals tailored to allergies and special diets.',
+      'tours.assurance.copy':
+        '<span class="assurance-line">Newest vans in the industry</span><span class="assurance-line">Certified guides</span><span class="assurance-line">Safe meals tailored to allergies and special diets</span>',
       'tours.assurance.item1.title': 'Private fleet & modern vans',
       'tours.assurance.item1.copy': 'Ride in our newest vans with cold A/C, leather seating, pro captains, and zero shared groups.',
       'tours.assurance.item2.title': 'Certified, professional guides',
@@ -466,7 +467,7 @@ const translations = {
       'tours.assurance.eyebrow': 'Solo tú y las personas que quieres',
       'tours.assurance.heading': 'Más de 14 años de experiencia en tours',
       'tours.assurance.copy':
-        'Las vans más nuevas de la industria, guías certificados y alimentos seguros para alergias y dietas especiales.',
+        '<span class="assurance-line">Las vans más nuevas de la industria</span><span class="assurance-line">Guías certificados</span><span class="assurance-line">Comidas seguras para alergias y dietas especiales</span>',
       'tours.assurance.item1.title': 'Flota privada y vans modernas',
       'tours.assurance.item1.copy':
         'Viaja en nuestras vans más nuevas con A/C frío, asientos de piel, capitanes expertos y cero grupos compartidos.',
