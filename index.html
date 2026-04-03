@@ -1,408 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="page.title">Beyond the Reef Mexico</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="theme-init.js"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body data-page="home">
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary" data-i18n="nav.primary" data-i18n-attr="aria-label">
-      <a class="nav__logo" href="index.html" aria-label="Beyond the Reef Mexico">
-        <span class="nav__logo-icon" aria-hidden="true">
-          <img src="assets/logo.svg" alt="" decoding="async" />
-        </span>
-        <span class="nav__logo-text">
-          <span class="nav__logo-title">Beyond the Reef</span>
-          <span class="nav__logo-subtitle">Mexico</span>
-        </span>
-      </a>
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-        <span class="sr-only" data-i18n="nav.toggle">Toggle navigation</span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav__links" id="primary-navigation">
-        <li><a href="index.html" aria-current="page" data-i18n="nav.home">Home</a></li>
-        <li><a href="build-your-tours.html" data-i18n="nav.create">Excursions</a></li>
-        <li><a href="review.html" data-i18n="nav.reviews">Reviews</a></li>
-        <li><a href="our-story.html" data-i18n="nav.story">Our Story</a></li>
-      </ul>
-      <button class="nav__control language-toggle" type="button" data-language-toggle aria-pressed="false">Español 🇲🇽</button>
-      <button class="nav__control theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero-slider hero-slider--home" aria-label="Featured Experiences" data-i18n="home.hero.aria" data-i18n-attr="aria-label">
-      <div class="hero-slider__content">
-        <h2 data-i18n="home.hero.heading">Pure adrenaline. Untamed nature. Your story in the making.</h2>
-        <p data-i18n="home.hero.description">
-          Not just a day out - this is freedom unleashed. Swim with turtles, dive into cenotes, race across lagoons, and explore
-          ancient Mayan ruins. No crowds. No limits. Just raw adventure carved into the heart of the Riviera Maya. Your rules.
-          Your pace. Your unforgettable. This isn’t tourism. This is Beyond the Reef.
-        </p>
-        <a class="button button--primary" href="build-your-tours.html" data-i18n="home.hero.cta">See all our private excursions</a>
-      </div>
-      <div class="hero-slider__controls" aria-hidden="true">
-        <button
-          class="hero-slider__arrow"
-          type="button"
-          data-slide="prev"
-          aria-label="Previous slide"
-          data-i18n="home.hero.previous"
-          data-i18n-attr="aria-label"
-        >
-          ❮
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beyond The Reef Mexico | Private Tours</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="reef-app.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <button class="brand" data-go="home" aria-label="Go to home page">
+          <img src="assets/logo.svg" alt="Beyond The Reef Mexico logo" />
+          <span>
+            <small>Beyond The Reef</small>
+            <strong>Mexico Private Tours</strong>
+          </span>
         </button>
-        <button
-          class="hero-slider__arrow"
-          type="button"
-          data-slide="next"
-          aria-label="Next slide"
-          data-i18n="home.hero.next"
-          data-i18n-attr="aria-label"
-        >
-          ❯
-        </button>
+        <nav class="main-nav" aria-label="Main">
+          <button data-go="home" class="active">Home</button>
+          <button data-go="tours">Tours</button>
+          <button data-go="booking">Book Now</button>
+        </nav>
       </div>
-      <div class="hero-slider__dots" role="tablist" aria-label="Featured slides" data-i18n="home.hero.dots" data-i18n-attr="aria-label"></div>
-      <div class="hero-slider__track">
-        <article class="hero-slide is-active" aria-hidden="false">
-          <video
-            class="hero-slide__media"
-            data-src="https://www.pexels.com/download/video/3591016/"
-            data-end-offset="3"
-            autoplay
-            muted
-            playsinline
-            preload="none"
-          ></video>
-        </article>
-        <article class="hero-slide" aria-hidden="true">
-          <video
-            class="hero-slide__media"
-            data-src="https://www.pexels.com/download/video/17823659/"
-            autoplay
-            muted
-            playsinline
-            preload="none"
-          ></video>
-        </article>
-        <article class="hero-slide" aria-hidden="true">
-          <video
-            class="hero-slide__media"
-            data-src="https://www.pexels.com/download/video/7772228/"
-            autoplay
-            muted
-            playsinline
-            preload="none"
-          ></video>
-        </article>
-        <article class="hero-slide" aria-hidden="true">
-          <video
-            class="hero-slide__media"
-            data-src="https://www.pexels.com/download/video/17145872/"
-            autoplay
-            muted
-            playsinline
-            preload="none"
-          ></video>
-        </article>
-      </div>
-    </section>
+    </header>
 
-    <section class="section section--difference" aria-labelledby="difference-heading">
-      <div class="difference">
-        <div class="section__intro difference__intro">
-          <h2 id="difference-heading" data-i18n="home.difference.heading">Experience the Difference</h2>
+    <main id="app" class="container"></main>
+
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <div class="footer-brand">
+          <img src="assets/logo.svg" alt="Beyond The Reef Mexico logo" />
+          <strong>Beyond The Reef Mexico</strong>
         </div>
-        <div class="difference__grid" role="list">
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3.5" y="6.75" width="17" height="11" rx="2.75" />
-                <path d="M9.5 6.75 10.9 4.5h2.2l1.4 2.25" />
-                <circle cx="12" cy="12.5" r="3.5" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.captured.title">Captured</h3>
-            <p data-i18n="home.difference.captured.copy">Complimentary Photography on Every Tour</p>
-          </article>
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="7" />
-                <path d="M9.5 12h6.75" />
-                <path d="m14.75 9.75 2.75 2.25-2.75 2.25" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.pace.title">Set the Pace</h3>
-            <p data-i18n="home.difference.pace.copy">Choose your start time, skip pickups, set your own schedule</p>
-          </article>
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 4v2.5" />
-                <path d="M12 17.5V20" />
-                <path d="M4 12h2.5" />
-                <path d="M17.5 12H20" />
-                <path d="m6.75 6.75 1.75 1.75" />
-                <path d="m15.5 15.5 1.75 1.75" />
-                <path d="m17.25 6.75-1.75 1.75" />
-                <path d="m8.5 15.5-1.75 1.75" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.journey.title">Your Journey</h3>
-            <p data-i18n="home.difference.journey.copy">Snorkel, explore, taste, relax - the choice is yours</p>
-          </article>
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 21c-4.25-2.2-6.5-5.15-6.5-8.75V7.25L12 4l6.5 3.25v5c0 3.6-2.25 6.55-6.5 8.75Z" />
-                <path d="m9.25 12.5 2.25 2.25 3.25-3.25" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.surprises.title">No Surprises</h3>
-            <p data-i18n="home.difference.surprises.copy">No hidden costs, No extra charges, Just adventure</p>
-          </article>
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 6.5 13.8 10l4 .55-2.9 2.85.7 4.1-3.6-1.9-3.6 1.9.7-4.1-2.9-2.85 4-.55Z" />
-                <path d="M8.5 13.4 7.25 20l4.75-1.8L16.75 20 15.5 13.4" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.excellence.title">Excellence</h3>
-            <p data-i18n="home.difference.excellence.copy">We don’t claim it - our guests do. Five stars, every time.</p>
-          </article>
-        </div>
+        <p>Full website flow with homepage, tours, tour detail, and booking page.</p>
       </div>
-    </section>
+    </footer>
 
-    <section class="section section--favorites" aria-labelledby="favorites-heading">
-      <div class="section__intro">
-        <h2 id="favorites-heading" data-i18n="home.favorites.heading">Adventures Loved by Travelers</h2>
-        <p data-i18n="home.favorites.copy">Swipe through limited-time offers on the tours our guests love the most.</p>
-      </div>
-      <div class="favorites-carousel" data-card-carousel>
-        <button
-          class="favorites-carousel__arrow favorites-carousel__arrow--prev"
-          type="button"
-          data-carousel-arrow="prev"
-          aria-label="Previous tours"
-          data-i18n="home.favorites.previous"
-          data-i18n-attr="aria-label"
-        >
-          <span aria-hidden="true">❮</span>
-        </button>
-        <div class="favorites-carousel__viewport">
-          <div class="favorites-carousel__track" role="list" data-favorites-track></div>
-        </div>
-        <button
-          class="favorites-carousel__arrow favorites-carousel__arrow--next"
-          type="button"
-          data-carousel-arrow="next"
-          aria-label="Next tours"
-          data-i18n="home.favorites.next"
-          data-i18n-attr="aria-label"
-        >
-          <span aria-hidden="true">❯</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="section" id="tour-builder">
-      <div class="section__intro">
-        <h2 data-i18n="home.builder.heading">We build your perfect day</h2>
-        <p data-i18n="home.builder.copy">
-          Share your idea by email and receive a personalized quote, or book a video call with our team to fine-tune every detail.
-        </p>
-      </div>
-      <div class="custom-inquiry">
-        <div class="card custom-inquiry__details">
-          <h3 data-i18n="home.builder.listHeading">Tell us about your dream day</h3>
-          <ul class="custom-inquiry__list">
-            <li data-i18n="home.builder.pointOne">Share the vibe you want: relaxed, high-energy, romantic, or off-grid.</li>
-            <li data-i18n="home.builder.pointTwo">Add any must-do activities, dining styles, or timing preferences.</li>
-              <li data-i18n="home.builder.pointThree">You’ll receive a personalized quote or the option to connect with our team by video call.</li>
-          </ul>
-          <p class="custom-inquiry__email" data-i18n="home.builder.emailFallback" data-i18n-attr="html">
-            Prefer email? Reach us directly at <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a>.
-          </p>
-        </div>
-        <form
-          class="card custom-inquiry__form"
-          id="custom-contact-form"
-          action="https://formspree.io/f/xkowoogr"
-          method="POST"
-          aria-label="Send your perfect day details"
-          data-i18n="home.builder.formAria"
-          data-i18n-attr="aria-label"
-        >
-          <div class="field">
-            <label for="contact-name" data-i18n="home.builder.nameLabel">Name</label>
-            <input id="contact-name" name="name" type="text" placeholder="Your name" required data-i18n="home.builder.namePlaceholder" data-i18n-attr="placeholder" />
-          </div>
-          <div class="field">
-            <label for="contact-email" data-i18n="home.builder.emailLabel">Email</label>
-            <input
-              id="contact-email"
-              name="email"
-              type="email"
-              inputmode="email"
-              placeholder="you@example.com"
-              required
-              data-i18n="home.builder.emailPlaceholder"
-              data-i18n-attr="placeholder"
-            />
-          </div>
-          <div class="field">
-            <label for="contact-phone" data-i18n="home.builder.phoneLabel">Phone</label>
-            <input
-              id="contact-phone"
-              name="phone"
-              type="tel"
-              inputmode="tel"
-              placeholder="+52 1 555 555 5555"
-              data-i18n="home.builder.phonePlaceholder"
-              data-i18n-attr="placeholder"
-            />
-          </div>
-          <div class="field">
-            <label for="contact-idea" data-i18n="home.builder.notesLabel">Tell us about your idea</label>
-            <textarea
-              id="contact-idea"
-              name="idea"
-              rows="4"
-              placeholder="Include the date, vibe, and any must-do experiences."
-              required
-              data-i18n="home.builder.notesPlaceholder"
-              data-i18n-attr="placeholder"
-            ></textarea>
-          </div>
-          <button class="button button--primary" type="submit" data-i18n="home.builder.submit">Send my idea</button>
-          <p class="form-status" id="custom-contact-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-    <section class="section section--accent">
-      <div class="section__intro">
-        <h2 data-i18n="home.accent.heading">Private, Stress-Free Excursions</h2>
-      </div>
-      <div class="grid grid--features">
-        <article class="card feature-card">
-          <h3 data-i18n="home.accent.locals.title">Led by certified guides</h3>
-          <p data-i18n="home.accent.locals.copy">Our certified guides bring years of professional experience, crafting insider-only moments you cannot find on a brochure.</p>
-        </article>
-        <article class="card feature-card">
-          <h3 data-i18n="home.accent.collab.title">Can’t find the tour you want?</h3>
-          <p data-i18n="home.accent.collab.copy">Reach out and we’ll schedule a call or video chat to custom-build your perfect excursions.</p>
-        </article>
-        <article class="card feature-card">
-          <h3 data-i18n="home.accent.execution.title">Worry-free tours</h3>
-          <p data-i18n="home.accent.execution.copy">Your tour, your time, no hidden fees, with transfers, tickets, and timing handled so you just enjoy.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="cta">
-        <div>
-          <h2 data-i18n="home.cta.heading">Ready to build your dream tour?</h2>
-          <p data-i18n="home.cta.copy">Reach out and we’ll design the right experience for you.</p>
-        </div>
-        <a class="button button--primary" href="mailto:info@beyondthereefmexico.com" data-i18n="home.cta.button">Email us now</a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>
-      &copy; <span id="current-year"></span>
-      <span data-i18n="footer.rights">Beyond the Reef Mexico. All rights reserved.</span>
-    </p>
-  </footer>
-
-  <div
-    class="floating-contact"
-    role="complementary"
-    aria-label="Quick contact options"
-    data-i18n="floatingContact.aria"
-    data-i18n-attr="aria-label"
-  >
-    <a
-      class="floating-contact__link floating-contact__link--whatsapp"
-      href="https://wa.me/529623562346"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
-      data-i18n="floatingContact.whatsappAria"
-      data-i18n-attr="aria-label"
-    >
-      <span class="floating-contact__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="11.5" r="7.5"></circle>
-          <path d="m7 17.3 -.8 3.4 3.4 -.9" />
-          <path
-            d="m9.3 8.8 1.1 -.5a .6 .6 0 0 1 .8 .33l .4 .95a .6 .6 0 0 1 -.14 .61l -.34 .33a 4.4 4.4 0 0 0 2.15 2.15l .33 -.34a .6 .6 0 0 1 .61 -.15l .95 .38a .6 .6 0 0 1 .34 .8l -.37 .98a .6 .6 0 0 1 -.47 .38c -1.84 -.17 -4.4 -2.58 -4.67 -4.47a .6 .6 0 0 1 .25 -.54Z"
-          />
-        </svg>
-      </span>
-      <span class="floating-contact__text">
-        <span class="floating-contact__label" data-i18n="floatingContact.whatsappLabel">WhatsApp</span>
-      </span>
-    </a>
-    <a
-      class="floating-contact__link floating-contact__link--email"
-      href="mailto:info@beyondthereefmexico.com"
-      aria-label="Email Beyond the Reef Mexico"
-      data-i18n="floatingContact.emailAria"
-      data-i18n-attr="aria-label"
-    >
-      <span class="floating-contact__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3.25" y="5.75" width="17.5" height="12.5" rx="2.25"></rect>
-          <path d="M4.5 7.5 12 12.75 19.5 7.5"></path>
-          <path d="m4.75 17 4.75-3.75"></path>
-          <path d="m19.25 17-4.75-3.75"></path>
-        </svg>
-      </span>
-      <span class="floating-contact__text">
-        <span class="floating-contact__label" data-i18n="floatingContact.emailLabel">Email</span>
-      </span>
-    </a>
-    <a
-      class="floating-contact__link floating-contact__link--instagram"
-      href="https://www.instagram.com/beyondthereefmexico"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Open Instagram"
-      data-i18n="floatingContact.instagramAria"
-      data-i18n-attr="aria-label"
-    >
-      <span class="floating-contact__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="4" width="16" height="16" rx="4"></rect>
-          <circle cx="12" cy="12" r="3.6"></circle>
-          <circle cx="16.5" cy="7.5" r="1" fill="currentColor"></circle>
-        </svg>
-      </span>
-      <span class="floating-contact__text">
-        <span class="floating-contact__label" data-i18n="floatingContact.instagramLabel">Instagram</span>
-      </span>
-    </a>
-  </div>
-
-  <script src="script.js" defer></script>
-</body>
+    <script src="reef-app.js"></script>
+  </body>
 </html>
