@@ -1,408 +1,1020 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title data-i18n="page.title">Beyond the Reef Mexico</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script src="theme-init.js"></script>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Beyond the Reef Mexico - Real Local Experiences Cancun Tulum Riviera Maya</title>
+<meta name="description" content="Real local experiences in the Riviera Maya. Cenotes, sea turtles, Mayan ruins. 14+ years.">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<meta name="theme-color" content="#0E2A45">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  color-scheme:light;
+  --navy:#0E2A45;--teal:#1DA5B4;--coral:#E8621A;--gold:#F2C14E;
+  --ink:#0E2A45;--muted:#4a6070;--border:#d4e4f0;
+  --gold-bg:#FFF8E7;--amber-bg:#FFF3D0;
+  --r:10px;--r2:16px;--r3:24px;--rp:999px;
+  --sh:0 2px 20px rgba(14,42,69,.10);--sh2:0 8px 40px rgba(14,42,69,.18);
+  --ease:.22s ease;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;color-scheme:light}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(14,42,69,.60);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.10);transition:background .3s}
+.nav.opaque{background:rgba(14,42,69,.95)}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-logo img{width:42px;height:42px;border-radius:8px;object-fit:contain}
+.nav-logo-words{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-name{font-size:14px;font-weight:900;color:#fff;letter-spacing:-.02em}
+.nav-logo-sub{font-size:9px;font-weight:700;color:rgba(255,255,255,.60);letter-spacing:.10em;text-transform:uppercase}
+.nav-links{display:none;align-items:center;gap:2px;margin:0 12px}
+.nav-links a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.88);padding:6px 10px;border-radius:var(--rp);transition:background var(--ease)}
+.nav-links a:hover{background:rgba(255,255,255,.14);color:#fff}
+.nav-right{display:flex;align-items:center;gap:8px}
+.nav-cta{background:var(--coral);color:#fff;font-size:13px;font-weight:700;padding:8px 16px;border-radius:var(--rp);transition:opacity var(--ease);display:none}
+.nav-cta:hover{opacity:.88}
+.ham{width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;transition:background var(--ease)}
+.ham:hover{background:rgba(255,255,255,.24)}
+.ham span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:transform .28s,opacity .28s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:768px){.ham{display:none}.nav-links{display:flex}.nav-cta{display:block}}
+
+/* MOBILE MENU */
+.mob-menu{position:fixed;inset:0;z-index:499;background:rgba(14,42,69,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;pointer-events:none;transition:opacity .28s}
+.mob-menu.open{opacity:1;pointer-events:all}
+.mob-menu a{font-size:22px;font-weight:800;color:rgba(255,255,255,.90);padding:13px 32px;border-radius:var(--r2);width:280px;text-align:center;transition:background var(--ease)}
+.mob-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+.mob-wa{margin-top:16px !important;background:var(--coral) !important;color:#fff !important;border-radius:var(--rp) !important}
+.mob-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}
+
+/* ======= HERO ======= */
+/* The hero is a fixed-height container. Photos fill it absolutely.
+   Overlay sits above photos. Text sits above overlay. */
+.hero{
+  position:relative;
+  width:100%;
+  height:100vh;
+  min-height:500px;
+  overflow:hidden;
+  background:#0E2A45;
+}
+
+/* Each photo: absolutely fills the entire hero box */
+.hs-img{
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  opacity:0;
+  transition:opacity 1s ease;
+  z-index:1;
+  display:block;
+}
+/* Active photo is fully visible */
+.hs-img.hs-on{
+  opacity:1;
+  z-index:2;
+}
+
+/* Dark overlay above photos, below text */
+.hero-ov{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  z-index:3;
+  background:linear-gradient(to right,
+    rgba(14,42,69,.72) 0%,
+    rgba(14,42,69,.50) 55%,
+    rgba(14,42,69,.25) 100%);
+  pointer-events:none;
+}
+
+/* Text content - above everything */
+.hero-body{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  z-index:4;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:80px 28px 120px;
+  max-width:700px;
+}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.24);border-radius:var(--rp);padding:6px 14px;margin-bottom:24px;width:fit-content}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--coral);animation:blink 2s infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-pill span{font-size:11px;font-weight:600;color:rgba(255,255,255,.82);letter-spacing:.04em}
+.hero-body h1{font-size:clamp(30px,7vw,64px);font-weight:900;line-height:1.08;letter-spacing:-.03em;color:#fff;margin-bottom:18px}
+.c-gold{color:var(--gold)}.c-teal{color:#7ECFDB}
+.hero-sub{font-size:clamp(14px,2vw,17px);line-height:1.72;color:rgba(255,255,255,.85);max-width:500px;margin-bottom:28px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:36px}
+.hero-stats{display:flex;gap:28px;flex-wrap:wrap}
+.stat-n{font-size:26px;font-weight:900;color:var(--gold);line-height:1}
+.stat-n sup{font-size:14px;color:var(--coral)}
+.stat-l{font-size:10px;font-weight:700;color:rgba(255,255,255,.50);text-transform:uppercase;letter-spacing:.08em;margin-top:3px}
+
+/* Slideshow controls - pinned to bottom of hero */
+.hero-ctrl{
+  position:absolute;
+  bottom:0;left:0;right:0;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 20px;
+  background:rgba(14,42,69,.35);
+  backdrop-filter:blur(4px);
+}
+.hc-btn{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.22);color:#fff;font-size:16px;display:flex;align-items:center;justify-content:center;border:1.5px solid rgba(255,255,255,.30);cursor:pointer;transition:background .2s;flex-shrink:0}
+.hc-btn:hover{background:rgba(255,255,255,.40)}
+.hc-dots{display:flex;gap:6px;align-items:center}
+.hc-dot{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.35);border:none;cursor:pointer;padding:0;font-size:0;transition:background .2s,transform .2s}
+.hc-dot.hc-on{background:#fff;transform:scale(1.4)}
+.hc-ctr{font-size:11px;font-weight:600;color:rgba(255,255,255,.70);white-space:nowrap;min-width:40px;text-align:center}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:'Montserrat',sans-serif;font-weight:700;border-radius:var(--rp);cursor:pointer;border:none;text-decoration:none;transition:opacity var(--ease),transform var(--ease);white-space:nowrap}
+.btn:hover{opacity:.86;transform:translateY(-1px)}
+.btn-lg{font-size:15px;padding:14px 26px}
+.btn-md{font-size:13px;padding:10px 20px}
+.btn-sm{font-size:12px;padding:7px 15px}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 4px 16px rgba(232,98,26,.32)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.38)}
+.btn-ghost:hover{background:rgba(255,255,255,.25)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--border)}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal)}
+.btn-full{width:100%}
+
+/* SECTIONS */
+.sec{padding:72px 20px;background:#fff;color-scheme:light}
+.sec-gold{background:var(--gold-bg)}.sec-amber{background:var(--amber-bg)}.sec-navy{background:var(--navy)}
+.lbl{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:block}
+.lbl-gold{color:#FFA726}.lbl-white{color:rgba(255,255,255,.65)}
+.h2{font-size:clamp(26px,5.5vw,42px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-bottom:14px}
+.h2-white{color:#fff}
+.sub{font-size:15px;line-height:1.72;color:var(--muted);max-width:540px;margin-bottom:28px}
+@media(min-width:768px){.sec{padding:96px 40px}}
+
+/* WHY GRID */
+.why-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.wc{background:#fff;border-radius:var(--r2);padding:20px;display:flex;align-items:flex-start;gap:14px;border:1.5px solid var(--border);box-shadow:var(--sh);transition:transform var(--ease),box-shadow var(--ease),border-color var(--ease);color-scheme:light}
+.wc:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--gold)}
+.wi{width:46px;height:46px;flex-shrink:0;background:var(--navy);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px}
+.wc h3{font-size:14px;font-weight:800;color:var(--ink);margin-bottom:3px}
+.wc p{font-size:13px;line-height:1.6;color:var(--muted)}
+@media(min-width:600px){.why-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.why-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* SLIDER */
+.sl-outer{overflow:hidden}.sl-viewport{overflow:hidden}
+.sl-track{display:flex;gap:16px;padding:8px 20px 24px;transition:transform .42s cubic-bezier(.4,0,.2,1);will-change:transform;align-items:stretch}
+.sl-controls{display:flex;align-items:center;justify-content:center;gap:10px;padding:4px 20px 0}
+.sl-btn{width:42px;height:42px;border-radius:50%;border:2px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--navy);cursor:pointer;transition:background var(--ease),border-color var(--ease),color var(--ease);flex-shrink:0}
+.sl-btn:hover:not(:disabled){background:var(--teal);border-color:var(--teal);color:#fff}
+.sl-btn:disabled{opacity:.28;cursor:default}
+.sl-btn-inv{border-color:rgba(255,255,255,.30);background:rgba(255,255,255,.12);color:#fff}
+.sl-btn-inv:hover:not(:disabled){background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.55);color:#fff}
+.sl-dots{display:flex;align-items:center;gap:6px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background var(--ease),transform var(--ease)}
+.dot.on{background:var(--teal);transform:scale(1.4)}
+.dot-inv{background:rgba(255,255,255,.32)}.dot-inv.on{background:var(--gold)}
+@media(min-width:768px){.sl-track{padding:8px 40px 24px}.sl-controls{padding:4px 40px 0}}
+
+/* TOUR CARDS */
+.tc{flex:0 0 280px;background:#fff;border-radius:var(--r2);overflow:hidden;border:1.5px solid var(--border);display:flex;flex-direction:column;box-shadow:var(--sh);transition:transform var(--ease),box-shadow var(--ease);min-height:420px;color-scheme:light}
+.tc:hover{transform:translateY(-5px);box-shadow:var(--sh2)}
+.tc-thumb{height:190px;position:relative;overflow:hidden;background:var(--navy);flex-shrink:0;border-radius:var(--r2) var(--r2) 0 0}
+.tc-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease,opacity .4s ease;opacity:0}
+.tc-thumb img.loaded{opacity:1}
+.tc:hover .tc-thumb img{transform:scale(1.07)}
+.tc-badge{position:absolute;top:10px;left:10px;z-index:2;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:var(--rp)}
+.b-coral{background:var(--coral);color:#fff}.b-teal{background:var(--teal);color:#fff}.b-gold{background:var(--gold);color:var(--navy)}.b-navy{background:var(--navy);color:#fff}
+.tc-dur{position:absolute;bottom:8px;right:8px;z-index:2;background:rgba(14,42,69,.72);color:rgba(255,255,255,.92);font-size:10px;font-weight:600;padding:3px 9px;border-radius:var(--rp)}
+.tc-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column;background:#fff;color-scheme:light}
+.tc-name{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:3px;letter-spacing:-.02em;line-height:1.2}
+.tc-tag{font-size:11px;font-weight:600;color:var(--teal);margin-bottom:7px;line-height:1.4}
+.tc-desc{font-size:12px;color:var(--muted);line-height:1.56;flex:1;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.tc-price{font-size:12px;font-weight:600;color:var(--muted);margin-bottom:12px;display:block}
+.tc-price strong{font-size:20px;font-weight:900;color:var(--navy)}
+.tc-price-req{font-size:13px;font-weight:700;color:var(--coral);margin-bottom:12px;display:block}
+.tc-acts{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:auto}
+.tc-shared{border-color:var(--teal);border-width:2px}
+@media(min-width:1024px){.tc{flex:0 0 300px}}
+
+/* REVIEWS */
+.rc{flex:0 0 300px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:var(--r2);padding:22px}
+.rc-stars{color:var(--gold);letter-spacing:2px;font-size:13px;margin-bottom:10px}
+.rc-text{font-size:13px;font-style:italic;line-height:1.72;color:rgba(255,255,255,.82);margin-bottom:16px}
+.rc-who{display:flex;align-items:center;gap:10px}
+.rc-av{width:36px;height:36px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+.rc-name{font-size:12px;font-weight:700;color:#fff}.rc-from{font-size:11px;color:rgba(255,255,255,.44);margin-top:1px}
+@media(min-width:1024px){.rc{flex:0 0 320px}}
+
+/* CONTACT */
+.copt-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:600px){.copt-grid{grid-template-columns:1fr 1fr}}
+.copt{background:#fff;border-radius:var(--r2);padding:28px 22px;text-align:center;border:1.5px solid var(--border);box-shadow:var(--sh);transition:transform var(--ease),box-shadow var(--ease);color-scheme:light}
+.copt:hover{transform:translateY(-3px);box-shadow:var(--sh2)}
+.copt-icon{width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:26px}
+.copt h3{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:7px}
+.copt p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:18px}
+
+/* FORM */
+.fbox{background:#fff;border-radius:var(--r3);padding:36px 24px;max-width:560px;margin:0 auto;border:1.5px solid var(--border);box-shadow:var(--sh);color-scheme:light}
+.fg{display:flex;flex-direction:column;gap:5px;margin-bottom:14px}
+.fg label{font-size:11px;font-weight:700;color:var(--ink);letter-spacing:.04em;text-transform:uppercase}
+.fg input,.fg textarea{padding:11px 14px;border:1.5px solid var(--border);border-radius:var(--r);font-family:'Montserrat',sans-serif;font-size:13px;color:var(--ink);background:#fff;outline:none;transition:border-color var(--ease);color-scheme:light;width:100%}
+.fg input:focus,.fg textarea:focus{border-color:var(--teal)}
+.fg textarea{min-height:90px;resize:vertical}
+.fsub{width:100%;padding:14px;background:var(--coral);color:#fff;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;border-radius:var(--r);cursor:pointer;border:none}
+.fsub:hover{opacity:.88}
+.fsuc{display:none;text-align:center;padding:28px 0}
+.fsuc h4{font-size:20px;font-weight:800;color:var(--ink);margin-bottom:8px}
+.fsuc p{color:var(--muted);font-size:14px}
+
+/* FOOTER */
+footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52);color-scheme:light}
+.ft-grid{display:grid;grid-template-columns:1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:22px}
+@media(min-width:768px){.ft-grid{grid-template-columns:1.6fr 1fr 1fr}}
+.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ft-logo img{width:38px;height:38px;border-radius:7px}
+.ft-logo-name{font-size:13px;font-weight:800;color:#fff}
+.ft-tagline{font-size:12px;line-height:1.7;margin-bottom:14px}
+.ft-social{display:flex;gap:8px}
+.ft-soc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;transition:background var(--ease)}
+.ft-soc:hover{background:rgba(255,255,255,.20)}
+.ft-soc svg{width:18px;height:18px}
+.ft-h{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px}
+.ft-links{display:flex;flex-direction:column;gap:7px}
+.ft-links a{font-size:13px;color:rgba(255,255,255,.46);transition:color var(--ease)}
+.ft-links a:hover{color:#fff}
+.ft-bottom{font-size:11px}
+
+/* FLOAT BUTTONS */
+.float-ig,.float-wa{position:fixed;right:20px;z-index:400;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .22s}
+.float-wa{bottom:20px;background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,.40)}
+.float-ig{bottom:82px;background:transparent;box-shadow:0 4px 18px rgba(188,24,136,.32)}
+.float-ig:hover,.float-wa:hover{transform:scale(1.10)}
+.float-ig svg,.float-wa svg{width:52px;height:52px;border-radius:50%}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
+.rv.vis{opacity:1;transform:none}
+.rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
+</style>
 </head>
-<body data-page="home">
-  <header class="site-header">
-    <nav class="nav" aria-label="Primary" data-i18n="nav.primary" data-i18n-attr="aria-label">
-      <a class="nav__logo" href="index.html" aria-label="Beyond the Reef Mexico">
-        <span class="nav__logo-icon" aria-hidden="true">
-          <img src="assets/logo.svg" alt="" decoding="async" />
-        </span>
-        <span class="nav__logo-text">
-          <span class="nav__logo-title">Beyond the Reef</span>
-          <span class="nav__logo-subtitle">Mexico</span>
-        </span>
-      </a>
-      <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
-        <span class="sr-only" data-i18n="nav.toggle">Toggle navigation</span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav__links" id="primary-navigation">
-        <li><a href="index.html" aria-current="page" data-i18n="nav.home">Home</a></li>
-        <li><a href="build-your-tours.html" data-i18n="nav.create">Excursions</a></li>
-        <li><a href="review.html" data-i18n="nav.reviews">Reviews</a></li>
-        <li><a href="our-story.html" data-i18n="nav.story">Our Story</a></li>
-      </ul>
-      <button class="nav__control language-toggle" type="button" data-language-toggle aria-pressed="false">Español 🇲🇽</button>
-      <button class="nav__control theme-toggle" type="button" data-theme-toggle aria-pressed="false">Dark mode</button>
-    </nav>
-  </header>
+<body style="color-scheme:light;background:#fff">
 
-  <main>
-    <section class="hero-slider hero-slider--home" aria-label="Featured Experiences" data-i18n="home.hero.aria" data-i18n-attr="aria-label">
-      <div class="hero-slider__content">
-        <h2 data-i18n="home.hero.heading">Pure adrenaline. Untamed nature. Your story in the making.</h2>
-        <p data-i18n="home.hero.description">
-          Not just a day out - this is freedom unleashed. Swim with turtles, dive into cenotes, race across lagoons, and explore
-          ancient Mayan ruins. No crowds. No limits. Just raw adventure carved into the heart of the Riviera Maya. Your rules.
-          Your pace. Your unforgettable. This isn’t tourism. This is Beyond the Reef.
-        </p>
-        <a class="button button--primary" href="build-your-tours.html" data-i18n="home.hero.cta">See all our private excursions</a>
-      </div>
-      <div class="hero-slider__controls" aria-hidden="true">
-        <button
-          class="hero-slider__arrow"
-          type="button"
-          data-slide="prev"
-          aria-label="Previous slide"
-          data-i18n="home.hero.previous"
-          data-i18n-attr="aria-label"
-        >
-          ❮
-        </button>
-        <button
-          class="hero-slider__arrow"
-          type="button"
-          data-slide="next"
-          aria-label="Next slide"
-          data-i18n="home.hero.next"
-          data-i18n-attr="aria-label"
-        >
-          ❯
-        </button>
-      </div>
-      <div class="hero-slider__dots" role="tablist" aria-label="Featured slides" data-i18n="home.hero.dots" data-i18n-attr="aria-label"></div>
-      <div class="hero-slider__track">
-        <article class="hero-slide is-active" aria-hidden="false">
-          <video
-            class="hero-slide__media"
-            data-src="https://www.pexels.com/download/video/3591016/"
-            data-end-offset="3"
-            autoplay
-            muted
-            playsinline
-            preload="none"
-          ></video>
-        </article>
-        <article class="hero-slide" aria-hidden="true">
-          <video
-            class="hero-slide__media"
-            data-src="https://www.pexels.com/download/video/17823659/"
-            autoplay
-            muted
-            playsinline
-            preload="none"
-          ></video>
-        </article>
-        <article class="hero-slide" aria-hidden="true">
-          <video
-            class="hero-slide__media"
-            data-src="https://www.pexels.com/download/video/7772228/"
-            autoplay
-            muted
-            playsinline
-            preload="none"
-          ></video>
-        </article>
-        <article class="hero-slide" aria-hidden="true">
-          <video
-            class="hero-slide__media"
-            data-src="https://www.pexels.com/download/video/17145872/"
-            autoplay
-            muted
-            playsinline
-            preload="none"
-          ></video>
-        </article>
-      </div>
-    </section>
-
-    <section class="section section--difference" aria-labelledby="difference-heading">
-      <div class="difference">
-        <div class="section__intro difference__intro">
-          <h2 id="difference-heading" data-i18n="home.difference.heading">Experience the Difference</h2>
-        </div>
-        <div class="difference__grid" role="list">
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3.5" y="6.75" width="17" height="11" rx="2.75" />
-                <path d="M9.5 6.75 10.9 4.5h2.2l1.4 2.25" />
-                <circle cx="12" cy="12.5" r="3.5" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.captured.title">Captured</h3>
-            <p data-i18n="home.difference.captured.copy">Complimentary Photography on Every Tour</p>
-          </article>
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="7" />
-                <path d="M9.5 12h6.75" />
-                <path d="m14.75 9.75 2.75 2.25-2.75 2.25" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.pace.title">Set the Pace</h3>
-            <p data-i18n="home.difference.pace.copy">Choose your start time, skip pickups, set your own schedule</p>
-          </article>
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="4" />
-                <path d="M12 4v2.5" />
-                <path d="M12 17.5V20" />
-                <path d="M4 12h2.5" />
-                <path d="M17.5 12H20" />
-                <path d="m6.75 6.75 1.75 1.75" />
-                <path d="m15.5 15.5 1.75 1.75" />
-                <path d="m17.25 6.75-1.75 1.75" />
-                <path d="m8.5 15.5-1.75 1.75" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.journey.title">Your Journey</h3>
-            <p data-i18n="home.difference.journey.copy">Snorkel, explore, taste, relax - the choice is yours</p>
-          </article>
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 21c-4.25-2.2-6.5-5.15-6.5-8.75V7.25L12 4l6.5 3.25v5c0 3.6-2.25 6.55-6.5 8.75Z" />
-                <path d="m9.25 12.5 2.25 2.25 3.25-3.25" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.surprises.title">No Surprises</h3>
-            <p data-i18n="home.difference.surprises.copy">No hidden costs, No extra charges, Just adventure</p>
-          </article>
-          <article class="card difference-item" role="listitem">
-            <span class="difference-item__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 6.5 13.8 10l4 .55-2.9 2.85.7 4.1-3.6-1.9-3.6 1.9.7-4.1-2.9-2.85 4-.55Z" />
-                <path d="M8.5 13.4 7.25 20l4.75-1.8L16.75 20 15.5 13.4" />
-              </svg>
-            </span>
-            <h3 data-i18n="home.difference.excellence.title">Excellence</h3>
-            <p data-i18n="home.difference.excellence.copy">We don’t claim it - our guests do. Five stars, every time.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--favorites" aria-labelledby="favorites-heading">
-      <div class="section__intro">
-        <h2 id="favorites-heading" data-i18n="home.favorites.heading">Adventures Loved by Travelers</h2>
-        <p data-i18n="home.favorites.copy">Swipe through limited-time offers on the tours our guests love the most.</p>
-      </div>
-      <div class="favorites-carousel" data-card-carousel>
-        <button
-          class="favorites-carousel__arrow favorites-carousel__arrow--prev"
-          type="button"
-          data-carousel-arrow="prev"
-          aria-label="Previous tours"
-          data-i18n="home.favorites.previous"
-          data-i18n-attr="aria-label"
-        >
-          <span aria-hidden="true">❮</span>
-        </button>
-        <div class="favorites-carousel__viewport">
-          <div class="favorites-carousel__track" role="list" data-favorites-track></div>
-        </div>
-        <button
-          class="favorites-carousel__arrow favorites-carousel__arrow--next"
-          type="button"
-          data-carousel-arrow="next"
-          aria-label="Next tours"
-          data-i18n="home.favorites.next"
-          data-i18n-attr="aria-label"
-        >
-          <span aria-hidden="true">❯</span>
-        </button>
-      </div>
-    </section>
-
-    <section class="section" id="tour-builder">
-      <div class="section__intro">
-        <h2 data-i18n="home.builder.heading">We build your perfect day</h2>
-        <p data-i18n="home.builder.copy">
-          Share your idea by email and receive a personalized quote, or book a video call with our team to fine-tune every detail.
-        </p>
-      </div>
-      <div class="custom-inquiry">
-        <div class="card custom-inquiry__details">
-          <h3 data-i18n="home.builder.listHeading">Tell us about your dream day</h3>
-          <ul class="custom-inquiry__list">
-            <li data-i18n="home.builder.pointOne">Share the vibe you want: relaxed, high-energy, romantic, or off-grid.</li>
-            <li data-i18n="home.builder.pointTwo">Add any must-do activities, dining styles, or timing preferences.</li>
-              <li data-i18n="home.builder.pointThree">You’ll receive a personalized quote or the option to connect with our team by video call.</li>
-          </ul>
-          <p class="custom-inquiry__email" data-i18n="home.builder.emailFallback" data-i18n-attr="html">
-            Prefer email? Reach us directly at <a href="mailto:info@beyondthereefmexico.com">info@beyondthereefmexico.com</a>.
-          </p>
-        </div>
-        <form
-          class="card custom-inquiry__form"
-          id="custom-contact-form"
-          action="https://formspree.io/f/xkowoogr"
-          method="POST"
-          aria-label="Send your perfect day details"
-          data-i18n="home.builder.formAria"
-          data-i18n-attr="aria-label"
-        >
-          <div class="field">
-            <label for="contact-name" data-i18n="home.builder.nameLabel">Name</label>
-            <input id="contact-name" name="name" type="text" placeholder="Your name" required data-i18n="home.builder.namePlaceholder" data-i18n-attr="placeholder" />
-          </div>
-          <div class="field">
-            <label for="contact-email" data-i18n="home.builder.emailLabel">Email</label>
-            <input
-              id="contact-email"
-              name="email"
-              type="email"
-              inputmode="email"
-              placeholder="you@example.com"
-              required
-              data-i18n="home.builder.emailPlaceholder"
-              data-i18n-attr="placeholder"
-            />
-          </div>
-          <div class="field">
-            <label for="contact-phone" data-i18n="home.builder.phoneLabel">Phone</label>
-            <input
-              id="contact-phone"
-              name="phone"
-              type="tel"
-              inputmode="tel"
-              placeholder="+52 1 555 555 5555"
-              data-i18n="home.builder.phonePlaceholder"
-              data-i18n-attr="placeholder"
-            />
-          </div>
-          <div class="field">
-            <label for="contact-idea" data-i18n="home.builder.notesLabel">Tell us about your idea</label>
-            <textarea
-              id="contact-idea"
-              name="idea"
-              rows="4"
-              placeholder="Include the date, vibe, and any must-do experiences."
-              required
-              data-i18n="home.builder.notesPlaceholder"
-              data-i18n-attr="placeholder"
-            ></textarea>
-          </div>
-          <button class="button button--primary" type="submit" data-i18n="home.builder.submit">Send my idea</button>
-          <p class="form-status" id="custom-contact-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-    <section class="section section--accent">
-      <div class="section__intro">
-        <h2 data-i18n="home.accent.heading">Private, Stress-Free Excursions</h2>
-      </div>
-      <div class="grid grid--features">
-        <article class="card feature-card">
-          <h3 data-i18n="home.accent.locals.title">Led by certified guides</h3>
-          <p data-i18n="home.accent.locals.copy">Our certified guides bring years of professional experience, crafting insider-only moments you cannot find on a brochure.</p>
-        </article>
-        <article class="card feature-card">
-          <h3 data-i18n="home.accent.collab.title">Can’t find the tour you want?</h3>
-          <p data-i18n="home.accent.collab.copy">Reach out and we’ll schedule a call or video chat to custom-build your perfect excursions.</p>
-        </article>
-        <article class="card feature-card">
-          <h3 data-i18n="home.accent.execution.title">Worry-free tours</h3>
-          <p data-i18n="home.accent.execution.copy">Your tour, your time, no hidden fees, with transfers, tickets, and timing handled so you just enjoy.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="cta">
-        <div>
-          <h2 data-i18n="home.cta.heading">Ready to build your dream tour?</h2>
-          <p data-i18n="home.cta.copy">Reach out and we’ll design the right experience for you.</p>
-        </div>
-        <a class="button button--primary" href="mailto:info@beyondthereefmexico.com" data-i18n="home.cta.button">Email us now</a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <p>
-      &copy; <span id="current-year"></span>
-      <span data-i18n="footer.rights">Beyond the Reef Mexico. All rights reserved.</span>
-    </p>
-  </footer>
-
-  <div
-    class="floating-contact"
-    role="complementary"
-    aria-label="Quick contact options"
-    data-i18n="floatingContact.aria"
-    data-i18n-attr="aria-label"
-  >
-    <a
-      class="floating-contact__link floating-contact__link--whatsapp"
-      href="https://wa.me/529623562346"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Chat on WhatsApp"
-      data-i18n="floatingContact.whatsappAria"
-      data-i18n-attr="aria-label"
-    >
-      <span class="floating-contact__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="11.5" r="7.5"></circle>
-          <path d="m7 17.3 -.8 3.4 3.4 -.9" />
-          <path
-            d="m9.3 8.8 1.1 -.5a .6 .6 0 0 1 .8 .33l .4 .95a .6 .6 0 0 1 -.14 .61l -.34 .33a 4.4 4.4 0 0 0 2.15 2.15l .33 -.34a .6 .6 0 0 1 .61 -.15l .95 .38a .6 .6 0 0 1 .34 .8l -.37 .98a .6 .6 0 0 1 -.47 .38c -1.84 -.17 -4.4 -2.58 -4.67 -4.47a .6 .6 0 0 1 .25 -.54Z"
-          />
-        </svg>
-      </span>
-      <span class="floating-contact__text">
-        <span class="floating-contact__label" data-i18n="floatingContact.whatsappLabel">WhatsApp</span>
-      </span>
-    </a>
-    <a
-      class="floating-contact__link floating-contact__link--email"
-      href="mailto:info@beyondthereefmexico.com"
-      aria-label="Email Beyond the Reef Mexico"
-      data-i18n="floatingContact.emailAria"
-      data-i18n-attr="aria-label"
-    >
-      <span class="floating-contact__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3.25" y="5.75" width="17.5" height="12.5" rx="2.25"></rect>
-          <path d="M4.5 7.5 12 12.75 19.5 7.5"></path>
-          <path d="m4.75 17 4.75-3.75"></path>
-          <path d="m19.25 17-4.75-3.75"></path>
-        </svg>
-      </span>
-      <span class="floating-contact__text">
-        <span class="floating-contact__label" data-i18n="floatingContact.emailLabel">Email</span>
-      </span>
-    </a>
-    <a
-      class="floating-contact__link floating-contact__link--instagram"
-      href="https://www.instagram.com/beyondthereefmexico"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Open Instagram"
-      data-i18n="floatingContact.instagramAria"
-      data-i18n-attr="aria-label"
-    >
-      <span class="floating-contact__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" role="presentation" focusable="false" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="4" y="4" width="16" height="16" rx="4"></rect>
-          <circle cx="12" cy="12" r="3.6"></circle>
-          <circle cx="16.5" cy="7.5" r="1" fill="currentColor"></circle>
-        </svg>
-      </span>
-      <span class="floating-contact__text">
-        <span class="floating-contact__label" data-i18n="floatingContact.instagramLabel">Instagram</span>
-      </span>
-    </a>
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav-logo">
+    <img src="data:image/png;base64,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" alt="Beyond the Reef Mexico" width="42" height="42">
+    <div class="nav-logo-words">
+      <span class="nav-logo-name">Beyond the Reef</span>
+      <span class="nav-logo-sub">Mexico</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#experiences">Private Experiences</a>
+    <a href="#shared">Shared Experiences</a>
+    <a href="reviews.html">Reviews</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="#contact">Contact</a>
   </div>
+  <div class="nav-right">
+    <a href="https://wa.me/529623562346" class="nav-cta btn" target="_blank" rel="noopener">Book Now</a>
+    <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-  <script src="script.js" defer></script>
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">X</button>
+  <a href="#experiences" onclick="closeMob()">Private Experiences</a>
+  <a href="#shared" onclick="closeMob()">Shared Experiences</a>
+  <a href="reviews.html" onclick="closeMob()">Reviews</a>
+  <a href="our-story.html" onclick="closeMob()">Our Story</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="https://wa.me/529623562346" class="mob-wa" target="_blank" rel="noopener" onclick="closeMob()">Book on WhatsApp</a>
+</div>
+
+<section class="hero" id="heroSection">
+  <img src="slide1.jpg" alt="Cenote snorkeling" class="hs-img hs-on" loading="eager"><img src="slide2.jpg" alt="Cenote adventure" class="hs-img" loading="eager"><img src="slide3.jpg" alt="Coba pyramid" class="hs-img" loading="eager"><img src="slide4.jpg" alt="Turquoise lagoon" class="hs-img" loading="lazy"><img src="slide5.jpg" alt="Cave formations" class="hs-img" loading="lazy"><img src="slide6.jpg" alt="Speedboat" class="hs-img" loading="lazy"><img src="slide7.jpg" alt="Crystal waters" class="hs-img" loading="lazy"><img src="slide8.jpg" alt="Chichen Itza" class="hs-img" loading="lazy"><img src="slide9.jpg" alt="El Castillo" class="hs-img" loading="lazy"><img src="slide10.jpg" alt="Tulum ruins" class="hs-img" loading="lazy"><img src="slide11.jpg" alt="Tulum coast" class="hs-img" loading="lazy"><img src="slide12.jpg" alt="Sian Kaan" class="hs-img" loading="lazy">
+  <div class="hero-ov"></div>
+  <div class="hero-body">
+    <div class="hero-pill">
+      <div class="hero-dot"></div>
+      <span>Cancun - Tulum - Riviera Maya - Playa del Carmen</span>
+    </div>
+    <h1><span class="c-gold">Go Beyond</span><br><span class="c-teal">the Tourist</span><br>Riviera Maya.</h1>
+    <p class="hero-sub">Dive into cenotes. Swim with turtles. Walk ancient Mayan ruins. Eat where locals eat. Private and shared experiences designed for those who want the real local experience.</p>
+    <div class="hero-btns">
+      <a href="#experiences" class="btn btn-coral btn-lg">Explore Experiences</a>
+      <a href="https://wa.me/529623562346" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">WhatsApp Us</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n">14<sup>+</sup></div><div class="stat-l">Years Experience</div></div>
+      <div><div class="stat-n">5<sup>*</sup></div><div class="stat-l">Guest Rating</div></div>
+      <div><div class="stat-n">100<sup>%</sup></div><div class="stat-l">Local Experience</div></div>
+    </div>
+  </div>
+  <div class="hero-ctrl">
+    <button class="hc-btn" id="hsPrev">&larr;</button>
+    <div class="hc-dots" id="hsDots"><button class="hc-dot hc-on" data-i="0">1</button><button class="hc-dot" data-i="1">2</button><button class="hc-dot" data-i="2">3</button><button class="hc-dot" data-i="3">4</button><button class="hc-dot" data-i="4">5</button><button class="hc-dot" data-i="5">6</button><button class="hc-dot" data-i="6">7</button><button class="hc-dot" data-i="7">8</button><button class="hc-dot" data-i="8">9</button><button class="hc-dot" data-i="9">10</button><button class="hc-dot" data-i="10">11</button><button class="hc-dot" data-i="11">12</button></div>
+    <button class="hc-btn" id="hsNext">&rarr;</button>
+    <span class="hc-ctr" id="hsCtr">1 / 12</span>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="sec sec-gold" style="background:var(--gold-bg)">
+  <div class="lbl">Why Choose Us</div>
+  <h2 class="h2">A different kind of tour.</h2>
+  <p class="sub">Every detail handled so you can simply enjoy. No hidden fees. No shared groups.</p>
+  <div class="why-grid">
+    <div class="wc rv"><div class="wi">📸</div><div><h3>Photos Included</h3><p>Your guide captures professional photos on every private experience — always free.</p></div></div>
+    <div class="wc rv rv1"><div class="wi">⏱</div><div><h3>Your Schedule</h3><p>Pick your start time, move at your pace — no group pickups or rushing.</p></div></div>
+    <div class="wc rv rv2"><div class="wi">🚐</div><div><h3>Brand New Vans</h3><p>Cold A/C, leather seats, professional drivers. Newest fleet in the Riviera Maya.</p></div></div>
+    <div class="wc rv rv3"><div class="wi">🥗</div><div><h3>Safe Food</h3><p>Fresh meals adapted for vegan, gluten-free, allergies and special requests.</p></div></div>
+    <div class="wc rv"><div class="wi">🗺</div><div><h3>Certified Guides</h3><p>Licensed, bilingual guides with 14+ years of safety-first expertise.</p></div></div>
+    <div class="wc rv rv1"><div class="wi">💰</div><div><h3>Zero Hidden Fees</h3><p>Transfers, tickets, timing — all included upfront. No surprises, ever.</p></div></div>
+  </div>
+</section>
+
+<!-- PRIVATE TOURS SLIDER -->
+<!-- PRIVATE TOURS SLIDER -->
+<section id="tours" class="sec" style="background:#ffffff">
+  <div class="lbl">Private Experiences</div>
+  <h2 class="h2">Private experiences —<br>just your group.</h2>
+  <p class="sub" style="margin-bottom:24px">100% private. Only you and the people you choose. Certified guides, newest vans, zero shared groups.</p>
+  <div class="sl-outer">
+    <div class="sl-viewport">
+      <div class="sl-track" id="privTrack"><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A4D5C,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Turtles + Cenotes" loading="lazy">
+    <span class="tc-badge b-coral">Top Pick</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Turtles + Cenotes</h3>
+    <p class="tc-tag">Sea Turtles · 3 Cenotes · Snack & Drinks</p>
+    <p class="tc-desc">Gentle sea turtle snorkeling followed by three crystal-clear cenotes hidden in the jungle.</p>
+    <span class="tc-price">From <strong>$119</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-turtles-cenotes.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-turtles-cenotes.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#1A5276,#2E86C1)">
+    <img data-src="https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tulum Underwater" loading="lazy">
+    <span class="tc-badge b-navy">Best Seller</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tulum Underwater</h3>
+    <p class="tc-tag">Tulum Ruins · Turtle Snorkeling · 2 Cenotes · Lunch</p>
+    <p class="tc-desc">Walk the stunning clifftop ruins of Tulum, snorkel with turtles, cool off in two beautiful cenotes.</p>
+    <span class="tc-price">From <strong>$169</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-tulum-underwater.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-tulum-underwater.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A1828,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Cenotes Express" loading="lazy">
+    <span class="tc-badge b-teal">New Route</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Cenotes Express</h3>
+    <p class="tc-tag">4 Cenotes · Rappel into a Cavern · Snack & Beers</p>
+    <p class="tc-desc">Dive into four different cenotes then rappel into a cavern chamber for a true wow moment.</p>
+    <span class="tc-price">From <strong>$74</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-cenotes-express.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-cenotes-express.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0E2A45,#E8621A)">
+    <img data-src="https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tulum Express" loading="lazy">
+    <span class="tc-badge b-gold">Quick Escape</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tulum Express</h3>
+    <p class="tc-tag">Tulum Ruins · Certified Guide · Drinks Included</p>
+    <p class="tc-desc">Explore iconic Tulum ruins with a certified guide — ocean views, great photos, relaxed history walk.</p>
+    <span class="tc-price">From <strong>$69</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-tulum-express.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-tulum-express.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#1D6A3E,#27AE60)">
+    <img data-src="https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tulum + Cobá" loading="lazy">
+    <span class="tc-badge b-coral">All-Day Epic</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tulum + Cobá</h3>
+    <p class="tc-tag">Tulum Ruins · Cobá · Cenote Zipline · Local Buffet</p>
+    <p class="tc-desc">Two Mayan sites in one epic day. Cenote zipline and a local buffet included.</p>
+    <span class="tc-price">From <strong>$179</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-tulum-coba.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-tulum-coba.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0E2A45,#2E7D9A)">
+    <img data-src="https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Cobá" loading="lazy">
+    <span class="tc-badge b-navy">History Rich</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Cobá</h3>
+    <p class="tc-tag">Cobá Ruins · Bike · Cenote Zipline · Regional Buffet</p>
+    <p class="tc-desc">Bike through jungle ruins with expert guides, zipline into a cenote, enjoy a regional buffet.</p>
+    <span class="tc-price">From <strong>$124</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-coba.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-coba.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#4A235A,#8E44AD)">
+    <img data-src="https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Chichén Itzá" loading="lazy">
+    <span class="tc-badge b-gold">UNESCO</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Chichén Itzá</h3>
+    <p class="tc-tag">Chichén Itzá · Cenote Zipline · Local Buffet</p>
+    <p class="tc-desc">See the UNESCO Wonder with an expert guide who makes every pyramid come alive.</p>
+    <span class="tc-price">From <strong>$184</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-chichen-itza.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-chichen-itza.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A1F3D,#1A5276)">
+    <img data-src="https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Cobá + Chichén Itzá" loading="lazy">
+    <span class="tc-badge b-coral">Epic Circuit</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Cobá + Chichén Itzá</h3>
+    <p class="tc-tag">Cobá · Chichén Itzá · Cenote Zipline · Local Buffet</p>
+    <p class="tc-desc">Two UNESCO wonders in one well-paced day — the ultimate Yucatán experience.</p>
+    <span class="tc-price">From <strong>$219</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-coba-chichen.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-coba-chichen.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#006994,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Holbox Express" loading="lazy">
+    <span class="tc-badge b-teal">Island Life</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Holbox Express</h3>
+    <p class="tc-tag">Private Speedboat · 3 Islands · Golf Cart · Beach Club Open Bar</p>
+    <p class="tc-desc">Private speedboat to dreamy Holbox islands. White sandbars, beach club buffet with open bar.</p>
+    <span class="tc-price">From <strong>$141</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-holbox-express.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-holbox-express.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A3D62,#1A7A8A)">
+    <img data-src="https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Dolphin + Turtle · Sian Ka'an" loading="lazy">
+    <span class="tc-badge b-navy">UNESCO Reserve</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Dolphin + Turtle · Sian Ka'an</h3>
+    <p class="tc-tag">Speedboat · Dolphins · Turtles · Bird Watching · Snorkeling</p>
+    <p class="tc-desc">Cruise the Sian Ka'an UNESCO reserve spotting dolphins, turtles, and reef life.</p>
+    <span class="tc-price">From <strong>$155</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-dolphin-turtle.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-dolphin-turtle.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#8B2500,#C0392B)">
+    <img data-src="https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tacos Tour" loading="lazy">
+    <span class="tc-badge b-gold">Foodie Fave</span>
+    <span class="tc-dur">⏱ Evening</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tacos Tour</h3>
+    <p class="tc-tag">Authentic Tacos · Beers, Tequila & Mezcal · Playa del Carmen</p>
+    <p class="tc-desc">Authentic tacos, mezcal, tequila, and a lively night in Playa del Carmen with a local guide.</p>
+    <span class="tc-price">From <strong>$59</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-tacos-tour.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-tacos-tour.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0E2A45,#2980B9)">
+    <img data-src="https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Fishing Half Day" loading="lazy">
+    <span class="tc-badge b-teal">Private Boat</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Fishing Half Day</h3>
+    <p class="tc-tag">Private Boat · Offshore Fishing · Fresh Ceviche · Drinks</p>
+    <p class="tc-desc">Private fishing charter with expert captains. Fresh ceviche made on board.</p>
+    <span class="tc-price-req">Price on request</span>
+    <div class="tc-acts">
+      <a href="tour-fishing.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-fishing.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article></div>
+    </div>
+    <div class="sl-controls">
+      <button class="sl-btn" id="privPrev" aria-label="Previous">&#8592;</button>
+      <div class="sl-dots" id="privDots"></div>
+      <button class="sl-btn" id="privNext" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+  <div style="text-align:center;padding:28px 0 0">
+    <a href="tours.html" class="btn btn-navy btn-md">View All Experiences →</a>
+  </div>
+</section>
+
+<!-- SHARED TOURS SLIDER -->
+<section id="shared" class="sec" style="background:var(--amber-bg)">
+  <div class="lbl lbl-gold">Shared Experiences</div>
+  <h2 class="h2">Budget-friendly adventures.</h2>
+  <p class="sub" style="margin-bottom:24px">Small group tours at great value. Same certified guides, same incredible destinations.</p>
+  <div class="sl-outer">
+    <div class="sl-viewport">
+      <div class="sl-track" id="sharedTrack"><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#1DA5B4,#3498DB)">
+    <img data-src="https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tulum Ruins (Shared)" loading="lazy">
+    <span class="tc-badge b-teal">Budget Friendly</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tulum Ruins (Shared)</h3>
+    <p class="tc-tag">Tulum Ruins · Certified Guide · Small Group</p>
+    <p class="tc-desc">Explore iconic Tulum ruins on a small-group tour with a certified bilingual guide.</p>
+    <span class="tc-price">From <strong>$59</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-tulum.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-shared-tulum.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#1A7A8A,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Cenotes Day (Shared)" loading="lazy">
+    <span class="tc-badge b-teal">Best Value</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Cenotes Day (Shared)</h3>
+    <p class="tc-tag">2 Cenotes · Guide · Snorkel Gear · Snack</p>
+    <p class="tc-desc">Two stunning cenotes with a small group. Snorkel gear, guide, and snack included.</p>
+    <span class="tc-price">From <strong>$45</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-cenotes.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-shared-cenotes.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#4A235A,#7D3C98)">
+    <img data-src="https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Chichén Itzá (Shared)" loading="lazy">
+    <span class="tc-badge b-teal">Budget Friendly</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Chichén Itzá (Shared)</h3>
+    <p class="tc-tag">Chichén Itzá · Cenote · Buffet · Small Group</p>
+    <p class="tc-desc">Visit the UNESCO Wonder on a small shared tour with cenote swim and buffet lunch.</p>
+    <span class="tc-price">From <strong>$70</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-chichen.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-shared-chichen.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0E2A45,#2E7D9A)">
+    <img data-src="https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Cobá (Shared)" loading="lazy">
+    <span class="tc-badge b-teal">Budget Friendly</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Cobá (Shared)</h3>
+    <p class="tc-tag">Cobá Ruins · Bike · Cenote · Small Group</p>
+    <p class="tc-desc">Bike through the jungle ruins of Cobá and cool off in a cenote with a certified guide.</p>
+    <span class="tc-price">From <strong>$60</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-coba.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-shared-coba.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A4D5C,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Turtle Snorkel (Shared)" loading="lazy">
+    <span class="tc-badge b-teal">Budget Friendly</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Turtle Snorkel (Shared)</h3>
+    <p class="tc-tag">Sea Turtles · Snorkel Gear · Small Group</p>
+    <p class="tc-desc">Snorkel alongside sea turtles on a small shared boat. Gear and guide included.</p>
+    <span class="tc-price">From <strong>$48</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-turtles.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-shared-turtles.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#006994,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Holbox Day Trip (Shared)" loading="lazy">
+    <span class="tc-badge b-teal">Best Value</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Holbox Day Trip (Shared)</h3>
+    <p class="tc-tag">Ferry · Holbox Island · Beach Club · Small Group</p>
+    <p class="tc-desc">Day trip to gorgeous Holbox island with ferry, beach club access, and certified guide.</p>
+    <span class="tc-price">From <strong>$80</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-holbox.html" class="btn btn-outline btn-sm">Details</a>
+      <a href="tour-shared-holbox.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+    </div>
+  </div>
+</article></div>
+    </div>
+    <div class="sl-controls">
+      <button class="sl-btn" id="sharedPrev" aria-label="Previous">&#8592;</button>
+      <div class="sl-dots" id="sharedDots"></div>
+      <button class="sl-btn" id="sharedNext" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS SLIDER -->
+<section class="sec sec-navy" style="padding-bottom:80px">
+  <div class="lbl lbl-white">Guest Stories</div>
+  <h2 class="h2 h2-white">5 stars, every time.</h2>
+  <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:8px 16px;margin-bottom:32px">
+    <span style="color:var(--gold);font-size:14px;letter-spacing:2px">★★★★★</span>
+    <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,.70)">5.0 · Riviera Maya's top-rated private tours</span>
+  </div>
+  <div class="sl-outer">
+    <div class="sl-viewport">
+      <div class="sl-track" id="revTrack"><div class="rc">
+  <div class="rc-stars">★★★★★</div>
+  <p class="rc-text">"From the midnight manta ray swim to the surprise anniversary dinner on a sandbar, the Beyond the Reef team went above and beyond. We never looked at our watches once."</p>
+  <div class="rc-who">
+    <div class="rc-av">CA</div>
+    <div><p class="rc-name">Cam & Jordan</p><p class="rc-from">United States</p></div>
+  </div>
+</div><div class="rc">
+  <div class="rc-stars">★★★★★</div>
+  <p class="rc-text">"We built the itinerary together during a video call. They secured a private guide for my dad so he could explore at his own pace. Absolutely incredible."</p>
+  <div class="rc-who">
+    <div class="rc-av">RI</div>
+    <div><p class="rc-name">Riya</p><p class="rc-from">United Kingdom</p></div>
+  </div>
+</div><div class="rc">
+  <div class="rc-stars">★★★★★</div>
+  <p class="rc-text">"They arranged a sunrise entry so we had El Castillo almost to ourselves, plus a guide who knew every story. Breakfast tacos afterward were the best."</p>
+  <div class="rc-who">
+    <div class="rc-av">MA</div>
+    <div><p class="rc-name">Mariela & Tomas</p><p class="rc-from">Spain</p></div>
+  </div>
+</div><div class="rc">
+  <div class="rc-stars">★★★★★</div>
+  <p class="rc-text">"Beyond the Reef stocked the cooler, handled the licenses, and matched us with a patient captain so our kids could reel in their first mahi. Zero stress, just smiles."</p>
+  <div class="rc-who">
+    <div class="rc-av">TH</div>
+    <div><p class="rc-name">The Greene Crew</p><p class="rc-from">Canada</p></div>
+  </div>
+</div><div class="rc">
+  <div class="rc-stars">★★★★★</div>
+  <p class="rc-text">"They found a hidden cenote and timed our arrival between buses. We floated in crystal water with just birds overhead. Towels, snacks, and photos — all handled."</p>
+  <div class="rc-who">
+    <div class="rc-av">JE</div>
+    <div><p class="rc-name">Jess & Priya</p><p class="rc-from">Australia</p></div>
+  </div>
+</div><div class="rc">
+  <div class="rc-stars">★★★★★</div>
+  <p class="rc-text">"Our guide pointed out turtles, rays, and even a shy seahorse. Gear fit perfectly and the boat had shade. We felt cared for from start to finish."</p>
+  <div class="rc-who">
+    <div class="rc-av">SA</div>
+    <div><p class="rc-name">Samir</p><p class="rc-from">Germany</p></div>
+  </div>
+</div></div>
+    </div>
+    <div class="sl-controls" style="margin-top:14px">
+      <button class="sl-btn sl-btn-inv" id="revPrev" aria-label="Previous">&#8592;</button>
+      <div class="sl-dots" id="revDots"></div>
+      <button class="sl-btn sl-btn-inv" id="revNext" aria-label="Next">&#8594;</button>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:32px">
+    <a href="reviews.html" class="btn btn-ghost btn-md">Read All 13 Reviews →</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="sec" id="contact" style="background:linear-gradient(135deg,var(--gold-bg) 0%,#FFE8BE 100%)">
+  <div class="lbl">Get In Touch</div>
+  <h2 class="h2">Let's plan your<br>perfect day.</h2>
+  <p class="sub">Quick response guaranteed — usually within the hour.</p>
+  <div class="copt-grid">
+    <div class="copt rv">
+      <div class="copt-icon" style="background:#E8F8EE">💬</div>
+      <h3>WhatsApp</h3>
+      <p>Chat directly with our team and get your personalized quote in minutes.</p>
+      <a href="https://wa.me/529623562346" class="btn btn-wa btn-full btn-md" target="_blank" rel="noopener">Open WhatsApp →</a>
+    </div>
+    <div class="copt rv rv1">
+      <div class="copt-icon" style="background:#EBF4FF">✉️</div>
+      <h3>Email</h3>
+      <p>Send your dates, group size &amp; interests and we'll reply with a custom quote.</p>
+      <a href="/cdn-cgi/l/email-protection#dcb5b2bab39cbeb9a5b3b2b8a8b4b9aeb9b9bab1b9a4b5bfb3f2bfb3b1" class="btn btn-navy btn-full btn-md">Send Email →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOM REQUEST FORM -->
+<section class="sec" style="background:#ffffff">
+  <div class="fbox">
+    <div class="lbl">Custom Request</div>
+    <h2 class="h2" style="font-size:clamp(22px,5vw,32px);margin-bottom:8px">Tell us your dream day</h2>
+    <p style="font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.7">Share your idea and we'll send a personalized quote within a few hours.</p>
+    <div id="frmWrap">
+      <div class="fg"><label>Your Name</label><input type="text" id="f-name" placeholder="e.g. John &amp; Maria" autocomplete="name"></div>
+      <div class="fg"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com" autocomplete="email"></div>
+      <div class="fg"><label>Phone / WhatsApp</label><input type="tel" id="f-phone" placeholder="+1 555 000 0000" autocomplete="tel"></div>
+      <div class="fg"><label>Your Dream Day</label><textarea id="f-msg" placeholder="Dates, group size, activities, dietary needs..."></textarea></div>
+      <button class="fsub" onclick="subForm()">Send My Request →</button>
+    </div>
+    <div class="fsuc" id="fsuc">
+      <div style="font-size:40px;margin-bottom:12px">🎉</div>
+      <h4>We got your message!</h4>
+      <p>We'll reply within hours. Check your WhatsApp too!</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-logo">
+        <img src="data:image/png;base64,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" alt="Beyond the Reef Mexico" width="38" height="38">
+        <span class="ft-logo-name">Beyond the Reef Mexico</span>
+      </div>
+      <p class="ft-tagline">Private & shared tours in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
+      <div class="ft-social">
+        <a href="https://wa.me/529623562346" class="ft-soc" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
+        <a href="/cdn-cgi/l/email-protection#84edeae2ebc4e6e1fdebeae0f0ece1f6e1e1e2e9e1fcede7ebaae7ebe9" class="ft-soc" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="white" stroke-width="1.5"/></svg>
+        </a>
+        <a href="https://www.instagram.com/beyondthereefmexico" class="ft-soc" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="ft-h">Explore</p>
+      <div class="ft-links">
+        <a href="tours.html">Private Experiences</a>
+        <a href="tours.html#shared">Shared Experiences</a>
+        <a href="reviews.html">Guest Reviews</a>
+        <a href="our-story.html">Our Story</a>
+      </div>
+    </div>
+    <div>
+      <p class="ft-h">Contact</p>
+      <div class="ft-links">
+        <a href="https://wa.me/529623562346" target="_blank" rel="noopener">+52 962 356 2346</a>
+        <a href="/cdn-cgi/l/email-protection#244d4a424b6446415d4b4a40504c415641414249415c4d474b0a474b49"><span class="__cf_email__" data-cfemail="127b7c747d5270776b7d7c76667a77607777747f776a7b717d3c717d7f">[email&#160;protected]</span></a>
+        <a href="https://www.instagram.com/beyondthereefmexico" target="_blank" rel="noopener">@beyondthereefmexico</a>
+      </div>
+      <p class="ft-h" style="margin-top:20px">Destinations</p>
+      <div class="ft-links">
+        <a href="tours.html">Cancun Tours</a>
+        <a href="tours.html">Tulum Tours</a>
+        <a href="tours.html">Playa del Carmen Tours</a>
+        <a href="tours.html">Riviera Maya Tours</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Beyond the Reef Mexico. All rights reserved.</p>
+  </div>
+</footer>
+
+<a href="https://www.instagram.com/beyondthereefmexico" class="float-ig" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#ig)"/><rect x="8" y="8" width="16" height="16" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="21" cy="11" r="1" fill="white"/></svg></a>
+<a href="https://wa.me/529623562346" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
+
+<script>
+// NAV scroll
+var nav = document.getElementById('mainNav');
+window.addEventListener('scroll', function() {
+  if (nav) nav.classList.toggle('opaque', window.scrollY > 80);
+}, {passive: true});
+
+// Hamburger menu
+var ham = document.getElementById('ham');
+var mob = document.getElementById('mobMenu');
+var mc  = document.getElementById('mobClose');
+function openMob() {
+  mob.classList.add('open');
+  ham.classList.add('open');
+  ham.setAttribute('aria-expanded', 'true');
+  document.body.style.overflow = 'hidden';
+}
+function closeMob() {
+  mob.classList.remove('open');
+  ham.classList.remove('open');
+  ham.setAttribute('aria-expanded', 'false');
+  document.body.style.overflow = '';
+}
+if (ham) ham.addEventListener('click', function() {
+  mob.classList.contains('open') ? closeMob() : openMob();
+});
+if (mc) mc.addEventListener('click', closeMob);
+
+// Hero slideshow
+(function() {
+  var imgs = Array.from(document.querySelectorAll('.hs-img'));
+  var dots = Array.from(document.querySelectorAll('#hsDots .hc-dot'));
+  var ctr  = document.getElementById('hsCtr');
+  var N = imgs.length;
+  if (!N) return;
+  var cur = 0;
+
+  function show(i) {
+    imgs[cur].classList.remove('hs-on');
+    if (dots[cur]) dots[cur].classList.remove('hc-on');
+    cur = ((i % N) + N) % N;
+    imgs[cur].classList.add('hs-on');
+    if (dots[cur]) dots[cur].classList.add('hc-on');
+    if (ctr) ctr.textContent = (cur + 1) + ' / ' + N;
+  }
+
+  var timer = setInterval(function() { show(cur + 1); }, 5000);
+  function reset() {
+    clearInterval(timer);
+    timer = setInterval(function() { show(cur + 1); }, 5000);
+  }
+
+  document.getElementById('hsPrev').onclick = function() { show(cur - 1); reset(); };
+  document.getElementById('hsNext').onclick = function() { show(cur + 1); reset(); };
+  dots.forEach(function(d, i) { d.onclick = function() { show(i); reset(); }; });
+
+  var sx = 0;
+  var sec = document.getElementById('heroSection');
+  if (sec) {
+    sec.addEventListener('touchstart', function(e) { sx = e.touches[0].clientX; }, {passive: true});
+    sec.addEventListener('touchend', function(e) {
+      var dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 50) { show(cur + (dx < 0 ? 1 : -1)); reset(); }
+    }, {passive: true});
+  }
+})();
+
+// Tour card sliders
+function makeSlider(tid, pid, nid, did, sel, inv) {
+  var track = document.getElementById(tid);
+  if (!track) return;
+  var prev = document.getElementById(pid);
+  var next = document.getElementById(nid);
+  var dotsC = document.getElementById(did);
+  var idx = 0, dots = [], raf = 0, GAP = 16;
+
+  function cards() { return Array.from(track.querySelectorAll(sel)); }
+  function cw() {
+    var c = cards()[0];
+    if (!c) return 296;
+    var w = c.getBoundingClientRect().width;
+    return (w > 10 ? w : 280) + GAP;
+  }
+  function vis() {
+    var vp = track.parentElement;
+    return vp ? Math.max(1, Math.floor(vp.clientWidth / cw())) : 1;
+  }
+  function maxIdx() { return Math.max(0, cards().length - vis()); }
+  function go(i) {
+    idx = Math.max(0, Math.min(i, maxIdx()));
+    track.style.transform = 'translateX(-' + (idx * cw()) + 'px)';
+    if (prev) prev.disabled = (idx <= 0);
+    if (next) next.disabled = (idx >= maxIdx());
+    dots.forEach(function(d, j) { d.classList.toggle('on', j === idx); });
+  }
+  function buildDots() {
+    if (!dotsC) return;
+    dotsC.innerHTML = '';
+    dots = [];
+    var pages = maxIdx() + 1;
+    for (var i = 0; i < pages; i++) {
+      var d = document.createElement('button');
+      d.className = 'dot' + (inv ? ' dot-inv' : '');
+      d.type = 'button';
+      (function(ii) { d.onclick = function() { go(ii); }; })(i);
+      dotsC.appendChild(d);
+      dots.push(d);
+    }
+  }
+  function init() { buildDots(); go(0); }
+  if (prev) prev.onclick = function() { go(idx - 1); };
+  if (next) next.onclick = function() { go(idx + 1); };
+  var sx2 = 0;
+  track.addEventListener('touchstart', function(e) { sx2 = e.touches[0].clientX; }, {passive: true});
+  track.addEventListener('touchend', function(e) {
+    var dx = e.changedTouches[0].clientX - sx2;
+    if (Math.abs(dx) > 44) go(idx + (dx < 0 ? 1 : -1));
+  }, {passive: true});
+  function resize() {
+    cancelAnimationFrame(raf);
+    raf = requestAnimationFrame(function() { buildDots(); go(Math.min(idx, maxIdx())); });
+  }
+  if (window.ResizeObserver) new ResizeObserver(resize).observe(track.parentElement);
+  else window.addEventListener('resize', resize, {passive: true});
+  if (document.readyState === 'complete') setTimeout(init, 60);
+  else window.addEventListener('load', function() { setTimeout(init, 60); }, {once: true});
+}
+
+makeSlider('privTrack',   'privPrev',   'privNext',   'privDots',   '.tc:not(.tc-shared)', false);
+makeSlider('sharedTrack', 'sharedPrev', 'sharedNext', 'sharedDots', '.tc-shared',           false);
+makeSlider('revTrack',    'revPrev',    'revNext',    'revDots',    '.rc',                   true);
+
+// Lazy images
+(function() {
+  if (!window.IntersectionObserver) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        var img = e.target;
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          img.addEventListener('load', function() { img.classList.add('loaded'); }, {once: true});
+          delete img.dataset.src;
+        }
+        io.unobserve(img);
+      }
+    });
+  }, {rootMargin: '300px'});
+  document.querySelectorAll('img[data-src]').forEach(function(img) { io.observe(img); });
+})();
+
+// Scroll reveal
+(function() {
+  if (!window.IntersectionObserver) return;
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  }, {threshold: 0.08});
+  document.querySelectorAll('.rv').forEach(function(el) { io.observe(el); });
+})();
+
+// Contact form
+function subForm() {
+  var name  = document.getElementById('f-name').value.trim();
+  var email = document.getElementById('f-email').value.trim();
+  if (!name || !email) { alert('Please enter your name and email.'); return; }
+  var phone = document.getElementById('f-phone').value.trim() || 'N/A';
+  var msg   = document.getElementById('f-msg').value.trim()   || 'No details';
+  var text  = 'Hello! Request from website. Name: ' + name + ' Phone: ' + phone + ' Email: ' + email + ' Message: ' + msg;
+  window.open('https://wa.me/529623562346?text=' + encodeURIComponent(text), '_blank');
+  document.getElementById('frmWrap').style.display = 'none';
+  document.getElementById('fsuc').style.display    = 'block';
+}
+</script>
 </body>
 </html>
