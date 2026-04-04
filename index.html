@@ -210,6 +210,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .tc-thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .45s ease,opacity .4s ease;opacity:0}
 .tc-thumb img.loaded{opacity:1}
 .tc:hover .tc-thumb img{transform:scale(1.07)}
+.tc-thumb-link{display:block;position:relative;width:100%;height:100%;color:inherit;text-decoration:none}
+.tc-title-link{color:inherit;text-decoration:none}
+.tc-title-link:hover{text-decoration:underline}
 .tc-badge{position:absolute;top:10px;left:10px;z-index:2;font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:3px 9px;border-radius:var(--rp)}
 .b-coral{background:var(--coral);color:#fff}.b-teal{background:var(--teal);color:#fff}.b-gold{background:var(--gold);color:var(--navy)}.b-navy{background:var(--navy);color:#fff}
 .tc-dur{position:absolute;bottom:8px;right:8px;z-index:2;background:rgba(14,42,69,.72);color:rgba(255,255,255,.92);font-size:10px;font-weight:600;padding:3px 9px;border-radius:var(--rp)}
@@ -990,6 +993,38 @@ function makeSlider(tid, pid, nid, did, sel, inv) {
 
 makeSlider('privTrack',   'privPrev',   'privNext',   'privDots',   '.tc:not(.tc-shared)', false);
 makeSlider('sharedTrack', 'sharedPrev', 'sharedNext', 'sharedDots', '.tc-shared',           false);
+
+
+// Make slider image + title clickable to tour details
+(function() {
+  var cards = document.querySelectorAll('#privTrack .tc, #sharedTrack .tc');
+  cards.forEach(function(card) {
+    var detailsLink = card.querySelector('.tc-acts a[href]');
+    if (!detailsLink) return;
+
+    var href = detailsLink.getAttribute('href');
+    var title = card.querySelector('.tc-name');
+    var thumb = card.querySelector('.tc-thumb');
+
+    if (thumb && !thumb.querySelector('.tc-thumb-link')) {
+      var thumbLink = document.createElement('a');
+      thumbLink.className = 'tc-thumb-link';
+      thumbLink.href = href;
+      if (title) thumbLink.setAttribute('aria-label', 'View ' + title.textContent.trim());
+      while (thumb.firstChild) thumbLink.appendChild(thumb.firstChild);
+      thumb.appendChild(thumbLink);
+    }
+
+    if (title && !title.querySelector('a')) {
+      var titleLink = document.createElement('a');
+      titleLink.className = 'tc-title-link';
+      titleLink.href = href;
+      titleLink.textContent = title.textContent.trim();
+      title.textContent = '';
+      title.appendChild(titleLink);
+    }
+  });
+})();
 makeSlider('revTrack',    'revPrev',    'revNext',    'revDots',    '.rc',                   true);
 
 // Lazy images
