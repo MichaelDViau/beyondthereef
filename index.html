@@ -321,7 +321,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </div>
 
 <section class="hero" id="heroSection">
-  <img src="slide1.jpg" alt="Cenote snorkeling" class="hs-img hs-on" loading="eager" fetchpriority="high" decoding="async"><img src="slide2.jpg" alt="Cenote adventure" class="hs-img" loading="lazy" decoding="async"><img src="slide3.jpg" alt="Coba pyramid" class="hs-img" loading="lazy" decoding="async"><img src="slide4.jpg" alt="Turquoise lagoon" class="hs-img" loading="lazy"><img src="slide5.jpg" alt="Cave formations" class="hs-img" loading="lazy"><img src="slide6.jpg" alt="Speedboat" class="hs-img" loading="lazy"><img src="slide7.jpg" alt="Crystal waters" class="hs-img" loading="lazy"><img src="slide8.jpg" alt="Chichen Itza" class="hs-img" loading="lazy"><img src="slide9.jpg" alt="El Castillo" class="hs-img" loading="lazy"><img src="slide10.jpg" alt="Tulum ruins" class="hs-img" loading="lazy"><img src="slide11.jpg" alt="Tulum coast" class="hs-img" loading="lazy"><img src="slide12.jpg" alt="Sian Kaan" class="hs-img" loading="lazy">
+  <img src="IMG_0344.jpeg" alt="Beyond the Reef tour photo" class="hs-img hs-on" loading="eager" fetchpriority="high" decoding="async"><img src="IMG_2952.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy" decoding="async"><img src="IMG_2823.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy" decoding="async"><img src="IMG_0903.jpg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_1833.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_2332.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_0675.jpg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_2695.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="_MG_9267.jpg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_2803.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_1279.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_0827.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_2242.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="_MG_3895.jpg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_0757.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_1095.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="_MG_3864.jpg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_2182.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy"><img src="IMG_1576.jpeg" alt="Beyond the Reef tour photo" class="hs-img" loading="lazy">
   <div class="hero-ov"></div>
   <div class="hero-body">
     <div class="hero-pill">
@@ -342,9 +342,9 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
   </div>
   <div class="hero-ctrl">
     <button class="hc-btn" id="hsPrev">&larr;</button>
-    <div class="hc-dots" id="hsDots"><button class="hc-dot hc-on" data-i="0">1</button><button class="hc-dot" data-i="1">2</button><button class="hc-dot" data-i="2">3</button><button class="hc-dot" data-i="3">4</button><button class="hc-dot" data-i="4">5</button><button class="hc-dot" data-i="5">6</button><button class="hc-dot" data-i="6">7</button><button class="hc-dot" data-i="7">8</button><button class="hc-dot" data-i="8">9</button><button class="hc-dot" data-i="9">10</button><button class="hc-dot" data-i="10">11</button><button class="hc-dot" data-i="11">12</button></div>
+    <div class="hc-dots" id="hsDots"></div>
     <button class="hc-btn" id="hsNext">&rarr;</button>
-    <span class="hc-ctr" id="hsCtr">1 / 12</span>
+    <span class="hc-ctr" id="hsCtr">1 / 19</span>
   </div>
 </section>
 
@@ -878,10 +878,22 @@ if (mc) mc.addEventListener('click', closeMob);
 // Hero slideshow
 (function() {
   var imgs = Array.from(document.querySelectorAll('.hs-img'));
-  var dots = Array.from(document.querySelectorAll('#hsDots .hc-dot'));
+  var dotsWrap = document.getElementById('hsDots');
   var ctr  = document.getElementById('hsCtr');
   var N = imgs.length;
   if (!N) return;
+  if (dotsWrap) {
+    dotsWrap.innerHTML = '';
+    for (var di = 0; di < N; di++) {
+      var b = document.createElement('button');
+      b.className = 'hc-dot' + (di === 0 ? ' hc-on' : '');
+      b.type = 'button';
+      b.setAttribute('data-i', String(di));
+      b.textContent = String(di + 1);
+      dotsWrap.appendChild(b);
+    }
+  }
+  var dots = Array.from(document.querySelectorAll('#hsDots .hc-dot'));
   var cur = 0;
 
   function show(i) {
