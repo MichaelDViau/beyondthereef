@@ -457,7 +457,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
           <div class="bfg"><label>Full Name *</label><input type="text" id="bkName" placeholder="John &amp; Maria" autocomplete="name"></div>
           <div class="bfg"><label>Email *</label><input type="email" id="bkEmail" placeholder="you@email.com" autocomplete="email"></div>
           <div class="bfg"><label>Phone / WhatsApp</label><input type="tel" id="bkPhone" placeholder="+1 555 000 0000" autocomplete="tel"></div>
-          <div class="bfg"><label>Preferred Date</label><input type="date" id="bkDate" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:Montserrat,sans-serif;font-size:13px;color:var(--ink);background:#ffffff;outline:none;color-scheme:light;-webkit-appearance:none"></div>
+          <div class="bfg"><label>Preferred Date (Only Monday & Thursday)</label><input type="date" id="bkDate" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:Montserrat,sans-serif;font-size:13px;color:var(--ink);background:#ffffff;outline:none;color-scheme:light;-webkit-appearance:none"></div>
           <div class="bfg"><label>Hotel / Pick-up Location</label><input type="text" id="bkHotel" placeholder="Hotel name or address"></div>
           <div class="bfg"><label>Special Requests</label><textarea id="bkNotes" placeholder="Dietary needs, accessibility..."></textarea></div>
           <button class="bk-sub" onclick="subBk()">Request to Book →</button>
@@ -595,6 +595,26 @@ mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',
   }
 })();
 
+
+function isAvailableCobaDay(dateValue){
+  if(!dateValue) return true;
+  var d = new Date(dateValue + 'T00:00:00');
+  var day = d.getDay(); // 1=Mon, 4=Thu
+  return day === 1 || day === 4;
+}
+
+var bkDateInput = document.getElementById('bkDate');
+if(bkDateInput){
+  bkDateInput.addEventListener('change', function(){
+    if(!isAvailableCobaDay(this.value)){
+      this.setCustomValidity('This tour is only available on Mondays and Thursdays.');
+      this.reportValidity();
+    }else{
+      this.setCustomValidity('');
+    }
+  });
+}
+
 //  BOOKING  WHATSAPP 
 function subBk(){
   var name  = document.getElementById('bkName').value.trim();
@@ -602,6 +622,7 @@ function subBk(){
   if(!name || !email){ alert('Please enter your name and email.'); return; }
   var phone = document.getElementById('bkPhone') && document.getElementById('bkPhone').value.trim() || 'N/A';
   var date  = document.getElementById('bkDate')  && document.getElementById('bkDate').value  || 'TBD';
+  if(date !== 'TBD' && !isAvailableCobaDay(date)){ alert('This tour is only available on Mondays and Thursdays. Please choose another date.'); return; }
   var hotel = document.getElementById('bkHotel') && document.getElementById('bkHotel').value.trim() || 'N/A';
   var notes = document.getElementById('bkNotes') && document.getElementById('bkNotes').value.trim() || 'None';
   var pInfo = (pricing[selPax] && selPax)
