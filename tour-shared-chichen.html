@@ -560,7 +560,85 @@ if(mobClose) mobClose.addEventListener('click',closeMob);
 mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMob);});
 
 //  SCROLL REVEAL 
-;
+(function(){
+  if(!window.IntersectionObserver) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});
+  },{threshold:0.1});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+
+//  LAZY IMAGES 
+(function(){
+  if(!window.IntersectionObserver) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var img=e.target;
+        if(img.dataset.src){
+          img.src=img.dataset.src;
+          img.addEventListener('load',function(){img.classList.add('loaded');},{once:true});
+          delete img.dataset.src;
+        }
+        io.unobserve(img);
+      }
+    });
+  },{rootMargin:'300px'});
+  document.querySelectorAll('img[data-src]').forEach(function(img){io.observe(img);});
+})();
+
+//  PHOTO SLIDER 
+(function(){
+  var track=document.getElementById('psTrack');
+  if(!track) return;
+  var dotEls=Array.from(document.querySelectorAll('.ps-dot'));
+  var ctr=document.getElementById('psCtr');
+  var total=track.children.length;
+  if(!total) return;
+  var idx=0;
+
+  function loadImg(i){
+    var slide=track.children[i];
+    if(!slide) return;
+    var img=slide.querySelector('img');
+    if(img && img.dataset.src){
+      img.src=img.dataset.src;
+      img.addEventListener('load',function(){img.classList.add('loaded');},{once:true});
+      delete img.dataset.src;
+    }
+  }
+
+  function syncDots(){
+    dotEls.forEach(function(d,j){d.classList.toggle('on',j===idx);});
+  }
+
+  function go(i){
+    idx=((i%total)+total)%total;
+    track.style.transform='translateX(-'+(idx*100)+'%)';
+    syncDots();
+    if(ctr) ctr.textContent=(idx+1)+' / '+total;
+    loadImg(idx);
+    loadImg((idx+1)%total);
+  }
+
+  loadImg(0);
+  loadImg(1);
+  go(0);
+
+  var prev=document.getElementById('psPrev');
+  var next=document.getElementById('psNext');
+  if(prev) prev.onclick=function(){go(idx-1);};
+  if(next) next.onclick=function(){go(idx+1);};
+  dotEls.forEach(function(d,i){d.onclick=function(){go(i);};});
+
+  var sx=0;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-sx;
+    if(Math.abs(dx)>44) go(idx+(dx<0?1:-1));
+  },{passive:true});
+})();
+
 
 //  BOOKING  WHATSAPP 
 //  PRICING & PAX SELECTOR 
