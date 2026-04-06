@@ -327,7 +327,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
   </div>
 </nav>
 <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
-  <button class="mob-close" id="mobFermer" aria-label="Fermer menu">✕</button>
+  <button class="mob-close" id="mobClose" aria-label="Fermer le menu">✕</button>
   <a href="tours-fr.html" onclick="closeMob()">Expériences privées</a>
   <a href="tours-fr.html#shared" onclick="closeMob()">Expériences en groupe</a>
   <a href="reviews-fr.html" onclick="closeMob()">Avis</a>
@@ -337,7 +337,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </div>
 
 <div class="rev-page-hero">
-  <div class="lbl lbl-white">Témoignages</div>
+  <div class="lbl lbl-white">Guest Stories</div>
   <h1 style="font-size:clamp(30px,7vw,52px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:14px">5 Stars, Every Time</h1>
   <p style="font-size:15px;color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 20px">Real reviews from real travelers.</p>
   <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.20);border-radius:999px;padding:8px 16px">
@@ -370,7 +370,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
       </div>
     </div>
     <div>
-      <p class="ft-h">Explorer</p>
+      <p class="ft-h">Explore</p>
       <div class="ft-links">
         <a href="tours-fr.html">Expériences privées</a>
         <a href="tours-fr.html#shared">Expériences en groupe</a>
@@ -387,10 +387,10 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
       </div>
       <p class="ft-h" style="margin-top:20px">Destinations</p>
       <div class="ft-links">
-        <a href="tours-fr.html">Tours Cancun</a>
-        <a href="tours-fr.html">Tours Tulum</a>
-        <a href="tours-fr.html">Tours Playa del Carmen</a>
-        <a href="tours-fr.html">Tours Riviera Maya</a>
+        <a href="tours-fr.html">Cancun Tours</a>
+        <a href="tours-fr.html">Tulum Tours</a>
+        <a href="tours-fr.html">Playa del Carmen Tours</a>
+        <a href="tours-fr.html">Riviera Maya Tours</a>
       </div>
     </div>
   </div>
@@ -411,7 +411,7 @@ if(nav){
 }
 var ham=document.getElementById('ham');
 var mob=document.getElementById('mobMenu');
-var mobFermer=document.getElementById('mobFermer');
+var mobClose=document.getElementById('mobClose');
 function openMob(){
   mob.classList.add('open');
   ham.classList.add('open');
@@ -425,7 +425,7 @@ function closeMob(){
   document.body.style.overflow='';
 }
 if(ham) ham.addEventListener('click',function(){mob.classList.contains('open')?closeMob():openMob();});
-if(mobFermer) mobFermer.addEventListener('click',closeMob);
+if(mobClose) mobClose.addEventListener('click',closeMob);
 mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMob);});
 
 //  SCROLL REVEAL 
@@ -493,7 +493,7 @@ function makeSlider(trackId,prevId,nextId,dotsId,cardSel,invDots){
       d.type='button';
       d.setAttribute('aria-label','Page '+(i+1));
       (function(ii){d.addEventListener('click',function(){go(ii);});})(i);
-      dotsC.appendEnfant(d);
+      dotsC.appendChild(d);
       dots.push(d);
     }
   }

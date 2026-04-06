@@ -400,8 +400,8 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     </button>
   </div>
 </nav>
-<div class="mob-menu" id="mobMenú" role="dialog" aria-label="Navigation">
-  <button class="mob-close" id="mobCerrar" aria-label="Cerrar menu">✕</button>
+<div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
+  <button class="mob-close" id="mobClose" aria-label="Cerrar menú">✕</button>
   <a href="tours-es.html" onclick="closeMob()">Experiencias privadas</a>
   <a href="tours-es.html#shared" onclick="closeMob()">Experiencias compartidas</a>
   <a href="reviews-es.html" onclick="closeMob()">Reseñas</a>
@@ -412,8 +412,8 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 
 <div class="ps" id="photoSlider">
   <div class="ps-track" id="psTrack"><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/db83f1be-27d6-4978-b40d-8d5239f4e79d.jpg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 1" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0675.jpeg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 2" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0680.jpeg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 3" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0688.jpg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 4" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0734.jpeg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 5" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0745.jpeg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 6" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0759.jpeg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 7" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0867.jpeg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 8" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0879.jpeg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 9" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0932.jpeg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 10" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-shared-coba/IMG_0963.jpeg" alt="Coba and Cenote Adventure (Experiencia compartida) photo 11" loading="lazy"></div></div>
-  <button class="ps-btn ps-prev" id="psPrev" aria-label="Anterior photo">&#8592;</button>
-  <button class="ps-btn ps-next" id="psSiguiente" aria-label="Siguiente photo">&#8594;</button>
+  <button class="ps-btn ps-prev" id="psPrev" aria-label="Foto anterior">&#8592;</button>
+  <button class="ps-btn ps-next" id="psNext" aria-label="Foto siguiente">&#8594;</button>
   <div class="ps-dots" id="psDots"><button class="ps-dot" aria-label="Photo 1"></button><button class="ps-dot" aria-label="Photo 2"></button><button class="ps-dot" aria-label="Photo 3"></button><button class="ps-dot" aria-label="Photo 4"></button><button class="ps-dot" aria-label="Photo 5"></button><button class="ps-dot" aria-label="Photo 6"></button><button class="ps-dot" aria-label="Photo 7"></button><button class="ps-dot" aria-label="Photo 8"></button><button class="ps-dot" aria-label="Photo 9"></button><button class="ps-dot" aria-label="Photo 10"></button><button class="ps-dot" aria-label="Photo 11"></button></div>
   <div class="ps-ctr" id="psCtr">1 / 11</div>
 </div>
@@ -430,11 +430,11 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 <div class="t-wrap">
   <div>
     <div class="cb">
-      <div class="cb-h">About This Experience</div>
-      <div class="cb-b"><p class="about-t">Experience the best of culture and nature in one exciting day. Explorar the ancient city of Coba with an archaeological guide, take a refreshing swim in a cenote, and enjoy a delicious buffet with non-alcoholic drinks. This shared adventure is ideal for travelers looking for history, flavor, and fun in the Riviera Maya.</p></div>
+      <div class="cb-h">Sobre esta experiencia</div>
+      <div class="cb-b"><p class="about-t">Disfruta una experiencia inmersiva diseñada para vivir la Riviera Maya a tu ritmo, con guía certificado, logística cuidada y atención personalizada de principio a fin.</p></div>
     </div>
     <div class="cb">
-      <div class="cb-h">What's Incluye &amp; No incluye</div>
+      <div class="cb-h">Qué incluye &amp; No incluye</div>
       <div class="cb-b">
         <div class="ic-grid">
           <div><p class="ic-sub">✓ Incluye</p><ul class="ic-list"><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Visit of Coba with archaeological guide</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Swim in a cenote</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Buffet with non-alcoholic drinks</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Bilingual guide</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Transportation with A/C</span></li></ul></div>
@@ -445,29 +445,29 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
   </div>
   <div>
     <div class="bk-card">
-      <div class="bk-head" style="background:linear-gradient(135deg,#0E2A45,#2E7D9A)"><p class="bk-from">Starting from</p><div class="bk-price">$149<sup>USD/person</sup></div><p class="bk-note">Fixed shared tour price · No payment here</p></div>
+      <div class="bk-head" style="background:linear-gradient(135deg,#0E2A45,#2E7D9A)"><p class="bk-from">Desde</p><div class="bk-price">$149<sup>USD/persona</sup></div><p class="bk-note">Fixed shared tour price · No payment here</p></div>
       <div class="bk-body">
         <div id="bkForm">
-          <label class="pax-label" for="paxSel">Number of guests</label>
-        <select id="paxSel" class="pax-sel" aria-label="Select number of guests"></select>
+          <label class="pax-label" for="paxSel">Número de viajeros</label>
+        <select id="paxSel" class="pax-sel" aria-label="Selecciona el número de viajeros"></select>
         <div class="bk-totals">
-          <div class="bk-row"><span class="bk-rl">Price por persona</span><span class="bk-rv" id="bkPP">-</span></div>
-          <div class="bk-row"><span class="bk-rl">Total price</span><span class="bk-total" id="bkTot">-</span></div>
+          <div class="bk-row"><span class="bk-rl">Precio por persona</span><span class="bk-rv" id="bkPP">-</span></div>
+          <div class="bk-row"><span class="bk-rl">Precio total</span><span class="bk-total" id="bkTot">-</span></div>
         </div>
-        <p class="bk-hint">💡 Fixed price: $149 USD por persona</p>
+        <p class="bk-hint">💡 Fixed price: $149 USD per person</p>
           <div class="bfg"><label>Nombre completo *</label><input type="text" id="bkName" placeholder="John &amp; Maria" autocomplete="name"></div>
-          <div class="bfg"><label>Correo *</label><input type="email" id="bkCorreo" placeholder="you@email.com" autocomplete="email"></div>
-          <div class="bfg"><label>Teléfono / WhatsApp</label><input type="tel" id="bkTeléfono" placeholder="+1 555 000 0000" autocomplete="tel"></div>
-          <div class="bfg"><label>Preferred Date (Only Monday & Thursday)</label><input type="date" id="bkDate" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:Montserrat,sans-serif;font-size:13px;color:var(--ink);background:#ffffff;outline:none;color-scheme:light;-webkit-appearance:none"></div>
-          <div class="bfg"><label>Hotel / Pick-up Location</label><input type="text" id="bkHotel" placeholder="Hotel name or address"></div>
-          <div class="bfg"><label>Special Requests</label><textarea id="bkNotes" placeholder="Dietary needs, accessibility..."></textarea></div>
-          <button class="bk-sub" onclick="subBk()">Request to Book →</button>
-          <p class="bk-disc">No payment collected here. We confirm availability and follow up right away.</p>
+          <div class="bfg"><label>Correo *</label><input type="email" id="bkEmail" placeholder="you@email.com" autocomplete="email"></div>
+          <div class="bfg"><label>Teléfono / WhatsApp</label><input type="tel" id="bkPhone" placeholder="+1 555 000 0000" autocomplete="tel"></div>
+          <div class="bfg"><label>Fecha preferida (Only Monday & Thursday)</label><input type="date" id="bkDate" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:Montserrat,sans-serif;font-size:13px;color:var(--ink);background:#ffffff;outline:none;color-scheme:light;-webkit-appearance:none"></div>
+          <div class="bfg"><label>Hotel / Lugar de recogida</label><input type="text" id="bkHotel" placeholder="Nombre del hotel o dirección"></div>
+          <div class="bfg"><label>Solicitudes especiales</label><textarea id="bkNotes" placeholder="Necesidades alimentarias, accesibilidad..."></textarea></div>
+          <button class="bk-sub" onclick="subBk()">Solicitar reserva →</button>
+          <p class="bk-disc">No cobramos aquí. Confirmamos disponibilidad y te contactamos enseguida.</p>
         </div>
         <div class="bk-suc" id="bkSuc">
           <div style="font-size:38px;margin-bottom:10px">🎉</div>
-          <h4>Request Sent!</h4>
-          <p>We'll confirm availability and reach out within a few hours. Check your WhatsApp too!</p>
+          <h4>¡Solicitud enviada!</h4>
+          <p>Confirmaremos disponibilidad y te contactaremos en pocas horas. ¡Revisa también tu WhatsApp!</p>
           <a href="tours-es.html" class="btn btn-navy btn-md" style="margin-top:14px;display:inline-flex">← Ver más tours</a>
         </div>
       </div>
@@ -477,9 +477,9 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </div>
 
 <section class="rel-sec">
-  <div class="lbl">Keep Exploring</div>
-  <h2 class="h2" style="font-size:clamp(20px,4vw,28px)">Guests also loved</h2>
-  <div class="rel-grid"><a href="tour-shared-chichen-es.html" class="rel-a"><div class="rel-thumb" style="background:linear-gradient(135deg,#4A235A,#7D3C98)"></div><div><p class="rel-name">Chichén Itzá (Shared)</p><p class="rel-price">Desde <strong>$70</strong>/person</p></div></a><a href="tour-shared-tulum-es.html" class="rel-a"><div class="rel-thumb" style="background:linear-gradient(135deg,#1DA5B4,#3498DB)"></div><div><p class="rel-name">Tulum Ruins (Shared)</p><p class="rel-price">Desde <strong>$59</strong>/person</p></div></a><a href="tour-coba-es.html" class="rel-a"><div class="rel-thumb" style="background:linear-gradient(135deg,#0E2A45,#2E7D9A)"></div><div><p class="rel-name">Cobá (Private)</p><p class="rel-price">Desde <strong>$124</strong>/person</p></div></a></div>
+  <div class="lbl">Sigue explorando</div>
+  <h2 class="h2" style="font-size:clamp(20px,4vw,28px)">A los viajeros también les encantó</h2>
+  <div class="rel-grid"><a href="tour-shared-chichen-es.html" class="rel-a"><div class="rel-thumb" style="background:linear-gradient(135deg,#4A235A,#7D3C98)"></div><div><p class="rel-name">Chichén Itzá (Compartido)</p><p class="rel-price">Desde <strong>$70</strong>/persona</p></div></a><a href="tour-shared-tulum-es.html" class="rel-a"><div class="rel-thumb" style="background:linear-gradient(135deg,#1DA5B4,#3498DB)"></div><div><p class="rel-name">Ruinas de Tulum (Compartido)</p><p class="rel-price">Desde <strong>$59</strong>/persona</p></div></a><a href="tour-coba-es.html" class="rel-a"><div class="rel-thumb" style="background:linear-gradient(135deg,#0E2A45,#2E7D9A)"></div><div><p class="rel-name">Cobá (Privado)</p><p class="rel-price">Desde <strong>$124</strong>/persona</p></div></a></div>
 </section>
 <footer>
   <div class="ft-grid">
@@ -488,10 +488,10 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         <img src="assets/common/logo.png" alt="Beyond the Reef Mexico" width="38" height="38">
         <span class="ft-logo-name">Beyond the Reef Mexico</span>
       </div>
-      <p class="ft-tagline">Private & shared experiences in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
+      <p class="ft-tagline">Privado & shared experiences in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
       <div class="ft-social">
         <a href="https://wa.me/529623562346" class="ft-soc" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
-        <a href="/cdn-cgi/l/email-protection#9df4f3fbf2ddfff8e4f2f3f9e9f5f8eff8f8fbf0f8e5f4fef2b3fef2f0" class="ft-soc" aria-label="Correo">
+        <a href="/cdn-cgi/l/email-protection#9df4f3fbf2ddfff8e4f2f3f9e9f5f8eff8f8fbf0f8e5f4fef2b3fef2f0" class="ft-soc" aria-label="Email">
           <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="white" stroke-width="1.5"/></svg>
         </a>
         <a href="https://www.instagram.com/beyondthereefmexico" class="ft-soc" target="_blank" rel="noopener" aria-label="Instagram">
@@ -500,7 +500,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
       </div>
     </div>
     <div>
-      <p class="ft-h">Explorar</p>
+      <p class="ft-h">Explore</p>
       <div class="ft-links">
         <a href="tours-es.html">Experiencias privadas</a>
         <a href="tours-es.html#shared">Experiencias compartidas</a>
@@ -515,12 +515,12 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         <a href="/cdn-cgi/l/email-protection#2940474f46694b4c5046474d5d414c5b4c4c4f444c51404a46074a4644"><span class="__cf_email__" data-cfemail="6e070008012e0c0b1701000a1a060b1c0b0b08030b16070d01400d0103">[email&#160;protected]</span></a>
         <a href="https://www.instagram.com/beyondthereefmexico" target="_blank" rel="noopener">@beyondthereefmexico</a>
       </div>
-      <p class="ft-h" style="margin-top:20px">Destinos</p>
+      <p class="ft-h" style="margin-top:20px">Destinations</p>
       <div class="ft-links">
-        <a href="tours-es.html">Tours Cancún</a>
-        <a href="tours-es.html">Tours Tulum</a>
-        <a href="tours-es.html">Tours Playa del Carmen</a>
-        <a href="tours-es.html">Tours Riviera Maya</a>
+        <a href="tours-es.html">Cancun Tours</a>
+        <a href="tours-es.html">Tulum Tours</a>
+        <a href="tours-es.html">Playa del Carmen Tours</a>
+        <a href="tours-es.html">Riviera Maya Tours</a>
       </div>
     </div>
   </div>
@@ -542,8 +542,8 @@ if(nav){
   },{passive:true});
 }
 var ham=document.getElementById('ham');
-var mob=document.getElementById('mobMenú');
-var mobCerrar=document.getElementById('mobCerrar');
+var mob=document.getElementById('mobMenu');
+var mobClose=document.getElementById('mobClose');
 function openMob(){
   mob.classList.add('open');
   ham.classList.add('open');
@@ -557,7 +557,7 @@ function closeMob(){
   document.body.style.overflow='';
 }
 if(ham) ham.addEventListener('click',function(){mob.classList.contains('open')?closeMob():openMob();});
-if(mobCerrar) mobCerrar.addEventListener('click',closeMob);
+if(mobClose) mobClose.addEventListener('click',closeMob);
 mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMob);});
 
 //  SCROLL REVEAL 
@@ -627,7 +627,7 @@ mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',
   go(0);
 
   var prev=document.getElementById('psPrev');
-  var next=document.getElementById('psSiguiente');
+  var next=document.getElementById('psNext');
   if(prev) prev.onclick=function(){go(idx-1);};
   if(next) next.onclick=function(){go(idx+1);};
   dotEls.forEach(function(d,i){d.onclick=function(){go(i);};});
@@ -654,7 +654,7 @@ mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',
       var o = document.createElement('option');
       o.value = p;
       o.textContent = p === 1 ? '1 guest' : p + ' guests';
-      sel.appendNiño(o);
+      sel.appendChild(o);
     });
   // Default to 2 guests
   var keys = Object.keys(pricing).map(Number).sort(function(a,b){return a-b;});
@@ -697,9 +697,9 @@ if(bkDateInput){
 //  BOOKING  WHATSAPP 
 function subBk(){
   var name  = document.getElementById('bkName').value.trim();
-  var email = document.getElementById('bkCorreo').value.trim();
+  var email = document.getElementById('bkEmail').value.trim();
   if(!name || !email){ alert('Please enter your name and email.'); return; }
-  var phone = document.getElementById('bkTeléfono') && document.getElementById('bkTeléfono').value.trim() || 'N/A';
+  var phone = document.getElementById('bkPhone') && document.getElementById('bkPhone').value.trim() || 'N/A';
   var date  = document.getElementById('bkDate')  && document.getElementById('bkDate').value  || 'TBD';
   if(date !== 'TBD' && !isAvailableCobaDay(date)){ alert('This tour is only available on Mondays and Thursdays. Please choose another date.'); return; }
   var hotel = document.getElementById('bkHotel') && document.getElementById('bkHotel').value.trim() || 'N/A';
@@ -709,8 +709,8 @@ function subBk(){
     : 'Precio bajo solicitud';
   var msg = 'Hello! Booking request: Coba and Cenote Adventure (Experiencia compartida).\n'
     + 'Name: ' + name + '\n'
-    + 'Teléfono: ' + phone + '\n'
-    + 'Correo: ' + email + '\n'
+    + 'Phone: ' + phone + '\n'
+    + 'Email: ' + email + '\n'
     + 'Date: ' + date + '\n'
     + 'Hotel: ' + hotel + '\n'
     + pInfo + '\n'
