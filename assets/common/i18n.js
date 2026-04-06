@@ -44,6 +44,7 @@
   const originalText = new WeakMap();
   const originalAttrs = new WeakMap();
   const inFlight = new Map();
+  let isTranslating = false;
 
   function normalizeLang(value) {
     const lang = String(value || '').toLowerCase().trim();
@@ -239,6 +240,8 @@
 
   async function translatePage(lang) {
     if (window.location.pathname.toLowerCase().includes('welcome.html')) return;
+    if (isTranslating) return;
+    isTranslating = true;
     document.documentElement.lang = REGION_LANG[lang] || 'en';
     const { textNodes, attrs } = gatherNodes();
     const textSources = textNodes.map((node) => originalText.get(node) || '');
@@ -250,7 +253,10 @@
     applyTranslationsFromMap(textNodes, attrs, instantMap);
 
     // Background remote pass for missing phrases (non-blocking).
-    enhanceWithRemoteTranslations(sources, lang, textNodes, attrs);
+    enhanceWithRemoteTranslations(sources, lang, textNodes, attrs).finally(() => {
+      isTranslating = false;
+    });
+    if (lang === 'en') isTranslating = false;
   }
 
   function bindLanguageButtons() {
@@ -266,12 +272,49 @@
     // intentionally no blocking loading style to avoid white/blank rendering
   }
 
+  function persistLangOnLinks(lang) {
+    document.querySelectorAll('a[href]').forEach((link) => {
+      const raw = link.getAttribute('href') || '';
+      if (!raw || raw.startsWith('#') || raw.startsWith('mailto:') || raw.startsWith('tel:') || raw.startsWith('javascript:')) return;
+      if (/^https?:\/\//i.test(raw)) return;
+
+      const [pathPart, hashPart] = raw.split('#');
+      const [path, query = ''] = pathPart.split('?');
+      const params = new URLSearchParams(query);
+
+      if (lang === 'en') {
+        params.delete('lang');
+      } else {
+        params.set('lang', lang);
+      }
+
+      const queryString = params.toString();
+      const next = `${path}${queryString ? `?${queryString}` : ''}${hashPart ? `#${hashPart}` : ''}`;
+      link.setAttribute('href', next);
+    });
+  }
+
+  function observeLanguageStability(lang) {
+    if (lang === 'en' || window.location.pathname.toLowerCase().includes('welcome.html')) return;
+    let timer = null;
+    const observer = new MutationObserver(() => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        translatePage(lang);
+        persistLangOnLinks(lang);
+      }, 220);
+    });
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+  }
+
   async function init() {
     bindLanguageButtons();
     applyLoadingStyle();
     const lang = getActiveLang();
     localStorage.setItem(STORAGE_KEY, lang);
+    persistLangOnLinks(lang);
     await translatePage(lang);
+    observeLanguageStability(lang);
   }
 
   if (document.readyState === 'loading') {
