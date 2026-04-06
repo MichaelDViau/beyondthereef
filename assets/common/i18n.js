@@ -2,7 +2,7 @@
   const STORAGE_KEY = 'btrPreferredLanguage';
   const VALID_LANGS = new Set(['en', 'es', 'fr']);
   const REGION_LANG = { en: 'en', es: 'es-MX', fr: 'fr-CA' };
-  const ATTRS = ['title', 'placeholder', 'aria-label', 'alt'];
+  const ATTRS = [];
   const PROTECTED = ['Beyond the Reef', 'BEYOND THE REEF', 'Beyond The Reef'];
   const QUICK = {
     es: {
@@ -120,6 +120,10 @@
       const tag = parent ? parent.tagName : '';
       const value = normalizeText(node.nodeValue);
       if (value && tag !== 'SCRIPT' && tag !== 'STYLE' && tag !== 'NOSCRIPT' && tag !== 'IFRAME') {
+        if (value.length < 2) {
+          node = walker.nextNode();
+          continue;
+        }
         if (!originalText.has(node)) originalText.set(node, node.nodeValue || '');
         textNodes.push(node);
       }
@@ -160,23 +164,24 @@
     if (window.location.pathname.toLowerCase().includes('welcome.html')) return;
     document.documentElement.lang = REGION_LANG[lang] || 'en';
     document.documentElement.setAttribute('data-i18n-loading', lang === 'en' ? '0' : '1');
+    try {
+      const { textNodes, attrs } = gatherNodes();
+      const textSources = textNodes.map((node) => originalText.get(node) || '');
+      const attrSources = attrs.map(([el, attr]) => (originalAttrs.get(el) || {})[attr] || '');
+      const translatedMap = await translateUniqueTexts([...textSources, ...attrSources], lang);
 
-    const { textNodes, attrs } = gatherNodes();
-    const textSources = textNodes.map((node) => originalText.get(node) || '');
-    const attrSources = attrs.map(([el, attr]) => (originalAttrs.get(el) || {})[attr] || '');
-    const translatedMap = await translateUniqueTexts([...textSources, ...attrSources], lang);
+      textNodes.forEach((node) => {
+        const source = originalText.get(node) || '';
+        node.nodeValue = translatedMap.get(source) || source;
+      });
 
-    textNodes.forEach((node) => {
-      const source = originalText.get(node) || '';
-      node.nodeValue = translatedMap.get(source) || source;
-    });
-
-    attrs.forEach(([el, attr]) => {
-      const source = (originalAttrs.get(el) || {})[attr] || '';
-      el.setAttribute(attr, translatedMap.get(source) || source);
-    });
-
-    document.documentElement.setAttribute('data-i18n-loading', '0');
+      attrs.forEach(([el, attr]) => {
+        const source = (originalAttrs.get(el) || {})[attr] || '';
+        el.setAttribute(attr, translatedMap.get(source) || source);
+      });
+    } finally {
+      document.documentElement.setAttribute('data-i18n-loading', '0');
+    }
   }
 
   function bindLanguageButtons() {
@@ -192,7 +197,7 @@
     if (document.getElementById('btr-i18n-loading-style')) return;
     const style = document.createElement('style');
     style.id = 'btr-i18n-loading-style';
-    style.textContent = 'html[data-i18n-loading="1"] body{opacity:0;transition:opacity .15s ease}html[data-i18n-loading="0"] body{opacity:1}';
+    style.textContent = 'html[data-i18n-loading="1"] body{cursor:progress}';
     document.head.appendChild(style);
   }
 

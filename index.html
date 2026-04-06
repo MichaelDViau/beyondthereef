@@ -6,15 +6,6 @@
 <meta name="color-scheme" content="light">
 <script>
 (() => {
-  const params = new URLSearchParams(window.location.search);
-  const lang = (params.get('lang') || localStorage.getItem('btrPreferredLanguage') || 'en').toLowerCase();
-  if (lang === 'fr' || lang === 'es') {
-    document.documentElement.setAttribute('data-i18n-loading', '1');
-  }
-})();
-</script>
-<script>
-(() => {
   const currentPath = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
   const params = new URLSearchParams(window.location.search);
   const fromWelcome = params.get('from') === 'welcome';
