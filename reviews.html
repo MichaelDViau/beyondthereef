@@ -12,7 +12,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.pexels.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="assets/common/perf.css">
 <style>
 .rev-page-hero{background:linear-gradient(135deg,var(--navy) 0%,#1DA5B4 100%);padding:110px 20px 60px;text-align:center}
 .rev-grid{display:grid;grid-template-columns:1fr;gap:16px}
@@ -517,5 +518,6 @@ function makeSlider(trackId,prevId,nextId,dotsId,cardSel,invDots){
   else{window.addEventListener('load',function(){setTimeout(init,60);},{once:true});}
 }
 </script>
+<script src="assets/common/perf.js" defer></script>
 </body>
 </html>
