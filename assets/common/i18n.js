@@ -15,9 +15,12 @@
       'Tours': 'Tours',
       'Reviews': 'Reseñas',
       'Home': 'Inicio',
+      'Details': 'Detalles',
       'Go Beyond': 'Ir Más Allá',
       'the Tourist': 'Del Turismo de la',
-      'Riviera Maya.': 'Riviera Maya'
+      'Riviera Maya.': 'Riviera Maya',
+      'Cancun - Tulum - Playa del Carmen': 'Cancún - Tulum - Playa del Carmen',
+      'Private & shared tours in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.': 'Tours privados y compartidos en Cancún, Tulum, Playa del Carmen y la Riviera Maya. Más de 14 años de experiencias inolvidables.'
     },
     fr: {
       'Choose your language': 'Choisissez votre langue',
@@ -29,9 +32,12 @@
       'Tours': 'Excursions',
       'Reviews': 'Avis',
       'Home': 'Accueil',
+      'Details': 'Détails',
       'Go Beyond': 'Aller au-delà',
       'the Tourist': 'du touriste de la',
-      'Riviera Maya.': 'Riviera Maya.'
+      'Riviera Maya.': 'Riviera Maya.',
+      'Cancun - Tulum - Playa del Carmen': 'Cancún - Tulum - Playa del Carmen',
+      'Private & shared tours in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.': 'Tours privés et partagés à Cancún, Tulum, Playa del Carmen et dans la Riviera Maya. Plus de 14 ans d’expériences inoubliables.'
     }
   };
 
@@ -52,7 +58,7 @@
   }
 
   function getCache(lang) {
-    const key = `btrI18nCache:${lang}`;
+    const key = `btrI18nCache:v2:${lang}`;
     let parsed = {};
     try {
       parsed = JSON.parse(localStorage.getItem(key) || '{}');
@@ -80,6 +86,33 @@
     return quick[text] || text;
   }
 
+  function preserveSourceCase(source, translated) {
+    const cleanSource = source.replace(/[^A-Za-zÀ-ÿ]/g, '');
+    const cleanTranslated = translated.replace(/[^A-Za-zÀ-ÿ]/g, '');
+    if (!cleanSource || !cleanTranslated) return translated;
+
+    if (cleanSource === cleanSource.toUpperCase()) return translated.toUpperCase();
+    if (cleanSource === cleanSource.toLowerCase()) return translated.toLowerCase();
+
+    const sourceWords = source.split(/\s+/).filter(Boolean);
+    const titleCaseLike = sourceWords.length > 1 && sourceWords.every((word) => {
+      const w = word.replace(/[^A-Za-zÀ-ÿ]/g, '');
+      if (!w) return true;
+      return w.charAt(0) === w.charAt(0).toUpperCase();
+    });
+    if (titleCaseLike) {
+      return translated
+        .split(/(\s+)/)
+        .map((word) => {
+          if (!word.trim()) return word;
+          return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        })
+        .join('');
+    }
+
+    return translated;
+  }
+
   async function fetchTranslation(text, lang) {
     if (lang === 'en') return text;
 
@@ -87,11 +120,11 @@
     if (!original || isProtected(original)) return text;
 
     const quick = quickTranslate(original, lang);
-    if (quick !== original) return text.replace(original, quick);
+    if (quick !== original) return text.replace(original, preserveSourceCase(original, quick));
 
     const cache = getCache(lang);
     if (cache.data[original]) {
-      return text.replace(original, cache.data[original]);
+      return text.replace(original, preserveSourceCase(original, cache.data[original]));
     }
 
     const key = `${lang}::${original}`;
@@ -105,7 +138,7 @@
         if (!translated || typeof translated !== 'string') return original;
         cache.data[original] = translated;
         saveCache(cache);
-        return translated;
+        return preserveSourceCase(original, translated);
       })();
       inFlight.set(key, promise);
     }
