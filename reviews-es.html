@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Reseñas de huéspedes | Beyond the Reef Mexico</title>
+<meta name="description" content="13 five-star guest reviews for Beyond the Reef Mexico private experiences in the Riviera Maya.">
+<link rel="icon" type="image/png" href="assets/common/logo.png">
+<meta name="theme-color" content="#0E2A45">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="assets/common/perf.css">
+<style>
+.rev-page-hero{background:linear-gradient(135deg,var(--navy) 0%,#1DA5B4 100%);padding:110px 20px 60px;text-align:center}
+.rev-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:600px){.rev-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.rev-grid{grid-template-columns:repeat(3,1fr)}}
+.rcp{background:#ffffff;border-radius:var(--r2);padding:22px;border:1.5px solid var(--border);box-shadow:var(--sh);color-scheme:light}
+.rcp-stars{color:var(--gold);letter-spacing:2px;font-size:13px;margin-bottom:10px}
+.rcp-text{font-size:13px;line-height:1.72;color:var(--muted);margin-bottom:16px;font-style:italic}
+.rcp-who{display:flex;align-items:center;gap:10px}
+.rcp-av{width:36px;height:36px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+.rcp-name{font-size:12px;font-weight:700;color:var(--ink)}
+.rcp-from{font-size:11px;color:var(--muted);margin-top:1px}
+
+.float-ig{position:fixed;bottom:84px;right:20px;z-index:400;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(188,24,136,.35);transition:transform .22s;background:transparent;text-decoration:none}
+.float-ig:hover{transform:scale(1.1)}
+.float-ig svg{width:46px;height:46px;border-radius:50%}
+
+</style>
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  color-scheme:light;
+  --navy:#0E2A45;
+  --teal:#1DA5B4;
+  --coral:#E8621A;
+  --gold:#F2C14E;
+  --amber:#FFA726;
+  --ink:#0E2A45;
+  --muted:#4a6070;
+  --border:#d4e4f0;
+  --gold-bg:#FFF8E7;
+  --amber-bg:#FFF3D0;
+  --white:#ffffff;
+  --r:10px;--r2:16px;--r3:24px;--rp:999px;
+  --sh:0 2px 20px rgba(14,42,69,.10);
+  --sh2:0 8px 40px rgba(14,42,69,.18);
+  --ease:.22s ease;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Montserrat',sans-serif;
+  color:var(--ink);
+  background:#ffffff;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  color-scheme:light;
+}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;
+  background:rgba(14,42,69,.60);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  transition:background .3s;
+}
+.nav.opaque{background:rgba(14,42,69,.86)}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-logo img{width:42px;height:42px;border-radius:8px;object-fit:contain;display:block}
+.nav-logo-words{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-name{font-size:14px;font-weight:900;color:#fff;letter-spacing:-.02em}
+.nav-logo-sub{font-size:9px;font-weight:700;color:rgba(255,255,255,.60);letter-spacing:.10em;text-transform:uppercase}
+.nav-links{display:none;align-items:center;gap:2px;margin:0 16px}
+.nav-links a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.88);padding:6px 11px;border-radius:var(--rp);transition:background var(--ease),color var(--ease)}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.14)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.nav-cta{background:var(--coral);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:var(--rp);transition:opacity var(--ease);display:none}
+.nav-cta:hover{opacity:.88}
+.ham{
+  width:40px;height:40px;border-radius:8px;
+  background:rgba(255,255,255,.14);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  transition:background var(--ease);
+}
+.ham:hover{background:rgba(255,255,255,.24)}
+.ham span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:.28s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:768px){
+  .ham{display:none}
+  .nav-links{display:flex}
+  .nav-cta{display:block}
+}
+
+/* ── MOBILE MENU ── */
+.mob-menu{
+  position:fixed;inset:0;z-index:499;
+  background:rgba(14,42,69,.97);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  opacity:0;pointer-events:none;
+  transition:opacity .28s;
+}
+.mob-menu.open{opacity:1;pointer-events:all}
+.mob-menu a{
+  font-size:22px;font-weight:800;color:rgba(255,255,255,.9);
+  padding:13px 32px;border-radius:var(--r2);width:280px;text-align:center;
+  transition:background var(--ease),color var(--ease);
+}
+.mob-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+.mob-menu .mob-wa{
+  margin-top:16px;background:var(--coral);color:#fff;
+  font-size:16px;font-weight:700;padding:14px 32px;
+  border-radius:var(--rp);width:280px;text-align:center;display:block;
+}
+.mob-close{
+  position:absolute;top:18px;right:18px;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+  color:#fff;font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:'Montserrat',sans-serif;font-weight:700;border-radius:var(--rp);cursor:pointer;border:none;text-decoration:none;transition:opacity var(--ease),transform var(--ease);white-space:nowrap}
+.btn:hover{opacity:.86;transform:translateY(-1px)}
+.btn-lg{font-size:15px;padding:14px 28px}
+.btn-md{font-size:13px;padding:10px 20px}
+.btn-sm{font-size:12px;padding:7px 15px}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 4px 16px rgba(232,98,26,.32)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--border)}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal)}
+.btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.38)}
+.btn-ghost:hover{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.6)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-full{width:100%}
+
+/* ── SECTION BASICS ── */
+.sec{padding:72px 20px;background:#ffffff;color-scheme:light}
+.sec-gold{background:var(--gold-bg)}
+.sec-amber{background:var(--amber-bg)}
+.sec-navy{background:var(--navy)}
+.sec-teal{background:linear-gradient(135deg,#0E2A45 0%,#1DA5B4 100%)}
+.lbl{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:block}
+.lbl-gold{color:var(--amber)}
+.lbl-white{color:rgba(255,255,255,.65)}
+.h2{font-size:clamp(26px,5.5vw,42px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-bottom:14px}
+.h2-white{color:#fff}
+.sub{font-size:15px;line-height:1.72;color:var(--muted);max-width:540px;margin-bottom:28px}
+.sub-white{color:rgba(255,255,255,.72)}
+@media(min-width:768px){.sec{padding:96px 40px}}
+
+/* ── SLIDER ── */
+.sl-outer{overflow:hidden}
+.sl-viewport{overflow:hidden}
+.sl-track{
+  display:flex;gap:16px;
+  padding:8px 20px 24px;
+  transition:transform .42s cubic-bezier(.4,0,.2,1);
+  will-change:transform;
+  align-items:stretch;
+}
+.sl-controls{display:flex;align-items:center;justify-content:center;gap:10px;padding:4px 20px 0}
+.sl-btn{
+  width:42px;height:42px;border-radius:50%;
+  border:2px solid var(--border);background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;color:var(--navy);cursor:pointer;
+  transition:background var(--ease),border-color var(--ease),color var(--ease);
+  flex-shrink:0;
+}
+.sl-btn:hover:not(:disabled){background:var(--teal);border-color:var(--teal);color:#fff}
+.sl-btn:disabled{opacity:.28;cursor:default}
+.sl-btn-inv{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff}
+.sl-btn-inv:hover:not(:disabled){background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.55);color:#fff}
+.sl-dots{display:flex;align-items:center;gap:6px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background var(--ease),transform var(--ease)}
+.dot.on{background:var(--teal);transform:scale(1.4)}
+.dot-inv{background:rgba(255,255,255,.32)}
+.dot-inv.on{background:var(--gold)}
+@media(min-width:768px){.sl-track{padding:8px 40px 24px}.sl-controls{padding:4px 40px 0}}
+
+/* ── TOUR CARDS ── */
+.tc{
+  flex:0 0 280px;
+  background:#fff;
+  border-radius:var(--r2);
+  overflow:hidden;
+  border:1.5px solid var(--border);
+  display:flex;flex-direction:column;
+  box-shadow:var(--sh);
+  transition:transform var(--ease),box-shadow var(--ease);
+  min-height:420px;
+  color-scheme:light;
+}
+.tc:hover{transform:translateY(-5px);box-shadow:var(--sh2)}
+.tc-thumb{
+  height:190px;position:relative;
+  overflow:hidden;background:var(--navy);
+  flex-shrink:0;
+  border-radius:var(--r2) var(--r2) 0 0;
+  -webkit-mask-image:-webkit-radial-gradient(white,black);
+}
+.tc-thumb img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .45s ease,opacity .4s ease;
+  opacity:0;
+}
+.tc-thumb img.loaded{opacity:1}
+.tc:hover .tc-thumb img{transform:scale(1.07)}
+.tc-badge{
+  position:absolute;top:10px;left:10px;z-index:2;
+  font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 9px;border-radius:var(--rp);
+}
+.b-coral{background:var(--coral);color:#fff}
+.b-teal{background:var(--teal);color:#fff}
+.b-gold{background:var(--gold);color:var(--navy)}
+.b-navy{background:var(--navy);color:#fff}
+.tc-dur{
+  position:absolute;bottom:8px;right:8px;z-index:2;
+  background:rgba(14,42,69,.60);color:rgba(255,255,255,.92);
+  font-size:10px;font-weight:600;padding:3px 9px;border-radius:var(--rp);
+}
+.tc-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column;background:#fff;color-scheme:light}
+.tc-name{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:3px;letter-spacing:-.02em;line-height:1.2}
+.tc-tag{font-size:11px;font-weight:600;color:var(--teal);margin-bottom:7px;line-height:1.4}
+.tc-desc{font-size:12px;color:var(--muted);line-height:1.56;flex:1;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.tc-price{font-size:12px;font-weight:600;color:var(--muted);margin-bottom:12px;display:block}
+.tc-price strong{font-size:20px;font-weight:900;color:var(--navy)}
+.tc-price-req{font-size:13px;font-weight:700;color:var(--coral);margin-bottom:12px;display:block}
+.tc-acts{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:auto}
+.tc-shared{border-color:var(--teal);border-width:2px}
+@media(min-width:1024px){.tc{flex:0 0 300px}}
+
+/* ── REVIEWS ── */
+.rc{
+  flex:0 0 300px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r2);padding:22px;
+}
+.rc-stars{color:var(--gold);letter-spacing:2px;font-size:13px;margin-bottom:10px}
+.rc-text{font-size:13px;font-style:italic;line-height:1.72;color:rgba(255,255,255,.82);margin-bottom:16px}
+.rc-who{display:flex;align-items:center;gap:10px}
+.rc-av{width:36px;height:36px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+.rc-name{font-size:12px;font-weight:700;color:#fff}
+.rc-from{font-size:11px;color:rgba(255,255,255,.44);margin-top:1px}
+@media(min-width:1024px){.rc{flex:0 0 320px}}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52);color-scheme:light}
+.ft-grid{display:grid;grid-template-columns:1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:22px}
+@media(min-width:768px){.ft-grid{grid-template-columns:1.6fr 1fr 1fr}}
+.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ft-logo img{width:38px;height:38px;border-radius:7px}
+.ft-logo-name{font-size:13px;font-weight:800;color:#fff}
+.ft-tagline{font-size:12px;line-height:1.7;margin-bottom:14px}
+.ft-social{display:flex;gap:8px}
+.ft-soc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;transition:background var(--ease)}
+.ft-soc:hover{background:rgba(255,255,255,.20)}
+.ft-soc svg{width:18px;height:18px}
+.ft-h{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px}
+.ft-links{display:flex;flex-direction:column;gap:7px}
+.ft-links a{font-size:13px;color:rgba(255,255,255,.46);transition:color var(--ease)}
+.ft-links a:hover{color:#fff}
+.ft-bottom{font-size:11px}
+
+/* ── FLOAT WA ── */
+.float-wa{
+  position:fixed;bottom:20px;right:20px;z-index:400;
+  width:52px;height:52px;border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.42);
+  transition:transform var(--ease);
+}
+.float-wa:hover{transform:scale(1.1)}
+.float-wa svg{width:28px;height:28px}
+
+/* ── SCROLL REVEAL ── */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
+.rv.vis{opacity:1;transform:none}
+.rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
+
+</style>
+</head>
+<body style="color-scheme:light;background:#ffffff">
+<nav class="nav" id="mainNav">
+  <a href="index-es.html" class="nav-logo">
+    <img src="assets/common/logo.png" alt="Beyond the Reef Mexico" width="42" height="42">
+    <div class="nav-logo-words">
+      <span class="nav-logo-name">Beyond the Reef</span>
+      <span class="nav-logo-sub">Mexico</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="tours-es.html">Experiencias privadas</a>
+    <a href="tours-es.html#shared">Experiencias compartidas</a>
+    <a href="reviews-es.html">Reseñas</a>
+    <a href="our-story-es.html">Nuestra historia</a>
+    <a href="index-es.html#contact">Contacto</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://wa.me/529623562346" class="nav-cta btn" target="_blank" rel="noopener">Reservar ahora →</a>
+    <button class="ham" id="ham" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenú" role="dialog" aria-label="Navigation">
+  <button class="mob-close" id="mobCerrar" aria-label="Cerrar menu">✕</button>
+  <a href="tours-es.html" onclick="closeMob()">Experiencias privadas</a>
+  <a href="tours-es.html#shared" onclick="closeMob()">Experiencias compartidas</a>
+  <a href="reviews-es.html" onclick="closeMob()">Reseñas</a>
+  <a href="our-story-es.html" onclick="closeMob()">Nuestra historia</a>
+  <a href="index-es.html#contact" onclick="closeMob()">Contacto</a>
+  <a href="https://wa.me/529623562346" class="mob-wa" target="_blank" rel="noopener" onclick="closeMob()">💬 Reservar por WhatsApp</a>
+</div>
+
+<div class="rev-page-hero">
+  <div class="lbl lbl-white">Historias de huéspedes</div>
+  <h1 style="font-size:clamp(30px,7vw,52px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:14px">5 Stars, Every Time</h1>
+  <p style="font-size:15px;color:rgba(255,255,255,.72);max-width:520px;margin:0 auto 20px">Real reviews from real travelers.</p>
+  <div style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.20);border-radius:999px;padding:8px 16px">
+    <span style="color:var(--gold);font-size:14px;letter-spacing:3px">★★★★★</span>
+    <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,.72)">5.0 · 13 reviews · Top-rated in Riviera Maya</span>
+  </div>
+</div>
+<section class="sec" style="background:#FFF8E7">
+  <div class="rev-grid"><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"From the midnight manta ray swim to the surprise anniversary dinner on a sandbar, the Beyond the Reef team went above and beyond. We never looked at our watches once."</p><div class="rcp-who"><div class="rcp-av">CA</div><div><p class="rcp-name">Cam & Jordan</p><p class="rcp-from">United States</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"We built the itinerary together during a video call. They secured a private guide for my dad so he could explore at his own pace. Absolutely incredible."</p><div class="rcp-who"><div class="rcp-av">RI</div><div><p class="rcp-name">Riya</p><p class="rcp-from">United Kingdom</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"They arranged a sunrise entry so we had El Castillo almost to ourselves, plus a guide who knew every story. Breakfast tacos afterward were the best."</p><div class="rcp-who"><div class="rcp-av">MA</div><div><p class="rcp-name">Mariela & Tomas</p><p class="rcp-from">Spain</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"Beyond the Reef stocked the cooler, handled the licenses, and matched us with a patient captain so our kids could reel in their first mahi. Zero stress, just smiles."</p><div class="rcp-who"><div class="rcp-av">TH</div><div><p class="rcp-name">The Greene Crew</p><p class="rcp-from">Canada</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"They found a hidden cenote and timed our arrival between buses. We floated in crystal water with just birds overhead. Towels, snacks, and photos - all handled."</p><div class="rcp-who"><div class="rcp-av">JE</div><div><p class="rcp-name">Jess & Priya</p><p class="rcp-from">Australia</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"Our guide pointed out turtles, rays, and even a shy seahorse. Gear fit perfectly and the boat had shade. We felt cared for from start to finish."</p><div class="rcp-who"><div class="rcp-av">SA</div><div><p class="rcp-name">Samir</p><p class="rcp-from">Germany</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"The private van picked us up at 7am and we never once felt rushed. Our guide spoke perfect French and knew every secret spot on the peninsula."</p><div class="rcp-who"><div class="rcp-av">LA</div><div><p class="rcp-name">Laura</p><p class="rcp-from">France</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"We've taken tours around the world. Beyond the Reef is genuinely top tier. The guides are passionate, the logistics are flawless, and the photos are frame-worthy."</p><div class="rcp-who"><div class="rcp-av">MI</div><div><p class="rcp-name">Mike & Susan</p><p class="rcp-from">Australia</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"Four adults, three kids, all different needs. They handled everything perfectly - the kids had a blast and the adults felt completely relaxed. Will book again."</p><div class="rcp-who"><div class="rcp-av">CH</div><div><p class="rcp-name">Chen Family</p><p class="rcp-from">Singapore</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"The cenote photos our guide took look like they belong in National Geographic. We still can't believe how crystal clear the water was."</p><div class="rcp-who"><div class="rcp-av">AN</div><div><p class="rcp-name">Ana & Pedro</p><p class="rcp-from">Brazil</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"Solo traveler here. I felt completely safe and well-looked-after. My guide was professional, funny, and made sure I had the best possible experience."</p><div class="rcp-who"><div class="rcp-av">SO</div><div><p class="rcp-name">Sofia</p><p class="rcp-from">Sweden</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"Celebrating our 30th anniversary. They surprised us with a private beach dinner and a bottle of wine. We had no idea it was coming."</p><div class="rcp-who"><div class="rcp-av">JO</div><div><p class="rcp-name">John & Carol</p><p class="rcp-from">Canada</p></div></div></div><div class="rcp"><div class="rcp-stars">★★★★★</div><p class="rcp-text">"We did three tours in one week - Tulum, cenotes, and Holbox. Each one was perfectly organized. The Holbox speedboat day was truly magical."</p><div class="rcp-who"><div class="rcp-av">EM</div><div><p class="rcp-name">Emma</p><p class="rcp-from">Netherlands</p></div></div></div></div>
+  <div style="text-align:center;margin-top:40px">
+    <a href="https://wa.me/529623562346" class="btn btn-coral btn-lg" target="_blank" rel="noopener">Reserva tu tour →</a>
+  </div>
+</section>
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-logo">
+        <img src="assets/common/logo.png" alt="Beyond the Reef Mexico" width="38" height="38">
+        <span class="ft-logo-name">Beyond the Reef Mexico</span>
+      </div>
+      <p class="ft-tagline">Private & shared experiences in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
+      <div class="ft-social">
+        <a href="https://wa.me/529623562346" class="ft-soc" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
+        <a href="/cdn-cgi/l/email-protection#670e0901082705021e080903130f02150202010a021f0e04084904080a" class="ft-soc" aria-label="Correo">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="white" stroke-width="1.5"/></svg>
+        </a>
+        <a href="https://www.instagram.com/beyondthereefmexico" class="ft-soc" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="ft-h">Explorar</p>
+      <div class="ft-links">
+        <a href="tours-es.html">Experiencias privadas</a>
+        <a href="tours-es.html#shared">Experiencias compartidas</a>
+        <a href="reviews-es.html">Reseñas de huéspedes</a>
+        <a href="our-story-es.html">Nuestra historia</a>
+      </div>
+    </div>
+    <div>
+      <p class="ft-h">Contacto</p>
+      <div class="ft-links">
+        <a href="https://wa.me/529623562346" target="_blank" rel="noopener">+52 962 356 2346</a>
+        <a href="/cdn-cgi/l/email-protection#96fff8f0f9d6f4f3eff9f8f2e2fef3e4f3f3f0fbf3eefff5f9b8f5f9fb"><span class="__cf_email__" data-cfemail="4f262129200f2d2a3620212b3b272a3d2a2a29222a37262c20612c2022">[email&#160;protected]</span></a>
+        <a href="https://www.instagram.com/beyondthereefmexico" target="_blank" rel="noopener">@beyondthereefmexico</a>
+      </div>
+      <p class="ft-h" style="margin-top:20px">Destinos</p>
+      <div class="ft-links">
+        <a href="tours-es.html">Tours Cancún</a>
+        <a href="tours-es.html">Tours Tulum</a>
+        <a href="tours-es.html">Tours Playa del Carmen</a>
+        <a href="tours-es.html">Tours Riviera Maya</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Beyond the Reef Mexico. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<a href="https://www.instagram.com/beyondthereefmexico" class="float-ig" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#igGrad)"/><rect x="8" y="8" width="16" height="16" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="21" cy="11" r="1" fill="white"/></svg></a>
+<a href="https://wa.me/529623562346" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+//  NAV 
+var nav=document.getElementById('mainNav');
+if(nav){
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('opaque',window.scrollY>80);
+  },{passive:true});
+}
+var ham=document.getElementById('ham');
+var mob=document.getElementById('mobMenú');
+var mobCerrar=document.getElementById('mobCerrar');
+function openMob(){
+  mob.classList.add('open');
+  ham.classList.add('open');
+  ham.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+}
+function closeMob(){
+  mob.classList.remove('open');
+  ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');
+  document.body.style.overflow='';
+}
+if(ham) ham.addEventListener('click',function(){mob.classList.contains('open')?closeMob():openMob();});
+if(mobCerrar) mobCerrar.addEventListener('click',closeMob);
+mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMob);});
+
+//  SCROLL REVEAL 
+(function(){
+  if(!window.IntersectionObserver) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});
+  },{threshold:0.1});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+
+//  LAZY IMAGES 
+(function(){
+  if(!window.IntersectionObserver) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var img=e.target;
+        img.src=img.dataset.src;
+        img.addEventListener('load',function(){img.classList.add('loaded');},{once:true});
+        io.unobserve(img);
+      }
+    });
+  },{rootMargin:'300px'});
+  document.querySelectorAll('img[data-src]').forEach(function(img){io.observe(img);});
+})();
+
+
+//  SLIDER ENGINE 
+function makeSlider(trackId,prevId,nextId,dotsId,cardSel,invDots){
+  var track=document.getElementById(trackId);
+  if(!track) return;
+  var prev=document.getElementById(prevId);
+  var next=document.getElementById(nextId);
+  var dotsC=document.getElementById(dotsId);
+  var idx=0, dots=[], raf=0, GAP=16;
+
+  function allCards(){return Array.from(track.querySelectorAll(cardSel));}
+  function cardW(){
+    var c=allCards()[0];
+    if(!c) return 296;
+    var w=c.getBoundingClientRect().width;
+    return (w>10?w:280)+GAP;
+  }
+  function visCount(){
+    var vp=track.parentElement;
+    if(!vp) return 1;
+    return Math.max(1,Math.floor(vp.clientWidth/cardW()));
+  }
+  function maxIdx(){return Math.max(0,allCards().length-visCount());}
+  function go(i){
+    idx=Math.max(0,Math.min(i,maxIdx()));
+    track.style.transform='translateX(-'+(idx*cardW())+'px)';
+    if(prev) prev.disabled=(idx<=0);
+    if(next) next.disabled=(idx>=maxIdx());
+    dots.forEach(function(d,j){d.classList.toggle('on',j===idx);});
+  }
+  function buildDots(){
+    if(!dotsC) return;
+    dotsC.innerHTML=''; dots=[];
+    var pages=maxIdx()+1;
+    for(var i=0;i<pages;i++){
+      var d=document.createElement('button');
+      d.className='dot'+(invDots?' dot-inv':'');
+      d.type='button';
+      d.setAttribute('aria-label','Page '+(i+1));
+      (function(ii){d.addEventListener('click',function(){go(ii);});})(i);
+      dotsC.appendNiño(d);
+      dots.push(d);
+    }
+  }
+  function init(){buildDots();go(0);}
+  if(prev) prev.addEventListener('click',function(){go(idx-1);});
+  if(next) next.addEventListener('click',function(){go(idx+1);});
+  // Touch swipe
+  var sx=0;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-sx;
+    if(Math.abs(dx)>44) go(idx+(dx<0?1:-1));
+  },{passive:true});
+  // Resize
+  function onResize(){
+    cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(function(){buildDots();go(Math.min(idx,maxIdx()));});
+  }
+  if(window.ResizeObserver){new ResizeObser(track.parentElement);}
+  else{window.addEventListener('resize',onResize,{passive:true});}
+  if(document.readyState==='complete'){setTimeout(init,60);}
+  else{window.addEventListener('load',function(){setTimeout(init,60);},{once:true});}
+}
+</script>
+<script src="assets/common/perf.js" defer></script>
+</body>
+</html>

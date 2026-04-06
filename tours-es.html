@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>All Experiences | Beyond the Reef Mexico</title>
+<meta name="description" content="Browse all private and shared experiences in Cancun, Tulum, Playa del Carmen & Riviera Maya.">
+<link rel="icon" type="image/png" href="assets/common/logo.png">
+<meta name="theme-color" content="#0E2A45">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="stylesheet" href="assets/common/perf.css">
+<style>
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,#1A5276 100%);padding:110px 20px 60px;text-align:center}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px}
+@media(min-width:768px){.page-hero{padding:110px 40px 60px}}
+
+.float-ig{position:fixed;bottom:84px;right:20px;z-index:400;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(188,24,136,.35);transition:transform .22s;background:transparent;text-decoration:none}
+.float-ig:hover{transform:scale(1.1)}
+.float-ig svg{width:46px;height:46px;border-radius:50%}
+
+</style>
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  color-scheme:light;
+  --navy:#0E2A45;
+  --teal:#1DA5B4;
+  --coral:#E8621A;
+  --gold:#F2C14E;
+  --amber:#FFA726;
+  --ink:#0E2A45;
+  --muted:#4a6070;
+  --border:#d4e4f0;
+  --gold-bg:#FFF8E7;
+  --amber-bg:#FFF3D0;
+  --white:#ffffff;
+  --r:10px;--r2:16px;--r3:24px;--rp:999px;
+  --sh:0 2px 20px rgba(14,42,69,.10);
+  --sh2:0 8px 40px rgba(14,42,69,.18);
+  --ease:.22s ease;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:'Montserrat',sans-serif;
+  color:var(--ink);
+  background:#ffffff;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  color-scheme:light;
+}
+img{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+
+/* ── NAV ── */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 20px;
+  background:rgba(14,42,69,.60);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(255,255,255,.10);
+  transition:background .3s;
+}
+.nav.opaque{background:rgba(14,42,69,.86)}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-logo img{width:42px;height:42px;border-radius:8px;object-fit:contain;display:block}
+.nav-logo-words{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-name{font-size:14px;font-weight:900;color:#fff;letter-spacing:-.02em}
+.nav-logo-sub{font-size:9px;font-weight:700;color:rgba(255,255,255,.60);letter-spacing:.10em;text-transform:uppercase}
+.nav-links{display:none;align-items:center;gap:2px;margin:0 16px}
+.nav-links a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.88);padding:6px 11px;border-radius:var(--rp);transition:background var(--ease),color var(--ease)}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.14)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.nav-cta{background:var(--coral);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:var(--rp);transition:opacity var(--ease);display:none}
+.nav-cta:hover{opacity:.88}
+.ham{
+  width:40px;height:40px;border-radius:8px;
+  background:rgba(255,255,255,.14);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  transition:background var(--ease);
+}
+.ham:hover{background:rgba(255,255,255,.24)}
+.ham span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:.28s}
+.ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:768px){
+  .ham{display:none}
+  .nav-links{display:flex}
+  .nav-cta{display:block}
+}
+
+/* ── MOBILE MENU ── */
+.mob-menu{
+  position:fixed;inset:0;z-index:499;
+  background:rgba(14,42,69,.97);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;
+  opacity:0;pointer-events:none;
+  transition:opacity .28s;
+}
+.mob-menu.open{opacity:1;pointer-events:all}
+.mob-menu a{
+  font-size:22px;font-weight:800;color:rgba(255,255,255,.9);
+  padding:13px 32px;border-radius:var(--r2);width:280px;text-align:center;
+  transition:background var(--ease),color var(--ease);
+}
+.mob-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+.mob-menu .mob-wa{
+  margin-top:16px;background:var(--coral);color:#fff;
+  font-size:16px;font-weight:700;padding:14px 32px;
+  border-radius:var(--rp);width:280px;text-align:center;display:block;
+}
+.mob-close{
+  position:absolute;top:18px;right:18px;
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.12);
+  color:#fff;font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:'Montserrat',sans-serif;font-weight:700;border-radius:var(--rp);cursor:pointer;border:none;text-decoration:none;transition:opacity var(--ease),transform var(--ease);white-space:nowrap}
+.btn:hover{opacity:.86;transform:translateY(-1px)}
+.btn-lg{font-size:15px;padding:14px 28px}
+.btn-md{font-size:13px;padding:10px 20px}
+.btn-sm{font-size:12px;padding:7px 15px}
+.btn-coral{background:var(--coral);color:#fff;box-shadow:0 4px 16px rgba(232,98,26,.32)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--border)}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal)}
+.btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.38)}
+.btn-ghost:hover{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.6)}
+.btn-wa{background:#25D366;color:#fff}
+.btn-full{width:100%}
+
+/* ── SECTION BASICS ── */
+.sec{padding:72px 20px;background:#ffffff;color-scheme:light}
+.sec-gold{background:var(--gold-bg)}
+.sec-amber{background:var(--amber-bg)}
+.sec-navy{background:var(--navy)}
+.sec-teal{background:linear-gradient(135deg,#0E2A45 0%,#1DA5B4 100%)}
+.lbl{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:block}
+.lbl-gold{color:var(--amber)}
+.lbl-white{color:rgba(255,255,255,.65)}
+.h2{font-size:clamp(26px,5.5vw,42px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-bottom:14px}
+.h2-white{color:#fff}
+.sub{font-size:15px;line-height:1.72;color:var(--muted);max-width:540px;margin-bottom:28px}
+.sub-white{color:rgba(255,255,255,.72)}
+@media(min-width:768px){.sec{padding:96px 40px}}
+
+/* ── SLIDER ── */
+.sl-outer{overflow:hidden}
+.sl-viewport{overflow:hidden}
+.sl-track{
+  display:flex;gap:16px;
+  padding:8px 20px 24px;
+  transition:transform .42s cubic-bezier(.4,0,.2,1);
+  will-change:transform;
+  align-items:stretch;
+}
+.sl-controls{display:flex;align-items:center;justify-content:center;gap:10px;padding:4px 20px 0}
+.sl-btn{
+  width:42px;height:42px;border-radius:50%;
+  border:2px solid var(--border);background:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;color:var(--navy);cursor:pointer;
+  transition:background var(--ease),border-color var(--ease),color var(--ease);
+  flex-shrink:0;
+}
+.sl-btn:hover:not(:disabled){background:var(--teal);border-color:var(--teal);color:#fff}
+.sl-btn:disabled{opacity:.28;cursor:default}
+.sl-btn-inv{border-color:rgba(255,255,255,.3);background:rgba(255,255,255,.12);color:#fff}
+.sl-btn-inv:hover:not(:disabled){background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.55);color:#fff}
+.sl-dots{display:flex;align-items:center;gap:6px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--border);border:none;cursor:pointer;padding:0;transition:background var(--ease),transform var(--ease)}
+.dot.on{background:var(--teal);transform:scale(1.4)}
+.dot-inv{background:rgba(255,255,255,.32)}
+.dot-inv.on{background:var(--gold)}
+@media(min-width:768px){.sl-track{padding:8px 40px 24px}.sl-controls{padding:4px 40px 0}}
+
+/* ── TOUR CARDS ── */
+.tc{
+  flex:0 0 280px;
+  background:#fff;
+  border-radius:var(--r2);
+  overflow:hidden;
+  border:1.5px solid var(--border);
+  display:flex;flex-direction:column;
+  box-shadow:var(--sh);
+  transition:transform var(--ease),box-shadow var(--ease);
+  min-height:420px;
+  color-scheme:light;
+}
+.tc:hover{transform:translateY(-5px);box-shadow:var(--sh2)}
+.tc-thumb{
+  height:190px;position:relative;
+  overflow:hidden;background:var(--navy);
+  flex-shrink:0;
+  border-radius:var(--r2) var(--r2) 0 0;
+  -webkit-mask-image:-webkit-radial-gradient(white,black);
+}
+.tc-thumb img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .45s ease,opacity .4s ease;
+  opacity:0;
+}
+.tc-thumb img.loaded{opacity:1}
+.tc:hover .tc-thumb img{transform:scale(1.07)}
+.tc-badge{
+  position:absolute;top:10px;left:10px;z-index:2;
+  font-size:9px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 9px;border-radius:var(--rp);
+}
+.b-coral{background:var(--coral);color:#fff}
+.b-teal{background:var(--teal);color:#fff}
+.b-gold{background:var(--gold);color:var(--navy)}
+.b-navy{background:var(--navy);color:#fff}
+.tc-dur{
+  position:absolute;bottom:8px;right:8px;z-index:2;
+  background:rgba(14,42,69,.60);color:rgba(255,255,255,.92);
+  font-size:10px;font-weight:600;padding:3px 9px;border-radius:var(--rp);
+}
+.tc-body{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column;background:#fff;color-scheme:light}
+.tc-name{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:3px;letter-spacing:-.02em;line-height:1.2}
+.tc-tag{font-size:11px;font-weight:600;color:var(--teal);margin-bottom:7px;line-height:1.4}
+.tc-desc{font-size:12px;color:var(--muted);line-height:1.56;flex:1;margin-bottom:10px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.tc-price{font-size:12px;font-weight:600;color:var(--muted);margin-bottom:12px;display:block}
+.tc-price strong{font-size:20px;font-weight:900;color:var(--navy)}
+.tc-price-req{font-size:13px;font-weight:700;color:var(--coral);margin-bottom:12px;display:block}
+.tc-acts{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:auto}
+.tc-shared{border-color:var(--teal);border-width:2px}
+@media(min-width:1024px){.tc{flex:0 0 300px}}
+
+/* ── REVIEWS ── */
+.rc{
+  flex:0 0 300px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--r2);padding:22px;
+}
+.rc-stars{color:var(--gold);letter-spacing:2px;font-size:13px;margin-bottom:10px}
+.rc-text{font-size:13px;font-style:italic;line-height:1.72;color:rgba(255,255,255,.82);margin-bottom:16px}
+.rc-who{display:flex;align-items:center;gap:10px}
+.rc-av{width:36px;height:36px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;flex-shrink:0}
+.rc-name{font-size:12px;font-weight:700;color:#fff}
+.rc-from{font-size:11px;color:rgba(255,255,255,.44);margin-top:1px}
+@media(min-width:1024px){.rc{flex:0 0 320px}}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52);color-scheme:light}
+.ft-grid{display:grid;grid-template-columns:1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:22px}
+@media(min-width:768px){.ft-grid{grid-template-columns:1.6fr 1fr 1fr}}
+.ft-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.ft-logo img{width:38px;height:38px;border-radius:7px}
+.ft-logo-name{font-size:13px;font-weight:800;color:#fff}
+.ft-tagline{font-size:12px;line-height:1.7;margin-bottom:14px}
+.ft-social{display:flex;gap:8px}
+.ft-soc{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.10);display:flex;align-items:center;justify-content:center;transition:background var(--ease)}
+.ft-soc:hover{background:rgba(255,255,255,.20)}
+.ft-soc svg{width:18px;height:18px}
+.ft-h{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-bottom:10px}
+.ft-links{display:flex;flex-direction:column;gap:7px}
+.ft-links a{font-size:13px;color:rgba(255,255,255,.46);transition:color var(--ease)}
+.ft-links a:hover{color:#fff}
+.ft-bottom{font-size:11px}
+
+/* ── FLOAT WA ── */
+.float-wa{
+  position:fixed;bottom:20px;right:20px;z-index:400;
+  width:52px;height:52px;border-radius:50%;
+  background:#25D366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,.42);
+  transition:transform var(--ease);
+}
+.float-wa:hover{transform:scale(1.1)}
+.float-wa svg{width:28px;height:28px}
+
+/* ── SCROLL REVEAL ── */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
+.rv.vis{opacity:1;transform:none}
+.rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
+
+</style>
+</head>
+<body style="color-scheme:light;background:#ffffff">
+<nav class="nav" id="mainNav">
+  <a href="index-es.html" class="nav-logo">
+    <img src="assets/common/logo.png" alt="Beyond the Reef Mexico" width="42" height="42">
+    <div class="nav-logo-words">
+      <span class="nav-logo-name">Beyond the Reef</span>
+      <span class="nav-logo-sub">Mexico</span>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="tours-es.html">Experiencias privadas</a>
+    <a href="tours-es.html#shared">Experiencias compartidas</a>
+    <a href="reviews-es.html">Reseñas</a>
+    <a href="our-story-es.html">Nuestra historia</a>
+    <a href="index-es.html#contact">Contacto</a>
+  </div>
+  <div class="nav-right">
+    <a href="https://wa.me/529623562346" class="nav-cta btn" target="_blank" rel="noopener">Reservar ahora →</a>
+    <button class="ham" id="ham" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mob-menu" id="mobMenú" role="dialog" aria-label="Navigation">
+  <button class="mob-close" id="mobCerrar" aria-label="Cerrar menu">✕</button>
+  <a href="tours-es.html" onclick="closeMob()">Experiencias privadas</a>
+  <a href="tours-es.html#shared" onclick="closeMob()">Experiencias compartidas</a>
+  <a href="reviews-es.html" onclick="closeMob()">Reseñas</a>
+  <a href="our-story-es.html" onclick="closeMob()">Nuestra historia</a>
+  <a href="index-es.html#contact" onclick="closeMob()">Contacto</a>
+  <a href="https://wa.me/529623562346" class="mob-wa" target="_blank" rel="noopener" onclick="closeMob()">💬 Reservar por WhatsApp</a>
+</div>
+
+<div class="page-hero">
+  <div class="lbl lbl-white">All Experiences</div>
+  <h1 style="font-size:clamp(30px,7vw,52px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:14px">Our Experiences</h1>
+  <p style="font-size:15px;color:rgba(255,255,255,.72);max-width:500px;margin:0 auto">All experiences depart from Cancun, Playa del Carmen or Tulum.</p>
+</div>
+<section class="sec" style="background:#ffffff">
+  <div class="lbl">Experiencias privadas</div>
+  <h2 class="h2">100% private - just your group.</h2>
+  <p class="sub">Certified guides, newest vans, zero shared groups. Price drops as your group grows.</p>
+  <div class="cards-grid"><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A4D5C,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Turtles + Cenotes" loading="lazy">
+    <span class="tc-badge b-coral">Favorito</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Turtles + Cenotes</h3>
+    <p class="tc-tag">Sea Turtles · 3 Cenotes · Snack & Drinks</p>
+    <p class="tc-desc">Gentle sea turtle snorkeling followed by three crystal-clear cenotes hidden in the jungle.</p>
+    <span class="tc-price">Desde <strong>$119</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-turtles-cenotes-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-turtles-cenotes-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#1A5276,#2E86C1)">
+    <img data-src="https://images.pexels.com/photos/5992273/pexels-photo-5992273.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tulum Underwater" loading="lazy">
+    <span class="tc-badge b-navy">Más vendido</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tulum Underwater</h3>
+    <p class="tc-tag">Tulum Ruins · Turtle Snorkeling · 2 Cenotes · Lunch</p>
+    <p class="tc-desc">Walk the stunning clifftop ruins of Tulum, snorkel with turtles, cool off in two beautiful cenotes.</p>
+    <span class="tc-price">Desde <strong>$169</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-tulum-underwater-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-tulum-underwater-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A1828,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/2410870/pexels-photo-2410870.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Cenotes Express" loading="lazy">
+    <span class="tc-badge b-teal">New Route</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Cenotes Express</h3>
+    <p class="tc-tag">4 Cenotes · Rappel into a Cavern · Snack & Beers</p>
+    <p class="tc-desc">Dive into four different cenotes then rappel into a cavern chamber for a true wow moment.</p>
+    <span class="tc-price">Desde <strong>$74</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-cenotes-express-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-cenotes-express-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0E2A45,#E8621A)">
+    <img data-src="https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tulum Express" loading="lazy">
+    <span class="tc-badge b-gold">Quick Escape</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tulum Express</h3>
+    <p class="tc-tag">Tulum Ruins · Certified Guide · Drinks Incluye</p>
+    <p class="tc-desc">Explorar iconic Tulum ruins with a certified guide - ocean views, great photos, relaxed history walk.</p>
+    <span class="tc-price">Desde <strong>$69</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-tulum-express-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-tulum-express-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#1D6A3E,#27AE60)">
+    <img data-src="https://images.pexels.com/photos/17179205/pexels-photo-17179205.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tulum + Cobá" loading="lazy">
+    <span class="tc-badge b-coral">All-Day Epic</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tulum + Cobá</h3>
+    <p class="tc-tag">Tulum Ruins · Cobá · Cenote Zipline · Local Buffet</p>
+    <p class="tc-desc">Two Mayan sites in one epic day. Cenote zipline and a local buffet included.</p>
+    <span class="tc-price">Desde <strong>$179</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-tulum-coba-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-tulum-coba-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0E2A45,#2E7D9A)">
+    <img data-src="https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Cobá" loading="lazy">
+    <span class="tc-badge b-navy">History Rich</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Cobá</h3>
+    <p class="tc-tag">Cobá Ruins · Bike · Cenote Zipline · Regional Buffet</p>
+    <p class="tc-desc">Bike through jungle ruins with expert guides, zipline into a cenote, enjoy a regional buffet.</p>
+    <span class="tc-price">Desde <strong>$124</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-coba-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-coba-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#4A235A,#8E44AD)">
+    <img data-src="https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Chichén Itzá" loading="lazy">
+    <span class="tc-badge b-gold">UNESCO</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Chichén Itzá</h3>
+    <p class="tc-tag">Chichén Itzá · Cenote Zipline · Local Buffet</p>
+    <p class="tc-desc">See the UNESCO Wonder with an expert guide who makes every pyramid come alive.</p>
+    <span class="tc-price">Desde <strong>$184</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-chichen-itza-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-chichen-itza-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A1F3D,#1A5276)">
+    <img data-src="https://images.pexels.com/photos/31657162/pexels-photo-31657162.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Cobá + Chichén Itzá" loading="lazy">
+    <span class="tc-badge b-coral">Epic Circuit</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Cobá + Chichén Itzá</h3>
+    <p class="tc-tag">Cobá · Chichén Itzá · Cenote Zipline · Local Buffet</p>
+    <p class="tc-desc">Two UNESCO wonders in one well-paced day - the ultimate Yucatán experience.</p>
+    <span class="tc-price">Desde <strong>$219</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-coba-chichen-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-coba-chichen-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#006994,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Holbox Express" loading="lazy">
+    <span class="tc-badge b-teal">Island Life</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Holbox Express</h3>
+    <p class="tc-tag">Private Speedboat · 3 Islands · Golf Cart · Beach Club Open Bar</p>
+    <p class="tc-desc">Private speedboat to dreamy Holbox islands. White sandbars, beach club buffet with open bar.</p>
+    <span class="tc-price">Desde <strong>$141</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-holbox-express-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-holbox-express-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A3D62,#1A7A8A)">
+    <img data-src="https://images.pexels.com/photos/2922672/pexels-photo-2922672.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Dolphin + Turtle · Sian Ka'an" loading="lazy">
+    <span class="tc-badge b-navy">UNESCO Reserve</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Dolphin + Turtle · Sian Ka'an</h3>
+    <p class="tc-tag">Speedboat · Dolphins · Turtles · Bird Watching · Snorkeling</p>
+    <p class="tc-desc">Cruise the Sian Ka'an UNESCO reserve spotting dolphins, turtles, and reef life.</p>
+    <span class="tc-price">Desde <strong>$155</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-dolphin-turtle-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-dolphin-turtle-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#8B2500,#C0392B)">
+    <img data-src="https://images.pexels.com/photos/4958641/pexels-photo-4958641.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tacos Tour" loading="lazy">
+    <span class="tc-badge b-gold">Foodie Fave</span>
+    <span class="tc-dur">⏱ Evening</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tacos Tour</h3>
+    <p class="tc-tag">Authentic Tacos · Beers, Tequila & Mezcal · Playa del Carmen</p>
+    <p class="tc-desc">Authentic tacos, mezcal, tequila, and a lively night in Playa del Carmen with a local guide.</p>
+    <span class="tc-price">Desde <strong>$109</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-tacos-tour-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-tacos-tour-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0E2A45,#2980B9)">
+    <img data-src="https://images.pexels.com/photos/3793366/pexels-photo-3793366.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Fishing Half Day" loading="lazy">
+    <span class="tc-badge b-teal">Private Boat</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Fishing Half Day</h3>
+    <p class="tc-tag">Private Boat · Offshore Fishing · Fresh Ceviche · Drinks</p>
+    <p class="tc-desc">Private fishing charter with expert captains. Fresh ceviche made on board.</p>
+    <span class="tc-price-req">Precio bajo solicitud</span>
+    <div class="tc-acts">
+      <a href="tour-fishing-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-fishing-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article></div>
+</section>
+<section class="sec" id="shared" style="background:#FFF3D0">
+  <div class="lbl lbl-gold">Experiencias compartidas</div>
+  <h2 class="h2">Budget-friendly adventures.</h2>
+  <p class="sub">Small group tours at great value. Same certified guides, same incredible destinations.</p>
+  <div class="cards-grid"><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#1DA5B4,#3498DB)">
+    <img data-src="https://images.pexels.com/photos/13713189/pexels-photo-13713189.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Tulum, Cenote & Village (Experiencia compartida)" loading="lazy">
+    <span class="tc-badge b-teal">Económico</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Tulum, Cenote & Village <span style="color:var(--coral)">(Experiencia compartida)</span></h3>
+    <p class="tc-tag">Tulum Ruins · Mayan Village · Cenote Swim</p>
+    <p class="tc-desc">Visit the Tulum ruins, discover a Mayan village, and cool off with a cenote swim on one shared adventure.</p>
+    <span class="tc-price">Desde <strong>$109</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-tulum-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-shared-tulum-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#4A235A,#7D3C98)">
+    <img data-src="https://images.pexels.com/photos/3290068/pexels-photo-3290068.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Chichen Itza and Cenote Adventure (Experiencia compartida)" loading="lazy">
+    <span class="tc-badge b-teal">Económico</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Chichen Itza and Cenote Adventure <span style="color:var(--coral)">(Experiencia compartida)</span></h3>
+    <p class="tc-tag">Chichen Itza · Cenote Adventure · Tour compartido</p>
+    <p class="tc-desc">Explorar Chichen Itza, enjoy a cenote adventure, and relax with a regional buffet and local drinks.</p>
+    <span class="tc-price">Desde <strong>$139</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-chichen-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-shared-chichen-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0E2A45,#2E7D9A)">
+    <img data-src="https://images.pexels.com/photos/14902028/pexels-photo-14902028.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Coba and Cenote Adventure (Experiencia compartida)" loading="lazy">
+    <span class="tc-badge b-teal">Económico</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Coba and Cenote Adventure <span style="color:var(--coral)">(Experiencia compartida)</span></h3>
+    <p class="tc-tag">Coba Ruins · Cenote Swim · Tour compartido</p>
+    <p class="tc-desc">Discover Coba with an archaeological guide, then cool off in a cenote and enjoy a buffet with non-alcoholic drinks.</p>
+    <span class="tc-price">Desde <strong>$149</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-coba-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-shared-coba-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#0A4D5C,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Snorkeling with Turtles and Cenote Adventure (Experiencia compartida)" loading="lazy">
+    <span class="tc-badge b-teal">Económico</span>
+    <span class="tc-dur">⏱ Half day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Snorkeling with Turtles and Cenote Adventure <span style="color:var(--coral)">(Experiencia compartida)</span></h3>
+    <p class="tc-tag">Sea Turtles · Cenote Visit · Tour compartido</p>
+    <p class="tc-desc">Snorkel with sea turtles in Akumal and enjoy a refreshing cenote stop with shared transportation with A/C and a bilingual guide.</p>
+    <span class="tc-price">Desde <strong>$99</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-turtles-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-shared-turtles-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article><article class="tc tc-shared">
+  <div class="tc-thumb" style="background:linear-gradient(135deg,#006994,#1DA5B4)">
+    <img data-src="https://images.pexels.com/photos/11481626/pexels-photo-11481626.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Holbox Day Adventure (Experiencia compartida)" loading="lazy">
+    <span class="tc-badge b-teal">Mejor valor</span>
+    <span class="tc-dur">⏱ Full day</span>
+  </div>
+  <div class="tc-body">
+    <h3 class="tc-name">Holbox Day Adventure <span style="color:var(--coral)">(Experiencia compartida)</span></h3>
+    <p class="tc-tag">2-Island Boat Trip · Holbox Downtown · Beach Club</p>
+    <p class="tc-desc">Enjoy a full shared day with a 2-island boat trip, Holbox downtown visit, and relaxing beach club time.</p>
+    <span class="tc-price">Desde <strong>$189</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /persona</span></span>
+    <div class="tc-acts">
+      <a href="tour-shared-holbox-es.html" class="btn btn-outline btn-sm">Detalles</a>
+      <a href="tour-shared-holbox-es.html#booking" class="btn btn-coral btn-sm">Reservar ahora →</a>
+    </div>
+  </div>
+</article></div>
+</section>
+<footer>
+  <div class="ft-grid">
+    <div>
+      <div class="ft-logo">
+        <img src="assets/common/logo.png" alt="Beyond the Reef Mexico" width="38" height="38">
+        <span class="ft-logo-name">Beyond the Reef Mexico</span>
+      </div>
+      <p class="ft-tagline">Private & shared experiences in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
+      <div class="ft-social">
+        <a href="https://wa.me/529623562346" class="ft-soc" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
+        <a href="/cdn-cgi/l/email-protection#6c05020a032c0e09150302081804091e09090a010914050f03420f0301" class="ft-soc" aria-label="Correo">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="20" height="16" rx="2" stroke="white" stroke-width="1.5"/><path d="M2 8l10 6 10-6" stroke="white" stroke-width="1.5"/></svg>
+        </a>
+        <a href="https://www.instagram.com/beyondthereefmexico" class="ft-soc" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" stroke="white" stroke-width="1.5"/><circle cx="12" cy="12" r="4" stroke="white" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="white"/></svg>
+        </a>
+      </div>
+    </div>
+    <div>
+      <p class="ft-h">Explorar</p>
+      <div class="ft-links">
+        <a href="tours-es.html">Experiencias privadas</a>
+        <a href="tours-es.html#shared">Experiencias compartidas</a>
+        <a href="reviews-es.html">Reseñas de huéspedes</a>
+        <a href="our-story-es.html">Nuestra historia</a>
+      </div>
+    </div>
+    <div>
+      <p class="ft-h">Contacto</p>
+      <div class="ft-links">
+        <a href="https://wa.me/529623562346" target="_blank" rel="noopener">+52 962 356 2346</a>
+        <a href="/cdn-cgi/l/email-protection#345d5a525b7456514d5b5a50405c514651515259514c5d575b1a575b59"><span class="__cf_email__" data-cfemail="157c7b737a5577706c7a7b71617d706770707378706d7c767a3b767a78">[email&#160;protected]</span></a>
+        <a href="https://www.instagram.com/beyondthereefmexico" target="_blank" rel="noopener">@beyondthereefmexico</a>
+      </div>
+      <p class="ft-h" style="margin-top:20px">Destinos</p>
+      <div class="ft-links">
+        <a href="tours-es.html">Tours Cancún</a>
+        <a href="tours-es.html">Tours Tulum</a>
+        <a href="tours-es.html">Tours Playa del Carmen</a>
+        <a href="tours-es.html">Tours Riviera Maya</a>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Beyond the Reef Mexico. Todos los derechos reservados.</p>
+  </div>
+</footer>
+<a href="https://www.instagram.com/beyondthereefmexico" class="float-ig" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#igGrad)"/><rect x="8" y="8" width="16" height="16" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="21" cy="11" r="1" fill="white"/></svg></a>
+<a href="https://wa.me/529623562346" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+//  NAV 
+var nav=document.getElementById('mainNav');
+if(nav){
+  window.addEventListener('scroll',function(){
+    nav.classList.toggle('opaque',window.scrollY>80);
+  },{passive:true});
+}
+var ham=document.getElementById('ham');
+var mob=document.getElementById('mobMenú');
+var mobCerrar=document.getElementById('mobCerrar');
+function openMob(){
+  mob.classList.add('open');
+  ham.classList.add('open');
+  ham.setAttribute('aria-expanded','true');
+  document.body.style.overflow='hidden';
+}
+function closeMob(){
+  mob.classList.remove('open');
+  ham.classList.remove('open');
+  ham.setAttribute('aria-expanded','false');
+  document.body.style.overflow='';
+}
+if(ham) ham.addEventListener('click',function(){mob.classList.contains('open')?closeMob():openMob();});
+if(mobCerrar) mobCerrar.addEventListener('click',closeMob);
+mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMob);});
+
+//  SCROLL REVEAL 
+(function(){
+  if(!window.IntersectionObserver) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});
+  },{threshold:0.1});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+})();
+
+//  LAZY IMAGES 
+(function(){
+  if(!window.IntersectionObserver) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var img=e.target;
+        img.src=img.dataset.src;
+        img.addEventListener('load',function(){img.classList.add('loaded');},{once:true});
+        io.unobserve(img);
+      }
+    });
+  },{rootMargin:'300px'});
+  document.querySelectorAll('img[data-src]').forEach(function(img){io.observe(img);});
+})();
+
+
+//  SLIDER ENGINE 
+function makeSlider(trackId,prevId,nextId,dotsId,cardSel,invDots){
+  var track=document.getElementById(trackId);
+  if(!track) return;
+  var prev=document.getElementById(prevId);
+  var next=document.getElementById(nextId);
+  var dotsC=document.getElementById(dotsId);
+  var idx=0, dots=[], raf=0, GAP=16;
+
+  function allCards(){return Array.from(track.querySelectorAll(cardSel));}
+  function cardW(){
+    var c=allCards()[0];
+    if(!c) return 296;
+    var w=c.getBoundingClientRect().width;
+    return (w>10?w:280)+GAP;
+  }
+  function visCount(){
+    var vp=track.parentElement;
+    if(!vp) return 1;
+    return Math.max(1,Math.floor(vp.clientWidth/cardW()));
+  }
+  function maxIdx(){return Math.max(0,allCards().length-visCount());}
+  function go(i){
+    idx=Math.max(0,Math.min(i,maxIdx()));
+    track.style.transform='translateX(-'+(idx*cardW())+'px)';
+    if(prev) prev.disabled=(idx<=0);
+    if(next) next.disabled=(idx>=maxIdx());
+    dots.forEach(function(d,j){d.classList.toggle('on',j===idx);});
+  }
+  function buildDots(){
+    if(!dotsC) return;
+    dotsC.innerHTML=''; dots=[];
+    var pages=maxIdx()+1;
+    for(var i=0;i<pages;i++){
+      var d=document.createElement('button');
+      d.className='dot'+(invDots?' dot-inv':'');
+      d.type='button';
+      d.setAttribute('aria-label','Page '+(i+1));
+      (function(ii){d.addEventListener('click',function(){go(ii);});})(i);
+      dotsC.appendNiño(d);
+      dots.push(d);
+    }
+  }
+  function init(){buildDots();go(0);}
+  if(prev) prev.addEventListener('click',function(){go(idx-1);});
+  if(next) next.addEventListener('click',function(){go(idx+1);});
+  // Touch swipe
+  var sx=0;
+  track.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;},{passive:true});
+  track.addEventListener('touchend',function(e){
+    var dx=e.changedTouches[0].clientX-sx;
+    if(Math.abs(dx)>44) go(idx+(dx<0?1:-1));
+  },{passive:true});
+  // Resize
+  function onResize(){
+    cancelAnimationFrame(raf);
+    raf=requestAnimationFrame(function(){buildDots();go(Math.min(idx,maxIdx()));});
+  }
+  if(window.ResizeObserver){new ResizeObserver(onResize).observe(track.parentElement);}
+  else{window.addEventListener('resize',onResize,{passive:true});}
+  // Init after layout
+  if(document.readyState==='complete'){setTimeout(init,60);}
+  else{window.addEventListener('load',function(){setTimeout(init,60);},{once:true});}
+}
+
+
+// Lazy load images on tours page
+(function(){
+  if(!window.IntersectionObserver) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        var img=e.target;
+         var img=e.target;
+        if(img.dataset.src){
+          img.src=img.dataset.src;
+          img.addEventListener('load',function(){img.classList.add('loaded');},{once:true});
+          delete img.dataset.src;
+        }
+        io.unobserve(img);
+      }
+    });
+  },{rootMargin:'300px'});
+  document.querySelectorAll('img[data-src]').forEach(function(img){io.observe(img);});
+})();
+</script>
+<script src="assets/common/perf.js" defer></script>
+</body>
+</html>
