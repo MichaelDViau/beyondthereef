@@ -26,6 +26,7 @@
 <meta name="theme-color" content="#0E2A45">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.pexels.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="stylesheet" href="assets/common/perf.css">
 <style>
@@ -1030,6 +1031,24 @@ makeSlider('revTrack',    'revPrev',    'revNext',    'revDots',    '.rc',      
 
 // Lazy images
 (function() {
+  function primeSliderImages(trackId, count) {
+    var track = document.getElementById(trackId);
+    if (!track) return;
+    var imgs = Array.from(track.querySelectorAll('img[data-src]')).slice(0, count);
+    imgs.forEach(function(img, idx) {
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+      img.loading = idx < 2 ? 'eager' : 'lazy';
+      img.fetchPriority = idx < 2 ? 'high' : 'auto';
+      img.decoding = 'async';
+      img.addEventListener('load', function() { img.classList.add('loaded'); }, {once: true});
+    });
+  }
+
+  // Ensure first visible cards in both sliders paint quickly.
+  primeSliderImages('privTrack', 4);
+  primeSliderImages('sharedTrack', 4);
+
   if (!window.IntersectionObserver) return;
   var io = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
