@@ -229,7 +229,12 @@
         <div class="logo-glow"></div>
         <img class="logo-img"
           src="assets/tour-sliders/Logo.JPG"
-          alt="Beyond The Reef Mexico"/>
+          alt="Beyond The Reef Mexico"
+          width="150"
+          height="150"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"/>
       </div>
 
       <div class="brand-block">
@@ -783,7 +788,9 @@
      MAIN LOOP
   ══════════════════════════════════════════ */
   let start=null, lastTs=0;
+  let running=true;
   function loop(ts){
+    if(!running){ requestAnimationFrame(loop); return; }
     if(!start) start=ts;
     const rawDt = Math.min((ts-lastTs)*0.001, 0.05); // cap at 50 ms
     lastTs = ts;
@@ -840,6 +847,10 @@
 
     requestAnimationFrame(loop);
   }
+  document.addEventListener('visibilitychange', () => {
+    running = document.visibilityState === 'visible';
+    if (running) lastTs = performance.now();
+  });
   requestAnimationFrame(loop);
 })();
 </script>
