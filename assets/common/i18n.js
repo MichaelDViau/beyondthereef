@@ -14,7 +14,10 @@
       'Our Story': 'Nuestra historia',
       'Tours': 'Tours',
       'Reviews': 'Reseñas',
-      'Home': 'Inicio'
+      'Home': 'Inicio',
+      'Go Beyond': 'Ir Más Allá',
+      'the Tourist': 'Del Turismo de la',
+      'Riviera Maya.': 'Riviera Maya'
     },
     fr: {
       'Choose your language': 'Choisissez votre langue',
@@ -25,7 +28,10 @@
       'Our Story': 'Notre histoire',
       'Tours': 'Excursions',
       'Reviews': 'Avis',
-      'Home': 'Accueil'
+      'Home': 'Accueil',
+      'Go Beyond': 'Aller au-delà',
+      'the Tourist': 'du touriste de la',
+      'Riviera Maya.': 'Riviera Maya.'
     }
   };
 
@@ -160,28 +166,58 @@
     return translatedMap;
   }
 
+  function applyTranslationsFromMap(textNodes, attrs, translatedMap) {
+    textNodes.forEach((node) => {
+      const source = originalText.get(node) || '';
+      node.nodeValue = translatedMap.get(source) || source;
+    });
+
+    attrs.forEach(([el, attr]) => {
+      const source = (originalAttrs.get(el) || {})[attr] || '';
+      el.setAttribute(attr, translatedMap.get(source) || source);
+    });
+  }
+
+  function applyInstantQuickTranslations(sources, lang) {
+    const map = new Map();
+    sources.forEach((source) => {
+      const normalized = normalizeText(source);
+      if (!normalized) {
+        map.set(source, source);
+        return;
+      }
+      map.set(source, source.replace(normalized, quickTranslate(normalized, lang)));
+    });
+    return map;
+  }
+
+  async function enhanceWithRemoteTranslations(sources, lang, textNodes, attrs) {
+    if (lang === 'en') return;
+    const unique = Array.from(new Set(sources.filter((value) => normalizeText(value))));
+    const pending = unique.filter((source) => {
+      const normalized = normalizeText(source);
+      return quickTranslate(normalized, lang) === normalized;
+    });
+    if (!pending.length) return;
+
+    const remoteMap = await translateUniqueTexts(pending, lang);
+    applyTranslationsFromMap(textNodes, attrs, remoteMap);
+  }
+
   async function translatePage(lang) {
     if (window.location.pathname.toLowerCase().includes('welcome.html')) return;
     document.documentElement.lang = REGION_LANG[lang] || 'en';
-    document.documentElement.setAttribute('data-i18n-loading', lang === 'en' ? '0' : '1');
-    try {
-      const { textNodes, attrs } = gatherNodes();
-      const textSources = textNodes.map((node) => originalText.get(node) || '');
-      const attrSources = attrs.map(([el, attr]) => (originalAttrs.get(el) || {})[attr] || '');
-      const translatedMap = await translateUniqueTexts([...textSources, ...attrSources], lang);
+    const { textNodes, attrs } = gatherNodes();
+    const textSources = textNodes.map((node) => originalText.get(node) || '');
+    const attrSources = attrs.map(([el, attr]) => (originalAttrs.get(el) || {})[attr] || '');
+    const sources = [...textSources, ...attrSources];
 
-      textNodes.forEach((node) => {
-        const source = originalText.get(node) || '';
-        node.nodeValue = translatedMap.get(source) || source;
-      });
+    // Instant local pass.
+    const instantMap = applyInstantQuickTranslations(sources, lang);
+    applyTranslationsFromMap(textNodes, attrs, instantMap);
 
-      attrs.forEach(([el, attr]) => {
-        const source = (originalAttrs.get(el) || {})[attr] || '';
-        el.setAttribute(attr, translatedMap.get(source) || source);
-      });
-    } finally {
-      document.documentElement.setAttribute('data-i18n-loading', '0');
-    }
+    // Background remote pass for missing phrases (non-blocking).
+    enhanceWithRemoteTranslations(sources, lang, textNodes, attrs);
   }
 
   function bindLanguageButtons() {
@@ -194,11 +230,7 @@
   }
 
   function applyLoadingStyle() {
-    if (document.getElementById('btr-i18n-loading-style')) return;
-    const style = document.createElement('style');
-    style.id = 'btr-i18n-loading-style';
-    style.textContent = 'html[data-i18n-loading="1"] body{cursor:progress}';
-    document.head.appendChild(style);
+    // intentionally no blocking loading style to avoid white/blank rendering
   }
 
   async function init() {
