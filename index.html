@@ -4,6 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
+<script>
+(() => {
+  const currentPath = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const params = new URLSearchParams(window.location.search);
+  const fromWelcome = params.get('from') === 'welcome';
+  if (fromWelcome) {
+    sessionStorage.setItem('btrSeenWelcome', '1');
+    const lang = params.get('lang');
+    if (lang) localStorage.setItem('btrPreferredLanguage', lang);
+  }
+  const hasSeenWelcome = sessionStorage.getItem('btrSeenWelcome') === '1';
+  if (currentPath === 'index.html' && !fromWelcome && !hasSeenWelcome) {
+    window.location.replace('welcome.html');
+  }
+})();
+</script>
 <title>Beyond the Reef Mexico - Real Local Experiences Cancun Tulum Riviera Maya</title>
 <meta name="description" content="Real local experiences in the Riviera Maya. Cenotes, sea turtles, Mayan ruins. 14+ years.">
 <link rel="icon" type="image/png" href="assets/common/logo.png">
@@ -288,8 +304,10 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 .rv.vis{opacity:1;transform:none}
 .rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
 </style>
+
 </head>
 <body style="color-scheme:light;background:#fff">
+<script src="i18n.js"></script>
 
 <nav class="nav" id="mainNav">
   <a href="/" class="nav-logo">

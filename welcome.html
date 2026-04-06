@@ -212,6 +212,7 @@
   </style>
 </head>
 <body>
+<script src="i18n.js"></script>
 
   <canvas id="c"></canvas>
   <div class="rays"></div>
@@ -224,7 +225,8 @@
       <div class="logo-wrap">
         <div class="logo-glow"></div>
         <img class="logo-img"
-          src="BEYOND_THE_REEF_-_FLYER_01__500_x_500_px___2_.jpeg"
+          src="assets/common/Logo.JPG"
+          onerror="this.onerror=null;this.src='assets/common/logo.png';"
           alt="Beyond The Reef Mexico"/>
       </div>
 
@@ -238,7 +240,7 @@
       <p class="choose">Choose your language</p>
 
       <div class="lang-group">
-        <a href="index.html" class="lang-btn" hreflang="en">
+        <a href="index.html?from=welcome&lang=en" class="lang-btn" hreflang="en" data-lang="en">
           <div class="flag">🇺🇸</div>
           <div class="lang-info">
             <div class="lang-name">English</div>
@@ -246,7 +248,7 @@
           </div>
           <span class="chevron">›</span>
         </a>
-        <a href="index-fr.html" class="lang-btn" hreflang="fr">
+        <a href="index.html?from=welcome&lang=fr" class="lang-btn" hreflang="fr" data-lang="fr">
           <div class="flag">🇫🇷</div>
           <div class="lang-info">
             <div class="lang-name">Français</div>
@@ -254,7 +256,7 @@
           </div>
           <span class="chevron">›</span>
         </a>
-        <a href="index-es.html" class="lang-btn" hreflang="es">
+        <a href="index.html?from=welcome&lang=es" class="lang-btn" hreflang="es" data-lang="es">
           <div class="flag">🇲🇽</div>
           <div class="lang-info">
             <div class="lang-name">Español</div>
@@ -270,6 +272,15 @@
 
 <script>
 (function(){
+  const langButtons = document.querySelectorAll('[data-lang]');
+  langButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const lang = button.getAttribute('data-lang') || 'en';
+      sessionStorage.setItem('btrSeenWelcome', '1');
+      localStorage.setItem('btrPreferredLanguage', lang);
+    });
+  });
+
   const C   = document.getElementById('c');
   const ctx = C.getContext('2d');
   let W, H;

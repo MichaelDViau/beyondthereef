@@ -1,0 +1,325 @@
+(function () {
+  const STORAGE_KEY = 'btrPreferredLanguage';
+  const VALID_LANGS = new Set(['en', 'es', 'fr']);
+  const REGION_LANG = { en: 'en', es: 'es-MX', fr: 'fr-CA' };
+  const ATTRS = [];
+  const PROTECTED = ['Beyond the Reef', 'BEYOND THE REEF', 'Beyond The Reef'];
+  const QUICK = {
+    es: {
+      'Choose your language': 'Elige tu idioma',
+      'Continue in English': 'Continuar en inglés',
+      'Continuer en français': 'Continuar en francés',
+      'Continuar en español': 'Continuar en español',
+      'Book Now': 'Reservar ahora',
+      'Our Story': 'Nuestra historia',
+      'Tours': 'Tours',
+      'Reviews': 'Reseñas',
+      'Home': 'Inicio',
+      'Details': 'Detalles',
+      'Go Beyond': 'Ir Más Allá',
+      'the Tourist': 'Del Turismo de la',
+      'Riviera Maya.': 'Riviera Maya',
+      'Cancun - Tulum - Playa del Carmen': 'Cancún - Tulum - Playa del Carmen',
+      'Private & shared tours in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.': 'Tours privados y compartidos en Cancún, Tulum, Playa del Carmen y la Riviera Maya. Más de 14 años de experiencias inolvidables.'
+    },
+    fr: {
+      'Choose your language': 'Choisissez votre langue',
+      'Continue in English': 'Continuer en anglais',
+      'Continuer en français': 'Continuer en français',
+      'Continuar en español': 'Continuer en espagnol',
+      'Book Now': 'Réserver maintenant',
+      'Our Story': 'Notre histoire',
+      'Tours': 'Excursions',
+      'Reviews': 'Avis',
+      'Home': 'Accueil',
+      'Details': 'Détails',
+      'Go Beyond': 'Aller au-delà',
+      'the Tourist': 'du touriste de la',
+      'Riviera Maya.': 'Riviera Maya.',
+      'Cancun - Tulum - Playa del Carmen': 'Cancún - Tulum - Playa del Carmen',
+      'Private & shared tours in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.': 'Tours privés et partagés à Cancún, Tulum, Playa del Carmen et dans la Riviera Maya. Plus de 14 ans d’expériences inoubliables.'
+    }
+  };
+
+  const originalText = new WeakMap();
+  const originalAttrs = new WeakMap();
+  const inFlight = new Map();
+  let isTranslating = false;
+
+  function normalizeLang(value) {
+    const lang = String(value || '').toLowerCase().trim();
+    return VALID_LANGS.has(lang) ? lang : 'en';
+  }
+
+  function getActiveLang() {
+    const params = new URLSearchParams(window.location.search);
+    const fromQuery = normalizeLang(params.get('lang'));
+    const stored = normalizeLang(localStorage.getItem(STORAGE_KEY));
+    return params.has('lang') ? fromQuery : stored;
+  }
+
+  function getCache(lang) {
+    const key = `btrI18nCache:v2:${lang}`;
+    let parsed = {};
+    try {
+      parsed = JSON.parse(localStorage.getItem(key) || '{}');
+    } catch (_error) {
+      parsed = {};
+    }
+    return { key, data: parsed && typeof parsed === 'object' ? parsed : {} };
+  }
+
+  function saveCache(cache) {
+    localStorage.setItem(cache.key, JSON.stringify(cache.data));
+  }
+
+  function normalizeText(value) {
+    return String(value || '').replace(/\s+/g, ' ').trim();
+  }
+
+  function isProtected(text) {
+    return PROTECTED.some((name) => text.includes(name));
+  }
+
+  function quickTranslate(text, lang) {
+    if (lang === 'en') return text;
+    const quick = QUICK[lang] || {};
+    return quick[text] || text;
+  }
+
+  function preserveSourceCase(source, translated) {
+    const cleanSource = source.replace(/[^A-Za-zÀ-ÿ]/g, '');
+    const cleanTranslated = translated.replace(/[^A-Za-zÀ-ÿ]/g, '');
+    if (!cleanSource || !cleanTranslated) return translated;
+
+    if (cleanSource === cleanSource.toUpperCase()) return translated.toUpperCase();
+    if (cleanSource === cleanSource.toLowerCase()) return translated.toLowerCase();
+
+    const sourceWords = source.split(/\s+/).filter(Boolean);
+    const titleCaseLike = sourceWords.length > 1 && sourceWords.every((word) => {
+      const w = word.replace(/[^A-Za-zÀ-ÿ]/g, '');
+      if (!w) return true;
+      return w.charAt(0) === w.charAt(0).toUpperCase();
+    });
+    if (titleCaseLike) {
+      return translated
+        .split(/(\s+)/)
+        .map((word) => {
+          if (!word.trim()) return word;
+          return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        })
+        .join('');
+    }
+
+    return translated;
+  }
+
+  async function fetchTranslation(text, lang) {
+    if (lang === 'en') return text;
+
+    const original = normalizeText(text);
+    if (!original || isProtected(original)) return text;
+
+    const quick = quickTranslate(original, lang);
+    if (quick !== original) return text.replace(original, preserveSourceCase(original, quick));
+
+    const cache = getCache(lang);
+    if (cache.data[original]) {
+      return text.replace(original, preserveSourceCase(original, cache.data[original]));
+    }
+
+    const key = `${lang}::${original}`;
+    if (!inFlight.has(key)) {
+      const promise = (async () => {
+        const url = `https://api.mymemory.translated.net/get?q=${encodeURIComponent(original)}&langpair=en|${lang}`;
+        const response = await fetch(url);
+        if (!response.ok) return original;
+        const payload = await response.json();
+        const translated = payload?.responseData?.translatedText;
+        if (!translated || typeof translated !== 'string') return original;
+        cache.data[original] = translated;
+        saveCache(cache);
+        return preserveSourceCase(original, translated);
+      })();
+      inFlight.set(key, promise);
+    }
+
+    const translated = await inFlight.get(key);
+    inFlight.delete(key);
+    return text.replace(original, translated);
+  }
+
+  function gatherNodes() {
+    const textNodes = [];
+    const attrs = [];
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let node = walker.nextNode();
+    while (node) {
+      const parent = node.parentElement;
+      const tag = parent ? parent.tagName : '';
+      const value = normalizeText(node.nodeValue);
+      if (value && tag !== 'SCRIPT' && tag !== 'STYLE' && tag !== 'NOSCRIPT' && tag !== 'IFRAME') {
+        if (value.length < 2) {
+          node = walker.nextNode();
+          continue;
+        }
+        if (!originalText.has(node)) originalText.set(node, node.nodeValue || '');
+        textNodes.push(node);
+      }
+      node = walker.nextNode();
+    }
+
+    document.querySelectorAll('*').forEach((el) => {
+      ATTRS.forEach((attr) => {
+        if (!el.hasAttribute(attr)) return;
+        if (!originalAttrs.has(el)) originalAttrs.set(el, {});
+        const store = originalAttrs.get(el);
+        if (!(attr in store)) store[attr] = el.getAttribute(attr) || '';
+        attrs.push([el, attr]);
+      });
+    });
+
+    return { textNodes, attrs };
+  }
+
+  async function translateUniqueTexts(sources, lang) {
+    const unique = Array.from(new Set(sources.filter((value) => normalizeText(value))));
+    const translatedMap = new Map();
+    const tasks = unique.map((source) => async () => {
+      const translated = lang === 'en' ? source : await fetchTranslation(source, lang);
+      translatedMap.set(source, translated);
+    });
+
+    const concurrency = 10;
+    for (let i = 0; i < tasks.length; i += concurrency) {
+      const chunk = tasks.slice(i, i + concurrency).map((fn) => fn());
+      await Promise.all(chunk);
+    }
+
+    return translatedMap;
+  }
+
+  function applyTranslationsFromMap(textNodes, attrs, translatedMap) {
+    textNodes.forEach((node) => {
+      const source = originalText.get(node) || '';
+      node.nodeValue = translatedMap.get(source) || source;
+    });
+
+    attrs.forEach(([el, attr]) => {
+      const source = (originalAttrs.get(el) || {})[attr] || '';
+      el.setAttribute(attr, translatedMap.get(source) || source);
+    });
+  }
+
+  function applyInstantQuickTranslations(sources, lang) {
+    const map = new Map();
+    sources.forEach((source) => {
+      const normalized = normalizeText(source);
+      if (!normalized) {
+        map.set(source, source);
+        return;
+      }
+      map.set(source, source.replace(normalized, quickTranslate(normalized, lang)));
+    });
+    return map;
+  }
+
+  async function enhanceWithRemoteTranslations(sources, lang, textNodes, attrs) {
+    if (lang === 'en') return;
+    const unique = Array.from(new Set(sources.filter((value) => normalizeText(value))));
+    const pending = unique.filter((source) => {
+      const normalized = normalizeText(source);
+      return quickTranslate(normalized, lang) === normalized;
+    });
+    if (!pending.length) return;
+
+    const remoteMap = await translateUniqueTexts(pending, lang);
+    applyTranslationsFromMap(textNodes, attrs, remoteMap);
+  }
+
+  async function translatePage(lang) {
+    if (window.location.pathname.toLowerCase().includes('welcome.html')) return;
+    if (isTranslating) return;
+    isTranslating = true;
+    document.documentElement.lang = REGION_LANG[lang] || 'en';
+    const { textNodes, attrs } = gatherNodes();
+    const textSources = textNodes.map((node) => originalText.get(node) || '');
+    const attrSources = attrs.map(([el, attr]) => (originalAttrs.get(el) || {})[attr] || '');
+    const sources = [...textSources, ...attrSources];
+
+    // Instant local pass.
+    const instantMap = applyInstantQuickTranslations(sources, lang);
+    applyTranslationsFromMap(textNodes, attrs, instantMap);
+
+    // Background remote pass for missing phrases (non-blocking).
+    enhanceWithRemoteTranslations(sources, lang, textNodes, attrs).finally(() => {
+      isTranslating = false;
+    });
+    if (lang === 'en') isTranslating = false;
+  }
+
+  function bindLanguageButtons() {
+    document.querySelectorAll('[data-lang]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const lang = normalizeLang(button.getAttribute('data-lang'));
+        localStorage.setItem(STORAGE_KEY, lang);
+      });
+    });
+  }
+
+  function applyLoadingStyle() {
+    // intentionally no blocking loading style to avoid white/blank rendering
+  }
+
+  function persistLangOnLinks(lang) {
+    document.querySelectorAll('a[href]').forEach((link) => {
+      const raw = link.getAttribute('href') || '';
+      if (!raw || raw.startsWith('#') || raw.startsWith('mailto:') || raw.startsWith('tel:') || raw.startsWith('javascript:')) return;
+      if (/^https?:\/\//i.test(raw)) return;
+
+      const [pathPart, hashPart] = raw.split('#');
+      const [path, query = ''] = pathPart.split('?');
+      const params = new URLSearchParams(query);
+
+      if (lang === 'en') {
+        params.delete('lang');
+      } else {
+        params.set('lang', lang);
+      }
+
+      const queryString = params.toString();
+      const next = `${path}${queryString ? `?${queryString}` : ''}${hashPart ? `#${hashPart}` : ''}`;
+      link.setAttribute('href', next);
+    });
+  }
+
+  function observeLanguageStability(lang) {
+    if (lang === 'en' || window.location.pathname.toLowerCase().includes('welcome.html')) return;
+    let timer = null;
+    const observer = new MutationObserver(() => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        translatePage(lang);
+        persistLangOnLinks(lang);
+      }, 220);
+    });
+    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+  }
+
+  async function init() {
+    bindLanguageButtons();
+    applyLoadingStyle();
+    const lang = getActiveLang();
+    localStorage.setItem(STORAGE_KEY, lang);
+    persistLangOnLinks(lang);
+    await translatePage(lang);
+    observeLanguageStability(lang);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
