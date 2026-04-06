@@ -291,8 +291,23 @@
   const C   = document.getElementById('c');
   const ctx = C.getContext('2d');
   let W, H;
+  const conn = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+  const budgetMode = !!(
+    (conn && (conn.saveData || /2g/.test(conn.effectiveType || ''))) ||
+    window.matchMedia('(max-width: 768px)').matches
+  );
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function resize(){ W = C.width = innerWidth; H = C.height = innerHeight; }
+  function resize(){
+    const dpr = budgetMode ? 1 : Math.min(window.devicePixelRatio || 1, 1.5);
+    C.width = Math.round(innerWidth * dpr);
+    C.height = Math.round(innerHeight * dpr);
+    C.style.width = innerWidth + 'px';
+    C.style.height = innerHeight + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    W = innerWidth;
+    H = innerHeight;
+  }
   resize(); window.addEventListener('resize', resize);
 
   /* ══════════════════════════════════════════
@@ -320,7 +335,7 @@
   /* ══════════════════════════════════════════
      BUBBLES
   ══════════════════════════════════════════ */
-  const bubbles = Array.from({length:28}, () => ({
+  const bubbles = Array.from({length: budgetMode ? 12 : 28}, () => ({
     x: Math.random()*W, y: H + Math.random()*H,
     r: 1.5 + Math.random()*4,
     speed: 0.3 + Math.random()*0.5,
@@ -375,7 +390,8 @@
     ctx.fillStyle='rgba(10,30,55,0.9)'; ctx.fill();
     // seagrass — only every other frame to halve cost
     if(reefFrame%2===0){
-      for(let i=0;i<14;i++) drawSeagrass(W*(0.03+i*0.07),H,20+((i*7)%30));
+      const blades = budgetMode ? 8 : 14;
+      for(let i=0;i<blades;i++) drawSeagrass(W*(0.03+i*0.07),H,20+((i*7)%30));
     }
   }
 
@@ -452,7 +468,7 @@
 
 
 
-  const FISH_N = 18;
+  const FISH_N = budgetMode ? 10 : 18;
   let fishes = Array.from({length:FISH_N},(_,i)=>spawnFish(i,true));
 
   function drawOneFish(f, t){
@@ -631,7 +647,7 @@
       tentN: 5+Math.floor(Math.random()*5),
     };
   }
-  let jellies = Array.from({length:5},()=>makeJelly(null, true));
+  let jellies = Array.from({length: budgetMode ? 3 : 5},()=>makeJelly(null, true));
 
   function drawJelly(j){
     const s=j.size, pulse=Math.sin(j.pulse);
@@ -761,7 +777,11 @@
      LIGHT SHAFTS FROM SURFACE
   ══════════════════════════════════════════ */
   function drawLightShafts(){
-    const shafts=[
+    const shafts = budgetMode ? [
+      {x:W*0.2, w:56, alpha:0.04},
+      {x:W*0.5, w:84, alpha:0.05},
+      {x:W*0.82,w:60, alpha:0.038},
+    ] : [
       {x:W*0.2, w:60, alpha:0.04},
       {x:W*0.45,w:90, alpha:0.055},
       {x:W*0.65,w:50, alpha:0.035},
@@ -789,7 +809,13 @@
   ══════════════════════════════════════════ */
   let start=null, lastTs=0;
   let running=true;
+  if (reducedMotion) {
+    drawBg();
+    drawLightShafts();
+    drawReef();
+  }
   function loop(ts){
+    if(reducedMotion) return;
     if(!running){ requestAnimationFrame(loop); return; }
     if(!start) start=ts;
     const rawDt = Math.min((ts-lastTs)*0.001, 0.05); // cap at 50 ms

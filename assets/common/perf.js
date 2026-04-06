@@ -1,6 +1,12 @@
 (function () {
   var doc = document;
   var win = window;
+  var nav = win.navigator || {};
+  var conn = nav.connection || nav.mozConnection || nav.webkitConnection;
+  var saveData = !!(conn && conn.saveData);
+  var effectiveType = (conn && conn.effectiveType) || '';
+  var slowConnection = /2g/.test(effectiveType);
+  var budgetMode = saveData || slowConnection;
 
   function onceLoaded(img) {
     if (!img) return;
@@ -79,19 +85,22 @@
 
     // Promote the first visible image as an LCP fallback.
     var imgs = Array.prototype.slice.call(doc.images || []);
+    var visiblePromoted = 0;
+    var maxVisiblePromotions = budgetMode ? 1 : 3;
     for (var i = 0; i < imgs.length; i += 1) {
       var rect = imgs[i].getBoundingClientRect();
       if (rect.bottom > 0 && rect.top < win.innerHeight) {
         promoteImage(imgs[i], true);
         hydrateImage(imgs[i]);
-        break;
+        visiblePromoted += 1;
+        if (visiblePromoted >= maxVisiblePromotions) break;
       }
     }
   }
 
   function primeNearFoldDataImages() {
     var nearFold = doc.querySelectorAll('img[data-src], img[data-srcset]');
-    var viewportBottom = win.innerHeight * 1.6;
+    var viewportBottom = win.innerHeight * (budgetMode ? 1.2 : 2.4);
 
     Array.prototype.forEach.call(nearFold, function (img) {
       var rect = img.getBoundingClientRect();
@@ -102,12 +111,25 @@
     });
   }
 
+  function preloadFirstSlides() {
+    var tracks = doc.querySelectorAll('.ps-track, #privTrack, #sharedTrack');
+    var perTrack = budgetMode ? 1 : 3;
+    Array.prototype.forEach.call(tracks, function (track) {
+      var imgs = track.querySelectorAll('img[data-src], img[data-srcset]');
+      for (var i = 0; i < imgs.length && i < perTrack; i += 1) {
+        promoteImage(imgs[i], i === 0);
+        hydrateImage(imgs[i]);
+      }
+    });
+  }
+
   Array.prototype.forEach.call(doc.querySelectorAll('img'), function (img) {
     promoteImage(img, false);
     onceLoaded(img);
   });
 
   primeCriticalImages();
+  preloadFirstSlides();
   primeNearFoldDataImages();
 
   // Lazy hydrate the rest of data-src images.
