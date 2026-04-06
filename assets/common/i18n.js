@@ -139,32 +139,42 @@
     return { textNodes, attrs };
   }
 
-  async function translatePage(lang) {
-    document.documentElement.lang = REGION_LANG[lang] || 'en';
-    document.documentElement.setAttribute('data-i18n-loading', lang === 'en' ? '0' : '1');
-
-    const { textNodes, attrs } = gatherNodes();
-
-    const tasks = [];
-    textNodes.forEach((node) => {
-      tasks.push(async () => {
-        const source = originalText.get(node) || '';
-        node.nodeValue = lang === 'en' ? source : await fetchTranslation(source, lang);
-      });
+  async function translateUniqueTexts(sources, lang) {
+    const unique = Array.from(new Set(sources.filter((value) => normalizeText(value))));
+    const translatedMap = new Map();
+    const tasks = unique.map((source) => async () => {
+      const translated = lang === 'en' ? source : await fetchTranslation(source, lang);
+      translatedMap.set(source, translated);
     });
 
-    attrs.forEach(([el, attr]) => {
-      tasks.push(async () => {
-        const source = (originalAttrs.get(el) || {})[attr] || '';
-        el.setAttribute(attr, lang === 'en' ? source : await fetchTranslation(source, lang));
-      });
-    });
-
-    const concurrency = 8;
+    const concurrency = 10;
     for (let i = 0; i < tasks.length; i += concurrency) {
       const chunk = tasks.slice(i, i + concurrency).map((fn) => fn());
       await Promise.all(chunk);
     }
+
+    return translatedMap;
+  }
+
+  async function translatePage(lang) {
+    if (window.location.pathname.toLowerCase().includes('welcome.html')) return;
+    document.documentElement.lang = REGION_LANG[lang] || 'en';
+    document.documentElement.setAttribute('data-i18n-loading', lang === 'en' ? '0' : '1');
+
+    const { textNodes, attrs } = gatherNodes();
+    const textSources = textNodes.map((node) => originalText.get(node) || '');
+    const attrSources = attrs.map(([el, attr]) => (originalAttrs.get(el) || {})[attr] || '');
+    const translatedMap = await translateUniqueTexts([...textSources, ...attrSources], lang);
+
+    textNodes.forEach((node) => {
+      const source = originalText.get(node) || '';
+      node.nodeValue = translatedMap.get(source) || source;
+    });
+
+    attrs.forEach(([el, attr]) => {
+      const source = (originalAttrs.get(el) || {})[attr] || '';
+      el.setAttribute(attr, translatedMap.get(source) || source);
+    });
 
     document.documentElement.setAttribute('data-i18n-loading', '0');
   }
