@@ -127,12 +127,12 @@
   --sh2:0 8px 40px rgba(14,42,69,.18);
   --ease:.22s ease;
 }
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth;font-size:16px;overscroll-behavior-y:none}
 body{
   font-family:'Montserrat',sans-serif;
   color:var(--ink);
   background:#ffffff;
-  overflow-x:hidden;
+  overflow-x:hidden;overscroll-behavior-y:none;
   -webkit-font-smoothing:antialiased;
   color-scheme:light;
 }
@@ -371,8 +371,8 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 .float-wa svg{width:28px;height:28px}
 
 /* ── SCROLL REVEAL ── */
-.rv{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
-.rv.vis{opacity:1;transform:none}
+.rv{opacity:0;transform:translate3d(0,16px,0);transition:opacity .5s,transform .5s;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.rv.vis{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 .rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
 
 </style>
@@ -703,6 +703,7 @@ function subBk(){
   if(suc)  suc.style.display  = 'block';
 }
 </script>
+<script src="assets/common/tour.js" defer></script>
 <script src="assets/common/perf.js" defer></script>
 </body>
 </html>

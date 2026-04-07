@@ -28,6 +28,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,800;0,900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<!-- Preload the 2nd hero slide so the first transition is instant -->
+<link rel="preload" as="image" href="assets/indexslider/2.JPEG">
 <link rel="stylesheet" href="assets/common/perf.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -40,8 +42,8 @@
   --sh:0 2px 20px rgba(14,42,69,.10);--sh2:0 8px 40px rgba(14,42,69,.18);
   --ease:.22s ease;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;color-scheme:light}
+html{scroll-behavior:smooth;overscroll-behavior-y:none}
+body{font-family:'Montserrat',sans-serif;color:var(--ink);background:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased;color-scheme:light;overscroll-behavior-y:none}
 img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -295,15 +297,15 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 .ft-bottom{font-size:11px}
 
 /* FLOAT BUTTONS */
-.float-ig,.float-wa{position:fixed;right:20px;z-index:400;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .22s}
+.float-ig,.float-wa{position:fixed;right:20px;z-index:400;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .22s;will-change:transform;transform:translateZ(0)}
 .float-wa{bottom:20px;background:#25D366;box-shadow:0 4px 20px rgba(37,211,102,.40)}
 .float-ig{bottom:82px;background:transparent;box-shadow:0 4px 18px rgba(188,24,136,.32)}
 .float-ig:hover,.float-wa:hover{transform:scale(1.10)}
 .float-ig svg,.float-wa svg{width:52px;height:52px;border-radius:50%}
 
-/* REVEAL */
-.rv{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
-.rv.vis{opacity:1;transform:none}
+/* REVEAL — use translate3d so the browser keeps elements on the GPU compositor */
+.rv{opacity:0;transform:translate3d(0,16px,0);transition:opacity .5s,transform .5s;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.rv.vis{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 .rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
 </style>
 </head>
@@ -873,6 +875,8 @@ if (mc) mc.addEventListener('click', closeMob);
   var ctr  = document.getElementById('hsCtr');
   var N = imgs.length;
   if (!N) return;
+
+  // Build dots
   if (dotsWrap) {
     dotsWrap.innerHTML = '';
     for (var di = 0; di < N; di++) {
@@ -887,14 +891,41 @@ if (mc) mc.addEventListener('click', closeMob);
   var dots = Array.from(document.querySelectorAll('#hsDots .hc-dot'));
   var cur = 0;
 
+  // Preload a slide so it's ready before the transition fires
+  function preloadSlide(i) {
+    var idx = ((i % N) + N) % N;
+    var img = imgs[idx];
+    if (!img) return;
+    if (img.dataset && img.dataset.src && !img.src) {
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+      img.decoding = 'async';
+      img.addEventListener('load', function(){ img.classList.add('loaded'); }, {once:true});
+    }
+  }
+
   function show(i) {
     imgs[cur].classList.remove('hs-on');
     if (dots[cur]) dots[cur].classList.remove('hc-on');
     cur = ((i % N) + N) % N;
+    // Hydrate the target slide if not yet loaded
+    var img = imgs[cur];
+    if (img.dataset && img.dataset.src && !img.src) {
+      img.src = img.dataset.src;
+      delete img.dataset.src;
+      img.decoding = 'async';
+      img.addEventListener('load', function(){ img.classList.add('loaded'); }, {once:true});
+    }
     imgs[cur].classList.add('hs-on');
     if (dots[cur]) dots[cur].classList.add('hc-on');
     if (ctr) ctr.textContent = (cur + 1) + ' / ' + N;
+    // Preload the next slide while the current one plays
+    preloadSlide(cur + 1);
   }
+
+  // Preload slides 2 and 3 immediately (slide 1 is already loaded as eager)
+  preloadSlide(1);
+  preloadSlide(2);
 
   var timer = setInterval(function() { show(cur + 1); }, 5000);
   function reset() {
@@ -902,8 +933,10 @@ if (mc) mc.addEventListener('click', closeMob);
     timer = setInterval(function() { show(cur + 1); }, 5000);
   }
 
-  document.getElementById('hsPrev').onclick = function() { show(cur - 1); reset(); };
-  document.getElementById('hsNext').onclick = function() { show(cur + 1); reset(); };
+  var prevBtn = document.getElementById('hsPrev');
+  var nextBtn = document.getElementById('hsNext');
+  if (prevBtn) prevBtn.onclick = function() { show(cur - 1); reset(); };
+  if (nextBtn) nextBtn.onclick = function() { show(cur + 1); reset(); };
   dots.forEach(function(d, i) { d.onclick = function() { show(i); reset(); }; });
 
   var sx = 0;
