@@ -1,28 +1,15 @@
-/* =============================================
-   Global Performance & Stability Optimizations
-   =============================================
-   Applies to every page on the site.
-*/
+/* Global Performance & Stability — beyondthereef.mx */
 
-/* ── Smooth scrolling + overscroll stability ── */
 html {
   scroll-behavior: smooth;
-  /* Prevents the page from "bouncing" at the top/bottom edges
-     (iOS rubber-band) which causes the visible shake when scrolling up */
   overscroll-behavior-y: none;
-  /* Hint to the browser that scroll position changes – keeps the
-     compositing layer ready so frames are never dropped */
   -webkit-overflow-scrolling: touch;
 }
 body {
   overscroll-behavior-y: none;
 }
 
-/* ── GPU layer for fixed elements ──────────────
-   Promotes the floating buttons and nav into their own
-   compositing layers so they NEVER trigger a page repaint
-   when the user scrolls.
-*/
+/* Promote fixed floating buttons & nav to GPU compositor layers */
 .float-ig,
 .float-wa {
   will-change: transform;
@@ -31,52 +18,27 @@ body {
 
 .nav,
 .mob-menu {
-  /* backface-visibility avoids repaint artefacts on some mobile GPUs */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* ── Scroll-reveal elements ────────────────────
-   Use transform3d so the browser keeps them on the GPU.
-   translateZ(0) primes the layer BEFORE the reveal fires
-   which prevents a one-frame geometry flash.
-*/
+/* Scroll-reveal: keep on GPU, release hint once visible */
 .rv {
   will-change: opacity, transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
-/* Once revealed, release the will-change hint to free GPU memory */
 .rv.vis {
   will-change: auto;
 }
 
-/* ── Slider tracks ─────────────────────────────
-   The tracks already carry will-change:transform in their
-   own styles; pan-y here tells the browser that horizontal
-   touch gestures belong to JavaScript, not native scroll,
-   so the page scroll and the slider never fight each other.
-*/
+/* Prevent slider drag from fighting native page scroll */
 .sl-track,
 .ps-track {
   touch-action: pan-y pinch-zoom;
 }
 
-/* ── Image loading ─────────────────────────────
-   Keep content-visibility only on true lazy images where
-   the browser has explicit width/height (avoids the CLS
-   that the section-level rule caused when scrolling back up).
-   We removed content-visibility:auto from sections entirely
-   because the intrinsic-size estimate (900px) never matched
-   real section heights, causing a visible layout jump on
-   every scroll-up transition.
-*/
-img[loading="lazy"] {
-  /* Removed content-visibility:auto — it caused flicker on
-     images without explicit width/height attributes. */
-}
-
-/* ── Reduced motion ────────────────────────────*/
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
