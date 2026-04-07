@@ -18,13 +18,13 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="stylesheet" href="assets/common/perf.css">
 <style>
-.ps{position:relative;width:100%;height:56.25vw;overflow:hidden;background:var(--navy);margin-top:64px}
+.ps{position:relative;width:100%;height:min(500px,70vw);min-height:240px;overflow:hidden;background:var(--navy);margin-top:64px}
 .ps-track{display:flex;height:100%;transition:transform .35s cubic-bezier(.4,0,.2,1);will-change:transform}
 .ps-slide{flex:0 0 100%;height:100%;position:relative;background:var(--navy)}
 .ps-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
 .ps-slide img.loaded{opacity:1}
 
-.ps-nav{display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 20px 12px;background:#fff;border-bottom:1.5px solid var(--border)}
+.ps-nav{display:flex;align-items:center;justify-content:space-between;padding:10px 40px 12px;background:#fff;border-bottom:1.5px solid var(--border)}
 .ps-btn{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-size:20px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s;border:none;flex-shrink:0}
 .ps-btn:hover{background:var(--teal)}
 .ps-btn:active{transform:scale(.92)}
@@ -423,7 +423,6 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </div>
 <div class="ps-nav">
   <button class="ps-btn ps-prev" id="psPrev" aria-label="Previous photo">&#8592;</button>
-  <div class="ps-dots" id="psDots"><button class="ps-dot" aria-label="Photo 1"></button><button class="ps-dot" aria-label="Photo 2"></button><button class="ps-dot" aria-label="Photo 3"></button><button class="ps-dot" aria-label="Photo 4"></button></div>
   <button class="ps-btn ps-next" id="psNext" aria-label="Next photo">&#8594;</button>
 </div>
 
