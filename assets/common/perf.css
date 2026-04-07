@@ -1,24 +1,44 @@
-/* Global performance optimizations */
-@supports (content-visibility: auto) {
-  main > section,
-  body > section,
-  .sec,
-  .rel-sec,
-  .t-wrap,
-  .faq,
-  .faq-sec,
-  .reviews,
-  .story,
-  footer {
-    content-visibility: auto;
-    contain-intrinsic-size: 1px 900px;
-  }
+/* Global Performance & Stability — beyondthereef.mx */
+
+html {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+  -webkit-overflow-scrolling: touch;
+}
+body {
+  overscroll-behavior-y: none;
 }
 
-img[loading="lazy"] {
-  content-visibility: auto;
+/* Promote fixed floating buttons & nav to GPU compositor layers */
+.float-ig,
+.float-wa {
+  will-change: transform;
+  transform: translateZ(0);
 }
 
+.nav,
+.mob-menu {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Scroll-reveal: keep on GPU, release hint once visible */
+.rv {
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.rv.vis {
+  will-change: auto;
+}
+
+/* Prevent slider drag from fighting native page scroll */
+.sl-track,
+.ps-track {
+  touch-action: pan-y pinch-zoom;
+}
+
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

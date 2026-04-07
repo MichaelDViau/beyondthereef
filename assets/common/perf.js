@@ -8,17 +8,23 @@
   var slowConnection = /2g/.test(effectiveType);
   var budgetMode = saveData || slowConnection;
 
+  /* ── Mark image as loaded (adds .loaded class for CSS fade-in) ── */
   function onceLoaded(img) {
     if (!img) return;
-    if (img.complete) {
+    if (img.complete && img.naturalWidth > 0) {
       img.classList.add('loaded');
       return;
     }
     img.addEventListener('load', function () {
       img.classList.add('loaded');
     }, { once: true });
+    img.addEventListener('error', function () {
+      /* On error still remove the blur / placeholder state */
+      img.classList.add('loaded');
+    }, { once: true });
   }
 
+  /* ── Set priority hints on an image ── */
   function promoteImage(img, isCritical) {
     if (!img) return;
     if (!img.decoding) img.decoding = 'async';
@@ -28,41 +34,50 @@
       onceLoaded(img);
       return;
     }
-
     if (!img.loading && !img.hasAttribute('fetchpriority')) {
       img.loading = 'lazy';
     }
   }
 
+  /* ── Swap data-src / data-srcset into real attributes ── */
   function hydrateImage(img) {
     if (!img || !img.dataset) return;
 
     var hasSource = false;
+
     if (img.dataset.src && !img.getAttribute('src')) {
       img.src = img.dataset.src;
-      img.removeAttribute('data-src');
+      delete img.dataset.src;
       hasSource = true;
     } else if (img.dataset.src) {
-      img.removeAttribute('data-src');
+      delete img.dataset.src;
     }
 
     if (img.dataset.srcset && !img.getAttribute('srcset')) {
       img.srcset = img.dataset.srcset;
-      img.removeAttribute('data-srcset');
+      delete img.dataset.srcset;
       hasSource = true;
     } else if (img.dataset.srcset) {
-      img.removeAttribute('data-srcset');
+      delete img.dataset.srcset;
     }
 
     if (hasSource && typeof img.decode === 'function') {
-      img.decode().catch(function () {
-        // Ignore decode errors; browser will still paint the image.
+      /* decode() resolves when the image is ready to paint —
+         this avoids the single-frame "flash of invisible image"
+         that can appear when an image completes loading mid-scroll. */
+      img.decode().then(function () {
+        img.classList.add('loaded');
+      }).catch(function () {
+        /* decode() may reject for SVG or display:none images; fall back */
+        onceLoaded(img);
       });
+      return;
     }
 
     onceLoaded(img);
   }
 
+  /* ── Prime above-the-fold images (LCP candidates) ── */
   function primeCriticalImages() {
     var criticalSelectors = [
       '.hs-img.hs-on',
@@ -83,24 +98,28 @@
       hydrateImage(found);
     });
 
-    // Promote the first visible image as an LCP fallback.
+    /* Promote the first few visible images as LCP fallbacks */
     var imgs = Array.prototype.slice.call(doc.images || []);
     var visiblePromoted = 0;
-    var maxVisiblePromotions = budgetMode ? 1 : 3;
-    for (var i = 0; i < imgs.length; i += 1) {
+    var maxVisiblePromotions = budgetMode ? 1 : 4;
+    for (var i = 0; i < imgs.length; i++) {
       var rect = imgs[i].getBoundingClientRect();
       if (rect.bottom > 0 && rect.top < win.innerHeight) {
         promoteImage(imgs[i], true);
         hydrateImage(imgs[i]);
-        visiblePromoted += 1;
+        visiblePromoted++;
         if (visiblePromoted >= maxVisiblePromotions) break;
       }
     }
   }
 
+  /* ── Hydrate images that are close to the viewport ── */
   function primeNearFoldDataImages() {
     var nearFold = doc.querySelectorAll('img[data-src], img[data-srcset]');
-    var viewportBottom = win.innerHeight * (budgetMode ? 1.2 : 2.4);
+    /* Load anything within 2× viewport height on fast connections,
+       1.2× on slow / data-saver — gives a comfortable preload buffer
+       without wasting bandwidth on images far below the fold. */
+    var viewportBottom = win.innerHeight * (budgetMode ? 1.2 : 2.5);
 
     Array.prototype.forEach.call(nearFold, function (img) {
       var rect = img.getBoundingClientRect();
@@ -111,18 +130,22 @@
     });
   }
 
+  /* ── Preload the first N slides of every track ── */
   function preloadFirstSlides() {
     var tracks = doc.querySelectorAll('.ps-track, #privTrack, #sharedTrack');
-    var perTrack = budgetMode ? 1 : 3;
+    /* On fast connections load 4 slides per track so the first manual
+       swipe is always instant; budget mode loads just 1. */
+    var perTrack = budgetMode ? 1 : 4;
     Array.prototype.forEach.call(tracks, function (track) {
       var imgs = track.querySelectorAll('img[data-src], img[data-srcset]');
-      for (var i = 0; i < imgs.length && i < perTrack; i += 1) {
+      for (var i = 0; i < imgs.length && i < perTrack; i++) {
         promoteImage(imgs[i], i === 0);
         hydrateImage(imgs[i]);
       }
     });
   }
 
+  /* ── Baseline: mark already-loaded images ── */
   Array.prototype.forEach.call(doc.querySelectorAll('img'), function (img) {
     promoteImage(img, false);
     onceLoaded(img);
@@ -132,12 +155,19 @@
   preloadFirstSlides();
   primeNearFoldDataImages();
 
-  // Lazy hydrate the rest of data-src images.
+  /* ── Fallback for browsers without IntersectionObserver ── */
   if (!('IntersectionObserver' in win)) {
-    Array.prototype.forEach.call(doc.querySelectorAll('img[data-src], img[data-srcset]'), hydrateImage);
+    Array.prototype.forEach.call(
+      doc.querySelectorAll('img[data-src], img[data-srcset]'),
+      hydrateImage
+    );
     return;
   }
 
+  /* ── IntersectionObserver lazy-hydration ──
+     800px rootMargin gives a generous preload buffer so images
+     are already decoded before the user reaches them.
+  */
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
@@ -145,13 +175,14 @@
       hydrateImage(img);
       io.unobserve(img);
     });
-  }, { rootMargin: '500px 0px' });
+  }, { rootMargin: '800px 0px' });
 
-  Array.prototype.forEach.call(doc.querySelectorAll('img[data-src], img[data-srcset]'), function (img) {
-    io.observe(img);
-  });
+  Array.prototype.forEach.call(
+    doc.querySelectorAll('img[data-src], img[data-srcset]'),
+    function (img) { io.observe(img); }
+  );
 
-  // Improve stability: pause heavy media decoding while tab is hidden and resume preloading when visible again.
+  /* ── Resume preloading when tab becomes visible again ── */
   doc.addEventListener('visibilitychange', function () {
     if (doc.visibilityState !== 'visible') return;
     primeNearFoldDataImages();

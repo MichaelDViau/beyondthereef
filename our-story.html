@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- i18n: detect lang before first paint -->
+<script>(function(){try{var l=localStorage.getItem('btrPreferredLanguage')||'en';window._btrLang=l;if(l!=='en')document.documentElement.classList.add('btr-i18n-loading');}catch(e){}}());</script>
+<style>.btr-i18n-loading body{visibility:hidden!important}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
@@ -36,12 +39,12 @@
   --sh2:0 8px 40px rgba(14,42,69,.18);
   --ease:.22s ease;
 }
-html{scroll-behavior:smooth;font-size:16px}
+html{scroll-behavior:smooth;font-size:16px;overscroll-behavior-y:none}
 body{
   font-family:'Montserrat',sans-serif;
   color:var(--ink);
   background:#ffffff;
-  overflow-x:hidden;
+  overflow-x:hidden;overscroll-behavior-y:none;
   -webkit-font-smoothing:antialiased;
   color-scheme:light;
 }
@@ -65,7 +68,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .nav-logo img{width:42px;height:42px;border-radius:8px;object-fit:contain;display:block}
 .nav-logo-words{display:flex;flex-direction:column;line-height:1.1}
-.nav-logo-name{font-size:14px;font-weight:900;color:#fff;letter-spacing:-.02em}
+.nav-logo-name{font-size:17px;font-weight:900;color:#fff;letter-spacing:-.02em}
 .nav-logo-sub{font-size:9px;font-weight:700;color:rgba(255,255,255,.60);letter-spacing:.10em;text-transform:uppercase}
 .nav-links{display:none;align-items:center;gap:2px;margin:0 16px}
 .nav-links a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.88);padding:6px 11px;border-radius:var(--rp);transition:background var(--ease),color var(--ease)}
@@ -277,19 +280,22 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
   transition:transform var(--ease);
 }
 .float-wa:hover{transform:scale(1.1)}
-.float-wa svg{width:28px;height:28px}
+.float-wa svg{width:52px;height:52px}
 
 /* ── SCROLL REVEAL ── */
-.rv{opacity:0;transform:translateY(16px);transition:opacity .5s,transform .5s}
-.rv.vis{opacity:1;transform:none}
+.rv{opacity:0;transform:translate3d(0,16px,0);transition:opacity .5s,transform .5s;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.rv.vis{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 .rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
 
 
-.float-ig{position:fixed;bottom:84px;right:20px;z-index:400;width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(188,24,136,.35);transition:transform .22s;background:transparent;text-decoration:none}
+.float-ig{position:fixed;bottom:82px;right:20px;z-index:400;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(188,24,136,.32);transition:transform .22s;background:transparent;text-decoration:none}
 .float-ig:hover{transform:scale(1.1)}
-.float-ig svg{width:46px;height:46px;border-radius:50%}
+.float-ig svg{width:52px;height:52px;border-radius:50%}
 
+
+/* ── Language switcher ── */
 </style>
+<script src="assets/common/i18n.js"></script>
 </head>
 <body style="color-scheme:light;background:#ffffff">
 <nav class="nav" id="mainNav">
@@ -301,14 +307,14 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     </div>
   </a>
   <div class="nav-links">
-    <a href="tours.html">Private Experiences</a>
-    <a href="tours.html#shared">Shared Experiences</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="our-story.html">Our Story</a>
-    <a href="index.html#contact">Contact</a>
+    <a href="tours.html" data-i18n="c.nav.private">Private Experiences</a>
+    <a href="tours.html#shared" data-i18n="c.nav.shared">Shared Experiences</a>
+    <a href="reviews.html" data-i18n="c.nav.reviews">Reviews</a>
+    <a href="our-story.html" data-i18n="c.nav.story">Our Story</a>
+    <a href="index.html#contact" data-i18n="c.nav.contact">Contact</a>
   </div>
   <div class="nav-right">
-    <a href="https://wa.me/529623562346" class="nav-cta btn" target="_blank" rel="noopener">Book Now →</a>
+    <a href="https://wa.me/529623562346" class="nav-cta btn" data-i18n="c.nav.book" target="_blank" rel="noopener">Book Now →</a>
     <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -316,63 +322,63 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </nav>
 <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
   <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
-  <a href="tours.html" onclick="closeMob()">Private Experiences</a>
-  <a href="tours.html#shared" onclick="closeMob()">Shared Experiences</a>
-  <a href="reviews.html" onclick="closeMob()">Reviews</a>
-  <a href="our-story.html" onclick="closeMob()">Our Story</a>
-  <a href="index.html#contact" onclick="closeMob()">Contact</a>
+  <a href="tours.html" onclick="closeMob()" data-i18n="c.nav.private">Private Experiences</a>
+  <a href="tours.html#shared" onclick="closeMob()" data-i18n="c.nav.shared">Shared Experiences</a>
+  <a href="reviews.html" onclick="closeMob()" data-i18n="c.nav.reviews">Reviews</a>
+  <a href="our-story.html" onclick="closeMob()" data-i18n="c.nav.story">Our Story</a>
+  <a href="index.html#contact" onclick="closeMob()" data-i18n="c.nav.contact">Contact</a>
   <a href="https://wa.me/529623562346" class="mob-wa" target="_blank" rel="noopener" onclick="closeMob()">💬 Book on WhatsApp</a>
 </div>
 
 <div style="background:linear-gradient(135deg,var(--navy) 0%,#1A5276 100%);padding:110px 20px 60px;text-align:center">
-  <div class="lbl lbl-white">Our Story</div>
-  <h1 style="font-size:clamp(30px,7vw,52px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:14px">Born in the Riviera Maya</h1>
+  <div class="lbl lbl-white" data-i18n="story.lbl">Our Story</div>
+  <h1 style="font-size:clamp(30px,7vw,52px);font-weight:900;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:14px" data-i18n="story.h1">Born in the Riviera Maya</h1>
   <p style="font-size:15px;color:rgba(255,255,255,.72);max-width:520px;margin:0 auto">14+ years of private experiences, certified hosts, and unforgettable moments.</p>
 </div>
 <section class="sec" style="background:#ffffff">
   <div style="display:grid;grid-template-columns:1fr;gap:32px;align-items:center;max-width:900px;margin:0 auto">
     <div>
-      <div class="lbl">Who We Are</div>
-      <h2 class="h2">More than a tour company.</h2>
-      <p style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">Beyond the Reef Mexico is more than a tour company. We create private experiences that let you feel the true Riviera Maya in a more personal, relaxed, and authentic way.</p>
-      <p style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">We are not about crowded attractions, rushed schedules, or one size fits all tours. We are about taking the time to do things right, giving every guest a more meaningful experience, and sharing places, flavors, and moments that feel real.</p>
-      <p style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">Our certified bilingual hosts have more than 10 years of experience and a deep connection to the region. From hidden cenotes and peaceful beaches to local food and ancient ruins, they know how to show you a side of the Riviera Maya that most visitors never truly experience.</p>
-      <p style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">We care deeply about the people we serve and the people we work with. That means thoughtful service, honest hospitality, and a team that is respected and fairly rewarded for the care they bring to every tour.</p>
-      <p style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">Whether you are snorkeling with sea turtles, discovering UNESCO World Heritage sites, heading out on a fishing charter, or enjoying an unforgettable taco tour, every detail is arranged with care so you can simply enjoy the moment.</p>
-      <p style="font-size:15px;line-height:1.82;color:var(--muted)">This is the Riviera Maya, without the rush.</p>
+      <div id="storyWhoLbl" class="lbl">Who We Are</div>
+      <h2 id="storyWhoH2" class="h2">More than a tour company.</h2>
+      <p id="storyWhoP1" style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">Beyond the Reef Mexico is more than a tour company. We create private experiences that let you feel the true Riviera Maya in a more personal, relaxed, and authentic way.</p>
+      <p id="storyWhoP2" style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">We are not about crowded attractions, rushed schedules, or one size fits all tours. We are about taking the time to do things right, giving every guest a more meaningful experience, and sharing places, flavors, and moments that feel real.</p>
+      <p id="storyWhoP3" style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">Our certified bilingual hosts have more than 10 years of experience and a deep connection to the region. From hidden cenotes and peaceful beaches to local food and ancient ruins, they know how to show you a side of the Riviera Maya that most visitors never truly experience.</p>
+      <p id="storyWhoP4" style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">We care deeply about the people we serve and the people we work with. That means thoughtful service, honest hospitality, and a team that is respected and fairly rewarded for the care they bring to every tour.</p>
+      <p id="storyWhoP5" style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:16px">Whether you are snorkeling with sea turtles, discovering UNESCO World Heritage sites, heading out on a fishing charter, or enjoying an unforgettable taco tour, every detail is arranged with care so you can simply enjoy the moment.</p>
+      <p id="storyWhoP6" style="font-size:15px;line-height:1.82;color:var(--muted)">This is the Riviera Maya, without the rush.</p>
     </div>
     <div style="background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:var(--r3);padding:40px 32px;color:#fff;text-align:center">
       <div style="font-size:52px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:4px">14+</div>
-      <div style="font-size:14px;font-weight:700;margin-bottom:28px;color:rgba(255,255,255,.65)">Years serving the Riviera Maya</div>
+      <div id="storyStatYears" style="font-size:14px;font-weight:700;margin-bottom:28px;color:rgba(255,255,255,.65)">Years serving the Riviera Maya</div>
       <div style="font-size:52px;font-weight:900;color:var(--coral);line-height:1;margin-bottom:4px">100%</div>
-      <div style="font-size:14px;font-weight:700;margin-bottom:28px;color:rgba(255,255,255,.65)">Private experiences - always just your group</div>
+      <div id="storyStatPriv" style="font-size:14px;font-weight:700;margin-bottom:28px;color:rgba(255,255,255,.65)">Private experiences - always just your group</div>
       <div style="font-size:52px;font-weight:900;color:#fff;line-height:1;margin-bottom:4px">5★</div>
-      <div style="font-size:14px;font-weight:700;margin-bottom:28px;color:rgba(255,255,255,.65)">Rating across all platforms</div>
-      <a href="https://wa.me/529623562346" class="btn btn-coral btn-md" target="_blank" rel="noopener">Book Your Tour →</a>
+      <div id="storyStatStars" style="font-size:14px;font-weight:700;margin-bottom:28px;color:rgba(255,255,255,.65)">Rating across all platforms</div>
+      <a href="https://wa.me/529623562346" class="btn btn-coral btn-md" target="_blank" rel="noopener" data-i18n="story.cta">Book Your Tour →</a>
     </div>
   </div>
 </section>
 <section class="sec" style="background:#FFF8E7;text-align:center">
-  <div class="lbl">Our Values</div>
-  <h2 class="h2">What makes us different.</h2>
+  <div id="storyValLbl" class="lbl">Our Values</div>
+  <h2 id="storyValH2" class="h2">What makes us different.</h2>
   <div style="max-width:860px;margin:0 auto 28px">
-    <h3 style="font-size:26px;font-weight:900;color:var(--navy);margin-bottom:14px">More Than a Day Out</h3>
-    <p style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:12px">Some experiences are rushed.</p>
-    <p style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:12px">Some feel crowded.</p>
-    <p style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:12px">Some feel like everyone gets the exact same thing.</p>
-    <p style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:12px">That is not how we do it.</p>
-    <p style="font-size:15px;line-height:1.82;color:var(--muted)">We believe the Riviera Maya is best experienced slowly, personally, and with real care. Whether you choose a private experience or a shared experience, our goal is always the same: to make you feel welcome, looked after, and truly connected to this place.</p>
+    <h3 id="storyValH3" style="font-size:26px;font-weight:900;color:var(--navy);margin-bottom:14px">More Than a Day Out</h3>
+    <p id="storyValP1" style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:12px">Some experiences are rushed.</p>
+    <p id="storyValP2" style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:12px">Some feel crowded.</p>
+    <p id="storyValP3" style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:12px">Some feel like everyone gets the exact same thing.</p>
+    <p id="storyValP4" style="font-size:15px;line-height:1.82;color:var(--muted);margin-bottom:12px">That is not how we do it.</p>
+    <p id="storyValP5" style="font-size:15px;line-height:1.82;color:var(--muted)">We believe the Riviera Maya is best experienced slowly, personally, and with real care. Whether you choose a private experience or a shared experience, our goal is always the same: to make you feel welcome, looked after, and truly connected to this place.</p>
   </div>
-  <h3 style="font-size:24px;font-weight:900;color:var(--navy);margin-bottom:18px">Why Guests Choose Us</h3>
+  <h3 id="storyWhyH3" style="font-size:24px;font-weight:900;color:var(--navy);margin-bottom:18px">Why Guests Choose Us</h3>
   <div style="display:grid;grid-template-columns:1fr;gap:16px;max-width:800px;margin:0 auto">
-    <div style="background:#fff;border-radius:var(--r2);padding:24px;border:1.5px solid var(--border);box-shadow:var(--sh);text-align:left"><h4 style="font-size:16px;font-weight:800;margin-bottom:8px">Because care matters</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">Your safety, comfort, and peace of mind come first. Every detail is carefully planned so you can relax and enjoy the experience fully.</p></div>
-    <div style="background:#fff;border-radius:var(--r2);padding:24px;border:1.5px solid var(--border);box-shadow:var(--sh);text-align:left"><h4 style="font-size:16px;font-weight:800;margin-bottom:8px">Because the moment matters</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">Professional photos are included with every private experience, so you can stay present and leave with real memories that last.</p></div>
-    <div style="background:#fff;border-radius:var(--r2);padding:24px;border:1.5px solid var(--border);box-shadow:var(--sh);text-align:left"><h4 style="font-size:16px;font-weight:800;margin-bottom:8px">Because this place matters</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">We believe the Riviera Maya should be experienced with respect. We care for nature, honor wildlife, support local businesses, and share this region in a more meaningful way.</p></div>
-    <div style="background:#fff;border-radius:var(--r2);padding:24px;border:1.5px solid var(--border);box-shadow:var(--sh);text-align:left"><h4 style="font-size:16px;font-weight:800;margin-bottom:8px">Because people matter</h4><p style="font-size:13px;color:var(--muted);line-height:1.7">We are here when you need us, with clear communication, personal attention, and the kind of service that makes you feel genuinely cared for.</p></div>
+    <div style="background:#fff;border-radius:var(--r2);padding:24px;border:1.5px solid var(--border);box-shadow:var(--sh);text-align:left"><h4 id="storyWhy1H" style="font-size:16px;font-weight:800;margin-bottom:8px">Because care matters</h4><p id="storyWhy1P" style="font-size:13px;color:var(--muted);line-height:1.7">Your safety, comfort, and peace of mind come first. Every detail is carefully planned so you can relax and enjoy the experience fully.</p></div>
+    <div style="background:#fff;border-radius:var(--r2);padding:24px;border:1.5px solid var(--border);box-shadow:var(--sh);text-align:left"><h4 id="storyWhy2H" style="font-size:16px;font-weight:800;margin-bottom:8px">Because the moment matters</h4><p id="storyWhy2P" style="font-size:13px;color:var(--muted);line-height:1.7">Professional photos are included with every private experience, so you can stay present and leave with real memories that last.</p></div>
+    <div style="background:#fff;border-radius:var(--r2);padding:24px;border:1.5px solid var(--border);box-shadow:var(--sh);text-align:left"><h4 id="storyWhy3H" style="font-size:16px;font-weight:800;margin-bottom:8px">Because this place matters</h4><p id="storyWhy3P" style="font-size:13px;color:var(--muted);line-height:1.7">We believe the Riviera Maya should be experienced with respect. We care for nature, honor wildlife, support local businesses, and share this region in a more meaningful way.</p></div>
+    <div style="background:#fff;border-radius:var(--r2);padding:24px;border:1.5px solid var(--border);box-shadow:var(--sh);text-align:left"><h4 id="storyWhy4H" style="font-size:16px;font-weight:800;margin-bottom:8px">Because people matter</h4><p id="storyWhy4P" style="font-size:13px;color:var(--muted);line-height:1.7">We are here when you need us, with clear communication, personal attention, and the kind of service that makes you feel genuinely cared for.</p></div>
   </div>
   <div style="max-width:800px;margin:28px auto 0">
-    <h3 style="font-size:24px;font-weight:900;color:var(--navy);margin-bottom:12px">Ready to experience the Riviera Maya differently?</h3>
-    <p style="font-size:15px;line-height:1.82;color:var(--muted)">Choose a private experience designed around you, or join a shared experience that still feels personal, thoughtful, and full of heart.</p>
+    <h3 id="storyReadyH3" style="font-size:24px;font-weight:900;color:var(--navy);margin-bottom:12px">Ready to experience the Riviera Maya differently?</h3>
+    <p id="storyReadyP" style="font-size:15px;line-height:1.82;color:var(--muted)">Choose a private experience designed around you, or join a shared experience that still feels personal, thoughtful, and full of heart.</p>
   </div>
 </section>
 <footer>
@@ -382,7 +388,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         <img src="assets/common/logo.png" alt="Beyond the Reef Mexico" width="38" height="38">
         <span class="ft-logo-name">Beyond the Reef Mexico</span>
       </div>
-      <p class="ft-tagline">Private & shared experiences in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
+      <p class="ft-tagline" data-i18n="c.ft.tagline">Private & shared experiences in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
       <div class="ft-social">
         <a href="https://wa.me/529623562346" class="ft-soc" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
         <a href="/cdn-cgi/l/email-protection#b1d8dfd7def1d3d4c8dedfd5c5d9d4c3d4d4d7dcd4c9d8d2de9fd2dedc" class="ft-soc" aria-label="Email">
@@ -394,32 +400,32 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
       </div>
     </div>
     <div>
-      <p class="ft-h">Explore</p>
+      <p class="ft-h" data-i18n="c.ft.explore">Explore</p>
       <div class="ft-links">
-        <a href="tours.html">Private Experiences</a>
-        <a href="tours.html#shared">Shared Experiences</a>
-        <a href="reviews.html">Guest Reviews</a>
-        <a href="our-story.html">Our Story</a>
+        <a href="tours.html" data-i18n="c.nav.private">Private Experiences</a>
+        <a href="tours.html#shared" data-i18n="c.nav.shared">Shared Experiences</a>
+        <a href="reviews.html" data-i18n="c.nav.reviews">Guest Reviews</a>
+        <a href="our-story.html" data-i18n="c.ft.story">Our Story</a>
       </div>
     </div>
     <div>
-      <p class="ft-h">Contact</p>
+      <p class="ft-h" data-i18n="c.ft.contact">Contact</p>
       <div class="ft-links">
         <a href="https://wa.me/529623562346" target="_blank" rel="noopener">+52 962 356 2346</a>
         <a href="/cdn-cgi/l/email-protection#076e6961684765627e686963736f62756262616a627f6e64682964686a"><span class="__cf_email__" data-cfemail="bad3d4dcd5fad8dfc3d5d4deced2dfc8dfdfdcd7dfc2d3d9d594d9d5d7">[email&#160;protected]</span></a>
         <a href="https://www.instagram.com/beyondthereefmexico" target="_blank" rel="noopener">@beyondthereefmexico</a>
       </div>
-      <p class="ft-h" style="margin-top:20px">Destinations</p>
+      <p class="ft-h" data-i18n="c.ft.dest" style="margin-top:20px">Destinations</p>
       <div class="ft-links">
-        <a href="tours.html">Cancun Tours</a>
-        <a href="tours.html">Tulum Tours</a>
-        <a href="tours.html">Playa del Carmen Tours</a>
-        <a href="tours.html">Riviera Maya Tours</a>
+        <a href="tours.html" data-i18n="c.ft.cancun">Cancun Tours</a>
+        <a href="tours.html" data-i18n="c.ft.tulum">Tulum Tours</a>
+        <a href="tours.html" data-i18n="c.ft.playa">Playa del Carmen Tours</a>
+        <a href="tours.html" data-i18n="c.ft.riviera">Riviera Maya Tours</a>
       </div>
     </div>
   </div>
   <div class="ft-bottom">
-    <p>© 2025 Beyond the Reef Mexico. All rights reserved.</p>
+    <p><span data-i18n="c.ft.copy">© 2025 Beyond the Reef Mexico. All rights reserved.</span></p>
   </div>
 </footer>
 <a href="https://www.instagram.com/beyondthereefmexico" class="float-ig" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#igGrad)"/><rect x="8" y="8" width="16" height="16" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="21" cy="11" r="1" fill="white"/></svg></a>
@@ -543,5 +549,14 @@ function makeSlider(trackId,prevId,nextId,dotsId,cardSel,invDots){
 }
 </script>
 <script src="assets/common/perf.js" defer></script>
+<script>
+(function(){
+  if(window._btrLang&&window._btrLang!=='en'&&window.BTR_I18N){
+    BTR_I18N.apply(window._btrLang);
+  }
+  document.documentElement.classList.remove('btr-i18n-loading');
+  if(window.BTR_I18N) BTR_I18N.setup();
+}());
+</script>
 </body>
 </html>
