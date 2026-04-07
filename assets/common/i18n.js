@@ -112,7 +112,9 @@
       'c.btn.allrev':   'Lire tous les 13 avis →',
       'c.btn.moretours':'← Voir plus d\'excursions',
       'c.btn.explore':  'Explorer les Expériences',
-      'c.per.person':   '/personne',
+      'c.btn.viewall':  'Voir Toutes les Expériences →',
+      'c.card.prereq':  'Sur devis',
+      'c.per.person':   ' /personne',
 
       /* ── Common: Booking form (shared across all tour pages) ── */
       'c.bk.about':     'À propos de l\'Expérience',
@@ -300,6 +302,11 @@
 
       /* ── Shared tour pages ── */
       'tp.stulum.title': 'Tulum, Cénote et Village Maya',
+      'tp.stulum.titlehtml': 'Tulum, Cénote et Village Maya <span style="color:var(--coral)">(Expérience Partagée)</span>',
+      'tp.schichen.titlehtml': 'Chichen Itza et Aventure Cénote <span style="color:var(--coral)">(Expérience Partagée)</span>',
+      'tp.scoba.titlehtml': 'Cobá et Aventure Cénote <span style="color:var(--coral)">(Expérience Partagée)</span>',
+      'tp.sturtles.titlehtml': 'Snorkeling avec Tortues et Cénote <span style="color:var(--coral)">(Expérience Partagée)</span>',
+      'tp.sholbox.titlehtml': 'Aventure d\'une Journée à Holbox <span style="color:var(--coral)">(Expérience Partagée)</span>',
       'tp.stulum.sub':   'Ruines de Tulum · Village Maya · Cénote · Expérience Partagée',
       'tp.stulum.about': 'Explorez les ruines de Tulum au bord des falaises avec un guide expert, visitez un village maya traditionnel pour une immersion culturelle authentique et baignez-vous dans un magnifique cénote.',
       'tp.stulum.chips': ['🏛️ Ruines de Tulum', '🌊 Vues sur l\'Océan', '🏘️ Village Maya', '💧 Cénote', '⏱ Journée', '👥 Partagé'],
@@ -397,7 +404,9 @@
       'c.btn.allrev':   'Leer todas las 13 reseñas →',
       'c.btn.moretours':'← Ver más tours',
       'c.btn.explore':  'Explorar Experiencias',
-      'c.per.person':   '/persona',
+      'c.btn.viewall':  'Ver Todas las Experiencias →',
+      'c.card.prereq':  'Precio a consultar',
+      'c.per.person':   ' /persona',
 
       /* ── Common: Booking form ── */
       'c.bk.about':     'Sobre Esta Experiencia',
@@ -585,6 +594,11 @@
 
       /* ── Shared tour pages ES ── */
       'tp.stulum.title': 'Tulum, Cenote y Pueblo Maya',
+      'tp.stulum.titlehtml': 'Tulum, Cenote y Pueblo Maya <span style="color:var(--coral)">(Experiencia Compartida)</span>',
+      'tp.schichen.titlehtml': 'Chichen Itza y Aventura Cenote <span style="color:var(--coral)">(Experiencia Compartida)</span>',
+      'tp.scoba.titlehtml': 'Cobá y Aventura Cenote <span style="color:var(--coral)">(Experiencia Compartida)</span>',
+      'tp.sturtles.titlehtml': 'Snorkel con Tortugas y Cenote <span style="color:var(--coral)">(Experiencia Compartida)</span>',
+      'tp.sholbox.titlehtml': 'Aventura de un Día en Holbox <span style="color:var(--coral)">(Experiencia Compartida)</span>',
       'tp.stulum.sub':   'Ruinas de Tulum · Pueblo Maya · Cenote · Compartido',
       'tp.stulum.about': 'Explora las ruinas de Tulum en el acantilado con un guía experto, visita un pueblo maya tradicional para una inmersión cultural auténtica y báñate en un hermoso cenote.',
       'tp.stulum.chips': ['🏛️ Ruinas de Tulum', '🌊 Vistas al Océano', '🏘️ Pueblo Maya', '💧 Cenote', '⏱ Día', '👥 Compartido'],

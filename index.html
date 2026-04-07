@@ -312,11 +312,6 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 .rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
 
 /* ── Language switcher ── */
-.lang-sw{display:flex;align-items:center;gap:2px;margin-right:6px}
-.ls-btn{background:transparent;border:1px solid rgba(255,255,255,.20);color:rgba(255,255,255,.55);font-size:10px;font-weight:700;letter-spacing:.05em;padding:4px 7px;border-radius:4px;cursor:pointer;font-family:inherit;transition:background .2s,color .2s,border-color .2s}
-.ls-btn:hover,.ls-btn.active{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.36)}
-.ls-btn.active{border-color:var(--teal);color:var(--teal)}
-@media(max-width:767px){.lang-sw{margin-right:2px}.ls-btn{padding:3px 5px;font-size:9px}}
 </style>
 <script src="assets/common/i18n.js"></script>
 </head>
@@ -331,15 +326,14 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     </div>
   </a>
   <div class="nav-links">
-    <a href="#tours" data-i18n="c.nav.private" data-i18n="c.nav.private">Private Experiences</a>
-    <a href="#shared" data-i18n="c.nav.shared" data-i18n="c.nav.shared">Shared Experiences</a>
-    <a href="reviews.html">Reviews</a>
-    <a href="our-story.html">Our Story</a>
-    <a href="#contact">Contact</a>
+    <a href="#tours" data-i18n="c.nav.private">Private Experiences</a>
+    <a href="#shared" data-i18n="c.nav.shared">Shared Experiences</a>
+    <a href="reviews.html" data-i18n="c.nav.reviews">Reviews</a>
+    <a href="our-story.html" data-i18n="c.nav.story">Our Story</a>
+    <a href="#contact" data-i18n="c.nav.contact">Contact</a>
   </div>
   <div class="nav-right">
     <a href="https://wa.me/529623562346" class="nav-cta btn" data-i18n="c.nav.book" target="_blank" rel="noopener">Book Now</a>
-    <div class="lang-sw" id="langSw"><button class="ls-btn" data-lang="en" type="button">EN</button><button class="ls-btn" data-lang="fr" type="button">FR</button><button class="ls-btn" data-lang="es" type="button">ES</button></div>
     <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -348,11 +342,11 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 
 <div class="mob-menu" id="mobMenu">
   <button class="mob-close" id="mobClose">X</button>
-  <a href="#tours" onclick="closeMob()" data-i18n="c.nav.private" data-i18n="c.nav.private">Private Experiences</a>
-  <a href="#shared" onclick="closeMob()" data-i18n="c.nav.shared" data-i18n="c.nav.shared">Shared Experiences</a>
-  <a href="reviews.html" onclick="closeMob()">Reviews</a>
-  <a href="our-story.html" onclick="closeMob()">Our Story</a>
-  <a href="#contact" onclick="closeMob()">Contact</a>
+  <a href="#tours" onclick="closeMob()" data-i18n="c.nav.private">Private Experiences</a>
+  <a href="#shared" onclick="closeMob()" data-i18n="c.nav.shared">Shared Experiences</a>
+  <a href="reviews.html" onclick="closeMob()" data-i18n="c.nav.reviews">Reviews</a>
+  <a href="our-story.html" onclick="closeMob()" data-i18n="c.nav.story">Our Story</a>
+  <a href="#contact" onclick="closeMob()" data-i18n="c.nav.contact">Contact</a>
   <a href="https://wa.me/529623562346" class="mob-wa" data-i18n="c.mob.wa" target="_blank" rel="noopener" onclick="closeMob()">Book on WhatsApp</a>
 </div>
 
@@ -414,13 +408,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Half day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Sea Turtle and Cenote Snorkeling Experience</h3>
-    <p class="tc-tag">Sea Turtles · 3 Cenotes · Snack & Drinks</p>
+    <h3 class="tc-name" data-i18n="tp.turtle.title">Sea Turtle and Cenote Snorkeling Experience</h3>
+    <p class="tc-tag" data-i18n="tp.turtle.sub">Sea Turtles · 3 Cenotes · Snack & Drinks</p>
     <p class="tc-desc">Snorkel with wild sea turtles, then discover three crystal clear cenotes hidden deep in the jungle.</p>
-    <span class="tc-price">From <strong>$119</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$119</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-turtles-cenotes.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-turtles-cenotes.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-turtles-cenotes.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-turtles-cenotes.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -430,13 +424,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Full day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Tulum Snorkeling Experience</h3>
-    <p class="tc-tag">Tulum Ruins · Turtle Snorkeling · 2 Cenotes · Lunch</p>
+    <h3 class="tc-name" data-i18n="tp.tulumund.title">Tulum Snorkeling Experience</h3>
+    <p class="tc-tag" data-i18n="tp.tulumund.sub">Tulum Ruins · Turtle Snorkeling · 2 Cenotes · Lunch</p>
     <p class="tc-desc">Walk the breathtaking clifftop ruins of Tulum, snorkel with sea turtles, and cool off in two beautiful cenotes.</p>
-    <span class="tc-price">From <strong>$169</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$169</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-tulum-underwater.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-tulum-underwater.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-tulum-underwater.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-tulum-underwater.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -446,13 +440,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Half day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Hidden Cenotes Express</h3>
-    <p class="tc-tag">4 Cenotes · Rappel into a Cavern · Snack & Beers</p>
+    <h3 class="tc-name" data-i18n="tp.cenotes.title">Hidden Cenotes Express</h3>
+    <p class="tc-tag" data-i18n="tp.cenotes.sub">4 Cenotes · Rappel into a Cavern · Snack & Beers</p>
     <p class="tc-desc">Dive into four different cenotes, then rappel into a hidden cavern chamber for a true wow moment.</p>
-    <span class="tc-price">From <strong>$74</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$74</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-cenotes-express.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-cenotes-express.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-cenotes-express.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-cenotes-express.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -462,13 +456,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Half day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Tulum Highlights</h3>
-    <p class="tc-tag">Tulum Ruins · Certified Host · Drinks Included</p>
+    <h3 class="tc-name" data-i18n="tp.tulumexp.title">Tulum Highlights</h3>
+    <p class="tc-tag" data-i18n="tp.tulumexp.sub">Tulum Ruins · Certified Host · Drinks Included</p>
     <p class="tc-desc">Explore the iconic ruins of Tulum with a certified host, take in stunning ocean views, capture beautiful photos, and enjoy a relaxed walk through history.</p>
-    <span class="tc-price">From <strong>$69</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$69</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-tulum-express.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-tulum-express.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-tulum-express.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-tulum-express.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -478,13 +472,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Full day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Tulum and Cobá Ruins Experience</h3>
-    <p class="tc-tag">Tulum Ruins · Cobá Ruins · Cenote · Local Buffet</p>
+    <h3 class="tc-name" data-i18n="tp.tulumcoba.title">Tulum and Cobá Ruins Experience</h3>
+    <p class="tc-tag" data-i18n="tp.tulumcoba.sub">Tulum Ruins · Cobá Ruins · Cenote · Local Buffet</p>
     <p class="tc-desc">Two Mayan sites. One unforgettable day. Cenote and local buffet included.</p>
-    <span class="tc-price">From <strong>$179</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$179</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-tulum-coba.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-tulum-coba.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-tulum-coba.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-tulum-coba.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -494,13 +488,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Full day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Coba Experience</h3>
-    <p class="tc-tag">Cobá Ruins · Bike · Cenote · Regional Buffet</p>
+    <h3 class="tc-name" data-i18n="tp.coba.title">Coba Experience</h3>
+    <p class="tc-tag" data-i18n="tp.coba.sub">Cobá Ruins · Bike · Cenote · Regional Buffet</p>
     <p class="tc-desc">Bike through jungle ruins with expert hosts, jump into a cenote, and enjoy a regional buffet.</p>
-    <span class="tc-price">From <strong>$124</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$124</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-coba.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-coba.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-coba.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-coba.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -510,13 +504,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Full day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Chichén Itzá Experience</h3>
-    <p class="tc-tag">Chichén Itzá Experience · Cenote Zipline · Local Buffet</p>
+    <h3 class="tc-name" data-i18n="tp.chichen.title">Chichén Itzá Experience</h3>
+    <p class="tc-tag" data-i18n="tp.chichen.sub">Chichén Itzá Experience · Cenote Zipline · Local Buffet</p>
     <p class="tc-desc">Explore this UNESCO Wonder with an expert host who brings every pyramid to life, then cool off in a cenote, zipline into the water, and enjoy a local buffet.</p>
-    <span class="tc-price">From <strong>$184</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$184</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-chichen-itza.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-chichen-itza.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-chichen-itza.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-chichen-itza.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -526,13 +520,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Full day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Holbox Experience</h3>
-    <p class="tc-tag">Private Speedboat · 3 Islands · Golf Cart · Beach Club Open Bar</p>
+    <h3 class="tc-name" data-i18n="tp.holbox.title">Holbox Experience</h3>
+    <p class="tc-tag" data-i18n="tp.holbox.sub">Private Speedboat · 3 Islands · Golf Cart · Beach Club Open Bar</p>
     <p class="tc-desc">Private speedboat to the dreamy islands of Holbox, with white sandbars, golf car, a beach club buffet, and open bar included.</p>
-    <span class="tc-price">From <strong>$141</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$141</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-holbox-express.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-holbox-express.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-holbox-express.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-holbox-express.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -542,13 +536,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Full day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Dolphin Watching in Sian Ka'an</h3>
-    <p class="tc-tag">Speedboat · Dolphins · Turtles · Bird Watching · Snorkeling</p>
+    <h3 class="tc-name" data-i18n="tp.dolphin.title">Dolphin Watching in Sian Ka'an</h3>
+    <p class="tc-tag" data-i18n="tp.dolphin.sub">Speedboat · Dolphins · Turtles · Bird Watching · Snorkeling</p>
     <p class="tc-desc">Cruise through the Sian Ka'an UNESCO Reserve, spotting dolphins, sea turtles, crocodiles, manatees, birds and vibrant reef life along the way.</p>
-    <span class="tc-price">From <strong>$155</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$155</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-dolphin-turtle.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-dolphin-turtle.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-dolphin-turtle.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-dolphin-turtle.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -558,13 +552,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Evening</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Taco Night in Playa</h3>
-    <p class="tc-tag">Open Cenote, unlimited tacos and playa del carmen</p>
+    <h3 class="tc-name" data-i18n="tp.tacos.title">Taco Night in Playa</h3>
+    <p class="tc-tag" data-i18n="tp.tacos.sub">Open Cenote, unlimited tacos and playa del carmen</p>
     <p class="tc-desc">A late afternoon escape to an open cenote, followed by unlimited tacos, local drinks, and free time in Playa del Carmen.</p>
-    <span class="tc-price">From <strong>$109</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$109</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-tacos-tour.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-tacos-tour.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-tacos-tour.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-tacos-tour.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc">
@@ -574,13 +568,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Half day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Private Fishing Experience</h3>
-    <p class="tc-tag">Private Boat · Offshore Fishing · Fresh Ceviche · Drinks</p>
+    <h3 class="tc-name" data-i18n="tp.fishing.title">Private Fishing Experience</h3>
+    <p class="tc-tag" data-i18n="tp.fishing.sub">Private Boat · Offshore Fishing · Fresh Ceviche · Drinks</p>
     <p class="tc-desc">Private fishing experience with expert captains, fresh ceviche prepared on board, and cold beers included.</p>
-    <span class="tc-price-req">Price on request</span>
+    <span class="tc-price-req" data-i18n="c.card.prereq">Price on request</span>
     <div class="tc-acts">
-      <a href="tour-fishing.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-fishing.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-fishing.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-fishing.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article></div>
@@ -592,7 +586,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     </div>
   </div>
   <div style="text-align:center;padding:28px 0 0">
-    <a href="tours.html" class="btn btn-navy btn-md">View All Experiences →</a>
+    <a href="tours.html" class="btn btn-navy btn-md" data-i18n="c.btn.viewall">View All Experiences →</a>
   </div>
 </section>
 
@@ -610,13 +604,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Half day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Tulum, Cenote & Village</h3>
-    <p class="tc-tag">Tulum Ruins · Mayan Village · Cenote Swim</p>
+    <h3 class="tc-name" data-i18n="tp.stulum.title">Tulum, Cenote & Village</h3>
+    <p class="tc-tag" data-i18n="tp.stulum.sub">Tulum Ruins · Mayan Village · Cenote Swim</p>
     <p class="tc-desc">Explore cliffside Tulum ruins, visit a traditional Mayan village, and dive into a beautiful cenote for the perfect adventure combo.</p>
-    <span class="tc-price">From <strong>$109</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$109</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-shared-tulum.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-shared-tulum.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-shared-tulum.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-shared-tulum.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc tc-shared">
@@ -626,13 +620,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Full day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Chichen Itza and Cenote Adventure</h3>
-    <p class="tc-tag">Chichen Itza · Cenote Adventure · Shared Tour</p>
+    <h3 class="tc-name" data-i18n="tp.schichen.title">Chichen Itza and Cenote Adventure</h3>
+    <p class="tc-tag" data-i18n="tp.schichen.sub">Chichen Itza · Cenote Adventure · Shared Tour</p>
     <p class="tc-desc">Explore Chichen Itza, swim in a cenote, and enjoy a regional buffet with local drinks on this full shared adventure.</p>
-    <span class="tc-price">From <strong>$139</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$139</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-shared-chichen.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-shared-chichen.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-shared-chichen.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-shared-chichen.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc tc-shared">
@@ -642,13 +636,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Full day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Coba and Cenote Adventure</h3>
-    <p class="tc-tag">Coba Ruins · Cenote Swim · Shared Tour</p>
+    <h3 class="tc-name" data-i18n="tp.scoba.title">Coba and Cenote Adventure</h3>
+    <p class="tc-tag" data-i18n="tp.scoba.sub">Coba Ruins · Cenote Swim · Shared Tour</p>
     <p class="tc-desc">Step into ancient Coba with an archaeological host, swim in a cenote, and enjoy buffet flavors on this epic shared adventure.</p>
-    <span class="tc-price">From <strong>$149</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$149</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-shared-coba.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-shared-coba.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-shared-coba.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-shared-coba.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc tc-shared">
@@ -658,13 +652,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Half day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Snorkeling with Turtles and Cenote</h3>
-    <p class="tc-tag">Sea Turtles · Snorkel Gear · Small Group</p>
+    <h3 class="tc-name" data-i18n="tp.sturtles.title">Snorkeling with Turtles and Cenote</h3>
+    <p class="tc-tag" data-i18n="tp.sturtles.sub">Sea Turtles · Snorkel Gear · Small Group</p>
     <p class="tc-desc">Enjoy a magical snorkeling experience with sea turtles, followed by a refreshing swim in a beautiful cenote with expert guidance.</p>
-    <span class="tc-price">From <strong>$99</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$99</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-shared-turtles.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-shared-turtles.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-shared-turtles.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-shared-turtles.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article><article class="tc tc-shared">
@@ -674,13 +668,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <span class="tc-dur">⏱ Full day</span>
   </div>
   <div class="tc-body">
-    <h3 class="tc-name">Holbox Day Adventure</h3>
-    <p class="tc-tag">2-Island Boat Trip · Holbox Downtown · Beach Club</p>
+    <h3 class="tc-name" data-i18n="tp.sholbox.title">Holbox Day Adventure</h3>
+    <p class="tc-tag" data-i18n="tp.sholbox.sub">2-Island Boat Trip · Holbox Downtown · Beach Club</p>
     <p class="tc-desc">Set sail to two islands, explore colorful Holbox downtown, and unwind at a beach club on this epic shared day.</p>
-    <span class="tc-price">From <strong>$189</strong><span style="font-size:11px;color:var(--muted);font-weight:500"> /person</span></span>
+    <span class="tc-price">From <strong>$189</strong><span style="font-size:11px;color:var(--muted);font-weight:500" data-i18n="c.per.person"> /person</span></span>
     <div class="tc-acts">
-      <a href="tour-shared-holbox.html" class="btn btn-outline btn-sm">Details</a>
-      <a href="tour-shared-holbox.html#booking" class="btn btn-coral btn-sm">Book Now →</a>
+      <a href="tour-shared-holbox.html" class="btn btn-outline btn-sm" data-i18n="c.btn.details">Details</a>
+      <a href="tour-shared-holbox.html#booking" class="btn btn-coral btn-sm" data-i18n="c.btn.book">Book Now →</a>
     </div>
   </div>
 </article></div>
@@ -822,9 +816,9 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <div>
       <p class="ft-h" data-i18n="c.ft.explore">Explore</p>
       <div class="ft-links">
-        <a href="tours.html" data-i18n="c.nav.private" data-i18n="c.nav.private">Private Experiences</a>
-        <a href="tours.html#shared" data-i18n="c.nav.shared" data-i18n="c.nav.shared" data-i18n="c.ft.shared">Shared Experiences</a>
-        <a href="reviews.html"Guest Reviews</a>
+        <a href="tours.html" data-i18n="c.nav.private">Private Experiences</a>
+        <a href="tours.html#shared" data-i18n="c.nav.shared">Shared Experiences</a>
+        <a href="reviews.html" data-i18n="c.nav.reviews">Guest Reviews</a>
         <a href="our-story.html" data-i18n="c.ft.story">Our Story</a>
       </div>
     </div>
