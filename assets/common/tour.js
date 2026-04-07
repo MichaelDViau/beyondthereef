@@ -85,12 +85,18 @@
 
     /* Touch swipe */
     var swipeStartX = 0;
+    var swipeStartY = 0;
     track.addEventListener('touchstart', function (e) {
       swipeStartX = e.touches[0].clientX;
+      swipeStartY = e.touches[0].clientY;
     }, { passive: true });
     track.addEventListener('touchend', function (e) {
       var dx = e.changedTouches[0].clientX - swipeStartX;
-      if (Math.abs(dx) > 44) go(cur + (dx < 0 ? 1 : -1));
+      var dy = e.changedTouches[0].clientY - swipeStartY;
+      /* Only trigger if horizontal swipe is dominant and >= 30px */
+      if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy)) {
+        go(cur + (dx < 0 ? 1 : -1));
+      }
     }, { passive: true });
 
     /* Keyboard navigation when slider is focused */

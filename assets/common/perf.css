@@ -4,9 +4,13 @@ html {
   scroll-behavior: smooth;
   overscroll-behavior-y: none;
   -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 body {
   overscroll-behavior-y: none;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Promote fixed floating buttons & nav to GPU compositor layers */

@@ -18,17 +18,19 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="stylesheet" href="assets/common/perf.css">
 <style>
-.ps{position:relative;height:min(500px,70vw);min-height:240px;overflow:hidden;background:var(--navy);margin-top:64px}
-.ps-track{display:flex;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);will-change:transform}
+.ps{position:relative;width:100%;height:min(500px,70vw);min-height:240px;overflow:hidden;background:var(--navy);margin-top:64px}
+.ps-track{display:flex;height:100%;transition:transform .35s cubic-bezier(.4,0,.2,1);will-change:transform}
 .ps-slide{flex:0 0 100%;height:100%;position:relative;background:var(--navy)}
 .ps-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
 .ps-slide img.loaded{opacity:1}
-.ps-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.20);backdrop-filter:blur(8px);color:#fff;font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;border:1.5px solid rgba(255,255,255,.3)}
-.ps-btn:hover{background:rgba(255,255,255,.36)}
-.ps-prev{left:12px}.ps-next{right:12px}
-.ps-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:10}
-.ps-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;border:none;padding:0;transition:background .2s,width .2s,border-radius .2s}
-.ps-dot.on{background:#fff;width:16px;border-radius:3px}
+
+.ps-nav{display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 20px 12px;background:#fff;border-bottom:1.5px solid var(--border)}
+.ps-btn{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-size:20px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .15s;border:none;flex-shrink:0}
+.ps-btn:hover{background:var(--teal)}
+.ps-btn:active{transform:scale(.92)}
+.ps-dots{display:flex;gap:6px;align-items:center}
+.ps-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;border:none;padding:0;transition:background .2s,width .2s,border-radius .2s}
+.ps-dot.on{background:var(--navy);width:20px;border-radius:4px}
 .ps-ctr{position:absolute;top:12px;right:12px;background:rgba(14,42,69,.6);color:rgba(255,255,255,.9);font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;backdrop-filter:blur(4px);z-index:10;font-family:'Montserrat',sans-serif}
 /* Tour info */
 .ti{background:#ffffff;padding:20px 24px 0;border-bottom:1.5px solid var(--border);color-scheme:light}
@@ -39,7 +41,7 @@
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .chip{display:inline-flex;align-items:center;gap:5px;background:var(--gold-bg);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:700;color:var(--ink);border:1px solid var(--border)}
 /* Layout */
-.t-wrap{display:grid;grid-template-columns:1fr;gap:24px;padding:24px 20px;max-width:1100px;margin:0 auto}
+.t-wrap{display:grid;grid-template-columns:1fr;gap:24px;padding:24px 16px;max-width:1100px;margin:0 auto;width:100%;box-sizing:border-box}
 @media(min-width:768px){.t-wrap{grid-template-columns:1fr 360px;padding:36px 40px;gap:32px}}
 .cb{background:#ffffff;border-radius:var(--r2);border:1.5px solid var(--border);overflow:hidden;margin-bottom:16px;box-shadow:var(--sh);color-scheme:light}
 .cb-h{padding:14px 20px;border-bottom:1.5px solid var(--border);font-size:14px;font-weight:800;color:var(--ink);background:#FFF8E7}
@@ -377,7 +379,6 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 .rv.vis{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 .rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
 
-
 /* ── Language switcher ── */
 </style>
 <script src="assets/common/i18n.js"></script>
@@ -416,11 +417,13 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </div>
 
 <div class="ps" id="photoSlider">
-  <div class="ps-track" id="psTrack"><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2168.JPEG" alt="Holbox Experience photo 1" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2181.JPEG" alt="Holbox Experience photo 2" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2182.JPEG" alt="Holbox Experience photo 3" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2193.JPEG" alt="Holbox Experience photo 4" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2195.JPEG" alt="Holbox Experience photo 5" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2196.JPEG" alt="Holbox Experience photo 6" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2374.JPEG" alt="Holbox Experience photo 7" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2376.JPEG" alt="Holbox Experience photo 8" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2379.JPEG" alt="Holbox Experience photo 9" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2380.JPEG" alt="Holbox Experience photo 10" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8020.JPEG" alt="Holbox Experience photo 11" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8025.JPEG" alt="Holbox Experience photo 12" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8026.JPEG" alt="Holbox Experience photo 13" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8029.JPEG" alt="Holbox Experience photo 14" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8037.JPEG" alt="Holbox Experience photo 15" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8114.JPEG" alt="Holbox Experience photo 16" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8121.JPEG" alt="Holbox Experience photo 17" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8122.JPEG" alt="Holbox Experience photo 18" loading="lazy"></div></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-holbox-express/slide-02.jpg" alt="Holbox Experience photo 2" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-holbox-express/slide-03.jpg" alt="Holbox Experience photo 3" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-holbox-express/slide-04.jpg" alt="Holbox Experience photo 4" loading="lazy"></div></div>
-  <button class="ps-btn ps-prev" id="psPrev" aria-label="Previous photo">&#8592;</button>
-  <button class="ps-btn ps-next" id="psNext" aria-label="Next photo">&#8594;</button>
-  <div class="ps-dots" id="psDots"><button class="ps-dot" aria-label="Photo 1"></button><button class="ps-dot" aria-label="Photo 2"></button><button class="ps-dot" aria-label="Photo 3"></button><button class="ps-dot" aria-label="Photo 4"></button></div>
+    <div class="ps-track" id="psTrack"><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2168.JPEG" alt="Holbox Experience photo 1" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2181.JPEG" alt="Holbox Experience photo 2" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2182.JPEG" alt="Holbox Experience photo 3" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2193.JPEG" alt="Holbox Experience photo 4" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2195.JPEG" alt="Holbox Experience photo 5" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2196.JPEG" alt="Holbox Experience photo 6" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2374.JPEG" alt="Holbox Experience photo 7" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2376.JPEG" alt="Holbox Experience photo 8" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2379.JPEG" alt="Holbox Experience photo 9" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_2380.JPEG" alt="Holbox Experience photo 10" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8020.JPEG" alt="Holbox Experience photo 11" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8025.JPEG" alt="Holbox Experience photo 12" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8026.JPEG" alt="Holbox Experience photo 13" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8029.JPEG" alt="Holbox Experience photo 14" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8037.JPEG" alt="Holbox Experience photo 15" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8114.JPEG" alt="Holbox Experience photo 16" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8121.JPEG" alt="Holbox Experience photo 17" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/holboxexperience/IMG_8122.JPEG" alt="Holbox Experience photo 18" loading="lazy"></div></div>
   <div class="ps-ctr" id="psCtr">1 / 18</div>
+</div>
+<div class="ps-nav">
+  <button class="ps-btn ps-prev" id="psPrev" aria-label="Previous photo">&#8592;</button>
+  <div class="ps-dots" id="psDots"><button class="ps-dot" aria-label="Photo 1"></button><button class="ps-dot" aria-label="Photo 2"></button><button class="ps-dot" aria-label="Photo 3"></button><button class="ps-dot" aria-label="Photo 4"></button></div>
+  <button class="ps-btn ps-next" id="psNext" aria-label="Next photo">&#8594;</button>
 </div>
 
 <div class="ti">
