@@ -33,7 +33,17 @@ body {
   will-change: auto;
 }
 
-/* Prevent slider drag from fighting native page scroll */
+/* Prevent the wide flex-track from causing layout recalculations
+   outside .ps; also isolates the repaint/composite zone */
+.ps {
+  contain: layout;
+}
+
+/* Stable height for the arrow bar — prevents CLS during font-swap */
+.ps-nav {
+  min-height: 64px;
+}
+
 .sl-track,
 .ps-track {
   touch-action: pan-y pinch-zoom;
