@@ -359,7 +359,81 @@
       /* ── Our Story page ── */
       'story.lbl': 'Notre Histoire',
       'story.h1':  'Une Passion Née Sous l\'Eau',
-      'story.cta': 'Planifier Mon Expérience'
+      'story.cta': 'Planifier Mon Expérience',
+      /* ── Tour card descriptions (carousel) ── */
+      'tp.turtle.cd':    'Nagez avec des tortues marines sauvages, puis découvrez trois cénotes cristallins cachés au cœur de la jungle.',
+      'tp.tulumund.cd':  'Explorez les ruines majestueuses de Tulum en surplomb des falaises, nagez avec des tortues et rafraîchissez-vous dans deux magnifiques cénotes.',
+      'tp.cenotes.cd':   'Plongez dans quatre cénotes différents, puis effectuez un rappel spectaculaire dans une chambre souterraine pour un moment inoubliable.',
+      'tp.tulumexp.cd':  'Explorez les ruines emblématiques de Tulum avec un guide certifié, profitez de vues océaniques époustouflantes et capturez de belles photos.',
+      'tp.tulumcoba.cd': 'Deux sites mayas. Une journée inoubliable. Cénote et buffet local inclus.',
+      'tp.coba.cd':      'Pédalez à travers des ruines envahies par la jungle, plongez dans un cénote et savourez un buffet régional authentique.',
+      'tp.chichen.cd':   "Explorez cette merveille de l'UNESCO avec un guide passionné, rafraîchissez-vous dans un cénote, ziplinez et savourez un buffet local.",
+      'tp.holbox.cd':    "Bateau privé vers les îles féeriques de Holbox, avec bancs de sable blancs, golf cart, buffet beach club et open bar inclus.",
+      'tp.dolphin.cd':   "Naviguez dans la réserve UNESCO de Sian Ka'an en observant dauphins, tortues, crocodiles, lamantins et oiseaux.",
+      'tp.tacos.cd':     'Une escapade en fin de journée vers un cénote ouvert, suivie de tacos illimités, boissons locales et temps libre à Playa del Carmen.',
+      'tp.fishing.cd':   'Expérience de pêche privée avec des capitaines experts, ceviche frais préparé à bord et bières fraîches incluses.',
+      'tp.stulum.cd':    'Explorez les ruines de Tulum en falaise, visitez un village maya traditionnel et plongez dans un beau cénote.',
+      'tp.schichen.cd':  'Explorez Chichen Itza, nagez dans un cénote et savourez un buffet régional pour une aventure partagée complète.',
+      'tp.scoba.cd':     'Découvrez ancienne Cobá avec un guide archéologique, nagez dans un cénote et dégustez un buffet lors de cette aventure partagée.',
+      'tp.sturtles.cd':  "Vivez une expérience de snorkeling magique avec des tortues marines, suivie d'une baignade dans un magnifique cénote.",
+      'tp.sholbox.cd':   'Naviguez vers deux îles, explorez le centre coloré de Holbox et détendez-vous au beach club lors de cette journée partagée.',
+
+      /* ── Review cards ── */
+      'rv.1.text': '"De la nage nocturne avec les raies manta au dîner d\'anniversaire surprise sur un banc de sable, l\'équipe a dépassé toutes nos attentes. Nous n\'avons pas regardé notre montre une seule fois."',
+      'rv.2.text': '"Nous avons construit l\'itinéraire ensemble lors d\'un appel vidéo. Un guide privé pour mon père pour qu\'il explore à son rythme. Absolument incroyable."',
+      'rv.3.text': '"Ils ont organisé une entrée au lever du soleil pour que nous ayons El Castillo presque pour nous seuls, avec un guide qui connaissait chaque histoire. Les tacos du petit-déjeuner étaient les meilleurs."',
+      'rv.4.text': '"Beyond the Reef a rempli la glacière, géré les licences et trouvé un capitaine patient pour que nos enfants puissent attraper leur premier mahi. Zéro stress, que des sourires."',
+      'rv.5.text': '"Ils ont trouvé un cénote caché et planifié notre arrivée entre les bus. Eau cristalline, oiseaux au-dessus. Serviettes, collations et photos — tout géré."',
+      'rv.6.text': '"Notre guide a repéré des tortues, des raies et un hippocampe timide. Équipement parfait et bateau ombragé. Pris en charge du début à la fin."',
+      'rv.7.text': '"Le van privé nous a récupérés à 7h et nous ne nous sommes jamais sentis pressés. Notre guide parlait un français parfait et connaissait chaque coin secret."',
+      'rv.8.text': '"Nous avons fait des visites guidées partout dans le monde. Beyond the Reef est véritablement au sommet. Guides passionnés, logistique impeccable, photos dignes d\'encadrement."',
+      'rv.9.text': '"Quatre adultes, trois enfants, besoins différents. Ils ont tout géré parfaitement — les enfants ont adoré et les adultes se sont détendus. On reviendra."',
+      'rv.10.text': '"Les photos de cénote prises par notre guide semblent appartenir à National Geographic. On n\'arrive pas à croire à quel point l\'eau était cristalline."',
+      'rv.11.text': '"Voyageuse solo. Je me suis sentie complètement en sécurité. Mon guide était professionnel, drôle et s\'est assuré que j\'avais la meilleure expérience possible."',
+      'rv.12.text': '"30e anniversaire. Ils nous ont surpris avec un dîner privé sur la plage et une bouteille de vin. Nous ne savions pas que ça allait arriver."',
+      'rv.13.text': '"Trois excursions en une semaine — Tulum, cénotes et Holbox. Chacune parfaitement organisée. La journée en bateau rapide à Holbox était vraiment magique."',
+      'rv.idx.1': '"Nage nocturne avec raies manta, dîner d\'anniversaire sur un banc de sable — l\'équipe a tout dépassé. Nous n\'avons pas regardé notre montre une seule fois."',
+      'rv.idx.2': '"Itinéraire construit ensemble en appel vidéo. Guide privé pour mon père à son rythme. Absolument incroyable."',
+      'rv.idx.3': '"Entrée au lever du soleil, El Castillo pour nous seuls, guide qui connaissait chaque histoire. Meilleurs tacos du matin."',
+      'rv.idx.4': '"Glacière remplie, licences gérées, capitaine patient — nos enfants ont attrapé leur premier mahi. Zéro stress, que des sourires."',
+      'rv.idx.5': '"Cénote caché, arrivée entre les bus, eau cristalline, oiseaux au-dessus. Serviettes, collations, photos — tout géré."',
+      'rv.idx.6': '"Tortues, raies et hippocampe timide repérés. Équipement parfait, bateau ombragé. Pris en charge du début à la fin."',
+      'rv.from.us': 'États-Unis', 'rv.from.uk': 'Royaume-Uni', 'rv.from.es': 'Espagne',
+      'rv.from.ca': 'Canada',     'rv.from.au': 'Australie',   'rv.from.de': 'Allemagne',
+      'rv.from.fr': 'France',     'rv.from.sg': 'Singapour',   'rv.from.br': 'Brésil',
+      'rv.from.se': 'Suède',      'rv.from.nl': 'Pays-Bas',
+
+      /* ── Our Story page ── */
+      'story.who.lbl':    'Qui Nous Sommes',
+      'story.who.h2':     'Plus qu\'une simple agence de voyages.',
+      'story.who.p1':     'Beyond the Reef Mexico est bien plus qu\'une agence de tours. Nous créons des expériences privées qui vous permettent de ressentir la vraie Riviera Maya de façon plus personnelle, détendue et authentique.',
+      'story.who.p2':     'Nous ne cherchons pas les attractions bondées, les horaires bousculés ou les tours identiques. Nous prenons le temps de faire les choses bien et de partager des lieux, saveurs et moments qui semblent vrais.',
+      'story.who.p3':     'Nos guides bilingues certifiés ont plus de 10 ans d\'expérience et un lien profond avec la région. Des cénotes cachés aux plages tranquilles, ils savent vous montrer une face de la Riviera Maya que peu de visiteurs découvrent vraiment.',
+      'story.who.p4':     'Nous nous soucions profondément des personnes que nous accueillons et de celles avec qui nous travaillons — service attentionné, hospitalité sincère, équipe respectée.',
+      'story.who.p5':     'Que vous fassiez du snorkeling avec des tortues, découvriez des sites UNESCO, partiez en pêche ou profitiez d\'une tournée des tacos, chaque détail est organisé avec soin.',
+      'story.who.p6':     'C\'est la Riviera Maya, sans la précipitation.',
+      'story.stat.years': 'Ans au service de la Riviera Maya',
+      'story.stat.priv':  'Expériences privées — toujours pour votre groupe uniquement',
+      'story.stat.stars': 'Note sur toutes les plateformes',
+      'story.val.lbl':    'Nos Valeurs',
+      'story.val.h2':     'Ce qui nous rend différents.',
+      'story.val.h3':     'Plus qu\'une sortie',
+      'story.val.p1':     'Certaines expériences sont précipitées.',
+      'story.val.p2':     'Certaines semblent bondées.',
+      'story.val.p3':     'Certaines donnent l\'impression que tout le monde vit exactement la même chose.',
+      'story.val.p4':     'Ce n\'est pas notre façon de faire.',
+      'story.val.p5':     'La Riviera Maya s\'apprécie lentement, personnellement et avec soin. Notre objectif est toujours le même : vous faire sentir les bienvenus, pris en charge et connectés à ce lieu.',
+      'story.why.h3':     'Pourquoi Nos Clients Nous Choisissent',
+      'story.why.1.h':    'Parce que l\'attention compte',
+      'story.why.1.p':    'Votre sécurité, confort et tranquillité sont notre priorité. Chaque détail est planifié pour que vous puissiez vous détendre et profiter pleinement.',
+      'story.why.2.h':    'Parce que l\'instant compte',
+      'story.why.2.p':    'Photos professionnelles incluses dans chaque expérience privée pour que vous repartiez avec de vrais souvenirs durables.',
+      'story.why.3.h':    'Parce que ce lieu compte',
+      'story.why.3.p':    'La Riviera Maya doit être vécue dans le respect. Nous protégeons la nature, honorons la faune et soutenons les commerces locaux.',
+      'story.why.4.h':    'Parce que les personnes comptent',
+      'story.why.4.p':    'Nous sommes là quand vous en avez besoin — communication claire, attention personnelle, service qui vous fait sentir véritablement pris en charge.',
+      'story.ready.h3':   'Prêt à vivre la Riviera Maya autrement ?',
+      'story.ready.p':    'Choisissez une expérience privée conçue autour de vous, ou rejoignez une expérience partagée qui reste personnelle, attentionnée et pleine de cœur.'
     },
 
     /* ==================================================
@@ -651,7 +725,81 @@
       /* ── Our Story page ── */
       'story.lbl': 'Nuestra Historia',
       'story.h1':  'Una Pasión Nacida Bajo el Agua',
-      'story.cta': 'Planificar Mi Experiencia'
+      'story.cta': 'Planificar Mi Experiencia',
+      /* ── Tour card descriptions (carousel) ── */
+      'tp.turtle.cd':    'Nada con tortugas marinas salvajes, luego descubre tres cenotes cristalinos escondidos en lo profundo de la selva.',
+      'tp.tulumund.cd':  'Explora las impresionantes ruinas de Tulum sobre los acantilados, nada con tortugas y refréscat en dos hermosos cenotes.',
+      'tp.cenotes.cd':   'Sumérgete en cuatro cenotes distintos, luego haz rappel en una cámara subterránea para un momento verdaderamente impresionante.',
+      'tp.tulumexp.cd':  'Explora las icónicas ruinas de Tulum con un guía certificado, disfruta vistas oceánicas impresionantes y captura hermosas fotos.',
+      'tp.tulumcoba.cd': 'Dos sitios mayas. Un día inolvidable. Cenote y buffet local incluidos.',
+      'tp.coba.cd':      'Pedalea por ruinas cubiertas de selva con guías expertos, salta a un cenote y disfruta un auténtico buffet regional.',
+      'tp.chichen.cd':   'Explora esta maravilla de la UNESCO con un guía apasionado, refréscat en un cenote, haz tirolesa y disfruta un buffet local.',
+      'tp.holbox.cd':    'Lancha privada hacia las soñadas islas de Holbox, con bancos de arena blancos, golf cart, buffet en beach club y barra libre.',
+      'tp.dolphin.cd':   "Navega por la Reserva UNESCO de Sian Ka'an observando delfines, tortugas, cocodrilos, manatíes y vida marina vibrante.",
+      'tp.tacos.cd':     'Una escapada vespertina a un cenote abierto, seguida de tacos ilimitados, bebidas locales y tiempo libre en Playa del Carmen.',
+      'tp.fishing.cd':   'Experiencia de pesca privada con capitanes expertos, ceviche fresco a bordo y cervezas frías incluidas.',
+      'tp.stulum.cd':    'Explora las ruinas de Tulum en el acantilado, visita un pueblo maya tradicional y sumérgete en un hermoso cenote.',
+      'tp.schichen.cd':  'Explora Chichen Itza, nada en un cenote y disfruta un buffet regional con bebidas locales en esta aventura compartida.',
+      'tp.scoba.cd':     'Descubre la antigua Cobá con un guía arqueológico, nada en un cenote y disfruta sabores de buffet en esta aventura compartida.',
+      'tp.sturtles.cd':  'Disfruta una mágica experiencia de snorkel con tortugas marinas, seguida de un refrescante baño en un hermoso cenote.',
+      'tp.sholbox.cd':   'Navega hacia dos islas, explora el colorido centro de Holbox y relájate en un beach club en este épico día compartido.',
+
+      /* ── Review cards ── */
+      'rv.1.text': '"Desde nadar de noche con rayas manta hasta la cena de aniversario sorpresa en el banco de arena, el equipo superó todas las expectativas. Ni una sola vez miramos el reloj."',
+      'rv.2.text': '"Construimos el itinerario juntos en videollamada. Consiguieron un guía privado para mi papá a su ritmo. Absolutamente increíble."',
+      'rv.3.text': '"Organizaron una entrada al amanecer para tener El Castillo casi para nosotros solos, con un guía que conocía cada historia. Los tacos del desayuno fueron los mejores."',
+      'rv.4.text': '"Beyond the Reef llenó la hielera, gestionó las licencias y nos buscó un capitán paciente para que nuestros hijos atraparan su primer mahi. Cero estrés, solo sonrisas."',
+      'rv.5.text': '"Encontraron un cenote escondido y calcularon nuestra llegada entre los autobuses. Agua cristalina, solo pájaros arriba. Toallas, snacks y fotos — todo resuelto."',
+      'rv.6.text': '"Nuestro guía señaló tortugas, rayas e incluso un caballito de mar tímido. El equipo quedaba perfecto y el barco tenía sombra. Nos sentimos cuidados de principio a fin."',
+      'rv.7.text': '"La van privada nos recogió a las 7am y nunca nos sentimos apresurados. Nuestro guía hablaba francés perfecto y conocía cada rincón secreto de la península."',
+      'rv.8.text': '"Hemos hecho tours por todo el mundo. Beyond the Reef es genuinamente de primer nivel. Guías apasionados, logística impecable y fotos que merecen enmarcarse."',
+      'rv.9.text': '"Cuatro adultos, tres niños, todos con necesidades diferentes. Lo manejaron todo perfectamente. Los niños la pasaron genial y los adultos se sintieron relajados. Volveremos."',
+      'rv.10.text': '"Las fotos del cenote de nuestro guía parecen de National Geographic. Todavía no podemos creer lo cristalina que estaba el agua."',
+      'rv.11.text': '"Viajera sola. Me sentí completamente segura y bien atendida. Mi guía era profesional, divertido y se aseguró de que tuviera la mejor experiencia posible."',
+      'rv.12.text': '"Celebrando nuestro 30 aniversario. Nos sorprendieron con una cena privada en la playa y una botella de vino. No teníamos idea de que llegaría."',
+      'rv.13.text': '"Hicimos tres tours en una semana — Tulum, cenotes y Holbox. Cada uno perfectamente organizado. El día en lancha rápida a Holbox fue verdaderamente mágico."',
+      'rv.idx.1': '"Nado nocturno con rayas manta, cena de aniversario en el banco de arena — el equipo superó todo. Ni una vez miramos el reloj."',
+      'rv.idx.2': '"Itinerario construido juntos en videollamada. Guía privado para mi papá a su ritmo. Absolutamente increíble."',
+      'rv.idx.3': '"Entrada al amanecer, El Castillo casi para nosotros solos, guía con cada historia. Los mejores tacos del desayuno."',
+      'rv.idx.4': '"Hielera lista, licencias resueltas, capitán paciente — primer mahi para los niños. Cero estrés, solo sonrisas."',
+      'rv.idx.5': '"Cenote escondido, llegada entre los buses, agua cristalina, solo pájaros arriba. Toallas, snacks, fotos — todo resuelto."',
+      'rv.idx.6': '"Tortugas, rayas y caballito de mar tímido señalados. Equipo perfecto, barco con sombra. Cuidados de inicio a fin."',
+      'rv.from.us': 'Estados Unidos', 'rv.from.uk': 'Reino Unido',   'rv.from.es': 'España',
+      'rv.from.ca': 'Canadá',          'rv.from.au': 'Australia',     'rv.from.de': 'Alemania',
+      'rv.from.fr': 'Francia',          'rv.from.sg': 'Singapur',     'rv.from.br': 'Brasil',
+      'rv.from.se': 'Suecia',           'rv.from.nl': 'Países Bajos',
+
+      /* ── Our Story page ── */
+      'story.who.lbl':    'Quiénes Somos',
+      'story.who.h2':     'Más que una agencia de tours.',
+      'story.who.p1':     'Beyond the Reef Mexico es mucho más que una agencia de tours. Creamos experiencias privadas que te permiten sentir la verdadera Riviera Maya de una manera más personal, relajada y auténtica.',
+      'story.who.p2':     'No somos de atracciones masificadas, horarios apresurados ni tours idénticos para todos. Nos tomamos el tiempo para hacer las cosas bien, compartiendo lugares, sabores y momentos que se sienten reales.',
+      'story.who.p3':     'Nuestros guías bilingües certificados tienen más de 10 años de experiencia y una conexión profunda con la región. Desde cenotes escondidos hasta ruinas antiguas, saben mostrarte una faceta de la Riviera Maya que pocos conocen.',
+      'story.who.p4':     'Nos importan las personas a quienes servimos y con quienes trabajamos — servicio atento, hospitalidad honesta y un equipo respetado y bien recompensado.',
+      'story.who.p5':     'Ya sea snorkel con tortugas, sitios UNESCO, pesca o un tour de tacos, cada detalle está organizado con cuidado para que simplemente disfrutes el momento.',
+      'story.who.p6':     'Esta es la Riviera Maya, sin la prisa.',
+      'story.stat.years': 'Años sirviendo la Riviera Maya',
+      'story.stat.priv':  'Experiencias privadas — siempre solo tu grupo',
+      'story.stat.stars': 'Calificación en todas las plataformas',
+      'story.val.lbl':    'Nuestros Valores',
+      'story.val.h2':     'Lo que nos hace diferentes.',
+      'story.val.h3':     'Más que una salida',
+      'story.val.p1':     'Algunas experiencias son apresuradas.',
+      'story.val.p2':     'Algunas se sienten masificadas.',
+      'story.val.p3':     'Algunas parecen que todos reciben exactamente lo mismo.',
+      'story.val.p4':     'Así no lo hacemos nosotros.',
+      'story.val.p5':     'Creemos que la Riviera Maya se vive lentamente, de forma personal y con verdadero cuidado. Nuestro objetivo es siempre hacerte sentir bienvenido, cuidado y conectado con este lugar.',
+      'story.why.h3':     'Por Qué Nos Eligen Nuestros Clientes',
+      'story.why.1.h':    'Porque el cuidado importa',
+      'story.why.1.p':    'Tu seguridad, comodidad y tranquilidad son lo primero. Cada detalle está planificado para que puedas relajarte y disfrutar plenamente la experiencia.',
+      'story.why.2.h':    'Porque el momento importa',
+      'story.why.2.p':    'Las fotos profesionales están incluidas en cada experiencia privada para que puedas estar presente y llevarte recuerdos reales que duran.',
+      'story.why.3.h':    'Porque este lugar importa',
+      'story.why.3.p':    'Creemos que la Riviera Maya debe vivirse con respeto. Cuidamos la naturaleza, honramos la fauna y apoyamos los negocios locales.',
+      'story.why.4.h':    'Porque las personas importan',
+      'story.why.4.p':    'Estamos aquí cuando nos necesitas — comunicación clara, atención personal y el servicio que te hace sentir genuinamente cuidado.',
+      'story.ready.h3':   '¿Listo para vivir la Riviera Maya de otra manera?',
+      'story.ready.p':    'Elige una experiencia privada diseñada para ti, o únete a una experiencia compartida que sigue siendo personal, cuidadosa y llena de corazón.'
     }
   }; /* end T */
 
@@ -700,8 +848,8 @@
     /* About text */
     setText('.about-t', D[pre + '.about']);
 
-    /* Included items (the text spans inside ic-y) */
-    var incItems = doc.querySelectorAll('.ic-y .ic-item span:last-child');
+    /* Included items (the text spans inside ic-y list items) */
+    var incItems = doc.querySelectorAll('.ic-item.ic-y span:last-child');
     var incArr = D[pre + '.inc'];
     if (incArr) {
       for (var ii = 0; ii < incItems.length && ii < incArr.length; ii++) {
@@ -710,7 +858,7 @@
     }
 
     /* Not included items */
-    var notIncItems = doc.querySelectorAll('.ic-n .ic-item span:last-child');
+    var notIncItems = doc.querySelectorAll('.ic-item.ic-n span:last-child');
     var notIncArr = D[pre + '.notinc'];
     if (notIncArr) {
       for (var ni = 0; ni < notIncItems.length && ni < notIncArr.length; ni++) {
@@ -785,12 +933,87 @@
     setPlaceholder('#f-phone', D['i.frm.phone.ph']);
   }
 
+  /* ── Our Story page ─────────────────────────────────────── */
+  function applyStoryPage(D) {
+    setText('#storyWhoLbl',   D['story.who.lbl']);
+    setText('#storyWhoH2',    D['story.who.h2']);
+    setText('#storyWhoP1',    D['story.who.p1']);
+    setText('#storyWhoP2',    D['story.who.p2']);
+    setText('#storyWhoP3',    D['story.who.p3']);
+    setText('#storyWhoP4',    D['story.who.p4']);
+    setText('#storyWhoP5',    D['story.who.p5']);
+    setText('#storyWhoP6',    D['story.who.p6']);
+    setText('#storyStatYears',D['story.stat.years']);
+    setText('#storyStatPriv', D['story.stat.priv']);
+    setText('#storyStatStars',D['story.stat.stars']);
+    setText('#storyValLbl',   D['story.val.lbl']);
+    setText('#storyValH2',    D['story.val.h2']);
+    setText('#storyValH3',    D['story.val.h3']);
+    setText('#storyValP1',    D['story.val.p1']);
+    setText('#storyValP2',    D['story.val.p2']);
+    setText('#storyValP3',    D['story.val.p3']);
+    setText('#storyValP4',    D['story.val.p4']);
+    setText('#storyValP5',    D['story.val.p5']);
+    setText('#storyWhyH3',    D['story.why.h3']);
+    setText('#storyWhy1H',    D['story.why.1.h']);
+    setText('#storyWhy1P',    D['story.why.1.p']);
+    setText('#storyWhy2H',    D['story.why.2.h']);
+    setText('#storyWhy2P',    D['story.why.2.p']);
+    setText('#storyWhy3H',    D['story.why.3.h']);
+    setText('#storyWhy3P',    D['story.why.3.p']);
+    setText('#storyWhy4H',    D['story.why.4.h']);
+    setText('#storyWhy4P',    D['story.why.4.p']);
+    setText('#storyReadyH3',  D['story.ready.h3']);
+    setText('#storyReadyP',   D['story.ready.p']);
+  }
+
+  /* ── Reviews page ────────────────────────────────────────── */
+  function applyReviewsPage(D) {
+    var KEYS = ['rv.1.text','rv.2.text','rv.3.text','rv.4.text','rv.5.text','rv.6.text',
+                'rv.7.text','rv.8.text','rv.9.text','rv.10.text','rv.11.text','rv.12.text','rv.13.text'];
+    var texts = doc.querySelectorAll('.rcp-text');
+    for (var i = 0; i < texts.length && i < KEYS.length; i++) {
+      if (D[KEYS[i]]) texts[i].textContent = D[KEYS[i]];
+    }
+    var FROM_MAP = {
+      'United States':'rv.from.us','United Kingdom':'rv.from.uk','Spain':'rv.from.es',
+      'Canada':'rv.from.ca','Australia':'rv.from.au','Germany':'rv.from.de',
+      'France':'rv.from.fr','Singapore':'rv.from.sg','Brazil':'rv.from.br',
+      'Sweden':'rv.from.se','Netherlands':'rv.from.nl'
+    };
+    var froms = doc.querySelectorAll('.rcp-from');
+    for (var j = 0; j < froms.length; j++) {
+      var key = FROM_MAP[froms[j].textContent.trim()];
+      if (key && D[key]) froms[j].textContent = D[key];
+    }
+  }
+
+  /* ── Index page: review slider translations ──────────────── */
+  function applyIndexReviews(D) {
+    var IDX_KEYS = ['rv.idx.1','rv.idx.2','rv.idx.3','rv.idx.4','rv.idx.5','rv.idx.6'];
+    var texts = doc.querySelectorAll('#revTrack .rc-text');
+    for (var i = 0; i < texts.length && i < IDX_KEYS.length; i++) {
+      if (D[IDX_KEYS[i]]) texts[i].textContent = D[IDX_KEYS[i]];
+    }
+    var FROM_MAP = {
+      'United States':'rv.from.us','United Kingdom':'rv.from.uk','Spain':'rv.from.es',
+      'Canada':'rv.from.ca','Australia':'rv.from.au','Germany':'rv.from.de',
+      'France':'rv.from.fr','Singapore':'rv.from.sg','Brazil':'rv.from.br',
+      'Sweden':'rv.from.se','Netherlands':'rv.from.nl'
+    };
+    var froms = doc.querySelectorAll('#revTrack .rc-from');
+    for (var j = 0; j < froms.length; j++) {
+      var key = FROM_MAP[froms[j].textContent.trim()];
+      if (key && D[key]) froms[j].textContent = D[key];
+    }
+  }
+
   /* ── Master apply function ──────────────────────────────── */
   function apply(lang) {
     if (lang === 'en' || !T[lang]) return;
     var D = T[lang];
 
-    /* 1. data-i18n attributes (nav, footer, booking form labels) */
+    /* 1. data-i18n attributes (nav, footer, cards, booking form) */
     applyDataAttrs(D);
 
     /* 2. Page-specific content by URL */
@@ -798,10 +1021,14 @@
 
     if (page === 'index' || page === '') {
       applyIndexPage(lang, D);
+      applyIndexReviews(D);
     } else if (TOUR_MAP[page]) {
       applyTourPage(lang, D);
+    } else if (page === 'our-story') {
+      applyStoryPage(D);
+    } else if (page === 'reviews') {
+      applyReviewsPage(D);
     }
-    /* tours.html, reviews.html, our-story.html are covered by data-i18n attrs */
 
     /* 3. Update html lang attribute */
     doc.documentElement.setAttribute('lang', lang);
