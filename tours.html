@@ -687,20 +687,42 @@ mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 })();
 
-//  LAZY IMAGES 
+//  LAZY IMAGES
 (function(){
-  if(!window.IntersectionObserver) return;
+  var imgs=document.querySelectorAll('img[data-src]');
+  function markLoaded(img){
+    if(img.complete && img.naturalWidth>0){
+      img.classList.add('loaded');
+      return;
+    }
+    img.addEventListener('load',function(){img.classList.add('loaded');},{once:true});
+  }
+
+  if(!window.IntersectionObserver){
+    imgs.forEach(function(img){
+      if(img.dataset.src && !img.getAttribute('src')) img.src=img.dataset.src;
+      markLoaded(img);
+    });
+    return;
+  }
+
   var io=new IntersectionObserver(function(entries){
     entries.forEach(function(e){
-      if(e.isIntersecting){
-        var img=e.target;
+      if(!e.isIntersecting) return;
+      var img=e.target;
+      if(img.dataset.src && (!img.getAttribute('src') || img.getAttribute('src')==='')){
         img.src=img.dataset.src;
-        img.addEventListener('load',function(){img.classList.add('loaded');},{once:true});
-        io.unobserve(img);
       }
+      markLoaded(img);
+      io.unobserve(img);
     });
   },{rootMargin:'300px'});
-  document.querySelectorAll('img[data-src]').forEach(function(img){io.observe(img);});
+
+  imgs.forEach(function(img){
+    // If src already exists (e.g. direct fallback), make it visible immediately.
+    markLoaded(img);
+    io.observe(img);
+  });
 })();
 
 
@@ -770,25 +792,6 @@ function makeSlider(trackId,prevId,nextId,dotsId,cardSel,invDots){
 }
 
 
-// Lazy load images on tours page
-(function(){
-  if(!window.IntersectionObserver) return;
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        var img=e.target;
-         var img=e.target;
-        if(img.dataset.src){
-          img.src=img.dataset.src;
-          img.addEventListener('load',function(){img.classList.add('loaded');},{once:true});
-          delete img.dataset.src;
-        }
-        io.unobserve(img);
-      }
-    });
-  },{rootMargin:'300px'});
-  document.querySelectorAll('img[data-src]').forEach(function(img){io.observe(img);});
-})();
 </script>
 <script src="assets/common/perf.js" defer></script>
 </body>
