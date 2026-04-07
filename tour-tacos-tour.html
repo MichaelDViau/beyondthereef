@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- i18n: detect lang before first paint -->
+<script>(function(){try{var l=localStorage.getItem('btrPreferredLanguage')||'en';window._btrLang=l;if(l!=='en')document.documentElement.classList.add('btr-i18n-loading');}catch(e){}}());</script>
+<style>.btr-i18n-loading body{visibility:hidden!important}</style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
@@ -374,7 +377,15 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 .rv.vis{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 .rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
 
+
+/* ── Language switcher ── */
+.lang-sw{display:flex;align-items:center;gap:2px;margin-right:6px}
+.ls-btn{background:transparent;border:1px solid rgba(255,255,255,.20);color:rgba(255,255,255,.55);font-size:10px;font-weight:700;letter-spacing:.05em;padding:4px 7px;border-radius:4px;cursor:pointer;font-family:inherit;transition:background .2s,color .2s,border-color .2s}
+.ls-btn:hover,.ls-btn.active{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.36)}
+.ls-btn.active{border-color:var(--teal);color:var(--teal)}
+@media(max-width:767px){.lang-sw{margin-right:2px}.ls-btn{padding:3px 5px;font-size:9px}}
 </style>
+<script src="assets/common/i18n.js"></script>
 </head>
 <body style="color-scheme:light;background:#ffffff">
 <nav class="nav" id="mainNav">
@@ -386,14 +397,15 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     </div>
   </a>
   <div class="nav-links">
-    <a href="tours.html">Private Experiences</a>
-    <a href="tours.html#shared">Shared Experiences</a>
+    <a href="tours.html" data-i18n="c.nav.private" data-i18n="c.nav.private">Private Experiences</a>
+    <a href="tours.html#shared" data-i18n="c.nav.shared" data-i18n="c.nav.shared">Shared Experiences</a>
     <a href="reviews.html">Reviews</a>
     <a href="our-story.html">Our Story</a>
     <a href="index.html#contact">Contact</a>
   </div>
   <div class="nav-right">
-    <a href="https://wa.me/529623562346" class="nav-cta btn" target="_blank" rel="noopener">Book Now →</a>
+    <a href="https://wa.me/529623562346" class="nav-cta btn" data-i18n="c.nav.book" target="_blank" rel="noopener">Book Now →</a>
+    <div class="lang-sw" id="langSw"><button class="ls-btn" data-lang="en" type="button">EN</button><button class="ls-btn" data-lang="fr" type="button">FR</button><button class="ls-btn" data-lang="es" type="button">ES</button></div>
     <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -401,8 +413,8 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </nav>
 <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
   <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
-  <a href="tours.html" onclick="closeMob()">Private Experiences</a>
-  <a href="tours.html#shared" onclick="closeMob()">Shared Experiences</a>
+  <a href="tours.html" onclick="closeMob()" data-i18n="c.nav.private" data-i18n="c.nav.private">Private Experiences</a>
+  <a href="tours.html#shared" onclick="closeMob()" data-i18n="c.nav.shared" data-i18n="c.nav.shared">Shared Experiences</a>
   <a href="reviews.html" onclick="closeMob()">Reviews</a>
   <a href="our-story.html" onclick="closeMob()">Our Story</a>
   <a href="index.html#contact" onclick="closeMob()">Contact</a>
@@ -429,45 +441,45 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 <div class="t-wrap">
   <div>
     <div class="cb">
-      <div class="cb-h">About This Experience</div>
+      <div class="cb-h" data-i18n="c.bk.about">About This Experience</div>
       <div class="cb-b"><p class="about-t">Taste your way through Playa del Carmen's most beloved taco spots with a local host who knows every secret spot. Sip craft mezcal and ice-cold beers, experience authentic Mexican street food culture, and enjoy free time on vibrant 5th Avenue.</p></div>
     </div>
     <div class="cb">
-      <div class="cb-h">What's Included &amp; Not Included</div>
+      <div class="cb-h" data-i18n="c.bk.included">What's Included &amp; Not Included</div>
       <div class="cb-b">
         <div class="ic-grid">
-          <div><p class="ic-sub">✓ Included</p><ul class="ic-list"><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>4+ taco tastings</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Beers, tequila & mezcal</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Local foodie host</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Professional photos</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Private van with A/C</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Hotel pick-up & drop-off</span></li></ul></div>
-          <div><p class="ic-sub">✕ Not Included</p><ul class="ic-list"><li class="ic-item ic-n"><span class="ic-dot">✕</span><span>Additional food or drinks beyond included</span></li><li class="ic-item ic-n"><span class="ic-dot">✕</span><span>Tips</span></li></ul></div>
+          <div><p class="ic-sub" data-i18n="c.bk.inc.lbl">✓ Included</p><ul class="ic-list"><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>4+ taco tastings</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Beers, tequila & mezcal</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Local foodie host</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Professional photos</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Private van with A/C</span></li><li class="ic-item ic-y"><span class="ic-dot">✓</span><span>Hotel pick-up & drop-off</span></li></ul></div>
+          <div><p class="ic-sub" data-i18n="c.bk.notinc.lbl">✕ Not Included</p><ul class="ic-list"><li class="ic-item ic-n"><span class="ic-dot">✕</span><span>Additional food or drinks beyond included</span></li><li class="ic-item ic-n"><span class="ic-dot">✕</span><span>Tips</span></li></ul></div>
         </div>
       </div>
     </div>
   </div>
   <div>
     <div class="bk-card">
-      <div class="bk-head" style="background:linear-gradient(135deg,#8B2500,#C0392B)"><p class="bk-from">Starting from</p><div class="bk-price">$59<sup>USD/person</sup></div><p class="bk-note">Price drops as you add guests · No payment here</p></div>
+      <div class="bk-head" style="background:linear-gradient(135deg,#8B2500,#C0392B)"><p class="bk-from" data-i18n="c.bk.from">Starting from</p><div class="bk-price">$59<sup>USD/person</sup></div><p class="bk-note" data-i18n="c.bk.pricedrop">Price drops as you add guests · No payment here</p></div>
       <div class="bk-body">
         <div id="bkForm">
-          <label class="pax-label" for="paxSel">Number of guests</label>
+          <label class="pax-label" data-i18n="c.bk.guests" for="paxSel">Number of guests</label>
         <select id="paxSel" class="pax-sel" aria-label="Select number of guests"></select>
         <div class="bk-totals">
-          <div class="bk-row"><span class="bk-rl">Price per person</span><span class="bk-rv" id="bkPP">-</span></div>
-          <div class="bk-row"><span class="bk-rl">Total price</span><span class="bk-total" id="bkTot">-</span></div>
+          <div class="bk-row"><span class="bk-rl" data-i18n="c.bk.pp">Price per person</span><span class="bk-rv" id="bkPP">-</span></div>
+          <div class="bk-row"><span class="bk-rl" data-i18n="c.bk.total">Total price</span><span class="bk-total" id="bkTot">-</span></div>
         </div>
-        <p class="bk-hint">💡 Price drops automatically as group grows</p>
-          <div class="bfg"><label>Full Name *</label><input type="text" id="bkName" placeholder="John &amp; Maria" autocomplete="name"></div>
-          <div class="bfg"><label>Email *</label><input type="email" id="bkEmail" placeholder="you@email.com" autocomplete="email"></div>
-          <div class="bfg"><label>Phone / WhatsApp</label><input type="tel" id="bkPhone" placeholder="+1 555 000 0000" autocomplete="tel"></div>
-          <div class="bfg"><label>Preferred Date</label><input type="date" id="bkDate" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:Montserrat,sans-serif;font-size:13px;color:var(--ink);background:#ffffff;outline:none;color-scheme:light;-webkit-appearance:none"></div>
-          <div class="bfg"><label>Hotel / Pick-up Location</label><input type="text" id="bkHotel" placeholder="Hotel name or address"></div>
-          <div class="bfg"><label>Special Requests</label><textarea id="bkNotes" placeholder="Dietary needs, accessibility..."></textarea></div>
-          <button class="bk-sub" onclick="subBk()">Request to Book →</button>
-          <p class="bk-disc">No payment collected here. We confirm availability and follow up right away.</p>
+        <p class="bk-hint" data-i18n="c.bk.hint">💡 Price drops automatically as group grows</p>
+          <div class="bfg"><label data-i18n="c.bk.name">Full Name *</label><input type="text" id="bkName" data-i18n-ph="c.bk.name.ph" placeholder="John &amp; Maria" autocomplete="name"></div>
+          <div class="bfg"><label data-i18n="c.bk.email">Email *</label><input type="email" id="bkEmail" data-i18n-ph="c.bk.email.ph" placeholder="you@email.com" autocomplete="email"></div>
+          <div class="bfg"><label data-i18n="c.bk.phone">Phone / WhatsApp</label><input type="tel" id="bkPhone" placeholder="+1 555 000 0000" autocomplete="tel"></div>
+          <div class="bfg"><label data-i18n="c.bk.date">Preferred Date</label><input type="date" id="bkDate" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:Montserrat,sans-serif;font-size:13px;color:var(--ink);background:#ffffff;outline:none;color-scheme:light;-webkit-appearance:none"></div>
+          <div class="bfg"><label data-i18n="c.bk.hotel">Hotel / Pick-up Location</label><input type="text" id="bkHotel" data-i18n-ph="c.bk.hotel.ph" placeholder="Hotel name or address"></div>
+          <div class="bfg"><label data-i18n="c.bk.notes">Special Requests</label><textarea id="bkNotes" data-i18n-ph="c.bk.notes.ph" placeholder="Dietary needs, accessibility..."></textarea></div>
+          <button class="bk-sub" data-i18n="c.bk.submit" onclick="subBk()">Request to Book →</button>
+          <p class="bk-disc" data-i18n="c.bk.disclaimer">No payment collected here. We confirm availability and follow up right away.</p>
         </div>
         <div class="bk-suc" id="bkSuc">
           <div style="font-size:38px;margin-bottom:10px">🎉</div>
-          <h4>Request Sent!</h4>
-          <p>We'll confirm availability and reach out within a few hours. Check your WhatsApp too!</p>
-          <a href="tours.html" class="btn btn-navy btn-md" style="margin-top:14px;display:inline-flex">← See More Tours</a>
+          <h4 data-i18n="c.bk.success.title">Request Sent!</h4>
+          <p data-i18n="c.bk.success.text">We'll confirm availability and reach out within a few hours. Check your WhatsApp too!</p>
+          <a href="tours.html" class="btn btn-navy btn-md" style="margin-top:14px;display:inline-flex" data-i18n="c.bk.success.link">← See More Tours</a>
         </div>
       </div>
     </div>
@@ -476,8 +488,8 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </div>
 
 <section class="rel-sec">
-  <div class="lbl">Keep Exploring</div>
-  <h2 class="h2" style="font-size:clamp(20px,4vw,28px)">Guests also loved</h2>
+  <div class="lbl" data-i18n="c.sec.keep">Keep Exploring</div>
+  <h2 class="h2" style="font-size:clamp(20px,4vw,28px)" data-i18n="c.sec.loved">Guests also loved</h2>
   <div class="rel-grid"><a href="tour-turtles-cenotes.html" class="rel-a"><div class="rel-thumb" style="background:linear-gradient(135deg,#0A4D5C,#1DA5B4)"></div><div><p class="rel-name">Sea Turtle and Cenote Snorkeling Experience</p><p class="rel-price">From <strong>$119</strong>/person</p></div></a><a href="tour-tulum-express.html" class="rel-a"><div class="rel-thumb" style="background:linear-gradient(135deg,#0E2A45,#E8621A)"></div><div><p class="rel-name">Tulum Highlights</p><p class="rel-price">From <strong>$69</strong>/person</p></div></a><a href="tour-cenotes-express.html" class="rel-a"><div class="rel-thumb" style="background:linear-gradient(135deg,#0A1828,#1DA5B4)"></div><div><p class="rel-name">Hidden Cenotes Express</p><p class="rel-price">From <strong>$74</strong>/person</p></div></a></div>
 </section>
 <footer>
@@ -487,7 +499,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         <img src="assets/common/logo.png" alt="Beyond the Reef Mexico" width="38" height="38">
         <span class="ft-logo-name">Beyond the Reef Mexico</span>
       </div>
-      <p class="ft-tagline">Private & shared experiences in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
+      <p class="ft-tagline" data-i18n="c.ft.tagline">Private & shared experiences in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
       <div class="ft-social">
         <a href="https://wa.me/529623562346" class="ft-soc" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
         <a href="/cdn-cgi/l/email-protection#c6afa8a0a986a4a3bfa9a8a2b2aea3b4a3a3a0aba3beafa5a9e8a5a9ab" class="ft-soc" aria-label="Email">
@@ -499,32 +511,32 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
       </div>
     </div>
     <div>
-      <p class="ft-h">Explore</p>
+      <p class="ft-h" data-i18n="c.ft.explore">Explore</p>
       <div class="ft-links">
-        <a href="tours.html">Private Experiences</a>
-        <a href="tours.html#shared">Shared Experiences</a>
-        <a href="reviews.html">Guest Reviews</a>
-        <a href="our-story.html">Our Story</a>
+        <a href="tours.html" data-i18n="c.nav.private" data-i18n="c.nav.private">Private Experiences</a>
+        <a href="tours.html#shared" data-i18n="c.nav.shared" data-i18n="c.nav.shared" data-i18n="c.ft.shared">Shared Experiences</a>
+        <a href="reviews.html"Guest Reviews</a>
+        <a href="our-story.html" data-i18n="c.ft.story">Our Story</a>
       </div>
     </div>
     <div>
-      <p class="ft-h">Contact</p>
+      <p class="ft-h" data-i18n="c.ft.contact">Contact</p>
       <div class="ft-links">
         <a href="https://wa.me/529623562346" target="_blank" rel="noopener">+52 962 356 2346</a>
         <a href="/cdn-cgi/l/email-protection#f49d9a929bb496918d9b9a90809c918691919299918c9d979bda979b99"><span class="__cf_email__" data-cfemail="83eaede5ecc3e1e6faecede7f7ebe6f1e6e6e5eee6fbeae0ecade0ecee">[email&#160;protected]</span></a>
         <a href="https://www.instagram.com/beyondthereefmexico" target="_blank" rel="noopener">@beyondthereefmexico</a>
       </div>
-      <p class="ft-h" style="margin-top:20px">Destinations</p>
+      <p class="ft-h" data-i18n="c.ft.dest" style="margin-top:20px">Destinations</p>
       <div class="ft-links">
-        <a href="tours.html">Cancun Tours</a>
-        <a href="tours.html">Tulum Tours</a>
-        <a href="tours.html">Playa del Carmen Tours</a>
-        <a href="tours.html">Riviera Maya Tours</a>
+        <a href="tours.html" data-i18n="c.ft.cancun">Cancun Tours</a>
+        <a href="tours.html" data-i18n="c.ft.tulum">Tulum Tours</a>
+        <a href="tours.html" data-i18n="c.ft.playa">Playa del Carmen Tours</a>
+        <a href="tours.html" data-i18n="c.ft.riviera">Riviera Maya Tours</a>
       </div>
     </div>
   </div>
   <div class="ft-bottom">
-    <p>© 2025 Beyond the Reef Mexico. All rights reserved.</p>
+    <p><span data-i18n="c.ft.copy">© 2025 Beyond the Reef Mexico. All rights reserved.</span></p>
   </div>
 </footer>
 <a href="https://www.instagram.com/beyondthereefmexico" class="float-ig" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" style="stop-color:#f09433"/><stop offset="25%" style="stop-color:#e6683c"/><stop offset="50%" style="stop-color:#dc2743"/><stop offset="75%" style="stop-color:#cc2366"/><stop offset="100%" style="stop-color:#bc1888"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#igGrad)"/><rect x="8" y="8" width="16" height="16" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="21" cy="11" r="1" fill="white"/></svg></a>
@@ -624,5 +636,14 @@ function subBk(){
 </script>
 <script src="assets/common/tour.js" defer></script>
 <script src="assets/common/perf.js" defer></script>
+<script>
+(function(){
+  if(window._btrLang&&window._btrLang!=='en'&&window.BTR_I18N){
+    BTR_I18N.apply(window._btrLang);
+  }
+  document.documentElement.classList.remove('btr-i18n-loading');
+  if(window.BTR_I18N) BTR_I18N.setup();
+}());
+</script>
 </body>
 </html>
