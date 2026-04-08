@@ -4,41 +4,33 @@
 
    ── CHOOSE YOUR NOTIFICATION METHOD(S) ──────────────────────
    Fill in the keys for whichever services you want to use.
-   You can enable one, two, or all three at the same time.
+   You can use one or more at the same time.
 
-   ── 1. TELEGRAM (recommended — free, instant, reliable) ─────
-      a. Open Telegram and search for "@BotFather"
-      b. Send:  /newbot
-      c. Follow the prompts — give your bot any name
-      d. BotFather sends you a TOKEN like:  123456789:ABCdef...
-      e. Now open this URL in your browser (replace TOKEN):
-            https://api.telegram.org/bot<TOKEN>/getUpdates
-         (first send any message to your new bot, then open the URL)
-      f. In the response find "chat":{"id": 123456789}  — that is your CHAT_ID
-      g. Fill in tg_token and tg_chatid below
+   ── 1. WHATSAPP via Green API (recommended — free, uses your own WhatsApp)
+      a. Go to https://green-api.com and create a free account
+      b. Click "Create Instance" — choose the free plan
+      c. In your instance dashboard, click "Scan QR Code"
+         and scan it with your WhatsApp (like WhatsApp Web)
+      d. Copy your "idInstance" (e.g. 1101234567)
+         and "apiTokenInstance" (long string of letters/numbers)
+      e. Fill in greenapi_instance and greenapi_token below
+      Note: keep WhatsApp open on your phone so the instance stays active
 
-   ── 2. NTFY (simplest — no account, push to phone) ──────────
-      a. Install the free "ntfy" app on your phone (iOS or Android)
-      b. Pick a unique topic name, e.g.  beyondthereef-bookings-2024
-         (anyone who knows the name can subscribe, so make it hard to guess)
-      c. In the ntfy app tap "+" and subscribe to your topic name
-      d. Fill in ntfy_topic below with that same name
-
-   ── 3. EMAIL (EmailJS — free up to 200/month) ───────────────
+   ── 2. EMAIL via EmailJS (free up to 200/month) ──────────────
       a. Go to https://www.emailjs.com — create a free account
-      b. "Add New Service" → connect Gmail (or any email)
+      b. "Add New Service" → connect your Gmail
       c. "Email Templates" → "Create New Template"
-         Set the "To Email" field to your address
-         Use these variables in the body:
+         Set "To Email" to your address in the template settings
+         Use these variables anywhere in the body:
            {{tour}} {{name}} {{email}} {{phone}} {{date}} {{hotel}} {{pricing}} {{notes}}
       d. "Account" → copy your Public Key
       e. Fill in ejs_public, ejs_service, ejs_template below
 
-   ── 4. WHATSAPP via CallMeBot (if you still want to try) ────
-      a. Add +34 644 59 77 51 to your WhatsApp contacts
-      b. Send the message:  I allow callmebot to send me messages
-      c. Wait for their reply with your API key (can take a few minutes)
-      d. Fill in wa_apikey below
+   ── 3. NTFY (simplest push notification — no account needed) ─
+      a. Install the free "ntfy" app on your phone (iOS or Android)
+      b. In the app tap "+" and subscribe to a unique topic name
+         e.g.  beyondthereef-bookings-2024  (make it hard to guess)
+      c. Fill in ntfy_topic below with that same name
 
    ============================================================ */
 
@@ -47,21 +39,20 @@
   // ── CONFIGURATION — fill in the values for what you want to use ──
   var CFG = {
 
-    // ── Telegram ─────────────────────────────────────────────────
-    tg_token:  'YOUR_TELEGRAM_BOT_TOKEN',   // e.g. '123456789:ABCdef...'
-    tg_chatid: 'YOUR_TELEGRAM_CHAT_ID',     // e.g. '123456789'
-
-    // ── ntfy (push notification to phone app) ────────────────────
-    ntfy_topic: 'YOUR_NTFY_TOPIC',          // e.g. 'beyondthereef-bookings-2024'
+    // ── WhatsApp via Green API ────────────────────────────────────
+    // Your own WhatsApp number that will RECEIVE the message (with country code, no + or spaces)
+    greenapi_to:       '52984167067',
+    // From your Green API dashboard:
+    greenapi_instance: 'YOUR_GREENAPI_INSTANCE_ID',  // e.g. '1101234567'
+    greenapi_token:    'YOUR_GREENAPI_TOKEN',         // long alphanumeric string
 
     // ── EmailJS ──────────────────────────────────────────────────
     ejs_public:   'YOUR_EMAILJS_PUBLIC_KEY',
     ejs_service:  'YOUR_EMAILJS_SERVICE_ID',
     ejs_template: 'YOUR_EMAILJS_TEMPLATE_ID',
 
-    // ── WhatsApp via CallMeBot (backup option) ────────────────────
-    wa_phone:  '52984167067',
-    wa_apikey: 'YOUR_CALLMEBOT_API_KEY'
+    // ── ntfy push notification ───────────────────────────────────
+    ntfy_topic: 'YOUR_NTFY_TOPIC'   // e.g. 'beyondthereef-bookings-2024'
   };
   // ─────────────────────────────────────────────────────────────────
 
@@ -79,22 +70,18 @@
     );
   }
 
-  /* ── Telegram ── */
-  function sendTelegram(data) {
-    if (CFG.tg_token === 'YOUR_TELEGRAM_BOT_TOKEN') return;
-    var url = 'https://api.telegram.org/bot' + CFG.tg_token +
-              '/sendMessage?chat_id=' + encodeURIComponent(CFG.tg_chatid) +
-              '&text=' + encodeURIComponent(buildMessage(data));
-    new Image().src = url;
-  }
-
-  /* ── ntfy push notification ── */
-  function sendNtfy(data) {
-    if (CFG.ntfy_topic === 'YOUR_NTFY_TOPIC') return;
-    fetch('https://ntfy.sh/' + CFG.ntfy_topic, {
+  /* ── WhatsApp via Green API ── */
+  function sendGreenAPI(data) {
+    if (CFG.greenapi_instance === 'YOUR_GREENAPI_INSTANCE_ID') return;
+    var url = 'https://api.green-api.com/waInstance' + CFG.greenapi_instance +
+              '/sendMessage/' + CFG.greenapi_token;
+    fetch(url, {
       method: 'POST',
-      body: buildMessage(data),
-      headers: { 'Title': 'New Booking: ' + data.tour }
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        chatId: CFG.greenapi_to + '@c.us',
+        message: buildMessage(data)
+      })
     }).catch(function () {});
   }
 
@@ -116,22 +103,21 @@
     }
   }
 
-  /* ── WhatsApp via CallMeBot ── */
-  function sendWhatsApp(data) {
-    if (CFG.wa_apikey === 'YOUR_CALLMEBOT_API_KEY') return;
-    var url = 'https://api.callmebot.com/whatsapp.php' +
-              '?phone='  + encodeURIComponent(CFG.wa_phone) +
-              '&text='   + encodeURIComponent(buildMessage(data)) +
-              '&apikey=' + encodeURIComponent(CFG.wa_apikey);
-    new Image().src = url;
+  /* ── ntfy push notification ── */
+  function sendNtfy(data) {
+    if (CFG.ntfy_topic === 'YOUR_NTFY_TOPIC') return;
+    fetch('https://ntfy.sh/' + CFG.ntfy_topic, {
+      method: 'POST',
+      body: buildMessage(data),
+      headers: { 'Title': 'New Booking: ' + data.tour }
+    }).catch(function () {});
   }
 
   /* Main notify — fires all configured channels simultaneously */
   window.btrNotify = function (data) {
-    sendTelegram(data);
-    sendNtfy(data);
+    sendGreenAPI(data);
     sendEmailJS(data);
-    sendWhatsApp(data);
+    sendNtfy(data);
   };
 
 }(window));
