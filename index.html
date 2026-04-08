@@ -1127,6 +1127,7 @@ function subForm() {
   .then(function(data){
     if(btn){ btn.disabled = false; btn.textContent = 'Send My Request →'; }
     if(data.ok){
+      if(window.btrNotify) btrNotify({name:name,email:email,phone:phone,notes:msg,tour:'Custom Request (Homepage)',date:'TBD',hotel:'N/A',pricing:'N/A'});
       document.getElementById('frmWrap').style.display = 'none';
       document.getElementById('fsuc').style.display    = 'block';
     } else {
@@ -1139,6 +1140,7 @@ function subForm() {
   });
 }
 </script>
+<script src="assets/common/booking-notify.js"></script>
 <script src="assets/common/perf.js" defer></script>
 <script>
 (function(){

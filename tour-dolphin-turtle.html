@@ -637,6 +637,7 @@ function subBk(){
   .then(function(data){
     if(btn){ btn.disabled = false; btn.textContent = 'Request to Book →'; }
     if(data.ok){
+      if(window.btrNotify) btrNotify({name:name,email:email,phone:phone,date:date,hotel:hotel,notes:notes,pricing:pInfo,tour:"Dolphin Watching in Sian Ka'an"});
       var form = document.getElementById('bkForm');
       var suc  = document.getElementById('bkSuc');
       if(form) form.style.display = 'none';
@@ -651,6 +652,7 @@ function subBk(){
   });
 }
 </script>
+<script src="assets/common/booking-notify.js"></script>
 <script src="assets/common/tour.js" defer></script>
 <script src="assets/common/perf.js" defer></script>
 <script>
