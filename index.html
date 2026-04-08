@@ -782,7 +782,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <p style="font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.7">Just share your ideas with us and we will send you a personalized quote within a few hours.</p>
     <div id="frmWrap">
       <div class="fg"><label id="frmNameLbl">Your Name</label><input type="text" id="f-name" data-i18n-ph="i.frm.name.ph" placeholder="e.g. John &amp; Maria" autocomplete="name"></div>
-      <div class="fg"><label id="frmEmailLbl">Email</label><input type="email" id="f-email" placeholder="you@email.com" autocomplete="email"></div>
+      <div class="fg"><label id="frmEmailLbl">Email *</label><input type="email" id="f-email" placeholder="you@email.com" autocomplete="email" required></div>
       <div class="fg"><label id="frmPhoneLbl">Phone / WhatsApp</label><input type="tel" id="f-phone" data-i18n-ph="i.frm.phone.ph" placeholder="+1 555 000 0000" autocomplete="tel"></div>
       <div class="fg"><label id="frmMsgLbl">Your Dream Day</label><textarea id="f-msg" data-i18n-ph="i.frm.msg.ph" placeholder="Dates, group size, activities, dietary needs..."></textarea></div>
       <button id="frmSubmit" class="fsub" onclick="subForm()">Send My Request →</button>
@@ -790,7 +790,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <div class="fsuc" id="fsuc">
       <div style="font-size:40px;margin-bottom:12px">🎉</div>
       <h4 id="frmSucTitle">We got your message!</h4>
-      <p id="frmSucText">We'll reply within hours. Check your WhatsApp too!</p>
+      <p id="frmSucText">We'll reply to your email within a few hours!</p>
     </div>
   </div>
 </section>
@@ -1101,17 +1101,42 @@ makeSlider('revTrack',    'revPrev',    'revNext',    'revDots',    '.rc',      
   document.querySelectorAll('.rv').forEach(function(el) { io.observe(el); });
 })();
 
-// Contact form
+// Contact form — EMAIL (Formspree)
 function subForm() {
   var name  = document.getElementById('f-name').value.trim();
   var email = document.getElementById('f-email').value.trim();
-  if (!name || !email) { alert('Please enter your name and email.'); return; }
+  if (!name) { alert('Please enter your name.'); return; }
+  if (!email) { alert('Email is required — we cannot send your request without it.'); return; }
   var phone = document.getElementById('f-phone').value.trim() || 'N/A';
   var msg   = document.getElementById('f-msg').value.trim()   || 'No details';
-  var text  = 'Hello! Request from website. Name: ' + name + ' Phone: ' + phone + ' Email: ' + email + ' Message: ' + msg;
-  window.open('https://wa.me/529841670697?text=' + encodeURIComponent(text), '_blank');
-  document.getElementById('frmWrap').style.display = 'none';
-  document.getElementById('fsuc').style.display    = 'block';
+  var btn = document.getElementById('frmSubmit');
+  if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+  fetch('https://formspree.io/f/xkowoogr', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: 'Custom Request from website',
+      email: email,
+      name: name,
+      phone: phone,
+      message: msg,
+      type: 'Custom Request'
+    })
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    if(btn){ btn.disabled = false; btn.textContent = 'Send My Request →'; }
+    if(data.ok){
+      document.getElementById('frmWrap').style.display = 'none';
+      document.getElementById('fsuc').style.display    = 'block';
+    } else {
+      alert('Something went wrong. Please try again or email us at info@beyondthereefmexico.com');
+    }
+  })
+  .catch(function(){
+    if(btn){ btn.disabled = false; btn.textContent = 'Send My Request →'; }
+    alert('Could not send your request. Please email us at info@beyondthereefmexico.com');
+  });
 }
 </script>
 <script src="assets/common/perf.js" defer></script>

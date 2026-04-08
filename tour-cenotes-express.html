@@ -463,7 +463,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         </div>
         <p class="bk-hint" data-i18n="c.bk.hint">💡 Price drops automatically as group grows</p>
           <div class="bfg"><label data-i18n="c.bk.name">Full Name *</label><input type="text" id="bkName" data-i18n-ph="c.bk.name.ph" placeholder="John &amp; Maria" autocomplete="name"></div>
-          <div class="bfg"><label data-i18n="c.bk.email">Email *</label><input type="email" id="bkEmail" data-i18n-ph="c.bk.email.ph" placeholder="you@email.com" autocomplete="email"></div>
+          <div class="bfg"><label data-i18n="c.bk.email">Email *</label><input type="email" id="bkEmail" required data-i18n-ph="c.bk.email.ph" placeholder="you@email.com" autocomplete="email"></div>
           <div class="bfg"><label data-i18n="c.bk.phone">Phone / WhatsApp</label><input type="tel" id="bkPhone" placeholder="+1 555 000 0000" autocomplete="tel"></div>
           <div class="bfg"><label data-i18n="c.bk.date">Preferred Date</label><input type="date" id="bkDate" style="width:100%;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;font-family:Montserrat,sans-serif;font-size:13px;color:var(--ink);background:#ffffff;outline:none;color-scheme:light;-webkit-appearance:none"></div>
           <div class="bfg"><label data-i18n="c.bk.hotel">Hotel / Pick-up Location</label><input type="text" id="bkHotel" data-i18n-ph="c.bk.hotel.ph" placeholder="Hotel name or address"></div>
@@ -474,7 +474,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         <div class="bk-suc" id="bkSuc">
           <div style="font-size:38px;margin-bottom:10px">🎉</div>
           <h4 data-i18n="c.bk.success.title">Request Sent!</h4>
-          <p data-i18n="c.bk.success.text">We'll confirm availability and reach out within a few hours. Check your WhatsApp too!</p>
+          <p data-i18n="c.bk.success.text">We'll confirm availability and reply to your email within a few hours.</p>
           <a href="tours.html" class="btn btn-navy btn-md" style="margin-top:14px;display:inline-flex" data-i18n="c.bk.success.link">← See More Tours</a>
         </div>
       </div>
@@ -603,31 +603,52 @@ mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',
   }
 })();
 
-//  BOOKING  WHATSAPP 
+//  BOOKING  EMAIL (Formspree)
 function subBk(){
   var name  = document.getElementById('bkName').value.trim();
   var email = document.getElementById('bkEmail').value.trim();
-  if(!name || !email){ alert('Please enter your name and email.'); return; }
+  if(!name){ alert('Please enter your name.'); return; }
+  if(!email){ alert('Email is required — we cannot send your booking without it.'); return; }
   var phone = document.getElementById('bkPhone') && document.getElementById('bkPhone').value.trim() || 'N/A';
   var date  = document.getElementById('bkDate')  && document.getElementById('bkDate').value  || 'TBD';
   var hotel = document.getElementById('bkHotel') && document.getElementById('bkHotel').value.trim() || 'N/A';
   var notes = document.getElementById('bkNotes') && document.getElementById('bkNotes').value.trim() || 'None';
   var pInfo = (pricing[selPax] && selPax)
-    ? 'Guests: ' + selPax + ', Total: $' + (pricing[selPax] * selPax) + ' USD'
+    ? selPax + ' guests — $' + (pricing[selPax] * selPax) + ' USD total'
     : 'Price on request';
-  var msg = 'Hello! Booking request: Hidden Cenotes Express.\n'
-    + 'Name: ' + name + '\n'
-    + 'Phone: ' + phone + '\n'
-    + 'Email: ' + email + '\n'
-    + 'Date: ' + date + '\n'
-    + 'Hotel: ' + hotel + '\n'
-    + pInfo + '\n'
-    + 'Notes: ' + notes;
-  window.open('https://wa.me/529841670697?text=' + encodeURIComponent(msg), '_blank');
-  var form = document.getElementById('bkForm');
-  var suc  = document.getElementById('bkSuc');
-  if(form) form.style.display = 'none';
-  if(suc)  suc.style.display  = 'block';
+  var btn = document.querySelector('.bk-sub');
+  if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+  fetch('https://formspree.io/f/xbdpbgkw', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: "Booking: Hidden Cenotes Express",
+      email: email,
+      name: name,
+      phone: phone,
+      date: date,
+      hotel: hotel,
+      pricing: pInfo,
+      notes: notes,
+      tour: "Hidden Cenotes Express"
+    })
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(data){
+    if(btn){ btn.disabled = false; btn.textContent = 'Request to Book →'; }
+    if(data.ok){
+      var form = document.getElementById('bkForm');
+      var suc  = document.getElementById('bkSuc');
+      if(form) form.style.display = 'none';
+      if(suc)  suc.style.display  = 'block';
+    } else {
+      alert('Something went wrong. Please try again or email us at info@beyondthereefmexico.com');
+    }
+  })
+  .catch(function(){
+    if(btn){ btn.disabled = false; btn.textContent = 'Request to Book →'; }
+    alert('Could not send your request. Please email us at info@beyondthereefmexico.com');
+  });
 }
 </script>
 <script src="assets/common/tour.js" defer></script>
