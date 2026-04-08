@@ -18,17 +18,19 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <link rel="stylesheet" href="assets/common/perf.css">
 <style>
-.ps{position:relative;height:min(500px,70vw);min-height:240px;overflow:hidden;background:var(--navy);margin-top:64px}
-.ps-track{display:flex;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);will-change:transform}
+.ps{position:relative;width:100%;height:min(500px,70vw);min-height:240px;overflow:hidden;background:var(--navy);margin-top:64px}
+.ps-track{display:flex;height:100%;transition:transform .35s cubic-bezier(.4,0,.2,1);will-change:transform}
 .ps-slide{flex:0 0 100%;height:100%;position:relative;background:var(--navy)}
 .ps-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .4s}
 .ps-slide img.loaded{opacity:1}
-.ps-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:10;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.20);backdrop-filter:blur(8px);color:#fff;font-size:18px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;border:1.5px solid rgba(255,255,255,.3)}
-.ps-btn:hover{background:rgba(255,255,255,.36)}
-.ps-prev{left:12px}.ps-next{right:12px}
-.ps-dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:5px;z-index:10}
-.ps-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;border:none;padding:0;transition:background .2s,width .2s,border-radius .2s}
-.ps-dot.on{background:#fff;width:16px;border-radius:3px}
+
+.ps-nav{display:flex;align-items:center;justify-content:center;gap:24px;padding:10px 20px 12px;background:#fff;border-bottom:1.5px solid var(--border)}
+.ps-btn{width:42px;height:42px;border-radius:50%;border:2px solid var(--border);background:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--navy);cursor:pointer;transition:background .22s ease,border-color .22s ease,color .22s ease,transform .15s;flex-shrink:0}
+.ps-btn:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+.ps-btn:active{transform:scale(.92)}
+.ps-dots{display:flex;gap:6px;align-items:center}
+.ps-dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;border:none;padding:0;transition:background .2s,width .2s,border-radius .2s}
+.ps-dot.on{background:var(--navy);width:20px;border-radius:4px}
 .ps-ctr{position:absolute;top:12px;right:12px;background:rgba(14,42,69,.6);color:rgba(255,255,255,.9);font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;backdrop-filter:blur(4px);z-index:10;font-family:'Montserrat',sans-serif}
 /* Tour info */
 .ti{background:#ffffff;padding:20px 24px 0;border-bottom:1.5px solid var(--border);color-scheme:light}
@@ -39,7 +41,7 @@
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px}
 .chip{display:inline-flex;align-items:center;gap:5px;background:var(--gold-bg);border-radius:999px;padding:6px 12px;font-size:11px;font-weight:700;color:var(--ink);border:1px solid var(--border)}
 /* Layout */
-.t-wrap{display:grid;grid-template-columns:1fr;gap:24px;padding:24px 20px;max-width:1100px;margin:0 auto}
+.t-wrap{display:grid;grid-template-columns:1fr;gap:24px;padding:24px 16px;max-width:1100px;margin:0 auto;width:100%;box-sizing:border-box}
 @media(min-width:768px){.t-wrap{grid-template-columns:1fr 360px;padding:36px 40px;gap:32px}}
 .cb{background:#ffffff;border-radius:var(--r2);border:1.5px solid var(--border);overflow:hidden;margin-bottom:16px;box-shadow:var(--sh);color-scheme:light}
 .cb-h{padding:14px 20px;border-bottom:1.5px solid var(--border);font-size:14px;font-weight:800;color:var(--ink);background:#FFF8E7}
@@ -377,7 +379,6 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 .rv.vis{opacity:1;transform:translate3d(0,0,0);will-change:auto}
 .rv1{transition-delay:.08s}.rv2{transition-delay:.16s}.rv3{transition-delay:.24s}
 
-
 /* ── Language switcher ── */
 </style>
 <script src="assets/common/i18n.js"></script>
@@ -416,11 +417,12 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </div>
 
 <div class="ps" id="photoSlider">
-  <div class="ps-track" id="psTrack"><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/1.JPG" alt="Hidden Cenotes Express photo 1" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/15.jpg" alt="Hidden Cenotes Express photo 2" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/17.JPG" alt="Hidden Cenotes Express photo 3" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/18.JPG" alt="Hidden Cenotes Express photo 4" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/23.JPEG" alt="Hidden Cenotes Express photo 5" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/24.JPEG" alt="Hidden Cenotes Express photo 6" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/3.JPG" alt="Hidden Cenotes Express photo 7" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/5.jpg" alt="Hidden Cenotes Express photo 8" loading="lazy"></div></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-cenotes-express/slide-02.jpg" alt="Hidden Cenotes Express photo 2" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-cenotes-express/slide-03.jpg" alt="Hidden Cenotes Express photo 3" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/tour-cenotes-express/slide-04.jpg" alt="Hidden Cenotes Express photo 4" loading="lazy"></div></div>
+    <div class="ps-track" id="psTrack"><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/1.JPG" alt="Hidden Cenotes Express photo 1" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/15.jpg" alt="Hidden Cenotes Express photo 2" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/17.JPG" alt="Hidden Cenotes Express photo 3" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/18.JPG" alt="Hidden Cenotes Express photo 4" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/23.JPEG" alt="Hidden Cenotes Express photo 5" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/24.JPEG" alt="Hidden Cenotes Express photo 6" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/3.JPG" alt="Hidden Cenotes Express photo 7" loading="lazy"></div><div class="ps-slide"><img data-src="assets/tour-sliders/privados/hiddencenotesexpress/5.jpg" alt="Hidden Cenotes Express photo 8" loading="lazy"></div></div>
+  <div class="ps-ctr" id="psCtr">1 / 8</div>
+</div>
+<div class="ps-nav">
   <button class="ps-btn ps-prev" id="psPrev" aria-label="Previous photo">&#8592;</button>
   <button class="ps-btn ps-next" id="psNext" aria-label="Next photo">&#8594;</button>
-  <div class="ps-dots" id="psDots"><button class="ps-dot" aria-label="Photo 1"></button><button class="ps-dot" aria-label="Photo 2"></button><button class="ps-dot" aria-label="Photo 3"></button><button class="ps-dot" aria-label="Photo 4"></button></div>
-  <div class="ps-ctr" id="psCtr">1 / 8</div>
 </div>
 
 <div class="ti">
