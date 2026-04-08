@@ -39,6 +39,11 @@
   // ── CONFIGURATION — fill in the values for what you want to use ──
   var CFG = {
 
+    // ── Firebase (for the admin dashboard) ───────────────────────
+    // Same projectId and apiKey you put in admin.html
+    firebase_projectId: 'YOUR_PROJECT_ID',
+    firebase_apiKey:    'YOUR_API_KEY',
+
     // ── WhatsApp via Green API ────────────────────────────────────
     // Your own WhatsApp number that will RECEIVE the message (with country code, no + or spaces)
     greenapi_to:       '52984167067',
@@ -68,6 +73,31 @@
       'Guests: ' + data.pricing + '\n' +
       'Notes: '  + data.notes
     );
+  }
+
+  /* ── Save to Firebase Firestore (powers the admin dashboard) ── */
+  function saveToFirestore(data) {
+    if (!CFG.firebase_projectId || CFG.firebase_projectId === 'YOUR_PROJECT_ID') return;
+    var url = 'https://firestore.googleapis.com/v1/projects/' + CFG.firebase_projectId +
+              '/databases/(default)/documents/bookings?key=' + CFG.firebase_apiKey;
+    fetch(url, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fields: {
+          tour:      { stringValue: data.tour    || '' },
+          name:      { stringValue: data.name    || '' },
+          email:     { stringValue: data.email   || '' },
+          phone:     { stringValue: data.phone   || '' },
+          date:      { stringValue: data.date    || '' },
+          hotel:     { stringValue: data.hotel   || '' },
+          pricing:   { stringValue: data.pricing || '' },
+          notes:     { stringValue: data.notes   || '' },
+          status:    { stringValue: 'pending'          },
+          createdAt: { timestampValue: new Date().toISOString() }
+        }
+      })
+    }).catch(function () {});
   }
 
   /* ── WhatsApp via Green API ── */
@@ -115,9 +145,10 @@
 
   /* Main notify — fires all configured channels simultaneously */
   window.btrNotify = function (data) {
-    sendGreenAPI(data);
-    sendEmailJS(data);
-    sendNtfy(data);
+    saveToFirestore(data);  /* admin dashboard */
+    sendGreenAPI(data);     /* WhatsApp        */
+    sendEmailJS(data);      /* email           */
+    sendNtfy(data);         /* push notify     */
   };
 
 }(window));
