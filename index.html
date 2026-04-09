@@ -1101,7 +1101,7 @@ makeSlider('revTrack',    'revPrev',    'revNext',    'revDots',    '.rc',      
   document.querySelectorAll('.rv').forEach(function(el) { io.observe(el); });
 })();
 
-// Contact form — EMAIL (Formspree)
+// Contact form — EMAIL (FormSubmit)
 function subForm() {
   var name  = document.getElementById('f-name').value.trim();
   var email = document.getElementById('f-email').value.trim();
@@ -1111,10 +1111,11 @@ function subForm() {
   var msg   = document.getElementById('f-msg').value.trim()   || 'No details';
   var btn = document.getElementById('frmSubmit');
   if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
-  fetch('https://formspree.io/f/xkowoogr', {
+  fetch('https://formsubmit.co/ajax/info@beyondthereefmexico.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({
+      _captcha: false,
       _subject: 'Custom Request from website',
       email: email,
       name: name,
@@ -1126,7 +1127,7 @@ function subForm() {
   .then(function(res){ return res.json(); })
   .then(function(data){
     if(btn){ btn.disabled = false; btn.textContent = 'Send My Request →'; }
-    if(data.ok){
+    if(data.success){
       document.getElementById('frmWrap').style.display = 'none';
       document.getElementById('fsuc').style.display    = 'block';
     } else {

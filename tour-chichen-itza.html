@@ -603,7 +603,7 @@ mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',
   }
 })();
 
-//  BOOKING  EMAIL (Formspree)
+//  BOOKING  EMAIL (FormSubmit)
 function subBk(){
   var name  = document.getElementById('bkName').value.trim();
   var email = document.getElementById('bkEmail').value.trim();
@@ -618,10 +618,11 @@ function subBk(){
     : 'Price on request';
   var btn = document.querySelector('.bk-sub');
   if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
-  fetch('https://formspree.io/f/xbdpbgkw', {
+  fetch('https://formsubmit.co/ajax/info@beyondthereefmexico.com', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({
+      _captcha: false,
       _subject: "Booking: Chichén Itzá",
       email: email,
       name: name,
@@ -636,7 +637,7 @@ function subBk(){
   .then(function(res){ return res.json(); })
   .then(function(data){
     if(btn){ btn.disabled = false; btn.textContent = 'Request to Book →'; }
-    if(data.ok){
+    if(data.success){
       var form = document.getElementById('bkForm');
       var suc  = document.getElementById('bkSuc');
       if(form) form.style.display = 'none';
