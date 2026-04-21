@@ -80,6 +80,149 @@ footer {
   .float-ig, .float-wa, .nav, .mob-menu { display: none !important; }
 }
 
+/* =============================================================
+   Tour photo slider — enlarge images & signal clickability.
+   Higher-specificity selectors override the inline <style> rules
+   that ship in each tour page (`.ps`, `.ps-slide img`).
+   ============================================================= */
+.ps#photoSlider {
+  height: min(620px, 78vw);
+  min-height: 280px;
+  cursor: zoom-in;
+}
+@media (min-width: 1024px) {
+  .ps#photoSlider { height: min(720px, 68vh); }
+}
+.ps .ps-slide img {
+  cursor: zoom-in;
+}
+
+/* =============================================================
+   Lightbox — fullscreen centered photo viewer for tour sliders.
+   Injected dynamically by tour.js; styled here to avoid FOUC.
+   ============================================================= */
+.btr-lb {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.94);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .22s ease;
+  touch-action: pan-y pinch-zoom;
+  -webkit-tap-highlight-color: transparent;
+}
+.btr-lb.open {
+  opacity: 1;
+  visibility: visible;
+}
+.btr-lb-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 12px;
+  box-sizing: border-box;
+}
+.btr-lb-img {
+  max-width: 95vw;
+  max-height: 88vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .55);
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: opacity .2s ease;
+  background: #0E2A45;
+}
+.btr-lb-img.loading { opacity: .35; }
+.btr-lb-close,
+.btr-lb-prev,
+.btr-lb-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  transition: background .18s ease, transform .15s ease;
+  -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.btr-lb-close:hover,
+.btr-lb-prev:hover,
+.btr-lb-next:hover { background: rgba(255, 255, 255, 0.24); }
+.btr-lb-close:active,
+.btr-lb-prev:active,
+.btr-lb-next:active { transform: scale(.92); }
+.btr-lb-close {
+  top: 14px;
+  right: 14px;
+  width: 44px;
+  height: 44px;
+  font-size: 26px;
+  line-height: 1;
+  font-weight: 300;
+}
+.btr-lb-prev,
+.btr-lb-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  font-size: 26px;
+  line-height: 1;
+}
+.btr-lb-prev:active,
+.btr-lb-next:active { transform: translateY(-50%) scale(.92); }
+.btr-lb-prev { left: 16px; }
+.btr-lb-next { right: 16px; }
+.btr-lb-ctr {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: .02em;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+@media (max-width: 640px) {
+  .btr-lb-stage { padding: 56px 4px; }
+  .btr-lb-img { max-width: 100vw; max-height: 82vh; }
+  .btr-lb-close { top: 10px; right: 10px; width: 40px; height: 40px; font-size: 24px; }
+  .btr-lb-prev, .btr-lb-next { width: 42px; height: 42px; font-size: 22px; }
+  .btr-lb-prev { left: 8px; }
+  .btr-lb-next { right: 8px; }
+}
+/* Hide prev/next arrows if only one slide (class toggled by tour.js) */
+.btr-lb.single .btr-lb-prev,
+.btr-lb.single .btr-lb-next { display: none; }
+/* Lock page scroll while lightbox is open */
+html.btr-lb-lock,
+body.btr-lb-lock {
+  overflow: hidden !important;
+  touch-action: none;
+}
+
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
