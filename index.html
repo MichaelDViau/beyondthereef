@@ -24,9 +24,37 @@
 })();
 </script>
 <title>Beyond the Reef Mexico - Real Local Experiences Cancun Tulum Riviera Maya</title>
-<meta name="description" content="Real local experiences in the Riviera Maya. Cenotes, sea turtles, Mayan ruins. 14+ years.">
+<meta name="description" content="Private and shared tours in Cancun, Tulum, Playa del Carmen and the Riviera Maya. Swim with sea turtles, dive hidden cenotes, explore Mayan ruins. 14+ years of real local experiences.">
+<meta name="keywords" content="Riviera Maya tours, Cancun private tours, Tulum tours, Playa del Carmen tours, cenote tours, sea turtle snorkeling, Chichen Itza tour, Coba ruins, Sian Ka'an, Holbox tours, private Mexico tours">
 <link rel="icon" type="image/png" href="assets/common/logo.png">
 <meta name="theme-color" content="#0E2A45">
+<link rel="canonical" href="https://www.beyondthereefmexico.com/">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="author" content="Beyond the Reef Mexico">
+<meta name="publisher" content="Beyond the Reef Mexico">
+<meta name="geo.region" content="MX-ROO">
+<meta name="geo.placename" content="Playa del Carmen, Quintana Roo, Mexico">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:site_name" content="Beyond the Reef Mexico">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.beyondthereefmexico.com/">
+<meta property="og:title" content="Beyond the Reef Mexico - Real Local Experiences in Cancun, Tulum & Riviera Maya">
+<meta property="og:description" content="Private and shared tours in Cancun, Tulum, Playa del Carmen & Riviera Maya. Cenotes, sea turtles, Mayan ruins. 14+ years of unforgettable local experiences.">
+<meta property="og:image" content="https://www.beyondthereefmexico.com/assets/indexslider/1.JPG">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="es_MX">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Beyond the Reef Mexico - Real Local Experiences in Cancun, Tulum & Riviera Maya">
+<meta name="twitter:description" content="Private and shared tours in Cancun, Tulum, Playa del Carmen & Riviera Maya. Cenotes, sea turtles, Mayan ruins. 14+ years of unforgettable local experiences.">
+<meta name="twitter:image" content="https://www.beyondthereefmexico.com/assets/indexslider/1.JPG">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","@id":"https://www.beyondthereefmexico.com/#org","name":"Beyond the Reef Mexico","alternateName":"Beyond the Reef","url":"https://www.beyondthereefmexico.com/","logo":"https://www.beyondthereefmexico.com/assets/common/logo.png","image":"https://www.beyondthereefmexico.com/assets/indexslider/1.JPG","description":"Private and shared tours in Cancun, Tulum, Playa del Carmen and the Riviera Maya. 14+ years of local experience.","priceRange":"$$","telephone":"+52-984-167-0697","email":"info@beyondthereefmexico.com","address":{"@type":"PostalAddress","addressCountry":"MX","addressRegion":"Quintana Roo","addressLocality":"Playa del Carmen"},"areaServed":[{"@type":"City","name":"Cancun"},{"@type":"City","name":"Tulum"},{"@type":"City","name":"Playa del Carmen"},{"@type":"Place","name":"Riviera Maya"}],"sameAs":["https://www.instagram.com/mikaeltheguide","https://wa.me/529841670697"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"13","bestRating":"5","worstRating":"5"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.beyondthereefmexico.com/#website","url":"https://www.beyondthereefmexico.com/","name":"Beyond the Reef Mexico","publisher":{"@id":"https://www.beyondthereefmexico.com/#org"},"inLanguage":["en","es","fr","de","it","pt"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.pexels.com">
@@ -313,7 +341,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 
 /* ── Language switcher ── */
 </style>
-<script src="assets/common/i18n.js"></script>
+<script src="assets/common/i18n.js" defer></script>
 </head>
 <body style="color-scheme:light;background:#fff">
 
@@ -1143,11 +1171,10 @@ function subForm() {
 <script src="assets/common/perf.js" defer></script>
 <script>
 (function(){
-  if(window._btrLang&&window._btrLang!=='en'&&window.BTR_I18N){
-    BTR_I18N.apply(window._btrLang);
-  }
+  if(!window.BTR_I18N)return; /* deferred i18n.js will auto-boot */
+  if(window._btrLang&&window._btrLang!=='en')BTR_I18N.apply(window._btrLang);
   document.documentElement.classList.remove('btr-i18n-loading');
-  if(window.BTR_I18N) BTR_I18N.setup();
+  BTR_I18N.setup();
 }());
 </script>
 </body>
