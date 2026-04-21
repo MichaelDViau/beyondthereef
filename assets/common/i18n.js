@@ -1041,12 +1041,29 @@
     setup: setupSwitcher
   };
 
-  /* Auto-apply if language is already known at script-load time
-     (when i18n.js is loaded synchronously in <head> before body) */
-  if (LANG !== 'en') {
-    /* Body not yet parsed – defer to DOMContentLoaded.
-       The CSS .btr-i18n-loading rule keeps body invisible until we call
-       apply() and remove the class in the end-of-body inline script. */
+  /* ── Auto-boot ──
+     Runs translations, removes the i18n loading class, and wires the
+     language switcher. Safe for both synchronous <script> and `defer`
+     loading: if the DOM is still parsing we wait for DOMContentLoaded,
+     otherwise we execute immediately. Idempotent. */
+  var booted = false;
+  function boot() {
+    if (booted) return;
+    booted = true;
+    try {
+      if (LANG !== 'en' && T[LANG]) apply(LANG);
+    } catch (e) {}
+    try {
+      doc.documentElement.classList.remove('btr-i18n-loading');
+    } catch (e) {}
+    try {
+      setupSwitcher();
+    } catch (e) {}
+  }
+  if (doc.readyState === 'loading') {
+    doc.addEventListener('DOMContentLoaded', boot, { once: true });
+  } else {
+    boot();
   }
 
 }(window, document));

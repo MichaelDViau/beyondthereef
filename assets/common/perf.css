@@ -1,13 +1,21 @@
-/* Global Performance & Stability — beyondthereef.mx */
+/* Global Performance & Stability — beyondthereefmexico.com */
 
 html {
   scroll-behavior: smooth;
   overscroll-behavior-y: none;
   -webkit-overflow-scrolling: touch;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 body {
   overscroll-behavior-y: none;
   overflow-x: hidden;
+  text-rendering: optimizeSpeed;
+}
+
+/* iOS: prevent double-tap zoom on interactive elements without blocking pinch-zoom */
+a, button, .btn, [role="button"], input[type="button"], input[type="submit"] {
+  touch-action: manipulation;
 }
 
 /* Promote fixed floating buttons & nav to GPU compositor layers */
@@ -47,6 +55,29 @@ body {
 .sl-track,
 .ps-track {
   touch-action: pan-y pinch-zoom;
+}
+
+/* Defer rendering of the site's footer (below the fold on every page) until
+   the user scrolls near — saves paint & layout work on initial load.
+   Intentionally conservative: we only skip elements that are safe to skip
+   (no anchor targets inside) to avoid scroll-jumps. */
+footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 500px;
+}
+
+/* Hardware-accelerated sliders — avoids mid-scroll flicker on low-end Android */
+.sl-track,
+.ps-track,
+.hs-img {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Print stability */
+@media print {
+  .float-ig, .float-wa, .nav, .mob-menu { display: none !important; }
 }
 
 /* Reduced motion */
