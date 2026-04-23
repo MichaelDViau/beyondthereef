@@ -585,12 +585,54 @@ form.addEventListener('submit', function(e){
   ];
   var body = lines.join('\n');
 
-  var mailto = 'mailto:info@beyondthereefmexico.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-
   submitBtn.disabled = true;
-  successBox.classList.add('on');
-  successBox.scrollIntoView({behavior:'smooth',block:'center'});
-  window.location.href = mailto;
+  var originalBtnText = submitBtn.textContent;
+  submitBtn.textContent = 'Sending...';
+
+  var payload = {
+    _captcha: false,
+    _subject: subject,
+    email: email,
+    name: name,
+    phone: phone,
+    adventurers: people,
+    ocean_snorkeling: snorkel || '(not selected)',
+    cenote: cenote || '(not selected)',
+    mayan_ruins: ruins || '(not selected)',
+    food: food || '(not selected)',
+    exclusive_nanny_service: nanny || '(not selected)',
+    transportation: transport || '(not selected)',
+    special_request: specialRequest || '(none)',
+    details: body
+  };
+
+  function sendTo(endpoint){
+    return fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    }).then(function(res){ return res.json(); });
+  }
+
+  sendTo('https://formsubmit.co/ajax/el/sozegi')
+    .catch(function(){ return sendTo('https://formsubmit.co/ajax/info@beyondthereefmexico.com'); })
+    .then(function(data){
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+      if(data && data.success){
+        form.reset();
+        peopleInput.value = '2';
+        successBox.classList.add('on');
+        successBox.scrollIntoView({behavior:'smooth',block:'center'});
+      } else {
+        alert('Something went wrong. Please try again or email us at info@beyondthereefmexico.com');
+      }
+    })
+    .catch(function(){
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalBtnText;
+      alert('Could not send your request. Please email us at info@beyondthereefmexico.com');
+    });
 });
 </script>
 
