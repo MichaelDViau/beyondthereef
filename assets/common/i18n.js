@@ -153,9 +153,9 @@
       /* ── INDEX: Hero ── */
       'i.hero.pill':    'Cancun · Tulum · Playa del Carmen',
       'i.hero.h1.1':    'Allez au-delà',
-      'i.hero.h1.2':    'du Tourisme,',
-      'i.hero.h1.3':    'Riviera Maya.',
-      'i.hero.sub':     'Plongez dans des cénotes cachés. Nagez avec des tortues de mer. Explorez d\'anciennes ruines mayas. Mangez où mangent les locaux. Des expériences privées et partagées pour les voyageurs qui veulent vivre la vraie Riviera Maya.',
+      'i.hero.h1.2':    'des Foules',
+      'i.hero.h1.3':    'Expériences Privées avec Sens',
+      'i.hero.sub':     'Découvrez la Riviera Maya sans le chaos.<br><br>Pas de foules. Pas d\'arrêts inutiles. Pas de stress.<br>Juste vous et votre famille, explorant à votre rythme.<br><br>Nagez avec les tortues, découvrez des cénotes, explorez d\'anciens sites mayas et savourez une cuisine locale authentique comme il se doit.',
       'i.hero.explore': 'Explorer les Expériences',
       'i.hero.wa':      'WhatsApp',
       'i.stats.years':  'Ans d\'Expérience',
@@ -519,9 +519,9 @@
       /* ── INDEX: Hero ── */
       'i.hero.pill':    'Cancún · Tulum · Playa del Carmen',
       'i.hero.h1.1':    'Ve Más Allá',
-      'i.hero.h1.2':    'del Turismo,',
-      'i.hero.h1.3':    'Riviera Maya.',
-      'i.hero.sub':     'Sumérgete en cenotes ocultos. Nada con tortugas marinas. Explora antiguas ruinas mayas. Come donde comen los locales. Experiencias privadas y compartidas para viajeros que quieren sentir la verdadera Riviera Maya.',
+      'i.hero.h1.2':    'de las Multitudes',
+      'i.hero.h1.3':    'Experiencias Privadas con Propósito',
+      'i.hero.sub':     'Vive la Riviera Maya sin el caos.<br><br>Sin multitudes. Sin paradas innecesarias. Sin estrés.<br>Solo tú y tu familia, explorando a tu propio ritmo.<br><br>Nada con tortugas, descubre cenotes, explora antiguos sitios mayas y disfruta de auténtica comida local como debe ser.',
       'i.hero.explore': 'Explorar Experiencias',
       'i.hero.wa':      'WhatsApp',
       'i.stats.years':  'Años de Experiencia',
@@ -874,7 +874,7 @@
     setText('.hero-body h1 .c-teal', D['i.hero.h1.2']);
     /* 3rd line of h1 is a text node – wrap was added in HTML */
     setText('.hero-body h1 .h1-line3', D['i.hero.h1.3']);
-    setText('.hero-sub', D['i.hero.sub']);
+    setHTML('.hero-sub', D['i.hero.sub']);
     setText('#heroExplore', D['i.hero.explore']);
     setText('#heroWa', D['i.hero.wa']);
     setText('.stat-years .stat-l', D['i.stats.years']);
