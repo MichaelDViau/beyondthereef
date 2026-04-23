@@ -218,6 +218,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .sec-gold{background:var(--gold-bg)}.sec-amber{background:var(--amber-bg)}.sec-navy{background:var(--navy)}
 .lbl{font-size:10px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;display:block}
 .lbl-gold{color:#FFA726}.lbl-white{color:rgba(255,255,255,.65)}
+.build-layout{max-width:1120px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--r3);padding:34px 26px;box-shadow:var(--sh);display:grid;grid-template-columns:1fr;gap:28px}
+.build-copy h3{font-size:24px;font-weight:800;color:var(--ink);margin-bottom:10px}
+.build-copy p{color:var(--muted);font-size:15px;line-height:1.55;margin-bottom:22px;max-width:520px}
+.build-gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:center}
+.build-gallery button{border:none;padding:0;background:none;cursor:pointer}
+.build-gallery img{width:100%;height:104px;border-radius:12px;object-fit:cover;border:1px solid var(--border);box-shadow:0 4px 12px rgba(14,42,69,.12);transition:transform var(--ease),box-shadow var(--ease)}
+.build-gallery button:hover img{transform:translateY(-2px);box-shadow:0 8px 18px rgba(14,42,69,.2)}
+@media(min-width:900px){.build-layout{grid-template-columns:1.05fr .95fr;align-items:center;padding:40px 30px}.build-gallery img{height:118px}}
+.img-modal{position:fixed;inset:0;background:rgba(14,42,69,.86);display:none;align-items:center;justify-content:center;padding:20px;z-index:1000}
+.img-modal.on{display:flex}
+.img-modal img{max-width:min(900px,100%);max-height:88vh;border-radius:16px;border:1px solid rgba(255,255,255,.35)}
+.img-modal-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.18);color:#fff;font-size:22px}
 .h2{font-size:clamp(26px,5.5vw,42px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-bottom:14px}
 .h2-white{color:#fff}
 .sub{font-size:15px;line-height:1.72;color:var(--muted);max-width:540px;margin-bottom:28px}
@@ -620,19 +632,32 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 
 <!-- BUILD YOUR OWN EXPERIENCE CTA -->
 <section id="build" class="sec" style="background:var(--amber-bg)">
-  <div class="lbl lbl-gold" data-i18n="i.build.lbl">Build Your Custom Tour</div>
+  <div class="lbl lbl-gold" data-i18n="i.build.lbl">Build Your Custom Experience</div>
   <h2 class="h2" data-i18n="i.build.h2">Design your own Riviera Maya experience.</h2>
   <p class="sub" style="margin-bottom:32px" data-i18n="i.build.sub">Pick your ocean adventure, cenote, Mayan ruin, food and transportation. We will send you a custom quote within 6 to 12 hours.</p>
-  <div style="max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--r3);padding:40px 28px;box-shadow:var(--sh)">
-    <div style="font-size:44px;line-height:1;margin-bottom:12px">🏝️</div>
-    <h3 style="font-size:22px;font-weight:800;color:var(--ink);margin-bottom:10px" data-i18n="i.build.card.title">Build Your Own Experience</h3>
-    <p style="color:var(--muted);font-size:15px;line-height:1.55;margin-bottom:22px" data-i18n="i.build.card.desc">Tell us who you are, how many adventurers are coming, and choose your ocean, cenote, ruin, food and transportation. We will craft a super exclusive top-of-the-class experience just for you.</p>
-    <a href="build-your-experience.html" class="btn btn-coral btn-md" style="display:inline-flex;align-items:center;gap:10px">
-      <span data-i18n="i.build.cta">Build Your Custom Tour</span>
-      <span style="font-size:18px;line-height:1">→</span>
-    </a>
+  <div class="build-layout">
+    <div class="build-copy">
+      <h3 data-i18n="i.build.card.title">Build Your Own Experience</h3>
+      <p data-i18n="i.build.card.desc">Tell us who you are, how many adventurers are coming, and choose your ocean, cenote, ruin, food and transportation. We will craft a super exclusive top-of-the-class experience just for you.</p>
+      <a href="build-your-experience.html" class="btn btn-coral btn-md" style="display:inline-flex;align-items:center;gap:10px">
+        <span data-i18n="i.build.cta">Build Your Custom Experience</span>
+        <span style="font-size:18px;line-height:1">→</span>
+      </a>
+    </div>
+    <div class="build-gallery">
+      <button type="button" class="build-thumb" data-full="assets/indexslider/indexslider1.JPG"><img src="assets/indexslider/indexslider1.JPG" alt="Riviera Maya experience preview 1" loading="lazy"></button>
+      <button type="button" class="build-thumb" data-full="assets/indexslider/indexslider7.jpg"><img src="assets/indexslider/indexslider7.jpg" alt="Riviera Maya experience preview 2" loading="lazy"></button>
+      <button type="button" class="build-thumb" data-full="assets/indexslider/indexslider15.jpg"><img src="assets/indexslider/indexslider15.jpg" alt="Riviera Maya experience preview 3" loading="lazy"></button>
+      <button type="button" class="build-thumb" data-full="assets/indexslider/indexslider24.JPG"><img src="assets/indexslider/indexslider24.JPG" alt="Riviera Maya experience preview 4" loading="lazy"></button>
+      <button type="button" class="build-thumb" data-full="assets/indexslider/indexslider33.jpg"><img src="assets/indexslider/indexslider33.jpg" alt="Riviera Maya experience preview 5" loading="lazy"></button>
+      <button type="button" class="build-thumb" data-full="assets/indexslider/indexslider40.jpg"><img src="assets/indexslider/indexslider40.jpg" alt="Riviera Maya experience preview 6" loading="lazy"></button>
+    </div>
   </div>
 </section>
+<div class="img-modal" id="buildImgModal" aria-hidden="true">
+  <button type="button" class="img-modal-close" id="buildImgClose" aria-label="Close image preview">×</button>
+  <img src="" alt="Large experience preview" id="buildImgLarge">
+</div>
 
 <!-- REVIEWS SLIDER -->
 <section class="sec sec-navy" style="padding-bottom:80px">
@@ -1093,6 +1118,33 @@ function subForm() {
     alert('Could not send your request. Please email us at info@beyondthereefmexico.com');
   });
 }
+
+(function(){
+  var modal = document.getElementById('buildImgModal');
+  var modalImg = document.getElementById('buildImgLarge');
+  var closeBtn = document.getElementById('buildImgClose');
+  if (!modal || !modalImg || !closeBtn) return;
+
+  document.querySelectorAll('.build-thumb').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var src = btn.getAttribute('data-full');
+      if (!src) return;
+      modalImg.src = src;
+      modal.classList.add('on');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  function closeModal(){
+    modal.classList.remove('on');
+    modal.setAttribute('aria-hidden', 'true');
+    modalImg.src = '';
+  }
+  closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', function(e){
+    if (e.target === modal) closeModal();
+  });
+})();
 </script>
 <script src="assets/common/perf.js" defer></script>
 <script>
