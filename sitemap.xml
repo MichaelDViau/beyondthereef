@@ -25,6 +25,11 @@
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://www.beyondthereefmexico.com/build-your-experience.html</loc>
+    <priority>0.9</priority>
+    <changefreq>weekly</changefreq>
+  </url>
 
   <!-- Private experiences -->
   <url>
@@ -119,50 +124,4 @@
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- Shared experiences -->
-  <url>
-    <loc>https://www.beyondthereefmexico.com/tour-shared-tulum.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-    <image:image>
-      <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsshared/tulum.jpg</image:loc>
-      <image:title>Tulum, Cenote and Village</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.beyondthereefmexico.com/tour-shared-chichen.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-    <image:image>
-      <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsshared/chichen.jpg</image:loc>
-      <image:title>Chichen Itza and Cenote Adventure</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.beyondthereefmexico.com/tour-shared-coba.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-    <image:image>
-      <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsshared/coba.jpg</image:loc>
-      <image:title>Coba and Cenote Adventure</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.beyondthereefmexico.com/tour-shared-turtles.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-    <image:image>
-      <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsshared/turtle.jpg</image:loc>
-      <image:title>Snorkeling with Turtles and Cenote</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.beyondthereefmexico.com/tour-shared-holbox.html</loc>
-    <priority>0.8</priority>
-    <changefreq>weekly</changefreq>
-    <image:image>
-      <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsshared/hb.jpg</image:loc>
-      <image:title>Holbox Day Adventure</image:title>
-    </image:image>
-  </url>
 </urlset>
