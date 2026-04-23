@@ -40,35 +40,42 @@ a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(14,42,69,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.10)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;background:rgba(14,42,69,.60);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,.10);transition:background .3s}
+.nav.opaque{background:rgba(14,42,69,.95)}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .nav-logo img{width:42px;height:42px;border-radius:8px;object-fit:contain}
 .nav-logo-words{display:flex;flex-direction:column;line-height:1.1}
 .nav-logo-name{font-size:17px;font-weight:900;color:#fff;letter-spacing:-.02em}
 .nav-logo-sub{font-size:9px;font-weight:700;color:rgba(255,255,255,.60);letter-spacing:.10em;text-transform:uppercase}
-.nav-links{display:none;align-items:center;gap:2px;margin:0 12px}
-.nav-links a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.88);padding:6px 10px;border-radius:var(--rp);transition:background var(--ease)}
-.nav-links a:hover{background:rgba(255,255,255,.14);color:#fff}
+.nav-links{display:none;align-items:center;gap:2px;margin:0 16px}
+.nav-links a{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.88);padding:6px 11px;border-radius:var(--rp);transition:background var(--ease),color var(--ease)}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.14)}
+.nav-links a.active{background:rgba(255,255,255,.2);color:#fff}
 .nav-right{display:flex;align-items:center;gap:8px}
-.ham{width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer}
+.nav-cta{background:var(--coral);color:#fff;font-size:13px;font-weight:700;padding:8px 18px;border-radius:var(--rp);transition:opacity var(--ease);display:none}
+.nav-cta:hover{opacity:.88}
+.ham{width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.14);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;cursor:pointer;transition:background var(--ease)}
+.ham:hover{background:rgba(255,255,255,.24)}
 .ham span{display:block;width:20px;height:2px;background:#fff;border-radius:2px;transition:.28s}
 .ham.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(2){opacity:0;transform:scaleX(0)}
 .ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-@media(min-width:900px){.nav-links{display:flex}.ham{display:none}}
+@media(min-width:768px){.ham{display:none}.nav-links{display:flex}.nav-cta{display:block}}
 
 /* MOB */
-.mob-menu{position:fixed;inset:0;z-index:600;background:rgba(14,42,69,.98);display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px 20px}
-.mob-menu.open{display:flex}
-.mob-menu a{color:#fff;font-size:20px;font-weight:700;padding:10px 16px}
-.mob-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.14);color:#fff;font-size:18px;font-weight:700}
-.mob-wa{background:#25D366;border-radius:var(--rp);padding:12px 22px!important;margin-top:10px}
+.mob-menu{position:fixed;inset:0;z-index:499;background:rgba(14,42,69,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;pointer-events:none;transition:opacity .28s}
+.mob-menu.open{opacity:1;pointer-events:all}
+.mob-menu a{font-size:22px;font-weight:800;color:rgba(255,255,255,.90);padding:13px 32px;border-radius:var(--r2);width:280px;text-align:center;transition:background var(--ease)}
+.mob-menu a:hover{background:rgba(255,255,255,.08);color:#fff}
+.mob-wa{margin-top:16px!important;background:var(--coral)!important;color:#fff!important;border-radius:var(--rp)!important}
+.mob-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}
 
 /* HERO */
-.page-hero{padding:96px 20px 38px;text-align:center;background:linear-gradient(135deg,#0E2A45 0%,#1DA5B4 100%);color:#fff}
-.lbl{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:6px 14px;border-radius:var(--rp);margin-bottom:18px}
+.page-hero{padding:96px 20px 54px;text-align:center;background:linear-gradient(135deg,#0E2A45 0%,#1DA5B4 100%);color:#fff}
 .page-hero h1{font-size:clamp(30px,7vw,52px);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:14px}
 .page-hero p{font-size:15px;color:rgba(255,255,255,.80);max-width:560px;margin:0 auto;line-height:1.55}
+.hero-photo-wrap{max-width:760px;margin:24px auto 0}
+.hero-photo-wrap img{width:100%;height:280px;object-fit:cover;border-radius:var(--r3);border:1px solid rgba(255,255,255,.32);box-shadow:0 10px 36px rgba(14,42,69,.28)}
 
 /* SECTION */
 .builder{max-width:860px;margin:0 auto;padding:40px 20px 80px}
@@ -86,6 +93,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .field input{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r);font-size:15px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color var(--ease),box-shadow var(--ease)}
 .field input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,165,180,.15)}
 .field input[type=number]{max-width:100%}
+.counter-field{max-width:260px;margin:0 auto}
+.counter-wrap{display:flex;align-items:center;justify-content:center;gap:10px}
+.counter-btn{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+.counter-btn:hover{opacity:.9}
+#fPeople{text-align:center;max-width:120px}
 
 /* OPTION CARDS */
 .opts{display:grid;grid-template-columns:1fr;gap:10px}
@@ -98,8 +110,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .opt-desc{font-size:12.5px;color:var(--muted);line-height:1.45}
 .opt input:checked ~ .opt-body .opt-title,.opt input:checked + .opt-title{color:var(--coral)}
 .opt:has(input:checked){border-color:var(--coral);background:#FFF8F2;box-shadow:0 2px 10px rgba(232,98,26,.12)}
+.nanny-wrap{display:flex;justify-content:center}
+.nanny-wrap .opt{width:min(560px,100%)}
 
-.skip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);margin-top:10px;cursor:pointer}
+.skip{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;color:var(--muted);margin-top:14px;cursor:pointer;width:100%;text-align:center}
 .skip input{width:16px;height:16px;accent-color:var(--muted);cursor:pointer}
 
 /* SUBMIT */
@@ -107,7 +121,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-submit{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;font-size:15px;font-weight:800;padding:16px 34px;border-radius:var(--rp);box-shadow:0 10px 28px rgba(232,98,26,.32);transition:transform var(--ease),box-shadow var(--ease);letter-spacing:.01em;border:none}
 .btn-submit:hover{transform:translateY(-1px);box-shadow:0 14px 34px rgba(232,98,26,.42)}
 .btn-submit:disabled{opacity:.7;cursor:wait}
-.fineprint{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.55;max-width:560px;margin-left:auto;margin-right:auto}
+.fineprint{font-size:12px;color:var(--muted);margin-top:24px;line-height:1.55;max-width:560px;margin-left:auto;margin-right:auto}
 
 .err{color:#c0392b;font-size:12.5px;margin-top:8px;font-weight:600;display:none}
 .err.on{display:block}
@@ -143,12 +157,13 @@ footer a:hover{color:#fff}
   </a>
   <div class="nav-links">
     <a href="tours.html" data-i18n="c.nav.private">Private Experiences</a>
-    <a href="build-your-experience.html" data-i18n="c.nav.build">Build Your Own Experience</a>
+    <a href="build-your-experience.html" class="active" aria-current="page" data-i18n="c.nav.build">Build Your Own Experience</a>
     <a href="reviews.html" data-i18n="c.nav.reviews">Reviews</a>
     <a href="our-story.html" data-i18n="c.nav.story">Our Story</a>
     <a href="index.html#contact" data-i18n="c.nav.contact">Contact</a>
   </div>
   <div class="nav-right">
+    <a href="https://wa.me/529841670697" class="nav-cta btn" target="_blank" rel="noopener" data-i18n="c.nav.book">Book Now</a>
     <button class="ham" id="ham" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -160,13 +175,15 @@ footer a:hover{color:#fff}
   <a href="reviews.html" onclick="closeMob()" data-i18n="c.nav.reviews">Reviews</a>
   <a href="our-story.html" onclick="closeMob()" data-i18n="c.nav.story">Our Story</a>
   <a href="index.html#contact" onclick="closeMob()" data-i18n="c.nav.contact">Contact</a>
-  <a href="https://wa.me/529841670697" class="mob-wa" target="_blank" rel="noopener" onclick="closeMob()">Book on WhatsApp</a>
+  <a href="https://wa.me/529841670697" class="mob-wa" target="_blank" rel="noopener" onclick="closeMob()">Book Now</a>
 </div>
 
 <header class="page-hero">
-  <div class="lbl" data-i18n="build.lbl">Custom Tour Builder</div>
   <h1 data-i18n="build.h1">Build Your Own Experience</h1>
   <p data-i18n="build.sub">Pick your adventure. We will build a super exclusive, top-of-the-class experience around you and send your custom quote within 6 to 12 hours.</p>
+  <div class="hero-photo-wrap">
+    <img src="https://i.ibb.co/Q3yTdyDv/IMG-3950.jpg" alt="Build your own Riviera Maya experience">
+  </div>
 </header>
 
 <main class="builder">
@@ -202,9 +219,12 @@ footer a:hover{color:#fff}
         <div class="bstep-title" data-i18n="build.s2.title">Number of Adventurers</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s2.sub">How many people will be joining you on this adventure?</p>
-      <div class="field" style="max-width:260px">
-        <label for="fPeople" data-i18n="build.s2.label">Adventurers</label>
-        <input id="fPeople" name="people" type="number" min="1" max="60" value="2" required>
+      <div class="field counter-field">
+        <div class="counter-wrap">
+          <button type="button" class="counter-btn" id="peopleMinus" aria-label="Decrease number of adventurers">−</button>
+          <input id="fPeople" name="people" type="number" min="1" max="60" value="2" required aria-label="Number of adventurers">
+          <button type="button" class="counter-btn" id="peoplePlus" aria-label="Increase number of adventurers">+</button>
+        </div>
       </div>
     </section>
 
@@ -217,21 +237,28 @@ footer a:hover{color:#fff}
       <p class="bstep-sub" data-i18n="build.s3.sub">Choose your ocean adventure.</p>
       <div class="opts">
         <label class="opt">
-          <input type="radio" name="snorkel" value="Reef Lagoon Snorkeling">
+          <input type="checkbox" name="snorkel" value="Reef Snorkeling">
           <div class="opt-body">
-            <div class="opt-title" data-i18n="build.s3.reef.t">Reef Lagoon Snorkeling</div>
-            <div class="opt-desc" data-i18n="build.s3.reef.d">Calm, crystal-clear lagoon full of tropical fish and coral.</div>
+            <div class="opt-title" data-i18n="build.s3.reef.t">Reef</div>
+            <div class="opt-desc" data-i18n="build.s3.reef.d">Explore colorful coral and tropical fish on the reef.</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="snorkel" value="Snorkeling with Sea Turtles">
+          <input type="checkbox" name="snorkel" value="Lagoon Snorkeling">
+          <div class="opt-body">
+            <div class="opt-title">Lagoon</div>
+            <div class="opt-desc">Calm, crystal-clear lagoon perfect for relaxed snorkeling.</div>
+          </div>
+        </label>
+        <label class="opt">
+          <input type="checkbox" name="snorkel" value="Snorkeling with Sea Turtles">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s3.turtles.t">Snorkeling with Sea Turtles</div>
             <div class="opt-desc" data-i18n="build.s3.turtles.d">Swim alongside wild sea turtles in Akumal Bay.</div>
           </div>
         </label>
       </div>
-      <label class="skip"><input type="radio" name="snorkel" value=""><span data-i18n="build.skip">Skip this section</span></label>
+      <label class="skip"><input type="checkbox" name="snorkel_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
     <!-- STEP 4: CENOTE -->
@@ -243,35 +270,35 @@ footer a:hover{color:#fff}
       <p class="bstep-sub" data-i18n="build.s4.sub">Choose your cenote experience.</p>
       <div class="opts opts-3">
         <label class="opt">
-          <input type="radio" name="cenote" value="3 Cenotes Tour">
+          <input type="checkbox" name="cenote" value="3 Cenotes Tour">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s4.three.t">3 Cenotes</div>
             <div class="opt-desc" data-i18n="build.s4.three.d">Visit three different cenotes in one adventure.</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="cenote" value="Rappel into a Cenote">
+          <input type="checkbox" name="cenote" value="Rappel into a Cenote">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s4.rappel.t">Rappel into a Cenote</div>
             <div class="opt-desc" data-i18n="build.s4.rappel.d">Adrenaline drop into a hidden jungle cenote.</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="cenote" value="Exclusive Top Private Cenote">
+          <input type="checkbox" name="cenote" value="Exclusive Top Private Cenote">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s4.priv.t">Exclusive Top Private Cenote</div>
             <div class="opt-desc" data-i18n="build.s4.priv.d">The most exclusive private cenote in the Riviera Maya.</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="cenote" value="1.5 hr Cenote Adventure (walk & swim)">
+          <input type="checkbox" name="cenote" value="1.5 hr Cenote Adventure (walk & swim)">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s4.walk.t">1.5 hr Cenote Adventure</div>
             <div class="opt-desc" data-i18n="build.s4.walk.d">Walk and swim through a stunning cenote system.</div>
           </div>
         </label>
       </div>
-      <label class="skip"><input type="radio" name="cenote" value=""><span data-i18n="build.skip">Skip this section</span></label>
+      <label class="skip"><input type="checkbox" name="cenote_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
     <!-- STEP 5: MAYAN RUINS -->
@@ -283,35 +310,35 @@ footer a:hover{color:#fff}
       <p class="bstep-sub" data-i18n="build.s5.sub">Choose a Mayan archaeological site.</p>
       <div class="opts opts-3">
         <label class="opt">
-          <input type="radio" name="ruins" value="Chichen Itza">
+          <input type="checkbox" name="ruins" value="Chichen Itza">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s5.chichen.t">Chichen Itza</div>
             <div class="opt-desc" data-i18n="build.s5.chichen.d">One of the New 7 Wonders of the World.</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="ruins" value="Tulum">
+          <input type="checkbox" name="ruins" value="Tulum">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s5.tulum.t">Tulum</div>
             <div class="opt-desc" data-i18n="build.s5.tulum.d">Cliffside Mayan ruins overlooking the Caribbean.</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="ruins" value="Coba">
+          <input type="checkbox" name="ruins" value="Coba">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s5.coba.t">Coba</div>
             <div class="opt-desc" data-i18n="build.s5.coba.d">Explore ancient pyramids deep in the jungle.</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="ruins" value="Ek Balam">
+          <input type="checkbox" name="ruins" value="Ek Balam">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s5.ekbalam.t">Ek Balam</div>
             <div class="opt-desc" data-i18n="build.s5.ekbalam.d">A lesser-known gem you can still climb.</div>
           </div>
         </label>
       </div>
-      <label class="skip"><input type="radio" name="ruins" value=""><span data-i18n="build.skip">Skip this section</span></label>
+      <label class="skip"><input type="checkbox" name="ruins_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
     <!-- STEP 6: FOOD -->
@@ -323,68 +350,100 @@ footer a:hover{color:#fff}
       <p class="bstep-sub" data-i18n="build.s6.sub">Choose how you want to eat on your adventure.</p>
       <div class="opts opts-3">
         <label class="opt">
-          <input type="radio" name="food" value="Tacos Experience">
+          <input type="checkbox" name="food" value="Tacos Experience">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s6.tacos.t">Tacos Experience</div>
             <div class="opt-desc" data-i18n="build.s6.tacos.d">Eat where locals eat, the tastiest tacos in town.</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="food" value="Snack Box">
+          <input type="checkbox" name="food" value="Snack Box">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s6.snack.t">Snack Box</div>
             <div class="opt-desc" data-i18n="build.s6.snack.d">A curated on-the-go snack box for your adventure.</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="food" value="Fresh Seafood Experience">
+          <input type="checkbox" name="food" value="Fresh Seafood Experience">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s6.seafood.t">Fresh Seafood Experience</div>
             <div class="opt-desc" data-i18n="build.s6.seafood.d">Fresh local seafood served by the sea.</div>
           </div>
         </label>
       </div>
-      <label class="skip"><input type="radio" name="food" value=""><span data-i18n="build.skip">Skip this section</span></label>
+      <label class="skip"><input type="checkbox" name="food_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
-    <!-- STEP 7: TRANSPORT -->
+    <!-- STEP 7: NANNY -->
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">7</div>
+        <div class="bstep-title">Exclusive Nanny Service</div>
+      </div>
+      <p class="bstep-sub">Traveling with little ones should still feel effortless. Add a professional certified nanny so every parent can relax and enjoy a smoother, more premium experience from start to finish.</p>
+      <div class="opts nanny-wrap" style="max-width:620px;margin:0 auto">
+        <label class="opt">
+          <input type="checkbox" name="nanny" value="Add Exclusive Certified Nanny Service">
+          <div class="opt-body">
+            <div class="opt-title">Add Exclusive Certified Nanny Service</div>
+            <div class="opt-desc">Dedicated childcare support throughout the day for maximum comfort and peace of mind.</div>
+          </div>
+        </label>
+      </div>
+      <label class="skip"><input type="checkbox" name="nanny_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
+    </section>
+
+    <!-- STEP 8: TRANSPORT -->
+    <section class="bstep">
+      <div class="bstep-h">
+        <div class="bstep-num">8</div>
         <div class="bstep-title" data-i18n="build.s7.title">Transportation</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s7.sub">Choose the vehicle that fits your group.</p>
       <div class="opts">
         <label class="opt">
-          <input type="radio" name="transport" value="Private Suburban (up to 5 people)">
+          <input type="checkbox" name="transport" value="Private Suburban (up to 5 people)">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s7.suburban.t">Private Suburban</div>
             <div class="opt-desc" data-i18n="build.s7.suburban.d">Up to 5 people · premium private SUV</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="transport" value="Van (up to 12 people)">
+          <input type="checkbox" name="transport" value="Van (up to 12 people)">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s7.van.t">Van</div>
             <div class="opt-desc" data-i18n="build.s7.van.d">Up to 12 people · comfortable A/C van</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="transport" value="Mercedes Sprinter (up to 18 people)">
+          <input type="checkbox" name="transport" value="Mercedes Sprinter (up to 18 people)">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s7.sprinter.t">Mercedes Sprinter</div>
             <div class="opt-desc" data-i18n="build.s7.sprinter.d">Up to 18 people · premium Mercedes Sprinter</div>
           </div>
         </label>
         <label class="opt">
-          <input type="radio" name="transport" value="Bus (up to 38 people)">
+          <input type="checkbox" name="transport" value="Bus (up to 38 people)">
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s7.bus.t">Bus</div>
             <div class="opt-desc" data-i18n="build.s7.bus.d">Up to 38 people · full-size tour bus</div>
           </div>
         </label>
       </div>
-      <label class="skip"><input type="radio" name="transport" value=""><span data-i18n="build.skip">Skip this section</span></label>
+      <label class="skip"><input type="checkbox" name="transport_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
+    </section>
+
+    <!-- STEP 9: SPECIAL REQUEST -->
+    <section class="bstep">
+      <div class="bstep-h">
+        <div class="bstep-num">9</div>
+        <div class="bstep-title">Special Request</div>
+      </div>
+      <p class="bstep-sub">Can&apos;t find what you are looking for? No worries, tell us more and we will build it for you.</p>
+      <div class="field">
+        <label for="fSpecial">Special request</label>
+        <input id="fSpecial" name="specialRequest" type="text" placeholder="Tell us what you would like to add">
+      </div>
     </section>
 
     <!-- SUBMIT -->
@@ -394,7 +453,7 @@ footer a:hover{color:#fff}
         <span style="font-size:18px;line-height:1">→</span>
       </button>
       <p class="err" id="formErr" data-i18n="build.err">Please fill out your name, phone and email so we can send your quote.</p>
-      <p class="fineprint" data-i18n="build.fine">We will craft a super exclusive, top-of-the-class experience and email you a custom quote within 6 to 12 hours.</p>
+      <p class="fineprint" data-i18n="build.fine">We will craft a super exclusive, top-of-the-class experience and contact you by email or WhatsApp with your custom quote within 6 to 12 hours.</p>
     </div>
 
     <div class="success" id="successBox">
@@ -416,20 +475,62 @@ footer a:hover{color:#fff}
 var ham = document.getElementById('ham');
 var mobMenu = document.getElementById('mobMenu');
 var mobClose = document.getElementById('mobClose');
+var mainNav = document.getElementById('mainNav');
 function openMob(){ham.classList.add('open');mobMenu.classList.add('open');ham.setAttribute('aria-expanded','true')}
 function closeMob(){ham.classList.remove('open');mobMenu.classList.remove('open');ham.setAttribute('aria-expanded','false')}
 ham.addEventListener('click',function(){mobMenu.classList.contains('open')?closeMob():openMob()});
 mobClose.addEventListener('click',closeMob);
+function syncNav(){if(window.scrollY>20){mainNav.classList.add('opaque')}else{mainNav.classList.remove('opaque')}}
+window.addEventListener('scroll',syncNav,{passive:true});
+syncNav();
 
 var form = document.getElementById('builderForm');
 var errBox = document.getElementById('formErr');
 var successBox = document.getElementById('successBox');
 var submitBtn = document.getElementById('submitBtn');
+var peopleInput = document.getElementById('fPeople');
+var peopleMinus = document.getElementById('peopleMinus');
+var peoplePlus = document.getElementById('peoplePlus');
+
+function adjustPeople(delta){
+  var min = parseInt(peopleInput.min || '1', 10);
+  var max = parseInt(peopleInput.max || '60', 10);
+  var current = parseInt(peopleInput.value || '0', 10);
+  if (isNaN(current)) current = min;
+  current = Math.max(min, Math.min(max, current + delta));
+  peopleInput.value = String(current);
+}
+peopleMinus.addEventListener('click', function(){ adjustPeople(-1); });
+peoplePlus.addEventListener('click', function(){ adjustPeople(1); });
+
+function toggleSkipBehavior(optionName, skipName){
+  var options = form.querySelectorAll('input[name="'+optionName+'"]');
+  var skip = form.querySelector('input[name="'+skipName+'"]');
+  if (!skip) return;
+  skip.addEventListener('change', function(){
+    if (!skip.checked) return;
+    options.forEach(function(opt){ opt.checked = false; });
+  });
+  options.forEach(function(opt){
+    opt.addEventListener('change', function(){
+      if (opt.checked) skip.checked = false;
+    });
+  });
+}
+toggleSkipBehavior('cenote', 'cenote_skip');
+toggleSkipBehavior('ruins', 'ruins_skip');
+toggleSkipBehavior('snorkel', 'snorkel_skip');
+toggleSkipBehavior('food', 'food_skip');
+toggleSkipBehavior('transport', 'transport_skip');
+toggleSkipBehavior('nanny', 'nanny_skip');
 
 function getRadio(name){
   var els = form.querySelectorAll('input[name="'+name+'"]:checked');
   var val = els.length ? els[0].value : '';
   return val;
+}
+function getCheckedValues(name){
+  return Array.prototype.slice.call(form.querySelectorAll('input[name="'+name+'"]:checked')).map(function(el){return el.value;}).filter(Boolean);
 }
 
 form.addEventListener('submit', function(e){
@@ -445,15 +546,23 @@ form.addEventListener('submit', function(e){
   }
   errBox.classList.remove('on');
 
-  var snorkel = getRadio('snorkel');
-  var cenote = getRadio('cenote');
-  var ruins = getRadio('ruins');
-  var food = getRadio('food');
-  var transport = getRadio('transport');
+  var snorkel = getCheckedValues('snorkel').join(', ');
+  if (form.querySelector('input[name="snorkel_skip"]:checked')) snorkel = '';
+  var cenote = getCheckedValues('cenote').join(', ');
+  if (form.querySelector('input[name="cenote_skip"]:checked')) cenote = '';
+  var ruins = getCheckedValues('ruins').join(', ');
+  if (form.querySelector('input[name="ruins_skip"]:checked')) ruins = '';
+  var food = getCheckedValues('food').join(', ');
+  if (form.querySelector('input[name="food_skip"]:checked')) food = '';
+  var nanny = getCheckedValues('nanny').join(', ');
+  if (form.querySelector('input[name="nanny_skip"]:checked')) nanny = '';
+  var transport = getCheckedValues('transport').join(', ');
+  if (form.querySelector('input[name="transport_skip"]:checked')) transport = '';
+  var specialRequest = form.fSpecial.value.trim();
 
-  var subject = 'New Custom Tour Request - ' + name;
+  var subject = 'New Custom Experience Request - ' + name;
   var lines = [
-    'New custom tour builder submission from beyondthereefmexico.com',
+    'New custom experience builder submission from beyondthereefmexico.com',
     '',
     'CONTACT',
     'Name: ' + name,
@@ -466,7 +575,10 @@ form.addEventListener('submit', function(e){
     'Cenote: ' + (cenote || '(not selected)'),
     'Mayan Ruins: ' + (ruins || '(not selected)'),
     'Food: ' + (food || '(not selected)'),
+    'Exclusive Nanny Service: ' + (nanny || '(not selected)'),
     'Transportation: ' + (transport || '(not selected)'),
+    '',
+    'Special request: ' + (specialRequest || '(none)'),
     '',
     'Please send a custom quote within 6 to 12 hours.'
   ];
