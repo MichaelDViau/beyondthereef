@@ -77,13 +77,13 @@
 
       /* ── Common: Navigation ── */
       'c.nav.private':  'Expériences Privées',
-      'c.nav.shared':   'Expériences Partagées',
+      'c.nav.build':    'Créez Votre Expérience',
       'c.nav.reviews':  'Avis',
       'c.nav.story':    'Notre Histoire',
       'c.nav.contact':  'Contact',
       'c.nav.book':     'Réserver',
       'c.mob.private':  'Expériences Privées',
-      'c.mob.shared':   'Expériences Partagées',
+      'c.mob.build':    'Créez Votre Expérience',
       'c.mob.reviews':  'Avis',
       'c.mob.story':    'Notre Histoire',
       'c.mob.contact':  'Contact',
@@ -443,13 +443,13 @@
 
       /* ── Common: Navigation ── */
       'c.nav.private':  'Experiencias Privadas',
-      'c.nav.shared':   'Experiencias Compartidas',
+      'c.nav.build':    'Crea Tu Experiencia',
       'c.nav.reviews':  'Reseñas',
       'c.nav.story':    'Nuestra Historia',
       'c.nav.contact':  'Contacto',
       'c.nav.book':     'Reservar',
       'c.mob.private':  'Experiencias Privadas',
-      'c.mob.shared':   'Experiencias Compartidas',
+      'c.mob.build':    'Crea Tu Experiencia',
       'c.mob.reviews':  'Reseñas',
       'c.mob.story':    'Nuestra Historia',
       'c.mob.contact':  'Contacto',
