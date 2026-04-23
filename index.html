@@ -631,11 +631,11 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </section>
 
 <!-- BUILD YOUR OWN EXPERIENCE CTA -->
-<section id="build" class="sec" style="background:var(--amber-bg)">
+<section id="build" class="sec" style="background:var(--amber-bg);text-align:center">
   <div class="lbl lbl-gold" data-i18n="i.build.lbl">Build Your Custom Experience</div>
   <h2 class="h2" data-i18n="i.build.h2">Design your own Riviera Maya experience.</h2>
   <p class="sub" style="margin-bottom:32px" data-i18n="i.build.sub">Pick your ocean adventure, cenote, Mayan ruin, food and transportation. We will send you a custom quote within 6 to 12 hours.</p>
-  <div class="build-layout">
+  <div class="build-layout" style="text-align:left">
     <div class="build-copy">
       <h3 data-i18n="i.build.card.title">Build Your Own Experience</h3>
       <p data-i18n="i.build.card.desc">Tell us who you are, how many adventurers are coming, and choose your ocean, cenote, ruin, food and transportation. We will craft a super exclusive top-of-the-class experience just for you.</p>
@@ -741,28 +741,6 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
       <h3 id="ctEmTitle">Email</h3>
       <p id="ctEmDesc">Send your dates, group size &amp; interests and we'll reply with a custom quote.</p>
       <a href="mailto:info@beyondthereefmexico.com" class="btn btn-navy btn-full btn-md" id="ctEmBtn">Send Email →</a>
-    </div>
-  </div>
-</section>
-
-<!-- CUSTOM REQUEST FORM -->
-<section class="sec" style="background:#ffffff">
-  <div class="fbox">
-    <div id="frmLbl" class="lbl">Custom Request</div>
-    <h2 id="frmH2" class="h2" style="font-size:clamp(22px,5vw,32px);margin-bottom:8px">Create your perfect Riviera Maya day</h2>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:12px;line-height:1.7">Not seeing exactly what you have in mind? No problem. We can personalize any private experience, adjust the plan to fit your group, or create something completely custom together.</p>
-    <p style="font-size:13px;color:var(--muted);margin-bottom:24px;line-height:1.7">Just share your ideas with us and we will send you a personalized quote within a few hours.</p>
-    <div id="frmWrap">
-      <div class="fg"><label id="frmNameLbl">Your Name</label><input type="text" id="f-name" data-i18n-ph="i.frm.name.ph" placeholder="e.g. John &amp; Maria" autocomplete="name"></div>
-      <div class="fg"><label id="frmEmailLbl">Email *</label><input type="email" id="f-email" placeholder="you@email.com" autocomplete="email" required></div>
-      <div class="fg"><label id="frmPhoneLbl">Phone / WhatsApp</label><input type="tel" id="f-phone" data-i18n-ph="i.frm.phone.ph" placeholder="+1 555 000 0000" autocomplete="tel"></div>
-      <div class="fg"><label id="frmMsgLbl">Your Dream Day</label><textarea id="f-msg" data-i18n-ph="i.frm.msg.ph" placeholder="Dates, group size, activities, dietary needs..."></textarea></div>
-      <button id="frmSubmit" class="fsub" onclick="subForm()">Send My Request →</button>
-    </div>
-    <div class="fsuc" id="fsuc">
-      <div style="font-size:40px;margin-bottom:12px">🎉</div>
-      <h4 id="frmSucTitle">We got your message!</h4>
-      <p id="frmSucText">We'll reply to your email within a few hours!</p>
     </div>
   </div>
 </section>
@@ -1079,45 +1057,6 @@ makeSlider('revTrack',    'revPrev',    'revNext',    'revDots',    '.rc',      
   }, {threshold: 0.08});
   document.querySelectorAll('.rv').forEach(function(el) { io.observe(el); });
 })();
-
-// Contact form — EMAIL (FormSubmit)
-function subForm() {
-  var name  = document.getElementById('f-name').value.trim();
-  var email = document.getElementById('f-email').value.trim();
-  if (!name) { alert('Please enter your name.'); return; }
-  if (!email) { alert('Email is required — we cannot send your request without it.'); return; }
-  var phone = document.getElementById('f-phone').value.trim() || 'N/A';
-  var msg   = document.getElementById('f-msg').value.trim()   || 'No details';
-  var btn = document.getElementById('frmSubmit');
-  if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
-  fetch('https://formsubmit.co/ajax/info@beyondthereefmexico.com', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-    body: JSON.stringify({
-      _captcha: false,
-      _subject: 'Custom Request from website',
-      email: email,
-      name: name,
-      phone: phone,
-      message: msg,
-      type: 'Custom Request'
-    })
-  })
-  .then(function(res){ return res.json(); })
-  .then(function(data){
-    if(btn){ btn.disabled = false; btn.textContent = 'Send My Request →'; }
-    if(data.success){
-      document.getElementById('frmWrap').style.display = 'none';
-      document.getElementById('fsuc').style.display    = 'block';
-    } else {
-      alert('Something went wrong. Please try again or email us at info@beyondthereefmexico.com');
-    }
-  })
-  .catch(function(){
-    if(btn){ btn.disabled = false; btn.textContent = 'Send My Request →'; }
-    alert('Could not send your request. Please email us at info@beyondthereefmexico.com');
-  });
-}
 
 (function(){
   var modal = document.getElementById('buildImgModal');
