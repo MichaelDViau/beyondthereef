@@ -93,6 +93,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .field input{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r);font-size:15px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color var(--ease),box-shadow var(--ease)}
 .field input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,165,180,.15)}
 .field input[type=number]{max-width:100%}
+.counter-field{max-width:260px;margin:0 auto}
+.counter-wrap{display:flex;align-items:center;justify-content:center;gap:10px}
+.counter-btn{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+.counter-btn:hover{opacity:.9}
+#fPeople{text-align:center;max-width:120px}
 
 /* OPTION CARDS */
 .opts{display:grid;grid-template-columns:1fr;gap:10px}
@@ -212,9 +217,13 @@ footer a:hover{color:#fff}
         <div class="bstep-title" data-i18n="build.s2.title">Number of Adventurers</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s2.sub">How many people will be joining you on this adventure?</p>
-      <div class="field" style="max-width:260px">
+      <div class="field counter-field">
         <label for="fPeople" data-i18n="build.s2.label">Adventurers</label>
-        <input id="fPeople" name="people" type="number" min="1" max="60" value="2" required>
+        <div class="counter-wrap">
+          <button type="button" class="counter-btn" id="peopleMinus" aria-label="Decrease number of adventurers">−</button>
+          <input id="fPeople" name="people" type="number" min="1" max="60" value="2" required>
+          <button type="button" class="counter-btn" id="peoplePlus" aria-label="Increase number of adventurers">+</button>
+        </div>
       </div>
     </section>
 
@@ -364,10 +373,29 @@ footer a:hover{color:#fff}
       <label class="skip"><input type="checkbox" name="food_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
-    <!-- STEP 7: TRANSPORT -->
+    <!-- STEP 7: NANNY -->
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">7</div>
+        <div class="bstep-title">Exclusive Nanny Service</div>
+      </div>
+      <p class="bstep-sub">Traveling with little ones should still feel effortless. Add a professional certified nanny so every parent can relax and enjoy a smoother, more premium experience from start to finish.</p>
+      <div class="opts">
+        <label class="opt">
+          <input type="checkbox" name="nanny" value="Add Exclusive Certified Nanny Service">
+          <div class="opt-body">
+            <div class="opt-title">Add Exclusive Certified Nanny Service</div>
+            <div class="opt-desc">Dedicated childcare support throughout the day for maximum comfort and peace of mind.</div>
+          </div>
+        </label>
+      </div>
+      <label class="skip"><input type="checkbox" name="nanny_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
+    </section>
+
+    <!-- STEP 8: TRANSPORT -->
+    <section class="bstep">
+      <div class="bstep-h">
+        <div class="bstep-num">8</div>
         <div class="bstep-title" data-i18n="build.s7.title">Transportation</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s7.sub">Choose the vehicle that fits your group.</p>
@@ -404,10 +432,10 @@ footer a:hover{color:#fff}
       <label class="skip"><input type="checkbox" name="transport_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
-    <!-- STEP 8: SPECIAL REQUEST -->
+    <!-- STEP 9: SPECIAL REQUEST -->
     <section class="bstep">
       <div class="bstep-h">
-        <div class="bstep-num">8</div>
+        <div class="bstep-num">9</div>
         <div class="bstep-title">Special Request</div>
       </div>
       <p class="bstep-sub">Can&apos;t find what you are looking for? No worries, tell us more and we will build it for you.</p>
@@ -459,6 +487,20 @@ var form = document.getElementById('builderForm');
 var errBox = document.getElementById('formErr');
 var successBox = document.getElementById('successBox');
 var submitBtn = document.getElementById('submitBtn');
+var peopleInput = document.getElementById('fPeople');
+var peopleMinus = document.getElementById('peopleMinus');
+var peoplePlus = document.getElementById('peoplePlus');
+
+function adjustPeople(delta){
+  var min = parseInt(peopleInput.min || '1', 10);
+  var max = parseInt(peopleInput.max || '60', 10);
+  var current = parseInt(peopleInput.value || '0', 10);
+  if (isNaN(current)) current = min;
+  current = Math.max(min, Math.min(max, current + delta));
+  peopleInput.value = String(current);
+}
+peopleMinus.addEventListener('click', function(){ adjustPeople(-1); });
+peoplePlus.addEventListener('click', function(){ adjustPeople(1); });
 
 function toggleSkipBehavior(optionName, skipName){
   var options = form.querySelectorAll('input[name="'+optionName+'"]');
@@ -479,6 +521,7 @@ toggleSkipBehavior('ruins', 'ruins_skip');
 toggleSkipBehavior('snorkel', 'snorkel_skip');
 toggleSkipBehavior('food', 'food_skip');
 toggleSkipBehavior('transport', 'transport_skip');
+toggleSkipBehavior('nanny', 'nanny_skip');
 
 function getRadio(name){
   var els = form.querySelectorAll('input[name="'+name+'"]:checked');
@@ -510,6 +553,8 @@ form.addEventListener('submit', function(e){
   if (form.querySelector('input[name="ruins_skip"]:checked')) ruins = '';
   var food = getCheckedValues('food').join(', ');
   if (form.querySelector('input[name="food_skip"]:checked')) food = '';
+  var nanny = getCheckedValues('nanny').join(', ');
+  if (form.querySelector('input[name="nanny_skip"]:checked')) nanny = '';
   var transport = getCheckedValues('transport').join(', ');
   if (form.querySelector('input[name="transport_skip"]:checked')) transport = '';
   var specialRequest = form.fSpecial.value.trim();
@@ -529,6 +574,7 @@ form.addEventListener('submit', function(e){
     'Cenote: ' + (cenote || '(not selected)'),
     'Mayan Ruins: ' + (ruins || '(not selected)'),
     'Food: ' + (food || '(not selected)'),
+    'Exclusive Nanny Service: ' + (nanny || '(not selected)'),
     'Transportation: ' + (transport || '(not selected)'),
     '',
     'Special request: ' + (specialRequest || '(none)'),
