@@ -165,6 +165,7 @@
       /* ── INDEX: Values ── */
       'i.val.lbl':      'Nos Valeurs sur l\'Expérience Privée',
       'i.val.h2':       'Allez au-delà de l\'ordinaire.',
+      'i.val.h2.html':  '<span style="color:var(--coral)">Allez au-delà</span> de la foule',
       'i.val.sub':      'Découvrez la Riviera Maya comme elle se doit d\'être vécue. Vraie gastronomie. Vraie culture. Des endroits inoubliables. Plus de liberté. Plus de profondeur. Sans précipitation.',
       'i.val.photos':   'Photos Incluses',
       'i.val.photos.d': 'Des photos professionnelles sont prises lors de chaque expérience privée, pour que vous restiez dans le moment et repartiez avec des souvenirs impérissables.',
@@ -182,6 +183,7 @@
       /* ── INDEX: Sections ── */
       'i.priv.lbl':     'Expériences Privées',
       'i.priv.h2':      'Nos Meilleures Expériences, Conçues pour Vous',
+      'i.priv.h2.html': 'Nos Meilleures Expériences, <span style="color:var(--coral)">Conçues pour Vous</span>',
       'i.priv.sub':     'Seulement vous et votre groupe. Pas de précipitation, pas de groupes partagés, juste une expérience plus personnelle de la Riviera Maya à votre rythme.',
       'i.shar.lbl':     'Expériences Partagées',
       'i.shar.h2':      'Vivez Plus, Dépensez Moins',
@@ -214,6 +216,81 @@
       'i.frm.name.ph':  'ex. Jean et Marie',
       'i.frm.msg.ph':   'Dates, taille du groupe, activités, régimes alimentaires…',
       'i.frm.phone.ph': '+33 6 00 00 00 00',
+      'i.build.lbl':    'Créez Votre Expérience Sur Mesure',
+      'i.build.h2':     'Créez votre propre expérience Riviera Maya.',
+      'i.build.sub':    'Choisissez votre aventure océan, cénote, ruine maya, repas et transport. Nous vous envoyons un devis personnalisé en 6 à 12 heures.',
+      'i.build.card.title': 'Créez Votre Propre Expérience',
+      'i.build.card.desc':  'Dites-nous qui vous êtes, combien de personnes viennent, puis choisissez océan, cénote, ruines, repas et transport. Nous créons une expérience premium sur mesure rien que pour vous.',
+      'i.build.cta':    'Créer Mon Expérience Sur Mesure',
+      'build.h1':       'Créez Votre Propre Expérience',
+      'build.sub':      'Choisissez votre aventure. Nous créons une expérience exclusive et haut de gamme autour de vous, puis envoyons votre devis personnalisé en 6 à 12 heures.',
+      'build.s1.title': 'Vos Coordonnées',
+      'build.s1.sub':   'Pour vous répondre avec un devis personnalisé.',
+      'build.s1.name':  'Votre Nom',
+      'build.s1.phone': 'Numéro de Téléphone',
+      'build.s1.email': 'Adresse Email',
+      'build.s2.title': 'Nombre d\'Aventuriers',
+      'build.s2.sub':   'Combien de personnes participeront à cette aventure ?',
+      'build.s3.title': 'Snorkeling en Mer',
+      'build.s3.sub':   'Choisissez votre aventure océan.',
+      'build.s3.reef.t': 'Récif',
+      'build.s3.reef.d': 'Explorez des coraux colorés et des poissons tropicaux sur le récif.',
+      'build.s3.lagoon.t': 'Lagon',
+      'build.s3.lagoon.d': 'Lagon calme et cristallin, parfait pour un snorkeling détendu.',
+      'build.s3.turtles.t': 'Snorkeling avec Tortues Marines',
+      'build.s3.turtles.d': 'Nagez avec des tortues marines sauvages dans la baie d\'Akumal.',
+      'build.skip':     'Passer cette section',
+      'build.s4.title': 'Aventure Cénote',
+      'build.s4.sub':   'Choisissez votre expérience cénote.',
+      'build.s4.three.t': '3 Cénotes',
+      'build.s4.three.d': 'Visitez trois cénotes différents en une seule aventure.',
+      'build.s4.rappel.t': 'Rappel dans un Cénote',
+      'build.s4.rappel.d': 'Descente adrénaline dans un cénote caché de la jungle.',
+      'build.s4.priv.t': 'Cénote Privé Exclusif',
+      'build.s4.priv.d': 'Le cénote privé le plus exclusif de la Riviera Maya.',
+      'build.s4.walk.t': 'Aventure Cénote 1h30',
+      'build.s4.walk.d': 'Marchez et nagez dans un système de cénote spectaculaire.',
+      'build.s5.title': 'Ruines Mayas',
+      'build.s5.sub':   'Choisissez un site archéologique maya.',
+      'build.s5.chichen.t': 'Chichen Itza',
+      'build.s5.chichen.d': 'L\'une des 7 nouvelles merveilles du monde.',
+      'build.s5.tulum.t': 'Tulum',
+      'build.s5.tulum.d': 'Ruines mayas en falaise avec vue sur les Caraïbes.',
+      'build.s5.coba.t': 'Coba',
+      'build.s5.coba.d': 'Explorez d\'anciennes pyramides au cœur de la jungle.',
+      'build.s5.ekbalam.t': 'Ek Balam',
+      'build.s5.ekbalam.d': 'Un joyau moins connu que vous pouvez encore escalader.',
+      'build.s6.title': 'Expérience Gastronomique',
+      'build.s6.sub':   'Choisissez comment vous souhaitez manger pendant votre aventure.',
+      'build.s6.tacos.t': 'Expérience Tacos',
+      'build.s6.tacos.d': 'Mangez là où mangent les locaux, les meilleurs tacos de la ville.',
+      'build.s6.snack.t': 'Snack Box',
+      'build.s6.snack.d': 'Une snack box sélectionnée pour votre aventure.',
+      'build.s6.seafood.t': 'Expérience Fruits de Mer',
+      'build.s6.seafood.d': 'Fruits de mer frais servis en bord de mer.',
+      'build.s7.title': 'Transport',
+      'build.s7.sub':   'Choisissez le véhicule adapté à votre groupe.',
+      'build.s7.suburban.t': 'Suburban Privé',
+      'build.s7.suburban.d': 'Jusqu\'à 5 personnes · SUV privé premium',
+      'build.s7.van.t': 'Van',
+      'build.s7.van.d': 'Jusqu\'à 12 personnes · van climatisé confortable',
+      'build.s7.sprinter.t': 'Mercedes Sprinter',
+      'build.s7.sprinter.d': 'Jusqu\'à 18 personnes · Mercedes Sprinter premium',
+      'build.s7.bus.t': 'Bus',
+      'build.s7.bus.d': 'Jusqu\'à 38 personnes · bus touristique grand format',
+      'build.s8.title': 'Service Nanny Exclusif',
+      'build.s8.sub':   'Voyager avec des enfants peut rester simple. Ajoutez une nanny certifiée pour que chaque parent se détende et profite d\'une expérience plus fluide.',
+      'build.s8.nanny.t': 'Ajouter une Nanny Certifiée Exclusive',
+      'build.s8.nanny.d': 'Soutien de garde d\'enfants dédié toute la journée pour plus de confort et de sérénité.',
+      'build.s9.title': 'Demande Spéciale',
+      'build.s9.sub':   'Vous ne trouvez pas ce que vous cherchez ? Dites-nous-en plus et nous le créons pour vous.',
+      'build.s9.label': 'Demande spéciale',
+      'build.s9.ph':    'Dites-nous ce que vous souhaitez ajouter',
+      'build.cta':      'Créer Mon Expérience',
+      'build.err':      'Merci de renseigner votre nom, téléphone et email pour recevoir votre devis.',
+      'build.fine':     'Nous créons une expérience exclusive et haut de gamme puis vous contactons par email ou WhatsApp avec votre devis personnalisé en 6 à 12 heures.',
+      'build.ok.title': 'Votre expérience personnalisée est en route !',
+      'build.ok.desc':  'Nous avons bien reçu vos choix. Notre équipe vous contacte sous 6 à 12 heures avec un devis personnalisé.',
 
       /* ── Tour pages: per-tour content ── */
       'tp.turtle.title': 'Snorkeling Tortues Marines et Cénotes',
@@ -531,6 +608,7 @@
       /* ── INDEX: Values ── */
       'i.val.lbl':      'Nuestros Valores en Experiencias Privadas',
       'i.val.h2':       'Ve más allá de lo ordinario.',
+      'i.val.h2.html':  '<span style="color:var(--coral)">Ve más allá</span> de las multitudes',
       'i.val.sub':      'Descubre la Riviera Maya como debe ser. Comida real. Cultura real. Lugares inolvidables. Más libertad. Más profundidad. Sin prisas.',
       'i.val.photos':   'Fotos Incluidas',
       'i.val.photos.d': 'Se toman fotos profesionales durante cada experiencia privada, para que puedas estar presente y llevarte recuerdos que duran toda la vida.',
@@ -548,6 +626,7 @@
       /* ── INDEX: Sections ── */
       'i.priv.lbl':     'Experiencias Privadas',
       'i.priv.h2':      'Nuestras Mejores Experiencias, Hechas Para Ti',
+      'i.priv.h2.html': 'Nuestras Mejores Experiencias, <span style="color:var(--coral)">Hechas Para Ti</span>',
       'i.priv.sub':     'Solo tú y tu grupo. Sin prisas, sin grupos compartidos, solo una experiencia más personal de la Riviera Maya a tu propio ritmo.',
       'i.shar.lbl':     'Experiencias Compartidas',
       'i.shar.h2':      'Vive Más, Gasta Menos',
@@ -580,6 +659,81 @@
       'i.frm.name.ph':  'ej. Juan y María',
       'i.frm.msg.ph':   'Fechas, tamaño del grupo, actividades, dietas…',
       'i.frm.phone.ph': '+52 1 000 000 0000',
+      'i.build.lbl':    'Crea Tu Experiencia Personalizada',
+      'i.build.h2':     'Diseña tu propia experiencia en Riviera Maya.',
+      'i.build.sub':    'Elige tu aventura de océano, cenote, ruina maya, comida y transporte. Te enviaremos una cotización personalizada en 6 a 12 horas.',
+      'i.build.card.title': 'Crea Tu Propia Experiencia',
+      'i.build.card.desc':  'Cuéntanos quién eres, cuántas personas vienen y elige océano, cenote, ruinas, comida y transporte. Diseñaremos una experiencia premium a tu medida.',
+      'i.build.cta':    'Crear Mi Experiencia Personalizada',
+      'build.h1':       'Crea Tu Propia Experiencia',
+      'build.sub':      'Elige tu aventura. Crearemos una experiencia exclusiva y de alto nivel alrededor de ti y te enviaremos tu cotización personalizada en 6 a 12 horas.',
+      'build.s1.title': 'Tus Datos de Contacto',
+      'build.s1.sub':   'Para responderte con una cotización personalizada.',
+      'build.s1.name':  'Tu Nombre',
+      'build.s1.phone': 'Número de Teléfono',
+      'build.s1.email': 'Correo Electrónico',
+      'build.s2.title': 'Número de Aventureros',
+      'build.s2.sub':   '¿Cuántas personas se unirán a esta aventura?',
+      'build.s3.title': 'Snorkel en Océano',
+      'build.s3.sub':   'Elige tu aventura en el mar.',
+      'build.s3.reef.t': 'Arrecife',
+      'build.s3.reef.d': 'Explora corales coloridos y peces tropicales en el arrecife.',
+      'build.s3.lagoon.t': 'Laguna',
+      'build.s3.lagoon.d': 'Laguna tranquila y cristalina, perfecta para snorkel relajado.',
+      'build.s3.turtles.t': 'Snorkel con Tortugas Marinas',
+      'build.s3.turtles.d': 'Nada junto a tortugas marinas salvajes en la bahía de Akumal.',
+      'build.skip':     'Omitir esta sección',
+      'build.s4.title': 'Aventura en Cenote',
+      'build.s4.sub':   'Elige tu experiencia de cenote.',
+      'build.s4.three.t': '3 Cenotes',
+      'build.s4.three.d': 'Visita tres cenotes diferentes en una sola aventura.',
+      'build.s4.rappel.t': 'Rapel en Cenote',
+      'build.s4.rappel.d': 'Descenso de adrenalina a un cenote oculto en la selva.',
+      'build.s4.priv.t': 'Cenote Privado Exclusivo',
+      'build.s4.priv.d': 'El cenote privado más exclusivo de la Riviera Maya.',
+      'build.s4.walk.t': 'Aventura Cenote 1.5 h',
+      'build.s4.walk.d': 'Camina y nada por un impresionante sistema de cenotes.',
+      'build.s5.title': 'Ruinas Mayas',
+      'build.s5.sub':   'Elige un sitio arqueológico maya.',
+      'build.s5.chichen.t': 'Chichen Itza',
+      'build.s5.chichen.d': 'Una de las Nuevas 7 Maravillas del Mundo.',
+      'build.s5.tulum.t': 'Tulum',
+      'build.s5.tulum.d': 'Ruinas mayas sobre acantilados frente al Caribe.',
+      'build.s5.coba.t': 'Coba',
+      'build.s5.coba.d': 'Explora antiguas pirámides en el corazón de la selva.',
+      'build.s5.ekbalam.t': 'Ek Balam',
+      'build.s5.ekbalam.d': 'Una joya menos conocida que aún puedes escalar.',
+      'build.s6.title': 'Experiencia Gastronómica',
+      'build.s6.sub':   'Elige cómo quieres comer durante tu aventura.',
+      'build.s6.tacos.t': 'Experiencia de Tacos',
+      'build.s6.tacos.d': 'Come donde comen los locales, los tacos más ricos de la ciudad.',
+      'build.s6.snack.t': 'Snack Box',
+      'build.s6.snack.d': 'Una caja de snacks seleccionada para tu aventura.',
+      'build.s6.seafood.t': 'Experiencia de Mariscos Frescos',
+      'build.s6.seafood.d': 'Mariscos frescos locales servidos frente al mar.',
+      'build.s7.title': 'Transporte',
+      'build.s7.sub':   'Elige el vehículo ideal para tu grupo.',
+      'build.s7.suburban.t': 'Suburban Privada',
+      'build.s7.suburban.d': 'Hasta 5 personas · SUV privado premium',
+      'build.s7.van.t': 'Van',
+      'build.s7.van.d': 'Hasta 12 personas · van cómoda con A/C',
+      'build.s7.sprinter.t': 'Mercedes Sprinter',
+      'build.s7.sprinter.d': 'Hasta 18 personas · Mercedes Sprinter premium',
+      'build.s7.bus.t': 'Bus',
+      'build.s7.bus.d': 'Hasta 38 personas · autobús turístico tamaño completo',
+      'build.s8.title': 'Servicio Exclusivo de Nanny',
+      'build.s8.sub':   'Viajar con niños pequeños también puede ser fácil. Agrega una nanny certificada para que cada padre disfrute una experiencia más fluida y premium.',
+      'build.s8.nanny.t': 'Agregar Servicio Exclusivo de Nanny Certificada',
+      'build.s8.nanny.d': 'Apoyo dedicado de cuidado infantil durante todo el día para máxima comodidad y tranquilidad.',
+      'build.s9.title': 'Solicitud Especial',
+      'build.s9.sub':   '¿No encuentras lo que buscas? Cuéntanos más y lo diseñamos para ti.',
+      'build.s9.label': 'Solicitud especial',
+      'build.s9.ph':    'Cuéntanos qué te gustaría agregar',
+      'build.cta':      'Crear Mi Experiencia',
+      'build.err':      'Por favor completa nombre, teléfono y correo para poder enviarte tu cotización.',
+      'build.fine':     'Diseñaremos una experiencia exclusiva y de alto nivel y te contactaremos por email o WhatsApp con tu cotización personalizada en 6 a 12 horas.',
+      'build.ok.title': '¡Tu experiencia personalizada está en camino!',
+      'build.ok.desc':  'Hemos recibido tu selección. Nuestro equipo te contactará en 6 a 12 horas con una cotización personalizada.',
 
       /* ── Tour pages: per-tour ES ── */
       'tp.turtle.title': 'Snorkel con Tortugas Marinas y Cenotes',
@@ -882,7 +1036,8 @@
     setText('.stat-local .stat-l', D['i.stats.local']);
     /* Values */
     setText('#valLbl', D['i.val.lbl']);
-    setText('#valH2', D['i.val.h2']);
+    if (D['i.val.h2.html']) setHTML('#valH2', D['i.val.h2.html']);
+    else setText('#valH2', D['i.val.h2']);
     setText('#valSub', D['i.val.sub']);
     setText('#valPhotosT', D['i.val.photos']);
     setText('#valPhotosD', D['i.val.photos.d']);
@@ -898,7 +1053,8 @@
     setText('#valPriceD', D['i.val.price.d']);
     /* Section headers */
     setText('#privLbl', D['i.priv.lbl']);
-    setText('#privH2', D['i.priv.h2']);
+    if (D['i.priv.h2.html']) setHTML('#privH2', D['i.priv.h2.html']);
+    else setText('#privH2', D['i.priv.h2']);
     setText('#privSub', D['i.priv.sub']);
     setText('#sharLbl', D['i.shar.lbl']);
     setText('#sharH2', D['i.shar.h2']);
@@ -931,6 +1087,13 @@
     setPlaceholder('#f-name',  D['i.frm.name.ph']);
     setPlaceholder('#f-msg',   D['i.frm.msg.ph']);
     setPlaceholder('#f-phone', D['i.frm.phone.ph']);
+    /* Build section on index */
+    setText('[data-i18n="i.build.lbl"]', D['i.build.lbl']);
+    setText('[data-i18n="i.build.h2"]', D['i.build.h2']);
+    setText('[data-i18n="i.build.sub"]', D['i.build.sub']);
+    setText('[data-i18n="i.build.card.title"]', D['i.build.card.title']);
+    setText('[data-i18n="i.build.card.desc"]', D['i.build.card.desc']);
+    setText('[data-i18n="i.build.cta"]', D['i.build.cta']);
   }
 
   /* ── Our Story page ─────────────────────────────────────── */
