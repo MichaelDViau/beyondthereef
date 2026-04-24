@@ -203,6 +203,22 @@ footer a:hover{color:#fff}
           <input id="fName" name="name" type="text" autocomplete="name" required>
         </div>
         <div class="field">
+          <label for="fPhoneCountryCode">Country Code</label>
+          <select id="fPhoneCountryCode" name="phone_country_code" autocomplete="tel-country-code" required>
+            <option value="+1">United States / Canada (+1)</option>
+            <option value="+52">Mexico (+52)</option>
+            <option value="+44">United Kingdom (+44)</option>
+            <option value="+33">France (+33)</option>
+            <option value="+34">Spain (+34)</option>
+            <option value="+49">Germany (+49)</option>
+            <option value="+39">Italy (+39)</option>
+            <option value="+61">Australia (+61)</option>
+            <option value="+54">Argentina (+54)</option>
+            <option value="+55">Brazil (+55)</option>
+            <option value="+57">Colombia (+57)</option>
+          </select>
+        </div>
+        <div class="field">
           <label for="fPhone" data-i18n="build.s1.phone">Phone Number</label>
           <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
         </div>
@@ -254,25 +270,100 @@ footer a:hover{color:#fff}
           <label for="fHotel" data-i18n="build.s2.hotel">Hotel</label>
           <select id="fHotel" name="hotel">
             <option value="">Select a hotel</option>
-            <optgroup label="Cancún">
+            <optgroup label="Cancun">
+              <option value="Le Blanc Spa Resort">Le Blanc Spa Resort</option>
               <option value="Hyatt Ziva Cancun">Hyatt Ziva Cancun</option>
-              <option value="JW Marriott Cancun Resort & Spa">JW Marriott Cancun Resort & Spa</option>
-              <option value="Paradisus Cancun">Paradisus Cancun</option>
+              <option value="Hyatt Zilara Cancun">Hyatt Zilara Cancun</option>
+              <option value="Live Aqua Cancun">Live Aqua Cancun</option>
               <option value="Moon Palace Cancun">Moon Palace Cancun</option>
+              <option value="Moon Palace The Grand">Moon Palace The Grand</option>
+              <option value="Sun Palace">Sun Palace</option>
+              <option value="Nizuc Resort">Nizuc Resort</option>
+              <option value="Grand Fiesta Americana Coral Beach">Grand Fiesta Americana Coral Beach</option>
+              <option value="Secrets The Vine Cancun">Secrets The Vine Cancun</option>
+              <option value="Breathless Cancun Soul">Breathless Cancun Soul</option>
+              <option value="Dreams Sands Cancun">Dreams Sands Cancun</option>
+              <option value="Dreams Playa Mujeres">Dreams Playa Mujeres</option>
+              <option value="Secrets Playa Mujeres">Secrets Playa Mujeres</option>
+              <option value="Excellence Playa Mujeres">Excellence Playa Mujeres</option>
+              <option value="Finest Playa Mujeres">Finest Playa Mujeres</option>
+              <option value="Beloved Playa Mujeres">Beloved Playa Mujeres</option>
+              <option value="Atelier Playa Mujeres">Atelier Playa Mujeres</option>
+              <option value="Garza Blanca Cancun">Garza Blanca Cancun</option>
+              <option value="Planet Hollywood Cancun">Planet Hollywood Cancun</option>
+              <option value="Club Med Cancun">Club Med Cancun</option>
+              <option value="Wyndham Alltra Cancun">Wyndham Alltra Cancun</option>
+              <option value="Crown Paradise Club">Crown Paradise Club</option>
+              <option value="Hard Rock Cancun">Hard Rock Cancun</option>
+              <option value="Riu Palace Las Americas">Riu Palace Las Americas</option>
+              <option value="Riu Cancun">Riu Cancun</option>
+              <option value="Riu Caribe">Riu Caribe</option>
+              <option value="Riu Palace Kukulkan">Riu Palace Kukulkan</option>
+              <option value="Riu Palace Peninsula">Riu Palace Peninsula</option>
+              <option value="Temptation Cancun">Temptation Cancun</option>
             </optgroup>
-            <optgroup label="Riviera Maya / Playa del Carmen">
-              <option value="Grand Velas Riviera Maya">Grand Velas Riviera Maya</option>
-              <option value="Fairmont Mayakoba">Fairmont Mayakoba</option>
+            <optgroup label="Riviera Maya">
+              <option value="Excellence Riviera Cancun">Excellence Riviera Cancun</option>
+              <option value="Valentin Imperial">Valentin Imperial</option>
+              <option value="Secrets Maroma">Secrets Maroma</option>
+              <option value="Dreams Riviera Cancun">Dreams Riviera Cancun</option>
+              <option value="Dreams Natura">Dreams Natura</option>
+              <option value="Dreams Sapphire">Dreams Sapphire</option>
+              <option value="Zoetry Paraiso de la Bonita">Zoetry Paraiso de la Bonita</option>
+              <option value="Margaritaville Island Reserve">Margaritaville Island Reserve</option>
+              <option value="Royalton Riviera Cancun">Royalton Riviera Cancun</option>
+              <option value="Hideaway at Royalton">Hideaway at Royalton</option>
+              <option value="Sensira Resort">Sensira Resort</option>
+              <option value="Ocean Coral &amp; Turquesa">Ocean Coral &amp; Turquesa</option>
+              <option value="Iberostar Grand Paraiso">Iberostar Grand Paraiso</option>
+              <option value="Iberostar Paraiso Maya">Iberostar Paraiso Maya</option>
+              <option value="Iberostar Paraiso Lindo">Iberostar Paraiso Lindo</option>
+              <option value="Iberostar Paraiso Beach">Iberostar Paraiso Beach</option>
+              <option value="Iberostar Paraiso Del Mar">Iberostar Paraiso Del Mar</option>
               <option value="Hotel Xcaret Mexico">Hotel Xcaret Mexico</option>
-              <option value="Secrets Maroma Beach Riviera Cancun">Secrets Maroma Beach Riviera Cancun</option>
-              <option value="Rosewood Mayakoba">Rosewood Mayakoba</option>
+              <option value="Hotel Xcaret Arte">Hotel Xcaret Arte</option>
+              <option value="Grand Velas Riviera Maya">Grand Velas Riviera Maya</option>
+              <option value="Paradisus Playa del Carmen">Paradisus Playa del Carmen</option>
+              <option value="Hilton Playa del Carmen">Hilton Playa del Carmen</option>
+              <option value="Sandos Playacar">Sandos Playacar</option>
+              <option value="Sandos Caracol">Sandos Caracol</option>
+              <option value="Riu Palace Riviera Maya">Riu Palace Riviera Maya</option>
+              <option value="Riu Palace Mexico">Riu Palace Mexico</option>
+              <option value="Riu Yucatan">Riu Yucatan</option>
+              <option value="Occidental at Xcaret">Occidental at Xcaret</option>
+              <option value="Nickelodeon Riviera Maya">Nickelodeon Riviera Maya</option>
+              <option value="Bahia Principe Luxury Akumal">Bahia Principe Luxury Akumal</option>
+              <option value="Bahia Principe Luxury Sian Ka’an">Bahia Principe Luxury Sian Ka’an</option>
+              <option value="Bahia Principe Grand Coba">Bahia Principe Grand Coba</option>
+              <option value="Bahia Principe Grand Tulum">Bahia Principe Grand Tulum</option>
+              <option value="Barceló Maya Palace">Barceló Maya Palace</option>
+              <option value="Barceló Maya Riviera">Barceló Maya Riviera</option>
+              <option value="Barceló Maya Tropical">Barceló Maya Tropical</option>
+              <option value="Barceló Maya Colonial">Barceló Maya Colonial</option>
+              <option value="Barceló Maya Caribe">Barceló Maya Caribe</option>
+              <option value="Barceló Maya Beach">Barceló Maya Beach</option>
+              <option value="Secrets Akumal">Secrets Akumal</option>
+              <option value="Unico 20°87°">Unico 20°87°</option>
+              <option value="TRS Yucatan">TRS Yucatan</option>
+              <option value="Grand Palladium Kantenah">Grand Palladium Kantenah</option>
+              <option value="Grand Palladium Colonial">Grand Palladium Colonial</option>
+              <option value="Grand Palladium White Sand">Grand Palladium White Sand</option>
+              <option value="Catalonia Royal Tulum">Catalonia Royal Tulum</option>
+              <option value="Catalonia Riviera Maya">Catalonia Riviera Maya</option>
+              <option value="Catalonia Yucatan Beach">Catalonia Yucatan Beach</option>
+              <option value="Grand Sirenis Riviera Maya">Grand Sirenis Riviera Maya</option>
             </optgroup>
-            <optgroup label="Tulum">
+            <optgroup label="Tulum Area">
               <option value="Conrad Tulum Riviera Maya">Conrad Tulum Riviera Maya</option>
               <option value="Hilton Tulum Riviera Maya">Hilton Tulum Riviera Maya</option>
-              <option value="Dreams Tulum Resort & Spa">Dreams Tulum Resort & Spa</option>
+              <option value="Secrets Tulum Resort &amp; Beach Club">Secrets Tulum Resort &amp; Beach Club</option>
+              <option value="Dreams Tulum Resort &amp; Spa">Dreams Tulum Resort &amp; Spa</option>
+              <option value="Kore Tulum Retreat">Kore Tulum Retreat</option>
+              <option value="Bahia Principe Luxury Sian Ka’an">Bahia Principe Luxury Sian Ka’an</option>
               <option value="Bahia Principe Grand Tulum">Bahia Principe Grand Tulum</option>
-              <option value="Azulik Tulum">Azulik Tulum</option>
+              <option value="Catalonia Royal Tulum">Catalonia Royal Tulum</option>
+              <option value="Unico 20°87°">Unico 20°87°</option>
+              <option value="TRS Yucatan">TRS Yucatan</option>
             </optgroup>
           </select>
         </div>
@@ -592,7 +683,9 @@ function getCheckedValues(name){
 form.addEventListener('submit', function(e){
   e.preventDefault();
   var name = form.fName.value.trim();
-  var phone = form.fPhone.value.trim();
+  var phoneCountryCode = form.fPhoneCountryCode.value.trim();
+  var phoneLocal = form.fPhone.value.trim();
+  var phone = [phoneCountryCode, phoneLocal].filter(Boolean).join(' ').trim();
   var email = form.fEmail.value.trim();
   var people = form.fPeople.value.trim();
   var date = form.fDate.value.trim();
@@ -609,7 +702,7 @@ form.addEventListener('submit', function(e){
     pickupLocation = customLocation;
   }
 
-  if(!name || !phone || !email || !people || !date || !pickupLocation){
+  if(!name || !phoneLocal || !email || !people || !date || !pickupLocation){
     errBox.classList.add('on');
     return;
   }
@@ -665,6 +758,8 @@ form.addEventListener('submit', function(e){
     email: email,
     name: name,
     phone: phone,
+    phone_country_code: phoneCountryCode || '(not selected)',
+    phone_local: phoneLocal || '(not provided)',
     adventurers: people,
     preferred_date: date,
     selected_hotel: selectedHotel || '(not selected)',
