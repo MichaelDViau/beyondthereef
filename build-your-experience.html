@@ -227,6 +227,16 @@ footer a:hover{color:#fff}
           <button type="button" class="counter-btn" id="peoplePlus" aria-label="Increase number of adventurers">+</button>
         </div>
       </div>
+      <div class="grid-2">
+        <div class="field">
+          <label for="fDate" data-i18n="build.s2.date">Preferred Date</label>
+          <input id="fDate" name="date" type="date" required>
+        </div>
+        <div class="field">
+          <label for="fPickup" data-i18n="build.s2.pickup">Pick-up Location</label>
+          <input id="fPickup" name="pickup_location" type="text" autocomplete="street-address" required>
+        </div>
+      </div>
     </section>
 
     <!-- STEP 3: OCEAN / SNORKELING -->
@@ -453,7 +463,7 @@ footer a:hover{color:#fff}
         <span data-i18n="build.cta">Build My Experience</span>
         <span style="font-size:18px;line-height:1">→</span>
       </button>
-      <p class="err" id="formErr" data-i18n="build.err">Please fill out your name, phone and email so we can send your quote.</p>
+      <p class="err" id="formErr" data-i18n="build.err">Please fill out your name, phone, email, preferred date, and pick-up location so we can send your quote.</p>
       <p class="fineprint" data-i18n="build.fine">We will craft a super exclusive, top-of-the-class experience and contact you by email or WhatsApp with your custom quote within 6 to 12 hours.</p>
     </div>
 
@@ -540,8 +550,10 @@ form.addEventListener('submit', function(e){
   var phone = form.fPhone.value.trim();
   var email = form.fEmail.value.trim();
   var people = form.fPeople.value.trim();
+  var date = form.fDate.value.trim();
+  var pickupLocation = form.fPickup.value.trim();
 
-  if(!name || !phone || !email || !people){
+  if(!name || !phone || !email || !people || !date || !pickupLocation){
     errBox.classList.add('on');
     return;
   }
@@ -570,6 +582,8 @@ form.addEventListener('submit', function(e){
     'Phone: ' + phone,
     'Email: ' + email,
     'Adventurers: ' + people,
+    'Preferred Date: ' + date,
+    'Pick-up Location: ' + pickupLocation,
     '',
     'SELECTIONS',
     'Ocean / Snorkeling: ' + (snorkel || '(not selected)'),
@@ -596,6 +610,8 @@ form.addEventListener('submit', function(e){
     name: name,
     phone: phone,
     adventurers: people,
+    preferred_date: date,
+    pickup_location: pickupLocation,
     ocean_snorkeling: snorkel || '(not selected)',
     cenote: cenote || '(not selected)',
     mayan_ruins: ruins || '(not selected)',
