@@ -38,7 +38,7 @@
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/cenote.jpg</image:loc>
-      <image:title>Sea Turtle and Cenote Snorkeling Experience</image:title>
+      <image:title>Sea Turtles & Cenote Experience</image:title>
     </image:image>
   </url>
   <url>
@@ -47,7 +47,17 @@
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/Tulum.jpg</image:loc>
-      <image:title>Tulum Snorkeling Experience</image:title>
+      <image:title>Tulum, Sea Turtles & Cenote Experience</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.beyondthereefmexico.com/tour-tulum-cenote-experience.html</loc>
+    <lastmod>2026-04-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/Tulum.jpg</image:loc>
+      <image:title>Tulum & Cenote Experience</image:title>
     </image:image>
   </url>
   <url>
@@ -56,7 +66,7 @@
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/cenote.jpg</image:loc>
-      <image:title>Hidden Cenotes Express</image:title>
+      <image:title>Hidden Cenote(s) Experience</image:title>
     </image:image>
   </url>
   <url>
@@ -65,7 +75,7 @@
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/Tulum.jpg</image:loc>
-      <image:title>Tulum Highlights</image:title>
+      <image:title>Tulum Ruins Experience</image:title>
     </image:image>
   </url>
   <url>
@@ -83,7 +93,7 @@
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/coba.jpg</image:loc>
-      <image:title>Coba Experience</image:title>
+      <image:title>Coba & Cenote Experience</image:title>
     </image:image>
   </url>
   <url>
@@ -110,7 +120,7 @@
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/siankaan.jpg</image:loc>
-      <image:title>Dolphin Watching in Sian Ka'an</image:title>
+      <image:title>Wild Dolphins & Bird Watching Experience</image:title>
     </image:image>
   </url>
   <url>
