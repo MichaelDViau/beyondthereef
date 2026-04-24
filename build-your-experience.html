@@ -203,12 +203,90 @@ footer a:hover{color:#fff}
           <input id="fName" name="name" type="text" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="fPhone" data-i18n="build.s1.phone">Phone Number</label>
-          <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
-        </div>
-        <div class="field" style="grid-column:1/-1">
           <label for="fEmail" data-i18n="build.s1.email">Email Address</label>
           <input id="fEmail" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field" style="grid-column:1/-1">
+          <label for="fPhone" data-i18n="build.s1.phone">Phone Number</label>
+          <div style="display:grid;grid-template-columns:minmax(165px, 36%) 1fr;gap:10px;align-items:center;">
+            <select id="fPhoneCountryCode" name="phone_country_code" autocomplete="tel-country-code" required aria-label="Country calling code">
+              <option value="+1">🇺🇸 United States (+1)</option>
+              <option value="+1">🇨🇦 Canada (+1)</option>
+              <option value="+52">🇲🇽 Mexico (+52)</option>
+              <option value="+1-242">🇧🇸 Bahamas (+1-242)</option>
+              <option value="+1-246">🇧🇧 Barbados (+1-246)</option>
+              <option value="+1-876">🇯🇲 Jamaica (+1-876)</option>
+              <option value="+1-809">🇩🇴 Dominican Republic (+1-809 / 829 / 849)</option>
+              <option value="+1-868">🇹🇹 Trinidad & Tobago (+1-868)</option>
+              <option value="+1-787">🇵🇷 Puerto Rico (+1-787 / 939)</option>
+              <option value="+53">🇨🇺 Cuba (+53)</option>
+              <option value="+44">🇬🇧 United Kingdom (+44)</option>
+              <option value="+33">🇫🇷 France (+33)</option>
+              <option value="+34">🇪🇸 Spain (+34)</option>
+              <option value="+39">🇮🇹 Italy (+39)</option>
+              <option value="+49">🇩🇪 Germany (+49)</option>
+              <option value="+31">🇳🇱 Netherlands (+31)</option>
+              <option value="+32">🇧🇪 Belgium (+32)</option>
+              <option value="+41">🇨🇭 Switzerland (+41)</option>
+              <option value="+43">🇦🇹 Austria (+43)</option>
+              <option value="+46">🇸🇪 Sweden (+46)</option>
+              <option value="+47">🇳🇴 Norway (+47)</option>
+              <option value="+45">🇩🇰 Denmark (+45)</option>
+              <option value="+358">🇫🇮 Finland (+358)</option>
+              <option value="+351">🇵🇹 Portugal (+351)</option>
+              <option value="+30">🇬🇷 Greece (+30)</option>
+              <option value="+353">🇮🇪 Ireland (+353)</option>
+              <option value="+48">🇵🇱 Poland (+48)</option>
+              <option value="+420">🇨🇿 Czech Republic (+420)</option>
+              <option value="+36">🇭🇺 Hungary (+36)</option>
+              <option value="+40">🇷🇴 Romania (+40)</option>
+              <option value="+359">🇧🇬 Bulgaria (+359)</option>
+              <option value="+380">🇺🇦 Ukraine (+380)</option>
+              <option value="+7">🇷🇺 Russia (+7)</option>
+              <option value="+27">🇿🇦 South Africa (+27)</option>
+              <option value="+20">🇪🇬 Egypt (+20)</option>
+              <option value="+212">🇲🇦 Morocco (+212)</option>
+              <option value="+216">🇹🇳 Tunisia (+216)</option>
+              <option value="+213">🇩🇿 Algeria (+213)</option>
+              <option value="+234">🇳🇬 Nigeria (+234)</option>
+              <option value="+254">🇰🇪 Kenya (+254)</option>
+              <option value="+233">🇬🇭 Ghana (+233)</option>
+              <option value="+251">🇪🇹 Ethiopia (+251)</option>
+              <option value="+256">🇺🇬 Uganda (+256)</option>
+              <option value="+255">🇹🇿 Tanzania (+255)</option>
+              <option value="+86">🇨🇳 China (+86)</option>
+              <option value="+81">🇯🇵 Japan (+81)</option>
+              <option value="+82">🇰🇷 South Korea (+82)</option>
+              <option value="+91">🇮🇳 India (+91)</option>
+              <option value="+66">🇹🇭 Thailand (+66)</option>
+              <option value="+84">🇻🇳 Vietnam (+84)</option>
+              <option value="+62">🇮🇩 Indonesia (+62)</option>
+              <option value="+63">🇵🇭 Philippines (+63)</option>
+              <option value="+65">🇸🇬 Singapore (+65)</option>
+              <option value="+60">🇲🇾 Malaysia (+60)</option>
+              <option value="+971">🇦🇪 UAE (+971)</option>
+              <option value="+966">🇸🇦 Saudi Arabia (+966)</option>
+              <option value="+972">🇮🇱 Israel (+972)</option>
+              <option value="+90">🇹🇷 Turkey (+90)</option>
+              <option value="+974">🇶🇦 Qatar (+974)</option>
+              <option value="+965">🇰🇼 Kuwait (+965)</option>
+              <option value="+61">🇦🇺 Australia (+61)</option>
+              <option value="+64">🇳🇿 New Zealand (+64)</option>
+              <option value="+679">🇫🇯 Fiji (+679)</option>
+              <option value="+675">🇵🇬 Papua New Guinea (+675)</option>
+              <option value="+55">🇧🇷 Brazil (+55)</option>
+              <option value="+54">🇦🇷 Argentina (+54)</option>
+              <option value="+56">🇨🇱 Chile (+56)</option>
+              <option value="+57">🇨🇴 Colombia (+57)</option>
+              <option value="+51">🇵🇪 Peru (+51)</option>
+              <option value="+58">🇻🇪 Venezuela (+58)</option>
+              <option value="+593">🇪🇨 Ecuador (+593)</option>
+              <option value="+598">🇺🇾 Uruguay (+598)</option>
+              <option value="+595">🇵🇾 Paraguay (+595)</option>
+              <option value="+591">🇧🇴 Bolivia (+591)</option>
+            </select>
+            <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+          </div>
         </div>
       </div>
     </section>
@@ -254,25 +332,100 @@ footer a:hover{color:#fff}
           <label for="fHotel" data-i18n="build.s2.hotel">Hotel</label>
           <select id="fHotel" name="hotel">
             <option value="">Select a hotel</option>
-            <optgroup label="Cancún">
+            <optgroup label="Cancun">
+              <option value="Le Blanc Spa Resort">Le Blanc Spa Resort</option>
               <option value="Hyatt Ziva Cancun">Hyatt Ziva Cancun</option>
-              <option value="JW Marriott Cancun Resort & Spa">JW Marriott Cancun Resort & Spa</option>
-              <option value="Paradisus Cancun">Paradisus Cancun</option>
+              <option value="Hyatt Zilara Cancun">Hyatt Zilara Cancun</option>
+              <option value="Live Aqua Cancun">Live Aqua Cancun</option>
               <option value="Moon Palace Cancun">Moon Palace Cancun</option>
+              <option value="Moon Palace The Grand">Moon Palace The Grand</option>
+              <option value="Sun Palace">Sun Palace</option>
+              <option value="Nizuc Resort">Nizuc Resort</option>
+              <option value="Grand Fiesta Americana Coral Beach">Grand Fiesta Americana Coral Beach</option>
+              <option value="Secrets The Vine Cancun">Secrets The Vine Cancun</option>
+              <option value="Breathless Cancun Soul">Breathless Cancun Soul</option>
+              <option value="Dreams Sands Cancun">Dreams Sands Cancun</option>
+              <option value="Dreams Playa Mujeres">Dreams Playa Mujeres</option>
+              <option value="Secrets Playa Mujeres">Secrets Playa Mujeres</option>
+              <option value="Excellence Playa Mujeres">Excellence Playa Mujeres</option>
+              <option value="Finest Playa Mujeres">Finest Playa Mujeres</option>
+              <option value="Beloved Playa Mujeres">Beloved Playa Mujeres</option>
+              <option value="Atelier Playa Mujeres">Atelier Playa Mujeres</option>
+              <option value="Garza Blanca Cancun">Garza Blanca Cancun</option>
+              <option value="Planet Hollywood Cancun">Planet Hollywood Cancun</option>
+              <option value="Club Med Cancun">Club Med Cancun</option>
+              <option value="Wyndham Alltra Cancun">Wyndham Alltra Cancun</option>
+              <option value="Crown Paradise Club">Crown Paradise Club</option>
+              <option value="Hard Rock Cancun">Hard Rock Cancun</option>
+              <option value="Riu Palace Las Americas">Riu Palace Las Americas</option>
+              <option value="Riu Cancun">Riu Cancun</option>
+              <option value="Riu Caribe">Riu Caribe</option>
+              <option value="Riu Palace Kukulkan">Riu Palace Kukulkan</option>
+              <option value="Riu Palace Peninsula">Riu Palace Peninsula</option>
+              <option value="Temptation Cancun">Temptation Cancun</option>
             </optgroup>
-            <optgroup label="Riviera Maya / Playa del Carmen">
-              <option value="Grand Velas Riviera Maya">Grand Velas Riviera Maya</option>
-              <option value="Fairmont Mayakoba">Fairmont Mayakoba</option>
+            <optgroup label="Riviera Maya">
+              <option value="Excellence Riviera Cancun">Excellence Riviera Cancun</option>
+              <option value="Valentin Imperial">Valentin Imperial</option>
+              <option value="Secrets Maroma">Secrets Maroma</option>
+              <option value="Dreams Riviera Cancun">Dreams Riviera Cancun</option>
+              <option value="Dreams Natura">Dreams Natura</option>
+              <option value="Dreams Sapphire">Dreams Sapphire</option>
+              <option value="Zoetry Paraiso de la Bonita">Zoetry Paraiso de la Bonita</option>
+              <option value="Margaritaville Island Reserve">Margaritaville Island Reserve</option>
+              <option value="Royalton Riviera Cancun">Royalton Riviera Cancun</option>
+              <option value="Hideaway at Royalton">Hideaway at Royalton</option>
+              <option value="Sensira Resort">Sensira Resort</option>
+              <option value="Ocean Coral &amp; Turquesa">Ocean Coral &amp; Turquesa</option>
+              <option value="Iberostar Grand Paraiso">Iberostar Grand Paraiso</option>
+              <option value="Iberostar Paraiso Maya">Iberostar Paraiso Maya</option>
+              <option value="Iberostar Paraiso Lindo">Iberostar Paraiso Lindo</option>
+              <option value="Iberostar Paraiso Beach">Iberostar Paraiso Beach</option>
+              <option value="Iberostar Paraiso Del Mar">Iberostar Paraiso Del Mar</option>
               <option value="Hotel Xcaret Mexico">Hotel Xcaret Mexico</option>
-              <option value="Secrets Maroma Beach Riviera Cancun">Secrets Maroma Beach Riviera Cancun</option>
-              <option value="Rosewood Mayakoba">Rosewood Mayakoba</option>
+              <option value="Hotel Xcaret Arte">Hotel Xcaret Arte</option>
+              <option value="Grand Velas Riviera Maya">Grand Velas Riviera Maya</option>
+              <option value="Paradisus Playa del Carmen">Paradisus Playa del Carmen</option>
+              <option value="Hilton Playa del Carmen">Hilton Playa del Carmen</option>
+              <option value="Sandos Playacar">Sandos Playacar</option>
+              <option value="Sandos Caracol">Sandos Caracol</option>
+              <option value="Riu Palace Riviera Maya">Riu Palace Riviera Maya</option>
+              <option value="Riu Palace Mexico">Riu Palace Mexico</option>
+              <option value="Riu Yucatan">Riu Yucatan</option>
+              <option value="Occidental at Xcaret">Occidental at Xcaret</option>
+              <option value="Nickelodeon Riviera Maya">Nickelodeon Riviera Maya</option>
+              <option value="Bahia Principe Luxury Akumal">Bahia Principe Luxury Akumal</option>
+              <option value="Bahia Principe Luxury Sian Ka’an">Bahia Principe Luxury Sian Ka’an</option>
+              <option value="Bahia Principe Grand Coba">Bahia Principe Grand Coba</option>
+              <option value="Bahia Principe Grand Tulum">Bahia Principe Grand Tulum</option>
+              <option value="Barceló Maya Palace">Barceló Maya Palace</option>
+              <option value="Barceló Maya Riviera">Barceló Maya Riviera</option>
+              <option value="Barceló Maya Tropical">Barceló Maya Tropical</option>
+              <option value="Barceló Maya Colonial">Barceló Maya Colonial</option>
+              <option value="Barceló Maya Caribe">Barceló Maya Caribe</option>
+              <option value="Barceló Maya Beach">Barceló Maya Beach</option>
+              <option value="Secrets Akumal">Secrets Akumal</option>
+              <option value="Unico 20°87°">Unico 20°87°</option>
+              <option value="TRS Yucatan">TRS Yucatan</option>
+              <option value="Grand Palladium Kantenah">Grand Palladium Kantenah</option>
+              <option value="Grand Palladium Colonial">Grand Palladium Colonial</option>
+              <option value="Grand Palladium White Sand">Grand Palladium White Sand</option>
+              <option value="Catalonia Royal Tulum">Catalonia Royal Tulum</option>
+              <option value="Catalonia Riviera Maya">Catalonia Riviera Maya</option>
+              <option value="Catalonia Yucatan Beach">Catalonia Yucatan Beach</option>
+              <option value="Grand Sirenis Riviera Maya">Grand Sirenis Riviera Maya</option>
             </optgroup>
-            <optgroup label="Tulum">
+            <optgroup label="Tulum Area">
               <option value="Conrad Tulum Riviera Maya">Conrad Tulum Riviera Maya</option>
               <option value="Hilton Tulum Riviera Maya">Hilton Tulum Riviera Maya</option>
-              <option value="Dreams Tulum Resort & Spa">Dreams Tulum Resort & Spa</option>
+              <option value="Secrets Tulum Resort &amp; Beach Club">Secrets Tulum Resort &amp; Beach Club</option>
+              <option value="Dreams Tulum Resort &amp; Spa">Dreams Tulum Resort &amp; Spa</option>
+              <option value="Kore Tulum Retreat">Kore Tulum Retreat</option>
+              <option value="Bahia Principe Luxury Sian Ka’an">Bahia Principe Luxury Sian Ka’an</option>
               <option value="Bahia Principe Grand Tulum">Bahia Principe Grand Tulum</option>
-              <option value="Azulik Tulum">Azulik Tulum</option>
+              <option value="Catalonia Royal Tulum">Catalonia Royal Tulum</option>
+              <option value="Unico 20°87°">Unico 20°87°</option>
+              <option value="TRS Yucatan">TRS Yucatan</option>
             </optgroup>
           </select>
         </div>
@@ -592,7 +745,9 @@ function getCheckedValues(name){
 form.addEventListener('submit', function(e){
   e.preventDefault();
   var name = form.fName.value.trim();
-  var phone = form.fPhone.value.trim();
+  var phoneCountryCode = form.fPhoneCountryCode.value.trim();
+  var phoneLocal = form.fPhone.value.trim();
+  var phone = [phoneCountryCode, phoneLocal].filter(Boolean).join(' ').trim();
   var email = form.fEmail.value.trim();
   var people = form.fPeople.value.trim();
   var date = form.fDate.value.trim();
@@ -609,7 +764,7 @@ form.addEventListener('submit', function(e){
     pickupLocation = customLocation;
   }
 
-  if(!name || !phone || !email || !people || !date || !pickupLocation){
+  if(!name || !phoneLocal || !email || !people || !date || !pickupLocation){
     errBox.classList.add('on');
     return;
   }
@@ -665,6 +820,8 @@ form.addEventListener('submit', function(e){
     email: email,
     name: name,
     phone: phone,
+    phone_country_code: phoneCountryCode || '(not selected)',
+    phone_local: phoneLocal || '(not provided)',
     adventurers: people,
     preferred_date: date,
     selected_hotel: selectedHotel || '(not selected)',
