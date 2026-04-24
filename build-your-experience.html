@@ -91,8 +91,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 @media(min-width:640px){.grid-2{grid-template-columns:1fr 1fr}}
 .field{display:flex;flex-direction:column;gap:6px}
 .field label{font-size:12.5px;font-weight:700;color:var(--ink);letter-spacing:.02em}
-.field input{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r);font-size:15px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color var(--ease),box-shadow var(--ease)}
-.field input:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,165,180,.15)}
+.field input,.field select{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r);font-size:15px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color var(--ease),box-shadow var(--ease)}
+.field input:focus,.field select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,165,180,.15)}
 .field input[type=number]{max-width:100%}
 .counter-field{max-width:260px;margin:0 auto}
 .counter-wrap{display:flex;align-items:center;justify-content:center;gap:10px}
@@ -229,10 +229,65 @@ footer a:hover{color:#fff}
       </div>
     </section>
 
-    <!-- STEP 3: OCEAN / SNORKELING -->
+    <!-- STEP 3: DATE -->
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">3</div>
+        <div class="bstep-title" data-i18n="build.s2.date.title">Preferred Date</div>
+      </div>
+      <p class="bstep-sub" data-i18n="build.s2.date.sub">Choose the date you would like for your experience.</p>
+      <div class="field">
+        <label for="fDate" data-i18n="build.s2.date">Preferred Date</label>
+        <input id="fDate" name="date" type="date" required>
+      </div>
+    </section>
+
+    <!-- STEP 4: PICK-UP LOCATION -->
+    <section class="bstep">
+      <div class="bstep-h">
+        <div class="bstep-num">4</div>
+        <div class="bstep-title" data-i18n="build.s2.pickup.title">Pick-up Location</div>
+      </div>
+      <p class="bstep-sub" data-i18n="build.s2.pickup.sub">Select your hotel from the list, or choose custom location and type it manually.</p>
+      <div class="grid-2">
+        <div class="field">
+          <label for="fHotel" data-i18n="build.s2.hotel">Hotel</label>
+          <select id="fHotel" name="hotel">
+            <option value="">Select a hotel</option>
+            <optgroup label="Cancún">
+              <option value="Hyatt Ziva Cancun">Hyatt Ziva Cancun</option>
+              <option value="JW Marriott Cancun Resort & Spa">JW Marriott Cancun Resort & Spa</option>
+              <option value="Paradisus Cancun">Paradisus Cancun</option>
+              <option value="Moon Palace Cancun">Moon Palace Cancun</option>
+            </optgroup>
+            <optgroup label="Riviera Maya / Playa del Carmen">
+              <option value="Grand Velas Riviera Maya">Grand Velas Riviera Maya</option>
+              <option value="Fairmont Mayakoba">Fairmont Mayakoba</option>
+              <option value="Hotel Xcaret Mexico">Hotel Xcaret Mexico</option>
+              <option value="Secrets Maroma Beach Riviera Cancun">Secrets Maroma Beach Riviera Cancun</option>
+              <option value="Rosewood Mayakoba">Rosewood Mayakoba</option>
+            </optgroup>
+            <optgroup label="Tulum">
+              <option value="Conrad Tulum Riviera Maya">Conrad Tulum Riviera Maya</option>
+              <option value="Hilton Tulum Riviera Maya">Hilton Tulum Riviera Maya</option>
+              <option value="Dreams Tulum Resort & Spa">Dreams Tulum Resort & Spa</option>
+              <option value="Bahia Principe Grand Tulum">Bahia Principe Grand Tulum</option>
+              <option value="Azulik Tulum">Azulik Tulum</option>
+            </optgroup>
+          </select>
+        </div>
+        <div class="field">
+          <label for="fPickupCustom" data-i18n="build.s2.pickup.custom">Custom pick-up location</label>
+          <input id="fPickupCustom" name="pickup_custom_location" type="text" autocomplete="street-address" placeholder="Type your custom location" data-i18n-ph="build.s2.pickup.custom.ph">
+          <label class="skip"><input type="checkbox" id="fPickupCustomToggle" name="pickup_custom_toggle" value="1"><span data-i18n="build.s2.pickup.usecustom">Use custom location</span></label>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 5: OCEAN / SNORKELING -->
+    <section class="bstep">
+      <div class="bstep-h">
+        <div class="bstep-num">5</div>
         <div class="bstep-title" data-i18n="build.s3.title">Ocean Snorkeling</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s3.sub">Choose your ocean adventure.</p>
@@ -262,10 +317,10 @@ footer a:hover{color:#fff}
       <label class="skip"><input type="checkbox" name="snorkel_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
-    <!-- STEP 4: CENOTE -->
+    <!-- STEP 6: CENOTE -->
     <section class="bstep">
       <div class="bstep-h">
-        <div class="bstep-num">4</div>
+        <div class="bstep-num">6</div>
         <div class="bstep-title" data-i18n="build.s4.title">Cenote Adventure</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s4.sub">Choose your cenote experience.</p>
@@ -302,10 +357,10 @@ footer a:hover{color:#fff}
       <label class="skip"><input type="checkbox" name="cenote_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
-    <!-- STEP 5: MAYAN RUINS -->
+    <!-- STEP 7: MAYAN RUINS -->
     <section class="bstep">
       <div class="bstep-h">
-        <div class="bstep-num">5</div>
+        <div class="bstep-num">7</div>
         <div class="bstep-title" data-i18n="build.s5.title">Mayan Ruins</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s5.sub">Choose a Mayan archaeological site.</p>
@@ -342,10 +397,10 @@ footer a:hover{color:#fff}
       <label class="skip"><input type="checkbox" name="ruins_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
-    <!-- STEP 6: FOOD -->
+    <!-- STEP 8: FOOD -->
     <section class="bstep">
       <div class="bstep-h">
-        <div class="bstep-num">6</div>
+        <div class="bstep-num">8</div>
         <div class="bstep-title" data-i18n="build.s6.title">Food Experience</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s6.sub">Choose how you want to eat on your adventure.</p>
@@ -375,10 +430,10 @@ footer a:hover{color:#fff}
       <label class="skip"><input type="checkbox" name="food_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
-    <!-- STEP 7: NANNY -->
+    <!-- STEP 9: NANNY -->
     <section class="bstep">
       <div class="bstep-h">
-        <div class="bstep-num">7</div>
+        <div class="bstep-num">9</div>
         <div class="bstep-title" data-i18n="build.s8.title">Exclusive Nanny Service</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s8.sub">Traveling with little ones should still feel effortless. Add a professional certified nanny so every parent can relax and enjoy a smoother, more premium experience from start to finish.</p>
@@ -394,10 +449,10 @@ footer a:hover{color:#fff}
       <label class="skip"><input type="checkbox" name="nanny_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
-    <!-- STEP 8: TRANSPORT -->
+    <!-- STEP 10: TRANSPORT -->
     <section class="bstep">
       <div class="bstep-h">
-        <div class="bstep-num">8</div>
+        <div class="bstep-num">10</div>
         <div class="bstep-title" data-i18n="build.s7.title">Transportation</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s7.sub">Choose the vehicle that fits your group.</p>
@@ -434,10 +489,10 @@ footer a:hover{color:#fff}
       <label class="skip"><input type="checkbox" name="transport_skip" value="1"><span data-i18n="build.skip">Skip this section</span></label>
     </section>
 
-    <!-- STEP 9: SPECIAL REQUEST -->
+    <!-- STEP 11: SPECIAL REQUEST -->
     <section class="bstep">
       <div class="bstep-h">
-        <div class="bstep-num">9</div>
+        <div class="bstep-num">11</div>
         <div class="bstep-title" data-i18n="build.s9.title">Special Request</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s9.sub">Can&apos;t find what you are looking for? No worries, tell us more and we will build it for you.</p>
@@ -453,7 +508,7 @@ footer a:hover{color:#fff}
         <span data-i18n="build.cta">Build My Experience</span>
         <span style="font-size:18px;line-height:1">→</span>
       </button>
-      <p class="err" id="formErr" data-i18n="build.err">Please fill out your name, phone and email so we can send your quote.</p>
+      <p class="err" id="formErr" data-i18n="build.err">Please fill out your name, phone, email, preferred date, and pick-up location so we can send your quote.</p>
       <p class="fineprint" data-i18n="build.fine">We will craft a super exclusive, top-of-the-class experience and contact you by email or WhatsApp with your custom quote within 6 to 12 hours.</p>
     </div>
 
@@ -540,8 +595,21 @@ form.addEventListener('submit', function(e){
   var phone = form.fPhone.value.trim();
   var email = form.fEmail.value.trim();
   var people = form.fPeople.value.trim();
+  var date = form.fDate.value.trim();
+  var selectedHotel = form.fHotel.value.trim();
+  var customLocation = form.fPickupCustom.value.trim();
+  var useCustomLocation = form.fPickupCustomToggle.checked;
+  var pickupLocation = '';
 
-  if(!name || !phone || !email || !people){
+  if (useCustomLocation) {
+    pickupLocation = customLocation;
+  } else if (selectedHotel) {
+    pickupLocation = selectedHotel;
+  } else if (customLocation) {
+    pickupLocation = customLocation;
+  }
+
+  if(!name || !phone || !email || !people || !date || !pickupLocation){
     errBox.classList.add('on');
     return;
   }
@@ -570,6 +638,8 @@ form.addEventListener('submit', function(e){
     'Phone: ' + phone,
     'Email: ' + email,
     'Adventurers: ' + people,
+    'Preferred Date: ' + date,
+    'Pick-up Location: ' + pickupLocation,
     '',
     'SELECTIONS',
     'Ocean / Snorkeling: ' + (snorkel || '(not selected)'),
@@ -596,6 +666,10 @@ form.addEventListener('submit', function(e){
     name: name,
     phone: phone,
     adventurers: people,
+    preferred_date: date,
+    selected_hotel: selectedHotel || '(not selected)',
+    custom_pickup_location: customLocation || '(not provided)',
+    pickup_location: pickupLocation,
     ocean_snorkeling: snorkel || '(not selected)',
     cenote: cenote || '(not selected)',
     mayan_ruins: ruins || '(not selected)',
