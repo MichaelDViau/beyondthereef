@@ -115,6 +115,20 @@
       'c.btn.viewall':  'Voir Toutes les Expériences →',
       'c.card.prereq':  'Sur devis',
       'c.per.person':   ' /personne',
+      'c.badge.top':    'Meilleur Choix',
+      'c.badge.new':    'Nouveau',
+      'c.badge.history':'Riche en Histoire',
+      'c.badge.foodie': 'Coup de Cœur Gourmand',
+      'c.badge.reserve':'Réserve UNESCO',
+      'c.badge.best':   'Meilleure Vente',
+      'c.badge.route':  'Nouvel Itinéraire',
+      'c.badge.quick':  'Évasion Rapide',
+      'c.badge.island': 'Vie Insulaire',
+      'c.badge.allday': 'Journée Épique',
+      'c.badge.boat':   'Bateau Privé',
+      'c.dur.half':     '⏱ Demi-journée',
+      'c.dur.full':     '⏱ Journée complète',
+      'c.dur.evening':  '⏱ Soirée',
 
       /* ── Common: Booking form (shared across all tour pages) ── */
       'c.bk.about':     'À propos de l\'Expérience',
@@ -326,6 +340,13 @@
       'tp.tulumund.chips': ['🏛️ Ruines de Tulum', '🐢 Tortues Marines', '💧 2 Cénotes', '🍽️ Déjeuner', '⏱ Journée Complète', '👥 Privé', '📸 Photos Incluses'],
       'tp.tulumund.inc':   ['Visite guidée des ruines de Tulum', 'Snorkeling avec tortues marines', 'Visite de 2 cénotes', 'Déjeuner au restaurant local', 'Équipement de snorkeling', 'Transport privé A/C', 'Guide bilingue certifié'],
       'tp.tulumund.notinc':['Droits d\'entrée de Tulum (~25 USD)', 'Pourboires', 'Boissons supplémentaires'],
+      'tp.tulumcen.title': 'Expérience Tulum & Cénote',
+      'tp.tulumcen.sub':   'Ruines de Tulum · Cénote(s) · Collation ou Tacos',
+      'tp.tulumcen.cd':    'Explorez les superbes ruines de Tulum sur les falaises, puis rafraîchissez-vous dans des cénotes cristallins, avec collation légère ou option tacos locaux.',
+      'tp.tulumcen.about': 'Explorez les impressionnantes ruines de Tulum sur les falaises, où les pyramides mayas dominent la mer des Caraïbes, puis rafraîchissez-vous dans deux magnifiques cénotes. Panini, snacks et boissons premium inclus. Option tacos locaux +20 USD/personne.',
+      'tp.tulumcen.chips': ['🏛️ Ruines de Tulum', '💧 2 Cénotes', '🍽️ Déjeuner Local', '⏱ Demi-journée (5h)', '👥 Privé'],
+      'tp.tulumcen.inc':   ['Visite guidée des ruines de Tulum', 'Visite de 2 cénotes', 'Équipement de snorkeling', 'Panini, snacks et boissons premium', 'Photos professionnelles', 'Guide bilingue certifié', 'Van privé avec A/C', 'Transfert hôtel inclus'],
+      'tp.tulumcen.notinc':['Expérience tacos (20 USD/personne)'],
 
       'tp.cenotes.title': 'Cénotes Cachés Express',
       'tp.cenotes.sub':   '4 Cénotes · Rappel dans une Caverne · Collation et Bières',
@@ -444,6 +465,7 @@
       'tours.sub':        'Choisissez l\'aventure qui vous correspond. Expériences privées sur mesure ou aventures partagées à prix accessible.',
       'tours.priv.lbl':   'Expériences Privées',
       'tours.priv.h2.html':'<span style="color:var(--coral)">Vivez-le</span> sans la foule.',
+      'tours.priv.sub':   'Le voyage devrait être ouvert, calme et authentique. C’est pourquoi tout ce que nous faisons est pensé pour vous donner de l’espace. De l’espace pour profiter de l’eau sans foule autour de vous. De l’espace pour avancer à votre propre rythme. De l’espace pour vous connecter au lieu et aux personnes avec qui vous voyagez. Vous ne faites pas partie d’un groupe et vous ne suivez pas un scénario. Vous êtes accompagné par un hôte local qui sait créer ces moments naturellement, sans rien forcer. L’expérience devient encore meilleure quand vous la partagez, et à mesure que votre groupe grandit, le prix par personne devient plus avantageux.',
       'tours.shar.lbl':   'Expériences Partagées',
       'tours.shar.h2':    'Vivez l\'Aventure à Petit Prix',
 
@@ -578,6 +600,20 @@
       'c.btn.viewall':  'Ver Todas las Experiencias →',
       'c.card.prereq':  'Precio a consultar',
       'c.per.person':   ' /persona',
+      'c.badge.top':    'Top',
+      'c.badge.new':    'Nuevo',
+      'c.badge.history':'Rico en Historia',
+      'c.badge.foodie': 'Favorito Foodie',
+      'c.badge.reserve':'Reserva UNESCO',
+      'c.badge.best':   'Más Vendido',
+      'c.badge.route':  'Nueva Ruta',
+      'c.badge.quick':  'Escapada Rápida',
+      'c.badge.island': 'Vida Isleña',
+      'c.badge.allday': 'Épico de Todo el Día',
+      'c.badge.boat':   'Lancha Privada',
+      'c.dur.half':     '⏱ Medio día',
+      'c.dur.full':     '⏱ Día completo',
+      'c.dur.evening':  '⏱ Tarde/Noche',
 
       /* ── Common: Booking form ── */
       'c.bk.about':     'Sobre Esta Experiencia',
@@ -789,6 +825,13 @@
       'tp.tulumund.chips': ['🏛️ Ruinas de Tulum', '🐢 Tortugas Marinas', '💧 2 Cenotes', '🍽️ Almuerzo', '⏱ Día Completo', '👥 Privado', '📸 Fotos Incluidas'],
       'tp.tulumund.inc':   ['Visita guiada a ruinas de Tulum', 'Snorkel con tortugas marinas', 'Visita a 2 cenotes', 'Almuerzo en restaurante local', 'Equipo de snorkel', 'Transporte privado A/C', 'Guía bilingüe certificado'],
       'tp.tulumund.notinc':['Entrada a Tulum (~$25 USD)', 'Propinas', 'Bebidas adicionales'],
+      'tp.tulumcen.title': 'Experiencia Tulum y Cenote',
+      'tp.tulumcen.sub':   'Ruinas de Tulum · Cenote(s) · Snack o Tacos',
+      'tp.tulumcen.cd':    'Explora las impresionantes ruinas de Tulum sobre el acantilado y luego refréscate en cenotes cristalinos, con snack ligero u opción de tacos locales.',
+      'tp.tulumcen.about': 'Explora las impresionantes ruinas de Tulum sobre el acantilado, donde antiguas pirámides mayas miran al mar Caribe, y luego refréscate en dos hermosos cenotes. Incluye panini, snacks y bebidas premium. Opción tacos locales +20 USD/persona.',
+      'tp.tulumcen.chips': ['🏛️ Ruinas de Tulum', '💧 2 Cenotes', '🍽️ Almuerzo Local', '⏱ Medio Día (5h)', '👥 Privado'],
+      'tp.tulumcen.inc':   ['Visita guiada a ruinas de Tulum', 'Visita a 2 cenotes', 'Equipo de snorkel', 'Panini, snacks y bebidas premium', 'Fotos profesionales', 'Guía bilingüe certificado', 'Van privado con A/C', 'Traslado hotel incluido'],
+      'tp.tulumcen.notinc':['Experiencia de tacos (20 USD/persona)'],
 
       'tp.cenotes.title': 'Cenotes Ocultos Express',
       'tp.cenotes.sub':   '4 Cenotes · Rapel en Caverna · Snack y Cervezas',
@@ -907,6 +950,7 @@
       'tours.sub':        'Elige la aventura que se adapte a ti. Experiencias privadas a tu medida o aventuras compartidas a precio accesible.',
       'tours.priv.lbl':   'Experiencias Privadas',
       'tours.priv.h2.html':'<span style="color:var(--coral)">Vívelo</span> sin multitudes.',
+      'tours.priv.sub':   'Viajar debería sentirse abierto, tranquilo y real. Por eso todo lo que hacemos está diseñado para darte espacio. Espacio para disfrutar el agua sin gente a tu alrededor. Espacio para moverte a tu ritmo. Espacio para conectar con el lugar y con las personas con las que viajas. No serás parte de un grupo ni seguirás un guion. Tendrás un anfitrión local que sabe crear esos momentos de forma natural, sin forzar nada. La experiencia se vuelve mejor cuando se comparte, y mientras crece tu grupo, el costo por persona se vuelve más favorable.',
       'tours.shar.lbl':   'Experiencias Compartidas',
       'tours.shar.h2':    'Vive la Aventura a Buen Precio',
 
@@ -1002,7 +1046,7 @@
   /* Map URL filename → translation key prefix for tour pages */
   var TOUR_MAP = {
     'tour-turtles-cenotes':  { pre: 'tp.turtle',    kind: 'private' },
-    'tour-tulum-cenote-experience': { pre: 'tp.tulumund', kind: 'private' },
+    'tour-tulum-cenote-experience': { pre: 'tp.tulumcen', kind: 'private' },
     'tour-tulum-underwater': { pre: 'tp.tulumund',  kind: 'private' },
     'tour-cenotes-express':  { pre: 'tp.cenotes',   kind: 'private' },
     'tour-tulum-express':    { pre: 'tp.tulumexp',  kind: 'private' },
@@ -1163,6 +1207,49 @@
     }
   }
 
+  function applyCardMetaTranslations(D) {
+    var badgeMap = {
+      'Top Pick': D['c.badge.top'],
+      'New': D['c.badge.new'],
+      'History Rich': D['c.badge.history'],
+      'Foodie Fave': D['c.badge.foodie'],
+      'UNESCO Reserve': D['c.badge.reserve'],
+      'Best Seller': D['c.badge.best'],
+      'New Route': D['c.badge.route'],
+      'Quick Escape': D['c.badge.quick'],
+      'Island Life': D['c.badge.island'],
+      'All-Day Epic': D['c.badge.allday'],
+      'Private Boat': D['c.badge.boat']
+    };
+    var badges = doc.querySelectorAll('.tc-badge');
+    for (var i = 0; i < badges.length; i++) {
+      var txt = (badges[i].textContent || '').trim();
+      if (badgeMap[txt]) badges[i].textContent = badgeMap[txt];
+    }
+
+    var durMap = {
+      '⏱ Half day': D['c.dur.half'],
+      '⏱ Full day': D['c.dur.full'],
+      '⏱ Evening': D['c.dur.evening']
+    };
+    var durations = doc.querySelectorAll('.tc-dur');
+    for (var j = 0; j < durations.length; j++) {
+      var dtxt = (durations[j].textContent || '').trim();
+      if (durMap[dtxt]) durations[j].textContent = durMap[dtxt];
+    }
+
+    var prices = doc.querySelectorAll('.tc-price');
+    for (var k = 0; k < prices.length; k++) {
+      for (var n = 0; n < prices[k].childNodes.length; n++) {
+        var node = prices[k].childNodes[n];
+        if (node && node.nodeType === 3 && /From/i.test(node.nodeValue)) {
+          node.nodeValue = D['c.bk.from'] + ' ';
+          break;
+        }
+      }
+    }
+  }
+
   function watchDynamicBookingButtonText(D) {
     if (!doc.body || !win.MutationObserver) return;
     function syncButtons() {
@@ -1279,6 +1366,7 @@
     }
 
     applyCommonRuntimeText(D);
+    applyCardMetaTranslations(D);
     watchDynamicBookingButtonText(D);
 
     /* 3. Update html lang attribute */
