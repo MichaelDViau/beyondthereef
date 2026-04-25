@@ -115,6 +115,20 @@
       'c.btn.viewall':  'Voir Toutes les Expériences →',
       'c.card.prereq':  'Sur devis',
       'c.per.person':   ' /personne',
+      'c.badge.top':    'Meilleur Choix',
+      'c.badge.new':    'Nouveau',
+      'c.badge.history':'Riche en Histoire',
+      'c.badge.foodie': 'Coup de Cœur Gourmand',
+      'c.badge.reserve':'Réserve UNESCO',
+      'c.badge.best':   'Meilleure Vente',
+      'c.badge.route':  'Nouvel Itinéraire',
+      'c.badge.quick':  'Évasion Rapide',
+      'c.badge.island': 'Vie Insulaire',
+      'c.badge.allday': 'Journée Épique',
+      'c.badge.boat':   'Bateau Privé',
+      'c.dur.half':     '⏱ Demi-journée',
+      'c.dur.full':     '⏱ Journée complète',
+      'c.dur.evening':  '⏱ Soirée',
 
       /* ── Common: Booking form (shared across all tour pages) ── */
       'c.bk.about':     'À propos de l\'Expérience',
@@ -138,6 +152,8 @@
       'c.bk.success.title': 'Demande Envoyée !',
       'c.bk.success.text':  'Nous confirmons les disponibilités et vous répondrons par email dans les prochaines heures.',
       'c.bk.success.link':  '← Voir plus d\'excursions',
+      'c.bk.sharednote': 'Prix fixe en groupe · Aucun paiement ici',
+      'c.bk.quote': 'Contactez-nous pour un devis personnalisé',
       'c.bk.name.ph':   'Jean et Marie',
       'c.bk.hotel.ph':  'Nom de l\'hôtel ou adresse',
       'c.bk.notes.ph':  'Régimes alimentaires, accessibilité…',
@@ -223,6 +239,13 @@
       'i.build.card.title': 'Créez Votre Propre Expérience',
       'i.build.card.desc':  'Dites-nous qui vous êtes, combien de personnes viennent, puis choisissez océan, cénote, ruines, repas et transport. Nous créons une expérience premium sur mesure rien que pour vous.',
       'i.build.cta':    'Créer Mon Expérience Sur Mesure',
+      'i.lens.lbl':     'POV réel. Sans foule. Juste vous',
+      'i.lens.h2.html': '<span style="color:var(--coral)">Allez au-delà</span> de l\'objectif',
+      'i.lens.sub':     'La plupart des tours vous montrent des lieux.<br>Nous faisons en sorte que vous les ressentiez vraiment.',
+      'i.lens.c1.h':    '🔦 Entrez dans le monde souterrain caché',
+      'i.lens.c1.p':    'Pas de files. Pas de bruit.<br>Juste vous, votre groupe, et un monde caché sous la jungle.<br>Nagez dans une eau cristalline, marchez parmi des formations anciennes et ressentez un silence rare.',
+      'i.lens.c2.h':    '🌮 Mangez là où c\'est authentique',
+      'i.lens.c2.p':    'Des tortillas fraîches faites à la main, préparées devant vous.<br>Plus de 20 saveurs authentiques cuisinées de façon traditionnelle.<br>Pas d\'arrêts touristiques. Juste la vraie cuisine locale, partagée comme elle doit l\'être.',
       'build.h1':       'Créez Votre Propre Expérience',
       'build.sub':      'Choisissez votre aventure. Nous créons une expérience exclusive et haut de gamme autour de vous, puis envoyons votre devis personnalisé en 6 à 12 heures.',
       'build.s1.title': 'Vos Coordonnées',
@@ -317,6 +340,13 @@
       'tp.tulumund.chips': ['🏛️ Ruines de Tulum', '🐢 Tortues Marines', '💧 2 Cénotes', '🍽️ Déjeuner', '⏱ Journée Complète', '👥 Privé', '📸 Photos Incluses'],
       'tp.tulumund.inc':   ['Visite guidée des ruines de Tulum', 'Snorkeling avec tortues marines', 'Visite de 2 cénotes', 'Déjeuner au restaurant local', 'Équipement de snorkeling', 'Transport privé A/C', 'Guide bilingue certifié'],
       'tp.tulumund.notinc':['Droits d\'entrée de Tulum (~25 USD)', 'Pourboires', 'Boissons supplémentaires'],
+      'tp.tulumcen.title': 'Expérience Tulum & Cénote',
+      'tp.tulumcen.sub':   'Ruines de Tulum · Cénote(s) · Collation ou Tacos',
+      'tp.tulumcen.cd':    'Explorez les superbes ruines de Tulum sur les falaises, puis rafraîchissez-vous dans des cénotes cristallins, avec collation légère ou option tacos locaux.',
+      'tp.tulumcen.about': 'Explorez les impressionnantes ruines de Tulum sur les falaises, où les pyramides mayas dominent la mer des Caraïbes, puis rafraîchissez-vous dans deux magnifiques cénotes. Panini, snacks et boissons premium inclus. Option tacos locaux +20 USD/personne.',
+      'tp.tulumcen.chips': ['🏛️ Ruines de Tulum', '💧 2 Cénotes', '🍽️ Déjeuner Local', '⏱ Demi-journée (5h)', '👥 Privé'],
+      'tp.tulumcen.inc':   ['Visite guidée des ruines de Tulum', 'Visite de 2 cénotes', 'Équipement de snorkeling', 'Panini, snacks et boissons premium', 'Photos professionnelles', 'Guide bilingue certifié', 'Van privé avec A/C', 'Transfert hôtel inclus'],
+      'tp.tulumcen.notinc':['Expérience tacos (20 USD/personne)'],
 
       'tp.cenotes.title': 'Cénotes Cachés Express',
       'tp.cenotes.sub':   '4 Cénotes · Rappel dans une Caverne · Collation et Bières',
@@ -435,6 +465,7 @@
       'tours.sub':        'Choisissez l\'aventure qui vous correspond. Expériences privées sur mesure ou aventures partagées à prix accessible.',
       'tours.priv.lbl':   'Expériences Privées',
       'tours.priv.h2.html':'<span style="color:var(--coral)">Vivez-le</span> sans la foule.',
+      'tours.priv.sub':   'Le voyage devrait être ouvert, calme et authentique. C’est pourquoi tout ce que nous faisons est pensé pour vous donner de l’espace. De l’espace pour profiter de l’eau sans foule autour de vous. De l’espace pour avancer à votre propre rythme. De l’espace pour vous connecter au lieu et aux personnes avec qui vous voyagez. Vous ne faites pas partie d’un groupe et vous ne suivez pas un scénario. Vous êtes accompagné par un hôte local qui sait créer ces moments naturellement, sans rien forcer. L’expérience devient encore meilleure quand vous la partagez, et à mesure que votre groupe grandit, le prix par personne devient plus avantageux.',
       'tours.shar.lbl':   'Expériences Partagées',
       'tours.shar.h2':    'Vivez l\'Aventure à Petit Prix',
 
@@ -569,6 +600,20 @@
       'c.btn.viewall':  'Ver Todas las Experiencias →',
       'c.card.prereq':  'Precio a consultar',
       'c.per.person':   ' /persona',
+      'c.badge.top':    'Top',
+      'c.badge.new':    'Nuevo',
+      'c.badge.history':'Rico en Historia',
+      'c.badge.foodie': 'Favorito Foodie',
+      'c.badge.reserve':'Reserva UNESCO',
+      'c.badge.best':   'Más Vendido',
+      'c.badge.route':  'Nueva Ruta',
+      'c.badge.quick':  'Escapada Rápida',
+      'c.badge.island': 'Vida Isleña',
+      'c.badge.allday': 'Épico de Todo el Día',
+      'c.badge.boat':   'Lancha Privada',
+      'c.dur.half':     '⏱ Medio día',
+      'c.dur.full':     '⏱ Día completo',
+      'c.dur.evening':  '⏱ Tarde/Noche',
 
       /* ── Common: Booking form ── */
       'c.bk.about':     'Sobre Esta Experiencia',
@@ -592,6 +637,8 @@
       'c.bk.success.title': '¡Solicitud Enviada!',
       'c.bk.success.text':  'Confirmaremos disponibilidad y te responderemos por email en las próximas horas.',
       'c.bk.success.link':  '← Ver más tours',
+      'c.bk.sharednote': 'Precio fijo en tour compartido · Sin pago aquí',
+      'c.bk.quote': 'Contáctanos para una cotización personalizada',
       'c.bk.name.ph':   'Juan y María',
       'c.bk.hotel.ph':  'Nombre del hotel o dirección',
       'c.bk.notes.ph':  'Dieta especial, accesibilidad…',
@@ -677,6 +724,13 @@
       'i.build.card.title': 'Crea Tu Propia Experiencia',
       'i.build.card.desc':  'Cuéntanos quién eres, cuántas personas vienen y elige océano, cenote, ruinas, comida y transporte. Diseñaremos una experiencia premium a tu medida.',
       'i.build.cta':    'Crear Mi Experiencia Personalizada',
+      'i.lens.lbl':     'POV real. Sin multitudes. Solo ustedes',
+      'i.lens.h2.html': '<span style="color:var(--coral)">Ve más allá</span> del lente',
+      'i.lens.sub':     'La mayoría de tours te muestran lugares.<br>Nosotros hacemos que realmente los sientas.',
+      'i.lens.c1.h':    '🔦 Entra al mundo subterráneo oculto',
+      'i.lens.c1.p':    'Sin filas. Sin ruido.<br>Solo tú, tu gente y un mundo escondido bajo la selva.<br>Nada en agua cristalina, camina entre formaciones antiguas y siente un silencio que casi nadie vive.',
+      'i.lens.c2.h':    '🌮 Come donde es auténtico',
+      'i.lens.c2.p':    'Tortillas frescas hechas a mano, cocinadas frente a ti.<br>Más de 20 sabores auténticos preparados de forma tradicional.<br>Sin paradas turísticas. Solo comida local real, compartida como debe ser.',
       'build.h1':       'Crea Tu Propia Experiencia',
       'build.sub':      'Elige tu aventura. Crearemos una experiencia exclusiva y de alto nivel alrededor de ti y te enviaremos tu cotización personalizada en 6 a 12 horas.',
       'build.s1.title': 'Tus Datos de Contacto',
@@ -771,6 +825,13 @@
       'tp.tulumund.chips': ['🏛️ Ruinas de Tulum', '🐢 Tortugas Marinas', '💧 2 Cenotes', '🍽️ Almuerzo', '⏱ Día Completo', '👥 Privado', '📸 Fotos Incluidas'],
       'tp.tulumund.inc':   ['Visita guiada a ruinas de Tulum', 'Snorkel con tortugas marinas', 'Visita a 2 cenotes', 'Almuerzo en restaurante local', 'Equipo de snorkel', 'Transporte privado A/C', 'Guía bilingüe certificado'],
       'tp.tulumund.notinc':['Entrada a Tulum (~$25 USD)', 'Propinas', 'Bebidas adicionales'],
+      'tp.tulumcen.title': 'Experiencia Tulum y Cenote',
+      'tp.tulumcen.sub':   'Ruinas de Tulum · Cenote(s) · Snack o Tacos',
+      'tp.tulumcen.cd':    'Explora las impresionantes ruinas de Tulum sobre el acantilado y luego refréscate en cenotes cristalinos, con snack ligero u opción de tacos locales.',
+      'tp.tulumcen.about': 'Explora las impresionantes ruinas de Tulum sobre el acantilado, donde antiguas pirámides mayas miran al mar Caribe, y luego refréscate en dos hermosos cenotes. Incluye panini, snacks y bebidas premium. Opción tacos locales +20 USD/persona.',
+      'tp.tulumcen.chips': ['🏛️ Ruinas de Tulum', '💧 2 Cenotes', '🍽️ Almuerzo Local', '⏱ Medio Día (5h)', '👥 Privado'],
+      'tp.tulumcen.inc':   ['Visita guiada a ruinas de Tulum', 'Visita a 2 cenotes', 'Equipo de snorkel', 'Panini, snacks y bebidas premium', 'Fotos profesionales', 'Guía bilingüe certificado', 'Van privado con A/C', 'Traslado hotel incluido'],
+      'tp.tulumcen.notinc':['Experiencia de tacos (20 USD/persona)'],
 
       'tp.cenotes.title': 'Cenotes Ocultos Express',
       'tp.cenotes.sub':   '4 Cenotes · Rapel en Caverna · Snack y Cervezas',
@@ -889,6 +950,7 @@
       'tours.sub':        'Elige la aventura que se adapte a ti. Experiencias privadas a tu medida o aventuras compartidas a precio accesible.',
       'tours.priv.lbl':   'Experiencias Privadas',
       'tours.priv.h2.html':'<span style="color:var(--coral)">Vívelo</span> sin multitudes.',
+      'tours.priv.sub':   'Viajar debería sentirse abierto, tranquilo y real. Por eso todo lo que hacemos está diseñado para darte espacio. Espacio para disfrutar el agua sin gente a tu alrededor. Espacio para moverte a tu ritmo. Espacio para conectar con el lugar y con las personas con las que viajas. No serás parte de un grupo ni seguirás un guion. Tendrás un anfitrión local que sabe crear esos momentos de forma natural, sin forzar nada. La experiencia se vuelve mejor cuando se comparte, y mientras crece tu grupo, el costo por persona se vuelve más favorable.',
       'tours.shar.lbl':   'Experiencias Compartidas',
       'tours.shar.h2':    'Vive la Aventura a Buen Precio',
 
@@ -984,6 +1046,7 @@
   /* Map URL filename → translation key prefix for tour pages */
   var TOUR_MAP = {
     'tour-turtles-cenotes':  { pre: 'tp.turtle',    kind: 'private' },
+    'tour-tulum-cenote-experience': { pre: 'tp.tulumcen', kind: 'private' },
     'tour-tulum-underwater': { pre: 'tp.tulumund',  kind: 'private' },
     'tour-cenotes-express':  { pre: 'tp.cenotes',   kind: 'private' },
     'tour-tulum-express':    { pre: 'tp.tulumexp',  kind: 'private' },
@@ -1040,6 +1103,13 @@
       for (var ni = 0; ni < notIncItems.length && ni < notIncArr.length; ni++) {
         notIncItems[ni].textContent = notIncArr[ni];
       }
+    }
+
+    /* Shared/private custom booking note copy */
+    if (info.kind === 'shared') {
+      setText('.bk-note', D['c.bk.sharednote']);
+    } else if (pageId === 'tour-fishing') {
+      setText('.bk-note', D['c.bk.quote']);
     }
   }
 
@@ -1117,6 +1187,85 @@
     setText('[data-i18n="i.build.card.title"]', D['i.build.card.title']);
     setText('[data-i18n="i.build.card.desc"]', D['i.build.card.desc']);
     setText('[data-i18n="i.build.cta"]', D['i.build.cta']);
+    setText('[data-i18n="i.lens.lbl"]', D['i.lens.lbl']);
+    setHTML('[data-i18n-html="i.lens.h2.html"]', D['i.lens.h2.html']);
+    setHTML('[data-i18n-html="i.lens.sub"]', D['i.lens.sub']);
+    setText('[data-i18n="i.lens.c1.h"]', D['i.lens.c1.h']);
+    setHTML('[data-i18n-html="i.lens.c1.p"]', D['i.lens.c1.p']);
+    setText('[data-i18n="i.lens.c2.h"]', D['i.lens.c2.h']);
+    setHTML('[data-i18n-html="i.lens.c2.p"]', D['i.lens.c2.p']);
+  }
+
+  function applyCommonRuntimeText(D) {
+    setText('.mob-wa', D['c.mob.wa']);
+
+    /* Booking buttons are reset in inline page scripts after requests.
+       Keep them translated in non-English languages. */
+    var buttons = doc.querySelectorAll('.bk-sub');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].textContent = D['c.bk.submit'];
+    }
+  }
+
+  function applyCardMetaTranslations(D) {
+    var badgeMap = {
+      'Top Pick': D['c.badge.top'],
+      'New': D['c.badge.new'],
+      'History Rich': D['c.badge.history'],
+      'Foodie Fave': D['c.badge.foodie'],
+      'UNESCO Reserve': D['c.badge.reserve'],
+      'Best Seller': D['c.badge.best'],
+      'New Route': D['c.badge.route'],
+      'Quick Escape': D['c.badge.quick'],
+      'Island Life': D['c.badge.island'],
+      'All-Day Epic': D['c.badge.allday'],
+      'Private Boat': D['c.badge.boat']
+    };
+    var badges = doc.querySelectorAll('.tc-badge');
+    for (var i = 0; i < badges.length; i++) {
+      var txt = (badges[i].textContent || '').trim();
+      if (badgeMap[txt]) badges[i].textContent = badgeMap[txt];
+    }
+
+    var durMap = {
+      '⏱ Half day': D['c.dur.half'],
+      '⏱ Full day': D['c.dur.full'],
+      '⏱ Evening': D['c.dur.evening']
+    };
+    var durations = doc.querySelectorAll('.tc-dur');
+    for (var j = 0; j < durations.length; j++) {
+      var dtxt = (durations[j].textContent || '').trim();
+      if (durMap[dtxt]) durations[j].textContent = durMap[dtxt];
+    }
+
+    var prices = doc.querySelectorAll('.tc-price');
+    for (var k = 0; k < prices.length; k++) {
+      for (var n = 0; n < prices[k].childNodes.length; n++) {
+        var node = prices[k].childNodes[n];
+        if (node && node.nodeType === 3 && /From/i.test(node.nodeValue)) {
+          node.nodeValue = D['c.bk.from'] + ' ';
+          break;
+        }
+      }
+    }
+  }
+
+  function watchDynamicBookingButtonText(D) {
+    if (!doc.body || !win.MutationObserver) return;
+    function syncButtons() {
+      var buttons = doc.querySelectorAll('.bk-sub');
+      for (var b = 0; b < buttons.length; b++) {
+        if (buttons[b].textContent && buttons[b].textContent.trim() === 'Request to Book →') {
+          buttons[b].textContent = D['c.bk.submit'];
+        }
+      }
+    }
+    var observer = new MutationObserver(function (mutations) {
+      if (!mutations || !mutations.length) return;
+      syncButtons();
+    });
+    observer.observe(doc.body, { subtree: true, childList: true, characterData: true });
+    syncButtons();
   }
 
   /* ── Our Story page ─────────────────────────────────────── */
@@ -1215,6 +1364,10 @@
     } else if (page === 'reviews') {
       applyReviewsPage(D);
     }
+
+    applyCommonRuntimeText(D);
+    applyCardMetaTranslations(D);
+    watchDynamicBookingButtonText(D);
 
     /* 3. Update html lang attribute */
     doc.documentElement.setAttribute('lang', lang);
