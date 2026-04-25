@@ -433,7 +433,7 @@
       'tours.h1':         'Explorez Nos Excursions',
       'tours.sub':        'Choisissez l\'aventure qui vous correspond. Expériences privées sur mesure ou aventures partagées à prix accessible.',
       'tours.priv.lbl':   'Expériences Privées',
-      'tours.priv.h2':    'Uniquement Pour Vous et Votre Groupe',
+      'tours.priv.h2.html':'<span style="color:var(--coral)">Vivez-le</span> sans la foule.',
       'tours.shar.lbl':   'Expériences Partagées',
       'tours.shar.h2':    'Vivez l\'Aventure à Petit Prix',
 
@@ -886,7 +886,7 @@
       'tours.h1':         'Explora Nuestros Tours',
       'tours.sub':        'Elige la aventura que se adapte a ti. Experiencias privadas a tu medida o aventuras compartidas a precio accesible.',
       'tours.priv.lbl':   'Experiencias Privadas',
-      'tours.priv.h2':    'Solo Para Ti y Tu Grupo',
+      'tours.priv.h2.html':'<span style="color:var(--coral)">Vívelo</span> sin multitudes.',
       'tours.shar.lbl':   'Experiencias Compartidas',
       'tours.shar.h2':    'Vive la Aventura a Buen Precio',
 
