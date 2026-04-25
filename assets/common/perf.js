@@ -77,6 +77,13 @@
     onceLoaded(img);
   }
 
+  /* ── Defer iframe embeds until near viewport ── */
+  function hydrateIframe(frame) {
+    if (!frame || !frame.dataset || !frame.dataset.src || frame.getAttribute('src')) return;
+    frame.setAttribute('src', frame.dataset.src);
+    delete frame.dataset.src;
+  }
+
   /* ── Prime above-the-fold images (LCP candidates) ── */
   function primeCriticalImages() {
     var criticalSelectors = [
@@ -155,11 +162,21 @@
   preloadFirstSlides();
   primeNearFoldDataImages();
 
+  /* Prime near-the-fold deferred embeds */
+  Array.prototype.forEach.call(doc.querySelectorAll('iframe[data-src]'), function (frame) {
+    var rect = frame.getBoundingClientRect();
+    if (rect.top < win.innerHeight * 1.5) hydrateIframe(frame);
+  });
+
   /* ── Fallback for browsers without IntersectionObserver ── */
   if (!('IntersectionObserver' in win)) {
     Array.prototype.forEach.call(
       doc.querySelectorAll('img[data-src], img[data-srcset]'),
       hydrateImage
+    );
+    Array.prototype.forEach.call(
+      doc.querySelectorAll('iframe[data-src]'),
+      hydrateIframe
     );
     return;
   }
@@ -172,7 +189,8 @@
     entries.forEach(function (entry) {
       if (!entry.isIntersecting) return;
       var img = entry.target;
-      hydrateImage(img);
+      if (img.tagName === 'IFRAME') hydrateIframe(img);
+      else hydrateImage(img);
       io.unobserve(img);
     });
   }, { rootMargin: '800px 0px' });
@@ -180,6 +198,10 @@
   Array.prototype.forEach.call(
     doc.querySelectorAll('img[data-src], img[data-srcset]'),
     function (img) { io.observe(img); }
+  );
+  Array.prototype.forEach.call(
+    doc.querySelectorAll('iframe[data-src]'),
+    function (frame) { io.observe(frame); }
   );
 
   /* ── Resume preloading when tab becomes visible again ── */

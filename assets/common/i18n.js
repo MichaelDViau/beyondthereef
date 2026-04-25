@@ -138,6 +138,8 @@
       'c.bk.success.title': 'Demande Envoyée !',
       'c.bk.success.text':  'Nous confirmons les disponibilités et vous répondrons par email dans les prochaines heures.',
       'c.bk.success.link':  '← Voir plus d\'excursions',
+      'c.bk.sharednote': 'Prix fixe en groupe · Aucun paiement ici',
+      'c.bk.quote': 'Contactez-nous pour un devis personnalisé',
       'c.bk.name.ph':   'Jean et Marie',
       'c.bk.hotel.ph':  'Nom de l\'hôtel ou adresse',
       'c.bk.notes.ph':  'Régimes alimentaires, accessibilité…',
@@ -223,6 +225,13 @@
       'i.build.card.title': 'Créez Votre Propre Expérience',
       'i.build.card.desc':  'Dites-nous qui vous êtes, combien de personnes viennent, puis choisissez océan, cénote, ruines, repas et transport. Nous créons une expérience premium sur mesure rien que pour vous.',
       'i.build.cta':    'Créer Mon Expérience Sur Mesure',
+      'i.lens.lbl':     'POV réel. Sans foule. Juste vous',
+      'i.lens.h2.html': '<span style="color:var(--coral)">Allez au-delà</span> de l\'objectif',
+      'i.lens.sub':     'La plupart des tours vous montrent des lieux.<br>Nous faisons en sorte que vous les ressentiez vraiment.',
+      'i.lens.c1.h':    '🔦 Entrez dans le monde souterrain caché',
+      'i.lens.c1.p':    'Pas de files. Pas de bruit.<br>Juste vous, votre groupe, et un monde caché sous la jungle.<br>Nagez dans une eau cristalline, marchez parmi des formations anciennes et ressentez un silence rare.',
+      'i.lens.c2.h':    '🌮 Mangez là où c\'est authentique',
+      'i.lens.c2.p':    'Des tortillas fraîches faites à la main, préparées devant vous.<br>Plus de 20 saveurs authentiques cuisinées de façon traditionnelle.<br>Pas d\'arrêts touristiques. Juste la vraie cuisine locale, partagée comme elle doit l\'être.',
       'build.h1':       'Créez Votre Propre Expérience',
       'build.sub':      'Choisissez votre aventure. Nous créons une expérience exclusive et haut de gamme autour de vous, puis envoyons votre devis personnalisé en 6 à 12 heures.',
       'build.s1.title': 'Vos Coordonnées',
@@ -592,6 +601,8 @@
       'c.bk.success.title': '¡Solicitud Enviada!',
       'c.bk.success.text':  'Confirmaremos disponibilidad y te responderemos por email en las próximas horas.',
       'c.bk.success.link':  '← Ver más tours',
+      'c.bk.sharednote': 'Precio fijo en tour compartido · Sin pago aquí',
+      'c.bk.quote': 'Contáctanos para una cotización personalizada',
       'c.bk.name.ph':   'Juan y María',
       'c.bk.hotel.ph':  'Nombre del hotel o dirección',
       'c.bk.notes.ph':  'Dieta especial, accesibilidad…',
@@ -677,6 +688,13 @@
       'i.build.card.title': 'Crea Tu Propia Experiencia',
       'i.build.card.desc':  'Cuéntanos quién eres, cuántas personas vienen y elige océano, cenote, ruinas, comida y transporte. Diseñaremos una experiencia premium a tu medida.',
       'i.build.cta':    'Crear Mi Experiencia Personalizada',
+      'i.lens.lbl':     'POV real. Sin multitudes. Solo ustedes',
+      'i.lens.h2.html': '<span style="color:var(--coral)">Ve más allá</span> del lente',
+      'i.lens.sub':     'La mayoría de tours te muestran lugares.<br>Nosotros hacemos que realmente los sientas.',
+      'i.lens.c1.h':    '🔦 Entra al mundo subterráneo oculto',
+      'i.lens.c1.p':    'Sin filas. Sin ruido.<br>Solo tú, tu gente y un mundo escondido bajo la selva.<br>Nada en agua cristalina, camina entre formaciones antiguas y siente un silencio que casi nadie vive.',
+      'i.lens.c2.h':    '🌮 Come donde es auténtico',
+      'i.lens.c2.p':    'Tortillas frescas hechas a mano, cocinadas frente a ti.<br>Más de 20 sabores auténticos preparados de forma tradicional.<br>Sin paradas turísticas. Solo comida local real, compartida como debe ser.',
       'build.h1':       'Crea Tu Propia Experiencia',
       'build.sub':      'Elige tu aventura. Crearemos una experiencia exclusiva y de alto nivel alrededor de ti y te enviaremos tu cotización personalizada en 6 a 12 horas.',
       'build.s1.title': 'Tus Datos de Contacto',
@@ -984,6 +1002,7 @@
   /* Map URL filename → translation key prefix for tour pages */
   var TOUR_MAP = {
     'tour-turtles-cenotes':  { pre: 'tp.turtle',    kind: 'private' },
+    'tour-tulum-cenote-experience': { pre: 'tp.tulumund', kind: 'private' },
     'tour-tulum-underwater': { pre: 'tp.tulumund',  kind: 'private' },
     'tour-cenotes-express':  { pre: 'tp.cenotes',   kind: 'private' },
     'tour-tulum-express':    { pre: 'tp.tulumexp',  kind: 'private' },
@@ -1040,6 +1059,13 @@
       for (var ni = 0; ni < notIncItems.length && ni < notIncArr.length; ni++) {
         notIncItems[ni].textContent = notIncArr[ni];
       }
+    }
+
+    /* Shared/private custom booking note copy */
+    if (info.kind === 'shared') {
+      setText('.bk-note', D['c.bk.sharednote']);
+    } else if (pageId === 'tour-fishing') {
+      setText('.bk-note', D['c.bk.quote']);
     }
   }
 
@@ -1117,6 +1143,42 @@
     setText('[data-i18n="i.build.card.title"]', D['i.build.card.title']);
     setText('[data-i18n="i.build.card.desc"]', D['i.build.card.desc']);
     setText('[data-i18n="i.build.cta"]', D['i.build.cta']);
+    setText('[data-i18n="i.lens.lbl"]', D['i.lens.lbl']);
+    setHTML('[data-i18n-html="i.lens.h2.html"]', D['i.lens.h2.html']);
+    setHTML('[data-i18n-html="i.lens.sub"]', D['i.lens.sub']);
+    setText('[data-i18n="i.lens.c1.h"]', D['i.lens.c1.h']);
+    setHTML('[data-i18n-html="i.lens.c1.p"]', D['i.lens.c1.p']);
+    setText('[data-i18n="i.lens.c2.h"]', D['i.lens.c2.h']);
+    setHTML('[data-i18n-html="i.lens.c2.p"]', D['i.lens.c2.p']);
+  }
+
+  function applyCommonRuntimeText(D) {
+    setText('.mob-wa', D['c.mob.wa']);
+
+    /* Booking buttons are reset in inline page scripts after requests.
+       Keep them translated in non-English languages. */
+    var buttons = doc.querySelectorAll('.bk-sub');
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].textContent = D['c.bk.submit'];
+    }
+  }
+
+  function watchDynamicBookingButtonText(D) {
+    if (!doc.body || !win.MutationObserver) return;
+    function syncButtons() {
+      var buttons = doc.querySelectorAll('.bk-sub');
+      for (var b = 0; b < buttons.length; b++) {
+        if (buttons[b].textContent && buttons[b].textContent.trim() === 'Request to Book →') {
+          buttons[b].textContent = D['c.bk.submit'];
+        }
+      }
+    }
+    var observer = new MutationObserver(function (mutations) {
+      if (!mutations || !mutations.length) return;
+      syncButtons();
+    });
+    observer.observe(doc.body, { subtree: true, childList: true, characterData: true });
+    syncButtons();
   }
 
   /* ── Our Story page ─────────────────────────────────────── */
@@ -1215,6 +1277,9 @@
     } else if (page === 'reviews') {
       applyReviewsPage(D);
     }
+
+    applyCommonRuntimeText(D);
+    watchDynamicBookingButtonText(D);
 
     /* 3. Update html lang attribute */
     doc.documentElement.setAttribute('lang', lang);
