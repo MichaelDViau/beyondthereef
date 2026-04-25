@@ -187,6 +187,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .h2{font-size:clamp(26px,5.5vw,42px);font-weight:900;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-bottom:14px}
 .h2-white{color:#fff}
 .sub{font-size:15px;line-height:1.72;color:var(--muted);max-width:540px;margin-bottom:28px}
+.priv-intro{text-align:center}
+.priv-intro .h2{margin-left:auto;margin-right:auto}
+.sub-priv{font-size:16px;line-height:1.9;max-width:860px;margin-left:auto;margin-right:auto}
 .sub-white{color:rgba(255,255,255,.72)}
 .build-layout{max-width:1120px;margin:0 auto;background:#fff;border:1px solid var(--border);border-radius:var(--r3);padding:34px 26px;box-shadow:var(--sh);display:grid;grid-template-columns:1fr;gap:28px}
 .build-copy h3{font-size:24px;font-weight:800;color:var(--ink);margin-bottom:10px}
@@ -380,9 +383,11 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
   <p style="font-size:15px;color:rgba(255,255,255,.72);max-width:500px;margin:0 auto" data-i18n="tours.sub">All experiences depart from Cancun, Playa del Carmen or Tulum.</p>
 </div>
 <section class="sec" style="background:#ffffff">
-  <div class="lbl" data-i18n="tours.priv.lbl">Private Experiences</div>
-  <h2 class="h2" data-i18n-html="tours.priv.h2.html"><span style="color:var(--coral)">Experience it</span> without the crowds.</h2>
-  <p class="sub">Travel should feel open, calm, and real. That’s why everything we do is built around giving you space. Space to enjoy the water without people around you. Space to move at your own rhythm. Space to connect with the place and the people you’re with. You won’t be part of a group or following a script. You’ll have a local host who understands how to create those moments naturally, without forcing anything. The experience becomes richer when shared, and as your group grows, the cost per person becomes more favorable.</p>
+  <div class="priv-intro">
+    <div class="lbl" data-i18n="tours.priv.lbl">Private Experiences</div>
+    <h2 class="h2" data-i18n-html="tours.priv.h2.html"><span style="color:var(--coral)">Experience it</span> without the crowds.</h2>
+    <p class="sub sub-priv">Travel should feel open, calm, and real. That’s why everything we do is built around giving you space. Space to enjoy the water without people around you. Space to move at your own rhythm. Space to connect with the place and the people you’re with. You won’t be part of a group or following a script. You’ll have a local host who understands how to create those moments naturally, without forcing anything. The experience becomes richer when shared, and as your group grows, the cost per person becomes more favorable.</p>
+  </div>
   <div class="cards-grid"><article class="tc">
   <div class="tc-thumb" style="background:linear-gradient(135deg,#0A4D5C,#1DA5B4)"><a href="tour-turtles-cenotes.html" class="tc-thumb-link" tabindex="-1" aria-hidden="true">
     <img src="https://images.pexels.com/photos/847393/pexels-photo-847393.jpeg?auto=compress&cs=tinysrgb&w=600&q=80" alt="Sea Turtles & Cenote Experience" loading="eager" fetchpriority="high" decoding="async">
@@ -579,7 +584,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </section>
 <section class="sec" id="build" style="background:var(--amber-bg);text-align:center">
   <div class="lbl lbl-gold" data-i18n="i.build.lbl">Build Your Custom Experience</div>
-  <h2 class="h2" data-i18n="i.build.h2">Design your own Riviera Maya experience.</h2>
+  <h2 class="h2" data-i18n-html="i.build.h2.html"><span style="color:var(--coral)">Design your own</span> Riviera Maya experience.</h2>
   <p class="sub" style="margin:0 auto 32px" data-i18n="i.build.sub">Pick your ocean adventure, cenote, Mayan ruin, food and transportation. We will send you a custom quote within 6 to 12 hours.</p>
   <div class="build-layout" style="text-align:left">
     <div class="build-copy">
