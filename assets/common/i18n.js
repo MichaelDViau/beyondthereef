@@ -218,6 +218,7 @@
       'i.frm.phone.ph': '+33 6 00 00 00 00',
       'i.build.lbl':    'Créez Votre Expérience Sur Mesure',
       'i.build.h2':     'Créez votre propre expérience Riviera Maya.',
+      'i.build.h2.html':'<span style="color:var(--coral)">Créez votre propre</span> expérience Riviera Maya.',
       'i.build.sub':    'Choisissez votre aventure océan, cénote, ruine maya, repas et transport. Nous vous envoyons un devis personnalisé en 6 à 12 heures.',
       'i.build.card.title': 'Créez Votre Propre Expérience',
       'i.build.card.desc':  'Dites-nous qui vous êtes, combien de personnes viennent, puis choisissez océan, cénote, ruines, repas et transport. Nous créons une expérience premium sur mesure rien que pour vous.',
@@ -671,6 +672,7 @@
       'i.frm.phone.ph': '+52 1 000 000 0000',
       'i.build.lbl':    'Crea Tu Experiencia Personalizada',
       'i.build.h2':     'Diseña tu propia experiencia en Riviera Maya.',
+      'i.build.h2.html':'<span style="color:var(--coral)">Diseña tu propia</span> experiencia en Riviera Maya.',
       'i.build.sub':    'Elige tu aventura de océano, cenote, ruina maya, comida y transporte. Te enviaremos una cotización personalizada en 6 a 12 horas.',
       'i.build.card.title': 'Crea Tu Propia Experiencia',
       'i.build.card.desc':  'Cuéntanos quién eres, cuántas personas vienen y elige océano, cenote, ruinas, comida y transporte. Diseñaremos una experiencia premium a tu medida.',
@@ -1109,7 +1111,8 @@
     setPlaceholder('#f-phone', D['i.frm.phone.ph']);
     /* Build section on index */
     setText('[data-i18n="i.build.lbl"]', D['i.build.lbl']);
-    setText('[data-i18n="i.build.h2"]', D['i.build.h2']);
+    if (D['i.build.h2.html']) setHTML('[data-i18n-html="i.build.h2.html"]', D['i.build.h2.html']);
+    else setText('[data-i18n="i.build.h2"]', D['i.build.h2']);
     setText('[data-i18n="i.build.sub"]', D['i.build.sub']);
     setText('[data-i18n="i.build.card.title"]', D['i.build.card.title']);
     setText('[data-i18n="i.build.card.desc"]', D['i.build.card.desc']);
