@@ -209,4 +209,96 @@
     if (doc.visibilityState !== 'visible') return;
     primeNearFoldDataImages();
   });
+
+
+  /* ── Global promo widget (all pages) ── */
+  function setupGlobalPromo() {
+    if (!doc.body) return;
+
+    var path = (win.location && win.location.pathname) || '';
+    if (/\/welcome(\.html)?$/i.test(path)) return;
+
+    var lang = (win._btrLang || (function () {
+      try { return localStorage.getItem('btrPreferredLanguage') || 'en'; }
+      catch (e) { return 'en'; }
+    })() || 'en').toLowerCase();
+
+    var promoCopy = {
+      en: {
+        kicker: 'Low season promo',
+        text: 'Up to <strong>30% discount</strong> on our most popular experiences. Reach out to us directly on WhatsApp.',
+        cta: 'Chat on WhatsApp'
+      },
+      fr: {
+        kicker: 'Promo basse saison',
+        text: 'Jusqu\'à <strong>30% de réduction</strong> sur nos expériences les plus populaires. Contactez-nous directement sur WhatsApp.',
+        cta: 'Écrire sur WhatsApp'
+      },
+      es: {
+        kicker: 'Promoción de temporada baja',
+        text: 'Hasta <strong>30% de descuento</strong> en nuestras experiencias más populares. Contáctanos directamente por WhatsApp.',
+        cta: 'Escribir por WhatsApp'
+      }
+    };
+
+    var promoText = promoCopy[lang] || promoCopy.en;
+
+    if (!doc.getElementById('promoFloatStyles')) {
+      var style = doc.createElement('style');
+      style.id = 'promoFloatStyles';
+      style.textContent = '' +
+        '.promo-float{position:fixed;left:14px;bottom:16px;z-index:390;width:min(300px,calc(100vw - 28px));background:rgba(255,140,0,.9);border:1px solid rgba(255,255,255,.45);border-radius:14px;box-shadow:0 12px 30px rgba(139,69,0,.32);padding:14px 38px 14px 14px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);overflow:hidden;transition:transform .42s cubic-bezier(.22,.61,.36,1),width .42s cubic-bezier(.22,.61,.36,1),height .42s cubic-bezier(.22,.61,.36,1),padding .42s cubic-bezier(.22,.61,.36,1),border-radius .42s cubic-bezier(.22,.61,.36,1)}' +
+        '.promo-main{transition:opacity .24s ease,transform .3s ease}' +
+        '.promo-close{position:absolute;top:8px;right:8px;width:22px;height:22px;border:0;border-radius:50%;background:rgba(255,255,255,.25);color:#fff;font-size:14px;font-weight:700;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:opacity .2s ease,transform .2s ease}' +
+        '.promo-kicker{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.95);margin:0 0 6px}' +
+        '.promo-text{font-size:13px;line-height:1.45;font-weight:700;color:#fff;margin:0 0 10px}' +
+        '.promo-link{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;background:#fff;color:#bf4f00;font-size:12px;font-weight:800;text-decoration:none}' +
+        '.promo-pill{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;opacity:0;transform:scale(.84);pointer-events:none;transition:opacity .24s ease,transform .34s cubic-bezier(.22,.61,.36,1)}' +
+        '.promo-float.is-collapsed{width:34px;height:34px;padding:0;border-radius:8px;transform:translateX(-8px);cursor:pointer}' +
+        '.promo-float.is-collapsed .promo-main,.promo-float.is-collapsed .promo-close{opacity:0;transform:translateX(-6px);pointer-events:none}' +
+        '.promo-float.is-collapsed .promo-pill{opacity:1;transform:scale(1)}' +
+        '@media(max-width:767px){.promo-float{left:10px;bottom:10px;width:min(270px,calc(100vw - 20px));padding:12px 34px 12px 12px}.promo-text{font-size:12px}.promo-link{font-size:11px;padding:7px 10px}.promo-float.is-collapsed{width:32px;height:32px;transform:translateX(-6px)}}';
+      doc.head.appendChild(style);
+    }
+
+    var promo = doc.getElementById('promoFloat');
+    if (!promo) {
+      promo = doc.createElement('aside');
+      promo.className = 'promo-float';
+      promo.id = 'promoFloat';
+      promo.setAttribute('aria-label', 'Low season promotion');
+      promo.innerHTML = '<button class="promo-close" id="promoClose" type="button" aria-label="Close promotion">✕</button>' +
+        '<div class="promo-main">' +
+        '<p class="promo-kicker">' + promoText.kicker + '</p>' +
+        '<p class="promo-text">' + promoText.text + '</p>' +
+        '<a href="https://wa.me/529841670697?text=Hi%20Beyond%20the%20Reef!%20I%20want%20to%20book%20the%20low%20season%20promo." class="promo-link" target="_blank" rel="noopener">' + promoText.cta + '</a>' +
+        '</div>' +
+        '<span class="promo-pill" aria-hidden="true">%</span>';
+      doc.body.appendChild(promo);
+    }
+
+    var closeBtn = promo.querySelector('.promo-close');
+    if (!closeBtn || promo.dataset.promoBound === '1') return;
+    promo.dataset.promoBound = '1';
+
+    var collapsed = sessionStorage.getItem('btr_promo_collapsed') === '1';
+    if (collapsed) promo.classList.add('is-collapsed');
+
+    closeBtn.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      promo.classList.add('is-collapsed');
+      sessionStorage.setItem('btr_promo_collapsed', '1');
+    });
+
+    promo.addEventListener('click', function (event) {
+      var onLink = event.target && event.target.closest && event.target.closest('.promo-link');
+      if (onLink) return;
+      if (!promo.classList.contains('is-collapsed')) return;
+      promo.classList.remove('is-collapsed');
+      sessionStorage.setItem('btr_promo_collapsed', '0');
+    });
+  }
+
+  setupGlobalPromo();
 })();
