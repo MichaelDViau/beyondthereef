@@ -218,6 +218,31 @@
     var path = (win.location && win.location.pathname) || '';
     if (/\/welcome(\.html)?$/i.test(path)) return;
 
+    var lang = (win._btrLang || (function () {
+      try { return localStorage.getItem('btrPreferredLanguage') || 'en'; }
+      catch (e) { return 'en'; }
+    })() || 'en').toLowerCase();
+
+    var promoCopy = {
+      en: {
+        kicker: 'Low season promo',
+        text: 'Up to <strong>30% discount</strong> on our most popular experiences. Reach out to us directly on WhatsApp.',
+        cta: 'Chat on WhatsApp'
+      },
+      fr: {
+        kicker: 'Promo basse saison',
+        text: 'Jusqu\'à <strong>30% de réduction</strong> sur nos expériences les plus populaires. Contactez-nous directement sur WhatsApp.',
+        cta: 'Écrire sur WhatsApp'
+      },
+      es: {
+        kicker: 'Promoción de temporada baja',
+        text: 'Hasta <strong>30% de descuento</strong> en nuestras experiencias más populares. Contáctanos directamente por WhatsApp.',
+        cta: 'Escribir por WhatsApp'
+      }
+    };
+
+    var promoText = promoCopy[lang] || promoCopy.en;
+
     if (!doc.getElementById('promoFloatStyles')) {
       var style = doc.createElement('style');
       style.id = 'promoFloatStyles';
@@ -244,9 +269,9 @@
       promo.setAttribute('aria-label', 'Low season promotion');
       promo.innerHTML = '<button class="promo-close" id="promoClose" type="button" aria-label="Close promotion">✕</button>' +
         '<div class="promo-main">' +
-        '<p class="promo-kicker">Low season promo</p>' +
-        '<p class="promo-text">Up to <strong>30% discount</strong> on our most popular experiences. Reach out to us directly on WhatsApp.</p>' +
-        '<a href="https://wa.me/529841670697?text=Hi%20Beyond%20the%20Reef!%20I%20want%20to%20book%20the%20low%20season%20promo." class="promo-link" target="_blank" rel="noopener">Chat on WhatsApp</a>' +
+        '<p class="promo-kicker">' + promoText.kicker + '</p>' +
+        '<p class="promo-text">' + promoText.text + '</p>' +
+        '<a href="https://wa.me/529841670697?text=Hi%20Beyond%20the%20Reef!%20I%20want%20to%20book%20the%20low%20season%20promo." class="promo-link" target="_blank" rel="noopener">' + promoText.cta + '</a>' +
         '</div>' +
         '<span class="promo-pill" aria-hidden="true">%</span>';
       doc.body.appendChild(promo);
