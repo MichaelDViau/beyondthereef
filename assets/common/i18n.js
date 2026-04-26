@@ -1077,7 +1077,7 @@
 
     /* Chips */
     var chips = D[pre + '.chips'];
-    if (chips) {
+    if (chips && chips.length === doc.querySelectorAll('.chip').length) {
       var chipEls = doc.querySelectorAll('.chip');
       for (var i = 0; i < chipEls.length && i < chips.length; i++) {
         chipEls[i].textContent = chips[i];
@@ -1090,7 +1090,7 @@
     /* Included items (the text spans inside ic-y list items) */
     var incItems = doc.querySelectorAll('.ic-item.ic-y span:last-child');
     var incArr = D[pre + '.inc'];
-    if (incArr) {
+    if (incArr && incArr.length === incItems.length) {
       for (var ii = 0; ii < incItems.length && ii < incArr.length; ii++) {
         incItems[ii].textContent = incArr[ii];
       }
@@ -1099,7 +1099,7 @@
     /* Not included items */
     var notIncItems = doc.querySelectorAll('.ic-item.ic-n span:last-child');
     var notIncArr = D[pre + '.notinc'];
-    if (notIncArr) {
+    if (notIncArr && notIncArr.length === notIncItems.length) {
       for (var ni = 0; ni < notIncItems.length && ni < notIncArr.length; ni++) {
         notIncItems[ni].textContent = notIncArr[ni];
       }
