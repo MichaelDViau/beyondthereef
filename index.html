@@ -208,13 +208,18 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .btn-md{font-size:13px;padding:10px 20px}
 .btn-sm{font-size:12px;padding:7px 15px}
 .btn-coral{background:var(--coral);color:#fff;box-shadow:0 4px 16px rgba(232,98,26,.32)}
-.btn-navy{background:var(--navy);color:#fff}
-.btn-ghost{background:rgba(255,255,255,.15);color:#fff;border:1.5px solid rgba(255,255,255,.38)}
-.btn-ghost:hover{background:rgba(255,255,255,.25)}
-.btn-wa{background:#25D366;color:#fff}
-.btn-outline{background:transparent;color:var(--navy);border:2px solid var(--border)}
-.btn-outline:hover{border-color:var(--teal);color:var(--teal)}
-.btn-full{width:100%}
+.tour-promo-wrap{max-width:1120px;margin:-38px auto 30px;padding:0 14px;position:relative;z-index:7}
+.tour-promo{position:relative;overflow:hidden;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding:18px;border-radius:20px;background:linear-gradient(130deg,#ff7c2a 0%,#ff9d3f 45%,#ffb15a 100%);color:#fff;box-shadow:0 16px 42px rgba(232,98,26,.34);border:1px solid rgba(255,255,255,.46)}
+.tour-promo::before{content:"";position:absolute;top:-44px;right:-34px;width:180px;height:180px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.35),rgba(255,255,255,0) 65%)}
+.tour-promo::after{content:"";position:absolute;bottom:-56px;left:-24px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.25),rgba(255,255,255,0) 70%)}
+.tour-promo-content{position:relative;z-index:1}
+.tour-promo-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.2);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:6px 11px;font-size:10px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+.tour-promo-title{font-size:clamp(21px,3.3vw,31px);font-weight:900;letter-spacing:-.02em;line-height:1.05;max-width:700px}
+.tour-promo-copy{font-size:13px;line-height:1.45;opacity:.96;margin-top:7px;max-width:740px}
+.tour-promo-actions{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px;align-items:stretch}
+.tour-promo-cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:#fff;color:#c24a0f;font-size:13px;font-weight:800;white-space:nowrap;box-shadow:0 8px 20px rgba(14,42,69,.24);transition:transform var(--ease),opacity var(--ease)}
+.tour-promo-note{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;text-align:center;color:rgba(255,255,255,.9)}
+@media(min-width:900px){.tour-promo-wrap{margin:-46px auto 36px;padding:0 20px}.tour-promo{padding:20px 24px}.tour-promo-actions{align-items:flex-end}}
 
 /* SECTIONS */
 .sec{padding:72px 20px;background:#fff;color-scheme:light}
@@ -458,10 +463,13 @@ Just you, your people, and a carefully designed experience</p>
 <!-- PRIVATE TOURS SLIDER -->
 <!-- PRIVATE TOURS SLIDER -->
 <section id="tours" class="sec" style="background:#ffffff;text-align:center">
-  <div id="privLbl" class="lbl">Private Experiences</div>
-  <h2 id="privH2" class="h2">Our Top Experiences, <span style="color:var(--coral)">Made Around You</span></h2>
-  <p id="privSub" class="sub" style="margin:0 auto 24px">Only you and your group. No rush, no shared groups, just a more personal Riviera Maya experience at your own pace.</p>
-  <div class="sl-outer">
+      <div class="tour-promo-content">
+        <div class="tour-promo-badge">🔥 Low Season Special</div>
+        <p class="tour-promo-copy">Limited low-season pricing is live now. Message us directly on WhatsApp and we’ll recommend the best experience for your travel dates.</p>
+      </div>
+      <div class="tour-promo-actions">
+        <a href="https://wa.me/529841670697" class="tour-promo-cta" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <span class="tour-promo-note">+52 984 167 0697</span>
     <div class="sl-viewport">
       <div class="sl-track" id="privTrack"><article class="tc">
   <div class="tc-thumb" style="background:linear-gradient(135deg,#0A4D5C,#1DA5B4)"><a href="tour-turtles-cenotes.html" class="tc-thumb-link" tabindex="-1" aria-hidden="true">
