@@ -215,6 +215,9 @@
   function setupGlobalPromo() {
     if (!doc.body) return;
 
+    var path = (win.location && win.location.pathname) || '';
+    if (/\/welcome(\.html)?$/i.test(path)) return;
+
     if (!doc.getElementById('promoFloatStyles')) {
       var style = doc.createElement('style');
       style.id = 'promoFloatStyles';
@@ -253,14 +256,14 @@
     if (!closeBtn || promo.dataset.promoBound === '1') return;
     promo.dataset.promoBound = '1';
 
-    var collapsed = localStorage.getItem('btr_promo_collapsed') === '1';
+    var collapsed = sessionStorage.getItem('btr_promo_collapsed') === '1';
     if (collapsed) promo.classList.add('is-collapsed');
 
     closeBtn.addEventListener('click', function (event) {
       event.preventDefault();
       event.stopPropagation();
       promo.classList.add('is-collapsed');
-      localStorage.setItem('btr_promo_collapsed', '1');
+      sessionStorage.setItem('btr_promo_collapsed', '1');
     });
 
     promo.addEventListener('click', function (event) {
@@ -268,7 +271,7 @@
       if (onLink) return;
       if (!promo.classList.contains('is-collapsed')) return;
       promo.classList.remove('is-collapsed');
-      localStorage.setItem('btr_promo_collapsed', '0');
+      sessionStorage.setItem('btr_promo_collapsed', '0');
     });
   }
 
