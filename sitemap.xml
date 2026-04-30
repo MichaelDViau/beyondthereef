@@ -3,133 +3,157 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.beyondthereefmexico.com/</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>1.0</priority>
     <changefreq>weekly</changefreq>
     <image:image>
-      <image:loc>https://www.beyondthereefmexico.com/assets/indexslider/1.JPG</image:loc>
-      <image:title>Beyond the Reef Mexico - Riviera Maya tours</image:title>
+      <image:loc>https://www.beyondthereefmexico.com/assets/indexslider/indexslider1.JPG</image:loc>
+      <image:title>Beyond the Reef Mexico – Private Tours Riviera Maya, Cancun, Tulum &amp; Playa del Carmen</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tours.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://www.beyondthereefmexico.com/assets/indexslider/indexslider2.JPG</image:loc>
+      <image:title>All Private Tour Experiences – Cancun, Tulum, Playa del Carmen &amp; Riviera Maya</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/our-story.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/reviews.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.7</priority>
     <changefreq>weekly</changefreq>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/build-your-experience.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
   </url>
 
-  <!-- Private experiences -->
+  <!-- Private tour experiences -->
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-turtles-cenotes.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/cenote.jpg</image:loc>
-      <image:title>Sea Turtles & Cenote Experience</image:title>
+      <image:title>Sea Turtles &amp; Cenote Private Tour – Riviera Maya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-tulum-underwater.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/Tulum.jpg</image:loc>
-      <image:title>Tulum, Sea Turtles & Cenote Experience</image:title>
+      <image:title>Tulum, Sea Turtles &amp; Cenote Private Tour – Cancun &amp; Riviera Maya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-tulum-cenote-experience.html</loc>
-    <lastmod>2026-04-24</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.85</priority>
+    <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/Tulum.jpg</image:loc>
-      <image:title>Tulum & Cenote Experience</image:title>
+      <image:title>Tulum Ruins &amp; Cenote Private Tour – Playa del Carmen &amp; Riviera Maya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-cenotes-express.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/cenote.jpg</image:loc>
-      <image:title>Hidden Cenote(s) Experience</image:title>
+      <image:title>Hidden Cenotes Private Tour – Cancun, Playa del Carmen &amp; Riviera Maya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-tulum-express.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/Tulum.jpg</image:loc>
-      <image:title>Tulum Ruins Experience</image:title>
+      <image:title>Tulum Ruins Private Tour – Cancun &amp; Riviera Maya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-tulum-coba.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/coba%20tulum.JPEG</image:loc>
-      <image:title>Tulum and Coba Ruins Experience</image:title>
+      <image:title>Tulum &amp; Cobá Ruins Private Tour – Riviera Maya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-coba.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/coba.jpg</image:loc>
-      <image:title>Coba & Cenote Experience</image:title>
+      <image:title>Cobá Ruins &amp; Cenote Private Tour – Cancun &amp; Riviera Maya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-chichen-itza.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/chichen.JPEG</image:loc>
-      <image:title>Chichen Itza Experience</image:title>
+      <image:title>Chichén Itzá Private Tour from Cancun &amp; Playa del Carmen</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-holbox-express.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/holbox.JPEG</image:loc>
-      <image:title>Holbox Experience</image:title>
+      <image:title>Holbox Island Private Tour from Cancun &amp; Riviera Maya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-dolphin-turtle.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
     <image:image>
       <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/siankaan.jpg</image:loc>
-      <image:title>Wild Dolphins & Bird Watching Experience</image:title>
+      <image:title>Wild Dolphins &amp; Sian Ka'an Private Tour – Riviera Maya</image:title>
     </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-tacos-tour.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.9</priority>
     <changefreq>weekly</changefreq>
+    <image:image>
+      <image:loc>https://www.beyondthereefmexico.com/assets/Tourcardsprivate/cenoteabierto.jpg</image:loc>
+      <image:title>Open Cenote, Tacos &amp; Playa del Carmen Private Tour</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://www.beyondthereefmexico.com/tour-fishing.html</loc>
+    <lastmod>2026-04-30</lastmod>
     <priority>0.8</priority>
     <changefreq>weekly</changefreq>
   </url>
