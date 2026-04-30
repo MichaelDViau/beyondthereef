@@ -718,6 +718,45 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
   <img src="" alt="Large experience preview" id="buildImgLarge">
 </div>
 
+<!-- QUICK PLANNER -->
+<section class="sec" id="quickPlanner" style="background:#fff">
+  <div class="lbl">Quick Plan</div>
+  <h2 class="h2">Build my <span style="color:var(--coral)">private tour</span> in 30 seconds</h2>
+  <p class="sub" style="margin:0 auto 24px">Tell us your dates and interests and we will prefill your WhatsApp message with your trip details.</p>
+  <form id="plannerForm" style="max-width:840px;margin:0 auto;background:#f8fbff;border:1px solid var(--border);border-radius:16px;padding:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+    <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700">Travel date
+      <input required type="date" id="tripDate" style="padding:10px;border:1px solid var(--border);border-radius:10px">
+    </label>
+    <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700">Group size
+      <select id="groupSize" style="padding:10px;border:1px solid var(--border);border-radius:10px"><option>2</option><option>3-4</option><option>5-6</option><option>7+</option></select>
+    </label>
+    <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700">Pickup area
+      <select id="pickupArea" style="padding:10px;border:1px solid var(--border);border-radius:10px"><option>Cancun</option><option>Playa del Carmen</option><option>Tulum</option><option>Akumal / Puerto Aventuras</option></select>
+    </label>
+    <label style="display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:700">Trip style
+      <select id="tripStyle" style="padding:10px;border:1px solid var(--border);border-radius:10px"><option>Nature + Swimming</option><option>Ruins + Culture</option><option>Family Friendly</option><option>Adventure</option><option>Food + Local vibes</option></select>
+    </label>
+    <div style="grid-column:1/-1;display:flex;justify-content:center;padding-top:8px">
+      <button type="submit" class="btn btn-wa btn-md">Get my WhatsApp itinerary →</button>
+    </div>
+  </form>
+</section>
+
+<section class="sec" style="background:var(--gold-bg)">
+  <div class="lbl">Simple Pricing</div>
+  <h2 class="h2">Private tour value at a glance</h2>
+  <div style="max-width:920px;margin:0 auto;overflow:auto;background:#fff;border-radius:14px;border:1px solid var(--border)">
+    <table style="width:100%;border-collapse:collapse;min-width:640px">
+      <thead><tr style="background:#0E2A45;color:#fff"><th style="padding:12px;text-align:left">Group size</th><th style="padding:12px;text-align:left">Typical private price / person</th><th style="padding:12px;text-align:left">Shared-tour benchmark</th><th style="padding:12px;text-align:left">Best for</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:12px;border-top:1px solid var(--border)">2 guests</td><td style="padding:12px;border-top:1px solid var(--border)">$120–$185</td><td style="padding:12px;border-top:1px solid var(--border)">$90–$160</td><td style="padding:12px;border-top:1px solid var(--border)">Couples</td></tr>
+        <tr><td style="padding:12px;border-top:1px solid var(--border)">3–4 guests</td><td style="padding:12px;border-top:1px solid var(--border)">$105–$170</td><td style="padding:12px;border-top:1px solid var(--border)">$90–$160</td><td style="padding:12px;border-top:1px solid var(--border)">Friends / small family</td></tr>
+        <tr><td style="padding:12px;border-top:1px solid var(--border)">5–6 guests</td><td style="padding:12px;border-top:1px solid var(--border)">$95–$158</td><td style="padding:12px;border-top:1px solid var(--border)">$90–$160</td><td style="padding:12px;border-top:1px solid var(--border)">Families</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 <!-- REVIEWS SLIDER -->
 <section class="sec sec-navy" style="padding-bottom:80px;text-align:center">
   <div id="revLbl" class="lbl lbl-white">Guest Stories</div>
@@ -1142,6 +1181,39 @@ makeSlider('revTrack',    'revPrev',    'revNext',    'revDots',    '.rc',      
   closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', function(e){
     if (e.target === modal) closeModal();
+  });
+})();
+
+(function(){
+  var planner = document.getElementById('plannerForm');
+  if (!planner) return;
+
+  function track(eventName, payload){
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(Object.assign({event: eventName}, payload || {}));
+  }
+
+  document.querySelectorAll('a[href*="wa.me"]').forEach(function(link){
+    link.addEventListener('click', function(){
+      track('whatsapp_click', {placement: link.id || 'generic_link'});
+    });
+  });
+
+  planner.addEventListener('submit', function(e){
+    e.preventDefault();
+    var date = document.getElementById('tripDate').value;
+    var group = document.getElementById('groupSize').value;
+    var pickup = document.getElementById('pickupArea').value;
+    var style = document.getElementById('tripStyle').value;
+    var lang = (window._btrLang || 'en').toLowerCase();
+    var msg = 'Hi Beyond the Reef! I want a private tour proposal.%0A'
+      + 'Date: ' + encodeURIComponent(date) + '%0A'
+      + 'Group: ' + encodeURIComponent(group) + '%0A'
+      + 'Pickup: ' + encodeURIComponent(pickup) + '%0A'
+      + 'Trip style: ' + encodeURIComponent(style) + '%0A'
+      + 'Language: ' + encodeURIComponent(lang);
+    track('planner_submit', {group_size: group, pickup_area: pickup, trip_style: style, lang: lang});
+    window.open('https://wa.me/529841670697?text=' + msg, '_blank', 'noopener');
   });
 })();
 </script>
