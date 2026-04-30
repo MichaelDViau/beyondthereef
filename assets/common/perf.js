@@ -222,7 +222,7 @@
       var style = doc.createElement('style');
       style.id = 'promoFloatStyles';
       style.textContent = '' +
-        '.promo-float{position:fixed;left:20px;bottom:51px;z-index:400;width:min(300px,calc(100vw - 40px));background:rgba(255,140,0,.95);border:1px solid rgba(255,255,255,.45);border-radius:14px;box-shadow:0 12px 30px rgba(139,69,0,.32);padding:14px 38px 14px 14px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);overflow:hidden;text-decoration:none;transition:transform .22s ease,width .32s ease,height .32s ease,padding .32s ease,border-radius .32s ease}' +
+        '.promo-float{position:fixed;left:20px;bottom:58px;z-index:400;width:min(300px,calc(100vw - 40px));background:rgba(255,140,0,.95);border:1px solid rgba(255,255,255,.45);border-radius:14px;box-shadow:0 12px 30px rgba(139,69,0,.32);padding:14px 38px 14px 14px;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);overflow:hidden;text-decoration:none;transition:transform .22s ease,width .32s ease,height .32s ease,padding .32s ease,border-radius .32s ease}' +
         '.promo-main{transition:opacity .2s ease,transform .22s ease}' +
         '.promo-close{position:absolute;top:8px;right:8px;width:22px;height:22px;border:0;border-radius:50%;background:rgba(255,255,255,.25);color:#fff;font-size:14px;font-weight:700;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}' +
         '.promo-kicker{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.95);margin:0 0 6px}' +
@@ -233,7 +233,7 @@
         '.promo-float.is-collapsed .promo-main,.promo-float.is-collapsed .promo-close{opacity:0;transform:translateY(6px);pointer-events:none}' +
         '.promo-float.is-collapsed .promo-pill{opacity:1;transform:scale(1)}' +
         '.promo-float.is-collapsed:hover{transform:scale(1.1)}' +
-        '@media(max-width:767px){.promo-float{left:10px;bottom:50px;width:min(270px,calc(100vw - 20px));padding:12px 34px 12px 12px}.promo-text{font-size:12px}.promo-link{font-size:11px;padding:7px 10px}.promo-float.is-collapsed{width:52px;height:52px}}';
+        '@media(max-width:767px){.promo-float{left:10px;bottom:72px;width:min(270px,calc(100vw - 20px));padding:12px 34px 12px 12px}.promo-text{font-size:12px}.promo-link{font-size:11px;padding:7px 10px}.promo-float.is-collapsed{width:52px;height:52px}}';
       doc.head.appendChild(style);
     }
 
@@ -249,7 +249,7 @@
         '<p class="promo-text">Up to <strong>30% discount</strong> on our most popular experiences. Reach out to us directly on WhatsApp.</p>' +
         '<a href="https://wa.me/529841670697?text=Hi%20Beyond%20the%20Reef!%20I%20want%20to%20book%20the%20low%20season%20promo." class="promo-link" target="_blank" rel="noopener">Chat on WhatsApp</a>' +
         '</div>' +
-        '<span class="promo-pill" aria-hidden="true">$</span>';
+        '<span class="promo-pill" aria-hidden="true">%</span>';
       doc.body.appendChild(promo);
     }
 
