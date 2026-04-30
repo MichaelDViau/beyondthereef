@@ -338,7 +338,7 @@
   resize(); window.addEventListener('resize', resize);
 
   /* ══════════════════════════════════════════
-     OCEAN BACKGROUND GRADIENT — cached
+     OCEAN BACKGROUND GRADIENT , cached
   ══════════════════════════════════════════ */
   let bgGrad=null, warmGrad=null;
   function buildGrads(){
@@ -415,7 +415,7 @@
     for(let x=0;x<=W;x+=22) ctx.lineTo(x, H-8-Math.sin(x*0.05)*5);
     ctx.lineTo(W,H); ctx.closePath();
     ctx.fillStyle='rgba(10,30,55,0.9)'; ctx.fill();
-    // seagrass — only every other frame to halve cost
+    // seagrass , only every other frame to halve cost
     if(reefFrame%2===0){
       const blades = budgetMode ? 8 : 14;
       for(let i=0;i<blades;i++) drawSeagrass(W*(0.03+i*0.07),H,20+((i*7)%30));
@@ -626,7 +626,7 @@
     const x=m.x,y=m.y;
     const wf = Math.sin(m.wingPhase)*22;
     ctx.save(); ctx.globalAlpha = m.alpha * 0.5;
-    ctx.scale(-1,1); // flip — goes right to left
+    ctx.scale(-1,1); // flip , goes right to left
 
     // left wing
     ctx.beginPath();
@@ -766,7 +766,7 @@
     ctx.quadraticCurveTo(x-24,y-4-arm*0.5,x-38,y-6-arm);
     ctx.strokeStyle=col; ctx.lineWidth=6; ctx.lineCap='round'; ctx.stroke();
 
-    // fins — kick alternating
+    // fins , kick alternating
     // right leg
     ctx.beginPath(); ctx.moveTo(x+5,y+22);
     ctx.quadraticCurveTo(x+12,y+34+kick,x+8,y+50+kick);
