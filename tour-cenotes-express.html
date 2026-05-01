@@ -578,9 +578,7 @@ var selPax=1;
 //  NAV 
 var nav=document.getElementById('mainNav');
 if(nav){
-  window.addEventListener('scroll',function(){
-    nav.classList.toggle('opaque',window.scrollY>80);
-  },{passive:true});
+  var _navTick=false;window.addEventListener('scroll',function(){if(!_navTick){_navTick=true;requestAnimationFrame(function(){nav.classList.toggle('opaque',window.scrollY>80);_navTick=false;});}},{passive:true});
 }
 var ham=document.getElementById('ham');
 var mob=document.getElementById('mobMenu');

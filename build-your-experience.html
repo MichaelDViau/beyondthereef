@@ -752,7 +752,7 @@ function closeMob(){ham.classList.remove('open');mobMenu.classList.remove('open'
 ham.addEventListener('click',function(){mobMenu.classList.contains('open')?closeMob():openMob()});
 mobClose.addEventListener('click',closeMob);
 function syncNav(){if(window.scrollY>20){mainNav.classList.add('opaque')}else{mainNav.classList.remove('opaque')}}
-window.addEventListener('scroll',syncNav,{passive:true});
+var _navTick=false;window.addEventListener('scroll',function(){if(!_navTick){_navTick=true;requestAnimationFrame(function(){syncNav();_navTick=false;});}},{passive:true});
 syncNav();
 
 var form = document.getElementById('builderForm');
