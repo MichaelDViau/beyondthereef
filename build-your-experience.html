@@ -32,14 +32,15 @@
 :root{
   color-scheme:light;
   --navy:#0E2A45;--teal:#1DA5B4;--coral:#E8621A;--gold:#F2C14E;
-  --ink:#0E2A45;--muted:#4a6070;--border:#d4e4f0;
-  --gold-bg:#FFF8E7;--amber-bg:#FFF3D0;
-  --r:10px;--r2:16px;--r3:24px;--rp:999px;
-  --sh:0 2px 20px rgba(14,42,69,.10);--sh2:0 8px 40px rgba(14,42,69,.18);
+  --ink:#0E2A45;--muted:#5a7080;--border:#d4e4f0;--border-focus:#1DA5B4;
+  --gold-bg:#FFF8E7;--amber-bg:#FFF3D0;--surface:#f6fafd;
+  --r:12px;--r2:18px;--r3:24px;--rp:999px;
+  --sh:0 2px 16px rgba(14,42,69,.08);--sh2:0 8px 40px rgba(14,42,69,.18);
   --ease:.22s ease;
+  --inp-h:52px;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Montserrat',sans-serif;color:var(--ink);background:#f6fafd;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body{font-family:'Montserrat',sans-serif;color:var(--ink);background:var(--surface);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 a{text-decoration:none;color:inherit}
 button{font-family:inherit;cursor:pointer;border:none;background:none}
@@ -67,7 +68,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .ham.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 @media(min-width:768px){.ham{display:none}.nav-links{display:flex}.nav-cta{display:block}}
 
-/* MOB */
+/* MOB MENU */
 .mob-menu{position:fixed;inset:0;z-index:499;background:rgba(14,42,69,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;opacity:0;pointer-events:none;transition:opacity .28s}
 .mob-menu.open{opacity:1;pointer-events:all}
 .mob-menu a{font-size:22px;font-weight:800;color:rgba(255,255,255,.90);padding:13px 32px;border-radius:var(--r2);width:280px;text-align:center;transition:background var(--ease)}
@@ -76,68 +77,118 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .mob-close{position:absolute;top:18px;right:18px;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center}
 
 /* HERO */
-.page-hero{padding:96px 20px 54px;text-align:center;background:linear-gradient(135deg,#0E2A45 0%,#1DA5B4 100%);color:#fff}
-.page-hero h1{font-size:clamp(30px,7vw,52px);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:14px}
-.page-hero p{font-size:15px;color:rgba(255,255,255,.80);max-width:560px;margin:0 auto;line-height:1.55}
-.hero-photo-wrap{max-width:760px;margin:24px auto 0}
-.hero-photo-wrap img{width:100%;height:280px;object-fit:cover;border-radius:var(--r3);border:1px solid rgba(255,255,255,.32);box-shadow:0 10px 36px rgba(14,42,69,.28)}
+.page-hero{padding:88px 20px 0;text-align:center;background:linear-gradient(150deg,#0E2A45 0%,#0a3d55 45%,#1DA5B4 100%);color:#fff;position:relative;overflow:hidden}
+.page-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none}
+.hero-inner{position:relative;max-width:760px;margin:0 auto}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(242,193,78,.18);border:1px solid rgba(242,193,78,.35);color:var(--gold);font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 14px;border-radius:var(--rp);margin-bottom:18px}
+.page-hero h1{font-size:clamp(28px,7vw,52px);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:14px}
+.page-hero p{font-size:15px;color:rgba(255,255,255,.80);max-width:540px;margin:0 auto 28px;line-height:1.6}
 
-/* SECTION */
-.builder{max-width:860px;margin:0 auto;padding:40px 20px 80px}
-.bstep{background:#fff;border:1px solid var(--border);border-radius:var(--r3);padding:28px 24px;margin-bottom:18px;box-shadow:var(--sh)}
-.bstep-h{display:flex;align-items:center;gap:12px;margin-bottom:8px}
-.bstep-num{width:32px;height:32px;border-radius:50%;background:var(--coral);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
-.bstep-title{font-size:19px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
-.bstep-sub{color:var(--muted);font-size:13.5px;margin:0 0 16px 44px;line-height:1.5}
+/* TRUST STRIP */
+.hero-trust{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 20px;margin-bottom:28px}
+.trust-item{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.15);border-radius:var(--rp);padding:7px 14px;backdrop-filter:blur(8px)}
+.trust-item span:first-child{font-size:16px;line-height:1}
+.trust-item span:last-child{font-size:11.5px;font-weight:700;color:rgba(255,255,255,.92);white-space:nowrap}
 
-/* FORM */
+/* HERO PHOTO */
+.hero-photo-wrap{max-width:760px;margin:0 auto;position:relative}
+.hero-photo-wrap img{width:100%;height:clamp(220px,42vw,320px);object-fit:cover;border-radius:var(--r3) var(--r3) 0 0;border:1px solid rgba(255,255,255,.20);border-bottom:none;box-shadow:0 -6px 32px rgba(14,42,69,.30);display:block}
+.hero-photo-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(14,42,69,.25) 0%,transparent 60%);border-radius:var(--r3) var(--r3) 0 0;pointer-events:none}
+
+/* PROGRESS BAR */
+.prog-wrap{background:#fff;border-bottom:1px solid var(--border);padding:12px 20px;position:sticky;top:64px;z-index:100;box-shadow:0 2px 12px rgba(14,42,69,.06)}
+.prog-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.prog-bar{flex:1;height:6px;background:#e8f0f6;border-radius:var(--rp);overflow:hidden}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--coral));border-radius:var(--rp);width:0%;transition:width .4s ease}
+.prog-label{font-size:11.5px;font-weight:700;color:var(--muted);white-space:nowrap;min-width:90px;text-align:right}
+
+/* BUILDER */
+.builder{max-width:860px;margin:0 auto;padding:28px 16px 100px}
+@media(min-width:640px){.builder{padding:36px 20px 100px}}
+
+/* STEP CARD */
+.bstep{background:#fff;border:1.5px solid var(--border);border-radius:var(--r3);padding:24px 20px;margin-bottom:14px;box-shadow:var(--sh);transition:border-color .2s,box-shadow .2s}
+.bstep:focus-within{border-color:rgba(29,165,180,.35);box-shadow:var(--sh),0 0 0 3px rgba(29,165,180,.08)}
+@media(min-width:640px){.bstep{padding:28px 28px}}
+.bstep-h{display:flex;align-items:center;gap:12px;margin-bottom:6px}
+.bstep-num{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--coral),#c94e12);color:#fff;font-weight:900;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;box-shadow:0 3px 10px rgba(232,98,26,.28)}
+.bstep-icon{font-size:20px;line-height:1;flex-shrink:0}
+.bstep-title{font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-.01em}
+.bstep-sub{color:var(--muted);font-size:13px;margin:0 0 18px;line-height:1.55}
+.bstep-optional{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--teal);background:rgba(29,165,180,.10);border-radius:var(--rp);padding:2px 8px;margin-left:8px;vertical-align:middle}
+
+/* FORM FIELDS */
 .grid-2{display:grid;grid-template-columns:1fr;gap:12px}
-@media(min-width:640px){.grid-2{grid-template-columns:1fr 1fr}}
+@media(min-width:600px){.grid-2{grid-template-columns:1fr 1fr}}
 .field{display:flex;flex-direction:column;gap:6px}
-.field label{font-size:12.5px;font-weight:700;color:var(--ink);letter-spacing:.02em}
-.field input,.field select{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--r);font-size:15px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color var(--ease),box-shadow var(--ease)}
-.field input:focus,.field select:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,165,180,.15)}
-.field input[type=number]{max-width:100%}
-.counter-field{max-width:260px;margin:0 auto}
-.counter-wrap{display:flex;align-items:center;justify-content:center;gap:10px}
-.counter-btn{width:38px;height:38px;border-radius:50%;background:var(--navy);color:#fff;font-size:20px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
-.counter-btn:hover{opacity:.9}
-#fPeople{text-align:center;max-width:120px}
+.field label{font-size:12px;font-weight:700;color:var(--ink);letter-spacing:.03em;text-transform:uppercase}
+.field input,.field select,.field textarea{width:100%;height:var(--inp-h);padding:0 16px;border:1.5px solid var(--border);border-radius:var(--r);font-size:15px;font-family:inherit;color:var(--ink);background:#fff;transition:border-color var(--ease),box-shadow var(--ease);-webkit-appearance:none;appearance:none}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a7080' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px rgba(29,165,180,.12)}
+.field input::placeholder{color:#b0c4d4}
+.phone-row{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:480px){.phone-row{grid-template-columns:minmax(160px,38%) 1fr}}
+
+/* COUNTER */
+.counter-field{max-width:300px;margin:0 auto}
+.counter-wrap{display:flex;align-items:center;justify-content:center;gap:14px}
+.counter-btn{width:52px;height:52px;border-radius:50%;background:var(--navy);color:#fff;font-size:24px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1;transition:background var(--ease),transform .1s;user-select:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.counter-btn:hover{background:#1a3d5c}
+.counter-btn:active{transform:scale(.93)}
+#fPeople{text-align:center;max-width:100px;font-size:22px;font-weight:800;border-radius:var(--r);height:52px}
+.counter-hint{text-align:center;font-size:11.5px;color:var(--muted);margin-top:8px;font-weight:600}
 
 /* OPTION CARDS */
-.opts{display:grid;grid-template-columns:1fr;gap:10px}
-@media(min-width:520px){.opts{grid-template-columns:1fr 1fr}}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:380px){.opts{grid-template-columns:1fr}}
 @media(min-width:760px){.opts-3{grid-template-columns:1fr 1fr 1fr}}
-.opt{position:relative;display:block;border:2px solid var(--border);border-radius:var(--r2);padding:14px 14px 14px 44px;cursor:pointer;background:#fff;transition:all var(--ease)}
-.opt:hover{border-color:var(--teal)}
-.opt input{position:absolute;left:16px;top:50%;transform:translateY(-50%);width:18px;height:18px;accent-color:var(--coral);cursor:pointer;margin:0}
-.opt-title{font-size:14.5px;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:2px}
-.opt-desc{font-size:12.5px;color:var(--muted);line-height:1.45}
-.opt input:checked ~ .opt-body .opt-title,.opt input:checked + .opt-title{color:var(--coral)}
-.opt:has(input:checked){border-color:var(--coral);background:#FFF8F2;box-shadow:0 2px 10px rgba(232,98,26,.12)}
-.nanny-wrap{display:flex;justify-content:center}
-.nanny-wrap .opt{width:min(560px,100%)}
+.opt{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;border:2px solid var(--border);border-radius:var(--r2);padding:20px 14px 16px;cursor:pointer;background:#fff;transition:border-color .2s,background .2s,box-shadow .2s;gap:8px;user-select:none;-webkit-tap-highlight-color:transparent}
+.opt:hover{border-color:var(--teal);box-shadow:0 4px 18px rgba(29,165,180,.12)}
+.opt input[type="checkbox"]{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.opt::after{content:'✓';position:absolute;top:10px;right:10px;width:22px;height:22px;background:var(--coral);color:#fff;border-radius:50%;font-size:12px;font-weight:900;line-height:22px;text-align:center;opacity:0;transform:scale(.5);transition:opacity .2s,transform .2s}
+.opt:has(input:checked)::after{opacity:1;transform:scale(1)}
+.opt:has(input:checked){border-color:var(--coral);background:linear-gradient(135deg,#fff8f4 0%,#fff 100%);box-shadow:0 4px 18px rgba(232,98,26,.14)}
+.opt:has(input:checked) .opt-title{color:var(--coral)}
+.opt-icon{font-size:32px;line-height:1;filter:drop-shadow(0 1px 2px rgba(0,0,0,.08))}
+.opt-title{font-size:13.5px;font-weight:800;color:var(--ink);line-height:1.25}
+.opt-desc{font-size:11.5px;color:var(--muted);line-height:1.5}
 
-.skip{display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;color:var(--muted);margin-top:14px;cursor:pointer;width:100%;text-align:center}
-.skip input{width:16px;height:16px;accent-color:var(--muted);cursor:pointer}
+/* NANNY (single wide card) */
+.nanny-wrap{grid-template-columns:1fr!important}
+.nanny-wrap .opt{flex-direction:row;text-align:left;gap:14px;padding:20px 20px}
+.nanny-wrap .opt .opt-icon{font-size:36px;flex-shrink:0}
+.nanny-wrap .opt .opt-body{flex:1}
+
+/* SKIP */
+.skip{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12px;color:var(--muted);margin-top:14px;cursor:pointer;font-weight:600;-webkit-tap-highlight-color:transparent}
+.skip input{width:16px;height:16px;accent-color:var(--muted);cursor:pointer;flex-shrink:0}
 
 /* SUBMIT */
-.submit-wrap{text-align:center;padding:18px 0 10px}
-.btn-submit{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:#fff;font-size:15px;font-weight:800;padding:16px 34px;border-radius:var(--rp);box-shadow:0 10px 28px rgba(232,98,26,.32);transition:transform var(--ease),box-shadow var(--ease);letter-spacing:.01em;border:none}
-.btn-submit:hover{transform:translateY(-1px);box-shadow:0 14px 34px rgba(232,98,26,.42)}
-.btn-submit:disabled{opacity:.7;cursor:wait}
-.fineprint{font-size:12px;color:var(--muted);margin-top:24px;line-height:1.55;max-width:560px;margin-left:auto;margin-right:auto}
+.submit-wrap{text-align:center;padding:16px 0 10px}
+.btn-submit{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,var(--coral) 0%,#c94e12 100%);color:#fff;font-size:16px;font-weight:800;padding:18px 40px;border-radius:var(--rp);box-shadow:0 8px 28px rgba(232,98,26,.35);transition:transform var(--ease),box-shadow var(--ease),opacity var(--ease);letter-spacing:.01em;border:none;min-width:260px;-webkit-tap-highlight-color:transparent}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 14px 36px rgba(232,98,26,.44)}
+.btn-submit:active{transform:translateY(0)}
+.btn-submit:disabled{opacity:.7;cursor:wait;transform:none}
+.btn-submit .btn-arrow{font-size:20px;transition:transform .2s}
+.btn-submit:not(:disabled):hover .btn-arrow{transform:translateX(4px)}
+.submit-trust{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:14px;font-size:11.5px;color:var(--muted);font-weight:600}
+.submit-trust span:first-child{font-size:15px}
+.fineprint{font-size:12px;color:var(--muted);margin-top:10px;line-height:1.6;max-width:500px;margin-left:auto;margin-right:auto}
 
-.err{color:#c0392b;font-size:12.5px;margin-top:8px;font-weight:600;display:none}
+/* SPINNER */
+.spinner{display:inline-block;width:18px;height:18px;border:2.5px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .7s linear infinite;flex-shrink:0}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* ERROR / SUCCESS */
+.err{color:#c0392b;font-size:12.5px;margin-top:12px;font-weight:600;display:none;background:#fff0ee;border:1px solid #f5c6c0;border-radius:var(--r);padding:10px 14px}
 .err.on{display:block}
-
-/* SUCCESS */
-.success{display:none;background:#E6F9F1;border:1.5px solid #7FC8A9;border-radius:var(--r3);padding:32px 22px;text-align:center;margin-top:18px}
+.success{display:none;background:linear-gradient(135deg,#E6F9F1,#f0fdf6);border:1.5px solid #7FC8A9;border-radius:var(--r3);padding:40px 24px;text-align:center;margin-top:18px}
 .success.on{display:block}
-.success h3{color:#0A5940;font-size:22px;font-weight:800;margin-bottom:10px}
-.success p{color:#0A5940;font-size:14.5px;line-height:1.6}
+.success-icon{font-size:56px;margin-bottom:14px;line-height:1}
+.success h3{color:#0A5940;font-size:22px;font-weight:900;margin-bottom:10px;letter-spacing:-.02em}
+.success p{color:#1a6b4a;font-size:14.5px;line-height:1.65}
 
-/* ── FOOTER ── */
+/* FOOTER */
 footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52);color-scheme:light}
 .ft-grid{display:grid;grid-template-columns:1fr;gap:32px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:22px}
 @media(min-width:768px){.ft-grid{grid-template-columns:1.6fr 1fr 1fr}}
@@ -161,6 +212,11 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 .float-ig{bottom:82px;background:transparent;box-shadow:0 4px 18px rgba(188,24,136,.32)}
 .float-ig:hover,.float-wa:hover{transform:scale(1.10)}
 .float-ig svg,.float-wa svg{width:52px;height:52px;border-radius:50%}
+
+/* MOBILE STICKY SUBMIT */
+.mob-submit-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;padding:12px 16px;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);box-shadow:0 -4px 20px rgba(14,42,69,.10)}
+.mob-submit-bar .btn-submit{width:100%;min-width:0}
+@media(max-width:639px){.mob-submit-bar{display:block}}
 </style>
 <script src="assets/common/i18n.js" defer></script>
 </head>
@@ -198,12 +254,30 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </div>
 
 <header class="page-hero">
-  <h1 data-i18n="build.h1">Build Your Own Experience</h1>
-  <p data-i18n="build.sub">Pick your adventure. We will build a super exclusive, top-of-the-class experience around you and send your custom quote within 6 to 12 hours.</p>
-  <div class="hero-photo-wrap">
-    <img src="https://i.ibb.co/Q3yTdyDv/IMG-3950.jpg" alt="Build your own Riviera Maya experience" decoding="async" fetchpriority="high">
+  <div class="hero-inner">
+    <div class="hero-badge">✦ 100% Personalized</div>
+    <h1 data-i18n="build.h1">Build Your Own Experience</h1>
+    <p data-i18n="build.sub">Pick your adventure. We will build a super exclusive, top-of-the-class experience around you and send your custom quote within 6 to 12 hours.</p>
+    <div class="hero-trust">
+      <div class="trust-item"><span>⭐</span><span>5-Star Rated</span></div>
+      <div class="trust-item"><span>🏅</span><span>14+ Years</span></div>
+      <div class="trust-item"><span>🔒</span><span>100% Private</span></div>
+      <div class="trust-item"><span>⚡</span><span>Quote in 6–12h</span></div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="https://i.ibb.co/Q3yTdyDv/IMG-3950.jpg" alt="Build your own Riviera Maya experience" decoding="async" fetchpriority="high">
+      <div class="hero-photo-overlay"></div>
+    </div>
   </div>
 </header>
+
+<!-- PROGRESS BAR -->
+<div class="prog-wrap" id="progWrap">
+  <div class="prog-inner">
+    <div class="prog-bar"><div class="prog-fill" id="progFill"></div></div>
+    <div class="prog-label" id="progLabel">Let's get started</div>
+  </div>
+</div>
 
 <main class="builder">
   <form id="builderForm" novalidate>
@@ -212,21 +286,22 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">1</div>
+        <span class="bstep-icon" aria-hidden="true">👤</span>
         <div class="bstep-title" data-i18n="build.s1.title">Your Contact Details</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s1.sub">So we can get back to you with a personalized quote.</p>
       <div class="grid-2">
         <div class="field">
           <label for="fName" data-i18n="build.s1.name">Your Name</label>
-          <input id="fName" name="name" type="text" autocomplete="name" required>
+          <input id="fName" name="name" type="text" autocomplete="name" required placeholder="Full name">
         </div>
         <div class="field">
           <label for="fEmail" data-i18n="build.s1.email">Email Address</label>
-          <input id="fEmail" name="email" type="email" autocomplete="email" required>
+          <input id="fEmail" name="email" type="email" autocomplete="email" required placeholder="you@email.com">
         </div>
         <div class="field" style="grid-column:1/-1">
           <label for="fPhone" data-i18n="build.s1.phone">Phone Number</label>
-          <div style="display:grid;grid-template-columns:minmax(165px, 36%) 1fr;gap:10px;align-items:center;">
+          <div class="phone-row">
             <select id="fPhoneCountryCode" name="phone_country_code" autocomplete="tel-country-code" required aria-label="Country calling code">
               <option value="+1">🇺🇸 United States (+1)</option>
               <option value="+1">🇨🇦 Canada (+1)</option>
@@ -234,9 +309,9 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
               <option value="+1-242">🇧🇸 Bahamas (+1-242)</option>
               <option value="+1-246">🇧🇧 Barbados (+1-246)</option>
               <option value="+1-876">🇯🇲 Jamaica (+1-876)</option>
-              <option value="+1-809">🇩🇴 Dominican Republic (+1-809 / 829 / 849)</option>
+              <option value="+1-809">🇩🇴 Dominican Republic (+1-809)</option>
               <option value="+1-868">🇹🇹 Trinidad & Tobago (+1-868)</option>
-              <option value="+1-787">🇵🇷 Puerto Rico (+1-787 / 939)</option>
+              <option value="+1-787">🇵🇷 Puerto Rico (+1-787)</option>
               <option value="+53">🇨🇺 Cuba (+53)</option>
               <option value="+44">🇬🇧 United Kingdom (+44)</option>
               <option value="+33">🇫🇷 France (+33)</option>
@@ -303,7 +378,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
               <option value="+595">🇵🇾 Paraguay (+595)</option>
               <option value="+591">🇧🇴 Bolivia (+591)</option>
             </select>
-            <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required>
+            <input id="fPhone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="Phone number">
           </div>
         </div>
       </div>
@@ -313,15 +388,17 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">2</div>
+        <span class="bstep-icon" aria-hidden="true">👥</span>
         <div class="bstep-title" data-i18n="build.s2.title">Number of Adventurers</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s2.sub">How many people will be joining you on this adventure?</p>
-      <div class="field counter-field">
+      <div class="counter-field">
         <div class="counter-wrap">
           <button type="button" class="counter-btn" id="peopleMinus" aria-label="Decrease number of adventurers">−</button>
           <input id="fPeople" name="people" type="number" min="1" max="60" value="2" required aria-label="Number of adventurers">
           <button type="button" class="counter-btn" id="peoplePlus" aria-label="Increase number of adventurers">+</button>
         </div>
+        <p class="counter-hint">Tap + or − to adjust (1–60 people)</p>
       </div>
     </section>
 
@@ -329,6 +406,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">3</div>
+        <span class="bstep-icon" aria-hidden="true">📅</span>
         <div class="bstep-title" data-i18n="build.s2.date.title">Preferred Date</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s2.date.sub">Choose the date you would like for your experience.</p>
@@ -342,6 +420,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">4</div>
+        <span class="bstep-icon" aria-hidden="true">📍</span>
         <div class="bstep-title" data-i18n="build.s2.pickup.title">Pick-up Location</div>
       </div>
       <p class="bstep-sub" data-i18n="build.s2.pickup.sub">Select your hotel from the list, or choose custom location and type it manually.</p>
@@ -413,7 +492,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
               <option value="Occidental at Xcaret">Occidental at Xcaret</option>
               <option value="Nickelodeon Riviera Maya">Nickelodeon Riviera Maya</option>
               <option value="Bahia Principe Luxury Akumal">Bahia Principe Luxury Akumal</option>
-              <option value="Bahia Principe Luxury Sian Ka’an">Bahia Principe Luxury Sian Ka’an</option>
+              <option value="Bahia Principe Luxury Sian Ka'an">Bahia Principe Luxury Sian Ka'an</option>
               <option value="Bahia Principe Grand Coba">Bahia Principe Grand Coba</option>
               <option value="Bahia Principe Grand Tulum">Bahia Principe Grand Tulum</option>
               <option value="Barceló Maya Palace">Barceló Maya Palace</option>
@@ -439,7 +518,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
               <option value="Secrets Tulum Resort &amp; Beach Club">Secrets Tulum Resort &amp; Beach Club</option>
               <option value="Dreams Tulum Resort &amp; Spa">Dreams Tulum Resort &amp; Spa</option>
               <option value="Kore Tulum Retreat">Kore Tulum Retreat</option>
-              <option value="Bahia Principe Luxury Sian Ka’an">Bahia Principe Luxury Sian Ka’an</option>
+              <option value="Bahia Principe Luxury Sian Ka'an">Bahia Principe Luxury Sian Ka'an</option>
               <option value="Bahia Principe Grand Tulum">Bahia Principe Grand Tulum</option>
               <option value="Catalonia Royal Tulum">Catalonia Royal Tulum</option>
               <option value="Unico 20°87°">Unico 20°87°</option>
@@ -450,7 +529,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         <div class="field">
           <label for="fPickupCustom" data-i18n="build.s2.pickup.custom">Custom pick-up location</label>
           <input id="fPickupCustom" name="pickup_custom_location" type="text" autocomplete="street-address" placeholder="Type your custom location" data-i18n-ph="build.s2.pickup.custom.ph">
-          <label class="skip"><input type="checkbox" id="fPickupCustomToggle" name="pickup_custom_toggle" value="1"><span data-i18n="build.s2.pickup.usecustom">Use custom location</span></label>
+          <label class="skip" style="justify-content:flex-start;margin-top:10px"><input type="checkbox" id="fPickupCustomToggle" name="pickup_custom_toggle" value="1"><span data-i18n="build.s2.pickup.usecustom">Use custom location</span></label>
         </div>
       </div>
     </section>
@@ -459,29 +538,34 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">5</div>
+        <span class="bstep-icon" aria-hidden="true">🐠</span>
         <div class="bstep-title" data-i18n="build.s3.title">Ocean Snorkeling</div>
+        <span class="bstep-optional">Optional</span>
       </div>
       <p class="bstep-sub" data-i18n="build.s3.sub">Choose your ocean adventure.</p>
       <div class="opts">
         <label class="opt">
           <input type="checkbox" name="snorkel" value="Reef Snorkeling">
+          <span class="opt-icon" aria-hidden="true">🐠</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s3.reef.t">Reef</div>
-            <div class="opt-desc" data-i18n="build.s3.reef.d">Explore colorful coral and tropical fish on the reef.</div>
+            <div class="opt-desc" data-i18n="build.s3.reef.d">Colorful coral and tropical fish.</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="snorkel" value="Lagoon Snorkeling">
+          <span class="opt-icon" aria-hidden="true">🌊</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s3.lagoon.t">Lagoon</div>
-            <div class="opt-desc" data-i18n="build.s3.lagoon.d">Calm, crystal-clear lagoon perfect for relaxed snorkeling.</div>
+            <div class="opt-desc" data-i18n="build.s3.lagoon.d">Calm, crystal-clear lagoon snorkeling.</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="snorkel" value="Snorkeling with Sea Turtles">
+          <span class="opt-icon" aria-hidden="true">🐢</span>
           <div class="opt-body">
-            <div class="opt-title" data-i18n="build.s3.turtles.t">Snorkeling with Sea Turtles</div>
-            <div class="opt-desc" data-i18n="build.s3.turtles.d">Swim alongside wild sea turtles in Akumal Bay.</div>
+            <div class="opt-title" data-i18n="build.s3.turtles.t">Sea Turtles</div>
+            <div class="opt-desc" data-i18n="build.s3.turtles.d">Swim with wild turtles in Akumal Bay.</div>
           </div>
         </label>
       </div>
@@ -492,36 +576,42 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">6</div>
+        <span class="bstep-icon" aria-hidden="true">💧</span>
         <div class="bstep-title" data-i18n="build.s4.title">Cenote Adventure</div>
+        <span class="bstep-optional">Optional</span>
       </div>
       <p class="bstep-sub" data-i18n="build.s4.sub">Choose your cenote experience.</p>
       <div class="opts opts-3">
         <label class="opt">
           <input type="checkbox" name="cenote" value="3 Cenotes Experience">
+          <span class="opt-icon" aria-hidden="true">💧</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s4.three.t">3 Cenotes</div>
-            <div class="opt-desc" data-i18n="build.s4.three.d">Visit three different cenotes in one adventure.</div>
+            <div class="opt-desc" data-i18n="build.s4.three.d">Three cenotes in one adventure.</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="cenote" value="Rappel into a Cenote">
+          <span class="opt-icon" aria-hidden="true">🧗</span>
           <div class="opt-body">
-            <div class="opt-title" data-i18n="build.s4.rappel.t">Rappel into a Cenote</div>
-            <div class="opt-desc" data-i18n="build.s4.rappel.d">Adrenaline drop into a hidden jungle cenote.</div>
+            <div class="opt-title" data-i18n="build.s4.rappel.t">Rappel Cenote</div>
+            <div class="opt-desc" data-i18n="build.s4.rappel.d">Drop into a hidden jungle cenote.</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="cenote" value="Exclusive Top Private Cenote">
+          <span class="opt-icon" aria-hidden="true">👑</span>
           <div class="opt-body">
-            <div class="opt-title" data-i18n="build.s4.priv.t">Exclusive Top Private Cenote</div>
-            <div class="opt-desc" data-i18n="build.s4.priv.d">The most exclusive private cenote in the Riviera Maya.</div>
+            <div class="opt-title" data-i18n="build.s4.priv.t">Private Cenote</div>
+            <div class="opt-desc" data-i18n="build.s4.priv.d">The most exclusive cenote in Riviera Maya.</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="cenote" value="1.5 hr Cenote Adventure (walk & swim)">
+          <span class="opt-icon" aria-hidden="true">🏊</span>
           <div class="opt-body">
-            <div class="opt-title" data-i18n="build.s4.walk.t">1.5 hr Cenote Adventure</div>
-            <div class="opt-desc" data-i18n="build.s4.walk.d">Walk and swim through a stunning cenote system.</div>
+            <div class="opt-title" data-i18n="build.s4.walk.t">1.5 hr Cenote</div>
+            <div class="opt-desc" data-i18n="build.s4.walk.d">Walk and swim through a cenote system.</div>
           </div>
         </label>
       </div>
@@ -532,12 +622,15 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">7</div>
+        <span class="bstep-icon" aria-hidden="true">🏛️</span>
         <div class="bstep-title" data-i18n="build.s5.title">Mayan Ruins</div>
+        <span class="bstep-optional">Optional</span>
       </div>
       <p class="bstep-sub" data-i18n="build.s5.sub">Choose a Mayan archaeological site.</p>
       <div class="opts opts-3">
         <label class="opt">
           <input type="checkbox" name="ruins" value="Chichen Itza">
+          <span class="opt-icon" aria-hidden="true">🌟</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s5.chichen.t">Chichen Itza</div>
             <div class="opt-desc" data-i18n="build.s5.chichen.d">One of the New 7 Wonders of the World.</div>
@@ -545,23 +638,26 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         </label>
         <label class="opt">
           <input type="checkbox" name="ruins" value="Tulum">
+          <span class="opt-icon" aria-hidden="true">🌅</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s5.tulum.t">Tulum</div>
-            <div class="opt-desc" data-i18n="build.s5.tulum.d">Cliffside Mayan ruins overlooking the Caribbean.</div>
+            <div class="opt-desc" data-i18n="build.s5.tulum.d">Cliffside ruins over the Caribbean.</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="ruins" value="Coba">
+          <span class="opt-icon" aria-hidden="true">🌿</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s5.coba.t">Coba</div>
-            <div class="opt-desc" data-i18n="build.s5.coba.d">Explore ancient pyramids deep in the jungle.</div>
+            <div class="opt-desc" data-i18n="build.s5.coba.d">Ancient pyramids deep in the jungle.</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="ruins" value="Ek Balam">
+          <span class="opt-icon" aria-hidden="true">🦅</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s5.ekbalam.t">Ek Balam</div>
-            <div class="opt-desc" data-i18n="build.s5.ekbalam.d">A lesser-known gem you can still climb.</div>
+            <div class="opt-desc" data-i18n="build.s5.ekbalam.d">A hidden gem you can still climb.</div>
           </div>
         </label>
       </div>
@@ -572,29 +668,34 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">8</div>
+        <span class="bstep-icon" aria-hidden="true">🍽️</span>
         <div class="bstep-title" data-i18n="build.s6.title">Food Experience</div>
+        <span class="bstep-optional">Optional</span>
       </div>
       <p class="bstep-sub" data-i18n="build.s6.sub">Choose how you want to eat on your adventure.</p>
       <div class="opts opts-3">
         <label class="opt">
           <input type="checkbox" name="food" value="Tacos Experience">
+          <span class="opt-icon" aria-hidden="true">🌮</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s6.tacos.t">Tacos Experience</div>
-            <div class="opt-desc" data-i18n="build.s6.tacos.d">Eat where locals eat, the tastiest tacos in town.</div>
+            <div class="opt-desc" data-i18n="build.s6.tacos.d">Eat where the locals eat.</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="food" value="Snack Box">
+          <span class="opt-icon" aria-hidden="true">🧺</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s6.snack.t">Snack Box</div>
-            <div class="opt-desc" data-i18n="build.s6.snack.d">A curated on-the-go snack box for your adventure.</div>
+            <div class="opt-desc" data-i18n="build.s6.snack.d">Curated on-the-go snack box.</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="food" value="Fresh Seafood Experience">
+          <span class="opt-icon" aria-hidden="true">🦞</span>
           <div class="opt-body">
-            <div class="opt-title" data-i18n="build.s6.seafood.t">Fresh Seafood Experience</div>
-            <div class="opt-desc" data-i18n="build.s6.seafood.d">Fresh local seafood served by the sea.</div>
+            <div class="opt-title" data-i18n="build.s6.seafood.t">Fresh Seafood</div>
+            <div class="opt-desc" data-i18n="build.s6.seafood.d">Fresh local seafood by the sea.</div>
           </div>
         </label>
       </div>
@@ -605,15 +706,18 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">9</div>
+        <span class="bstep-icon" aria-hidden="true">👶</span>
         <div class="bstep-title" data-i18n="build.s8.title">Exclusive Nanny Service</div>
+        <span class="bstep-optional">Optional</span>
       </div>
       <p class="bstep-sub" data-i18n="build.s8.sub">Traveling with little ones should still feel effortless. Add a professional certified nanny so every parent can relax and enjoy a smoother, more premium experience from start to finish.</p>
-      <div class="opts nanny-wrap" style="max-width:620px;margin:0 auto">
+      <div class="opts nanny-wrap">
         <label class="opt">
           <input type="checkbox" name="nanny" value="Add Exclusive Certified Nanny Service">
+          <span class="opt-icon" aria-hidden="true">👶</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s8.nanny.t">Add Exclusive Certified Nanny Service</div>
-            <div class="opt-desc" data-i18n="build.s8.nanny.d">Dedicated childcare support throughout the day for maximum comfort and peace of mind.</div>
+            <div class="opt-desc" data-i18n="build.s8.nanny.d">Dedicated childcare throughout the day for maximum comfort and peace of mind.</div>
           </div>
         </label>
       </div>
@@ -624,12 +728,15 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">10</div>
+        <span class="bstep-icon" aria-hidden="true">🚐</span>
         <div class="bstep-title" data-i18n="build.s7.title">Transportation</div>
+        <span class="bstep-optional">Optional</span>
       </div>
       <p class="bstep-sub" data-i18n="build.s7.sub">Choose the vehicle that fits your group.</p>
       <div class="opts">
         <label class="opt">
           <input type="checkbox" name="transport" value="Private Suburban (up to 5 people)">
+          <span class="opt-icon" aria-hidden="true">🚗</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s7.suburban.t">Private Suburban</div>
             <div class="opt-desc" data-i18n="build.s7.suburban.d">Up to 5 people · premium private SUV</div>
@@ -637,6 +744,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         </label>
         <label class="opt">
           <input type="checkbox" name="transport" value="Van (up to 12 people)">
+          <span class="opt-icon" aria-hidden="true">🚐</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s7.van.t">Van</div>
             <div class="opt-desc" data-i18n="build.s7.van.d">Up to 12 people · comfortable A/C van</div>
@@ -644,16 +752,18 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
         </label>
         <label class="opt">
           <input type="checkbox" name="transport" value="Mercedes Sprinter (up to 18 people)">
+          <span class="opt-icon" aria-hidden="true">✨</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s7.sprinter.t">Mercedes Sprinter</div>
-            <div class="opt-desc" data-i18n="build.s7.sprinter.d">Up to 18 people · premium Mercedes Sprinter</div>
+            <div class="opt-desc" data-i18n="build.s7.sprinter.d">Up to 18 people · premium Sprinter</div>
           </div>
         </label>
         <label class="opt">
           <input type="checkbox" name="transport" value="Bus (up to 38 people)">
+          <span class="opt-icon" aria-hidden="true">🚌</span>
           <div class="opt-body">
             <div class="opt-title" data-i18n="build.s7.bus.t">Bus</div>
-            <div class="opt-desc" data-i18n="build.s7.bus.d">Up to 38 people · full-size experience bus</div>
+            <div class="opt-desc" data-i18n="build.s7.bus.d">Up to 38 people · full-size bus</div>
           </div>
         </label>
       </div>
@@ -664,7 +774,9 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
     <section class="bstep">
       <div class="bstep-h">
         <div class="bstep-num">11</div>
+        <span class="bstep-icon" aria-hidden="true">✨</span>
         <div class="bstep-title" data-i18n="build.s9.title">Special Request</div>
+        <span class="bstep-optional">Optional</span>
       </div>
       <p class="bstep-sub" data-i18n="build.s9.sub">Can&apos;t find what you are looking for? No worries, tell us more and we will build it for you.</p>
       <div class="field">
@@ -673,23 +785,33 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
       </div>
     </section>
 
-    <!-- SUBMIT -->
+    <!-- SUBMIT (desktop) -->
     <div class="submit-wrap">
       <button type="submit" class="btn-submit" id="submitBtn">
         <span data-i18n="build.cta">Build My Experience</span>
-        <span style="font-size:18px;line-height:1">→</span>
+        <span class="btn-arrow" aria-hidden="true">→</span>
       </button>
-      <p class="err" id="formErr" data-i18n="build.err">Please fill out your name, phone, email, preferred date, and pick-up location so we can send your quote.</p>
+      <div class="submit-trust"><span>🔒</span><span>Free quote · No commitment · Reply in 6–12 hours</span></div>
+      <p class="err" id="formErr" role="alert" data-i18n="build.err">Please fill out your name, phone, email, preferred date, and pick-up location so we can send your quote.</p>
       <p class="fineprint" data-i18n="build.fine">We will craft a super exclusive, top-of-the-class experience and contact you by email or WhatsApp with your custom quote within 6 to 12 hours.</p>
     </div>
 
-    <div class="success" id="successBox">
+    <div class="success" id="successBox" role="status">
+      <div class="success-icon">🎉</div>
       <h3 data-i18n="build.ok.title">Your custom experience is on its way!</h3>
       <p data-i18n="build.ok.desc">We have received your selections. Our team will contact you within 6 to 12 hours with a personalized quote.</p>
     </div>
 
   </form>
 </main>
+
+<!-- MOBILE STICKY SUBMIT BAR -->
+<div class="mob-submit-bar" id="mobSubmitBar">
+  <button type="button" class="btn-submit" id="mobSubmitBtn">
+    <span data-i18n="build.cta">Build My Experience</span>
+    <span class="btn-arrow" aria-hidden="true">→</span>
+  </button>
+</div>
 
 <footer>
   <div class="ft-grid">
@@ -743,6 +865,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 <a href="https://wa.me/529841670697" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
 
 <script>
+// NAV
 var ham = document.getElementById('ham');
 var mobMenu = document.getElementById('mobMenu');
 var mobClose = document.getElementById('mobClose');
@@ -751,170 +874,189 @@ function openMob(){ham.classList.add('open');mobMenu.classList.add('open');ham.s
 function closeMob(){ham.classList.remove('open');mobMenu.classList.remove('open');ham.setAttribute('aria-expanded','false')}
 ham.addEventListener('click',function(){mobMenu.classList.contains('open')?closeMob():openMob()});
 mobClose.addEventListener('click',closeMob);
-function syncNav(){if(window.scrollY>20){mainNav.classList.add('opaque')}else{mainNav.classList.remove('opaque')}}
+function syncNav(){mainNav.classList.toggle('opaque',window.scrollY>20)}
 window.addEventListener('scroll',syncNav,{passive:true});
 syncNav();
 
+// FORM ELEMENTS
 var form = document.getElementById('builderForm');
 var errBox = document.getElementById('formErr');
 var successBox = document.getElementById('successBox');
 var submitBtn = document.getElementById('submitBtn');
+var mobSubmitBtn = document.getElementById('mobSubmitBtn');
 var peopleInput = document.getElementById('fPeople');
 var peopleMinus = document.getElementById('peopleMinus');
 var peoplePlus = document.getElementById('peoplePlus');
+var progFill = document.getElementById('progFill');
+var progLabel = document.getElementById('progLabel');
 
+// Set date min to today
+(function(){
+  var d = new Date();
+  var pad = function(n){return n<10?'0'+n:n};
+  document.getElementById('fDate').min = d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+})();
+
+// COUNTER
 function adjustPeople(delta){
-  var min = parseInt(peopleInput.min || '1', 10);
-  var max = parseInt(peopleInput.max || '60', 10);
-  var current = parseInt(peopleInput.value || '0', 10);
-  if (isNaN(current)) current = min;
-  current = Math.max(min, Math.min(max, current + delta));
-  peopleInput.value = String(current);
+  var min=parseInt(peopleInput.min||'1',10);
+  var max=parseInt(peopleInput.max||'60',10);
+  var cur=parseInt(peopleInput.value||'0',10);
+  if(isNaN(cur))cur=min;
+  peopleInput.value=String(Math.max(min,Math.min(max,cur+delta)));
+  updateProgress();
 }
-peopleMinus.addEventListener('click', function(){ adjustPeople(-1); });
-peoplePlus.addEventListener('click', function(){ adjustPeople(1); });
+peopleMinus.addEventListener('click',function(){adjustPeople(-1)});
+peoplePlus.addEventListener('click',function(){adjustPeople(1)});
 
-function toggleSkipBehavior(optionName, skipName){
-  var options = form.querySelectorAll('input[name="'+optionName+'"]');
-  var skip = form.querySelector('input[name="'+skipName+'"]');
-  if (!skip) return;
-  skip.addEventListener('change', function(){
-    if (!skip.checked) return;
-    options.forEach(function(opt){ opt.checked = false; });
+// SKIP / OPTION MUTUAL EXCLUSION
+function toggleSkipBehavior(optName,skipName){
+  var opts=form.querySelectorAll('input[name="'+optName+'"]');
+  var skip=form.querySelector('input[name="'+skipName+'"]');
+  if(!skip)return;
+  skip.addEventListener('change',function(){
+    if(!skip.checked)return;
+    opts.forEach(function(o){o.checked=false});
+    updateProgress();
   });
-  options.forEach(function(opt){
-    opt.addEventListener('change', function(){
-      if (opt.checked) skip.checked = false;
+  opts.forEach(function(o){
+    o.addEventListener('change',function(){
+      if(o.checked)skip.checked=false;
+      updateProgress();
     });
   });
 }
-toggleSkipBehavior('cenote', 'cenote_skip');
-toggleSkipBehavior('ruins', 'ruins_skip');
-toggleSkipBehavior('snorkel', 'snorkel_skip');
-toggleSkipBehavior('food', 'food_skip');
-toggleSkipBehavior('transport', 'transport_skip');
-toggleSkipBehavior('nanny', 'nanny_skip');
+toggleSkipBehavior('cenote','cenote_skip');
+toggleSkipBehavior('ruins','ruins_skip');
+toggleSkipBehavior('snorkel','snorkel_skip');
+toggleSkipBehavior('food','food_skip');
+toggleSkipBehavior('transport','transport_skip');
+toggleSkipBehavior('nanny','nanny_skip');
 
-function getRadio(name){
-  var els = form.querySelectorAll('input[name="'+name+'"]:checked');
-  var val = els.length ? els[0].value : '';
-  return val;
+// PROGRESS
+function updateProgress(){
+  var score=0,total=11;
+  if(form.fName.value.trim())score++;
+  if(form.fEmail.value.trim())score++;
+  if(form.fPhone.value.trim())score++;
+  if(form.fDate.value.trim())score++;
+  if(form.fHotel.value.trim()||form.fPickupCustom.value.trim())score++;
+  ['snorkel','cenote','ruins','food','nanny','transport'].forEach(function(n){
+    var sel=form.querySelectorAll('input[name="'+n+'"]:checked').length>0;
+    var skipped=form.querySelector('input[name="'+n+'_skip"]:checked');
+    if(sel||skipped)score++;
+  });
+  var pct=Math.round(score/total*100);
+  progFill.style.width=pct+'%';
+  if(pct===0)progLabel.textContent='Let\'s get started';
+  else if(pct<40)progLabel.textContent='Keep going! '+pct+'%';
+  else if(pct<80)progLabel.textContent='Looking great! '+pct+'%';
+  else if(pct<100)progLabel.textContent='Almost there! '+pct+'%';
+  else progLabel.textContent='Ready! 🎉';
 }
+
+// Attach progress update to all inputs
+form.querySelectorAll('input,select').forEach(function(el){
+  el.addEventListener('change',updateProgress);
+  el.addEventListener('input',updateProgress);
+});
+
+// FORM DATA HELPERS
 function getCheckedValues(name){
-  return Array.prototype.slice.call(form.querySelectorAll('input[name="'+name+'"]:checked')).map(function(el){return el.value;}).filter(Boolean);
+  return Array.prototype.slice.call(form.querySelectorAll('input[name="'+name+'"]:checked')).map(function(el){return el.value}).filter(Boolean);
 }
 
-form.addEventListener('submit', function(e){
-  e.preventDefault();
-  var name = form.fName.value.trim();
-  var phoneCountryCode = form.fPhoneCountryCode.value.trim();
-  var phoneLocal = form.fPhone.value.trim();
-  var phone = [phoneCountryCode, phoneLocal].filter(Boolean).join(' ').trim();
-  var email = form.fEmail.value.trim();
-  var people = form.fPeople.value.trim();
-  var date = form.fDate.value.trim();
-  var selectedHotel = form.fHotel.value.trim();
-  var customLocation = form.fPickupCustom.value.trim();
-  var useCustomLocation = form.fPickupCustomToggle.checked;
-  var pickupLocation = '';
+// SUBMIT LOGIC
+function doSubmit(){
+  var name=form.fName.value.trim();
+  var phoneCountryCode=form.fPhoneCountryCode.value.trim();
+  var phoneLocal=form.fPhone.value.trim();
+  var phone=[phoneCountryCode,phoneLocal].filter(Boolean).join(' ').trim();
+  var email=form.fEmail.value.trim();
+  var people=form.fPeople.value.trim();
+  var date=form.fDate.value.trim();
+  var selectedHotel=form.fHotel.value.trim();
+  var customLocation=form.fPickupCustom.value.trim();
+  var useCustomLocation=form.fPickupCustomToggle.checked;
+  var pickupLocation='';
+  if(useCustomLocation){pickupLocation=customLocation}
+  else if(selectedHotel){pickupLocation=selectedHotel}
+  else if(customLocation){pickupLocation=customLocation}
 
-  if (useCustomLocation) {
-    pickupLocation = customLocation;
-  } else if (selectedHotel) {
-    pickupLocation = selectedHotel;
-  } else if (customLocation) {
-    pickupLocation = customLocation;
-  }
-
-  if(!name || !phoneLocal || !email || !people || !date || !pickupLocation){
+  if(!name||!phoneLocal||!email||!people||!date||!pickupLocation){
     errBox.classList.add('on');
+    errBox.scrollIntoView({behavior:'smooth',block:'center'});
     return;
   }
   errBox.classList.remove('on');
 
-  var snorkel = getCheckedValues('snorkel').join(', ');
-  if (form.querySelector('input[name="snorkel_skip"]:checked')) snorkel = '';
-  var cenote = getCheckedValues('cenote').join(', ');
-  if (form.querySelector('input[name="cenote_skip"]:checked')) cenote = '';
-  var ruins = getCheckedValues('ruins').join(', ');
-  if (form.querySelector('input[name="ruins_skip"]:checked')) ruins = '';
-  var food = getCheckedValues('food').join(', ');
-  if (form.querySelector('input[name="food_skip"]:checked')) food = '';
-  var nanny = getCheckedValues('nanny').join(', ');
-  if (form.querySelector('input[name="nanny_skip"]:checked')) nanny = '';
-  var transport = getCheckedValues('transport').join(', ');
-  if (form.querySelector('input[name="transport_skip"]:checked')) transport = '';
-  var specialRequest = form.fSpecial.value.trim();
+  var snorkel=getCheckedValues('snorkel').join(', ');
+  if(form.querySelector('input[name="snorkel_skip"]:checked'))snorkel='';
+  var cenote=getCheckedValues('cenote').join(', ');
+  if(form.querySelector('input[name="cenote_skip"]:checked'))cenote='';
+  var ruins=getCheckedValues('ruins').join(', ');
+  if(form.querySelector('input[name="ruins_skip"]:checked'))ruins='';
+  var food=getCheckedValues('food').join(', ');
+  if(form.querySelector('input[name="food_skip"]:checked'))food='';
+  var nanny=getCheckedValues('nanny').join(', ');
+  if(form.querySelector('input[name="nanny_skip"]:checked'))nanny='';
+  var transport=getCheckedValues('transport').join(', ');
+  if(form.querySelector('input[name="transport_skip"]:checked'))transport='';
+  var specialRequest=form.fSpecial.value.trim();
 
-  var subject = 'New Custom Experience Request - ' + name;
-  var lines = [
-    'New custom experience builder submission from beyondthereefmexico.com',
-    '',
-    'CONTACT',
-    'Name: ' + name,
-    'Phone: ' + phone,
-    'Email: ' + email,
-    'Adventurers: ' + people,
-    'Preferred Date: ' + date,
-    'Pick-up Location: ' + pickupLocation,
-    '',
+  var subject='New Custom Experience Request - '+name;
+  var body=[
+    'New custom experience builder submission from beyondthereefmexico.com','',
+    'CONTACT','Name: '+name,'Phone: '+phone,'Email: '+email,
+    'Adventurers: '+people,'Preferred Date: '+date,'Pick-up Location: '+pickupLocation,'',
     'SELECTIONS',
-    'Ocean / Snorkeling: ' + (snorkel || '(not selected)'),
-    'Cenote: ' + (cenote || '(not selected)'),
-    'Mayan Ruins: ' + (ruins || '(not selected)'),
-    'Food: ' + (food || '(not selected)'),
-    'Exclusive Nanny Service: ' + (nanny || '(not selected)'),
-    'Transportation: ' + (transport || '(not selected)'),
-    '',
-    'Special request: ' + (specialRequest || '(none)'),
-    '',
+    'Ocean / Snorkeling: '+(snorkel||'(not selected)'),
+    'Cenote: '+(cenote||'(not selected)'),
+    'Mayan Ruins: '+(ruins||'(not selected)'),
+    'Food: '+(food||'(not selected)'),
+    'Exclusive Nanny Service: '+(nanny||'(not selected)'),
+    'Transportation: '+(transport||'(not selected)'),'',
+    'Special request: '+(specialRequest||'(none)'),'',
     'Please send a custom quote within 6 to 12 hours.'
-  ];
-  var body = lines.join('\n');
+  ].join('\n');
 
-  submitBtn.disabled = true;
-  var originalBtnText = submitBtn.textContent;
-  submitBtn.textContent = 'Sending...';
+  function setLoading(on){
+    [submitBtn,mobSubmitBtn].forEach(function(btn){
+      if(!btn)return;
+      btn.disabled=on;
+      if(on){
+        btn.innerHTML='<span class="spinner"></span><span>Sending...</span>';
+      } else {
+        btn.innerHTML='<span data-i18n="build.cta">Build My Experience</span><span class="btn-arrow" aria-hidden="true">→</span>';
+      }
+    });
+  }
 
-  var payload = {
-    _captcha: false,
-    _subject: subject,
-    email: email,
-    name: name,
-    phone: phone,
-    phone_country_code: phoneCountryCode || '(not selected)',
-    phone_local: phoneLocal || '(not provided)',
-    adventurers: people,
-    preferred_date: date,
-    selected_hotel: selectedHotel || '(not selected)',
-    custom_pickup_location: customLocation || '(not provided)',
-    pickup_location: pickupLocation,
-    ocean_snorkeling: snorkel || '(not selected)',
-    cenote: cenote || '(not selected)',
-    mayan_ruins: ruins || '(not selected)',
-    food: food || '(not selected)',
-    exclusive_nanny_service: nanny || '(not selected)',
-    transportation: transport || '(not selected)',
-    special_request: specialRequest || '(none)',
-    details: body
+  setLoading(true);
+
+  var payload={
+    _captcha:false,_subject:subject,email:email,name:name,phone:phone,
+    phone_country_code:phoneCountryCode||'(not selected)',phone_local:phoneLocal||'(not provided)',
+    adventurers:people,preferred_date:date,selected_hotel:selectedHotel||'(not selected)',
+    custom_pickup_location:customLocation||'(not provided)',pickup_location:pickupLocation,
+    ocean_snorkeling:snorkel||'(not selected)',cenote:cenote||'(not selected)',
+    mayan_ruins:ruins||'(not selected)',food:food||'(not selected)',
+    exclusive_nanny_service:nanny||'(not selected)',transportation:transport||'(not selected)',
+    special_request:specialRequest||'(none)',details:body
   };
 
   function sendTo(endpoint){
-    return fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(payload)
-    }).then(function(res){ return res.json(); });
+    return fetch(endpoint,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload)}).then(function(r){return r.json()});
   }
 
   sendTo('https://formsubmit.co/ajax/el/sozegi')
-    .catch(function(){ return sendTo('https://formsubmit.co/ajax/info@beyondthereefmexico.com'); })
+    .catch(function(){return sendTo('https://formsubmit.co/ajax/info@beyondthereefmexico.com')})
     .then(function(data){
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalBtnText;
-      if(data && data.success){
+      setLoading(false);
+      if(data&&data.success){
         form.reset();
-        peopleInput.value = '2';
+        peopleInput.value='2';
+        updateProgress();
         successBox.classList.add('on');
         successBox.scrollIntoView({behavior:'smooth',block:'center'});
       } else {
@@ -922,11 +1064,13 @@ form.addEventListener('submit', function(e){
       }
     })
     .catch(function(){
-      submitBtn.disabled = false;
-      submitBtn.textContent = originalBtnText;
+      setLoading(false);
       alert('Could not send your request. Please email us at info@beyondthereefmexico.com');
     });
-});
+}
+
+form.addEventListener('submit',function(e){e.preventDefault();doSubmit()});
+mobSubmitBtn.addEventListener('click',doSubmit);
 </script>
 
 <script src="assets/common/perf.js" defer></script>
