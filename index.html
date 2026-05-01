@@ -859,8 +859,15 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 <script>
 // NAV scroll
 var nav = document.getElementById('mainNav');
+var _navTick = false;
 window.addEventListener('scroll', function() {
-  if (nav) nav.classList.toggle('opaque', window.scrollY > 80);
+  if (!_navTick) {
+    _navTick = true;
+    requestAnimationFrame(function() {
+      if (nav) nav.classList.toggle('opaque', window.scrollY > 80);
+      _navTick = false;
+    });
+  }
 }, {passive: true});
 
 // Hamburger menu
@@ -1071,40 +1078,19 @@ makeSlider('privTrack',   'privPrev',   'privNext',   'privDots',   '.tc:not(.tc
 })();
 makeSlider('revTrack',    'revPrev',    'revNext',    'revDots',    '.rc',                   true);
 
-// Lazy images
+// Eager-load first slider cards so they paint before perf.js deferred run
 (function() {
-  function primeSliderImages(trackId, count) {
-    var track = document.getElementById(trackId);
-    if (!track) return;
-    var imgs = Array.from(track.querySelectorAll('img[data-src]')).slice(0, count);
-    imgs.forEach(function(img, idx) {
-      img.src = img.dataset.src;
-      delete img.dataset.src;
-      img.loading = idx < 2 ? 'eager' : 'lazy';
-      img.fetchPriority = idx < 2 ? 'high' : 'auto';
-      img.decoding = 'async';
-      img.addEventListener('load', function() { img.classList.add('loaded'); }, {once: true});
-    });
-  }
-
-  // Ensure first visible cards in the private slider paint quickly.
-  primeSliderImages('privTrack', 4);
-
-  if (!window.IntersectionObserver) return;
-  var io = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      if (e.isIntersecting) {
-        var img = e.target;
-        if (img.dataset.src) {
-          img.src = img.dataset.src;
-          img.addEventListener('load', function() { img.classList.add('loaded'); }, {once: true});
-          delete img.dataset.src;
-        }
-        io.unobserve(img);
-      }
-    });
-  }, {rootMargin: '300px'});
-  document.querySelectorAll('img[data-src]').forEach(function(img) { io.observe(img); });
+  var track = document.getElementById('privTrack');
+  if (!track) return;
+  var imgs = Array.from(track.querySelectorAll('img[data-src]')).slice(0, 4);
+  imgs.forEach(function(img, idx) {
+    img.src = img.dataset.src;
+    delete img.dataset.src;
+    img.loading = idx < 2 ? 'eager' : 'lazy';
+    img.fetchPriority = idx < 2 ? 'high' : 'auto';
+    img.decoding = 'async';
+    img.addEventListener('load', function() { img.classList.add('loaded'); }, {once: true});
+  });
 })();
 
 // Scroll reveal

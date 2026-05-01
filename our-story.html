@@ -460,9 +460,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 //  NAV 
 var nav=document.getElementById('mainNav');
 if(nav){
-  window.addEventListener('scroll',function(){
-    nav.classList.toggle('opaque',window.scrollY>80);
-  },{passive:true});
+  var _navTick=false;window.addEventListener('scroll',function(){if(!_navTick){_navTick=true;requestAnimationFrame(function(){nav.classList.toggle('opaque',window.scrollY>80);_navTick=false;});}},{passive:true});
 }
 var ham=document.getElementById('ham');
 var mob=document.getElementById('mobMenu');
@@ -492,21 +490,7 @@ mob && mob.querySelectorAll('a').forEach(function(a){a.addEventListener('click',
   document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 })();
 
-//  LAZY IMAGES 
-(function(){
-  if(!window.IntersectionObserver) return;
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){
-        var img=e.target;
-        img.src=img.dataset.src;
-        img.addEventListener('load',function(){img.classList.add('loaded');},{once:true});
-        io.unobserve(img);
-      }
-    });
-  },{rootMargin:'300px'});
-  document.querySelectorAll('img[data-src]').forEach(function(img){io.observe(img);});
-})();
+
 
 
 //  SLIDER ENGINE 
