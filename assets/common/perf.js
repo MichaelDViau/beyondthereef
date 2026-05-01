@@ -228,7 +228,7 @@
         '.promo-kicker{font-size:10px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.95);margin:0 0 6px}' +
         '.promo-text{font-size:13px;line-height:1.45;font-weight:700;color:#fff;margin:0 0 10px}' +
         '.promo-link{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border-radius:999px;background:#fff;color:#bf4f00;font-size:12px;font-weight:800;text-decoration:none}' +
-        '.promo-pill{position:absolute;left:0;bottom:0;width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#fff;opacity:0;pointer-events:none;transition:opacity .15s ease}' +
+        '.promo-pill{position:absolute;left:0;bottom:0;width:52px;height:52px;border-radius:50%;background:rgba(255,140,0,1);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:900;color:#fff;opacity:0;pointer-events:none;transition:opacity .15s ease}' +
         '.promo-float.is-collapsed{clip-path:inset(calc(100% - 52px) calc(100% - 52px) 0 0 round 50%);cursor:pointer;transition:clip-path .24s cubic-bezier(0.4,0,1,1)}' +
         '.promo-float.is-collapsed .promo-main{opacity:0;pointer-events:none;transition:opacity .1s ease 0s}' +
         '.promo-float.is-collapsed .promo-close{opacity:0;pointer-events:none;transition:opacity .1s ease 0s}' +
