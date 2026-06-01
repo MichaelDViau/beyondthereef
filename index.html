@@ -9,7 +9,6 @@
 <meta name="color-scheme" content="light">
 <script>
 (() => {
-  const currentPath = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase();
   const params = new URLSearchParams(window.location.search);
   const fromWelcome = params.get('from') === 'welcome';
   if (fromWelcome) {
@@ -17,15 +16,11 @@
     const lang = params.get('lang');
     if (lang) localStorage.setItem('btrPreferredLanguage', lang);
   }
-  const hasSeenWelcome = sessionStorage.getItem('btrSeenWelcome') === '1';
-  if (currentPath === 'index.html' && !fromWelcome && !hasSeenWelcome) {
-    window.location.replace('welcome.html');
-  }
 })();
 </script>
-<title>Private Experiences Riviera Maya, Cancun & Playa del Carmen | Beyond the Reef Mexico</title>
-<meta name="description" content="Top-rated private experiences in Riviera Maya, Cancun, Tulum & Playa del Carmen. Swim with sea turtles, explore hidden cenotes, visit Chichén Itzá & Cobá ruins. 100% private groups, certified local guides, 14+ years experience. Book on WhatsApp.">
-<meta name="keywords" content="private experiences Riviera Maya, private experiences Cancun, private experiences Playa del Carmen, private experiences Tulum, cenote experience Cancun, sea turtle snorkeling Riviera Maya, Chichen Itza private experience, Coba private experience, Holbox private experience, Sian Kaan experience, private experiences Mexico, private excursions Cancun, private excursions Playa del Carmen, private excursions Riviera Maya, beyond the reef Mexico">
+<title>Private Tours Riviera Maya – Crowd-Free Cancun, Tulum & Playa del Carmen | Beyond the Reef Mexico</title>
+<meta name="description" content="Private tour company in Riviera Maya, Cancun, Tulum & Playa del Carmen specializing in avoiding the crowds. Swim with sea turtles, explore hidden cenotes, visit Chichén Itzá & Cobá ruins crowd-free. 100% private groups, certified local guides, 14+ years experience.">
+<meta name="keywords" content="private tour company Riviera Maya, avoid crowds Cancun tours, crowd-free tours Tulum, private tours Playa del Carmen, private experiences Riviera Maya, private experiences Cancun, private experiences Tulum, cenote experience Cancun, sea turtle snorkeling Riviera Maya, Chichen Itza private tour, Coba private tour, Holbox private tour, Sian Kaan tour, private excursions Riviera Maya, beyond the reef Mexico">
 <link rel="icon" type="image/png" href="assets/common/logo.png">
 <meta name="theme-color" content="#0E2A45">
 <link rel="canonical" href="https://www.beyondthereefmexico.com/">
@@ -38,8 +33,8 @@
 <meta property="og:site_name" content="Beyond the Reef Mexico">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.beyondthereefmexico.com/">
-<meta property="og:title" content="Private Experiences Riviera Maya, Cancun & Playa del Carmen | Beyond the Reef Mexico">
-<meta property="og:description" content="Top-rated private experiences in Riviera Maya, Cancun, Tulum & Playa del Carmen. Sea turtles, hidden cenotes, Chichén Itzá & Cobá ruins. 100% private groups, certified guides, 14+ years experience.">
+<meta property="og:title" content="Private Tours Riviera Maya – Crowd-Free Cancun, Tulum & Playa del Carmen | Beyond the Reef Mexico">
+<meta property="og:description" content="Private tour company specializing in avoiding crowds in Riviera Maya, Cancun, Tulum & Playa del Carmen. Sea turtles, hidden cenotes, Chichén Itzá & Cobá ruins — only your group, zero strangers. 14+ years experience.">
 <meta property="og:image" content="https://www.beyondthereefmexico.com/assets/indexslider/indexslider1.JPG">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -50,8 +45,8 @@
 <meta property="og:locale:alternate" content="it_IT">
 <meta property="og:locale:alternate" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Private Experiences Riviera Maya, Cancun & Playa del Carmen | Beyond the Reef Mexico">
-<meta name="twitter:description" content="Top-rated private experiences in Riviera Maya, Cancun, Tulum & Playa del Carmen. Sea turtles, hidden cenotes, Chichén Itzá & Cobá ruins. 100% private groups, certified guides, 14+ years experience.">
+<meta name="twitter:title" content="Private Tours Riviera Maya – Crowd-Free Cancun, Tulum & Playa del Carmen | Beyond the Reef Mexico">
+<meta name="twitter:description" content="Private tour company specializing in avoiding crowds in Riviera Maya, Cancun, Tulum & Playa del Carmen. Sea turtles, hidden cenotes, Chichén Itzá & Cobá ruins — only your group, zero strangers.">
 <meta name="twitter:image" content="https://www.beyondthereefmexico.com/assets/indexslider/indexslider1.JPG">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","@id":"https://www.beyondthereefmexico.com/#org","name":"Beyond the Reef Mexico","alternateName":"Beyond the Reef","url":"https://www.beyondthereefmexico.com/","logo":"https://www.beyondthereefmexico.com/assets/common/logo.png","image":"https://www.beyondthereefmexico.com/assets/indexslider/indexslider1.JPG","description":"Private and shared experiences in Cancun, Tulum, Playa del Carmen and the Riviera Maya. 14+ years of local experience.","priceRange":"$$","telephone":"+52-984-167-0697","email":"info@beyondthereefmexico.com","address":{"@type":"PostalAddress","addressCountry":"MX","addressRegion":"Quintana Roo","addressLocality":"Playa del Carmen"},"areaServed":[{"@type":"City","name":"Cancun"},{"@type":"City","name":"Tulum"},{"@type":"City","name":"Playa del Carmen"},{"@type":"Place","name":"Riviera Maya"}],"sameAs":["https://www.instagram.com/mikaeltheguide","https://wa.me/529841670697"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5","reviewCount":"13","bestRating":"5","worstRating":"5"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://www.beyondthereefmexico.com/#website","url":"https://www.beyondthereefmexico.com/","name":"Beyond the Reef Mexico","publisher":{"@id":"https://www.beyondthereefmexico.com/#org"},"inLanguage":["en","es","fr","de","it","pt"]}</script>
