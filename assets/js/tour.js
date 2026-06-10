@@ -2,7 +2,9 @@
    Shared tour-page JavaScript
    - Photo slider (psTrack / psPrev / psNext / psCtr)
    - Click-to-open fullscreen lightbox
-   - Scroll reveal (.rv elements)
+   - Booking card: group-size pricing + booking request
+     (per-page config supplied via window.BTR_TOUR)
+   Nav, mobile menu and scroll reveal live in site.js.
    =============================================*/
 (function () {
   'use strict';
@@ -237,23 +239,112 @@
     }
   })();
 
-  /* ── Scroll Reveal ────────────────────────────────────── */
+  /* ── Booking card ─────────────────────────────────────────
+     Each tour page declares its own configuration before this
+     script loads:
+
+       window.BTR_TOUR = {
+         name:    'Experience name',   // used in the booking email
+         pricing: { 1: 340, 2: 218 }   // USD per person by group size
+       };                              // (empty {} = price on request)
+
+     Behaviour:
+     - Builds the "Number of guests" selector from the pricing
+       table (defaults to 2 guests) and live-updates the totals.
+     - Submits the request through FormSubmit and swaps the form
+       for the success message — no payment is collected.
+     ──────────────────────────────────────────────────────── */
   (function () {
-    if (!window.IntersectionObserver) {
-      var els = document.querySelectorAll('.rv');
-      for (var i = 0; i < els.length; i++) els[i].classList.add('vis');
-      return;
+    var config = window.BTR_TOUR || {};
+    var pricing = config.pricing || {};
+    var tourName = config.name || document.title;
+    var selectedPax = 1;
+
+    /* Group-size selector + live price totals */
+    var sel = document.getElementById('paxSel');
+    var sizes = Object.keys(pricing).map(Number).sort(function (a, b) { return a - b; });
+
+    function updateTotals() {
+      var price = pricing[selectedPax] || 0;
+      var perPerson = document.getElementById('bkPP');
+      var total = document.getElementById('bkTot');
+      if (perPerson) perPerson.textContent = '$' + price + ' USD';
+      if (total) total.textContent = '$' + (price * selectedPax) + ' USD';
     }
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('vis');
-          io.unobserve(entry.target);
-        }
+
+    if (sel && sizes.length) {
+      sizes.forEach(function (p) {
+        var option = document.createElement('option');
+        option.value = p;
+        option.textContent = p === 1 ? '1 guest' : p + ' guests';
+        sel.appendChild(option);
       });
-    }, { threshold: 0.08 });
-    var els = document.querySelectorAll('.rv');
-    for (var i = 0; i < els.length; i++) io.observe(els[i]);
+      selectedPax = sizes.indexOf(2) >= 0 ? 2 : sizes[0]; /* most groups are couples */
+      sel.value = selectedPax;
+      updateTotals();
+      sel.addEventListener('change', function () {
+        selectedPax = parseInt(this.value, 10);
+        updateTotals();
+      });
+    }
+
+    /* Booking request submission (FormSubmit, no payment) */
+    function submitBooking() {
+      var name  = (document.getElementById('bkName')  || {}).value || '';
+      var email = (document.getElementById('bkEmail') || {}).value || '';
+      name = name.trim();
+      email = email.trim();
+      if (!name)  { alert('Please enter your name.'); return; }
+      if (!email) { alert('Email is required , we cannot send your booking without it.'); return; }
+
+      function fieldValue(id, fallback) {
+        var el = document.getElementById(id);
+        var v = el && el.value && el.value.trim ? el.value.trim() : (el && el.value) || '';
+        return v || fallback;
+      }
+      var priceInfo = (pricing[selectedPax] && selectedPax)
+        ? selectedPax + ' guests , $' + (pricing[selectedPax] * selectedPax) + ' USD total'
+        : 'Price on request';
+
+      var btn = document.querySelector('.bk-sub');
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+
+      fetch('https://formsubmit.co/ajax/info@beyondthereefmexico.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _captcha: false,
+          _subject: 'Booking: ' + tourName,
+          email: email,
+          name: name,
+          phone: fieldValue('bkPhone', 'N/A'),
+          date: fieldValue('bkDate', 'TBD'),
+          hotel: fieldValue('bkHotel', 'N/A'),
+          pricing: priceInfo,
+          notes: fieldValue('bkNotes', 'None'),
+          experience: tourName
+        })
+      })
+      .then(function (res) { return res.json(); })
+      .then(function (data) {
+        if (btn) { btn.disabled = false; btn.textContent = 'Request to Book →'; }
+        if (data.success) {
+          var form = document.getElementById('bkForm');
+          var success = document.getElementById('bkSuc');
+          if (form) form.style.display = 'none';
+          if (success) success.style.display = 'block';
+        } else {
+          alert('Something went wrong. Please try again or email us at info@beyondthereefmexico.com');
+        }
+      })
+      .catch(function () {
+        if (btn) { btn.disabled = false; btn.textContent = 'Request to Book →'; }
+        alert('Could not send your request. Please email us at info@beyondthereefmexico.com');
+      });
+    }
+
+    var submitBtn = document.querySelector('.bk-sub');
+    if (submitBtn) submitBtn.addEventListener('click', submitBooking);
   })();
 
 })();

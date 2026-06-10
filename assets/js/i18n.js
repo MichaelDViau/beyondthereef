@@ -1,7 +1,9 @@
 /* =========================================================
-   BTR i18n – Zero-flash multilingual engine
-   Loaded synchronously (no defer/async) so translations
-   apply before the browser gets a chance to paint.
+   BTR i18n – Zero-flash multilingual engine (en/fr/es/de/it/pt)
+   Loaded with `defer`; pages hide <body> via the
+   .btr-i18n-loading class (set by an inline head snippet)
+   until translations are applied, so non-English visitors
+   never see a flash of English content.
    ========================================================= */
 (function (win, doc) {
   'use strict';
