@@ -6,10 +6,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
+<!-- ── SEO & social metadata ── -->
 <title>Build Your Own Experience | Beyond the Reef Mexico</title>
 <meta name="description" content="Build your own crowd-free private tour in Riviera Maya, Cancun, Tulum & Playa del Carmen. Mix and match ocean adventures, cenotes, Mayan ruins & local food into a fully custom private experience. Custom quote in 6–12 hours.">
 <meta name="keywords" content="custom private experience Riviera Maya, build your own experience Cancun, custom private excursion Playa del Carmen, personalized private experience Mexico">
-<link rel="icon" type="image/png" href="assets/common/logo.png">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
 <meta name="theme-color" content="#0E2A45">
 <link rel="canonical" href="https://www.beyondthereefmexico.com/build-your-experience.html">
 <meta name="robots" content="index,follow">
@@ -22,11 +23,13 @@
 <link rel="alternate" hreflang="en" href="https://www.beyondthereefmexico.com/build-your-experience.html">
 <link rel="alternate" hreflang="es" href="https://www.beyondthereefmexico.com/build-your-experience.html">
 <link rel="alternate" hreflang="x-default" href="https://www.beyondthereefmexico.com/build-your-experience.html">
+<!-- ── Fonts & stylesheets (fonts load async with noscript fallback) ── -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://i.ibb.co" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<link rel="stylesheet" href="assets/common/perf.css">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap"></noscript>
+<link rel="stylesheet" href="assets/css/global.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -162,13 +165,14 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 .float-ig:hover,.float-wa:hover{transform:scale(1.10)}
 .float-ig svg,.float-wa svg{width:52px;height:52px;border-radius:50%}
 </style>
-<script src="assets/common/i18n.js" defer></script>
+<script src="assets/js/i18n.js" defer></script>
 </head>
 <body>
 
+<!-- ============ HEADER / NAVIGATION ============ -->
 <nav class="nav" id="mainNav">
   <a href="index.html" class="nav-logo">
-    <img src="assets/common/logo.png" alt="Beyond the Reef Mexico" width="42" height="42">
+    <img src="assets/img/logo.png" alt="Beyond the Reef Mexico" width="42" height="42">
     <div class="nav-logo-words">
       <span class="nav-logo-name">Beyond the Reef</span>
       <span class="nav-logo-sub">Mexico</span>
@@ -187,16 +191,18 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
   </div>
 </nav>
 
+<!-- Mobile navigation overlay (toggled by the hamburger button) -->
 <div class="mob-menu" id="mobMenu" role="dialog" aria-label="Navigation">
   <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
-  <a href="tours.html" onclick="closeMob()" data-i18n="c.nav.private">Private Experiences</a>
-  <a href="build-your-experience.html" onclick="closeMob()" data-i18n="c.nav.build">Build Your Own Experience</a>
-  <a href="reviews.html" onclick="closeMob()" data-i18n="c.nav.reviews">Reviews</a>
-  <a href="our-story.html" onclick="closeMob()" data-i18n="c.nav.story">Our Story</a>
-  <a href="index.html#contact" onclick="closeMob()" data-i18n="c.nav.contact">Contact</a>
-  <a href="https://wa.me/529841670697" class="mob-wa" target="_blank" rel="noopener" onclick="closeMob()">Book Now</a>
+  <a href="tours.html" data-i18n="c.nav.private">Private Experiences</a>
+  <a href="build-your-experience.html" data-i18n="c.nav.build">Build Your Own Experience</a>
+  <a href="reviews.html" data-i18n="c.nav.reviews">Reviews</a>
+  <a href="our-story.html" data-i18n="c.nav.story">Our Story</a>
+  <a href="index.html#contact" data-i18n="c.nav.contact">Contact</a>
+  <a href="https://wa.me/529841670697" class="mob-wa" target="_blank" rel="noopener">Book Now</a>
 </div>
 
+<!-- ============ PAGE HERO ============ -->
 <header class="page-hero">
   <h1 data-i18n="build.h1">Build Your Own Experience</h1>
   <p data-i18n="build.sub">Pick your adventure. We will build a super exclusive, top-of-the-class experience around you and send your custom quote within 6 to 12 hours.</p>
@@ -206,6 +212,7 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
 </header>
 
 <main class="builder">
+  <!-- ============ EXPERIENCE BUILDER FORM (11 steps · submits via FormSubmit) ============ -->
   <form id="builderForm" novalidate>
 
     <!-- STEP 1: CONTACT -->
@@ -691,11 +698,12 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
   </form>
 </main>
 
+<!-- ============ FOOTER ============ -->
 <footer>
   <div class="ft-grid">
     <div>
       <div class="ft-logo">
-        <img src="assets/common/logo.png" alt="Beyond the Reef Mexico" width="38" height="38">
+        <img src="assets/img/logo.png" alt="Beyond the Reef Mexico" width="38" height="38">
         <span class="ft-logo-name">Beyond the Reef Mexico</span>
       </div>
       <p class="ft-tagline" data-i18n="c.ft.tagline">Private & custom experiences in Cancun, Tulum, Playa del Carmen & the Riviera Maya. 14+ years of unforgettable experiences.</p>
@@ -739,22 +747,12 @@ footer{background:var(--navy);padding:52px 20px 28px;color:rgba(255,255,255,.52)
   </div>
 </footer>
 
+<!-- Floating action buttons (Instagram · WhatsApp) -->
 <a href="https://www.instagram.com/mikaeltheguide" class="float-ig" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#ig)"/><rect x="8" y="8" width="16" height="16" rx="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="16" cy="16" r="4" fill="none" stroke="white" stroke-width="1.5"/><circle cx="21" cy="11" r="1" fill="white"/></svg></a>
 <a href="https://wa.me/529841670697" class="float-wa" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5A10.47 10.47 0 0016 5.5C10.2 5.5 5.5 10.2 5.5 16c0 1.85.49 3.65 1.42 5.24L5.5 26.5l5.4-1.4A10.45 10.45 0 0016 26.5c5.8 0 10.5-4.7 10.5-10.5 0-2.8-1.09-5.43-3-7.5zM16 24.5c-1.6 0-3.17-.43-4.54-1.24l-.32-.19-3.34.87.9-3.24-.21-.34A8.47 8.47 0 017.5 16C7.5 11.31 11.31 7.5 16 7.5c2.27 0 4.4.88 6 2.48A8.44 8.44 0 0124.5 16c0 4.69-3.81 8.5-8.5 8.5zm4.66-6.36c-.25-.13-1.5-.74-1.73-.82-.23-.08-.4-.12-.57.12-.17.25-.65.82-.8 1-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.74-.66-1.25-1.48-1.39-1.73-.15-.25-.02-.38.11-.51.12-.12.25-.31.38-.47.12-.16.17-.27.25-.45.08-.17.04-.33-.02-.46-.07-.13-.57-1.38-.78-1.89-.2-.5-.42-.43-.57-.44h-.49c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.12.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.53.6.19 1.14.16 1.57.1.48-.07 1.5-.61 1.71-1.2.21-.59.21-1.1.15-1.2-.06-.1-.23-.16-.48-.29z" fill="#fff"/></svg></a>
 
 <script>
-var ham = document.getElementById('ham');
-var mobMenu = document.getElementById('mobMenu');
-var mobClose = document.getElementById('mobClose');
-var mainNav = document.getElementById('mainNav');
-function openMob(){ham.classList.add('open');mobMenu.classList.add('open');ham.setAttribute('aria-expanded','true')}
-function closeMob(){ham.classList.remove('open');mobMenu.classList.remove('open');ham.setAttribute('aria-expanded','false')}
-ham.addEventListener('click',function(){mobMenu.classList.contains('open')?closeMob():openMob()});
-mobClose.addEventListener('click',closeMob);
-function syncNav(){if(window.scrollY>20){mainNav.classList.add('opaque')}else{mainNav.classList.remove('opaque')}}
-var _navTick=false;window.addEventListener('scroll',function(){if(!_navTick){_navTick=true;requestAnimationFrame(function(){syncNav();_navTick=false;});}},{passive:true});
-syncNav();
-
+/* Nav & mobile menu are handled by assets/js/site.js */
 var form = document.getElementById('builderForm');
 var errBox = document.getElementById('formErr');
 var successBox = document.getElementById('successBox');
@@ -929,6 +927,7 @@ form.addEventListener('submit', function(e){
 });
 </script>
 
-<script src="assets/common/perf.js" defer></script>
+<script src="assets/js/site.js" defer></script>
+<script src="assets/js/perf.js" defer></script>
 </body>
 </html>
